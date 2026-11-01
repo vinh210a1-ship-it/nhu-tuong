@@ -8,7 +8,7 @@
     "chuan-bi": "node scripts/chuan-bi-noi-dung.mjs",
     "dev": "npm run chuan-bi && astro dev",
     "build": "npm run chuan-bi && astro build",
-    "kiem": "node scripts/kiem-may-tinh.mjs",
+    "kiem": "node scripts/kiem-may-tinh.mjs && node scripts/kiem-phong-lab.mjs",
     "preview": "astro preview"
   },
   "dependencies": {
