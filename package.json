@@ -1,0 +1,23 @@
+{
+  "name": "nhu-tuong",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Web kiến thức nhũ tương thực phẩm, tiếng Việt, mỗi khẳng định có nhãn tin cậy và nguồn",
+  "scripts": {
+    "chuan-bi": "node scripts/chuan-bi-noi-dung.mjs",
+    "dev": "npm run chuan-bi && astro dev",
+    "build": "npm run chuan-bi && astro build",
+    "kiem": "node scripts/kiem-may-tinh.mjs",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/markdown-remark": "7.3.2",
+    "@astrojs/starlight": "0.42.6",
+    "astro": "7.3.8",
+    "katex": "0.16.22",
+    "rehype-katex": "7.0.1",
+    "remark-math": "6.0.0",
+    "unist-util-visit": "5.0.0"
+  }
+}

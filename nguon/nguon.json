@@ -1,0 +1,4822 @@
+[
+ {
+  "trich_dan": "Abbott S. Critical Packing Parameter (Practical Surfactants Science). https://www.stevenabbott.co.uk/practical-surfactants/cpp.php",
+  "ho": "abbott",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.stevenabbott.co.uk/practical-surfactants/cpp.php",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:A3"
+  ],
+  "khoa": "abbott"
+ },
+ {
+  "trich_dan": "Aben S. et al. (2012). Rheological investigations on the creaming of depletion-flocculated emulsions. *Langmuir*.",
+  "ho": "aben",
+  "nam": 2012,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/80f0be126b435927940f55c936b13048/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S7"
+  ],
+  "khoa": "aben2012"
+ },
+ {
+  "trich_dan": "Acevedo NC, Block JM, Marangoni AG. Critical laminar shear-temperature effects on the nano- and mesoscale structure of a model fat and its relationship to oil binding and rheological properties. *Faraday Discuss* 2012;158:171–194",
+  "ho": "acevedo",
+  "nam": 2012,
+  "doi": "10.1039/c2fd20008b",
+  "pmid": "23234167",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R7"
+  ],
+  "khoa": "acevedo2012"
+ },
+ {
+  "trich_dan": "Acevedo NC, Marangoni AG. Nanostructured fat crystal systems. *Annu Rev Food Sci Technol* 2015;6:71–96 (online 2014-11)",
+  "ho": "acevedo",
+  "nam": 2015,
+  "doi": "10.1146/annurev-food-030713-092400",
+  "pmid": "25422879",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R5"
+  ],
+  "khoa": "acevedo2015"
+ },
+ {
+  "trich_dan": "Agarwal D. et al. (2018). Interactions between microfibrillar cellulose and carboxymethyl cellulose in an aqueous suspension. *Carbohydr. Polym.*",
+  "ho": "agarwal",
+  "nam": 2018,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/543c3b9c73fd5fcdbb284b56112bcf3f/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S106"
+  ],
+  "khoa": "agarwal2018"
+ },
+ {
+  "trich_dan": "Ahsan H. et al. (2019). Surface modification of microcrystalline cellulose... Pickering emulsions. *Int. J. Biol. Macromol.*",
+  "ho": "ahsan",
+  "nam": 2019,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/ae9e1be936bd51fca57feaf15a3e7fae/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S108"
+  ],
+  "khoa": "ahsan2019"
+ },
+ {
+  "trich_dan": "Akoh CC, Min DB (eds.). *Food Lipids: Chemistry, Nutrition, and Biotechnology*, 4th ed. CRC Press, 2017",
+  "ho": "akoh",
+  "nam": 2017,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:B3"
+  ],
+  "khoa": "akoh2017"
+ },
+ {
+  "trich_dan": "Aktar T, Adal E. Determining the Arrhenius Kinetics of Avocado Oil: Oxidative Stability under Rancimat Test Conditions. *Foods* 2019;8(7):236",
+  "ho": "aktar",
+  "nam": 2019,
+  "doi": "10.3390/foods8070236",
+  "pmid": "31261986",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R38"
+  ],
+  "khoa": "aktar2019"
+ },
+ {
+  "trich_dan": "Albano K. M. et al. (2019). Electrostatic interaction between proteins and polysaccharides: physicochemical aspects and applications in emulsion stabilization. *Food Reviews International*.",
+  "ho": "albano",
+  "nam": 2019,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/cbde8ae903745f6bbeee85b9b8103c1d/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S14"
+  ],
+  "khoa": "albano2019"
+ },
+ {
+  "trich_dan": "Aphibanthammakit C. et al. (2020). Emulsifying properties of *Acacia senegal* gum: impact of high molar mass protein-rich AGPs. *Food Chemistry: X*.",
+  "ho": "aphibanthammakit",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/99c86e2e6cd354f4838e36f6432c8a98/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S88"
+  ],
+  "khoa": "aphibanthammakit2020"
+ },
+ {
+  "trich_dan": "Arltoft D. et al. (2007). Interactions between carrageenans and milk proteins: a microstructural and rheological study. *Biomacromolecules*.",
+  "ho": "arltoft",
+  "nam": 2007,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/254f1d056faf5cf48545f475f4d0cca9/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S50"
+  ],
+  "khoa": "arltoft2007"
+ },
+ {
+  "trich_dan": "Asakura S, Oosawa F (1954). On interaction between two bodies immersed in a solution of macromolecules. *J Chem Phys* 22:1255.",
+  "ho": "asakura",
+  "nam": 1954,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:C08"
+  ],
+  "khoa": "asakura1954"
+ },
+ {
+  "trich_dan": "Bak J. (2024). A comparative study on the rheological properties of concentrated xanthan gum in combination with gum arabic or gum arabic-based emulsion. *Int. J. Biol. Macromol.*",
+  "ho": "bak",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/32aa5a4234385d7da3750464108bc68c/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S33"
+  ],
+  "khoa": "bak2024"
+ },
+ {
+  "trich_dan": "Bangar S. P. et al. (2024). Recent advancements in cross-linked starches for food applications – a review. *Int. J. Food Prop.*",
+  "ho": "bangar",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/b629ff45c5ac58fba473a694a825b502/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S99"
+  ],
+  "khoa": "bangar2024"
+ },
+ {
+  "trich_dan": "Benichou A. et al. (2002). Protein-polysaccharide interactions for stabilization of food emulsions. *J. Dispersion Sci. Technol.*",
+  "ho": "benichou",
+  "nam": 2002,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/bd9f4926066c5577b3bb79b418de577f/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S11"
+  ],
+  "khoa": "benichou2002"
+ },
+ {
+  "trich_dan": "Bercea M. et al. (2020). Real-time monitoring the order-disorder conformational transition of xanthan gum. *J. Mol. Liq.*",
+  "ho": "bercea",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/a52280a153ac5684b3e37498451fe5d1/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S25"
+  ],
+  "khoa": "bercea2020"
+ },
+ {
+  "trich_dan": "Berry SEE. Triacylglycerol structure and interesterification of palmitic and stearic acid-rich fats: an overview and implications for cardiovascular disease. *Nutr Res Rev* 2009;22(1):3–17",
+  "ho": "berry",
+  "nam": 2009,
+  "doi": "10.1017/s0954422409369267",
+  "pmid": "19442321",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R23"
+  ],
+  "khoa": "berry2009"
+ },
+ {
+  "trich_dan": "Bigi A. et al. (2004). Relationship between triple-helix content and mechanical properties of gelatin films. *Biomaterials*.",
+  "ho": "bigi",
+  "nam": 2004,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/494577fa251b59798e336e479aec5349/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S93"
+  ],
+  "khoa": "bigi2004"
+ },
+ {
+  "trich_dan": "Binks BP, Horozov TS (eds). *Colloidal Particles at Liquid Interfaces*. Cambridge University Press, 2006.",
+  "ho": "binks",
+  "nam": 2006,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:T05"
+  ],
+  "khoa": "binks2006"
+ },
+ {
+  "trich_dan": "Boostani S, ... Jafari SM (2024). Multiple Pickering emulsions stabilized by food-grade particles as innovative delivery systems for bioactive compounds. *Adv Colloid Interface Sci* 328:103174.",
+  "ho": "boostani",
+  "nam": 2024,
+  "doi": "10.1016/j.cis.2024.103174",
+  "pmid": null,
+  "url": "https://doi.org/10.1016/j.cis.2024.103174",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R07"
+  ],
+  "khoa": "boostani2024"
+ },
+ {
+  "trich_dan": "Braccini I., Pérez S. (2001). Molecular basis of Ca²⁺-induced gelation in alginates and pectins: the egg-box model revisited. *Biomacromolecules*.",
+  "ho": "braccini",
+  "nam": 2001,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/745d8eaed22153929343dd0803977d61/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S59"
+  ],
+  "khoa": "braccini2001"
+ },
+ {
+  "trich_dan": "Brunchi C.-E. et al. (2019). Chain conformation of xanthan in solution as influenced by temperature and salt addition. *J. Mol. Liq.*",
+  "ho": "brunchi",
+  "nam": 2019,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/ba061c5925915884a83f0e4c073e6e6b/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S26"
+  ],
+  "khoa": "brunchi2019"
+ },
+ {
+  "trich_dan": "Burgos-Díaz C. et al. (2016). Multilayer emulsions stabilized by vegetable proteins and polysaccharides. *Curr. Opin. Colloid Interface Sci.*",
+  "ho": "burgosdiaz",
+  "nam": 2016,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/a196ff7d515a5775970502b3fd97bab4/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S16"
+  ],
+  "khoa": "burgosdiaz2016"
+ },
+ {
+  "trich_dan": "Campos JR, Fernandes AR, Severino P, Gracia ML, Souto SB, Souto EB. Phase Behavior of Polymorphic Fats in Drug Delivery Systems — A Review of the State of Art. *Curr Pharm Des* 2018;24(21):2508–2512",
+  "ho": "campos",
+  "nam": 2018,
+  "doi": "10.2174/1381612824666180522092740",
+  "pmid": "29788879",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R40"
+  ],
+  "khoa": "campos2018"
+ },
+ {
+  "trich_dan": "Cao Y., Dickinson E., Wedlock D. J. (1990). Creaming and flocculation in emulsions containing polysaccharide. *Food Hydrocolloids*.",
+  "ho": "cao",
+  "nam": 1990,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/c09c8171a03c57a98c2a1b3b85526111/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S5"
+  ],
+  "khoa": "cao1990"
+ },
+ {
+  "trich_dan": "Cao L. et al. (2020). Egg-box model-based gelation of alginate and pectin: a review. *Carbohydr. Polym.*",
+  "ho": "cao",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/2a7cb80b5c2b5469af3fe7aa74ae8911/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S58"
+  ],
+  "khoa": "cao2020"
+ },
+ {
+  "trich_dan": "Chabni A, Bañares C, Torres CF. Study of the oxidative stability via Oxitest and Rancimat of phenolic-rich olive oils obtained by a sequential process of dehydration, expeller and supercritical CO₂ extractions. *Front Nutr* 2024;11:1494091",
+  "ho": "chabni",
+  "nam": 2024,
+  "doi": "10.3389/fnut.2024.1494091",
+  "pmid": "39659907",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R37"
+  ],
+  "khoa": "chabni2024"
+ },
+ {
+  "trich_dan": "Chaiyasit W, Elias RJ, McClements DJ, Decker EA. Role of physical structures in bulk oils on lipid oxidation. *Crit Rev Food Sci Nutr* 2007;47(3):299–317",
+  "ho": "chaiyasit",
+  "nam": 2007,
+  "doi": "10.1080/10408390600754248",
+  "pmid": "17453926",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R28"
+  ],
+  "khoa": "chaiyasit2007"
+ },
+ {
+  "trich_dan": "Chanamai R. et al. (2000). Creaming stability of flocculated monodisperse oil-in-water emulsions. *J. Colloid Interface Sci.*",
+  "ho": "chanamai",
+  "nam": 2000,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/442b21491b6856b5964e10e715a9774a/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S10"
+  ],
+  "khoa": "chanamai2000"
+ },
+ {
+  "trich_dan": "Chang Y, McLandsborough L, McClements DJ (2012). Physical properties and antimicrobial efficacy of thyme oil nanoemulsions: influence of ripening inhibitors. *J Agric Food Chem* 60(48):12056–12063.",
+  "ho": "chang",
+  "nam": 2012,
+  "doi": "10.1021/jf304045a",
+  "pmid": null,
+  "url": "https://doi.org/10.1021/jf304045a",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R15"
+  ],
+  "khoa": "chang2012"
+ },
+ {
+  "trich_dan": "Chang HJ, Lee JH. Regiospecific Positioning of Palmitic Acid in Triacylglycerol Structure of Enzymatically Modified Lipids Affects Physicochemical and In Vitro Digestion Properties. *Molecules* 2021;26(13):4015",
+  "ho": "chang",
+  "nam": 2021,
+  "doi": "10.3390/molecules26134015",
+  "pmid": "34209258",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R25"
+  ],
+  "khoa": "chang2021"
+ },
+ {
+  "trich_dan": "Chassaing B, et al. (2015). Dietary emulsifiers impact the mouse gut microbiota promoting colitis and metabolic syndrome. *Nature* 519:92–96.",
+  "ho": "chassaing",
+  "nam": 2015,
+  "doi": "10.1038/nature14232",
+  "pmid": "25731162",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E12"
+  ],
+  "khoa": "chassaing2015"
+ },
+ {
+  "trich_dan": "Chen X-W, Yang X-Q (2019). Orange oil powders and oleogels from emulsion templates stabilized solely by a natural triterpene saponin. *J Agric Food Chem* 67:2637–2646. doi 10.1021/acs.jafc.8b04588. PMID 30721052",
+  "ho": "chen",
+  "nam": 2019,
+  "doi": "10.1021/acs.jafc.8b04588",
+  "pmid": "30721052",
+  "url": "https://doi.org/10.1021/acs.jafc.8b04588",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:C17"
+  ],
+  "khoa": "chen2019a"
+ },
+ {
+  "trich_dan": "Chen W-P, et al. (2019). Effects of soy proteins and hydrolysates on fat globule coalescence and meltdown properties of ice cream. *Food Hydrocolloids*.",
+  "ho": "chen",
+  "nam": 2019,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/46423c2e968b5e04972b8c95f337f864/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:D7"
+  ],
+  "khoa": "chen2019b"
+ },
+ {
+  "trich_dan": "Cheng J, Dudu OE, Wang D, Li X, Yan T (2019). Influence of interfacial adsorption of glyceryl monostearate and proteins on fat crystallization behavior and stability of whipped-frozen emulsions. *Food Chem* 310:125949.",
+  "ho": "cheng",
+  "nam": 2019,
+  "doi": "10.1016/j.foodchem.2019.125949",
+  "pmid": null,
+  "url": "https://doi.org/10.1016/j.foodchem.2019.125949",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R22"
+  ],
+  "khoa": "cheng2019"
+ },
+ {
+  "trich_dan": "Cheng J-J, et al. (2020). Effect of emulsifier–fat interactions and interfacial competitive adsorption of emulsifiers with proteins on fat crystallization and stability of whipped-frozen emulsions. *Food Hydrocolloids*.",
+  "ho": "cheng",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/4b790c3abea45251937d52a215d12956/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:D5"
+  ],
+  "khoa": "cheng2020"
+ },
+ {
+  "trich_dan": "Chi J, Hou X, Du M, Jin J, Zhang Y. Evaluation Methods of Crystal Behaviors and Structures of Symmetrical Monounsaturated Triacylglycerols. *J Texture Stud* 2025;56(3):e70023",
+  "ho": "chi",
+  "nam": 2025,
+  "doi": "10.1111/jtxs.70023",
+  "pmid": "40374587",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R9"
+  ],
+  "khoa": "chi2025"
+ },
+ {
+  "trich_dan": "Chiarelli P. G. et al. (2024). Modifying and improving the Bloom strength and rheological properties of jellyfish gelatin. *Food Hydrocolloids*.",
+  "ho": "chiarelli",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/98244e1b72dd5e8a9c6a08e386ded68f/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S98"
+  ],
+  "khoa": "chiarelli2024"
+ },
+ {
+  "trich_dan": "Chivero P. et al. (2015). Effect of xanthan and guar gums on the formation and stability of soy soluble polysaccharide oil-in-water emulsions. *Food Research International*.",
+  "ho": "chivero",
+  "nam": 2015,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/f865efa141b156a8ba665fd2469f7658/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S8"
+  ],
+  "khoa": "chivero2015"
+ },
+ {
+  "trich_dan": "Cholakova D, et al. (2024). Sucrose ester surfactants: current understanding and emerging perspectives. *Curr Opin Colloid Interface Sci*.",
+  "ho": "cholakova",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/1d180cf1bab3582d89b35a6d2f4db368/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:C6"
+  ],
+  "khoa": "cholakova2024"
+ },
+ {
+  "trich_dan": "Choppe E. et al. (2010). Rheology of xanthan solutions as a function of temperature, concentration and ionic strength. *Carbohydr. Polym.*",
+  "ho": "choppe",
+  "nam": 2010,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/e5164812ccf15d9888da0488be61bc20/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S28"
+  ],
+  "khoa": "choppe2010"
+ },
+ {
+  "trich_dan": "Công báo Chính phủ: bản Thông tư 24/2019",
+  "ho": "cong",
+  "nam": 2019,
+  "doi": null,
+  "pmid": null,
+  "url": "https://congbaocdn.chinhphu.vn/CongBaoCP/CongBao/2019/10/29732/28148-1-801-802.pdf",
+  "muc_doc": "tieu-de",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E18"
+  ],
+  "khoa": "cong2019"
+ },
+ {
+  "trich_dan": "Cucheval A. et al. (2009). Diffusing wave spectroscopy investigations of acid milk gels containing pectin. *Colloid Polym. Sci.*",
+  "ho": "cucheval",
+  "nam": 2009,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/80c97444c2fb512093ae2b4161887558/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S68"
+  ],
+  "khoa": "cucheval2009"
+ },
+ {
+  "trich_dan": "Davies JT (1957). A quantitative kinetic theory of emulsion type I: physical chemistry of the emulsifying agent. *Proc Int Congr Surface Activity* 1:426.",
+  "ho": "davies",
+  "nam": 1957,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "chat-nhu-hoa",
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:C03",
+   "chat-nhu-hoa:A6"
+  ],
+  "khoa": "davies1957"
+ },
+ {
+  "trich_dan": "Deetae P. et al. (2008). Preparation, pasting properties and freeze-thaw stability of dual modified crosslink-phosphorylated rice starch. *Carbohydr. Polym.*",
+  "ho": "deetae",
+  "nam": 2008,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/065a19135e4f57a182b02cbe9010d61b/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S101"
+  ],
+  "khoa": "deetae2008"
+ },
+ {
+  "trich_dan": "de Oliveira Barros M, ... Rojas OJ (2026). Cooperative stabilization of Pickering emulsions by starch and chitin nanoparticles. *ACS Omega* 11(7):12163–12174.",
+  "ho": "deoliveira",
+  "nam": 2026,
+  "doi": "10.1021/acsomega.5c11090",
+  "pmid": null,
+  "url": "https://doi.org/10.1021/acsomega.5c11090",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R25"
+  ],
+  "khoa": "deoliveira2026"
+ },
+ {
+  "trich_dan": "Dewi B. P. C. (2020). Phase separation in biopolymer mixtures (luận án).",
+  "ho": "dewi",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/52d5a581c1cd551bbebd132a050844df/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S22"
+  ],
+  "khoa": "dewi2020"
+ },
+ {
+  "trich_dan": "Dhiman A, Chopra R, Singh PK, Homroy S, Chand M, Talwar B. Amelioration of nutritional properties of bakery fat using omega-3 fatty acid-rich edible oils: a review. *J Sci Food Agric* 2024;104(6):3175–3184",
+  "ho": "dhiman",
+  "nam": 2024,
+  "doi": "10.1002/jsfa.13225",
+  "pmid": "38105390",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R39"
+  ],
+  "khoa": "dhiman2024"
+ },
+ {
+  "trich_dan": "Dickinson E (1991). Competitive adsorption and protein–surfactant interactions in oil-in-water emulsions.",
+  "ho": "dickinson",
+  "nam": 1991,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/13a135c095f55ffcbfd2340b3f8f56bc/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B13"
+  ],
+  "khoa": "dickinson1991a"
+ },
+ {
+  "trich_dan": "Dickinson E. et al. (1991). Effect of molecular weight on the emulsifying behaviour of gum arabic (chương sách).",
+  "ho": "dickinson",
+  "nam": 1991,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/2b201539da4c5520ac58fee60729cd75/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S84"
+  ],
+  "khoa": "dickinson1991b"
+ },
+ {
+  "trich_dan": "Dickinson E. *An Introduction to Food Colloids*. Oxford University Press, 1992.",
+  "ho": "dickinson",
+  "nam": 1992,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:T03"
+  ],
+  "khoa": "dickinson1992"
+ },
+ {
+  "trich_dan": "Dickinson E. (2002). Hydrocolloids at interfaces and the influence on the properties of dispersed systems. *Food Hydrocolloids*.",
+  "ho": "dickinson",
+  "nam": 2002,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/6d0aa5b33f85536ab65dbccff94a86c6/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S2"
+  ],
+  "khoa": "dickinson2002"
+ },
+ {
+  "trich_dan": "Dickinson E, et al. (2008). Competitive adsorption of food macromolecules and surfactants at the oil–water interface.",
+  "ho": "dickinson",
+  "nam": 2008,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/77ec9846aa5f55648320e2507a2f974d/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B12"
+  ],
+  "khoa": "dickinson2008"
+ },
+ {
+  "trich_dan": "Dickinson E. (2009). Hydrocolloids as emulsifiers and emulsion stabilizers. *Food Hydrocolloids*.",
+  "ho": "dickinson",
+  "nam": 2009,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/ae217f0221ec510c937df20028c5b8a6/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S1"
+  ],
+  "khoa": "dickinson2009"
+ },
+ {
+  "trich_dan": "Dickinson E. (2019). Strategies to control and inhibit the flocculation of protein-stabilized oil-in-water emulsions. *Food Hydrocolloids*.",
+  "ho": "dickinson",
+  "nam": 2019,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/7042fb332d495dc9b46d8c510fa7f1d6/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S3"
+  ],
+  "khoa": "dickinson2019"
+ },
+ {
+  "trich_dan": "Donati I. et al. (2023). Alginate-metal cation interactions: macromolecular approach. *Carbohydr. Polym.*",
+  "ho": "donati",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/0bdb802dcdb75a9f95a64ef31af24519/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S62"
+  ],
+  "khoa": "donati2023"
+ },
+ {
+  "trich_dan": "D'Oria G. et al. (2023). Effect of stirring speed on low acyl gellan gum fluid gels' rheology, particle morphology and physical ageing. *Food Hydrocolloids*.",
+  "ho": "doria",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/600327754e835512a6c4f950653bd390/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S81"
+  ],
+  "khoa": "doria2023"
+ },
+ {
+  "trich_dan": "Drusch S. et al. (2024). Review on the impact of the molecular structure of pectin on the associative phase separation with proteins. *Food Hydrocolloids*.",
+  "ho": "drusch",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/6350ace9dceb5eb6bb2aa9cad4b95340/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S21"
+  ],
+  "khoa": "drusch2024"
+ },
+ {
+  "trich_dan": "EFSA (2013). Re-evaluation of sodium stearoyl-2-lactylate (E 481) and calcium stearoyl-2-lactylate (E 482). *EFSA J* 11(5):3144",
+  "ho": "efsa",
+  "nam": 2013,
+  "doi": null,
+  "pmid": null,
+  "url": "https://proe.info/files/docs/2602/EFSA_E481_E482.pdf",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E4"
+  ],
+  "khoa": "efsa2013"
+ },
+ {
+  "trich_dan": "EFSA (2015, sửa 2018). Re-evaluation of polyoxyethylene sorbitan monolaurate, -monooleate, -monopalmitate, -monostearate, -tristearate (E 432–436). *EFSA J* 13(7):4152",
+  "ho": "efsa",
+  "nam": 2015,
+  "doi": "10.2903/j.efsa.2015.4152",
+  "pmid": null,
+  "url": "https://proe.info/files/docs/2509/EFSA_E432_E433_E434_E435_E436%20.pdf",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E5"
+  ],
+  "khoa": "efsa2015"
+ },
+ {
+  "trich_dan": "EFSA (2017). Re-evaluation of lecithins (E 322). *EFSA J* 15(4):e04742.",
+  "ho": "efsa",
+  "nam": 2017,
+  "doi": "10.2903/j.efsa.2017.4742",
+  "pmid": "32625454",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E1"
+  ],
+  "khoa": "efsa2017a"
+ },
+ {
+  "trich_dan": "EFSA (2017). Re-evaluation of mono- and di-glycerides of fatty acids (E 471).",
+  "ho": "efsa",
+  "nam": 2017,
+  "doi": "10.2903/j.efsa.2017.5045",
+  "pmid": "32625340",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E2"
+  ],
+  "khoa": "efsa2017b"
+ },
+ {
+  "trich_dan": "EFSA Journal: đánh giá lại phụ gia – xanthan 2017",
+  "ho": "efsa",
+  "nam": 2017,
+  "doi": null,
+  "pmid": "32625570",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/32625570/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S110"
+  ],
+  "khoa": "efsa2017c"
+ },
+ {
+  "trich_dan": "EFSA Journal: đánh giá lại phụ gia – guar 2017",
+  "ho": "efsa",
+  "nam": 2017,
+  "doi": null,
+  "pmid": "32625396",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/32625396/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S112"
+  ],
+  "khoa": "efsa2017d"
+ },
+ {
+  "trich_dan": "EFSA Journal: đánh giá lại phụ gia – LBG 2017",
+  "ho": "efsa",
+  "nam": 2017,
+  "doi": null,
+  "pmid": "32625248",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/32625248/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S114"
+  ],
+  "khoa": "efsa2017e"
+ },
+ {
+  "trich_dan": "EFSA (2018). Re-evaluation of propane-1,2-diol esters of fatty acids (E 477). *EFSA J* 16(12):5497",
+  "ho": "efsa",
+  "nam": 2018,
+  "doi": null,
+  "pmid": null,
+  "url": "https://core.ac.uk/download/424005063.pdf",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E7"
+  ],
+  "khoa": "efsa2018a"
+ },
+ {
+  "trich_dan": "EFSA ANS Panel (2018). Re-evaluation of carrageenan (E 407) and processed Eucheuma seaweed (E 407a) as food additives. *EFSA Journal* 16(4):e05238. DOI 10.2903/j.efsa.2018.5238; PMC7009739.",
+  "ho": "efsa",
+  "nam": 2018,
+  "doi": "10.2903/j.efsa.2018.5238",
+  "pmid": null,
+  "url": "https://doi.org/10.2903/j.efsa.2018.5238",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S57"
+  ],
+  "khoa": "efsa2018b"
+ },
+ {
+  "trich_dan": "EFSA (2019). Re-evaluation of quillaia extract (E 999). *EFSA J*; (2024) Follow-up... *EFSA J* doi 10.2903/j.efsa.2024.8563 ; (2024) extension of uses doi 10.2903/j.efsa.2024.9140",
+  "ho": "efsa",
+  "nam": 2019,
+  "doi": "10.2903/j.efsa.2024.8563",
+  "pmid": "38322232",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E8"
+  ],
+  "khoa": "efsa2019"
+ },
+ {
+  "trich_dan": "EFSA (2020). Re-evaluation of E 472a–f. *EFSA J* 18(3):e06032.",
+  "ho": "efsa",
+  "nam": 2020,
+  "doi": "10.2903/j.efsa.2020.6032",
+  "pmid": "32874250",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E3"
+  ],
+  "khoa": "efsa2020"
+ },
+ {
+  "trich_dan": "EFSA Journal: đánh giá lại phụ gia – xanthan 2023",
+  "ho": "efsa",
+  "nam": 2023,
+  "doi": null,
+  "pmid": "37151988",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/37151988/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S111"
+  ],
+  "khoa": "efsa2023a"
+ },
+ {
+  "trich_dan": "EFSA Journal: đánh giá lại phụ gia – LBG 2023",
+  "ho": "efsa",
+  "nam": 2023,
+  "doi": null,
+  "pmid": "36789355",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/36789355/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S115"
+  ],
+  "khoa": "efsa2023b"
+ },
+ {
+  "trich_dan": "EFSA Journal: đánh giá lại phụ gia – guar 2024",
+  "ho": "efsa",
+  "nam": 2024,
+  "doi": null,
+  "pmid": "38711804",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/38711804/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S113"
+  ],
+  "khoa": "efsa2024"
+ },
+ {
+  "trich_dan": "EFSA (2025). Scientific opinion on specifications of E 472a,b,d,e,f.",
+  "ho": "efsa",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12336667/",
+  "muc_doc": "tieu-de",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E11"
+  ],
+  "khoa": "efsa2025"
+ },
+ {
+  "trich_dan": "EFSA. Re-evaluation of polyglycerol polyricinoleate (E 476).",
+  "ho": "efsa",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": "https://efsa.europa.eu/en/efsajournal/pub/4743",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E6"
+  ],
+  "khoa": "efsaa"
+ },
+ {
+  "trich_dan": "EFSA. Refined exposure assessment of sucrose esters of fatty acids (E 473).",
+  "ho": "efsa",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7009454/",
+  "muc_doc": "tieu-de",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E9"
+  ],
+  "khoa": "efsab"
+ },
+ {
+  "trich_dan": "EFSA. Re-evaluation of sucrose esters of fatty acids (E 473) in foods for infants below 16 weeks of age.",
+  "ho": "efsa",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10119783",
+  "muc_doc": "tieu-de",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E10"
+  ],
+  "khoa": "efsac"
+ },
+ {
+  "trich_dan": "EFSA Journal: đánh giá lại phụ gia – tara",
+  "ho": "efsa",
+  "nam": null,
+  "doi": null,
+  "pmid": "32625525",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/32625525/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S116"
+  ],
+  "khoa": "efsad"
+ },
+ {
+  "trich_dan": "EFSA Journal: đánh giá lại phụ gia – alginate",
+  "ho": "efsa",
+  "nam": null,
+  "doi": null,
+  "pmid": "32625343",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/32625343/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S117"
+  ],
+  "khoa": "efsae"
+ },
+ {
+  "trich_dan": "EFSA Journal: đánh giá lại phụ gia – gellan",
+  "ho": "efsa",
+  "nam": null,
+  "doi": null,
+  "pmid": "32625935",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/32625935/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S118"
+  ],
+  "khoa": "efsaf"
+ },
+ {
+  "trich_dan": "EFSA Journal: đánh giá lại phụ gia – agar",
+  "ho": "efsa",
+  "nam": null,
+  "doi": null,
+  "pmid": "42006017",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42006017/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S119"
+  ],
+  "khoa": "efsag"
+ },
+ {
+  "trich_dan": "EFSA Journal: đánh giá lại phụ gia – acacia gum",
+  "ho": "efsa",
+  "nam": null,
+  "doi": null,
+  "pmid": "32625453",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/32625453/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S120"
+  ],
+  "khoa": "efsah"
+ },
+ {
+  "trich_dan": "EFSA Journal: đánh giá lại phụ gia – tinh bột biến tính (modified starches)",
+  "ho": "efsa",
+  "nam": null,
+  "doi": null,
+  "pmid": "32625282",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/32625282/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S121"
+  ],
+  "khoa": "efsai"
+ },
+ {
+  "trich_dan": "EU Reg. (EU) 2020/355 và 2018/682 (sửa phụ lục phụ gia)",
+  "ho": "eu",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://eur-lex.europa.eu/eli/reg/2020/355/oj",
+  "muc_doc": "tieu-de",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E20"
+  ],
+  "khoa": "eu2020"
+ },
+ {
+  "trich_dan": "Fan H.-R. et al. (2026). Modulation of viscosity, swallowability, and stability of starch-based thickener: konjac gum and xanthan gum. *Food Res. Int.*",
+  "ho": "fan",
+  "nam": 2026,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/8a06bd202e8552ed975c56eaca5c5f5b/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S103"
+  ],
+  "khoa": "fan2026"
+ },
+ {
+  "trich_dan": "Fang Y. et al. (2007). Multiple steps and critical behaviors of the binding of calcium to alginate. *J. Phys. Chem. B*.",
+  "ho": "fang",
+  "nam": 2007,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/5d63af68de1d5809851a257e4445939d/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S60"
+  ],
+  "khoa": "fang2007"
+ },
+ {
+  "trich_dan": "Farahani Z. K. et al. (2023). Stability, physicochemical, rheological and sensory properties of beverage containing encapsulated jujube extract... *Food Chem. Adv.*",
+  "ho": "farahani",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/d7c4a4a3bace5eac8f187dc5a42ec4fe/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S80"
+  ],
+  "khoa": "farahani2023"
+ },
+ {
+  "trich_dan": "Fjodorova J. et al. (2022). Tuning xanthan viscosity by directed random coil-to-helix transition. *Biomacromolecules*.",
+  "ho": "fjodorova",
+  "nam": 2022,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/b86a84e4b2805da4af36b7cc8b8d21b5/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S27"
+  ],
+  "khoa": "fjodorova2022"
+ },
+ {
+  "trich_dan": "Frankel EN. *Lipid Oxidation*, 2nd ed. Oily Press, 2005",
+  "ho": "frankel",
+  "nam": 2005,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:B4"
+  ],
+  "khoa": "frankel2005"
+ },
+ {
+  "trich_dan": "Friberg SE, Larsson K, Sjöblom J (eds). *Food Emulsions*, 4th ed. Marcel Dekker, 2004.",
+  "ho": "friberg",
+  "nam": 2004,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:T07"
+  ],
+  "khoa": "friberg2004"
+ },
+ {
+  "trich_dan": "Gárzon R, et al. (2018). Understanding the effect of emulsifiers on bread aeration during breadmaking. *J Sci Food Agric*.",
+  "ho": "garzon",
+  "nam": 2018,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/cd19091f08785b1cb73c83e4f8bd0466/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:D12"
+  ],
+  "khoa": "garzon2018"
+ },
+ {
+  "trich_dan": "Gelin J-L, et al. (1996). Interactions between food components in ice cream. Part 1: unfrozen emulsions. *Food Hydrocolloids*.",
+  "ho": "gelin",
+  "nam": 1996,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/af05a8f8eaac54d1950a7c99dd64df25/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:D4"
+  ],
+  "khoa": "gelin1996"
+ },
+ {
+  "trich_dan": "Ghazani SM, Marangoni AG. Molecular Origins of Polymorphism in Cocoa Butter. *Annu Rev Food Sci Technol* 2021;12:567–590",
+  "ho": "ghazani",
+  "nam": 2021,
+  "doi": "10.1146/annurev-food-070620-022551",
+  "pmid": "33467907",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R3"
+  ],
+  "khoa": "ghazani2021"
+ },
+ {
+  "trich_dan": "Ghebremedhin M. et al. (2020). Interaction of xanthan gums with galacto- and glucomannans. Part II. *J. Phys. Mater.*",
+  "ho": "ghebremedhin",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/9bcdf53e97d85e338c92a2ba37151f42/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S40"
+  ],
+  "khoa": "ghebremedhin2020"
+ },
+ {
+  "trich_dan": "Girardet J, et al. (2001). Dilational rheology of mixed β-casein/Tween 20 and β-casein (f114–169)/Tween 20 films at the oil–water interface. *J Colloid Interface Sci*.",
+  "ho": "girardet",
+  "nam": 2001,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/2cc744d27a3e5046860a53c013303dd9/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B9"
+  ],
+  "khoa": "girardet2001"
+ },
+ {
+  "trich_dan": "Goff H, et al. (1987). Effects of polysorbate 80 on the fat emulsion in ice cream mix: TEM. *Food Microstruct*.",
+  "ho": "goff",
+  "nam": 1987,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/b3210560b5a65cfc8ba7f28e861d1e69/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:D2"
+  ],
+  "khoa": "goff1987"
+ },
+ {
+  "trich_dan": "Goff H, et al. (1989). Action of emulsifiers in promoting fat destabilization during the manufacture of ice cream. *J Dairy Sci*.",
+  "ho": "goff",
+  "nam": 1989,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/e1ee993fccea5f69ae82a778d50ae734/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:D1"
+  ],
+  "khoa": "goff1989"
+ },
+ {
+  "trich_dan": "Goff H (1997). Instability and partial coalescence in whippable dairy emulsions. *J Dairy Sci*.",
+  "ho": "goff",
+  "nam": 1997,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/40fd2b276f0c50c38efd515aab042d6e/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:D3"
+  ],
+  "khoa": "goff1997"
+ },
+ {
+  "trich_dan": "Gómez M, et al. (2004). Functionality of different emulsifiers on the performance of breadmaking and wheat bread quality. *Eur Food Res Technol*.",
+  "ho": "gomez",
+  "nam": 2004,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/98f7328c99bd5a08a431352caf76e6cf/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:D11"
+  ],
+  "khoa": "gomez2004"
+ },
+ {
+  "trich_dan": "Gómez AV, et al. (2013). Emulsifiers: effects on quality of fibre-enriched wheat bread. *Food Bioprocess Technol*.",
+  "ho": "gomez",
+  "nam": 2013,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/4769df408129597db316fecfdb79e497/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:D18"
+  ],
+  "khoa": "gomez2013"
+ },
+ {
+  "trich_dan": "Grace HP (1982). Dispersion phenomena in high viscosity immiscible fluid systems... *Chem Eng Commun* 14:225–277.",
+  "ho": "grace",
+  "nam": 1982,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:C07"
+  ],
+  "khoa": "grace1982"
+ },
+ {
+  "trich_dan": "Gregersen S, et al. (2025). Enhanced encapsulation yield in double emulsions: stabilising role of PGPR... *LWT*.",
+  "ho": "gregersen",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/335426d40741568d860ed6338313a80c/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:C13"
+  ],
+  "khoa": "gregersen2025"
+ },
+ {
+  "trich_dan": "Griffin WC (1949). Classification of surface-active agents by \"HLB\". *J Soc Cosmet Chem* 1:311–326.",
+  "ho": "griffin",
+  "nam": 1949,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:C02"
+  ],
+  "khoa": "griffin1949a"
+ },
+ {
+  "trich_dan": "Griffin WC. Calculation of HLB values of non-ionic surfactants. *J Soc Cosmet Chem* 1954;5:249–256. Và Griffin WC (1949) *J Soc Cosmet Chem* 1:311–326.",
+  "ho": "griffin",
+  "nam": 1949,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:A5"
+  ],
+  "khoa": "griffin1949b"
+ },
+ {
+  "trich_dan": "Gumus CE. *Utilization of natural emulsifiers and their derivatives to formulate emulsion-based delivery systems for hydrophobic nutraceuticals.* Luận án tiến sĩ, UMass Amherst, 05/2017 (hướng dẫn: D.J. McClements). https://scholarworks.umass.edu/server/api/core/bitstreams/14ac3154-28b0-4f62-a8f3-ad64a1376e87/content",
+  "ho": "gumus",
+  "nam": 2017,
+  "doi": null,
+  "pmid": null,
+  "url": "https://scholarworks.umass.edu/server/api/core/bitstreams/14ac3154-28b0-4f62-a8f3-ad64a1376e87/content",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:A1"
+  ],
+  "khoa": "gumus2017"
+ },
+ {
+  "trich_dan": "Gunning P. et al. (1988). Gravitational destabilization of emulsions flocculated by non-adsorbed xanthan. *Food Hydrocolloids*.",
+  "ho": "gunning",
+  "nam": 1988,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/0c316e68783359369b2a76a40eac1780/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S6"
+  ],
+  "khoa": "gunning1988"
+ },
+ {
+  "trich_dan": "Gunning P, et al. (2004). Effect of surfactant type on surfactant–protein interactions at the air–water interface. *Biomacromolecules*.",
+  "ho": "gunning",
+  "nam": 2004,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/3bb03ad5ac1553b2bae40d844f4cb409/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B3"
+  ],
+  "khoa": "gunning2004a"
+ },
+ {
+  "trich_dan": "Gunning P, et al. (2004). The effect of surfactant type on protein displacement from the air–water interface. *Food Hydrocolloids*.",
+  "ho": "gunning",
+  "nam": 2004,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/ae7b3ad9fd415df4a16966c24a5a55e0/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B4"
+  ],
+  "khoa": "gunning2004b"
+ },
+ {
+  "trich_dan": "Gunstone FD, Harwood JL, Dijkstra AJ (eds.). *The Lipid Handbook*, 3rd ed. CRC Press, 2007",
+  "ho": "gunstone",
+  "nam": 2007,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:B1"
+  ],
+  "khoa": "gunstone2007"
+ },
+ {
+  "trich_dan": "Gupta R, et al. (1983). Sucrose esters and sucrose ester/glyceride blends as emulsifiers. *J Am Oil Chem Soc*.",
+  "ho": "gupta",
+  "nam": 1983,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/c62325863369553c8274fedf238d8537/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:C3"
+  ],
+  "khoa": "gupta1983"
+ },
+ {
+  "trich_dan": "Gupta A, Eral HB, Hatton TA, Doyle PS (2016). Nanoemulsions: formation, properties and applications. *Soft Matter* 12(11):2826–2841.",
+  "ho": "gupta",
+  "nam": 2016,
+  "doi": "10.1039/c5sm02958a",
+  "pmid": null,
+  "url": "https://doi.org/10.1039/c5sm02958a",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R04"
+  ],
+  "khoa": "gupta2016"
+ },
+ {
+  "trich_dan": "Han L. et al. (2019). Effect of arabinogalactan protein complex content on emulsification performance of gum arabic. *Carbohydr. Polym.*",
+  "ho": "han",
+  "nam": 2019,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/76f924b3937a520f899f6f527c505c6a/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S85"
+  ],
+  "khoa": "han2019"
+ },
+ {
+  "trich_dan": "Harte F. et al. (2007). Solubilized micellar calcium induced low methoxyl-pectin aggregation during milk acidification. *J. Dairy Sci.*",
+  "ho": "harte",
+  "nam": 2007,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/4233ed16f71850dfbdf68132c8162609/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S67"
+  ],
+  "khoa": "harte2007"
+ },
+ {
+  "trich_dan": "Hartel R, et al. (2025). Microstructural, rheological, and melting behavior of plant-based frozen desserts from soy and pea protein isolates. *J Texture Stud*.",
+  "ho": "hartel",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/d92ff826833354aab8b27abf8e918663/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:D9"
+  ],
+  "khoa": "hartel2025"
+ },
+ {
+  "trich_dan": "Hay T. et al. (2024). A new hydrocolloid to rival gum Arabic: gidyea gum. *Food Hydrocolloids*.",
+  "ho": "hay",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/f3be82b284945689ac218258681e4123/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S90"
+  ],
+  "khoa": "hay2024"
+ },
+ {
+  "trich_dan": "Hazarika B. J. et al. (2016). Effect of dual modification with hydroxypropylation and cross-linking on physicochemical properties of taro starch. *Carbohydr. Polym.*",
+  "ho": "hazarika",
+  "nam": 2016,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/315d4a1e398857ff8c559ad77c9f2914/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S100"
+  ],
+  "khoa": "hazarika2016"
+ },
+ {
+  "trich_dan": "Hinderink EBA, Sagis L, Schroën K, Berton-Carabin CC (2021). Sequential adsorption and interfacial displacement in emulsions stabilized with plant–dairy protein blends. *J Colloid Interface Sci* 583:704–713.",
+  "ho": "hinderink",
+  "nam": 2021,
+  "doi": null,
+  "pmid": null,
+  "url": "https://edepot.wur.nl/535642",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B11"
+  ],
+  "khoa": "hinderink2021"
+ },
+ {
+  "trich_dan": "Hinze JO (1955). Fundamentals of the hydrodynamic mechanism of splitting in dispersion processes. *AIChE J* 1:289–295.",
+  "ho": "hinze",
+  "nam": 1955,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:C06"
+  ],
+  "khoa": "hinze1955"
+ },
+ {
+  "trich_dan": "Hu B. et al. (2025). The impact of molecular weight on the segregative phase separation-induced molecular fractionation of aqueous gum Arabic/xanthan mixtures. *Int. J. Biol. Macromol.*",
+  "ho": "hu",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/4428ea7e5c6856f4b45d176c6a81cdbb/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S91"
+  ],
+  "khoa": "hu2025"
+ },
+ {
+  "trich_dan": "Huamaní-Meléndez V. J. et al. (2023). Xanthan gum and tara gum galactomannans have a synergistic effect on gelation properties.",
+  "ho": "huamanimelendez",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/d8366422994450dda398262adb7849b6/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S45"
+  ],
+  "khoa": "huamanimelendez2023"
+ },
+ {
+  "trich_dan": "Hwang J, Jun H, Roh S, Lee SJ, Mun JM, Kim SW, Chung MY, Kim IH, Kim BH. Preparation of Low-Diacylglycerol Cocoa Butter Equivalents by Hexane Fractionation of Palm Stearin and Shea Butter. *Molecules* 2021;26(11):3231",
+  "ho": "hwang",
+  "nam": 2021,
+  "doi": "10.3390/molecules26113231",
+  "pmid": "34072180",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R20"
+  ],
+  "khoa": "hwang2021"
+ },
+ {
+  "trich_dan": "Idris NA, Dian NLHM. Inter-esterified palm products as alternatives to hydrogenation. *Asia Pac J Clin Nutr* 2005;14(4):396–401",
+  "ho": "idris",
+  "nam": 2005,
+  "doi": null,
+  "pmid": "16326647",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R14"
+  ],
+  "khoa": "idris2005"
+ },
+ {
+  "trich_dan": "Israelachvili JN, Mitchell DJ, Ninham BW (1976). Theory of self-assembly of hydrocarbon amphiphiles into micelles and bilayers. *J Chem Soc Faraday Trans 2* 72:1525–1568.",
+  "ho": "israelachvili",
+  "nam": 1976,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:A7"
+  ],
+  "khoa": "israelachvili1976"
+ },
+ {
+  "trich_dan": "Israelachvili JN. *Intermolecular and Surface Forces*, 3rd ed. Academic Press, 2011.",
+  "ho": "israelachvili",
+  "nam": 2011,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:T06"
+  ],
+  "khoa": "israelachvili2011"
+ },
+ {
+  "trich_dan": "Jia X. et al. (2025). Conformational and rheological property comparison for three exudates gums containing type II arabinogalactans. *Food Hydrocolloids*.",
+  "ho": "jia",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/91d399bd92eb5a838e232c6107973408/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S92"
+  ],
+  "khoa": "jia2025"
+ },
+ {
+  "trich_dan": "Jin Y, et al. (2021). Effect of surfactant molecular structure on emulsion stability investigated by interfacial dilatational rheology (PGPR vs polyglycerol-2 dioleate). *Polymers*.",
+  "ho": "jin",
+  "nam": 2021,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/13954fb9b3d85de28020108b97fa3ded/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:C8"
+  ],
+  "khoa": "jin2021"
+ },
+ {
+  "trich_dan": "Jo W. et al. (2018). Rheological characterizations of concentrated binary gum mixtures with xanthan gum and galactomannans. *Int. J. Biol. Macromol.*",
+  "ho": "jo",
+  "nam": 2018,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/59da2a8b156f517db8587c8b053d8dff/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S39"
+  ],
+  "khoa": "jo2018"
+ },
+ {
+  "trich_dan": "Kabalnov AS, Shchukin ED (1992). Ostwald ripening theory: applications to fluorocarbon emulsion stability. *Adv Colloid Interface Sci* 38:69–97.",
+  "ho": "kabalnov",
+  "nam": 1992,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:C05"
+  ],
+  "khoa": "kabalnov1992"
+ },
+ {
+  "trich_dan": "Kadhum AAH, Shamma MN. Edible lipids modification processes: A review. *Crit Rev Food Sci Nutr* 2017;57(1):48–58",
+  "ho": "kadhum",
+  "nam": 2017,
+  "doi": "10.1080/10408398.2013.848834",
+  "pmid": "26048727",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R13"
+  ],
+  "khoa": "kadhum2017"
+ },
+ {
+  "trich_dan": "Kapoor D. U. et al. (2025). Alginate gels: chemistry, gelation mechanisms, and therapeutic applications... *Int. J. Pharm.*",
+  "ho": "kapoor",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/0e8cc109765c54b8a82a51c7e0985594/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S64"
+  ],
+  "khoa": "kapoor2025"
+ },
+ {
+  "trich_dan": "Karthik P, Ezhilarasi PN, Anandharamakrishnan C (2017). Challenges associated in stability of food grade nanoemulsions. *Crit Rev Food Sci Nutr* 57(7):1435–1450.",
+  "ho": "karthik",
+  "nam": 2017,
+  "doi": "10.1080/10408398.2015.1006767",
+  "pmid": null,
+  "url": "https://doi.org/10.1080/10408398.2015.1006767",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R13"
+  ],
+  "khoa": "karthik2017"
+ },
+ {
+  "trich_dan": "Kersten F. et al. (2025). Gum arabic – same but different: comparative analysis of 20 *Acacia senegal* samples. *Food Hydrocolloids*.",
+  "ho": "kersten",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/4bf0d584efdc5eb394fbc7acf1d58cbc/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S86"
+  ],
+  "khoa": "kersten2025"
+ },
+ {
+  "trich_dan": "Kersten F. et al. (2026). Quality control of gum arabic – molecular basis and a new screening method. *Food Hydrocolloids*.",
+  "ho": "kersten",
+  "nam": 2026,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/6a5e2a18666d5dd5bfc1b7fe0470b4e8/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S87"
+  ],
+  "khoa": "kersten2026"
+ },
+ {
+  "trich_dan": "Kibar E. A. A. et al. (2023). Cross-linked, hydroxypropylated and dual modified corn starch as gelling agent in soft confectionery. *Starch/Stärke*.",
+  "ho": "kibar",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/cdd4dda8bfe954f3b9079684bc6f264b/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S104"
+  ],
+  "khoa": "kibar2023"
+ },
+ {
+  "trich_dan": "Kiokias S, Varzakas T, Oreopoulou V. In vitro activity of vitamins, flavonoids, and natural phenolic antioxidants against the oxidative deterioration of oil-based systems. *Crit Rev Food Sci Nutr* 2008;48(1):78–93",
+  "ho": "kiokias",
+  "nam": 2008,
+  "doi": "10.1080/10408390601079975",
+  "pmid": "18274966",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R32"
+  ],
+  "khoa": "kiokias2008"
+ },
+ {
+  "trich_dan": "Kochhar SP, Henry CJK. Oxidative stability and shelf-life evaluation of selected culinary oils. *Int J Food Sci Nutr* 2009;60 Suppl 7:289–296",
+  "ho": "kochhar",
+  "nam": 2009,
+  "doi": "10.1080/09637480903103774",
+  "pmid": "19634067",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R36"
+  ],
+  "khoa": "kochhar2009"
+ },
+ {
+  "trich_dan": "Kontogiorgos V. (2017). Galactomannans (guar, locust bean, fenugreek, tara). *Encyclopedia of Food Chemistry*.",
+  "ho": "kontogiorgos",
+  "nam": 2017,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/f3e32a097f7854568fcfd341fbbed4b8/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S34"
+  ],
+  "khoa": "kontogiorgos2017"
+ },
+ {
+  "trich_dan": "Kummar S. S. et al. (2024). Effect of shear rate, temperature, and salts on the viscosity and viscoelasticity of semi-dilute and entangled xanthan gum. *J. Appl. Polym. Sci.*",
+  "ho": "kummar",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/ee59ce16ff6b50d49a79604fea6dc27b/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S29"
+  ],
+  "khoa": "kummar2024"
+ },
+ {
+  "trich_dan": "Kupikowska-Stobba B, Domagała J, Kasprzak MM (2024). Critical review of techniques for food emulsion characterization. *Appl Sci* 14(3):1069.",
+  "ho": "kupikowskastobba",
+  "nam": 2024,
+  "doi": "10.3390/app14031069",
+  "pmid": null,
+  "url": "https://doi.org/10.3390/app14031069",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R18"
+  ],
+  "khoa": "kupikowskastobba2024"
+ },
+ {
+  "trich_dan": "Lains J. et al. (2025). Sustainable stabilisation of microcrystalline cellulose oil-in-water Pickering emulsions. *Colloids Surf. A*.",
+  "ho": "lains",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/50be792d910a507f8c80665d6741e630/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S109"
+  ],
+  "khoa": "lains2025"
+ },
+ {
+  "trich_dan": "Langendorff V. et al. (1997). Gelation and flocculation of casein micelle/carrageenan mixtures. *Food Hydrocolloids*.",
+  "ho": "langendorff",
+  "nam": 1997,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/c8ec8e17b57352fa9acbeb7fe93d89db/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S48"
+  ],
+  "khoa": "langendorff1997"
+ },
+ {
+  "trich_dan": "Langendorff V. et al. (2000). Effects of carrageenan type on the behaviour of carrageenan/milk mixtures. *Food Hydrocolloids*.",
+  "ho": "langendorff",
+  "nam": 2000,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/0addfe9fa13b5e9a928e758ba1602e82/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S47"
+  ],
+  "khoa": "langendorff2000"
+ },
+ {
+  "trich_dan": "Larsson K. Classification of glyceride crystal forms. *Acta Chem Scand* 1966;20:2255–2260",
+  "ho": "larsson",
+  "nam": 1966,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:B9"
+  ],
+  "khoa": "larsson1966"
+ },
+ {
+  "trich_dan": "Lee YY, Tang TK, Chan ES, Phuah ET, Lai OM, Tan CP, Wang Y, Ab Karim NA, Mat Dian NH, Tan JS. Medium chain triglyceride and medium-and long chain triglyceride: metabolism, production, health impacts and its applications — a review. *Crit Rev Food Sci Nutr* 2022;62(15):4169–4185 (online 2021-01)",
+  "ho": "lee",
+  "nam": 2022,
+  "doi": "10.1080/10408398.2021.1873729",
+  "pmid": "33480262",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R22"
+  ],
+  "khoa": "lee2022"
+ },
+ {
+  "trich_dan": "Lee M.-H. et al. (2025). Impact of rheological synergism between xanthan gum and three major galactomannans on... bigels. *ACS Food Sci. Technol.*",
+  "ho": "lee",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/d36b9e04f4fb5390bafa59c4486ddf3a/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S46"
+  ],
+  "khoa": "lee2025"
+ },
+ {
+  "trich_dan": "Li L, et al. (2021). Competitive adsorption and dilatational rheology of pork myofibrillar and sarcoplasmic proteins at the O/W interface. *Food Hydrocolloids*.",
+  "ho": "li",
+  "nam": 2021,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/b334d2dc359656a98da40036f6102f6e/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B20"
+  ],
+  "khoa": "li2021"
+ },
+ {
+  "trich_dan": "Li W, Jiao B, Li S, Faisal S, Shi A, Fu W, Chen Y, Wang Q (2022). Recent advances on Pickering emulsions stabilized by diverse edible particles: stability mechanism and applications. *Front Nutr* 9:864943.",
+  "ho": "li",
+  "nam": 2022,
+  "doi": "10.3389/fnut.2022.864943",
+  "pmid": null,
+  "url": "https://doi.org/10.3389/fnut.2022.864943",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R19"
+  ],
+  "khoa": "li2022a"
+ },
+ {
+  "trich_dan": "Li L, Liu G, Bogojevic O, Pedersen JN, Guo Z. Edible oleogels as solid fat alternatives: Composition and oleogelation mechanism implications. *Compr Rev Food Sci Food Saf* 2022;21(3):2077–2104",
+  "ho": "li",
+  "nam": 2022,
+  "doi": "10.1111/1541-4337.12928",
+  "pmid": "35279947",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R26"
+  ],
+  "khoa": "li2022b"
+ },
+ {
+  "trich_dan": "Li L. et al. (2023). Characterization of complex coacervation between chia seed gum and whey protein isolate. *Food Hydrocolloids*.",
+  "ho": "li",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/170a7d4a324b5bf2bf18a34ed1f27411/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S20"
+  ],
+  "khoa": "li2023"
+ },
+ {
+  "trich_dan": "Liang Y. et al. (2014). Physical stability, microstructure and rheology of sodium-caseinate-stabilized emulsions as influenced by protein concentration and non-adsorbing polysaccharides. *Food Hydrocolloids*.",
+  "ho": "liang",
+  "nam": 2014,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/e5b072d84e21582f9ef6f733859bacc5/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S9"
+  ],
+  "khoa": "liang2014"
+ },
+ {
+  "trich_dan": "Liang W. et al. (2021). Physicochemical characteristics and functional properties of high methoxyl pectin with different degree of esterification. *Food Chemistry*.",
+  "ho": "liang",
+  "nam": 2021,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/7b0d6bb902125014938cb9d90128db9a/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S73"
+  ],
+  "khoa": "liang2021"
+ },
+ {
+  "trich_dan": "Lifshitz IM, Slyozov VV (1961), *J Phys Chem Solids* 19:35; Wagner C (1961), *Z Elektrochem* 65:581.",
+  "ho": "lifshitz",
+  "nam": 1961,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:C04"
+  ],
+  "khoa": "lifshitz1961"
+ },
+ {
+  "trich_dan": "Lin J.-W. et al. (2021). Genipin crosslinked gum arabic. *Carbohydr. Polym.*",
+  "ho": "lin",
+  "nam": 2021,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/7424392b526557e0a792a467261cc2db/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S89"
+  ],
+  "khoa": "lin2021"
+ },
+ {
+  "trich_dan": "Liu Q, Huang H, Chen H, Lin J, Wang Q (2019). Food-grade nanoemulsions: preparation, stability and application in encapsulation of bioactive compounds. *Molecules* 24(23):4242.",
+  "ho": "liu",
+  "nam": 2019,
+  "doi": "10.3390/molecules24234242",
+  "pmid": null,
+  "url": "https://doi.org/10.3390/molecules24234242",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R14"
+  ],
+  "khoa": "liu2019"
+ },
+ {
+  "trich_dan": "Liu Y. et al. (2020). Physicochemical characterization of galactomannans extracted from seeds of *Gleditsia sinensis* and fenugreek. *Int. J. Biol. Macromol.*",
+  "ho": "liu",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/bda622fceb135b41bab4828b878825b1/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S37"
+  ],
+  "khoa": "liu2020"
+ },
+ {
+  "trich_dan": "Liu L. et al. (2023). Effects of de-esterification treatment of lemon pectin on its stable capability against protein precipitation in acidified milk drinks. *eFood*.",
+  "ho": "liu",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/7d260ecd5dcd5044ba9ab93ceb2a34be/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S66"
+  ],
+  "khoa": "liu2023"
+ },
+ {
+  "trich_dan": "Liu S, Chen F, Huang Y, ... Zhu X (2025). The modification and application of food grade Pickering emulsion. *J Food Sci* 90(9):e70562.",
+  "ho": "liu",
+  "nam": 2025,
+  "doi": "10.1111/1750-3841.70562",
+  "pmid": null,
+  "url": "https://doi.org/10.1111/1750-3841.70562",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R17"
+  ],
+  "khoa": "liu2025"
+ },
+ {
+  "trich_dan": "López-Santiago R. F. et al. (2025). Alginate biopolymer viscoelasticity from sol to gel... *Phys. Fluids*.",
+  "ho": "lopezsantiago",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/078197da510b5b29a02530031edb5648/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S65"
+  ],
+  "khoa": "lopezsantiago2025"
+ },
+ {
+  "trich_dan": "López-Tenorio JA, et al. (2015). Influence of different emulsifiers on gluten-free cheese bread. *J Texture Stud*.",
+  "ho": "lopeztenorio",
+  "nam": 2015,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/193097c13b9156f0a743373826a80d43/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:D17"
+  ],
+  "khoa": "lopeztenorio2015"
+ },
+ {
+  "trich_dan": "Lu Z. et al. (2023). Kappa-carrageenan improves the gelation and structures of soy protein isolate... *Food Hydrocolloids*.",
+  "ho": "lu",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/ca6ace8cba635b73804186a37f495061/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S55"
+  ],
+  "khoa": "lu2023"
+ },
+ {
+  "trich_dan": "MacDougall CJ, Razul MS, Papp-Szabo E, Peyronel F, Hanna CB, Marangoni AG, Pink DA. Nanoscale characteristics of triacylglycerol oils: phase separation and binding energies of two-component oils to crystalline nanoplatelets. *Faraday Discuss* 2012;158:425–433",
+  "ho": "macdougall",
+  "nam": 2012,
+  "doi": "10.1039/c2fd20039b",
+  "pmid": "23234178",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R8"
+  ],
+  "khoa": "macdougall2012"
+ },
+ {
+  "trich_dan": "Mackie AR, Gunning AP, Wilde PJ, Morris VJ (1999). Orogenic displacement of protein from the air/water interface by competitive adsorption. *J Colloid Interface Sci* 210:157–166.",
+  "ho": "mackie",
+  "nam": 1999,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/29d5c1d99a195aa2a0339e939a027a81/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B1"
+  ],
+  "khoa": "mackie1999"
+ },
+ {
+  "trich_dan": "Mackie A, et al. (2000). Orogenic displacement of protein from the oil/water interface. *Langmuir*.",
+  "ho": "mackie",
+  "nam": 2000,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/d8c19d7f5a965822bc3bdeea52a3bcd1/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B2"
+  ],
+  "khoa": "mackie2000"
+ },
+ {
+  "trich_dan": "Macridachis-González J, Bayés-García L, Calvet T. An Insight into the Solid-State Miscibility of Triacylglycerol Crystals. *Molecules* 2020;25(19):4562",
+  "ho": "macridachisgonzalez",
+  "nam": 2020,
+  "doi": "10.3390/molecules25194562",
+  "pmid": "33036267",
+  "url": null,
+  "muc_doc": "toan-van",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R1"
+  ],
+  "khoa": "macridachisgonzalez2020"
+ },
+ {
+  "trich_dan": "Marangoni AG (ed.). *Fat Crystal Networks*. Marcel Dekker, 2005",
+  "ho": "marangoni",
+  "nam": 2005,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:B5"
+  ],
+  "khoa": "marangoni2005"
+ },
+ {
+  "trich_dan": "Matsusaki M. et al. (2019). Fabrication of perfusable pseudo blood vessels by controlling sol-gel transition of gellan gum templates. *ACS Biomater. Sci. Eng.* PMID 33405694, DOI 10.1021/acsbiomaterials.8b01272.",
+  "ho": "matsusaki",
+  "nam": 2019,
+  "doi": "10.1021/acsbiomaterials.8b01272",
+  "pmid": "33405694",
+  "url": "https://doi.org/10.1021/acsbiomaterials.8b01272",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S83"
+  ],
+  "khoa": "matsusaki2019"
+ },
+ {
+  "trich_dan": "McClements DJ. *Food Emulsions: Principles, Practices, and Techniques*, 3rd ed. CRC Press / Taylor & Francis (ISBN 9781498726689 – ISBN xuất hiện trong kết quả tìm kiếm của nhà xuất bản).",
+  "ho": "mcclements",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:T01"
+  ],
+  "khoa": "mcclements"
+ },
+ {
+  "trich_dan": "McClements DJ, Decker EA. Lipid oxidation in oil-in-water emulsions: Impact of molecular environment on chemical reactions in heterogeneous food systems. *J Food Sci* 2000;65(8):1270–1282",
+  "ho": "mcclements",
+  "nam": 2000,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:B11"
+  ],
+  "khoa": "mcclements2000a"
+ },
+ {
+  "trich_dan": "McClements D. J. (2000). Comments on viscosity enhancement and depletion flocculation by polysaccharides. *Food Hydrocolloids*.",
+  "ho": "mcclements",
+  "nam": 2000,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/89e1d97cc6e45af8b91b1853d42d8adf/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S4"
+  ],
+  "khoa": "mcclements2000b"
+ },
+ {
+  "trich_dan": "McClements DJ (2007). Critical review of techniques and methodologies for characterization of emulsion stability. *Crit Rev Food Sci Nutr* 47(7):611–649.",
+  "ho": "mcclements",
+  "nam": 2007,
+  "doi": "10.1080/10408390701289292",
+  "pmid": null,
+  "url": "https://doi.org/10.1080/10408390701289292",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R01"
+  ],
+  "khoa": "mcclements2007"
+ },
+ {
+  "trich_dan": "McClements DJ (2015). Nanoscale nutrient delivery systems for food applications. *J Food Sci* 80(7):N1602–N1611.",
+  "ho": "mcclements",
+  "nam": 2015,
+  "doi": "10.1111/1750-3841.12919",
+  "pmid": null,
+  "url": "https://doi.org/10.1111/1750-3841.12919",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R11"
+  ],
+  "khoa": "mcclements2015a"
+ },
+ {
+  "trich_dan": "McClements DJ. *Food Emulsions: Principles, Practices, and Techniques*, 3rd ed. CRC Press, 2015",
+  "ho": "mcclements",
+  "nam": 2015,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:B8"
+  ],
+  "khoa": "mcclements2015b"
+ },
+ {
+  "trich_dan": "McClements J, McClements DJ (2016). Standardization of nanoparticle characterization: methods for testing properties, stability, and functionality of edible nanoparticles. *Crit Rev Food Sci Nutr* 56(8):1334–1362.",
+  "ho": "mcclements",
+  "nam": 2016,
+  "doi": "10.1080/10408398.2014.970267",
+  "pmid": null,
+  "url": "https://doi.org/10.1080/10408398.2014.970267",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R12"
+  ],
+  "khoa": "mcclements2016a"
+ },
+ {
+  "trich_dan": "McClements DJ, Gumus CE. Natural emulsifiers — biosurfactants, phospholipids, biopolymers, and colloidal particles: molecular and physicochemical basis of functional performance. *Adv Colloid Interface Sci* 2016;234:3–26. (tiêu đề và trang lưu trữ, vd. https://avesis.ankara.edu.tr/yayin/a0b0ebfe-ebed-41bf-9091-0cadac0ee55b/...)",
+  "ho": "mcclements",
+  "nam": 2016,
+  "doi": null,
+  "pmid": null,
+  "url": "https://avesis.ankara.edu.tr/yayin/a0b0ebfe-ebed-41bf-9091-0cadac0ee55b/...",
+  "muc_doc": "tieu-de",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:A2"
+  ],
+  "khoa": "mcclements2016b"
+ },
+ {
+  "trich_dan": "McClements DJ (2017). Enhanced delivery of lipophilic bioactives using emulsions: a review of major factors affecting vitamin, nutraceutical, and lipid bioaccessibility. *Food Funct*.",
+  "ho": "mcclements",
+  "nam": 2017,
+  "doi": "10.1039/c7fo01515a",
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R21"
+  ],
+  "khoa": "mcclements2017"
+ },
+ {
+  "trich_dan": "Mediwaththe A. et al. (2023). Heat-induced changes in κ-carrageenan-containing chocolate-flavoured milk protein concentrate suspensions under controlled shearing. *Foods*.",
+  "ho": "mediwaththe",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/da196e67e42e51e3b2d5dd0927a1e6ae/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S53"
+  ],
+  "khoa": "mediwaththe2023"
+ },
+ {
+  "trich_dan": "Mo Y. et al. (2026). Functional additives enhance freeze–thaw stability and retard retrogradation in wheat–potato starch gels... *Foods*.",
+  "ho": "mo",
+  "nam": 2026,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/a374d683acd25d3abae5dc1870115ff2/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S102"
+  ],
+  "khoa": "mo2026"
+ },
+ {
+  "trich_dan": "Moens K, Tavernier I, Dewettinck K (2018). Crystallization behavior of emulsified fats influences shear-induced partial coalescence. *Food Res Int* 113:362–370.",
+  "ho": "moens",
+  "nam": 2018,
+  "doi": "10.1016/j.foodres.2018.07.005",
+  "pmid": "30195530",
+  "url": "https://doi.org/10.1016/j.foodres.2018.07.005",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo",
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R06",
+   "chat-beo:R33"
+  ],
+  "khoa": "moens2018"
+ },
+ {
+  "trich_dan": "Moens K, Tzompa-Sosa DA, Van de Walle D, Van der Meeren P, Dewettinck K. Influence of cooling rate on partial coalescence in natural dairy cream. *Food Res Int* 2019;120:819–828",
+  "ho": "moens",
+  "nam": 2019,
+  "doi": "10.1016/j.foodres.2018.11.044",
+  "pmid": "31000302",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R34"
+  ],
+  "khoa": "moens2019"
+ },
+ {
+  "trich_dan": "Morris V, et al. (2000). Surfactant–protein interactions at air–water and oil–water interfaces observed by AFM.",
+  "ho": "morris",
+  "nam": 2000,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/09a7a29803ab5241af36d64f85f2e45d/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B8"
+  ],
+  "khoa": "morris2000"
+ },
+ {
+  "trich_dan": "Morris V, et al. (2008). Microscopy, microstructure and displacement of proteins from interfaces: implications for food quality and digestion. *Soft Matter*.",
+  "ho": "morris",
+  "nam": 2008,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/d24c78837c8354d98032d599e30f734a/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B7"
+  ],
+  "khoa": "morris2008"
+ },
+ {
+  "trich_dan": "Murayama D, et al. (2021). Surfactant-induced competitive displacement of whey protein conjugated to acid- or alkali-extracted potato pectin. *Food Hydrocolloids*.",
+  "ho": "murayama",
+  "nam": 2021,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/75b9fa08d4895c81be4549e652e47cbc/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B19"
+  ],
+  "khoa": "murayama2021"
+ },
+ {
+  "trich_dan": "Muschiolik G, Dickinson E (2017). Double emulsions relevant to food systems: preparation, stability, and applications. *Compr Rev Food Sci Food Saf* 16(3):532–555.",
+  "ho": "muschiolik",
+  "nam": 2017,
+  "doi": "10.1111/1541-4337.12261",
+  "pmid": null,
+  "url": "https://doi.org/10.1111/1541-4337.12261",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R02"
+  ],
+  "khoa": "muschiolik2017"
+ },
+ {
+  "trich_dan": "Nakada M. et al. (2024). Disaggregation and fibrillation during sol-gel transition of alginate hydrogels. *Int. J. Biol. Macromol.*",
+  "ho": "nakada",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/051b085c546b5949959f730c0d9a6be0/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S63"
+  ],
+  "khoa": "nakada2024"
+ },
+ {
+  "trich_dan": "Narciso JO, Soliva-Fortuny R, Salvía-Trujillo L, Martín-Belloso O (2025). Pickering emulsions as catalytic systems in food applications. *ACS Food Sci Technol* 5(1):29–35.",
+  "ho": "narciso",
+  "nam": 2025,
+  "doi": "10.1021/acsfoodscitech.4c00839",
+  "pmid": null,
+  "url": "https://doi.org/10.1021/acsfoodscitech.4c00839",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R26"
+  ],
+  "khoa": "narciso2025"
+ },
+ {
+  "trich_dan": "Nie C, et al. (2025). Influence of polysaccharide stabilizer and PGPR on the stability of Pickering double emulsions via microfluidic technology. *Food Hydrocolloids*.",
+  "ho": "nie",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/12f6cc499cc7505387d7d0302b5358ed/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:C14"
+  ],
+  "khoa": "nie2025"
+ },
+ {
+  "trich_dan": "Niu F, et al. (2023). Fabrication and stability of W/O/W emulsions stabilized by gum arabic and PGPR. *J Sci Food Agric* 104:797–808. doi 10.1002/jsfa.12972. PMID 37683081",
+  "ho": "niu",
+  "nam": 2023,
+  "doi": "10.1002/jsfa.12972",
+  "pmid": "37683081",
+  "url": "https://doi.org/10.1002/jsfa.12972",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:C11"
+  ],
+  "khoa": "niu2023"
+ },
+ {
+  "trich_dan": "Niu F-G, et al. (2024). Stabilization mechanism of emulsion containing vitamin B12... *J Mol Liq*.",
+  "ho": "niu",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/81891cb3016c59839e94f996bbcf779e/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:C12"
+  ],
+  "khoa": "niu2024"
+ },
+ {
+  "trich_dan": "Nooshkam M. et al. (2023). Behavior of protein-polysaccharide conjugate-stabilized food emulsions under various destabilization conditions. *Food Chemistry: X*.",
+  "ho": "nooshkam",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/4c29a3f389425686b7f9ea02875996d4/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S15"
+  ],
+  "khoa": "nooshkam2023"
+ },
+ {
+  "trich_dan": "Nsengiyumva E. et al. (2022). Xanthan gum in aqueous solutions: fundamentals and applications. *Int. J. Biol. Macromol.*",
+  "ho": "nsengiyumva",
+  "nam": 2022,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/675af4953d745a61b0890dd2d4dc0421/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S23"
+  ],
+  "khoa": "nsengiyumva2022"
+ },
+ {
+  "trich_dan": "Nsengiyumva E. et al. (2023). Salt and temperature effects on xanthan gum polysaccharide in aqueous solutions. *Int. J. Mol. Sci.*",
+  "ho": "nsengiyumva",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/49bafd4c1c745afb9445e8ae10daacd4/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S24"
+  ],
+  "khoa": "nsengiyumva2023"
+ },
+ {
+  "trich_dan": "Nunes MGB, et al. (2009). Impact of emulsifiers on the quality and rheological properties of gluten-free breads and batters. *Eur Food Res Technol*.",
+  "ho": "nunes",
+  "nam": 2009,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/314e21124f5e5c9bb227a715a9d3fbeb/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:D14"
+  ],
+  "khoa": "nunes2009"
+ },
+ {
+  "trich_dan": "NutriNet-Santé: emulsifiers & CVD. *BMJ* 2023.",
+  "ho": "nutrinetsante",
+  "nam": 2023,
+  "doi": "10.1136/bmj-2023-076058",
+  "pmid": "37673430",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E13"
+  ],
+  "khoa": "nutrinetsante2023"
+ },
+ {
+  "trich_dan": "NutriNet-Santé: emulsifiers & type 2 diabetes. *Lancet Diabetes Endocrinol* 2024.",
+  "ho": "nutrinetsante",
+  "nam": 2024,
+  "doi": "10.1016/s2213-8587(24",
+  "pmid": "38663950",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E14"
+  ],
+  "khoa": "nutrinetsante2024a"
+ },
+ {
+  "trich_dan": "NutriNet-Santé: emulsifiers & cancer. *PLoS Med* 2024.",
+  "ho": "nutrinetsante",
+  "nam": 2024,
+  "doi": "10.1371/journal.pmed.1004338",
+  "pmid": "38349899",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E15"
+  ],
+  "khoa": "nutrinetsante2024b"
+ },
+ {
+  "trich_dan": "Okstate extension \"Food emulsifiers\" https://extension.okstate.edu/fact-sheets/food-emulsifiers ; ePG Pathshala \"Emulsifiers for the food industry\" https://epgp.inflibnet.ac.in/epgpdata/uploads/epgp_content/Food_Technology/Food_Additives/11.Emulsifiers_for_the_food__industry/et/2686_et_m11.pdf",
+  "ho": "okstate",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": "https://extension.okstate.edu/fact-sheets/food-emulsifiers",
+  "muc_doc": "tieu-de",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:A10"
+  ],
+  "khoa": "okstate"
+ },
+ {
+  "trich_dan": "Pai V. et al. (2002). Gelation and rheology of xanthan/enzyme-modified guar blends. *Carbohydr. Polym.*",
+  "ho": "pai",
+  "nam": 2002,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/e933477dc9135b6793d9c41a4a2e2708/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S43"
+  ],
+  "khoa": "pai2002"
+ },
+ {
+  "trich_dan": "Park JI, McClements DJ, Choi SJ (2025). Impact of small molecule surfactant type and oil phase composition on Ostwald ripening in model food emulsions. *Food Sci Biotechnol* 34(13):3067–3076.",
+  "ho": "park",
+  "nam": 2025,
+  "doi": "10.1007/s10068-025-01954-4",
+  "pmid": null,
+  "url": "https://doi.org/10.1007/s10068-025-01954-4",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R16"
+  ],
+  "khoa": "park2025"
+ },
+ {
+  "trich_dan": "Peng C. et al. (2025). Direct visualization of the side-by-side self-assembly of high and low acyl gellan gum by AFM. *Carbohydr. Polym.*",
+  "ho": "peng",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/0e0d4231c83f57e2b6a8ed3b1ff6a25d/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S75"
+  ],
+  "khoa": "peng2025"
+ },
+ {
+  "trich_dan": "Perazzo A, Preziosi V, Guido S (2015). Phase inversion emulsification: current understanding and applications. *Adv Colloid Interface Sci* 222:581–599.",
+  "ho": "perazzo",
+  "nam": 2015,
+  "doi": "10.1016/j.cis.2015.01.001",
+  "pmid": null,
+  "url": "https://doi.org/10.1016/j.cis.2015.01.001",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R03"
+  ],
+  "khoa": "perazzo2015"
+ },
+ {
+  "trich_dan": "Petrut RF, Danthine S, Blecker C (2015). Assessment of partial coalescence in whippable oil-in-water food emulsions. *Adv Colloid Interface Sci* 229:25–33.",
+  "ho": "petrut",
+  "nam": 2015,
+  "doi": "10.1016/j.cis.2015.12.004",
+  "pmid": null,
+  "url": "https://doi.org/10.1016/j.cis.2015.12.004",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R05"
+  ],
+  "khoa": "petrut2015"
+ },
+ {
+  "trich_dan": "Pickering SU (1907). Emulsions. *J Chem Soc* 91:2001–2021; Ramsden W (1903). *Proc R Soc Lond* 72:156.",
+  "ho": "pickering",
+  "nam": 1907,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:C09"
+  ],
+  "khoa": "pickering1907"
+ },
+ {
+  "trich_dan": "Portanguen S. et al. (2023). Impact of water content and bloom index on gelatin glycation. *Food Hydrocolloids*.",
+  "ho": "portanguen",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/f768e93e96d75527bdad31fd8873bde4/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S96"
+  ],
+  "khoa": "portanguen2023"
+ },
+ {
+  "trich_dan": "Qayum A, ... Ma H (2023). Ultrasonic and homogenization: an overview of the preparation of an edible protein–polysaccharide complex emulsion. *Compr Rev Food Sci Food Saf* 22(6):4242–4281.",
+  "ho": "qayum",
+  "nam": 2023,
+  "doi": "10.1111/1541-4337.13221",
+  "pmid": null,
+  "url": "https://doi.org/10.1111/1541-4337.13221",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R09"
+  ],
+  "khoa": "qayum2023"
+ },
+ {
+  "trich_dan": "QCVN 4-22 (chất nhũ hóa)",
+  "ho": "qcvn",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": "https://cdnmedia.eurofins.com/apac/media/311736/qcvn-4-22-chất-nhũ-hóa.pdf",
+  "muc_doc": "tieu-de",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E19"
+  ],
+  "khoa": "qcvn"
+ },
+ {
+  "trich_dan": "Rabe M, Kerth A, Blume A, Garidel P (2020). Albumin displacement at the air–water interface by Tween (polysorbate) surfactants. *Eur Biophys J* 49:533–547. doi 10.1007/s00249-020-01459-4",
+  "ho": "rabe",
+  "nam": 2020,
+  "doi": "10.1007/s00249-020-01459-4",
+  "pmid": null,
+  "url": "https://link.springer.com/article/10.1007/s00249-020-01459-4",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B10"
+  ],
+  "khoa": "rabe2020"
+ },
+ {
+  "trich_dan": "Ramel PR, Co ED, Acevedo NC, Marangoni AG. Structure and functionality of nanostructured triacylglycerol crystal networks. *Prog Lipid Res* 2016;64:231–242",
+  "ho": "ramel",
+  "nam": 2016,
+  "doi": "10.1016/j.plipres.2016.09.004",
+  "pmid": "27702594",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R6"
+  ],
+  "khoa": "ramel2016"
+ },
+ {
+  "trich_dan": "Raviadaran R, et al. (2019). Ultrasound-assisted water-in-palm oil nano-emulsion: influence of PGPR and NaCl on its stability. *Ultrason Sonochem*.",
+  "ho": "raviadaran",
+  "nam": 2019,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/b50ecf184021536d9af86ce12482d1fe/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:C9"
+  ],
+  "khoa": "raviadaran2019"
+ },
+ {
+  "trich_dan": "Rebry F, Declerck A, Ratzsch KF, Wilhelm M, Dewettinck K, Van der Meeren P. Rheo-NMR to investigate fat crystallization under shear. *Curr Res Food Sci* 2021;4:414–420",
+  "ho": "rebry",
+  "nam": 2021,
+  "doi": "10.1016/j.crfs.2021.05.004",
+  "pmid": "34195622",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R10"
+  ],
+  "khoa": "rebry2021"
+ },
+ {
+  "trich_dan": "Ribeiro E. F. et al. (2021). Protein- and polysaccharide-based particles used for Pickering emulsion stabilisation. *Food Hydrocolloids*.",
+  "ho": "ribeiro",
+  "nam": 2021,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/c93256771d8f5fc9a9924888070f1a37/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S17"
+  ],
+  "khoa": "ribeiro2021"
+ },
+ {
+  "trich_dan": "Rodríguez-Sandoval E, et al. (2026). Influencia de las enzimas y los emulsificantes... pan molde. *Ing Competitiv*.",
+  "ho": "rodriguezsandoval",
+  "nam": 2026,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/35d4818064b956debb4b1779f63ca4bd/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:D13"
+  ],
+  "khoa": "rodriguezsandoval2026"
+ },
+ {
+  "trich_dan": "Safic-Alcan, \"What is HLB\". https://www.safic-alcan.com/en-it/industry-articles/what-is-hlb/",
+  "ho": "saficalcan",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.safic-alcan.com/en-it/industry-articles/what-is-hlb/",
+  "muc_doc": "tieu-de",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:A8"
+  ],
+  "khoa": "saficalcan"
+ },
+ {
+  "trich_dan": "Sanders TAB, Filippou A, Berry SE, Baumgartner S, Mensink RP. Palmitic acid in the sn-2 position of triacylglycerols acutely influences postprandial lipid metabolism. *Am J Clin Nutr* 2011;94(6):1433–1441",
+  "ho": "sanders",
+  "nam": 2011,
+  "doi": "10.3945/ajcn.111.017459",
+  "pmid": "22030225",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R24"
+  ],
+  "khoa": "sanders2011"
+ },
+ {
+  "trich_dan": "Sano Y. et al. (2000). Interaction of kappa-carrageenan and β-casein (chương sách).",
+  "ho": "sano",
+  "nam": 2000,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/354d727d2b8c525ca5c34c69402a1488/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S56"
+  ],
+  "khoa": "sano2000"
+ },
+ {
+  "trich_dan": "Sato K, Ueno S, Yano J. Molecular interactions and kinetic properties of fats. *Prog Lipid Res* 1999;38(1):91–116",
+  "ho": "sato",
+  "nam": 1999,
+  "doi": "10.1016/s0163-7827(98",
+  "pmid": "10396603",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R4"
+  ],
+  "khoa": "sato1999"
+ },
+ {
+  "trich_dan": "Sato K (ed.). *Crystallization of Lipids: Fundamentals and Applications in Food, Cosmetics, and Pharmaceuticals*. Wiley, 2018",
+  "ho": "sato",
+  "nam": 2018,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:B6"
+  ],
+  "khoa": "sato2018"
+ },
+ {
+  "trich_dan": "Schreiber C. et al. (2020). Interaction of xanthan gums with galacto- and glucomannans. Part I. *J. Phys. Mater.*",
+  "ho": "schreiber",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/5dc3b7f020575c2b91013e42444ce43c/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S41"
+  ],
+  "khoa": "schreiber2020"
+ },
+ {
+  "trich_dan": "Schroeder MT, Becker EM, Skibsted LH. Molecular mechanism of antioxidant synergism of tocotrienols and carotenoids in palm oil. *J Agric Food Chem* 2006;54(9):3445–3453",
+  "ho": "schroeder",
+  "nam": 2006,
+  "doi": "10.1021/jf053141z",
+  "pmid": "16637706",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R31"
+  ],
+  "khoa": "schroeder2006"
+ },
+ {
+  "trich_dan": "Schroën K, Shen X, Hasyyati FI, Deshpande S, van der Gucht J (2024). From theoretical aspects to practical food Pickering emulsions: formation, stabilization, and complexities linked to the use of colloidal food particles. *Adv Colloid Interface Sci* 334:103321.",
+  "ho": "schroen",
+  "nam": 2024,
+  "doi": "10.1016/j.cis.2024.103321",
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R20"
+  ],
+  "khoa": "schroen2024"
+ },
+ {
+  "trich_dan": "Sciarini L, et al. (2012). Incorporation of several additives into gluten free breads. *J Food Eng*.",
+  "ho": "sciarini",
+  "nam": 2012,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/392368247dc1532db4abd551bff64775/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:D15"
+  ],
+  "khoa": "sciarini2012"
+ },
+ {
+  "trich_dan": "Seilert J, Holdstock M, Pratama Y, Sadeghpour A, Flöter E, Rappolt M. Polymorphic Structures and Transitions of Triglycerides and Complex Fats: A Guide to X-Ray Scattering Approaches. *Compr Rev Food Sci Food Saf* 2025;24(6):e70271",
+  "ho": "seilert",
+  "nam": 2025,
+  "doi": "10.1111/1541-4337.70271",
+  "pmid": "41046568",
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R2"
+  ],
+  "khoa": "seilert2025"
+ },
+ {
+  "trich_dan": "Severini L. et al. (2026). How gellan gum gelation is affected by acyl substituents. *Carbohydr. Polym.*",
+  "ho": "severini",
+  "nam": 2026,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/5dd0b457578b512197a4a80d4e9d746c/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S74"
+  ],
+  "khoa": "severini2026"
+ },
+ {
+  "trich_dan": "Shahidi F (ed.). *Bailey's Industrial Oil and Fat Products*, 6th ed. Wiley, 2005",
+  "ho": "shahidi",
+  "nam": 2005,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:B2"
+  ],
+  "khoa": "shahidi2005"
+ },
+ {
+  "trich_dan": "Shen Q, et al. (2023). Quantitative analysis and interfacial properties of mixed pea protein isolate–phospholipid adsorption layer. *Int J Biol Macromol*.",
+  "ho": "shen",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/f8f1d94873f85f41a875b3e2fb24c368/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B18"
+  ],
+  "khoa": "shen2023"
+ },
+ {
+  "trich_dan": "Sherafati M. et al. (2013). Effects of low and high acyl gellan gums on engineering properties of carrot juice. *J. Food Process Eng.*",
+  "ho": "sherafati",
+  "nam": 2013,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/a5335820ec0b5822a9df5dbc532eba54/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S79"
+  ],
+  "khoa": "sherafati2013"
+ },
+ {
+  "trich_dan": "Shinoda K, Saito H (1969). The stability of O/W type emulsions as functions of temperature and the HLB of emulsifiers: the emulsification by PIT-method. *J Colloid Interface Sci* 30:258–263.",
+  "ho": "shinoda",
+  "nam": 1969,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:C10"
+  ],
+  "khoa": "shinoda1969"
+ },
+ {
+  "trich_dan": "Shobha M. et al. (2009). Rheological behaviour of pullulanase-treated guar galactomannan on co-gelation with xanthan. *Food Hydrocolloids*.",
+  "ho": "shobha",
+  "nam": 2009,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/9747de8e6d7b596daac61ad2e59d6b83/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S44"
+  ],
+  "khoa": "shobha2009"
+ },
+ {
+  "trich_dan": "Silva-Carvalho R. et al. (2025). Polysaccharide-mediated stabilization of bacterial nanocellulose dispersions. *Food Hydrocolloids*.",
+  "ho": "silvacarvalho",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/1627caad4085578f80e27b509df64623/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S107"
+  ],
+  "khoa": "silvacarvalho2025"
+ },
+ {
+  "trich_dan": "Singh PK, Chopra R, Garg M, Dhiman A, Dhyani A. Enzymatic Interesterification of Vegetable Oil: A Review on Physicochemical and Functional Properties, and Its Health Effects. *J Oleo Sci* 2022;71(12):1697–1709",
+  "ho": "singh",
+  "nam": 2022,
+  "doi": "10.5650/jos.ess22118",
+  "pmid": "36336342",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R15"
+  ],
+  "khoa": "singh2022"
+ },
+ {
+  "trich_dan": "Society of Cosmetic Chemists library (v011n06/1) https://library.scconline.org/v011n06/1 ; (v041n03/2) https://library.scconline.org/v041n03/2",
+  "ho": "society",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": "https://library.scconline.org/v011n06/1",
+  "muc_doc": "tieu-de",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:A9"
+  ],
+  "khoa": "society"
+ },
+ {
+  "trich_dan": "Spagnuolo P. et al. (2005). Kappa-carrageenan interactions in systems containing casein micelles and polysaccharide stabilizers. *Food Hydrocolloids*.",
+  "ho": "spagnuolo",
+  "nam": 2005,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/6a2e5e65187053aa901c9ac64a0f0535/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S49"
+  ],
+  "khoa": "spagnuolo2005"
+ },
+ {
+  "trich_dan": "Stounbjerg L. et al. (2019). Associative phase separation of potato protein and anionic polysaccharides. *Colloids Surf. A*.",
+  "ho": "stounbjerg",
+  "nam": 2019,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/32451df0fc4c51d38f9cae1912329211/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S19"
+  ],
+  "khoa": "stounbjerg2019"
+ },
+ {
+  "trich_dan": "Sulaiman NS, Sintang MD, Mantihal S, Zaini HM, Munsu E, Mamat H, Kanagaratnam S, Jahurul MHA, Pindi W. Balancing functional and health benefits of food products formulated with palm oil as oil sources. *Heliyon* 2022;8(10):e11041",
+  "ho": "sulaiman",
+  "nam": 2022,
+  "doi": "10.1016/j.heliyon.2022.e11041",
+  "pmid": "36303903",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R19"
+  ],
+  "khoa": "sulaiman2022"
+ },
+ {
+  "trich_dan": "Tadros TF. *Emulsion Formation and Stability*. Wiley-VCH, 2013.",
+  "ho": "tadros",
+  "nam": 2013,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:T04"
+  ],
+  "khoa": "tadros2013"
+ },
+ {
+  "trich_dan": "Teng Y, et al. (2020). Sucrose fatty acid esters: synthesis, emulsifying capacities, biological activities and structure–property profiles. *Crit Rev Food Sci Nutr*.",
+  "ho": "teng",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/9f6fa08830ca5374bf8e943c9fd74841/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:C5"
+  ],
+  "khoa": "teng2020"
+ },
+ {
+  "trich_dan": "Thirumdas R. Partial hydrogenation of oils using cold plasma technology and its effect on lipid oxidation. *J Food Sci Technol* 2023;60(6):1674–1680 (online 2022-04)",
+  "ho": "thirumdas",
+  "nam": 2023,
+  "doi": "10.1007/s13197-022-05434-z",
+  "pmid": "37187979",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R18"
+  ],
+  "khoa": "thirumdas2023"
+ },
+ {
+  "trich_dan": "Thông tư 24/2019/TT-BYT (30/8/2019).",
+  "ho": "thong",
+  "nam": 2019,
+  "doi": null,
+  "pmid": null,
+  "url": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Circular-24-2019-TT-BYT-guiding-the-management-and-use-of-food-additives-425671.aspx",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E16"
+  ],
+  "khoa": "thong2019"
+ },
+ {
+  "trich_dan": "Tijssen R. et al. (2007). Gelation upon long storage of milk drinks with carrageenan. *J. Dairy Sci.*",
+  "ho": "tijssen",
+  "nam": 2007,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/3d0e9940aae15f779bc834d9b348b338/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S51"
+  ],
+  "khoa": "tijssen2007"
+ },
+ {
+  "trich_dan": "Timms RE. *Confectionery Fats Handbook*. Oily Press, 2003",
+  "ho": "timms",
+  "nam": 2003,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:B7"
+  ],
+  "khoa": "timms2003"
+ },
+ {
+  "trich_dan": "Tobias TJ, Moraes TB, Colnago LA. Establishing optimal parameters to mitigate the heating effects caused by CPMAS sequence in ¹³C solid-state NMR studies of cocoa butter and other fat samples. *Food Res Int* 2025;204:115944",
+  "ho": "tobias",
+  "nam": 2025,
+  "doi": "10.1016/j.foodres.2025.115944",
+  "pmid": "39986788",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R11"
+  ],
+  "khoa": "tobias2025"
+ },
+ {
+  "trich_dan": "Tong K.-F. et al. (2018). LAOS behavior and gelation procedure of high and low acyl gellan gum. *Carbohydr. Polym.*",
+  "ho": "tong",
+  "nam": 2018,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/f3816caf0b4150ae8db8be10d24a79ff/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S77"
+  ],
+  "khoa": "tong2018"
+ },
+ {
+  "trich_dan": "Tran M. et al. (2021). The effect of high-pressure jet processing on cocoa stability in chocolate milk. *J. Dairy Sci.*",
+  "ho": "tran",
+  "nam": 2021,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/a4c46b39aa135ad1af331b8f93b4e7b3/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S52"
+  ],
+  "khoa": "tran2021"
+ },
+ {
+  "trich_dan": "Tsibranska S, et al. (2019). Role of interfacial elasticity for the rheological properties of saponin-stabilized emulsions. *J Colloid Interface Sci* 564:264–275. doi 10.1016/j.jcis.2019.12.108. PMID 31923825",
+  "ho": "tsibranska",
+  "nam": 2019,
+  "doi": "10.1016/j.jcis.2019.12.108",
+  "pmid": "31923825",
+  "url": "https://doi.org/10.1016/j.jcis.2019.12.108",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:C16"
+  ],
+  "khoa": "tsibranska2019"
+ },
+ {
+  "trich_dan": "Văn bản hợp nhất 08/VBHN-BYT (02/11/2023).",
+  "ho": "van",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Integrated-document-08-VBHN-BYT-2023-Circular-management-and-use-of-food-additives-586202.aspx",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:E17"
+  ],
+  "khoa": "van2023"
+ },
+ {
+  "trich_dan": "VanWees S, et al. (2026). Microstructural and physical properties of high-protein, high-overrun frozen desserts. *J Food Sci*.",
+  "ho": "vanwees",
+  "nam": 2026,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/b73a446e295e59fe8f4e109b443115a0/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:D10"
+  ],
+  "khoa": "vanwees2026"
+ },
+ {
+  "trich_dan": "Villeneuve P, Bourlieu-Lacanal C, Durand E, Lecomte J, McClements DJ, Decker EA. Lipid oxidation in emulsions and bulk oils: a review of the importance of micelles. *Crit Rev Food Sci Nutr* 2023;63(20):4687–4727 (online 2021-11)",
+  "ho": "villeneuve",
+  "nam": 2023,
+  "doi": "10.1080/10408398.2021.2006138",
+  "pmid": "34839769",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R27"
+  ],
+  "khoa": "villeneuve2023"
+ },
+ {
+  "trich_dan": "Viriato RLS, Queirós MS, Ribeiro APB, Gigante ML. Potential of Milk Fat to Structure Semisolid Lipidic Systems: A Review. *J Food Sci* 2019;84(8):2024–2030",
+  "ho": "viriato",
+  "nam": 2019,
+  "doi": "10.1111/1750-3841.14728",
+  "pmid": "31329276",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R12"
+  ],
+  "khoa": "viriato2019"
+ },
+ {
+  "trich_dan": "Walstra P (1993). Principles of emulsion formation. *Chem Eng Sci* 48:333–349.",
+  "ho": "walstra",
+  "nam": 1993,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:C01"
+  ],
+  "khoa": "walstra1993"
+ },
+ {
+  "trich_dan": "Walstra P. *Physical Chemistry of Foods*. Marcel Dekker, 2003.",
+  "ho": "walstra",
+  "nam": 2003,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:T02"
+  ],
+  "khoa": "walstra2003"
+ },
+ {
+  "trich_dan": "Wan L. et al. (2019). Comparative study on gelling properties of low methoxyl pectin prepared by HHP-assisted enzymatic, atmospheric enzymatic, and alkaline de-esterification. *Carbohydr. Polym.*",
+  "ho": "wan",
+  "nam": 2019,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/d404430170d05eb99fa23b2a63f6be84/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S71"
+  ],
+  "khoa": "wan2019"
+ },
+ {
+  "trich_dan": "Wan L. et al. (2021). Calcium-induced-gel properties for low methoxyl pectin in the presence of different sugar alcohols. *Food Hydrocolloids*.",
+  "ho": "wan",
+  "nam": 2021,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/b46c6c0fa95f5930a33111259817c204/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S72"
+  ],
+  "khoa": "wan2021"
+ },
+ {
+  "trich_dan": "Wang C.-S. et al. (2017). A mechanism for the synergistic gelation properties of gelatin B and xanthan gum aqueous mixtures. *Carbohydr. Polym.*",
+  "ho": "wang",
+  "nam": 2017,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/036376e406ff5bdc9db13382cd9ac566/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S32"
+  ],
+  "khoa": "wang2017"
+ },
+ {
+  "trich_dan": "Wang Y-N, et al. (2021). The stability of aerated emulsions: effects of emulsifier synergy on partial coalescence and crystallization of milk fat. *J Food Eng*.",
+  "ho": "wang",
+  "nam": 2021,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/28decba7dbaf557ea58ec3b730d66a74/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:D6"
+  ],
+  "khoa": "wang2021a"
+ },
+ {
+  "trich_dan": "Wang C.-S. et al. (2021). Understanding the effect of conformational rigidity on rheological behavior and formation of polysaccharide-based hybrid hydrogels. *Biomacromolecules*.",
+  "ho": "wang",
+  "nam": 2021,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/dac2213a68315f23b98b6bfcf604b964/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S30"
+  ],
+  "khoa": "wang2021b"
+ },
+ {
+  "trich_dan": "Wang Y. et al. (2022). Doubling growth of egg-box structure during calcium-mediated molecular assembly of alginate. *J. Colloid Interface Sci.*",
+  "ho": "wang",
+  "nam": 2022,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/842b3a8d0b045c2c92461b3df0a9a98e/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S61"
+  ],
+  "khoa": "wang2022"
+ },
+ {
+  "trich_dan": "Wang L. et al. (2023). Insights into interaction mechanism between xanthan gum and galactomannan based on DFT and rheological properties. *Food Chemistry*.",
+  "ho": "wang",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/8889154c9b0d5f2c940263cbb57c9f83/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S42"
+  ],
+  "khoa": "wang2023"
+ },
+ {
+  "trich_dan": "Wang Q. et al. (2025). Segregative phase separation of protein/polysaccharide mixed systems... a review. *Food Research International*.",
+  "ho": "wang",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/b60c6509f3645ec9aa3c2af605bb7718/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S18"
+  ],
+  "khoa": "wang2025"
+ },
+ {
+  "trich_dan": "Warren MM, et al. (2018). Effects of emulsifier, overrun and dasher speed on ice cream microstructure and melting properties. *J Food Sci*.",
+  "ho": "warren",
+  "nam": 2018,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/91dc5185442e57c485aaee32c20dffd7/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:D8"
+  ],
+  "khoa": "warren2018"
+ },
+ {
+  "trich_dan": "Watanabe T, et al. (2018). Effects of fatty acid addition to O/W emulsions stabilized with sucrose fatty acid ester. *J Oleo Sci*.",
+  "ho": "watanabe",
+  "nam": 2018,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/c9819713048c5eee94ddd71e7da3eccc/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:C4"
+  ],
+  "khoa": "watanabe2018"
+ },
+ {
+  "trich_dan": "Webber JL, et al. (2023). ATR FTIR spectroscopy of protein and surfactant adsorption to the oil–water interface. *Colloids Surf A*.",
+  "ho": "webber",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/abedb989258452289e5fea5a087009da/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B16"
+  ],
+  "khoa": "webber2023"
+ },
+ {
+  "trich_dan": "Wikipedia. Hydrophilic-lipophilic balance. https://en.wikipedia.org/wiki/Hydrophilic-lipophilic_balance",
+  "ho": "wikipedia",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": "https://en.wikipedia.org/wiki/Hydrophilic-lipophilic_balance",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:A4"
+  ],
+  "khoa": "wikipedia"
+ },
+ {
+  "trich_dan": "Wilde P, Mackie A, Husband F, Gunning P, Morris V (2004). Proteins and emulsifiers at liquid interfaces. *Adv Colloid Interface Sci* 108–109:63–71.",
+  "ho": "wilde",
+  "nam": 2004,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B22"
+  ],
+  "khoa": "wilde2004"
+ },
+ {
+  "trich_dan": "Wille RL, Lutton ES. Polymorphism of cocoa butter. *J Am Oil Chem Soc* 1966;43:491–496",
+  "ho": "wille",
+  "nam": 1966,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tri-nho",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:B10"
+  ],
+  "khoa": "wille1966"
+ },
+ {
+  "trich_dan": "Woodward N, et al. (2004). Effect of processing on the displacement of whey proteins: applying the orogenic model to a real system. *J Agric Food Chem*.",
+  "ho": "woodward",
+  "nam": 2004,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/4fd87b1419c55c18bd4c92f32c91a14d/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B5"
+  ],
+  "khoa": "woodward2004"
+ },
+ {
+  "trich_dan": "Woodward N, et al. (2010). Probing the in situ competitive displacement of protein by nonionic surfactant using AFM. *Langmuir*.",
+  "ho": "woodward",
+  "nam": 2010,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/4912f9f513085cbe8dd01a8958559710/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B6"
+  ],
+  "khoa": "woodward2010"
+ },
+ {
+  "trich_dan": "Wu Y. et al. (2012). A molecular modeling approach to understand conformation-functionality relationships of galactomannans with different mannose/galactose ratios. *Food Hydrocolloids*.",
+  "ho": "wu",
+  "nam": 2012,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/b640e16fee6754a4aeea6f70fccaafff/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S36"
+  ],
+  "khoa": "wu2012"
+ },
+ {
+  "trich_dan": "Wu C. et al. (2023). Study on low methoxyl pectin with varied molecular structures cross-linked with calcium... *Food Hydrocolloids*.",
+  "ho": "wu",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/c5b6beefadbe56179f4789e36be940e9/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S70"
+  ],
+  "khoa": "wu2023"
+ },
+ {
+  "trich_dan": "Xiao Y. et al. (2025). Property changes of tilapia gelatin of low bloom value... laccase and tea polyphenols. *Food Chemistry: X*.",
+  "ho": "xiao",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/08c85f407b4e59ba98cdd4a5f0ba1266/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S97"
+  ],
+  "khoa": "xiao2025"
+ },
+ {
+  "trich_dan": "Xie F. et al. (2022). Structure-function relationship between galactomannans and their effects on freeze-thaw stability, retrogradation, and texture of corn starch gels. *Food Chemistry*.",
+  "ho": "xie",
+  "nam": 2022,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/e2ebf02fbdca5a3699e0aa63381ea8e6/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S35"
+  ],
+  "khoa": "xie2022"
+ },
+ {
+  "trich_dan": "Xie P, Zheng Y, Lee YY, Zou S, Wu Y, Lai J, Wang Y, Zhang Z. Effect of diacylglycerol on partial coalescence of aerated emulsions: Fat crystal-membrane interaction and air-liquid interface interaction insights. *Food Chem* 2024;461:140879",
+  "ho": "xie",
+  "nam": 2024,
+  "doi": "10.1016/j.foodchem.2024.140879",
+  "pmid": "39154466",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R35"
+  ],
+  "khoa": "xie2024"
+ },
+ {
+  "trich_dan": "Xu X.-J. et al. (2018). Effects of different acyl gellan gums on the rheological properties and colloidal stability of blueberry cloudy juice. *J. Food Sci.*",
+  "ho": "xu",
+  "nam": 2018,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/a57185647d625d93a7fa0c6788d8282c/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S78"
+  ],
+  "khoa": "xu2018"
+ },
+ {
+  "trich_dan": "Xu X.-J. et al. (2022). Impact of guar gum and locust bean gum addition on the pasting, rheological properties, and freeze-thaw stability of rice starch gel. *Foods*.",
+  "ho": "xu",
+  "nam": 2022,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/9bd7bfc103405397b39b937d7e0e32bb/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S38"
+  ],
+  "khoa": "xu2022"
+ },
+ {
+  "trich_dan": "Xu W. et al. (2023). Insight into the mechanism of the decrease in mechanical strength and water-holding capacity of gels made from oxidized gelatin. *Int. J. Biol. Macromol.*",
+  "ho": "xu",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/41c5e0d39cd756c29ec814ee2b8fcf71/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S94"
+  ],
+  "khoa": "xu2023"
+ },
+ {
+  "trich_dan": "Xu K. et al. (2026). Rheology and molecular mechanisms of fracturing fluids... *Gels*.",
+  "ho": "xu",
+  "nam": 2026,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/f2d8a9ad09f3571989801552ab7d396e/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S31"
+  ],
+  "khoa": "xu2026"
+ },
+ {
+  "trich_dan": "Yan S, et al. (2022). Effect of interfacial composition on physical stability and co-oxidation in a soy protein isolate–EGCG conjugate emulsion. *Food Hydrocolloids*.",
+  "ho": "yan",
+  "nam": 2022,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/8c9bbe8b5fdd5aa5adaf98b0709a8dec/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B21"
+  ],
+  "khoa": "yan2022"
+ },
+ {
+  "trich_dan": "Yang X. et al. (2019). Concentration-dependent rheological behavior and gelation mechanism of high acyl gellan aqueous solutions. *Int. J. Biol. Macromol.*",
+  "ho": "yang",
+  "nam": 2019,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/64f07c5a195e5f45af243fc3a37f0739/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S76"
+  ],
+  "khoa": "yang2019"
+ },
+ {
+  "trich_dan": "Yang J, et al. (2020). Effect of diacylglycerol interfacial crystallization on the physical stability of W/O emulsions. *Food Chem*.",
+  "ho": "yang",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/da96d686edbe53bea061a4f202fbbf5c/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:C15"
+  ],
+  "khoa": "yang2020"
+ },
+ {
+  "trich_dan": "Yang K, Lin R, Zhang S, ... (2021). Ultrasound-modified interfacial properties and crystallization behavior of aerated emulsions fabricated with pH-shifting treated pea protein. *Food Chem* (130536).",
+  "ho": "yang",
+  "nam": 2021,
+  "doi": "10.1016/j.foodchem.2021.130536",
+  "pmid": null,
+  "url": "https://doi.org/10.1016/j.foodchem.2021.130536",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R23"
+  ],
+  "khoa": "yang2021"
+ },
+ {
+  "trich_dan": "Yang Y. et al. (2022). Effect of coconut protein and xanthan gum, soybean polysaccharide and gelatin interactions in oil-water interface. *Molecules*.",
+  "ho": "yang",
+  "nam": 2022,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/a2ffaed4a59551bb8aee19da820ad33f/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S13"
+  ],
+  "khoa": "yang2022"
+ },
+ {
+  "trich_dan": "Yang Z, ... Zhang W (2025). Pickering emulsions stabilized by soybean protein-based nanoparticles: formulation, characterization, and food-grade application. *Compr Rev Food Sci Food Saf* 24(2):e70157.",
+  "ho": "yang",
+  "nam": 2025,
+  "doi": "10.1111/1541-4337.70157",
+  "pmid": null,
+  "url": "https://doi.org/10.1111/1541-4337.70157",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R10"
+  ],
+  "khoa": "yang2025"
+ },
+ {
+  "trich_dan": "Yao D, Sun LC, Zhang LJ, Chen YL, Miao S, Cao MJ, Lin D (2024). Emulsion structural remodeling in milk and its gelling products: a review. *Gels* 10(10).",
+  "ho": "yao",
+  "nam": 2024,
+  "doi": "10.3390/gels10100671",
+  "pmid": null,
+  "url": "https://doi.org/10.3390/gels10100671",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R24"
+  ],
+  "khoa": "yao2024a"
+ },
+ {
+  "trich_dan": "Yao X, et al. (2024). PGPR and lecithin stabilized W/O nanoemulsions for sugaring Beijing roast duck. *Food Chem* 447:138979. doi 10.1016/j.foodchem.2024.138979. PMID 38518617",
+  "ho": "yao",
+  "nam": 2024,
+  "doi": "10.1016/j.foodchem.2024.138979",
+  "pmid": "38518617",
+  "url": "https://doi.org/10.1016/j.foodchem.2024.138979",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:C10"
+  ],
+  "khoa": "yao2024b"
+ },
+ {
+  "trich_dan": "Yeşil S, et al. (2022). Emulsifiers on quality and staling of gluten-free bread (fermented buckwheat, quinoa, amaranth). *J Food Process Preserv*.",
+  "ho": "yesil",
+  "nam": 2022,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/e6e1ca23d2f25198a5ada807b51e54ac/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:D16"
+  ],
+  "khoa": "yesil2022"
+ },
+ {
+  "trich_dan": "Yi J, Zhu Z, McClements DJ, Decker EA. Influence of aqueous phase emulsifiers on lipid oxidation in water-in-walnut oil emulsions. *J Agric Food Chem* 2014;62(9):2104–2111",
+  "ho": "yi",
+  "nam": 2014,
+  "doi": "10.1021/jf404593f",
+  "pmid": "24446832",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R29"
+  ],
+  "khoa": "yi2014"
+ },
+ {
+  "trich_dan": "Yi J-H, et al. (2019). Impact of interfacial composition on co-oxidation of lipids and proteins in O/W emulsions: competitive displacement of casein by surfactants. *Food Hydrocolloids*.",
+  "ho": "yi",
+  "nam": 2019,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/45f655c38d2651ca81dd1f4e3e55d155/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B15"
+  ],
+  "khoa": "yi2019"
+ },
+ {
+  "trich_dan": "Yi J, Qiu M, Liu N, Tian L, Zhu X, Decker EA, McClements DJ. Inhibition of Lipid and Protein Oxidation in Whey-Protein-Stabilized Emulsions Using a Natural Antioxidant: Black Rice Anthocyanins. *J Agric Food Chem* 2020;68(37):10149–10156",
+  "ho": "yi",
+  "nam": 2020,
+  "doi": "10.1021/acs.jafc.0c03978",
+  "pmid": "32833451",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R30"
+  ],
+  "khoa": "yi2020"
+ },
+ {
+  "trich_dan": "Zambuto S. G. et al. (2024). Evaluation of gelatin bloom strength on gelatin methacryloyl hydrogel properties.",
+  "ho": "zambuto",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/c7ce2c1c04fc5589b991dc04259db6de/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S95"
+  ],
+  "khoa": "zambuto2024"
+ },
+ {
+  "trich_dan": "Zbikowska A, Onacik-Gür S, Kowalska M, Zbikowska K, Feszterová M. Trends in Fat Modifications Enabling Alternative Partially Hydrogenated Fat Products Proposed for Advanced Application. *Gels* 2023;9(6):453",
+  "ho": "zbikowska",
+  "nam": 2023,
+  "doi": "10.3390/gels9060453",
+  "pmid": "37367124",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R17"
+  ],
+  "khoa": "zbikowska2023"
+ },
+ {
+  "trich_dan": "Zembyla M, et al. (2020). Water-in-oil emulsions stabilized by surfactants, biopolymers and/or particles: a review. *Trends Food Sci Technol*.",
+  "ho": "zembyla",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/0709989e67e65f7ba07b743083698a15/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:C7"
+  ],
+  "khoa": "zembyla2020"
+ },
+ {
+  "trich_dan": "Zeng J, Shen J, Wu Y, Liu X, Deng ZY, Li J. Effect of adding shea butter stearin and emulsifiers on the physical properties of cocoa butter. *J Food Sci* 2020;85(4):972–979",
+  "ho": "zeng",
+  "nam": 2020,
+  "doi": "10.1111/1750-3841.15076",
+  "pmid": "32144765",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R21"
+  ],
+  "khoa": "zeng2020"
+ },
+ {
+  "trich_dan": "Zeng D, et al. (2023). Effect of hydrophobic sucrose esters... on whipped cream properties. *Food Hydrocolloids*.",
+  "ho": "zeng",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/9f333d0cbea9559881a00a8e4bd0b0e2/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:C2"
+  ],
+  "khoa": "zeng2023"
+ },
+ {
+  "trich_dan": "Zhang T, et al. (2020). Fish oil-loaded emulsions stabilized by synergetic or competitive adsorption of gelatin and surfactants. *Food Chem*.",
+  "ho": "zhang",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/a1775b0b9cdd570e9ce147861823f2e6/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B14"
+  ],
+  "khoa": "zhang2020"
+ },
+ {
+  "trich_dan": "Zhang Z, Lee WJ, Wang Y. Evaluation of enzymatic interesterification in structured triacylglycerols preparation: a concise review and prospect. *Crit Rev Food Sci Nutr* 2021;61(19):3145–3159 (online 2020-07)",
+  "ho": "zhang",
+  "nam": 2021,
+  "doi": "10.1080/10408398.2020.1793725",
+  "pmid": "32696657",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-beo"
+  ],
+  "ma_cu": [
+   "chat-beo:R16"
+  ],
+  "khoa": "zhang2021"
+ },
+ {
+  "trich_dan": "Zhang M, et al. (2022). Effects of proteins on emulsion stability: the role of proteins at the oil–water interface. *Food Chem*.",
+  "ho": "zhang",
+  "nam": 2022,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/e063788660d45a8382713a14d7980496/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:B17"
+  ],
+  "khoa": "zhang2022a"
+ },
+ {
+  "trich_dan": "Zhang L.-N. et al. (2022). The interaction between anionic polysaccharides and legume protein and their influence mechanism on emulsion stability. *Food Hydrocolloids*.",
+  "ho": "zhang",
+  "nam": 2022,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/85ee5ae8d1085c46b732525632f61923/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S12"
+  ],
+  "khoa": "zhang2022b"
+ },
+ {
+  "trich_dan": "Zhang Y.-M. et al. (2023). Rheological properties and microstructure of rennet-induced casein micelle/κ-carrageenan composite gels. *LWT*.",
+  "ho": "zhang",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/d1e9eff8885d5e7cb6fa94e831fd4329/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S54"
+  ],
+  "khoa": "zhang2023"
+ },
+ {
+  "trich_dan": "Zhang R, Mao L, Lu Y, Ma P, Gao Y, Miao S (2025). Interface and bulk phase engineering in W/O high internal phase emulsion: a clean-label strategy. *Compr Rev Food Sci Food Saf* 24(5):e70247.",
+  "ho": "zhang",
+  "nam": 2025,
+  "doi": "10.1111/1541-4337.70247",
+  "pmid": null,
+  "url": "https://doi.org/10.1111/1541-4337.70247",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R08"
+  ],
+  "khoa": "zhang2025"
+ },
+ {
+  "trich_dan": "Zhao G.-H. et al. (2011). Characterisation of the interactive properties of microcrystalline cellulose-carboxymethyl cellulose hydrogels. *Int. J. Pharm.*",
+  "ho": "zhao",
+  "nam": 2011,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/a8182588a23e5127b0b8718f846a4560/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S105"
+  ],
+  "khoa": "zhao2011"
+ },
+ {
+  "trich_dan": "Zhao X.-W. et al. (2024). Sucrose and Ca²⁺ synergistically regulate the rheological properties of apple high-methoxyl pectin. *Int. J. Biol. Macromol.*",
+  "ho": "zhao",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/c192cf081b2d53db95fce5dc88749283/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S69"
+  ],
+  "khoa": "zhao2024"
+ },
+ {
+  "trich_dan": "Zhu J-P, et al. (2021). Enzymatic synthesis of long- and very-long-chain sucrose esters... *Food Hydrocolloids*.",
+  "ho": "zhu",
+  "nam": 2021,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/73bae2eaed53508692ec2fc342209bde/?utm_source=claude_desktop",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [
+   "chat-nhu-hoa:C1"
+  ],
+  "khoa": "zhu2021"
+ },
+ {
+  "trich_dan": "Zhu R. et al. (2024). Effect of high acyl gellan gum and pH on the structural and foaming properties of heated whey protein suspensions. *Food Chemistry*.",
+  "ho": "zhu",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/ddaef935599257e7854dda52efd37da7/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "chat-on-dinh"
+  ],
+  "ma_cu": [
+   "chat-on-dinh:S82"
+  ],
+  "khoa": "zhu2024"
+ },
+ {
+  "trich_dan": "Zia R, Nazir A, Poortinga AT, van Nostrum CF (2022). Advances in antibubble formation and potential applications. *Adv Colloid Interface Sci* 305:102688.",
+  "ho": "zia",
+  "nam": 2022,
+  "doi": "10.1016/j.cis.2022.102688",
+  "pmid": null,
+  "url": "https://doi.org/10.1016/j.cis.2022.102688",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "nhu-tuong:R27"
+  ],
+  "khoa": "zia2022"
+ }
+]

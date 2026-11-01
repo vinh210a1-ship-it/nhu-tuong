@@ -1,0 +1,46 @@
+/* Máy tính tương tác */
+.may-tinh {
+	margin: 1.5rem 0;
+	padding: 1rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-inline-start: 4px solid var(--sl-color-accent);
+	border-radius: 0.5rem;
+	background: var(--sl-color-gray-7, var(--sl-color-black));
+}
+.may-tinh:empty::before { content: 'Máy tính cần bật JavaScript.'; color: var(--sl-color-gray-3); }
+.mt-dau { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+.mt-the {
+	font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em;
+	padding: 0.05rem 0.4rem; border-radius: 0.3rem;
+	background: var(--sl-color-accent); color: var(--sl-color-black);
+}
+.mt-cong-thuc { font-family: var(--__sl-font-mono, monospace); font-size: 0.9rem; margin: 0.5rem 0 0.75rem; color: var(--sl-color-gray-2); }
+.mt-form {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+	gap: 0.75rem;
+	margin: 0;
+}
+.mt-o { display: flex; flex-direction: column; gap: 0.2rem; margin: 0 !important; }
+.mt-nhan { font-size: 0.85rem; font-weight: 600; }
+.mt-nhap { display: flex; align-items: center; gap: 0.35rem; }
+.mt-nhap input {
+	width: 100%; min-width: 0;
+	padding: 0.4rem 0.5rem;
+	font-size: 1rem;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 0.35rem;
+	background: var(--sl-color-black);
+	color: var(--sl-color-white);
+}
+.mt-dv { font-size: 0.85rem; color: var(--sl-color-gray-3); white-space: nowrap; min-width: 3.2rem; }
+.mt-goi-y { font-size: 0.75rem; color: var(--sl-color-gray-3); }
+.mt-ket-qua { margin-top: 1rem; }
+.mt-kq { display: grid; gap: 0.35rem; padding: 0.75rem; border-radius: 0.4rem; background: var(--sl-color-accent-low); }
+.mt-kq > div { display: flex; flex-wrap: wrap; gap: 0.25rem 0.6rem; align-items: baseline; margin: 0 !important; }
+.mt-kq-nhan { font-size: 0.8rem; color: var(--sl-color-gray-2); min-width: 8.5rem; }
+.mt-kq strong { font-size: 1.1rem; }
+.mt-meo { font-size: 0.85rem; color: var(--sl-color-gray-2); margin-top: 0.5rem !important; }
+.mt-loi { color: #c0392b; font-weight: 600; }
+.mt-chu-y { margin-top: 0.75rem; font-size: 0.85rem; }
+.mt-chu-y summary { cursor: pointer; font-weight: 600; }
