@@ -1,23 +1,28 @@
 ---
-// Phần thân trang chủ: thẻ bắt đầu nhanh, các khu kiến thức, bản đồ lộ trình 6 chặng, 4 huy hiệu tin cậy.
+// Phần thân trang chủ: thẻ bắt đầu nhanh, các khu kiến thức (4 khu + công cụ + tra cứu), bản đồ lộ trình 6 chặng, 4 huy hiệu tin cậy.
 // Tiến độ đọc lưu trong máy người xem (localStorage), do public/tuong-tac.js điền vào.
 import fs from 'node:fs';
 import path from 'node:path';
 import { CHANG, MO_RONG } from '../data/chang.mjs';
+import { KHU as DS_KHU } from '../data/khu.mjs';
 import BieuTuong from './BieuTuong.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const tn = path.join(process.cwd(), 'src/data/thuat-ngu.json');
 const thuatNgu = fs.existsSync(tn) ? JSON.parse(fs.readFileSync(tn, 'utf8')) : [];
 const tn0 = thuatNgu[0];
+const pg = path.join(process.cwd(), 'src/content/docs/tra-cuu-phu-gia.md');
+const soPhuGia = fs.existsSync(pg) ? (fs.readFileSync(pg, 'utf8').match(/class="the-pg/g) || []).length : 0;
 
+const soBai = (k) => DS_KHU[k].bai.length;
 const KHU = [
-	{ ten: 'Nhũ tương', mo: 'Trục chính: 6 chặng từ nền tảng đến sản phẩm, kèm hệ đặc biệt và xử lý sự cố.', chip: '8 bài', href: '/nhu-tuong/', icon: 'giot', mau: 'var(--chang-1)' },
-	{ ten: 'Chất béo', mo: 'Cấu trúc TAG, đa hình tinh thể, SFC, oleogel, oxy hóa và hạn dùng.', chip: 'Sắp có', icon: 'chat-beo', mau: '#d08a22' },
-	{ ten: 'Chất nhũ hóa', mo: 'HLB, lecithin, MDG, polysorbate, cạnh tranh hấp phụ với protein, mã INS.', chip: 'Sắp có', icon: 'chat-nhu-hoa', mau: '#8b5cf6' },
-	{ ten: 'Chất ổn định', mo: 'Xanthan, galactomannan, carrageenan, pectin, gellan, gum arabic.', chip: 'Sắp có', icon: 'chat-on-dinh', mau: '#3a9a57' },
-	{ ten: 'Máy tính', mo: 'Tốc độ kem hóa (Stokes) và lượng chất nhũ hóa tối thiểu, tính ngay trên trang.', chip: '2 công cụ', href: '/may-tinh/', icon: 'may-tinh', mau: '#2f6fd6' },
-	{ ten: 'Nguồn', mo: 'Danh mục nguồn, ghi rõ đã đọc toàn văn hay mới đọc tóm tắt.', chip: '301 nguồn', href: '/nguon/', icon: 'nguon', mau: '#5b6b74' },
+	{ ten: 'Nhũ tương', mo: 'Trục chính: 6 chặng từ nền tảng đến sản phẩm, kèm hệ đặc biệt và xử lý sự cố.', khu: 'nhu-tuong', href: '/nhu-tuong/', icon: 'giot', mau: 'var(--chang-1)' },
+	{ ten: 'Chất béo', mo: 'Cấu trúc TAG, đa hình tinh thể, SFC, oleogel, oxy hóa và hạn dùng.', khu: 'chat-beo', href: '/chat-beo/', icon: 'chat-beo', mau: 'var(--khu-chat-beo)' },
+	{ ten: 'Chất nhũ hóa', mo: 'HLB, lecithin, MDG, polysorbate, cạnh tranh hấp phụ với protein, mã INS.', khu: 'chat-nhu-hoa', href: '/chat-nhu-hoa/', icon: 'chat-nhu-hoa', mau: 'var(--khu-chat-nhu-hoa)' },
+	{ ten: 'Chất ổn định', mo: 'Xanthan, galactomannan, carrageenan, pectin, gellan, gum arabic.', khu: 'chat-on-dinh', href: '/chat-on-dinh/', icon: 'chat-on-dinh', mau: 'var(--khu-chat-on-dinh)' },
+	{ ten: 'Phòng lab ảo', mo: 'Trò chơi: tự cân dầu, chạy máy đồng hóa, xem mẻ của bạn có tách lớp hay bị ôi không. Kết quả tính bằng cơ chế thật trong bài.', chip: '4 nhiệm vụ', href: '/phong-lab/', icon: 'vo-giot', mau: 'var(--chang-3)' },
+	{ ten: 'Máy tính và chẩn đoán', mo: 'Stokes, chất nhũ hóa tối thiểu, trộn HLB, hạn dùng Q10/Arrhenius, cây chẩn đoán sự cố.', chip: '5 máy tính · 1 cây', href: '/may-tinh/', icon: 'may-tinh', mau: '#2f6fd6' },
+	{ ten: 'Tra cứu phụ gia', mo: 'Gõ mã INS/E hoặc tên chất: chức năng, kết luận EFSA, ADI, nguồn.', chip: `${soPhuGia} chất`, href: '/tra-cuu-phu-gia/', icon: 'nguon', mau: '#5b6b74' },
 ];
 const NHAN = [
 	['N', 'Có nguồn', 'Đã đọc nguồn; bấm tên nguồn để xem thẻ nguồn.'],
@@ -38,11 +43,11 @@ const NHAN = [
 			</span>
 			<span class="tcn-mui" aria-hidden="true">›</span>
 		</a>
-		<a class="tc-the-nhanh" href={`${base}/nhu-tuong/su-co-thiet-ke/`}>
+		<a class="tc-the-nhanh" href={`${base}/chan-doan/`}>
 			<span class="tcn-icon" aria-hidden="true">?</span>
 			<span class="tcn-chu">
 				<b>Sản phẩm bị tách lớp?</b>
-				<small>Bảng chẩn đoán sự cố từng bước</small>
+				<small>Trả lời vài câu, tìm mắt xích hỏng</small>
 			</span>
 			<span class="tcn-mui" aria-hidden="true">›</span>
 		</a>
@@ -72,7 +77,13 @@ const NHAN = [
 					</span>
 					<span class="tck-ten">{k.ten}</span>
 					<span class="tck-mo">{k.mo}</span>
-					<span class="tck-chip">{k.chip}</span>
+					{k.khu ? (
+						<span class="tck-chip" data-tien-do-khu={k.khu} data-tong={soBai(k.khu)}>
+							{soBai(k.khu)} bài
+						</span>
+					) : (
+						<span class="tck-chip">{k.chip}</span>
+					)}
 				</Tag>
 			);
 		})}

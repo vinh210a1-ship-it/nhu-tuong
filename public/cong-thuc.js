@@ -29,3 +29,58 @@ export function chatNhuHoaToiThieu(phi, d32Um, gammaMgM2) {
 	const cGL = A * gammaMgM2 * 1e-6; // kg/m³ = g/L
 	return { A, cGL, phanTramWV: cGL / 10 };
 }
+
+/**
+ * HLB của hỗn hợp hai chất nhũ hóa, trung bình theo khối lượng: HLB = wA·HLB_A + (1−wA)·HLB_B.
+ * @param {number} hlbA HLB chất A
+ * @param {number} hlbB HLB chất B
+ * @param {number} wA phần khối lượng chất A (0–1)
+ */
+export function hlbTron(hlbA, hlbB, wA) {
+	return wA * hlbA + (1 - wA) * hlbB;
+}
+
+/**
+ * Phần khối lượng chất A cần để hỗn hợp A + B đạt HLB mục tiêu. Trả null nếu mục tiêu nằm ngoài khoảng [HLB_A, HLB_B].
+ */
+export function hlbPhanA(hlbA, hlbB, hlbMucTieu) {
+	if (hlbA === hlbB) return null;
+	const wA = (hlbMucTieu - hlbB) / (hlbA - hlbB);
+	return wA >= 0 && wA <= 1 ? wA : null;
+}
+
+/**
+ * Quy đổi thời gian theo Q10: thời gian ở nhiệt độ T2 = t1 · Q10^((T1 − T2)/10).
+ * (phản ứng chậm đi Q10 lần mỗi khi giảm 10 °C)
+ */
+export function q10DoiThoiGian(t1, T1, T2, q10) {
+	return t1 * Math.pow(q10, (T1 - T2) / 10);
+}
+
+export const R = 8.314; // J/(mol·K)
+
+/**
+ * Khớp Arrhenius từ các cặp (nhiệt độ °C, thời gian cảm ứng hoặc hạn dùng): ln t = a + b/T (T theo K).
+ * Thời gian tỉ lệ nghịch với hằng số tốc độ k nên Ea = b·R. Trả về hàm ngoại suy, Ea (kJ/mol), Q10 quanh nhiệt độ đích, R².
+ * @param {Array<[number, number]>} diem [[°C, thời gian], ...] (ít nhất 2 điểm, nhiệt độ khác nhau)
+ */
+export function arrhenius(diem) {
+	const x = diem.map(([c]) => 1 / (c + 273.15));
+	const y = diem.map(([, t]) => Math.log(t));
+	const n = x.length;
+	const mx = x.reduce((s, v) => s + v, 0) / n;
+	const my = y.reduce((s, v) => s + v, 0) / n;
+	let sxy = 0, sxx = 0, syy = 0;
+	for (let i = 0; i < n; i++) {
+		sxy += (x[i] - mx) * (y[i] - my);
+		sxx += (x[i] - mx) ** 2;
+		syy += (y[i] - my) ** 2;
+	}
+	const b = sxy / sxx;
+	const a = my - b * mx;
+	const r2 = syy === 0 ? 1 : (sxy * sxy) / (sxx * syy);
+	const thoiGianTai = (c) => Math.exp(a + b / (c + 273.15));
+	const EaKJ = (b * R) / 1000;
+	const q10Tai = (c) => thoiGianTai(c) / thoiGianTai(c + 10);
+	return { thoiGianTai, EaKJ, q10Tai, r2 };
+}

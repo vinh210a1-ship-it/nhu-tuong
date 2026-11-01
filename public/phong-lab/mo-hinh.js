@@ -9,7 +9,7 @@
 //    (khu chất ổn định, bài 01, nguồn Gunning 1988).
 // Các hằng số "cho vừa với thực tế" (vd. d32 ở 100 bar) là TÍNH MINH HỌA (nhãn T), ghi rõ ở NHAN.
 
-import { stokes, chatNhuHoaToiThieu } from '../cong-thuc.js';
+import { stokes, chatNhuHoaToiThieu, q10DoiThoiGian } from '../cong-thuc.js';
 
 /** Nhãn tin cậy cho từng giả định của mô hình, hiện ra ở màn hình "Vì sao?" */
 export const NHAN = {
@@ -160,7 +160,7 @@ export function thoiGianCamUng({ dau, d32 = 1, tocopherol = false, edta = false,
 	if (edta) ip *= 2;
 	if (sang) ip /= 3;
 	ip *= kep((d32 / 1) ** 0.15, 0.6, 1.6); // giọt nhỏ → nhiều bề mặt tiếp xúc kim loại/oxy
-	return ip * Q10_OXY ** ((25 - nhietDo) / 10);
+	return q10DoiThoiGian(ip, 25, nhietDo, Q10_OXY);
 }
 
 /** Chỉ số peroxide theo thời gian: thấp trong giai đoạn cảm ứng rồi tăng theo hàm mũ; PV(ip) = 10. */
