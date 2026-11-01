@@ -3,35 +3,20 @@ title: Nhũ tương thực phẩm
 description: Kiến thức nhũ tương thực phẩm bằng tiếng Việt cho người làm R&D, mỗi khẳng định có nhãn tin cậy và nguồn.
 template: splash
 editUrl: false
+pagefind: false
+next: false
+prev: false
 hero:
-  tagline: Kiến thức nhũ tương thực phẩm bằng tiếng Việt, từ bản chất đến sản phẩm. Mỗi khẳng định có huy hiệu cho biết nó dựa vào đâu.
+  title: Hiểu nhũ tương từ <span>giọt&nbsp;dầu</span> đến sản&nbsp;phẩm
+  tagline: Kiến thức nhũ tương thực phẩm viết bằng tiếng Việt cho người làm R&D và QA. Đi từ bản chất, qua cơ chế, tới cách làm; mỗi khẳng định có huy hiệu cho biết nó dựa vào đâu.
   actions:
-    - text: Bắt đầu đọc
-      link: /nhu-tuong/nhu-tuong/
-      icon: right-arrow
-    - text: Máy tính
+    - text: Bắt đầu chặng 1
+      link: /nhu-tuong/nhu-tuong/nen-tang/
+    - text: Mở máy tính
       link: /nhu-tuong/may-tinh/
       variant: minimal
 ---
 
-import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import TrangChu from '../../components/TrangChu.astro';
 
-## Bốn huy hiệu tin cậy
-
-<CardGrid>
-	<Card title="N · Có nguồn">Đã đọc nguồn; bấm tên nguồn để xem thẻ nguồn và mức đã đọc.</Card>
-	<Card title="T · Tính minh họa">Ví dụ tự tính, giả thiết ghi kèm.</Card>
-	<Card title="K · Sách nền">Kiến thức giáo khoa, chưa trích số trang. Số liệu chỉ dựa vào sách nền đang tạm ẩn.</Card>
-	<Card title="G · Suy luận">Diễn giải hoặc giả thuyết, cần kiểm bằng thí nghiệm.</Card>
-</CardGrid>
-
-<LinkCard title="Cách đọc nhãn tin cậy" href="/nhu-tuong/quy-uoc/" />
-
-## Các khu kiến thức
-
-<CardGrid>
-	<LinkCard title="Nhũ tương" description="Trục chính: 6 chặng từ nền tảng đến sản phẩm." href="/nhu-tuong/nhu-tuong/" />
-	<Card title="Chất béo (sắp có)">Cấu trúc TAG, đa hình, SFC, oleogel, oxy hóa và hạn dùng.</Card>
-	<Card title="Chất nhũ hóa (sắp có)">HLB, lecithin, MDG, polysorbate, cạnh tranh hấp phụ với protein, mã INS.</Card>
-	<Card title="Chất ổn định (sắp có)">Xanthan, galactomannan, carrageenan, pectin, gellan, gum arabic.</Card>
-</CardGrid>
+<TrangChu />

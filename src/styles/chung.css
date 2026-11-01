@@ -1,0 +1,136 @@
+/* Phần giao diện dùng chung: chữ, tiêu đề, bảng, khung trích, máy tính, sơ đồ nhũ tương. */
+:root {
+	--sl-font: 'Be Vietnam Pro';
+	--sl-font-mono: 'JetBrains Mono';
+	--sl-line-height: 1.72;
+	--sl-content-width: 46rem;
+	--hh-luc-giac: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.2 20.6 7.1v9.8L12 21.8 3.4 16.9V7.1z' fill='none' stroke='black' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='12' cy='12' r='4.2' fill='none' stroke='black' stroke-width='2'/%3E%3C/svg%3E");
+}
+body { background: var(--sl-color-bg); }
+.page > header.header { border-bottom: 1px solid var(--hh-vien); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02); }
+.site-title { font-weight: 700; letter-spacing: -0.015em; color: var(--sl-color-white); }
+.site-title img { height: 2.1rem; }
+
+/* Thanh bên: mục đang mở nổi như nút */
+.sidebar-content a[aria-current='page'] {
+	background: var(--hh-thuong-hieu);
+	color: #fff !important;
+	border-radius: 0.5rem;
+	font-weight: 600;
+}
+.sidebar-content .group-label .large { font-weight: 700; }
+
+/* Vùng nội dung bài: đặt trên "tờ giấy" trắng bo góc */
+:root[data-has-sidebar] .main-pane .content-panel:first-of-type { padding-top: 1.25rem; }
+
+/* ---------- Tiêu đề trong bài ---------- */
+.sl-markdown-content h2 {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	margin-top: 2.6rem;
+	padding-bottom: 0.4rem;
+	border-bottom: 2px solid var(--hh-vien);
+	font-weight: 700;
+}
+.sl-markdown-content h2::before {
+	content: '';
+	flex: none;
+	width: 0.85em;
+	height: 0.85em;
+	background: var(--mau-chang, var(--hh-thuong-hieu));
+	-webkit-mask: var(--hh-luc-giac) center / contain no-repeat;
+	mask: var(--hh-luc-giac) center / contain no-repeat;
+}
+.sl-markdown-content h3 { color: var(--sl-color-white); font-weight: 650; }
+h1, h2, h3 { letter-spacing: -0.012em; }
+.sl-markdown-content strong { color: var(--sl-color-white); }
+
+/* ---------- Khung trích (> ...): thẻ nổi bật kiểu "kết luận trước" ---------- */
+.sl-markdown-content blockquote {
+	position: relative;
+	margin: 1.25rem 0;
+	padding: 0.9rem 1.1rem 0.9rem 3.1rem;
+	border: 1px solid color-mix(in srgb, var(--mau-chang, var(--hh-thuong-hieu)) 30%, var(--hh-vien));
+	border-inline-start: 4px solid var(--mau-chang, var(--hh-thuong-hieu));
+	border-radius: 0.75rem;
+	background: color-mix(in srgb, var(--mau-chang, var(--hh-thuong-hieu)) 7%, var(--hh-be-mat));
+	color: var(--sl-color-gray-1);
+	font-style: normal;
+	box-shadow: var(--hh-bong);
+}
+.sl-markdown-content blockquote::before {
+	content: '';
+	position: absolute;
+	left: 0.95rem;
+	top: 1.05rem;
+	width: 1.35rem;
+	height: 1.35rem;
+	border-radius: 50%;
+	background: var(--mau-chang, var(--hh-thuong-hieu))
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M12 7v6M12 17h.01'/%3E%3C/svg%3E") center / 70% no-repeat;
+}
+
+/* ---------- Bảng: đầu bảng như bảng số liệu thí nghiệm ---------- */
+.sl-markdown-content table {
+	display: block;
+	overflow-x: auto;
+	border-collapse: separate;
+	border-spacing: 0;
+	font-size: 0.9em;
+	border: 1px solid var(--hh-vien);
+	border-radius: 0.75rem;
+	background: var(--hh-be-mat);
+}
+.sl-markdown-content th {
+	background: var(--hh-dau-bang);
+	color: var(--sl-color-white);
+	font-weight: 650;
+	border-bottom: 2px solid var(--mau-chang, var(--hh-thuong-hieu));
+}
+.sl-markdown-content th, .sl-markdown-content td { border-inline: 0; }
+.sl-markdown-content tr:nth-child(even) td { background: var(--hh-so-le); }
+
+/* Công thức hiển thị: ô ghi chép */
+.sl-markdown-content .katex-display {
+	padding: 0.8rem 1rem;
+	border: 1px solid var(--hh-vien);
+	border-inline-start: 4px solid var(--hh-ho-phach);
+	background: var(--hh-be-mat);
+	border-radius: 0.6rem;
+	overflow-x: auto;
+}
+.sl-markdown-content code:not(pre code) { border-radius: 0.3rem; }
+
+/* ---------- Máy tính: như mặt máy đo ---------- */
+.may-tinh {
+	background: var(--hh-be-mat) !important;
+	border: 1px solid var(--hh-vien) !important;
+	border-inline-start: 5px solid var(--hh-ho-phach) !important;
+	border-radius: 0.9rem !important;
+	box-shadow: var(--hh-bong);
+}
+.mt-the { font-family: var(--__sl-font-mono); background: var(--hh-ho-phach) !important; color: #2b1a00 !important; }
+.mt-kq { background: var(--hh-man-hinh) !important; border: 1px solid var(--hh-vien); }
+.mt-kq strong { font-family: var(--__sl-font-mono); color: var(--hh-chu-man-hinh); font-weight: 600; }
+.nhan { font-family: var(--__sl-font-mono); }
+
+/* ---------- Sơ đồ nhũ tương (SVG tự vẽ) ---------- */
+.hinh-nhu-tuong { width: 100%; height: auto; overflow: visible; }
+.hinh-nhu-tuong .giot { stroke: var(--hh-vien-giot); stroke-width: 1; }
+.hinh-nhu-tuong .duoi { fill: none; stroke: var(--hh-duoi); stroke-width: 1.4; stroke-linejoin: round; stroke-linecap: round; }
+.hinh-nhu-tuong .dau-ua-nuoc { fill: var(--hh-thuong-hieu); }
+.hinh-nhu-tuong .nuoc line { stroke: var(--hh-nuoc); stroke-width: 1.3; }
+.hinh-nhu-tuong .nuoc .o { fill: var(--hh-nuoc-o); }
+.hinh-nhu-tuong .nuoc .h { fill: var(--hh-nuoc-h); }
+.hinh-nhu-tuong .tag line, .hinh-nhu-tuong .tag polyline { fill: none; stroke: var(--hh-tag); stroke-width: 1.3; stroke-linejoin: round; }
+.hinh-nhu-tuong .chi { stroke: var(--sl-color-gray-3); stroke-width: 0.8; }
+.hinh-nhu-tuong .chi-dau { fill: var(--sl-color-gray-3); }
+.hinh-nhu-tuong .nhan-hinh {
+	font-family: var(--__sl-font-mono);
+	font-size: 13px;
+	fill: var(--sl-color-gray-2);
+	paint-order: stroke;
+	stroke: var(--hh-be-mat);
+	stroke-width: 3px;
+}

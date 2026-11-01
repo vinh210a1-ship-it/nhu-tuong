@@ -1,0 +1,98 @@
+/* Bảng màu của web: xanh mòng két đậm (pha nước) + hổ phách (giọt dầu). Nền sáng mặc định, có nền tối.
+   Biến --hh-* dùng cho các khối tự vẽ (trang chủ, sơ đồ, thẻ). */
+
+/* ---------- Nền tối ---------- */
+:root {
+	--sl-color-white: #eef5f5;
+	--sl-color-gray-1: #d9e6e6;
+	--sl-color-gray-2: #b4c6c7;
+	--sl-color-gray-3: #8aa1a3;
+	--sl-color-gray-4: #5a6f72;
+	--sl-color-gray-5: #2f4246;
+	--sl-color-gray-6: #1a2a2e;
+	--sl-color-gray-7: #142226;
+	--sl-color-black: #0e181b;
+	--sl-color-accent-low: #0e3a40;
+	--sl-color-accent: #2ec4b6;
+	--sl-color-accent-high: #a7efe6;
+	--sl-color-bg-nav: rgba(14, 24, 27, 0.9);
+	--sl-color-bg-sidebar: #111d20;
+
+	--hh-be-mat: #15242a;          /* nền thẻ */
+	--hh-be-mat-2: #1a2c33;        /* nền thẻ phụ */
+	--hh-vien: #26393f;
+	--hh-bong: 0 1px 2px rgba(0, 0, 0, 0.35), 0 8px 24px -12px rgba(0, 0, 0, 0.6);
+	--hh-thuong-hieu: #13808a;     /* màu chính */
+	--hh-thuong-hieu-dam: #0a4f57;
+	--hh-ho-phach: #f0b14a;        /* màu dầu */
+	--hh-chu-tren-dam: #ffffff;
+
+	--hh-dau: #d48f2a;
+	--hh-dau-sang: #f9d68c;
+	--hh-vien-giot: #b87918;
+	--hh-duoi: #6b4508;
+	--hh-nuoc: #3f7d93;
+	--hh-nuoc-o: #4a9bbd;
+	--hh-nuoc-h: #8fc3d6;
+	--hh-tag: rgba(90, 55, 8, 0.55);
+
+	--hh-dau-bang: #173238;
+	--hh-so-le: rgba(46, 196, 182, 0.035);
+	--hh-o-cong-thuc: rgba(46, 196, 182, 0.06);
+	--hh-nen-o: #15242a;
+	--hh-man-hinh: #0a2a2c;
+	--hh-chu-man-hinh: #7ff0dc;
+}
+
+/* ---------- Nền sáng ---------- */
+:root[data-theme='light'] {
+	--sl-color-white: #12202a;
+	--sl-color-gray-1: #1f2f3a;
+	--sl-color-gray-2: #34454f;
+	--sl-color-gray-3: #5b6b74;
+	--sl-color-gray-4: #8b989f;
+	--sl-color-gray-5: #c8d2d3;
+	--sl-color-gray-6: #e3eaea;
+	--sl-color-gray-7: #eef3f2;
+	--sl-color-black: #f1f5f4;
+	--sl-color-accent-low: #d4eeee;
+	--sl-color-accent: #0d7480;
+	--sl-color-accent-high: #094850;
+	--sl-color-bg-nav: rgba(255, 255, 255, 0.92);
+	--sl-color-bg-sidebar: #ffffff;
+
+	--hh-be-mat: #ffffff;
+	--hh-be-mat-2: #f6f9f8;
+	--hh-vien: #dbe4e3;
+	--hh-bong: 0 1px 2px rgba(16, 40, 44, 0.06), 0 10px 24px -14px rgba(16, 40, 44, 0.28);
+	--hh-thuong-hieu: #0d7480;
+	--hh-thuong-hieu-dam: #0a4b53;
+	--hh-ho-phach: #e39a2d;
+
+	--hh-dau: #e29a30;
+	--hh-dau-sang: #fde7b8;
+	--hh-vien-giot: #c4831f;
+	--hh-duoi: #8a5a12;
+	--hh-nuoc: #8bb8cb;
+	--hh-nuoc-o: #3b84a8;
+	--hh-nuoc-h: #a7cfe0;
+	--hh-tag: rgba(130, 78, 10, 0.5);
+
+	--hh-dau-bang: #e5f2f1;
+	--hh-so-le: rgba(13, 116, 128, 0.03);
+	--hh-o-cong-thuc: rgba(13, 116, 128, 0.05);
+	--hh-nen-o: #ffffff;
+	--hh-man-hinh: #e7f4f2;
+	--hh-chu-man-hinh: #094850;
+}
+
+/* Màu từng chặng: dùng ở bản đồ lộ trình, dải chặng đầu bài, thẻ khu */
+:root {
+	--chang-1: #0d8a96;
+	--chang-2: #2f6fd6;
+	--chang-3: #d9762b;
+	--chang-4: #3a9a57;
+	--chang-5: #7a5cd6;
+	--chang-6: #c4486b;
+	--chang-7: #5b6b74;
+}

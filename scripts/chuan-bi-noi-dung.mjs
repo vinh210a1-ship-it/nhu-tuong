@@ -67,6 +67,18 @@ for (const khu of KHU_BAT) {
 			body = body.replace(/\|\s*(0[1-9](?:,\s*0[1-9])*)\s*\|\s*$/gm, (m, ds) =>
 				'| ' + ds.split(/,\s*/).map((so) => (slugTheoSo[so] ? `[${so}](../${slugTheoSo[so]}/)` : so)).join(', ') + ' |',
 			);
+		// bảng thuật ngữ -> src/data/thuat-ngu.json cho thẻ "Khái niệm hôm nay" ở trang chủ
+		if (fm.loai === 'thuat-ngu') {
+			const tron = (s) => s.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/\*\*|`/g, '').trim();
+			const dong = than.split('\n').filter((d) => /^\|/.test(d) && !/^\|\s*-/.test(d)).slice(1);
+			const tn = dong.map((d) => d.split('|').slice(1, -1).map(tron)).filter((c) => c.length >= 3 && c[0]);
+			const xem = (c) => (c[3] || '').split(/,\s*/)[0];
+			fs.mkdirSync(path.join(GOC, 'src/data'), { recursive: true });
+			fs.writeFileSync(
+				path.join(GOC, 'src/data/thuat-ngu.json'),
+				JSON.stringify(tn.map((c) => ({ vi: c[0], en: c[1], mo: c[2], bai: slugTheoSo[xem(c)] || null })), null, 1),
+			);
+		}
 		for (const [k, slug, moc, loai] of MAY_TINH) {
 			if (k !== khu || slug !== fm.slug) continue;
 			if (!body.includes(moc)) throw new Error(`Không tìm thấy mốc chèn máy tính "${moc}" trong ${f}`);
@@ -82,6 +94,9 @@ for (const khu of KHU_BAT) {
 			`<p class="nguon-goc-bai">Cập nhật ${fm.updated}. Nội dung gốc: <code>noi-dung/${khu}/${f}</code></p>`,
 			'',
 		].join('\n');
+		// hộp cuối bài: đánh dấu đã đọc (lưu trong máy người xem)
+		if (fm.loai === 'bai')
+			body += `\n\n<div class="ket-bai not-content" data-ket-bai="${fm.slug}"><div class="kb-chu"><b>Đọc xong bài này?</b><small data-tien-do>Đánh dấu để theo dõi lộ trình của bạn. Dữ liệu chỉ lưu trên máy này.</small></div><button type="button" class="kb-nut" data-danh-dau>Đánh dấu đã đọc</button></div>\n`;
 		// dòng trống sau thẻ <p> để Markdown không nuốt dòng đầu của bài vào khối HTML
 		fs.writeFileSync(path.join(dich, `${fm.slug}.md`), dau + '\n' + body);
 		soBai++;

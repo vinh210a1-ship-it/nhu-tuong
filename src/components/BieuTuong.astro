@@ -1,0 +1,111 @@
+---
+// Biểu tượng vẽ tay cho các chặng và các khu. Nét dùng currentColor, mảng dầu dùng màu hổ phách.
+interface Props {
+	ten: string;
+	co?: number;
+}
+const { ten, co = 48 } = Astro.props;
+const D = 'var(--hh-ho-phach)';
+---
+
+<svg class="bieu-tuong" width={co} height={co} viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	{ten === 'giot' && (
+		<Fragment>
+			<circle cx="24" cy="24" r="11" fill={D} stroke="none" />
+			{[0, 45, 90, 135, 180, 225, 270, 315].map((g) => {
+				const a = (g * Math.PI) / 180;
+				return (
+					<Fragment>
+						<line x1={24 + 11 * Math.cos(a)} y1={24 + 11 * Math.sin(a)} x2={24 + 7 * Math.cos(a)} y2={24 + 7 * Math.sin(a)} />
+						<circle cx={24 + 15 * Math.cos(a)} cy={24 + 15 * Math.sin(a)} r="2.8" fill="currentColor" stroke="none" />
+					</Fragment>
+				);
+			})}
+		</Fragment>
+	)}
+	{ten === 'vo-giot' && (
+		<Fragment>
+			<circle cx="13" cy="24" r="9" fill={D} stroke="none" />
+			<path d="M25 24h7m-3-3 3 3-3 3" />
+			<circle cx="38" cy="15" r="3.6" fill={D} stroke="none" />
+			<circle cx="41" cy="26" r="3" fill={D} stroke="none" />
+			<circle cx="36" cy="34" r="3.4" fill={D} stroke="none" />
+		</Fragment>
+	)}
+	{ten === 'tach-lop' && (
+		<Fragment>
+			<path d="M13 6v32a6 6 0 0 0 6 6h10a6 6 0 0 0 6-6V6" />
+			<rect x="14.2" y="12" width="19.6" height="8" fill={D} stroke="none" />
+			<circle cx="20" cy="27" r="1.8" fill={D} stroke="none" />
+			<circle cx="27" cy="31" r="1.5" fill={D} stroke="none" />
+			<circle cx="23" cy="36" r="1.3" fill={D} stroke="none" />
+			<path d="M10 6h28" />
+		</Fragment>
+	)}
+	{ten === 'mang' && (
+		<Fragment>
+			<circle cx="24" cy="24" r="10" fill={D} stroke="none" />
+			<circle cx="24" cy="24" r="14.5" stroke-width="3.2" stroke-dasharray="3 2.4" />
+			<path d="M24 4v3M24 41v3M4 24h3M41 24h3" />
+		</Fragment>
+	)}
+	{ten === 'phan-bo' && (
+		<Fragment>
+			<path d="M6 41h36" />
+			<rect x="9" y="33" width="5" height="8" fill={D} stroke="none" />
+			<rect x="15.5" y="22" width="5" height="19" fill={D} stroke="none" />
+			<rect x="22" y="13" width="5" height="28" fill={D} stroke="none" />
+			<rect x="28.5" y="21" width="5" height="20" fill={D} stroke="none" />
+			<rect x="35" y="32" width="5" height="9" fill={D} stroke="none" />
+			<path d="M7 38C14 34 17 9 24.5 9S35 34 42 38" />
+		</Fragment>
+	)}
+	{ten === 'chai' && (
+		<Fragment>
+			<path d="M20 4h8v7l5 6v23a4 4 0 0 1-4 4H19a4 4 0 0 1-4-4V17l5-6z" />
+			<path d="M15.6 25h16.8v14a3 3 0 0 1-3 3H18.6a3 3 0 0 1-3-3z" fill={D} stroke="none" />
+			<path d="M20 8h8" />
+		</Fragment>
+	)}
+	{ten === 'chat-beo' && (
+		<Fragment>
+			<path d="M9 9v30" stroke-width="3" />
+			<polyline points="9,9 14,6 19,9 24,6 29,9 34,6 39,9" stroke={D} />
+			<polyline points="9,24 14,21 19,24 24,21 29,24 34,21 39,24 44,21" stroke={D} />
+			<polyline points="9,39 14,36 19,39 24,36 29,39 34,36" stroke={D} />
+		</Fragment>
+	)}
+	{ten === 'chat-nhu-hoa' && (
+		<Fragment>
+			<path d="M3 26c7-3 14 3 21 0s14-3 21 0" stroke-dasharray="2 3" />
+			{[9, 19, 29, 39].map((x) => (
+				<Fragment>
+					<circle cx={x} cy="15" r="4" fill="currentColor" stroke="none" />
+					<polyline points={`${x},19 ${x - 2},23 ${x + 2},27 ${x - 2},31 ${x + 1},35`} stroke={D} />
+				</Fragment>
+			))}
+		</Fragment>
+	)}
+	{ten === 'chat-on-dinh' && (
+		<Fragment>
+			<path d="M4 14c8-6 12 8 20 2s12-8 20-2" />
+			<path d="M4 30c8-6 12 8 20 2s12-8 20-2" />
+			<path d="M14 4c-6 8 8 12 2 20s-8 12-2 20" stroke={D} />
+			<path d="M34 4c-6 8 8 12 2 20s-8 12-2 20" stroke={D} />
+		</Fragment>
+	)}
+	{ten === 'may-tinh' && (
+		<Fragment>
+			<rect x="8" y="5" width="32" height="38" rx="5" />
+			<rect x="13" y="10" width="22" height="9" rx="2" fill={D} stroke="none" />
+			{[0, 1, 2].map((r) => [0, 1, 2].map((c) => <circle cx={16 + c * 8} cy={26 + r * 6} r="1.8" fill="currentColor" stroke="none" />))}
+		</Fragment>
+	)}
+	{ten === 'nguon' && (
+		<Fragment>
+			<path d="M8 8h11a5 5 0 0 1 5 5v28a4 4 0 0 0-4-4H8z" />
+			<path d="M40 8H29a5 5 0 0 0-5 5v28a4 4 0 0 1 4-4h12z" />
+			<path d="M29 15h6M29 21h6M13 15h6" stroke={D} />
+		</Fragment>
+	)}
+</svg>

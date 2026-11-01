@@ -1,0 +1,51 @@
+---
+// Tiêu đề bài. Với bài thuộc lộ trình nhũ tương: thêm dải chặng (đang ở chặng mấy, câu hỏi bài trả lời,
+// thời gian đọc ước tính, 6 chấm chặng bấm được) và tô màu riêng của chặng cho tiêu đề mục, khung trích.
+import { CHANG, MO_RONG } from '../data/chang.mjs';
+import BieuTuong from './BieuTuong.astro';
+
+const route = Astro.locals.starlightRoute;
+const { title } = route.entry.data;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const [khu, slug] = route.id.split('/');
+const chang = khu === 'nhu-tuong' ? CHANG.find((c) => c.slug === slug) : undefined;
+const moRong = khu === 'nhu-tuong' ? MO_RONG.find((c) => c.slug === slug) : undefined;
+const laBai = Boolean(chang || moRong);
+// Ước tính thời gian đọc: đếm âm tiết, ~220 âm tiết/phút; bỏ bảng và nhãn
+const than = (route.entry.body || '').replace(/\[(?:N|K|T|G)[^\]]*\]/g, '').replace(/^\|.*$/gm, '');
+const phut = Math.max(1, Math.round(than.split(/\s+/).filter(Boolean).length / 220));
+const mau = chang ? `var(--chang-${chang.so})` : 'var(--chang-7)';
+---
+
+{
+	laBai ? (
+		<div class="dai-chang" style={`--mau-chang: ${mau}`}>
+			<style set:html={`:root{--mau-chang:${mau}}`} />
+			<div class="dc-dau">
+				<span class="dc-icon">
+					<BieuTuong ten={chang ? chang.bieuTuong : slug === 'he-dac-biet' ? 'giot' : 'phan-bo'} co={34} />
+				</span>
+				<span class="dc-nhan">
+					{chang ? `Chặng ${chang.so} / 6 · Nhũ tương` : 'Mở rộng · Nhũ tương'}
+					<span class="dc-phut">khoảng {phut} phút đọc</span>
+				</span>
+			</div>
+			<h1 id="_top">{title}</h1>
+			<p class="dc-cau-hoi">
+				<b>Bài này trả lời:</b> {(chang || moRong).cauHoi}.
+			</p>
+			<ol class="dc-buoc" aria-label="Các chặng">
+				{CHANG.map((c) => (
+					<li class:list={{ 'dang-o': c.slug === slug }} style={`--mau: var(--chang-${c.so})`}>
+						<a href={`${base}/nhu-tuong/${c.slug}/`} data-slug={c.slug} title={`Chặng ${c.so}: ${c.ten}`}>
+							<span class="dc-so">{c.so}</span>
+							<span class="dc-ten">{c.ten}</span>
+						</a>
+					</li>
+				))}
+			</ol>
+		</div>
+	) : (
+		<h1 id="_top" class="tieu-de-thuong">{title}</h1>
+	)
+}
