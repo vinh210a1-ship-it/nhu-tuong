@@ -1,9 +1,75 @@
 ---
-// Thay ảnh trang chủ bằng sơ đồ nhũ tương vẽ bằng SVG (màu theo biến CSS nên tự đổi theo nền sáng/tối).
-import Default from '@astrojs/starlight/components/Hero.astro';
-import hinh from '../assets/nhu-tuong.svg?raw';
+// Khối mở đầu trang chủ: chữ + số liệu bên trái, ống nghiệm nhũ tương chuyển động bên phải
+// (kéo thanh trượt đổi cỡ giọt để thấy kem hóa nhanh chậm theo định luật Stokes).
+import fs from 'node:fs';
+import path from 'node:path';
+const PAGE_TITLE_ID = '_top'; // giống hằng số của Starlight
+
 const { data } = Astro.locals.starlightRoute.entry;
-if (data.hero && !data.hero.image) data.hero.image = { html: hinh };
+const { title = data.title, tagline, actions = [] } = data.hero || {};
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const goc = process.cwd();
+
+// Số liệu thật, đếm lúc build
+const nguon = JSON.parse(fs.readFileSync(path.join(goc, 'nguon/nguon.json'), 'utf8')).length;
+const tn = path.join(goc, 'src/data/thuat-ngu.json');
+const thuatNgu = fs.existsSync(tn) ? JSON.parse(fs.readFileSync(tn, 'utf8')).length : 0;
+const soBai = fs
+	.readdirSync(path.join(goc, 'noi-dung/nhu-tuong'))
+	.filter((f) => /hien_tren_web: true/.test(fs.readFileSync(path.join(goc, 'noi-dung/nhu-tuong', f), 'utf8')) && /loai: bai/.test(fs.readFileSync(path.join(goc, 'noi-dung/nhu-tuong', f), 'utf8'))).length;
+const SO = [
+	[6, 'chặng đọc'],
+	[soBai, 'bài nhũ tương'],
+	[nguon, 'nguồn'],
+	[thuatNgu, 'thuật ngữ'],
+];
 ---
 
-<Default />
+<section class="tc-hero">
+	<div class="tc-hero-chu">
+		<span class="tc-chip">Kiến thức R&D thực phẩm · Tiếng Việt · Miễn phí</span>
+		<h1 id={PAGE_TITLE_ID} data-page-title set:html={title} />
+		{tagline && <p class="tc-tagline" set:html={tagline} />}
+		<ol class="tc-buoc" aria-label="Cách dùng">
+			<li><b>1</b>Đọc theo chặng</li>
+			<li><b>2</b>Tính thử</li>
+			<li><b>3</b>Chẩn đoán sự cố</li>
+		</ol>
+		<dl class="tc-so">
+			{SO.map(([n, t]) => (
+				<div>
+					<dt>{t}</dt>
+					<dd>{Number(n).toLocaleString('vi-VN')}</dd>
+				</div>
+			))}
+		</dl>
+		<div class="tc-nut">
+			{actions.map(({ link, text, variant }) => (
+				<a class:list={['tc-a', variant === 'minimal' ? 'tc-a-phu' : 'tc-a-chinh']} href={link}>
+					{text}
+					{variant !== 'minimal' && <span aria-hidden="true">→</span>}
+				</a>
+			))}
+		</div>
+	</div>
+
+	<figure class="tc-ong" data-ong-nghiem>
+		<div class="tc-ong-khung">
+			<canvas width="240" height="330" aria-label="Ống nghiệm nhũ tương dầu trong nước: các giọt dầu nổi lên tạo lớp kem"></canvas>
+			<div class="tc-ong-ngay" data-ngay>Ngày 0</div>
+		</div>
+		<figcaption>
+			<label class="tc-truot">
+				<span>Đường kính giọt <strong data-d>1 µm</strong></span>
+				<input type="range" min="0" max="100" value="38" data-thanh-truot aria-label="Đường kính giọt dầu" />
+				<span class="tc-truot-dau"><span>0,2 µm</span><span>20 µm</span></span>
+			</label>
+			<p class="tc-ong-kq" data-ket-qua>Giọt nổi khoảng 3,8 mm mỗi ngày.</p>
+			<p class="tc-ong-chu">
+				<span class="nhan nhan-T" title="Tính minh họa">T</span> Ống cao 10 cm, 1 giây trên màn hình = 1 ngày. Tính bằng định luật Stokes với Δρ = 80 kg/m³, η = 1 mPa·s; chưa tính keo tụ hay chất làm đặc.
+				<a href={`${base}/nhu-tuong/mat-on-dinh/`}>Đọc cơ chế</a>
+			</p>
+			<button type="button" class="tc-lac" data-lac>Lắc lại ống</button>
+		</figcaption>
+	</figure>
+</section>

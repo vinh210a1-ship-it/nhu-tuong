@@ -7,8 +7,6 @@ import rehypeKatex from 'rehype-katex';
 import remarkNhan from './src/plugins/remark-nhan.mjs';
 
 const BASE = '/nhu-tuong';
-// Bảng màu: 'a' = sổ tay phòng thí nghiệm, 'b' = mạng phân tử (đang chọn thử)
-const GIAO_DIEN = process.env.GIAO_DIEN || 'b';
 
 export default defineConfig({
 	site: 'https://vinh210a1-ship-it.github.io',
@@ -37,12 +35,19 @@ export default defineConfig({
 				'katex/dist/katex.min.css',
 				'./src/styles/nhan.css',
 				'./src/styles/may-tinh.css',
+				'./src/styles/giao-dien.css',
 				'./src/styles/chung.css',
-				`./src/styles/giao-dien-${GIAO_DIEN}.css`,
+				'./src/styles/trang-chu.css',
 			],
 			logo: { src: './src/assets/logo.svg' },
-			components: { Hero: './src/components/Hero.astro' },
-			head: [{ tag: 'script', attrs: { type: 'module', src: `${BASE}/may-tinh.js` } }],
+			components: {
+				Hero: './src/components/Hero.astro',
+				PageTitle: './src/components/PageTitle.astro',
+			},
+			head: [
+				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/may-tinh.js` } },
+				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/tuong-tac.js` } },
+			],
 			lastUpdated: false,
 			pagination: true,
 			sidebar: [

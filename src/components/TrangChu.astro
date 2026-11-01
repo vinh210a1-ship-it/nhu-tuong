@@ -1,0 +1,126 @@
+---
+// Phần thân trang chủ: thẻ bắt đầu nhanh, các khu kiến thức, bản đồ lộ trình 6 chặng, 4 huy hiệu tin cậy.
+// Tiến độ đọc lưu trong máy người xem (localStorage), do public/tuong-tac.js điền vào.
+import fs from 'node:fs';
+import path from 'node:path';
+import { CHANG, MO_RONG } from '../data/chang.mjs';
+import BieuTuong from './BieuTuong.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const tn = path.join(process.cwd(), 'src/data/thuat-ngu.json');
+const thuatNgu = fs.existsSync(tn) ? JSON.parse(fs.readFileSync(tn, 'utf8')) : [];
+const tn0 = thuatNgu[0];
+
+const KHU = [
+	{ ten: 'Nhũ tương', mo: 'Trục chính: 6 chặng từ nền tảng đến sản phẩm, kèm hệ đặc biệt và xử lý sự cố.', chip: '8 bài', href: '/nhu-tuong/', icon: 'giot', mau: 'var(--chang-1)' },
+	{ ten: 'Chất béo', mo: 'Cấu trúc TAG, đa hình tinh thể, SFC, oleogel, oxy hóa và hạn dùng.', chip: 'Sắp có', icon: 'chat-beo', mau: '#d08a22' },
+	{ ten: 'Chất nhũ hóa', mo: 'HLB, lecithin, MDG, polysorbate, cạnh tranh hấp phụ với protein, mã INS.', chip: 'Sắp có', icon: 'chat-nhu-hoa', mau: '#8b5cf6' },
+	{ ten: 'Chất ổn định', mo: 'Xanthan, galactomannan, carrageenan, pectin, gellan, gum arabic.', chip: 'Sắp có', icon: 'chat-on-dinh', mau: '#3a9a57' },
+	{ ten: 'Máy tính', mo: 'Tốc độ kem hóa (Stokes) và lượng chất nhũ hóa tối thiểu, tính ngay trên trang.', chip: '2 công cụ', href: '/may-tinh/', icon: 'may-tinh', mau: '#2f6fd6' },
+	{ ten: 'Nguồn', mo: 'Danh mục nguồn, ghi rõ đã đọc toàn văn hay mới đọc tóm tắt.', chip: '301 nguồn', href: '/nguon/', icon: 'nguon', mau: '#5b6b74' },
+];
+const NHAN = [
+	['N', 'Có nguồn', 'Đã đọc nguồn; bấm tên nguồn để xem thẻ nguồn.'],
+	['T', 'Tính minh họa', 'Ví dụ tự tính, giả thiết ghi kèm.'],
+	['K', 'Sách nền', 'Kiến thức giáo khoa, chưa trích số trang; số liệu đang tạm ẩn.'],
+	['G', 'Suy luận', 'Diễn giải hoặc giả thuyết, cần kiểm bằng thí nghiệm.'],
+];
+---
+
+<div class="not-content tc-than">
+	<!-- Bắt đầu nhanh -->
+	<div class="tc-nhanh">
+		<a class="tc-the-nhanh" href={`${base}/nhu-tuong/nen-tang/`} data-tiep-tuc>
+			<span class="tcn-icon tcn-chinh" aria-hidden="true">▶</span>
+			<span class="tcn-chu">
+				<b data-tiep-tuc-tieu-de>Bắt đầu đọc</b>
+				<small data-tiep-tuc-mo>Chặng 1 · Nền tảng</small>
+			</span>
+			<span class="tcn-mui" aria-hidden="true">›</span>
+		</a>
+		<a class="tc-the-nhanh" href={`${base}/nhu-tuong/su-co-thiet-ke/`}>
+			<span class="tcn-icon" aria-hidden="true">?</span>
+			<span class="tcn-chu">
+				<b>Sản phẩm bị tách lớp?</b>
+				<small>Bảng chẩn đoán sự cố từng bước</small>
+			</span>
+			<span class="tcn-mui" aria-hidden="true">›</span>
+		</a>
+		{tn0 && (
+			<div class="tc-the-nhanh tc-khai-niem" data-khai-niem>
+				<span class="tcn-icon tcn-ho-phach" aria-hidden="true">Aa</span>
+				<span class="tcn-chu">
+					<small class="tcn-tren">Khái niệm hôm nay</small>
+					<b data-kn-vi>{tn0.vi}</b>
+					<small><i data-kn-en>{tn0.en}</i> · <span data-kn-mo>{tn0.mo}</span></small>
+				</span>
+				<a class="tcn-xem" href={`${base}/nhu-tuong/thuat-ngu/`} data-kn-link>Bảng thuật ngữ</a>
+			</div>
+		)}
+	</div>
+	<script type="application/json" id="du-lieu-thuat-ngu" set:html={JSON.stringify(thuatNgu)} />
+
+	<!-- Các khu -->
+	<h2 class="tc-muc"><span>Chọn một khu</span></h2>
+	<div class="tc-khu">
+		{KHU.map((k) => {
+			const Tag = k.href ? 'a' : 'div';
+			return (
+				<Tag class:list={['tc-khu-the', { sap: !k.href }]} href={k.href && `${base}${k.href}`} style={`--mau: ${k.mau}`}>
+					<span class="tck-hinh">
+						<BieuTuong ten={k.icon} co={64} />
+					</span>
+					<span class="tck-ten">{k.ten}</span>
+					<span class="tck-mo">{k.mo}</span>
+					<span class="tck-chip">{k.chip}</span>
+				</Tag>
+			);
+		})}
+	</div>
+
+	<!-- Bản đồ lộ trình -->
+	<h2 class="tc-muc"><span>Lộ trình nhũ tương</span><small data-tong-tien-do>Đã đọc 0/{CHANG.length + MO_RONG.length} bài</small></h2>
+	<div class="tc-lo-trinh">
+		<div class="lt-thanh"><span data-thanh-tien-do style="width:0%"></span></div>
+		<ol class="lt-ds">
+			{CHANG.map((c) => (
+				<li style={`--mau: var(--chang-${c.so})`}>
+					<a class="lt-nut" href={`${base}/nhu-tuong/${c.slug}/`} data-slug={c.slug}>
+						<span class="lt-tron">
+							<BieuTuong ten={c.bieuTuong} co={30} />
+							<span class="lt-so">{c.so}</span>
+						</span>
+						<span class="lt-chu">
+							<b>{c.ten}</b>
+							<small>{c.cauHoi}</small>
+							<span class="lt-trang-thai" data-trang-thai>Chưa đọc</span>
+						</span>
+					</a>
+				</li>
+			))}
+		</ol>
+		<div class="lt-mo-rong">
+			{MO_RONG.map((c) => (
+				<a class="lt-nhanh" href={`${base}/nhu-tuong/${c.slug}/`} data-slug={c.slug}>
+					<b>{c.ten}</b>
+					<small>{c.cauHoi}</small>
+					<span class="lt-trang-thai" data-trang-thai>Chưa đọc</span>
+				</a>
+			))}
+		</div>
+	</div>
+
+	<!-- Huy hiệu -->
+	<h2 class="tc-muc"><span>Mỗi câu đều nói rõ nó dựa vào đâu</span></h2>
+	<div class="tc-nhan">
+		{NHAN.map(([k, ten, mo]) => (
+			<a class="tc-nhan-the" href={`${base}/quy-uoc/`}>
+				<span class:list={['nhan', `nhan-${k}`, 'tc-nhan-to']}>{k}</span>
+				<span>
+					<b>{ten}</b>
+					<small>{mo}</small>
+				</span>
+			</a>
+		))}
+	</div>
+</div>
