@@ -1,0 +1,154 @@
+/* Bước 3: máy tính nhiều cặp số, cây chẩn đoán, trang tra cứu phụ gia */
+
+/* Máy Arrhenius: mỗi cặp (nhiệt độ, thời gian) một hàng riêng */
+.mt-cap {
+	grid-column: 1 / -1;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.75rem;
+	margin: 0 !important;
+}
+
+/* ---------- Cây chẩn đoán ---------- */
+.chan-doan {
+	margin: 1.5rem 0;
+	padding: 1.1rem 1.1rem 0.9rem;
+	background: var(--hh-be-mat);
+	border: 1px solid var(--hh-vien);
+	border-inline-start: 5px solid var(--chang-6);
+	border-radius: 0.9rem;
+	box-shadow: var(--hh-bong);
+}
+.chan-doan:empty::before { content: 'Cây chẩn đoán cần bật JavaScript.'; color: var(--sl-color-gray-3); }
+.chan-doan > * + * { margin-top: 0.75rem; }
+.cd-dau { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.cd-dau .mt-the { background: var(--chang-6) !important; color: #fff !important; }
+.cd-vet { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0; padding: 0; list-style: none; font-size: 0.8rem; }
+.cd-vet > * {
+	margin: 0 !important;
+	padding: 0.15rem 0.55rem;
+	border-radius: 999px;
+	background: var(--hh-be-mat-2);
+	border: 1px solid var(--hh-vien);
+	color: var(--sl-color-gray-2);
+}
+.cd-hoi { font-size: 1.15rem; font-weight: 700; color: var(--sl-color-white); }
+.cd-goi-y { font-size: 0.88rem; color: var(--sl-color-gray-3); }
+.cd-chon { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 0.55rem; }
+.cd-chon button {
+	text-align: start;
+	font: inherit;
+	font-size: 0.95rem;
+	line-height: 1.35;
+	padding: 0.65rem 0.8rem;
+	border-radius: 0.6rem;
+	border: 1px solid var(--hh-vien);
+	background: var(--hh-be-mat-2);
+	color: var(--sl-color-white);
+	cursor: pointer;
+	transition: border-color 0.15s, transform 0.15s, background 0.15s;
+}
+.cd-chon button:hover, .cd-chon button:focus-visible {
+	border-color: var(--chang-6);
+	background: color-mix(in srgb, var(--chang-6) 10%, var(--hh-be-mat-2));
+	transform: translateY(-1px);
+}
+.cd-kq {
+	padding: 0.9rem 1rem;
+	border-radius: 0.6rem;
+	background: var(--hh-man-hinh);
+	border: 1px solid var(--hh-vien);
+}
+.cd-kq > * { margin: 0 !important; }
+.cd-kq > * + * { margin-top: 0.5rem !important; }
+.cd-kq-nhan { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sl-color-gray-3); font-family: var(--__sl-font-mono); }
+.cd-kq-ten { font-size: 1.3rem; font-weight: 700; color: var(--hh-chu-man-hinh); }
+.cd-kq dl { display: grid; grid-template-columns: 10rem 1fr; gap: 0.4rem 0.9rem; }
+.cd-kq dt { font-weight: 600; font-size: 0.88rem; color: var(--sl-color-gray-2); margin: 0 !important; }
+.cd-kq dd { margin: 0 !important; font-size: 0.93rem; }
+.cd-nut { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.cd-nut:empty { display: none; }
+.cd-nut button {
+	font: inherit; font-size: 0.85rem;
+	padding: 0.35rem 0.8rem;
+	border-radius: 999px;
+	border: 1px solid var(--hh-vien);
+	background: transparent;
+	color: var(--sl-color-gray-2);
+	cursor: pointer;
+}
+.cd-nut button:hover { color: var(--sl-color-white); border-color: var(--sl-color-gray-3); }
+.cd-chu { font-size: 0.8rem; color: var(--sl-color-gray-3); }
+@media (max-width: 40rem) {
+	.cd-kq dl { grid-template-columns: 1fr; gap: 0.15rem; }
+	.cd-kq dd { margin-bottom: 0.4rem !important; }
+}
+
+/* ---------- Tra cứu phụ gia ---------- */
+.loc-pg { display: grid; gap: 0.6rem; margin: 1.25rem 0 0.5rem; }
+.loc-pg input {
+	width: 100%;
+	padding: 0.65rem 0.85rem;
+	font-size: 1rem;
+	border: 1px solid var(--hh-vien);
+	border-radius: 0.6rem;
+	background: var(--hh-be-mat);
+	color: var(--sl-color-white);
+}
+.loc-pg-nut { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.loc-pg-nut button {
+	font: inherit; font-size: 0.85rem;
+	padding: 0.3rem 0.85rem;
+	border-radius: 999px;
+	border: 1px solid var(--hh-vien);
+	background: var(--hh-be-mat);
+	color: var(--sl-color-gray-2);
+	cursor: pointer;
+}
+.loc-pg-nut button[aria-pressed='true'] { background: var(--hh-thuong-hieu); border-color: var(--hh-thuong-hieu); color: #fff; }
+.loc-pg-dem { font-size: 0.85rem; color: var(--sl-color-gray-3); margin: 0 !important; }
+.ds-pg {
+	list-style: none;
+	padding: 0;
+	margin: 0.75rem 0 1.5rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+	gap: 0.8rem;
+}
+.the-pg {
+	--mau-nhom: var(--khu-chat-nhu-hoa);
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin: 0 !important;
+	padding: 0.85rem 0.95rem;
+	background: var(--hh-be-mat);
+	border: 1px solid var(--hh-vien);
+	border-top: 4px solid var(--mau-nhom);
+	border-radius: 0.75rem;
+	box-shadow: var(--hh-bong);
+}
+.the-pg[data-nhom='Chất ổn định'] { --mau-nhom: var(--khu-chat-on-dinh); }
+.the-pg[hidden] { display: none; }
+.the-pg.chua { border-style: dashed; border-top-style: dashed; box-shadow: none; background: var(--hh-be-mat-2); }
+.pg-dau { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+.pg-ma {
+	font-family: var(--__sl-font-mono);
+	font-weight: 600;
+	font-size: 1rem;
+	padding: 0.1rem 0.5rem;
+	border-radius: 0.35rem;
+	background: color-mix(in srgb, var(--mau-nhom) 16%, transparent);
+	color: var(--sl-color-white);
+}
+.pg-nhom { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--mau-nhom); font-weight: 700; text-align: end; }
+.pg-ten { font-weight: 700; font-size: 1.02rem; line-height: 1.35; color: var(--sl-color-white); }
+.pg-ds { margin: 0; display: grid; gap: 0.35rem; font-size: 0.86rem; }
+.pg-ds > div { margin: 0 !important; }
+.pg-ds dt { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--sl-color-gray-3); font-weight: 600; }
+.pg-ds dd { margin: 0; color: var(--sl-color-gray-2); line-height: 1.45; }
+.pg-bai { margin-top: auto; font-size: 0.85rem; font-weight: 600; text-decoration: none; color: var(--sl-color-accent); }
+.pg-bai:hover { text-decoration: underline; }
+/* khung chẩn đoán nằm trong vùng bài: bỏ khoảng cách dọc mặc định Starlight thêm cho phần tử kề nhau */
+.chan-doan .cd-chon > *, .chan-doan .cd-nut > *, .chan-doan .cd-vet > * { margin-top: 0 !important; }
+.cd-chu .nhan { margin-inline-end: 0.15rem; }

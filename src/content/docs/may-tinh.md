@@ -18,6 +18,24 @@ Dùng khi cần biết tối thiểu bao nhiêu chất nhũ hóa để phủ h�
 
 <div class="may-tinh" data-may-tinh="chat-nhu-hoa-toi-thieu"></div>
 
+## Trộn hai chất nhũ hóa theo HLB
+
+Dùng khi cần phối một chất HLB thấp với một chất HLB cao để đạt HLB mục tiêu, ví dụ Span 60 với Tween 60. HLB chỉ là điểm xuất phát để sàng lọc, không thay được thử nghiệm; giới hạn của nó nằm ở bài [Nền tảng hóa lý bề mặt](../chat-nhu-hoa/nen-tang-vat-ly-hoa-be-mat/).
+
+<div class="may-tinh" data-may-tinh="hlb"></div>
+
+## Hạn dùng theo nhiệt độ (Arrhenius/Q10)
+
+Dùng khi có kết quả bảo quản cấp tốc ở nhiệt độ cao và muốn ước lượng ở nhiệt độ bảo quản thật. Máy thứ nhất quy đổi nhanh bằng Q10; máy thứ hai khớp đường Arrhenius từ nhiều nhiệt độ. Đọc kỹ các bẫy (đổi cơ chế khi đổi nhiệt độ, chất béo chảy hay kết tinh, nước hoạt động) ở bài [Oxy hóa và hạn dùng](../chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung/).
+
+<div class="may-tinh" data-may-tinh="q10"></div>
+
+<div class="may-tinh" data-may-tinh="arrhenius"></div>
+
+## Chẩn đoán sự cố
+
+Sản phẩm bị tách lớp, vón, đặc lại hay ôi? Trả lời vài câu hỏi để tìm mắt xích hỏng: [mở cây chẩn đoán](../chan-doan/).
+
 ## Sắp có
 
-Trộn HLB, cây chẩn đoán sự cố và hạn sử dụng theo Arrhenius/Q10 (đợt 1); sau đó là vẽ d³ theo thời gian (Ostwald), TOTOX, IV/SV, Laplace và Debye, năng lượng giải hấp Pickering.
+Vẽ d³ theo thời gian (Ostwald), TOTOX, IV/SV, Laplace và Debye, năng lượng giải hấp Pickering.
