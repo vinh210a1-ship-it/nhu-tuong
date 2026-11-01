@@ -1,0 +1,148 @@
+/* Phần giao diện dùng chung cho mọi bảng màu: chữ, sơ đồ trang chủ, ô nguyên tố, tiêu đề, bảng, máy tính.
+   Màu cụ thể nằm trong file giao-dien-*.css (biến --hh-*). */
+:root {
+	--sl-font: 'Be Vietnam Pro';
+	--sl-font-mono: 'JetBrains Mono';
+	--sl-line-height: 1.72;
+}
+
+/* ---------- Nền có họa tiết (họa tiết do file giao diện khai báo trong --hh-hoa-tiet) ---------- */
+body {
+	background-color: var(--sl-color-bg);
+	background-image: var(--hh-hoa-tiet);
+	background-attachment: fixed;
+}
+.page > header.header {
+	backdrop-filter: blur(6px);
+	border-bottom: 1px solid var(--sl-color-hairline-light);
+}
+
+/* ---------- Tiêu đề: mỗi mục H2 có một vòng lục giác nhỏ (vòng benzen) ---------- */
+.sl-markdown-content h2 {
+	display: flex;
+	align-items: center;
+	gap: 0.55rem;
+	padding-bottom: 0.35rem;
+	border-bottom: 1px solid var(--sl-color-hairline-light);
+}
+.sl-markdown-content h2::before {
+	content: '';
+	flex: none;
+	width: 0.8em;
+	height: 0.8em;
+	background: var(--sl-color-accent);
+	-webkit-mask: var(--hh-luc-giac) center / contain no-repeat;
+	mask: var(--hh-luc-giac) center / contain no-repeat;
+}
+.sl-markdown-content h3 { color: var(--sl-color-accent-high); }
+:root[data-theme='light'] .sl-markdown-content h3 { color: var(--sl-color-accent); }
+h1, h2, h3, .site-title { letter-spacing: -0.01em; }
+.site-title img { height: 2rem; }
+
+/* ---------- Bảng: đầu bảng như bảng số liệu thí nghiệm ---------- */
+.sl-markdown-content table {
+	display: block;
+	overflow-x: auto;
+	border-collapse: collapse;
+	font-size: 0.92em;
+}
+.sl-markdown-content th {
+	background: var(--hh-dau-bang);
+	color: var(--sl-color-white);
+	font-weight: 600;
+	border-bottom: 2px solid var(--sl-color-accent);
+}
+.sl-markdown-content tr:nth-child(even) td { background: var(--hh-so-le); }
+
+/* Công thức và mã: nền nhẹ như ô ghi chép */
+.sl-markdown-content .katex-display {
+	padding: 0.75rem 1rem;
+	border-inline-start: 3px solid var(--sl-color-accent);
+	background: var(--hh-o-cong-thuc);
+	border-radius: 0 0.4rem 0.4rem 0;
+	overflow-x: auto;
+}
+
+/* ---------- Sơ đồ nhũ tương ở trang chủ ---------- */
+.hero .hero-html { width: min(100%, 28rem) !important; }
+.hinh-nhu-tuong { width: 100%; height: auto; overflow: visible; }
+.hinh-nhu-tuong .giot { stroke: var(--hh-vien-giot); stroke-width: 1; }
+.hinh-nhu-tuong .duoi { fill: none; stroke: var(--hh-duoi); stroke-width: 1.4; stroke-linejoin: round; stroke-linecap: round; }
+.hinh-nhu-tuong .dau-ua-nuoc { fill: var(--sl-color-accent); }
+.hinh-nhu-tuong .nuoc line { stroke: var(--hh-nuoc); stroke-width: 1.3; }
+.hinh-nhu-tuong .nuoc .o { fill: var(--hh-nuoc-o); }
+.hinh-nhu-tuong .nuoc .h { fill: var(--hh-nuoc-h); }
+.hinh-nhu-tuong .tag line, .hinh-nhu-tuong .tag polyline { fill: none; stroke: var(--hh-tag); stroke-width: 1.3; stroke-linejoin: round; }
+.hinh-nhu-tuong .chi { stroke: var(--sl-color-gray-3); stroke-width: 0.8; }
+.hinh-nhu-tuong .chi-dau { fill: var(--sl-color-gray-3); }
+.hinh-nhu-tuong .nhan-hinh {
+	font-family: var(--__sl-font-mono);
+	font-size: 13px;
+	fill: var(--sl-color-gray-2);
+	paint-order: stroke;
+	stroke: var(--sl-color-bg);
+	stroke-width: 3px;
+}
+@media (prefers-reduced-motion: no-preference) {
+	.hinh-nhu-tuong .giot:nth-of-type(odd) { animation: troi 9s ease-in-out infinite alternate; }
+}
+@keyframes troi { to { transform: translateY(-3px); } }
+.hero .tagline { max-width: 46ch; }
+
+/* ---------- Ô nguyên tố kiểu bảng tuần hoàn ---------- */
+.bang-nguyen-to {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+	gap: 0.75rem;
+	margin-top: 1rem !important;
+}
+.nguyen-to {
+	--mau-o: var(--sl-color-accent);
+	position: relative;
+	display: grid;
+	grid-template-rows: auto auto auto 1fr;
+	gap: 0.1rem;
+	min-height: 9.5rem;
+	margin: 0 !important;
+	padding: 0.55rem 0.7rem 0.7rem;
+	border: 1.5px solid var(--mau-o);
+	border-radius: 0.35rem;
+	background: linear-gradient(160deg, color-mix(in srgb, var(--mau-o) 14%, var(--hh-nen-o)) 0%, var(--hh-nen-o) 65%);
+	color: var(--sl-color-white);
+	text-decoration: none;
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+a.nguyen-to:hover { transform: translateY(-2px); box-shadow: 0 6px 18px -8px var(--mau-o); }
+.nt-so { font-family: var(--__sl-font-mono); font-size: 0.8rem; color: var(--sl-color-gray-3); }
+.nt-phu { position: absolute; top: 0.55rem; right: 0.7rem; font-family: var(--__sl-font-mono); font-size: 0.72rem; color: var(--sl-color-gray-3); }
+.nt-ky { font-size: 2.3rem; font-weight: 700; line-height: 1.05; color: var(--mau-o); margin: 0 !important; }
+.nt-ten { font-weight: 600; font-size: 0.95rem; margin: 0 !important; }
+.nt-mo { font-size: 0.8rem; line-height: 1.45; color: var(--sl-color-gray-2); margin: 0 !important; }
+.nguyen-to.sap { border-style: dashed; opacity: 0.8; }
+.nt-sap {
+	position: absolute; bottom: 0.5rem; right: 0.6rem;
+	font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em;
+	color: var(--sl-color-gray-3);
+}
+
+/* ---------- Máy tính: như mặt máy đo ---------- */
+.may-tinh {
+	background: var(--hh-nen-o) !important;
+	border-color: var(--sl-color-hairline-light) !important;
+	border-inline-start-color: var(--sl-color-accent) !important;
+	box-shadow: 0 1px 0 var(--sl-color-hairline-light);
+}
+.mt-the { font-family: var(--__sl-font-mono); }
+.mt-kq {
+	background: var(--hh-man-hinh) !important;
+	border: 1px solid var(--sl-color-hairline-light);
+}
+.mt-kq strong { font-family: var(--__sl-font-mono); color: var(--hh-chu-man-hinh); font-weight: 600; }
+
+/* Huy hiệu tin cậy dùng chữ đơn cách cho giống ký hiệu */
+.nhan { font-family: var(--__sl-font-mono); }
+
+:root {
+	--hh-luc-giac: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.2 20.6 7.1v9.8L12 21.8 3.4 16.9V7.1z' fill='none' stroke='black' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='12' cy='12' r='4.2' fill='none' stroke='black' stroke-width='2'/%3E%3C/svg%3E");
+}
+body { background-size: var(--hh-co-hoa-tiet, auto); }

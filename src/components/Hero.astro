@@ -1,0 +1,9 @@
+---
+// Thay ảnh trang chủ bằng sơ đồ nhũ tương vẽ bằng SVG (màu theo biến CSS nên tự đổi theo nền sáng/tối).
+import Default from '@astrojs/starlight/components/Hero.astro';
+import hinh from '../assets/nhu-tuong.svg?raw';
+const { data } = Astro.locals.starlightRoute.entry;
+if (data.hero && !data.hero.image) data.hero.image = { html: hinh };
+---
+
+<Default />

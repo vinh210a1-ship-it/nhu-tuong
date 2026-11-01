@@ -1,0 +1,82 @@
+/* Giao diện A: "Sổ tay phòng thí nghiệm" — nền giấy kẻ ô ly, màu xanh mòng két (teal) như dung dịch CuSO4 loãng, giọt dầu màu hổ phách. */
+
+/* Nền tối */
+:root {
+	--sl-color-white: #eef6f5;
+	--sl-color-gray-1: #dbe7e6;
+	--sl-color-gray-2: #b8c7c6;
+	--sl-color-gray-3: #87a0a1;
+	--sl-color-gray-4: #566a6c;
+	--sl-color-gray-5: #2e4145;
+	--sl-color-gray-6: #172a2e;
+	--sl-color-gray-7: #13242a;
+	--sl-color-black: #0e1a1e;
+	--sl-color-accent-low: #0c3a3e;
+	--sl-color-accent: #2cc4b6;
+	--sl-color-accent-high: #a6efe6;
+	--sl-color-bg-nav: rgba(14, 26, 30, 0.86);
+	--sl-color-bg-sidebar: #10201f;
+
+	--hh-hoa-tiet:
+		linear-gradient(rgba(90, 200, 190, 0.075) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(90, 200, 190, 0.075) 1px, transparent 1px),
+		linear-gradient(rgba(90, 200, 190, 0.03) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(90, 200, 190, 0.03) 1px, transparent 1px);
+	--hh-co-hoa-tiet: 110px 110px, 110px 110px, 22px 22px, 22px 22px;
+
+	--hh-dau: #cf8a26;
+	--hh-dau-sang: #f7cf7d;
+	--hh-vien-giot: #a86b14;
+	--hh-duoi: #6b4508;
+	--hh-nuoc: #3f7d93;
+	--hh-nuoc-o: #4a9bbd;
+	--hh-nuoc-h: #8fc3d6;
+	--hh-tag: rgba(90, 55, 8, 0.55);
+
+	--hh-dau-bang: #12353a;
+	--hh-so-le: rgba(44, 196, 182, 0.035);
+	--hh-o-cong-thuc: rgba(44, 196, 182, 0.06);
+	--hh-nen-o: #12252a;
+	--hh-man-hinh: #0a2a2c;
+	--hh-chu-man-hinh: #7ff0dc;
+}
+
+/* Nền sáng */
+:root[data-theme='light'] {
+	--sl-color-white: #15202a;
+	--sl-color-gray-1: #22303d;
+	--sl-color-gray-2: #34434f;
+	--sl-color-gray-3: #5a6772;
+	--sl-color-gray-4: #8a949c;
+	--sl-color-gray-5: #c9cdcc;
+	--sl-color-gray-6: #ebeae2;
+	--sl-color-gray-7: #f4f3ec;
+	--sl-color-black: #fbfaf5;
+	--sl-color-accent-low: #d3ecee;
+	--sl-color-accent: #0e7c86;
+	--sl-color-accent-high: #0a4a51;
+	--sl-color-bg-nav: rgba(251, 250, 245, 0.88);
+	--sl-color-bg-sidebar: #f5f3ea;
+
+	--hh-hoa-tiet:
+		linear-gradient(rgba(14, 124, 134, 0.075) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(14, 124, 134, 0.075) 1px, transparent 1px),
+		linear-gradient(rgba(14, 124, 134, 0.035) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(14, 124, 134, 0.035) 1px, transparent 1px);
+
+	--hh-dau: #e29a30;
+	--hh-dau-sang: #fde7b8;
+	--hh-vien-giot: #c4831f;
+	--hh-duoi: #8a5a12;
+	--hh-nuoc: #8bb8cb;
+	--hh-nuoc-o: #3b84a8;
+	--hh-nuoc-h: #a7cfe0;
+	--hh-tag: rgba(130, 78, 10, 0.5);
+
+	--hh-dau-bang: #e3f1f0;
+	--hh-so-le: rgba(14, 124, 134, 0.035);
+	--hh-o-cong-thuc: rgba(14, 124, 134, 0.05);
+	--hh-nen-o: #ffffff;
+	--hh-man-hinh: #e6f3f1;
+	--hh-chu-man-hinh: #0a4a51;
+}

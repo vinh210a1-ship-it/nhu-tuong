@@ -1,0 +1,23 @@
+---
+// Ô "nguyên tố" kiểu bảng tuần hoàn, dùng cho các khu kiến thức và huy hiệu ở trang chủ.
+interface Props {
+	so: number | string;
+	ky: string;
+	ten: string;
+	phu?: string;
+	href?: string;
+	mau?: string;
+	sap?: boolean;
+}
+const { so, ky, ten, phu, href, mau, sap } = Astro.props;
+const Tag = href ? 'a' : 'div';
+---
+
+<Tag class:list={['nguyen-to', { sap }]} href={href} style={mau ? `--mau-o: ${mau}` : undefined}>
+	<span class="nt-so">{so}</span>
+	{phu && <span class="nt-phu">{phu}</span>}
+	<span class="nt-ky">{ky}</span>
+	<span class="nt-ten">{ten}</span>
+	<span class="nt-mo"><slot /></span>
+	{sap && <span class="nt-sap">sắp có</span>}
+</Tag>
