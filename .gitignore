@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.astro/
+# Trang sinh tự động từ noi-dung/ và nguon/ bởi scripts/chuan-bi-noi-dung.mjs
+src/content/docs/nhu-tuong/
+src/content/docs/nguon.md
+bao-cao-build.json

@@ -1,0 +1,81 @@
+/* Huy hiệu tin cậy: N xanh lá, T xanh dương, K vàng, G tím xám. Màu đủ tương phản ở cả nền sáng và tối. */
+:root {
+	--nhan-N: #1f7a3a;
+	--nhan-T: #1d5fb8;
+	--nhan-K: #a86b00;
+	--nhan-G: #6b5b95;
+	--nhan-chu: #ffffff;
+}
+:root[data-theme='dark'] {
+	--nhan-N: #3fb162;
+	--nhan-T: #5b9bf0;
+	--nhan-K: #e0a52e;
+	--nhan-G: #a593d6;
+	--nhan-chu: #10131a;
+}
+.nhan-cum {
+	display: inline-flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 0.15rem 0.3rem;
+	margin-inline-start: 0.15rem;
+	font-size: 0.78em;
+	line-height: 1.4;
+	vertical-align: baseline;
+}
+.nhan {
+	display: inline-block;
+	min-width: 1.35em;
+	padding: 0 0.32em;
+	border-radius: 0.3em;
+	font-weight: 700;
+	font-size: 0.85em;
+	text-align: center;
+	color: var(--nhan-chu);
+	cursor: help;
+	font-style: normal;
+}
+.nhan-N { background: var(--nhan-N); }
+.nhan-T { background: var(--nhan-T); }
+.nhan-K { background: var(--nhan-K); }
+.nhan-G { background: var(--nhan-G); }
+.nhan-phan { color: var(--sl-color-gray-3); font-weight: 400; }
+.nhan-phan a.nhan-nguon { color: var(--sl-color-gray-2); text-decoration: underline dotted; text-underline-offset: 0.18em; }
+.nhan-phan a.nhan-nguon:hover { color: var(--sl-color-text-accent); }
+.nhan-muc { font-size: 0.9em; color: var(--sl-color-gray-3); }
+.an-so-lieu {
+	display: inline-block;
+	padding: 0.15rem 0.5rem;
+	border-inline-start: 3px solid var(--nhan-K);
+	background: color-mix(in srgb, var(--nhan-K) 10%, transparent);
+	color: var(--sl-color-gray-2);
+	font-size: 0.9em;
+}
+.nguon-goc-bai { font-size: 0.8rem; color: var(--sl-color-gray-3); margin-top: 0; }
+
+/* Trang Nguồn */
+.loc-nguon {
+	width: 100%;
+	padding: 0.5rem 0.75rem;
+	margin: 1rem 0;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 0.4rem;
+	background: var(--sl-color-black);
+	color: var(--sl-color-white);
+	font-size: 1rem;
+}
+.ds-nguon { list-style: none; padding: 0; }
+.ds-nguon .the-nguon {
+	padding: 0.6rem 0.75rem;
+	border: 1px solid var(--sl-color-gray-6);
+	border-radius: 0.4rem;
+	margin: 0.5rem 0;
+	scroll-margin-top: 5rem;
+}
+.ds-nguon .the-nguon:target { border-color: var(--sl-color-accent); box-shadow: 0 0 0 2px var(--sl-color-accent-low); }
+.the-dau { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: baseline; }
+.the-trich { font-size: 0.9rem; margin-top: 0.2rem; }
+.the-lk { font-size: 0.85rem; margin-top: 0.2rem; }
+.muc-doc, .khu { font-size: 0.75rem; padding: 0 0.4rem; border-radius: 0.3rem; border: 1px solid var(--sl-color-gray-5); color: var(--sl-color-gray-2); }
+.muc-doc.muc-1, .muc-doc.muc-2 { border-color: var(--nhan-N); color: var(--nhan-N); }
+.muc-doc.muc-4, .muc-doc.muc-5 { border-color: var(--nhan-K); color: var(--nhan-K); }
