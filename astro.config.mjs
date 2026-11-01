@@ -72,7 +72,13 @@ export default defineConfig({
 						{ label: 'Thực hành: xử lý sự cố', slug: 'nhu-tuong/su-co-thiet-ke' },
 					],
 				},
-				{ label: 'Công cụ', items: [{ label: 'Máy tính', slug: 'may-tinh' }] },
+				{
+					label: 'Công cụ',
+					items: [
+						{ label: 'Phòng lab ảo', slug: 'phong-lab', badge: { text: 'Mới', variant: 'tip' } },
+						{ label: 'Máy tính', slug: 'may-tinh' },
+					],
+				},
 				{
 					label: 'Tra cứu',
 					items: [

@@ -13,11 +13,18 @@ import { stokes, chatNhuHoaToiThieu } from '../cong-thuc.js';
 
 /** Nhãn tin cậy cho từng giả định của mô hình, hiện ra ở màn hình "Vì sao?" */
 export const NHAN = {
-	stokes: { ma: 'N', chu: 'Vận tốc kem hóa theo Stokes: v = 2r²Δρg/9η', bai: 'nhu-tuong/03-co-che-mat-on-dinh' },
-	gamma: { ma: 'N', chu: 'Giọt không thể nhỏ hơn 6φΓ/c khi chất nhũ hóa không đủ phủ bề mặt', bai: 'nhu-tuong/01-nen-tang-nhu-tuong' },
-	apSuat: { ma: 'G', chu: 'd32 ∝ P^−0,5 (độ dốc thực nghiệm thường −0,3 đến −0,6, tùy hệ và van)', bai: 'nhu-tuong/02-hinh-thanh-nhu-tuong' },
-	nhiet: { ma: 'N', chu: 'Mỗi 100 bar làm mẫu nóng thêm ≈ 2,4 °C (cân bằng năng lượng ΔP/ρcp)', bai: 'nhu-tuong/02-hinh-thanh-nhu-tuong' },
-	canKiet: { ma: 'N', chu: 'Xanthan ít: kết bông do cạn kiệt, kem hóa nhanh hơn. Xanthan đủ: mạng yếu giữ giọt', bai: 'chat-on-dinh/01-co-che-nen-tang' },
+	stokes: { ma: 'N', chu: 'Vận tốc kem hóa theo Stokes: v = 2r²Δρg/9η', bai: 'nhu-tuong/mat-on-dinh' },
+	gamma: { ma: 'N', chu: 'Giọt không thể nhỏ hơn 6φΓ/c khi chất nhũ hóa không đủ phủ bề mặt', bai: 'nhu-tuong/nen-tang' },
+	apSuat: { ma: 'G', chu: 'd32 ∝ P^−0,5 (độ dốc thực nghiệm thường −0,3 đến −0,6, tùy hệ và van)', bai: 'nhu-tuong/hinh-thanh' },
+	nhiet: { ma: 'N', chu: 'Mỗi 100 bar làm mẫu nóng thêm ≈ 2,4 °C (cân bằng năng lượng ΔP/ρcp)', bai: 'nhu-tuong/hinh-thanh' },
+	canKiet: { ma: 'N', chu: 'Xanthan ít: kết bông do cạn kiệt, kem hóa nhanh hơn. Xanthan đủ: mạng yếu giữ giọt', bai: 'chat-on-dinh/co-che-nen-tang' },
+	hlb: { ma: 'K', chu: 'HLB cao (Tween 80 ≈ 15) hợp dầu trong nước, HLB thấp (Span 80 ≈ 4,3) hợp nước trong dầu (quy tắc Bancroft)', bai: 'chat-nhu-hoa/nen-tang-vat-ly-hoa-be-mat' },
+	bienTinh: { ma: 'K', chu: 'Protein whey biến tính khi nóng, lộ vùng kỵ nước, làm các giọt dính thành cụm', bai: 'nhu-tuong/mat-on-dinh' },
+	khongNo: { ma: 'N', chu: 'Độ không no quy đổi U = %C18:2 + 0,08·%C18:1 + 2,08·%C18:3; tốc độ oxy hóa (100/thời gian cảm ứng) tăng theo U (Kochhar 2009)', bai: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung' },
+	chongOxy: { ma: 'K', chu: 'Tocopherol phá chuỗi gốc tự do; EDTA bắt kim loại (Fe, Cu) trong pha nước, nơi khởi đầu oxy hóa nhũ tương', bai: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung' },
+	anhSang: { ma: 'K', chu: 'Ánh sáng + chất nhạy sáng sinh oxy đơn tuyến, oxy hóa không cần giai đoạn khởi đầu: chai trong hỏng nhanh hơn', bai: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung' },
+	q10: { ma: 'T', chu: 'Q10 = 2: tăng 10 °C thì oxy hóa nhanh gấp đôi (số minh họa; Q10 thật phải đo bằng nhiều nhiệt độ)', bai: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung' },
+	pv: { ma: 'K', chu: 'Ngưỡng chỉ số peroxide 10 meq O₂/kg dầu dùng làm mốc "bắt đầu ôi" trong trò chơi', bai: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung' },
 	hangSo: { ma: 'T', chu: 'Hằng số mô hình (d32 ở 100 bar, ngưỡng xanthan, cỡ floc...) là số minh họa, không dùng để thiết kế' },
 };
 
@@ -27,9 +34,12 @@ export const G_CP_NUOC = 4180; // J/(kg·K)
 /* Tủ nguyên liệu                                                      */
 /* ------------------------------------------------------------------ */
 
+// c181/c182/c183: % oleic / linoleic / linolenic (thành phần điển hình, sách nền, nhãn K)
 export const DAU = {
-	'huong-duong': { ten: 'Dầu hướng dương', rho: 920, eta: 50, gia: 60 }, // gia: nghìn đồng/kg, minh họa
-	mct: { ten: 'Dầu MCT', rho: 945, eta: 25, gia: 250 },
+	'huong-duong': { ten: 'Dầu hướng dương', rho: 920, eta: 50, gia: 60, c181: 20, c182: 66, c183: 0.5 }, // gia: nghìn đồng/kg, minh họa
+	'huong-duong-oleic': { ten: 'Dầu hướng dương cao oleic', rho: 915, eta: 55, gia: 80, c181: 82, c182: 9, c183: 0.3 },
+	lanh: { ten: 'Dầu hạt lanh (giàu omega-3)', rho: 928, eta: 45, gia: 150, c181: 20, c182: 15, c183: 53 },
+	mct: { ten: 'Dầu MCT', rho: 945, eta: 25, gia: 250, c181: 0, c182: 0, c183: 0 },
 };
 
 /**
@@ -129,6 +139,38 @@ export function lopKichThuoc(dv50, sigma, soLop = 41) {
 }
 
 /* ------------------------------------------------------------------ */
+/* Oxy hóa chất béo                                                    */
+/* ------------------------------------------------------------------ */
+
+/** Độ không no quy đổi theo Kochhar 2009: U = C18:2 + 0,08·C18:1 + 2,08·C18:3 */
+export function doKhongNo(dau) {
+	return dau.c182 + 0.08 * dau.c181 + 2.08 * dau.c183;
+}
+
+export const Q10_OXY = 2; // [T]
+export const PV_NGUONG = 10; // meq O2/kg [K]
+
+/**
+ * Thời gian cảm ứng (ngày) của dầu trong nhũ tương: hết giai đoạn này thì peroxide tăng vọt.
+ * Tốc độ ∝ (U + 3); chất chống oxy hóa và chai tối kéo dài; giọt mịn (nhiều bề mặt) rút ngắn. [hằng số T]
+ */
+export function thoiGianCamUng({ dau, d32 = 1, tocopherol = false, edta = false, nhietDo = 25, sang = false }) {
+	let ip = 1500 / (doKhongNo(dau) + 3); // ngày ở 25 °C, tối, không chống oxy hóa
+	if (tocopherol) ip *= 2.5;
+	if (edta) ip *= 2;
+	if (sang) ip /= 3;
+	ip *= kep((d32 / 1) ** 0.15, 0.6, 1.6); // giọt nhỏ → nhiều bề mặt tiếp xúc kim loại/oxy
+	return ip * Q10_OXY ** ((25 - nhietDo) / 10);
+}
+
+/** Chỉ số peroxide theo thời gian: thấp trong giai đoạn cảm ứng rồi tăng theo hàm mũ; PV(ip) = 10. */
+export function chiSoPeroxide(ngay, ip) {
+	const PV0 = 0.5;
+	const x = ngay / ip;
+	return PV0 + ((PV_NGUONG - PV0) * (Math.exp(3 * x) - 1)) / (Math.exp(3) - 1);
+}
+
+/* ------------------------------------------------------------------ */
 /* Mô phỏng một mẻ                                                     */
 /* ------------------------------------------------------------------ */
 
@@ -203,7 +245,12 @@ export function moPhongMe(me) {
 		canhBao, rhoDau: dau.rho,
 		chiPhi: chiPhi(me, dau, nh),
 	};
-	ketQua.ongNghiem = (ngay) => ongNghiem(ketQua, ngay);
+	ketQua.ongNghiem = (ngay, nhietDo = 25) => ongNghiem(ketQua, ngay, nhietDo);
+	/** Oxy hóa sau `ngay` ngày ở nhiệt độ và ánh sáng cho trước */
+	ketQua.oxyHoa = (ngay, nhietDo = 25, sang = false) => {
+		const ip = thoiGianCamUng({ dau, d32: ketQua.d32, tocopherol: !!me.tocopherol, edta: !!me.edta, nhietDo, sang });
+		return { ip, pv: chiSoPeroxide(ngay, ip), U: doKhongNo(dau) };
+	};
 	return ketQua;
 }
 
@@ -213,7 +260,12 @@ function so(x) {
 
 /** Chi phí cho 1 kg sản phẩm (nghìn đồng), minh họa: nguyên liệu + điện cho máy đồng hóa */
 function chiPhi(me, dau, nh) {
-	const nl = (me.phanTramDau / 100) * dau.gia + (nh ? (me.phanTramNhuHoa / 100) * nh.gia : 0) + ((me.phanTramXanthan ?? 0) / 100) * 400;
+	const nl =
+		(me.phanTramDau / 100) * dau.gia +
+		(nh ? (me.phanTramNhuHoa / 100) * nh.gia : 0) +
+		((me.phanTramXanthan ?? 0) / 100) * 400 +
+		(me.tocopherol ? 0.6 : 0) +
+		(me.edta ? 0.1 : 0);
 	const dh = me.dongHoa?.bar >= 20 ? (me.dongHoa.bar / 100) * me.dongHoa.soLan * 0.6 : 0;
 	const khuay = me.khuay?.rpm > 0 ? 0.3 : 0;
 	return nl + dh + khuay;
@@ -225,11 +277,16 @@ function chiPhi(me, dau, nh) {
 
 export const CAO_ONG_MM = 100;
 
+/** Độ nhớt của nước theo nhiệt độ (mPa·s), phương trình Vogel: 0,89 ở 25 °C, 1,57 ở 4 °C */
+export function doNhotNuoc(nhietDo) {
+	return 0.02939 * Math.exp(507.88 / (nhietDo + 273.15 - 149.3));
+}
+
 /**
- * Ống nghiệm cao 100 mm sau `ngay` ngày.
+ * Ống nghiệm cao 100 mm sau `ngay` ngày ở `nhietDo` °C.
  * Trả về chiều cao (mm) lớp váng dầu, lớp kem, vùng đục, vùng trong (serum) và chỉ số kem hóa CI = H_serum/H × 100.
  */
-export function ongNghiem(kq, ngay) {
+export function ongNghiem(kq, ngay, nhietDo = 25) {
 	const H = CAO_ONG_MM;
 	const giay = ngay * 86400;
 
@@ -249,7 +306,7 @@ export function ongNghiem(kq, ngay) {
 	if (kq.bienTinh) heSoCum = Math.max(heSoCum, 3);
 	const lop = lopKichThuoc(kq.dv50 * tangCo, kq.sigma);
 
-	let etaKemHoa = kq.etaC;
+	let etaKemHoa = kq.etaC * (doNhotNuoc(nhietDo) / doNhotNuoc(25)); // lạnh thì nước đặc hơn, kem hóa chậm hơn
 	let dungYen = false;
 	if (kq.cheDo === 'mang') dungYen = true; // mạng yếu, có ứng suất chảy: giọt đứng yên
 	const hinder = (1 - kq.phi) ** 5; // Richardson–Zaki: giọt cản nhau khi đặc [K]
@@ -326,11 +383,25 @@ export const NHIEM_VU = [
 			{ chu: 'Chi phí không quá 25 nghìn đồng/kg', dat: (kq) => kq.chiPhi <= 25 },
 		],
 	},
+	{
+		id: 'omega-3',
+		ten: 'Sữa omega-3 không ôi',
+		de: 'Đồ uống 5% dầu hạt lanh, bảo quản lạnh 4 °C trong 60 ngày. Không được tách lớp, và không được ôi (chỉ số peroxide dưới 10).',
+		coDinh: { dau: 'lanh', phanTramDau: 5 },
+		ngay: 60,
+		baoQuan: { nhietDo: 4 },
+		nganSach: 30,
+		sao: [
+			{ chu: 'Chỉ số peroxide sau 60 ngày ở 4 °C dưới 10 meq/kg', dat: (kq, o, bq) => kq.oxyHoa(60, 4, bq.sang).pv < PV_NGUONG },
+			{ chu: 'Chỉ số kem hóa sau 60 ngày dưới 10%', dat: (kq, o) => o.CI < 10 },
+			{ chu: 'Chi phí không quá 30 nghìn đồng/kg', dat: (kq) => kq.chiPhi <= 30 },
+		],
+	},
 ];
 
 /** Chấm sao một mẻ cho một nhiệm vụ */
-export function chamSao(nhiemVu, kq) {
-	const o = kq.ongNghiem(nhiemVu.ngay);
-	const tieuChi = nhiemVu.sao.map((s) => ({ chu: s.chu, dat: !!s.dat(kq, o) }));
+export function chamSao(nhiemVu, kq, baoQuan = { sang: false }) {
+	const o = kq.ongNghiem(nhiemVu.ngay, nhiemVu.baoQuan?.nhietDo ?? 25);
+	const tieuChi = nhiemVu.sao.map((s) => ({ chu: s.chu, dat: !!s.dat(kq, o, baoQuan) }));
 	return { tieuChi, sao: tieuChi.filter((t) => t.dat).length, ong: o };
 }

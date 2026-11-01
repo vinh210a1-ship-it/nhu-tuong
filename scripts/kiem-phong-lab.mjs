@@ -4,7 +4,7 @@
 import { chatNhuHoaToiThieu, stokes } from '../public/cong-thuc.js';
 import {
 	dTheoChatNhuHoa, dTheoApSuat, nhietDoRa, dacTrungPhanBo, phanSoTheTich, doNhotXanthan,
-	moPhongMe, NHIEM_VU, chamSao,
+	moPhongMe, NHIEM_VU, chamSao, doKhongNo, thoiGianCamUng, chiSoPeroxide, doNhotNuoc, DAU, PV_NGUONG,
 } from '../public/phong-lab/mo-hinh.js';
 
 let loi = 0;
@@ -70,7 +70,23 @@ for (const [ten, kq] of [['cao', cao], ['thap', thap], ['khongNH', khongNH], ['s
 	dung(`Ống nghiệm ${ten}: các lớp cộng lại = 100 mm`, gan(o.vangDau + o.kem + o.duc + o.serum, 100, 1e-6));
 }
 
-// 3. Nhiệm vụ: có lời giải 3 sao, và cách làm ẩu thì không đủ 3 sao
+// 3. Oxy hóa chất béo
+dung('U hướng dương ≈ 68,6 theo công thức Kochhar', gan(doKhongNo(DAU['huong-duong']), 68.6, 0.01));
+dung('Thứ tự bền oxy hóa: MCT > hướng dương cao oleic > hướng dương > hạt lanh', (() => {
+	const ip = (k) => thoiGianCamUng({ dau: DAU[k] });
+	return ip('mct') > ip('huong-duong-oleic') && ip('huong-duong-oleic') > ip('huong-duong') && ip('huong-duong') > ip('lanh');
+})());
+dung('Hệ số Kochhar khớp tỷ lệ giáo trình oleate:linoleate:linolenate ≈ 1:12:25', gan(1 / 0.08, 12.5, 0.05) && gan(2.08 / 0.08, 26, 0.05));
+dung('PV tại cuối giai đoạn cảm ứng = 10 meq/kg', gan(chiSoPeroxide(20, 20), PV_NGUONG, 1e-9));
+dung('Lạnh hơn 10 °C → thời gian cảm ứng gấp đôi (Q10 = 2)', gan(thoiGianCamUng({ dau: DAU.lanh, nhietDo: 15 }) / thoiGianCamUng({ dau: DAU.lanh }), 2, 1e-9));
+dung('Tocopherol và EDTA kéo dài, chai trong rút ngắn thời gian cảm ứng', (() => {
+	const g = thoiGianCamUng({ dau: DAU.lanh });
+	return thoiGianCamUng({ dau: DAU.lanh, tocopherol: true }) > g && thoiGianCamUng({ dau: DAU.lanh, edta: true }) > g && thoiGianCamUng({ dau: DAU.lanh, sang: true }) < g;
+})());
+dung('Độ nhớt nước: 0,89 mPa·s ở 25 °C, 1,57 ở 4 °C', gan(doNhotNuoc(25), 0.89, 0.01) && gan(doNhotNuoc(4), 1.57, 0.02));
+dung('Bảo quản lạnh làm kem hóa chậm hơn', cao.ongNghiem(30, 4).CI < cao.ongNghiem(30, 25).CI);
+
+// 4. Nhiệm vụ: có lời giải 3 sao, và cách làm ẩu thì không đủ 3 sao
 const LOI_GIAI = {
 	'sua-thuc-vat': [{ ...me }, { ...me, dongHoa: { bar: 100, soLan: 1, lamLanh: true } }],
 	'whey-nong': [
@@ -78,6 +94,10 @@ const LOI_GIAI = {
 		{ ...whey, dongHoa: { bar: 1000, soLan: 3, lamLanh: false } },
 	],
 	'sot-salad': [{ ...sot, phanTramXanthan: 0.3 }, { ...sot, phanTramXanthan: 0.05 }],
+	'omega-3': [
+		{ ...sot, phanTramXanthan: 0.3, tocopherol: true },
+		{ ...sot, dongHoa: { bar: 600, soLan: 2, lamLanh: true } },
+	],
 };
 for (const nv of NHIEM_VU) {
 	const [tot, au] = LOI_GIAI[nv.id];
