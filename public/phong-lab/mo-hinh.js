@@ -18,7 +18,7 @@ export const NHAN = {
 	apSuat: { ma: 'G', chu: 'd32 ∝ P^−0,5 (độ dốc thực nghiệm thường −0,3 đến −0,6, tùy hệ và van)', bai: 'nhu-tuong/hinh-thanh' },
 	nhiet: { ma: 'N', chu: 'Mỗi 100 bar làm mẫu nóng thêm ≈ 2,4 °C (cân bằng năng lượng ΔP/ρcp)', bai: 'nhu-tuong/hinh-thanh' },
 	canKiet: { ma: 'N', chu: 'Xanthan ít: kết bông do cạn kiệt, kem hóa nhanh hơn. Xanthan đủ: mạng yếu giữ giọt', bai: 'chat-on-dinh/co-che-nen-tang' },
-	hlb: { ma: 'K', chu: 'HLB cao (Tween 80 ≈ 15) hợp dầu trong nước, HLB thấp (Span 80 ≈ 4,3) hợp nước trong dầu (quy tắc Bancroft)', bai: 'chat-nhu-hoa/nen-tang-vat-ly-hoa-be-mat' },
+	hlb: { ma: 'K', chu: 'HLB cao (như Tween 80) hợp dầu trong nước, HLB thấp (như Span 80) hợp nước trong dầu (quy tắc Bancroft)', bai: 'chat-nhu-hoa/nen-tang-vat-ly-hoa-be-mat' },
 	bienTinh: { ma: 'K', chu: 'Protein whey biến tính khi nóng, lộ vùng kỵ nước, làm các giọt dính thành cụm', bai: 'nhu-tuong/mat-on-dinh' },
 	khongNo: { ma: 'N', chu: 'Độ không no quy đổi U = %C18:2 + 0,08·%C18:1 + 2,08·%C18:3; tốc độ oxy hóa (100/thời gian cảm ứng) tăng theo U (Kochhar 2009)', bai: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung' },
 	chongOxy: { ma: 'K', chu: 'Tocopherol phá chuỗi gốc tự do; EDTA bắt kim loại (Fe, Cu) trong pha nước, nơi khởi đầu oxy hóa nhũ tương', bai: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung' },
@@ -34,10 +34,14 @@ export const G_CP_NUOC = 4180; // J/(kg·K)
 /* Tủ nguyên liệu                                                      */
 /* ------------------------------------------------------------------ */
 
-// c181/c182/c183: % oleic / linoleic / linolenic (thành phần điển hình, sách nền, nhãn K)
+// c181/c182/c183: % oleic / linoleic / linolenic. Giá trị điển hình chọn để mô phỏng (nhãn T), không phải số kiểm từ sách.
 export const DAU = {
 	'huong-duong': { ten: 'Dầu hướng dương', rho: 920, eta: 50, gia: 60, c181: 20, c182: 66, c183: 0.5 }, // gia: nghìn đồng/kg, minh họa
 	'huong-duong-oleic': { ten: 'Dầu hướng dương cao oleic', rho: 915, eta: 55, gia: 80, c181: 82, c182: 9, c183: 0.3 },
+	'dau-nanh': { ten: 'Dầu đậu nành', rho: 920, eta: 50, gia: 45, c181: 23, c182: 53, c183: 7 },
+	cai: { ten: 'Dầu hạt cải (canola)', rho: 915, eta: 60, gia: 55, c181: 61, c182: 21, c183: 9 },
+	'o-liu': { ten: 'Dầu ô liu', rho: 912, eta: 70, gia: 200, c181: 72, c182: 10, c183: 0.7 },
+	'co-olein': { ten: 'Dầu cọ olein', rho: 910, eta: 60, gia: 40, c181: 42, c182: 11, c183: 0.3 },
 	lanh: { ten: 'Dầu hạt lanh (giàu omega-3)', rho: 928, eta: 45, gia: 150, c181: 20, c182: 15, c183: 53 },
 	mct: { ten: 'Dầu MCT', rho: 945, eta: 25, gia: 250, c181: 0, c182: 0, c183: 0 },
 };
@@ -52,10 +56,10 @@ export const NHU_HOA = {
 		ghiChu: 'Γ ≈ 1,4 mg/m² (Hinderink 2021). β-lactoglobulin biến tính khi nóng, protein lộ vùng kỵ nước làm giọt dính nhau.' },
 	ppi: { ten: 'Protein đậu Hà Lan (PPI)', gamma: 2.5, hieuQua: 0.5, tocDo: 1.1, loai: 'OW', nhayNhiet: null, gia: 120,
 		ghiChu: 'Γ ≈ 2,5 mg/m² (Hinderink 2021). Độ tan thấp: chỉ phần hòa tan mới nhũ hóa được (hiệu quả 50% là số minh họa).' },
-	tween80: { ten: 'Polysorbate 80 (Tween 80, E433)', gamma: 2.5, hieuQua: 1.0, tocDo: 0.85, loai: 'OW', nhayNhiet: null, gia: 200, hlb: 15,
-		ghiChu: 'HLB ≈ 15: ưa nước, hợp dầu trong nước. Phân tử nhỏ hấp phụ nhanh nên giọt vừa vỡ đã được phủ kịp.' },
-	span80: { ten: 'Sorbitan monooleate (Span 80, E494)', gamma: 2.5, hieuQua: 1.0, tocDo: 0.85, loai: 'WO', nhayNhiet: null, gia: 180, hlb: 4.3,
-		ghiChu: 'HLB ≈ 4,3: ưa dầu, hợp nước trong dầu. Dùng cho dầu trong nước thì giọt hợp nhất, nổi váng dầu.' },
+	tween80: { ten: 'Polysorbate 80 (Tween 80, E433)', gamma: 2.5, hieuQua: 1.0, tocDo: 0.85, loai: 'OW', nhayNhiet: null, gia: 200,
+		ghiChu: 'HLB cao: ưa nước, hợp dầu trong nước. Phân tử nhỏ hấp phụ nhanh nên giọt vừa vỡ đã được phủ kịp.' },
+	span80: { ten: 'Sorbitan monooleate (Span 80, E494)', gamma: 2.5, hieuQua: 1.0, tocDo: 0.85, loai: 'WO', nhayNhiet: null, gia: 180,
+		ghiChu: 'HLB thấp: ưa dầu, hợp nước trong dầu. Dùng cho dầu trong nước thì giọt hợp nhất, nổi váng dầu.' },
 };
 
 /* ------------------------------------------------------------------ */

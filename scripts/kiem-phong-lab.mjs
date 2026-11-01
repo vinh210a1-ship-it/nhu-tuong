@@ -86,6 +86,12 @@ dung('Tocopherol và EDTA kéo dài, chai trong rút ngắn thời gian cảm �
 dung('Độ nhớt nước: 0,89 mPa·s ở 25 °C, 1,57 ở 4 °C', gan(doNhotNuoc(25), 0.89, 0.01) && gan(doNhotNuoc(4), 1.57, 0.02));
 dung('Bảo quản lạnh làm kem hóa chậm hơn', cao.ongNghiem(30, 4).CI < cao.ongNghiem(30, 25).CI);
 
+dung('Mọi loại dầu: tổng acid béo không no ≤ 100%', Object.values(DAU).every((d) => d.c181 + d.c182 + d.c183 <= 100));
+dung('Dầu ô liu bền oxy hóa hơn đậu nành; cải nằm giữa', (() => {
+	const ip = (k) => thoiGianCamUng({ dau: DAU[k] });
+	return ip('o-liu') > ip('cai') && ip('cai') > ip('dau-nanh');
+})());
+
 // 4. Nhiệm vụ: có lời giải 3 sao, và cách làm ẩu thì không đủ 3 sao
 const LOI_GIAI = {
 	'sua-thuc-vat': [{ ...me }, { ...me, dongHoa: { bar: 100, soLan: 1, lamLanh: true } }],
