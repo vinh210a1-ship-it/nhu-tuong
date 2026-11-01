@@ -129,6 +129,7 @@
 	box-shadow: var(--hh-bong);
 }
 .the-pg[data-nhom='Chất ổn định'] { --mau-nhom: var(--khu-chat-on-dinh); }
+.the-pg[data-nhom='Phụ gia khác'] { --mau-nhom: var(--khu-thuc-pham); }
 .the-pg[hidden] { display: none; }
 .the-pg.chua { border-style: dashed; border-top-style: dashed; box-shadow: none; background: var(--hh-be-mat-2); }
 .pg-dau { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }

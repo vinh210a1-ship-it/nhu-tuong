@@ -223,7 +223,7 @@ function veTienDo() {
 	});
 	// dấu ✓ ở thanh bên (mọi khu)
 	document.querySelectorAll('.sidebar-content a[href]').forEach((a) => {
-		const m = a.getAttribute('href').match(/\/(nhu-tuong|chat-beo|chat-nhu-hoa|chat-on-dinh)\/([^/]+)\/?$/);
+		const m = a.getAttribute('href').match(/\/(nhu-tuong|chat-beo|chat-nhu-hoa|chat-on-dinh|thuc-pham|duoc-pham)\/([^/]+)\/?$/);
 		if (!m) return;
 		a.classList.toggle('da-doc', ds.has(m[1] === 'nhu-tuong' ? m[2] : `${m[1]}/${m[2]}`));
 	});

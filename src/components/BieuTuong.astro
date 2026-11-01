@@ -94,6 +94,28 @@ const D = 'var(--hh-ho-phach)';
 			<path d="M34 4c-6 8 8 12 2 20s-8 12-2 20" stroke={D} />
 		</Fragment>
 	)}
+	{ten === 'thuc-pham' && (
+		<Fragment>
+			<path d="M8 22h32a16 14 0 0 1-32 0z" />
+			<path d="M6 22h36" />
+			<path d="M17 16c-2-3 2-5 0-9M24 16c-2-3 2-5 0-9M31 16c-2-3 2-5 0-9" stroke={D} />
+			<path d="M18 40h12" />
+		</Fragment>
+	)}
+	{ten === 'tra-cuu' && (
+		<Fragment>
+			<circle cx="20" cy="20" r="11" />
+			<path d="M28 28l12 12" />
+			<path d="M15 20h10M20 15v10" stroke={D} />
+		</Fragment>
+	)}
+	{ten === 'duoc' && (
+		<g transform="rotate(-35 24 24)">
+			<path d="M24 16h-9a8 8 0 0 0 0 16h9z" fill={D} stroke="none" />
+			<rect x="7" y="16" width="34" height="16" rx="8" />
+			<path d="M24 16v16" />
+		</g>
+	)}
 	{ten === 'may-tinh' && (
 		<Fragment>
 			<rect x="8" y="5" width="32" height="38" rx="5" />

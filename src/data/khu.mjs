@@ -48,5 +48,35 @@ export const KHU = {
 			{ slug: 'quy-dinh-ins-e', ten: 'Mã INS/E và quy định', cauHoi: 'Kết luận EFSA và JECFA đã xác minh, và những phần còn thiếu' },
 		],
 	},
+	'thuc-pham': {
+		ten: 'Thực phẩm',
+		mau: 'var(--khu-thuc-pham)',
+		icon: 'thuc-pham',
+		bai: [
+			{ slug: 'giu-nuoc-thit-phosphat-muoi-ph', ten: 'Giữ nước thịt: phosphat, muối, pH', cauHoi: 'Phosphat và muối giữ nước cho thịt, surimi bằng cơ chế nào; vì sao pH so với điểm đẳng điện là then chốt' },
+			{ slug: 'bao-quan-hoat-do-nuoc-va-han-su-dung', ten: 'Bảo quản và hoạt độ nước', cauHoi: 'Giới hạn aw, pH, nhiệt độ của vi sinh vật gây bệnh; axit yếu, nitrit, sulfit và hàng rào kép' },
+			{ slug: 'maillard-caramel-acrylamide', ten: 'Maillard, caramel, acrylamide', cauHoi: 'Nhiệt độ, pH, aw ảnh hưởng nâu hóa thế nào; giảm acrylamide bằng những đòn bẩy nào' },
+			{ slug: 'tinh-bot-ho-hoa-thoai-hoa', ten: 'Tinh bột: hồ hóa, thoái hóa', cauHoi: 'Hồ hóa và thoái hóa xảy ra thế nào; đường, muối và tinh bột biến tính thay đổi gì' },
+			{ slug: 'protein-bien-tinh-gel-hoa-va-enzym', ten: 'Protein, gel và enzym', cauHoi: 'Protein biến tính và tạo gel theo hai bước nào; muối, pH, transglutaminase và các enzym thực phẩm' },
+			{ slug: 'chat-tao-ngot-mau-dieu-vi', ten: 'Tạo ngọt, màu, điều vị', cauHoi: 'Chất tạo ngọt, glutamat, anthocyanin: độ ổn định trong nền và ADI đã kiểm' },
+			{ slug: 'qua-trinh-nhiet-lanh-say-ep-dun', ten: 'Thanh trùng, đông lạnh, sấy, ép đùn', cauHoi: 'Phương trình chủ đạo của từng quá trình: D, z, F; Tg′; đẳng nhiệt hấp phụ; thông số ép đùn' },
+			{ slug: 'quy-dinh-jecfa-efsa-da-kiem', ten: 'ADI phụ gia đã kiểm', cauHoi: 'ADI/MTDI của phosphat, chất bảo quản, chống oxy hóa, chất tạo ngọt đã đọc tại JECFA và EFSA' },
+		],
+	},
+	'duoc-pham': {
+		ten: 'Dược phẩm',
+		mau: 'var(--khu-duoc-pham)',
+		icon: 'duoc',
+		bai: [
+			{ slug: 'ta-duoc-chuc-nang-va-tuong-ky', ten: 'Tá dược: chức năng, tương kỵ', cauHoi: 'Tá dược làm những việc gì; vì sao không "trơ"; tương kỵ thật như Maillard với lactose, peroxide trong polysorbate' },
+			{ slug: 'hoa-tan-sinh-kha-dung-bcs', ten: 'Hòa tan, sinh khả dụng, BCS', cauHoi: 'Noyes–Whitney, phân loại BCS, chỉ tiêu hòa tan và f2, mô hình giải phóng, cách tăng độ tan' },
+			{ slug: 'dang-bao-che-long-va-ban-ran', ten: 'Dạng lỏng và bán rắn', cauHoi: 'Nhũ tương, kem, thuốc mỡ, hỗn dịch, nhũ tương tiêm: chỉ tiêu chất lượng và vi cấu trúc' },
+			{ slug: 'he-phan-tan-nano', ten: 'Hệ phân tán nano', cauHoi: 'Nanoemulsion, SEDDS, liposome, LNP, tinh thể nano, cyclodextrin, phân tán rắn vô định hình' },
+			{ slug: 'dang-ran-vien-nen-tao-hat', ten: 'Dạng rắn: tạo hạt, dập viên', cauHoi: 'Dòng chảy bột, tạo hạt, dập viên, bôi trơn, rã, mài mòn, bao phim, SUPAC-IR' },
+			{ slug: 'on-dinh-han-dung-ich', ten: 'Độ ổn định và hạn dùng', cauHoi: 'Điều kiện thử ICH, vùng khí hậu IVb, Arrhenius và ASAP, các đường phân hủy' },
+			{ slug: 'qbd-scale-up-quy-trinh', ten: 'QbD và scale-up', cauHoi: 'QTPP, CQA, CPP, design space theo ICH Q8 và các mức thay đổi khi tăng quy mô' },
+		],
+		phu: [{ slug: 'thuat-ngu-duoc-bao-che', ten: 'Thuật ngữ bào chế' }],
+	},
 };
-export const THU_TU_KHU = ['nhu-tuong', 'chat-beo', 'chat-nhu-hoa', 'chat-on-dinh'];
+export const THU_TU_KHU = ['nhu-tuong', 'chat-beo', 'chat-nhu-hoa', 'chat-on-dinh', 'thuc-pham', 'duoc-pham'];

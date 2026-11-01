@@ -96,6 +96,22 @@
   "khoa": "ahsan2019"
  },
  {
+  "trich_dan": "Airaksinen S, Karjalainen M, Shevchenko A, Westermarck S, Leppänen E, Rantanen J, Yliruusi J (2005). Role of water in the physical stability of solid dosage formulations. *J Pharm Sci* 94(10):2147–2165.",
+  "ho": "airaksinen",
+  "nam": 2005,
+  "doi": "10.1002/jps.20411",
+  "pmid": "16136577",
+  "url": "https://doi.org/10.1002/jps.20411",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S73"
+  ],
+  "khoa": "airaksinen2005"
+ },
+ {
   "trich_dan": "Akoh CC, Min DB (eds.). *Food Lipids: Chemistry, Nutrition, and Biotechnology*, 4th ed. CRC Press, 2017",
   "ho": "akoh",
   "nam": 2017,
@@ -128,6 +144,22 @@
   "khoa": "aktar2019"
  },
  {
+  "trich_dan": "Alappat B, Alappat J (2020). Anthocyanin pigments: beyond aesthetics. *Molecules* 25(23):5500",
+  "ho": "alappat",
+  "nam": 2020,
+  "doi": "10.3390/molecules25235500",
+  "pmid": "33255297",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/33255297/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:06"
+  ],
+  "khoa": "alappat2020"
+ },
+ {
   "trich_dan": "Albano K. M. et al. (2019). Electrostatic interaction between proteins and polysaccharides: physicochemical aspects and applications in emulsion stabilization. *Food Reviews International*.",
   "ho": "albano",
   "nam": 2019,
@@ -142,6 +174,87 @@
    "chat-on-dinh:S14"
   ],
   "khoa": "albano2019"
+ },
+ {
+  "trich_dan": "Hald Albertsen C, Kulkarni JA, Witzigmann D, Lind M, Petersson K, Simonsen JB (2022). The role of lipid components in lipid nanoparticles for vaccines and gene therapy. *Adv Drug Deliv Rev* 188:114416.",
+  "ho": "albertsen",
+  "nam": 2022,
+  "doi": "10.1016/j.addr.2022.114416",
+  "pmid": "35787388",
+  "url": "https://doi.org/10.1016/j.addr.2022.114416",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S70"
+  ],
+  "khoa": "albertsen2022"
+ },
+ {
+  "trich_dan": "Allan MC et al. (2020). Effects of sugars and sugar alcohols on the gelatinization temperatures of wheat, potato, and corn starches. *Foods*",
+  "ho": "allan",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/68f617f654d651a48e47b07c7203f80d/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:04",
+   "06"
+  ],
+  "khoa": "allan2020"
+ },
+ {
+  "trich_dan": "Allen TM, Cullis PR (2013). Liposomal drug delivery systems: from concept to clinical applications. *Adv Drug Deliv Rev* 65(1):36–48.",
+  "ho": "allen",
+  "nam": 2013,
+  "doi": "10.1016/j.addr.2012.09.037",
+  "pmid": "23036225",
+  "url": "https://doi.org/10.1016/j.addr.2012.09.037",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S34"
+  ],
+  "khoa": "allen2013"
+ },
+ {
+  "trich_dan": "Allen LV (2018). Quality control: water activity considerations for beyond-use dates. *Int J Pharm Compd*",
+  "ho": "allen",
+  "nam": 2018,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/b1dac30c633158559b005e2be12e32a7/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02"
+  ],
+  "khoa": "allen2018"
+ },
+ {
+  "trich_dan": "Amidon GL, Lennernäs H, Shah VP, Crison JR (1995). A theoretical basis for a biopharmaceutic drug classification: the correlation of in vitro drug product dissolution and in vivo bioavailability. *Pharm Res* 12(3):413–420.",
+  "ho": "amidon",
+  "nam": 1995,
+  "doi": "10.1023/a:1016212804288",
+  "pmid": "7617530",
+  "url": "https://doi.org/10.1023/a:1016212804288",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S19"
+  ],
+  "khoa": "amidon1995"
  },
  {
   "trich_dan": "Aphibanthammakit C. et al. (2020). Emulsifying properties of *Acacia senegal* gum: impact of high molar mass protein-rich AGPs. *Food Chemistry: X*.",
@@ -176,6 +289,22 @@
   "khoa": "arltoft2007"
  },
  {
+  "trich_dan": "Arroyo-López FN et al. (2008). Modelling the inhibition of sorbic and benzoic acids on a native yeast cocktail from table olives. *Food Microbiol*",
+  "ho": "arroyolopez",
+  "nam": 2008,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/969c95292b4350fda58cfe843a9b4c2f/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02"
+  ],
+  "khoa": "arroyolopez2008"
+ },
+ {
   "trich_dan": "Asakura S, Oosawa F (1954). On interaction between two bodies immersed in a solution of macromolecules. *J Chem Phys* 22:1255.",
   "ho": "asakura",
   "nam": 1954,
@@ -190,6 +319,38 @@
    "nhu-tuong:C08"
   ],
   "khoa": "asakura1954"
+ },
+ {
+  "trich_dan": "ASEAN (2018). ASEAN Guideline on Stability Study of Drug Product, Version 2.0 (Revision 2), thông qua tại ACCSQ-PPWG lần 25.",
+  "ho": "aseanstab",
+  "nam": 2018,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.hsa.gov.sg/docs/default-source/hprg/therapeutic-products/guidance-documents/asean-guideline-stability.pdf",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S12"
+  ],
+  "khoa": "aseanstab"
+ },
+ {
+  "trich_dan": "Baghel S, Cathcart H, O'Reilly NJ (2016). Polymeric amorphous solid dispersions: a review of amorphization, crystallization, stabilization, solid-state characterization, and aqueous solubilization of BCS class II drugs. *J Pharm Sci* 105(9):2527–2544.",
+  "ho": "baghel",
+  "nam": 2016,
+  "doi": "10.1016/j.xphs.2015.10.008",
+  "pmid": "26886314",
+  "url": "https://doi.org/10.1016/j.xphs.2015.10.008",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S46"
+  ],
+  "khoa": "baghel2016"
  },
  {
   "trich_dan": "Bak J. (2024). A comparative study on the rheological properties of concentrated xanthan gum in combination with gum arabic or gum arabic-based emulsion. *Int. J. Biol. Macromol.*",
@@ -222,6 +383,70 @@
    "chat-on-dinh:S99"
   ],
   "khoa": "bangar2024"
+ },
+ {
+  "trich_dan": "Bao Y, Boeren S, Ertbjerg P (2018). Myofibrillar protein oxidation affects filament charges, aggregation and water-holding. *Meat Sci* 135:102–108",
+  "ho": "bao",
+  "nam": 2018,
+  "doi": "10.1016/j.meatsci.2017.09.011",
+  "pmid": "28968552",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/28968552/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01"
+  ],
+  "khoa": "bao2017"
+ },
+ {
+  "trich_dan": "Barenholz Y (2012). Doxil® — the first FDA-approved nano-drug: lessons learned. *J Control Release* 160(2):117–134.",
+  "ho": "barenholz",
+  "nam": 2012,
+  "doi": "10.1016/j.jconrel.2012.03.020",
+  "pmid": "22484195",
+  "url": "https://doi.org/10.1016/j.jconrel.2012.03.020",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S67"
+  ],
+  "khoa": "barenholz2012"
+ },
+ {
+  "trich_dan": "Bauer J, Spanton S, Henry R, Quick J, Dziki W, Porter W, Morris J (2001). Ritonavir: an extraordinary example of conformational polymorphism. *Pharm Res* 18(6):859–866.",
+  "ho": "bauer",
+  "nam": 2001,
+  "doi": "10.1023/a:1011052932607",
+  "pmid": "11474792",
+  "url": "https://doi.org/10.1023/a:1011052932607",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S41"
+  ],
+  "khoa": "bauer2001"
+ },
+ {
+  "trich_dan": "Becker L et al. (2026). Asparaginases combined with calcium salts or phenols to mitigate acrylamide in potato chips. *Eur Food Res Technol*",
+  "ho": "becker",
+  "nam": 2026,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/2a724a16ec225d2b97427d955cce5b0d/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:03"
+  ],
+  "khoa": "becker2026"
  },
  {
   "trich_dan": "Benichou A. et al. (2002). Protein-polysaccharide interactions for stabilization of food emulsions. *J. Dispersion Sci. Technol.*",
@@ -272,6 +497,39 @@
   "khoa": "berry2009"
  },
  {
+  "trich_dan": "Beuchat LR (1983). Influence of water activity on growth, metabolic activities and survival of yeasts and molds. *J Food Prot*",
+  "ho": "beuchat",
+  "nam": 1983,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/d4156176ce2953899f56f6d11705f346/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02",
+   "07"
+  ],
+  "khoa": "beuchat1983"
+ },
+ {
+  "trich_dan": "Bhuiyan MNI et al. (2026). Emerging strategies for acrylamide mitigation in potato-based products. *Food Chem Adv*",
+  "ho": "bhuiyan",
+  "nam": 2026,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/175c5906f9415010be04a3bf274de7ec/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:03"
+  ],
+  "khoa": "bhuiyan2026"
+ },
+ {
   "trich_dan": "Bigi A. et al. (2004). Relationship between triple-helix content and mechanical properties of gelatin films. *Biomaterials*.",
   "ho": "bigi",
   "nam": 2004,
@@ -286,6 +544,22 @@
    "chat-on-dinh:S93"
   ],
   "khoa": "bigi2004"
+ },
+ {
+  "trich_dan": "Binarjo A et al. (2025). Determination of required hydrophilic-lipophilic balance (RHLB) of oleic acid-rich vegetable oil as internal phase of O/W emulsion. *Bull Pharm Sci Assiut Univ*. (Chỉ đọc tóm tắt qua Consensus; chưa có DOI.)",
+  "ho": "binarjo",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/7686211833615d6790e699ce433bed1e/",
+  "muc_doc": "tieu-de",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S79"
+  ],
+  "khoa": "binarjo2025"
  },
  {
   "trich_dan": "Binks BP, Horozov TS (eds). *Colloidal Particles at Liquid Interfaces*. Cambridge University Press, 2006.",
@@ -320,6 +594,22 @@
   "khoa": "boostani2024"
  },
  {
+  "trich_dan": "Borrelli RC et al. (2003). Characterization of coloured compounds obtained by enzymatic extraction of bakery products. *Food Chem Toxicol* 41(10):1367–1374",
+  "ho": "borrelli",
+  "nam": 2003,
+  "doi": "10.1016/s0278-6915(03)00140-6",
+  "pmid": "12909270",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/12909270/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:03"
+  ],
+  "khoa": "borrelli2003"
+ },
+ {
   "trich_dan": "Braccini I., Pérez S. (2001). Molecular basis of Ca²⁺-induced gelation in alginates and pectins: the egg-box model revisited. *Biomacromolecules*.",
   "ho": "braccini",
   "nam": 2001,
@@ -334,6 +624,22 @@
    "chat-on-dinh:S59"
   ],
   "khoa": "braccini2001"
+ },
+ {
+  "trich_dan": "Brewster ME, Loftsson T (2007). Cyclodextrins as pharmaceutical solubilizers. *Adv Drug Deliv Rev* 59(7):645–666.",
+  "ho": "brewster",
+  "nam": 2007,
+  "doi": "10.1016/j.addr.2007.05.012",
+  "pmid": "17601630",
+  "url": "https://doi.org/10.1016/j.addr.2007.05.012",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S35"
+  ],
+  "khoa": "brewster2007"
  },
  {
   "trich_dan": "Brunchi C.-E. et al. (2019). Chain conformation of xanthan in solution as influenced by temperature and salt addition. *J. Mol. Liq.*",
@@ -352,6 +658,22 @@
   "khoa": "brunchi2019"
  },
  {
+  "trich_dan": "del Pilar Buera M et al. (1987). Nonenzymatic browning in liquid model systems of high water activity: kinetics of color changes due to Maillard's reaction between different single sugars and glycine and comparison with caramelization browning. *J Food Sci*",
+  "ho": "buera",
+  "nam": 1987,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/c1ccd5a33a415d009b44c1dc5fa3519a/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:03"
+  ],
+  "khoa": "buera1987"
+ },
+ {
   "trich_dan": "Burgos-Díaz C. et al. (2016). Multilayer emulsions stabilized by vegetable proteins and polysaccharides. *Curr. Opin. Colloid Interface Sci.*",
   "ho": "burgosdiaz",
   "nam": 2016,
@@ -366,6 +688,22 @@
    "chat-on-dinh:S16"
   ],
   "khoa": "burgosdiaz2016"
+ },
+ {
+  "trich_dan": "Bộ Y tế (2018). Thông tư 11/2018/TT-BYT quy định về chất lượng thuốc, nguyên liệu làm thuốc (ngày 04/05/2018, hiệu lực 20/06/2018); văn bản hợp nhất 01/VBHN-BYT ngày 02/01/2025 (đã sửa bởi TT 03/2020, 23/2021, 45/2024).",
+  "ho": "bytett",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://luatvietnam.vn/y-te/van-ban-hop-nhat-01-vbhn-byt-nam-2024-do-bo-y-te-ban-hanh-hop-nhat-thong-tu-quy-dinh-ve-chat-luong-thuoc-nguyen-lieu-lam-thuoc-384005-d5.html",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S18"
+  ],
+  "khoa": "bytett11"
  },
  {
   "trich_dan": "Campos JR, Fernandes AR, Severino P, Gracia ML, Souto SB, Souto EB. Phase Behavior of Polymorphic Fats in Drug Delivery Systems — A Review of the State of Art. *Curr Pharm Des* 2018;24(21):2508–2512",
@@ -414,6 +752,22 @@
    "chat-on-dinh:S58"
   ],
   "khoa": "cao2020"
+ },
+ {
+  "trich_dan": "Cerruto-Noya CA et al. (2009). Evaluation of 0.1% ammonium hydroxide to replace sodium tripolyphosphate in fresh meat injection brines. *J Food Sci*",
+  "ho": "cerruto",
+  "nam": 2009,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/967c643c92265ba0b4545c9bb6fd9af5/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01"
+  ],
+  "khoa": "cerruto2009"
  },
  {
   "trich_dan": "Chabni A, Bañares C, Torres CF. Study of the oxidative stability via Oxitest and Rancimat of phenolic-rich olive oils obtained by a sequential process of dehydration, expeller and supercritical CO₂ extractions. *Front Nutr* 2024;11:1494091",
@@ -480,6 +834,22 @@
   "khoa": "chang2012"
  },
  {
+  "trich_dan": "Chang RK, Raw A, Lionberger R, Yu L (2013). Generic development of topical dermatologic products: formulation development, process development, and testing of topical dermatologic products. *AAPS J* 15(1):41–52.",
+  "ho": "chang",
+  "nam": 2013,
+  "doi": "10.1208/s12248-012-9411-0",
+  "pmid": "23054971",
+  "url": "https://doi.org/10.1208/s12248-012-9411-0",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S71"
+  ],
+  "khoa": "chang2013"
+ },
+ {
   "trich_dan": "Chang HJ, Lee JH. Regiospecific Positioning of Palmitic Acid in Triacylglycerol Structure of Enzymatically Modified Lipids Affects Physicochemical and In Vitro Digestion Properties. *Molecules* 2021;26(13):4015",
   "ho": "chang",
   "nam": 2021,
@@ -542,6 +912,38 @@
    "chat-nhu-hoa:D7"
   ],
   "khoa": "chen2019b"
+ },
+ {
+  "trich_dan": "Chen JY et al. (2019). Phosphorylation modification of myofibrillar proteins by sodium pyrophosphate affects emulsion gel formation and oxidative stability under different pH conditions. *Food Funct*",
+  "ho": "chen",
+  "nam": 2019,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/4f9ef2c30f495fe39061e2b078d5a3ba/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01"
+  ],
+  "khoa": "chen2019spp"
+ },
+ {
+  "trich_dan": "Chen JY et al. (2019). Site-specific incorporation of sodium tripolyphosphate into myofibrillar protein from mantis shrimp (Oratosquilla oratoria) promotes protein crosslinking and gel network formation. *Food Chem*",
+  "ho": "chen",
+  "nam": 2019,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/15ff386a7e355aa6b8393460af4a470c/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01"
+  ],
+  "khoa": "chen2019stp"
  },
  {
   "trich_dan": "Cheng J, Dudu OE, Wang D, Li X, Yan T (2019). Influence of interfacial adsorption of glyceryl monostearate and proteins on fat crystallization behavior and stability of whipped-frozen emulsions. *Food Chem* 310:125949.",
@@ -624,6 +1026,22 @@
   "khoa": "chivero2015"
  },
  {
+  "trich_dan": "Choi JS et al. (2020). Evaluation of physicochemical and textural properties of chicken breast sausages containing various combinations of salt and sodium tripolyphosphate. *J Anim Sci Technol*",
+  "ho": "choi",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/88f7af5d64425c77b43e949fe01e817e/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01"
+  ],
+  "khoa": "choi2020"
+ },
+ {
   "trich_dan": "Cholakova D, et al. (2024). Sucrose ester surfactants: current understanding and emerging perspectives. *Curr Opin Colloid Interface Sci*.",
   "ho": "cholakova",
   "nam": 2024,
@@ -672,6 +1090,22 @@
   "khoa": "cong2019"
  },
  {
+  "trich_dan": "Costa P, Sousa Lobo JM (2001). Modeling and comparison of dissolution profiles. *Eur J Pharm Sci* 13(2):123–133.",
+  "ho": "costa",
+  "nam": 2001,
+  "doi": "10.1016/s0928-0987(01)00095-1",
+  "pmid": "11297896",
+  "url": "https://doi.org/10.1016/s0928-0987(01)00095-1",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S29"
+  ],
+  "khoa": "costa2001"
+ },
+ {
   "trich_dan": "Cucheval A. et al. (2009). Diffusing wave spectroscopy investigations of acid milk gels containing pectin. *Colloid Polym. Sci.*",
   "ho": "cucheval",
   "nam": 2009,
@@ -686,6 +1120,38 @@
    "chat-on-dinh:S68"
   ],
   "khoa": "cucheval2009"
+ },
+ {
+  "trich_dan": "Cullis PR, Hope MJ (2017). Lipid nanoparticle systems for enabling gene therapies. *Mol Ther* 25(7):1467–1475.",
+  "ho": "cullis",
+  "nam": 2017,
+  "doi": "10.1016/j.ymthe.2017.03.013",
+  "pmid": "28412170",
+  "url": "https://doi.org/10.1016/j.ymthe.2017.03.013",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S68"
+  ],
+  "khoa": "cullis2017"
+ },
+ {
+  "trich_dan": "Date AA, Desai N, Dixit R, Nagarsenker M (2010). Self-nanoemulsifying drug delivery systems: formulation insights, applications and advances. *Nanomedicine (Lond)* 5(10):1595–1616.",
+  "ho": "date",
+  "nam": 2010,
+  "doi": "10.2217/nnm.10.126",
+  "pmid": "21143036",
+  "url": "https://doi.org/10.2217/nnm.10.126",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S62"
+  ],
+  "khoa": "date2010"
  },
  {
   "trich_dan": "Davies JT (1957). A quantitative kinetic theory of emulsion type I: physical chemistry of the emulsifying agent. *Proc Int Congr Surface Activity* 1:426.",
@@ -706,6 +1172,22 @@
   "khoa": "davies1957"
  },
  {
+  "trich_dan": "Davis SS, Hardy JG, Fara JW (1986). Transit of pharmaceutical dosage forms through the small intestine. *Gut* 27(8):886–892.",
+  "ho": "davis",
+  "nam": 1986,
+  "doi": "10.1136/gut.27.8.886",
+  "pmid": "3732895",
+  "url": "https://doi.org/10.1136/gut.27.8.886",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S51"
+  ],
+  "khoa": "davis1986"
+ },
+ {
   "trich_dan": "Deetae P. et al. (2008). Preparation, pasting properties and freeze-thaw stability of dual modified crosslink-phosphorylated rice starch. *Carbohydr. Polym.*",
   "ho": "deetae",
   "nam": 2008,
@@ -722,6 +1204,22 @@
   "khoa": "deetae2008"
  },
  {
+  "trich_dan": "de Melo DW et al. (2025). Refining L-asparaginase application for acrylamide reduction in sweet potatoes. *LWT*",
+  "ho": "demelo",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/7f21063233075e05ba90c77178c5dc93/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:03"
+  ],
+  "khoa": "demelo2025"
+ },
+ {
   "trich_dan": "de Oliveira Barros M, ... Rojas OJ (2026). Cooperative stabilization of Pickering emulsions by starch and chitin nanoparticles. *ACS Omega* 11(7):12163–12174.",
   "ho": "deoliveira",
   "nam": 2026,
@@ -736,6 +1234,22 @@
    "nhu-tuong:R25"
   ],
   "khoa": "deoliveira2026"
+ },
+ {
+  "trich_dan": "Desai PM, Liew CV, Heng PWS (2016). Review of disintegrants and the disintegration phenomena. *J Pharm Sci* 105(9):2545–2555.",
+  "ho": "desai",
+  "nam": 2016,
+  "doi": "10.1016/j.xphs.2015.12.019",
+  "pmid": "27506604",
+  "url": "https://doi.org/10.1016/j.xphs.2015.12.019",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S56"
+  ],
+  "khoa": "desai2016"
  },
  {
   "trich_dan": "Dewi B. P. C. (2020). Phase separation in biopolymer mixtures (luận án).",
@@ -914,6 +1428,22 @@
   "khoa": "doria2023"
  },
  {
+  "trich_dan": "Dressman JB, Amidon GL, Reppas C, Shah VP (1998). Dissolution testing as a prognostic tool for oral drug absorption: immediate release dosage forms. *Pharm Res* 15(1):11–22.",
+  "ho": "dressman",
+  "nam": 1998,
+  "doi": "10.1023/a:1011984216775",
+  "pmid": "9487541",
+  "url": "https://doi.org/10.1023/a:1011984216775",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S27"
+  ],
+  "khoa": "dressman1998"
+ },
+ {
   "trich_dan": "Drusch S. et al. (2024). Review on the impact of the molecular structure of pectin on the associative phase separation with proteins. *Food Hydrocolloids*.",
   "ho": "drusch",
   "nam": 2024,
@@ -1042,6 +1572,74 @@
   "khoa": "efsa2017e"
  },
  {
+  "trich_dan": "EFSA ANS Panel (2017). Re-evaluation of glutamic acid (E 620), sodium glutamate (E 621), potassium glutamate (E 622), calcium glutamate (E 623), ammonium glutamate (E 624) and magnesium glutamate (E 625) as food additives. *EFSA J* 15(7):e04910",
+  "ho": "efsa",
+  "nam": 2017,
+  "doi": "10.2903/j.efsa.2017.4910",
+  "pmid": "32625571",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/32625571/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:06",
+   "09"
+  ],
+  "khoa": "efsa2017glu"
+ },
+ {
+  "trich_dan": "EFSA ANS Panel (2017). Re-evaluation of sodium nitrate (E 251) and potassium nitrate (E 252) as food additives. *EFSA J* 15(6):e04787",
+  "ho": "efsa",
+  "nam": 2017,
+  "doi": "10.2903/j.efsa.2017.4787",
+  "pmid": "32625505",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/32625505/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02",
+   "09"
+  ],
+  "khoa": "efsa2017nitrate"
+ },
+ {
+  "trich_dan": "EFSA ANS Panel (2017). Re-evaluation of potassium nitrite (E 249) and sodium nitrite (E 250) as food additives. *EFSA J* 15(6):e04786",
+  "ho": "efsa",
+  "nam": 2017,
+  "doi": "10.2903/j.efsa.2017.4786",
+  "pmid": "32625504",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/32625504/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02",
+   "09"
+  ],
+  "khoa": "efsa2017nitrite"
+ },
+ {
+  "trich_dan": "EFSA ANS Panel (2017). Re-evaluation of oxidised starch (E 1404), monostarch phosphate (E 1410), distarch phosphate (E 1412), phosphated distarch phosphate (E 1413), acetylated distarch phosphate (E 1414), acetylated starch (E 1420), acetylated distarch adipate (E 1422), hydroxypropyl starch (E 1440), hydroxypropyl distarch phosphate (E 1442), starch sodium octenyl succinate (E 1450), acetylated oxidised starch (E 1451) and starch aluminium octenyl succinate (E 1452) as food additives. *EFSA J* 15(10):e04911",
+  "ho": "efsa",
+  "nam": 2017,
+  "doi": "10.2903/j.efsa.2017.4911",
+  "pmid": "32625282",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/32625282/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:04",
+   "09"
+  ],
+  "khoa": "efsa2017starch"
+ },
+ {
   "trich_dan": "EFSA (2018). Re-evaluation of propane-1,2-diol esters of fatty acids (E 477). *EFSA J* 16(12):5497",
   "ho": "efsa",
   "nam": 2018,
@@ -1090,6 +1688,23 @@
   "khoa": "efsa2019"
  },
  {
+  "trich_dan": "EFSA ANS Panel (2019). Re-evaluation of phosphoric acid–phosphates – di-, tri- and polyphosphates (E 338–341, E 343, E 450–452) as food additives and the safety of proposed extension of use. *EFSA J* 17(6):e05674",
+  "ho": "efsa",
+  "nam": 2019,
+  "doi": "10.2903/j.efsa.2019.5674",
+  "pmid": "32626329",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/32626329/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01",
+   "09"
+  ],
+  "khoa": "efsa2019phos"
+ },
+ {
   "trich_dan": "EFSA (2020). Re-evaluation of E 472a–f. *EFSA J* 18(3):e06032.",
   "ho": "efsa",
   "nam": 2020,
@@ -1104,6 +1719,23 @@
    "chat-nhu-hoa:E3"
   ],
   "khoa": "efsa2020"
+ },
+ {
+  "trich_dan": "EFSA FAF Panel (2022). Follow-up of the re-evaluation of sulfur dioxide (E 220), sodium sulfite (E 221), sodium bisulfite (E 222), sodium metabisulfite (E 223), potassium metabisulfite (E 224), calcium sulfite (E 226), calcium bisulfite (E 227) and potassium bisulfite (E 228). *EFSA J* 20(11):e07594",
+  "ho": "efsa",
+  "nam": 2022,
+  "doi": "10.2903/j.efsa.2022.7594",
+  "pmid": "36440381",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/36440381/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02",
+   "09"
+  ],
+  "khoa": "efsa2022sulfite"
  },
  {
   "trich_dan": "EFSA Journal: đánh giá lại phụ gia – xanthan 2023",
@@ -1314,6 +1946,70 @@
   "khoa": "efsai"
  },
  {
+  "trich_dan": "Eklund T (1983). The antimicrobial effect of dissociated and undissociated sorbic acid at different pH levels. *J Appl Bacteriol*",
+  "ho": "eklund",
+  "nam": 1983,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/e83f42fec3c85aceadb5a0121771c264/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02"
+  ],
+  "khoa": "eklund1983"
+ },
+ {
+  "trich_dan": "Eklund T (1985). Inhibition of microbial growth at different pH levels by benzoic and propionic acids and esters of p-hydroxybenzoic acid. *Int J Food Microbiol*",
+  "ho": "eklund",
+  "nam": 1985,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/04734c7901e15071b7e246ef880a3f8e/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02"
+  ],
+  "khoa": "eklund1985"
+ },
+ {
+  "trich_dan": "Elgadir M et al. (2009). Thermal behavior of selected starches in presence of other food ingredients studied by DSC – review. *Compr Rev Food Sci Food Saf*",
+  "ho": "elgadir",
+  "nam": 2009,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/8c1572e88f8d5e048bc0affc433a70ad/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:04"
+  ],
+  "khoa": "elgadir2009"
+ },
+ {
+  "trich_dan": "El Hosry L et al. (2025). Maillard reaction: mechanism, influencing parameters, advantages, disadvantages, and food industrial applications: a review. *Foods*",
+  "ho": "elhosry",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/8a6fce415fa3566ea59aca71bfe62037/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:03"
+  ],
+  "khoa": "elhosry2025"
+ },
+ {
   "trich_dan": "EU Reg. (EU) 2020/355 và 2018/682 (sửa phụ lục phụ gia)",
   "ho": "eu",
   "nam": 2020,
@@ -1328,6 +2024,22 @@
    "chat-nhu-hoa:E20"
   ],
   "khoa": "eu2020"
+ },
+ {
+  "trich_dan": "Evans DF, Pye G, Bramley R, Clark AG, Dyson TJ, Hardcastle JD (1988). Measurement of gastrointestinal pH profiles in normal ambulant human subjects. *Gut* 29(8):1035–1041.",
+  "ho": "evans",
+  "nam": 1988,
+  "doi": "10.1136/gut.29.8.1035",
+  "pmid": "3410329",
+  "url": "https://doi.org/10.1136/gut.29.8.1035",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S50"
+  ],
+  "khoa": "evans1988"
  },
  {
   "trich_dan": "Fan H.-R. et al. (2026). Modulation of viscosity, swallowability, and stability of starch-based thickener: konjac gum and xanthan gum. *Food Res. Int.*",
@@ -1378,6 +2090,119 @@
   "khoa": "farahani2023"
  },
  {
+  "trich_dan": "Faure A, York P, Rowe RC (2001). Process control and scale-up of pharmaceutical wet granulation processes: a review. *Eur J Pharm Biopharm* 52(3):269–277.",
+  "ho": "faure",
+  "nam": 2001,
+  "doi": "10.1016/s0939-6411(01)00184-9",
+  "pmid": "11677069",
+  "url": "https://doi.org/10.1016/s0939-6411(01)00184-9",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S52"
+  ],
+  "khoa": "faure2001"
+ },
+ {
+  "trich_dan": "FDA. Fish and Fishery Products Hazards and Controls Guidance, Appendix 4: Bacterial Pathogen Growth and Inactivation, Table A-1 Limiting conditions for pathogen growth (tài liệu tham khảo cập nhật 2011-03-29)",
+  "ho": "fda",
+  "nam": 2011,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.fda.gov/media/80390/download",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02",
+   "07"
+  ],
+  "khoa": "fda-app4"
+ },
+ {
+  "trich_dan": "FDA (2017, tháng 12). Waiver of In Vivo Bioavailability and Bioequivalence Studies for Immediate-Release Solid Oral Dosage Forms Based on a Biopharmaceutics Classification System. Guidance for Industry.",
+  "ho": "fdabcs",
+  "nam": 2017,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.fda.gov/media/70963/download",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S06"
+  ],
+  "khoa": "fdabcs2017"
+ },
+ {
+  "trich_dan": "FDA (1997). Dissolution Testing of Immediate Release Solid Oral Dosage Forms. Guidance for Industry.",
+  "ho": "fdadissol",
+  "nam": 1997,
+  "doi": null,
+  "pmid": null,
+  "url": "https://fda.gov/media/70936/download",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S07"
+  ],
+  "khoa": "fdadissol1997"
+ },
+ {
+  "trich_dan": "FDA. Inactive Ingredients Database Download (trang mô tả CSDL; cập nhật hằng quý).",
+  "ho": "fdaiid",
+  "nam": 2026,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.fda.gov/drugs/drug-approvals-and-databases/inactive-ingredients-database-download",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S09"
+  ],
+  "khoa": "fdaiid"
+ },
+ {
+  "trich_dan": "FDA/CDER (1995, tháng 11). Immediate Release Solid Oral Dosage Forms: Scale-Up and Postapproval Changes (SUPAC-IR). Guidance for Industry.",
+  "ho": "fdasupacir",
+  "nam": 1995,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.fda.gov/media/70949/download",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S08"
+  ],
+  "khoa": "fdasupacir"
+ },
+ {
+  "trich_dan": "Felton LA, Porter SC (2013). An update on pharmaceutical film coating for drug delivery. *Expert Opin Drug Deliv* 10(4):421–435.",
+  "ho": "felton",
+  "nam": 2013,
+  "doi": "10.1517/17425247.2013.763792",
+  "pmid": "23339342",
+  "url": "https://doi.org/10.1517/17425247.2013.763792",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S57"
+  ],
+  "khoa": "felton2013"
+ },
+ {
   "trich_dan": "Fjodorova J. et al. (2022). Tuning xanthan viscosity by directed random coil-to-helix transition. *Biomacromolecules*.",
   "ho": "fjodorova",
   "nam": 2022,
@@ -1426,6 +2251,22 @@
   "khoa": "friberg2004"
  },
  {
+  "trich_dan": "Galia E, Nicolaides E, Hörter D, Löbenberg R, Reppas C, Dressman JB (1998). Evaluation of various dissolution media for predicting in vivo performance of class I and II drugs. *Pharm Res* 15(5):698–705.",
+  "ho": "galia",
+  "nam": 1998,
+  "doi": "10.1023/a:1011910801212",
+  "pmid": "9619777",
+  "url": "https://doi.org/10.1023/a:1011910801212",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S28"
+  ],
+  "khoa": "galia1998"
+ },
+ {
   "trich_dan": "Gárzon R, et al. (2018). Understanding the effect of emulsifiers on bread aeration during breadmaking. *J Sci Food Agric*.",
   "ho": "garzon",
   "nam": 2018,
@@ -1440,6 +2281,22 @@
    "chat-nhu-hoa:D12"
   ],
   "khoa": "garzon2018"
+ },
+ {
+  "trich_dan": "Gault NFS (1985). The relationship between water-holding capacity and cooked meat tenderness in some beef muscles as influenced by acidic conditions below the ultimate pH. *Meat Sci* 15(1):15–30",
+  "ho": "gault",
+  "nam": 1985,
+  "doi": "10.1016/0309-1740(85)90071-3",
+  "pmid": "22056073",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/22056073/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01"
+  ],
+  "khoa": "gault1985"
  },
  {
   "trich_dan": "Gelin J-L, et al. (1996). Interactions between food components in ice cream. Part 1: unfrozen emulsions. *Food Hydrocolloids*.",
@@ -1584,6 +2441,22 @@
    "chat-nhu-hoa:D18"
   ],
   "khoa": "gomez2013"
+ },
+ {
+  "trich_dan": "Gøtterup J et al. (2008). Relationship between nitrate/nitrite reductase activities in meat associated staphylococci and nitrosylmyoglobin formation in a cured meat model system. *Int J Food Microbiol* 120(3):303–310",
+  "ho": "gotterup",
+  "nam": 2007,
+  "doi": "10.1016/j.ijfoodmicro.2007.08.034",
+  "pmid": "17920151",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/17920151/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02"
+  ],
+  "khoa": "gotterup2008"
  },
  {
   "trich_dan": "Grace HP (1982). Dispersion phenomena in high viscosity immiscible fluid systems... *Chem Eng Commun* 14:225–277.",
@@ -1754,12 +2627,45 @@
   "url": "https://doi.org/10.1039/c5sm02958a",
   "muc_doc": "tom-tat",
   "khu": [
-   "nhu-tuong"
+   "nhu-tuong",
+   "duoc-pham"
   ],
   "ma_cu": [
    "nhu-tuong:R04"
   ],
   "khoa": "gupta2016"
+ },
+ {
+  "trich_dan": "Gursoy RN, Benita S (2004). Self-emulsifying drug delivery systems (SEDDS) for improved oral delivery of lipophilic drugs. *Biomed Pharmacother* 58(3):173–182.",
+  "ho": "gursoy",
+  "nam": 2004,
+  "doi": "10.1016/j.biopha.2004.02.001",
+  "pmid": "15082340",
+  "url": "https://doi.org/10.1016/j.biopha.2004.02.001",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S61"
+  ],
+  "khoa": "gursoy2004"
+ },
+ {
+  "trich_dan": "Håkansson A (2019). Emulsion formation by homogenization: current understanding and future perspectives. *Annu Rev Food Sci Technol* 10:239–258.",
+  "ho": "hakansson",
+  "nam": 2019,
+  "doi": "10.1146/annurev-food-032818-121501",
+  "pmid": "30908953",
+  "url": "https://doi.org/10.1146/annurev-food-032818-121501",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S65"
+  ],
+  "khoa": "hakansson2019"
  },
  {
   "trich_dan": "Han L. et al. (2019). Effect of arabinogalactan protein complex content on emulsification performance of gum arabic. *Carbohydr. Polym.*",
@@ -1776,6 +2682,38 @@
    "chat-on-dinh:S85"
   ],
   "khoa": "han2019"
+ },
+ {
+  "trich_dan": "Hancock BC, Shamblin SL, Zografi G (1995). Molecular mobility of amorphous pharmaceutical solids below their glass transition temperatures. *Pharm Res* 12(6):799–806.",
+  "ho": "hancock",
+  "nam": 1995,
+  "doi": "10.1023/a:1016292416526",
+  "pmid": "7667182",
+  "url": "https://doi.org/10.1023/a:1016292416526",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S43"
+  ],
+  "khoa": "hancock1995"
+ },
+ {
+  "trich_dan": "Hancock BC, Zografi G (1997). Characteristics and significance of the amorphous state in pharmaceutical systems. *J Pharm Sci* 86(1):1–12.",
+  "ho": "hancock",
+  "nam": 1997,
+  "doi": "10.1021/js9601896",
+  "pmid": "9002452",
+  "url": "https://doi.org/10.1021/js9601896",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S42"
+  ],
+  "khoa": "hancock1997"
  },
  {
   "trich_dan": "Harte F. et al. (2007). Solubilized micellar calcium induced low methoxyl-pectin aggregation during milk acidification. *J. Dairy Sci.*",
@@ -1874,6 +2812,70 @@
   "khoa": "hinze1955"
  },
  {
+  "trich_dan": "Hippalgaonkar K, Majumdar S, Kansara V (2010). Injectable lipid emulsions — advancements, opportunities and challenges. *AAPS PharmSciTech* 11(4):1526–1540.",
+  "ho": "hippal",
+  "nam": 2010,
+  "doi": "10.1208/s12249-010-9526-5",
+  "pmid": "20976577",
+  "url": "https://doi.org/10.1208/s12249-010-9526-5",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S58"
+  ],
+  "khoa": "hippal2010"
+ },
+ {
+  "trich_dan": "Hörter D, Dressman JB (2001). Influence of physicochemical properties on dissolution of drugs in the gastrointestinal tract. *Adv Drug Deliv Rev* 46(1–3):75–87.",
+  "ho": "horter",
+  "nam": 2001,
+  "doi": "10.1016/s0169-409x(00)00130-7",
+  "pmid": "11259834",
+  "url": "https://doi.org/10.1016/s0169-409x(00)00130-7",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S49"
+  ],
+  "khoa": "horter2001"
+ },
+ {
+  "trich_dan": "Hou X, Zaks T, Langer R, Dong Y (2021). Lipid nanoparticles for mRNA delivery. *Nat Rev Mater* 6(12):1078–1094.",
+  "ho": "hou",
+  "nam": 2021,
+  "doi": "10.1038/s41578-021-00358-0",
+  "pmid": "34394960",
+  "url": "https://doi.org/10.1038/s41578-021-00358-0",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S69"
+  ],
+  "khoa": "hou2021"
+ },
+ {
+  "trich_dan": "Hovorka SW, Schöneich C (2001). Oxidative degradation of pharmaceuticals: theory, mechanisms and inhibition. *J Pharm Sci* 90(3):253–269.",
+  "ho": "hovorka",
+  "nam": 2001,
+  "doi": "10.1002/1520-6017(200103)90:3<253::aid-jps1>3.0.co;2-w",
+  "pmid": "11170019",
+  "url": "https://doi.org/10.1002/1520-6017(200103)90:3<253::aid-jps1>3.0.co;2-w",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S75"
+  ],
+  "khoa": "hovorka2001"
+ },
+ {
   "trich_dan": "Hu B. et al. (2025). The impact of molecular weight on the segregative phase separation-induced molecular fractionation of aqueous gum Arabic/xanthan mixtures. *Int. J. Biol. Macromol.*",
   "ho": "hu",
   "nam": 2025,
@@ -1906,6 +2908,22 @@
   "khoa": "huamanimelendez2023"
  },
  {
+  "trich_dan": "Huang G et al. (2024). Recent advances in enzymatic modification techniques to improve the quality of flour-based fried foods. *Crit Rev Food Sci Nutr* 65(13):2609–2624",
+  "ho": "huang",
+  "nam": 2024,
+  "doi": "10.1080/10408398.2024.2349728",
+  "pmid": "38711404",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/38711404/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:05"
+  ],
+  "khoa": "huang2024"
+ },
+ {
   "trich_dan": "Hwang J, Jun H, Roh S, Lee SJ, Mun JM, Kim SW, Chung MY, Kim IH, Kim BH. Preparation of Low-Diacylglycerol Cocoa Butter Equivalents by Hexane Fractionation of Palm Stearin and Shea Butter. *Molecules* 2021;26(11):3231",
   "ho": "hwang",
   "nam": 2021,
@@ -1922,6 +2940,86 @@
   "khoa": "hwang2021"
  },
  {
+  "trich_dan": "ICH (2019). M9 Biopharmaceutics Classification System-based Biowaivers (Step 4/5; bản đăng trên EMA).",
+  "ho": "ichm",
+  "nam": 2019,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.ema.europa.eu/en/documents/scientific-guideline/ich-m9-biopharmaceutics-classification-system-based-biowaivers-step-5_en.pdf",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S05"
+  ],
+  "khoa": "ichm9"
+ },
+ {
+  "trich_dan": "ICH (2003). Q1A(R2) Stability Testing of New Drug Substances and Products. Step 4, 6/2/2003.",
+  "ho": "ichq",
+  "nam": 2003,
+  "doi": null,
+  "pmid": null,
+  "url": "https://database.ich.org/sites/default/files/Q1A%28R2%29%20Guideline.pdf",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S01"
+  ],
+  "khoa": "ichq1a"
+ },
+ {
+  "trich_dan": "ICH (1996). Q1B Photostability Testing of New Drug Substances and Products.",
+  "ho": "ichq",
+  "nam": 1996,
+  "doi": null,
+  "pmid": null,
+  "url": "https://database.ich.org/sites/default/files/Q1B%20Guideline.pdf",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S02"
+  ],
+  "khoa": "ichq1b"
+ },
+ {
+  "trich_dan": "ICH (2003). Q1E Evaluation of Stability Data.",
+  "ho": "ichq",
+  "nam": 2003,
+  "doi": null,
+  "pmid": null,
+  "url": "https://database.ich.org/sites/default/files/Q1E%20Guideline.pdf",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S03"
+  ],
+  "khoa": "ichq1e"
+ },
+ {
+  "trich_dan": "ICH (2009). Q8(R2) Pharmaceutical Development.",
+  "ho": "ichq",
+  "nam": 2009,
+  "doi": null,
+  "pmid": null,
+  "url": "https://database.ich.org/sites/default/files/Q8_R2_Guideline.pdf",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S04"
+  ],
+  "khoa": "ichq8"
+ },
+ {
   "trich_dan": "Idris NA, Dian NLHM. Inter-esterified palm products as alternatives to hydrogenation. *Asia Pac J Clin Nutr* 2005;14(4):396–401",
   "ho": "idris",
   "nam": 2005,
@@ -1936,6 +3034,22 @@
    "chat-beo:R14"
   ],
   "khoa": "idris2005"
+ },
+ {
+  "trich_dan": "Isleroglu H et al. (2012). Effect of steam baking on acrylamide formation and browning kinetics of cookies. *J Food Sci* 77(10):E257–E263",
+  "ho": "isleroglu",
+  "nam": 2012,
+  "doi": "10.1111/j.1750-3841.2012.02912.x",
+  "pmid": "22950636",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/22950636/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:03"
+  ],
+  "khoa": "isleroglu2012"
  },
  {
   "trich_dan": "Israelachvili JN, Mitchell DJ, Ninham BW (1976). Theory of self-assembly of hydrocarbon amphiphiles into micelles and bilayers. *J Chem Soc Faraday Trans 2* 72:1525–1568.",
@@ -1970,6 +3084,193 @@
   "khoa": "israelachvili2011"
  },
  {
+  "trich_dan": "JECFA database. Acesulfame potassium (INS 950): ADI 0–15 mg/kg bw; 1990, meeting 46. https://apps.who.int/food-additives-contaminants-jecfa-database/chemical.aspx?chemID=926",
+  "ho": "jecfa",
+  "nam": 1990,
+  "doi": null,
+  "pmid": null,
+  "url": "https://apps.who.int/food-additives-contaminants-jecfa-database/chemical.aspx?chemID=926",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:06",
+   "09"
+  ],
+  "khoa": "jecfa-acek"
+ },
+ {
+  "trich_dan": "JECFA database. Ascorbic acid (INS 300): ADI not specified (group); 1981, meeting 25. https://apps.who.int/food-additives-contaminants-jecfa-database/Home/Chemical/59",
+  "ho": "jecfa",
+  "nam": 1981,
+  "doi": null,
+  "pmid": null,
+  "url": "https://apps.who.int/food-additives-contaminants-jecfa-database/Home/Chemical/59",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02",
+   "09"
+  ],
+  "khoa": "jecfa-ascorbic"
+ },
+ {
+  "trich_dan": "JECFA database. Aspartame (INS 951): ADI 0–40 mg/kg bw; 2023, meeting 96 (reaffirmed). https://apps.who.int/food-additives-contaminants-jecfa-database/Home/Chemical/62",
+  "ho": "jecfa",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://apps.who.int/food-additives-contaminants-jecfa-database/Home/Chemical/62",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:06",
+   "09"
+  ],
+  "khoa": "jecfa-aspartame"
+ },
+ {
+  "trich_dan": "JECFA database. Benzoic acid (INS 210): group ADI 0–20 mg/kg bw as benzoic acid; 2021, meeting 92 (withdrew 0–5). https://apps.who.int/food-additives-contaminants-jecfa-database/Home/Chemical/4530",
+  "ho": "jecfa",
+  "nam": 2021,
+  "doi": null,
+  "pmid": null,
+  "url": "https://apps.who.int/food-additives-contaminants-jecfa-database/Home/Chemical/4530",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02",
+   "09"
+  ],
+  "khoa": "jecfa-benzoic"
+ },
+ {
+  "trich_dan": "JECFA Evaluations: Butylated hydroxyanisole: ADI 0–0.5 mg/kg bw; 1988, meeting 33. https://www.inchem.org/documents/jecfa/jeceval/jec_258.htm",
+  "ho": "jecfa",
+  "nam": 1988,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.inchem.org/documents/jecfa/jeceval/jec_258.htm",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02",
+   "09"
+  ],
+  "khoa": "jecfa-bha"
+ },
+ {
+  "trich_dan": "JECFA Evaluations: Butylated hydroxytoluene: ADI 0–0.3 mg/kg bw; 1995, meeting 44. https://www.inchem.org/documents/jecfa/jeceval/jec_259.htm",
+  "ho": "jecfa",
+  "nam": 1995,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.inchem.org/documents/jecfa/jeceval/jec_259.htm",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02",
+   "09"
+  ],
+  "khoa": "jecfa-bht"
+ },
+ {
+  "trich_dan": "JECFA database. Sodium nitrite (INS 250): ADI 0–0.07 mg/kg bw as nitrite ion; 2002, meeting 59. https://apps.who.int/food-additives-contaminants-jecfa-database/Home/Chemical/4792",
+  "ho": "jecfa",
+  "nam": 2002,
+  "doi": null,
+  "pmid": null,
+  "url": "https://apps.who.int/food-additives-contaminants-jecfa-database/Home/Chemical/4792",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02",
+   "09"
+  ],
+  "khoa": "jecfa-nitrite"
+ },
+ {
+  "trich_dan": "JECFA database. Phosphoric acid (INS 338): MTDI 70 mg/kg bw as P (group); evaluation 1982, meeting 26. https://apps.who.int/food-additives-contaminants-jecfa-database/Home/Chemical/2530",
+  "ho": "jecfa",
+  "nam": 1982,
+  "doi": null,
+  "pmid": null,
+  "url": "https://apps.who.int/food-additives-contaminants-jecfa-database/Home/Chemical/2530",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01",
+   "09"
+  ],
+  "khoa": "jecfa-phosphoric"
+ },
+ {
+  "trich_dan": "JECFA database. Potassium sorbate (INS 202): group ADI 0–25 mg/kg bw as sorbic acid; 1973, meeting 17. https://apps.who.int/food-additives-contaminants-jecfa-database/Home/Chemical/2724",
+  "ho": "jecfa",
+  "nam": 1973,
+  "doi": null,
+  "pmid": null,
+  "url": "https://apps.who.int/food-additives-contaminants-jecfa-database/Home/Chemical/2724",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02",
+   "09"
+  ],
+  "khoa": "jecfa-sorbate"
+ },
+ {
+  "trich_dan": "JECFA database. Steviol glycosides (INS 960): ADI 0–4 mg/kg bw as steviol; mục mới nhất 2026, meeting 102. https://apps.who.int/food-additives-contaminants-jecfa-database/Home/Chemical/267",
+  "ho": "jecfa",
+  "nam": 2026,
+  "doi": null,
+  "pmid": null,
+  "url": "https://apps.who.int/food-additives-contaminants-jecfa-database/Home/Chemical/267",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:06",
+   "09"
+  ],
+  "khoa": "jecfa-stevia"
+ },
+ {
+  "trich_dan": "JECFA Evaluations: Sucralose (INS 955): ADI 0–15 mg/kg bw; 1990, meeting 37. https://www.inchem.org/documents/jecfa/jeceval/jec_2206.htm",
+  "ho": "jecfa",
+  "nam": 1990,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.inchem.org/documents/jecfa/jeceval/jec_2206.htm",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:06",
+   "09"
+  ],
+  "khoa": "jecfa-sucralose"
+ },
+ {
   "trich_dan": "Jia X. et al. (2025). Conformational and rheological property comparison for three exudates gums containing type II arabinogalactans. *Food Hydrocolloids*.",
   "ho": "jia",
   "nam": 2025,
@@ -2000,6 +3301,22 @@
    "chat-nhu-hoa:C8"
   ],
   "khoa": "jin2021"
+ },
+ {
+  "trich_dan": "Jivraj M, Martini LG, Thomson CM (2000). An overview of the different excipients useful for the direct compression of tablets. *Pharm Sci Technol Today* 3(2):58–63.",
+  "ho": "jivraj",
+  "nam": 2000,
+  "doi": "10.1016/s1461-5347(99)00237-0",
+  "pmid": "10664574",
+  "url": "https://doi.org/10.1016/s1461-5347(99)00237-0",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S55"
+  ],
+  "khoa": "jivraj2000"
  },
  {
   "trich_dan": "Jo W. et al. (2018). Rheological characterizations of concentrated binary gum mixtures with xanthan gum and galactomannans. *Int. J. Biol. Macromol.*",
@@ -2050,6 +3367,38 @@
   "khoa": "kadhum2017"
  },
  {
+  "trich_dan": "Kang ZL et al. (2020). The effects of sodium chloride on proteins aggregation, conformation and gel properties of pork myofibrillar protein. *J Food Sci Technol*",
+  "ho": "kang",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/e95bc104ec46582e91a02e4eb49cbc1d/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01"
+  ],
+  "khoa": "kang2020"
+ },
+ {
+  "trich_dan": "Kang ZL et al. (2021). Effect of temperature increase and NaCl addition on aggregation and gel properties of pork myofibrillar protein. *J Food Process Preserv*",
+  "ho": "kang",
+  "nam": 2021,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/eed7bbcd9aa354acaae087e3eefc6de8/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01"
+  ],
+  "khoa": "kang2021"
+ },
+ {
   "trich_dan": "Kapoor D. U. et al. (2025). Alginate gels: chemistry, gelation mechanisms, and therapeutic applications... *Int. J. Pharm.*",
   "ho": "kapoor",
   "nam": 2025,
@@ -2080,6 +3429,38 @@
    "nhu-tuong:R13"
   ],
   "khoa": "karthik2017"
+ },
+ {
+  "trich_dan": "Kawabata Y, Wada K, Nakatani M, Yamada S, Onoue S (2011). Formulation design for poorly water-soluble drugs based on biopharmaceutics classification system: basic approaches and practical applications. *Int J Pharm* 420(1):1–10.",
+  "ho": "kawabata",
+  "nam": 2011,
+  "doi": "10.1016/j.ijpharm.2011.08.032",
+  "pmid": "21884771",
+  "url": "https://doi.org/10.1016/j.ijpharm.2011.08.032",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S47"
+  ],
+  "khoa": "kawabata2011"
+ },
+ {
+  "trich_dan": "Keck CM, Müller RH (2006). Drug nanocrystals of poorly soluble drugs produced by high pressure homogenisation. *Eur J Pharm Biopharm* 62(1):3–16.",
+  "ho": "keck",
+  "nam": 2006,
+  "doi": "10.1016/j.ejpb.2005.05.009",
+  "pmid": "16129588",
+  "url": "https://doi.org/10.1016/j.ejpb.2005.05.009",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S38"
+  ],
+  "khoa": "keck2005"
  },
  {
   "trich_dan": "Kersten F. et al. (2025). Gum arabic – same but different: comparative analysis of 20 *Acacia senegal* samples. *Food Hydrocolloids*.",
@@ -2114,6 +3495,22 @@
   "khoa": "kersten2026"
  },
  {
+  "trich_dan": "Khoo HE et al. (2017). Anthocyanidins and anthocyanins: colored pigments as food, pharmaceutical ingredients, and the potential health benefits. *Food Nutr Res* 61(1):1361779",
+  "ho": "khoo",
+  "nam": 2017,
+  "doi": "10.1080/16546628.2017.1361779",
+  "pmid": "28970777",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/28970777/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:06"
+  ],
+  "khoa": "khoo2017"
+ },
+ {
   "trich_dan": "Kibar E. A. A. et al. (2023). Cross-linked, hydroxypropylated and dual modified corn starch as gelling agent in soft confectionery. *Starch/Stärke*.",
   "ho": "kibar",
   "nam": 2023,
@@ -2130,6 +3527,22 @@
   "khoa": "kibar2023"
  },
  {
+  "trich_dan": "Kim YJ et al. (1987). Maillard reaction in an intermediate moisture model food system. *Korean J Food Sci Technol*",
+  "ho": "kim",
+  "nam": 1987,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/18b25afcdb3453a88db20713561379c7/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:03"
+  ],
+  "khoa": "kim1987"
+ },
+ {
   "trich_dan": "Kiokias S, Varzakas T, Oreopoulou V. In vitro activity of vitamins, flavonoids, and natural phenolic antioxidants against the oxidative deterioration of oil-based systems. *Crit Rev Food Sci Nutr* 2008;48(1):78–93",
   "ho": "kiokias",
   "nam": 2008,
@@ -2144,6 +3557,22 @@
    "chat-beo:R32"
   ],
   "khoa": "kiokias2008"
+ },
+ {
+  "trich_dan": "Kishore RSK, Pappenberger A, Dauphin IB, Ross A, Buergi B, Staempfli A, Mahler HC (2011). Degradation of polysorbates 20 and 80: studies on thermal autoxidation and hydrolysis. *J Pharm Sci* 100(2):721–731.",
+  "ho": "kishore",
+  "nam": 2011,
+  "doi": "10.1002/jps.22290",
+  "pmid": "20803573",
+  "url": "https://doi.org/10.1002/jps.22290",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S76"
+  ],
+  "khoa": "kishore2011"
  },
  {
   "trich_dan": "Kochhar SP, Henry CJK. Oxidative stability and shelf-life evaluation of selected culinary oils. *Int J Food Sci Nutr* 2009;60 Suppl 7:289–296",
@@ -2274,6 +3703,38 @@
   "khoa": "larsson1966"
  },
  {
+  "trich_dan": "Lawrence MJ, Rees GD (2000). Microemulsion-based media as novel drug delivery systems. *Adv Drug Deliv Rev* 45(1):89–121.",
+  "ho": "lawrence",
+  "nam": 2000,
+  "doi": "10.1016/s0169-409x(00)00103-4",
+  "pmid": "11104900",
+  "url": "https://doi.org/10.1016/s0169-409x(00)00103-4",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S63"
+  ],
+  "khoa": "lawrence2000"
+ },
+ {
+  "trich_dan": "Lee CH, Moturi V, Lee Y (2009). Thixotropic property in pharmaceutical formulations. *J Control Release* 136(2):88–98.",
+  "ho": "lee",
+  "nam": 2009,
+  "doi": "10.1016/j.jconrel.2009.02.013",
+  "pmid": "19250955",
+  "url": "https://doi.org/10.1016/j.jconrel.2009.02.013",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S72"
+  ],
+  "khoa": "lee2009"
+ },
+ {
   "trich_dan": "Lee YY, Tang TK, Chan ES, Phuah ET, Lai OM, Tan CP, Wang Y, Ab Karim NA, Mat Dian NH, Tan JS. Medium chain triglyceride and medium-and long chain triglyceride: metabolism, production, health impacts and its applications — a review. *Crit Rev Food Sci Nutr* 2022;62(15):4169–4185 (online 2021-01)",
   "ho": "lee",
   "nam": 2022,
@@ -2306,6 +3767,38 @@
   "khoa": "lee2025"
  },
  {
+  "trich_dan": "Leuner C, Dressman J (2000). Improving drug solubility for oral delivery using solid dispersions. *Eur J Pharm Biopharm* 50(1):47–60.",
+  "ho": "leuner",
+  "nam": 2000,
+  "doi": "10.1016/s0939-6411(00)00076-x",
+  "pmid": "10840192",
+  "url": "https://doi.org/10.1016/s0939-6411(00)00076-x",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S45"
+  ],
+  "khoa": "leuner2000"
+ },
+ {
+  "trich_dan": "Lewis DF et al. (1986). Action of polyphosphates in meat products. *Food Structure*",
+  "ho": "lewis",
+  "nam": 1986,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/fb8331c4b5b45b84b3a3b40a54f20815/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01"
+  ],
+  "khoa": "lewis1986"
+ },
+ {
   "trich_dan": "Li L, et al. (2021). Competitive adsorption and dilatational rheology of pork myofibrillar and sarcoplasmic proteins at the O/W interface. *Food Hydrocolloids*.",
   "ho": "li",
   "nam": 2021,
@@ -2320,6 +3813,22 @@
    "chat-nhu-hoa:B20"
   ],
   "khoa": "li2021"
+ },
+ {
+  "trich_dan": "Li C (2022). Recent progress in understanding starch gelatinization – an important property determining food quality. *Carbohydr Polym*",
+  "ho": "li",
+  "nam": 2022,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/a360b32deeb15658a6a67057024bb0b2/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:04"
+  ],
+  "khoa": "li2022"
  },
  {
   "trich_dan": "Li W, Jiao B, Li S, Faisal S, Shi A, Fu W, Chen Y, Wang Q (2022). Recent advances on Pickering emulsions stabilized by diverse edible particles: stability mechanism and applications. *Front Nutr* 9:864943.",
@@ -2368,6 +3877,70 @@
    "chat-on-dinh:S20"
   ],
   "khoa": "li2023"
+ },
+ {
+  "trich_dan": "Li EP et al. (2023). Importance of amylose chain-length distribution in determining starch gelatinization and retrogradation property of wheat flour in the presence of different salts. *Carbohydr Polym*",
+  "ho": "li",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/90593c546ccd5ec2a4ebb41e75a20f34/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:04"
+  ],
+  "khoa": "li2023amylose"
+ },
+ {
+  "trich_dan": "Li S et al. (2024). The important role of starch fine molecular structures in starch gelatinization property with addition of sugars/sugar alcohols. *Carbohydr Polym*",
+  "ho": "li",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/2c6ff7ec8a945c3e994fbad50f9821df/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:04"
+  ],
+  "khoa": "li2024"
+ },
+ {
+  "trich_dan": "Li K et al. (2026). Application of bamboo shoot superfine powder/κ-carrageenan composite gel in bread: texture, properties and flavor. *Foods* 15(18):3193",
+  "ho": "li",
+  "nam": 2026,
+  "doi": "10.3390/foods15183193",
+  "pmid": "42793980",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42793980/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:04"
+  ],
+  "khoa": "li2026bread"
+ },
+ {
+  "trich_dan": "Li M et al. (2026). Valorization of pink salmon processing by-products: nutritional composition, starch-modified gel quality and digestibility. *Foods* 15(18):3259",
+  "ho": "li",
+  "nam": 2026,
+  "doi": "10.3390/foods15183259",
+  "pmid": "42794043",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42794043/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:04"
+  ],
+  "khoa": "li2026salmon"
  },
  {
   "trich_dan": "Liang Y. et al. (2014). Physical stability, microstructure and rheology of sodium-caseinate-stabilized emulsions as influenced by protein concentration and non-adsorbing polysaccharides. *Food Hydrocolloids*.",
@@ -2434,6 +4007,22 @@
   "khoa": "lin2021"
  },
  {
+  "trich_dan": "Lipinski CA, Lombardo F, Dominy BW, Feeney PJ (2001). Experimental and computational approaches to estimate solubility and permeability in drug discovery and development settings. *Adv Drug Deliv Rev* 46(1–3):3–26.",
+  "ho": "lipinski",
+  "nam": 2001,
+  "doi": "10.1016/s0169-409x(00)00129-0",
+  "pmid": "11259830",
+  "url": "https://doi.org/10.1016/s0169-409x(00)00129-0",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S48"
+  ],
+  "khoa": "lipinski2001"
+ },
+ {
   "trich_dan": "Liu Q, Huang H, Chen H, Lin J, Wang Q (2019). Food-grade nanoemulsions: preparation, stability and application in encapsulation of bioactive compounds. *Molecules* 24(23):4242.",
   "ho": "liu",
   "nam": 2019,
@@ -2496,6 +4085,54 @@
    "nhu-tuong:R17"
   ],
   "khoa": "liu2025"
+ },
+ {
+  "trich_dan": "Liyanage DWK et al. (2020). Processing strategies to decrease acrylamide formation, reducing sugars and free asparagine content in potato chips from three commercial cultivars. *Food Control*",
+  "ho": "liyanage",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/0e22bf88ab335987a9bf2093fee96443/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:03"
+  ],
+  "khoa": "liyanage2020"
+ },
+ {
+  "trich_dan": "Loftsson T, Brewster ME (2010). Pharmaceutical applications of cyclodextrins: basic science and product development. *J Pharm Pharmacol* 62(11):1607–1621.",
+  "ho": "loftsson",
+  "nam": 2010,
+  "doi": "10.1111/j.2042-7158.2010.01030.x",
+  "pmid": "21039545",
+  "url": "https://doi.org/10.1111/j.2042-7158.2010.01030.x",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S36"
+  ],
+  "khoa": "loftsson2010"
+ },
+ {
+  "trich_dan": "López-Medina FA et al. (2023). Functional and physicochemical properties of protein from giant squid (Dosidicus gigas) extracted using foam-aided pH-shift processing. *J Food Sci* 88(4):1409–1419",
+  "ho": "lopezmedina",
+  "nam": 2023,
+  "doi": "10.1111/1750-3841.16508",
+  "pmid": "36851824",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/36851824/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:05"
+  ],
+  "khoa": "lopezmedina2023"
  },
  {
   "trich_dan": "López-Santiago R. F. et al. (2025). Alginate biopolymer viscoelasticity from sol to gel... *Phys. Fluids*.",
@@ -2608,6 +4245,22 @@
    "chat-beo:R1"
   ],
   "khoa": "macridachisgonzalez2020"
+ },
+ {
+  "trich_dan": "Maleki-dashti F et al. (2026). Ultrasonicated brine: implications for polyphosphate functionality and beef quality. *Ultrason Sonochem*",
+  "ho": "maleki",
+  "nam": 2026,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/2b3415e7f12a5b74b7bf099286568db7/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01"
+  ],
+  "khoa": "maleki2026"
  },
  {
   "trich_dan": "Marangoni AG (ed.). *Fat Crystal Networks*. Marcel Dekker, 2005",
@@ -2802,6 +4455,38 @@
   "khoa": "mediwaththe2023"
  },
  {
+  "trich_dan": "Meng N et al. (2026). Influence of cooking techniques on whole grains quality, nutrition, safety and structural changes. *Food Res Int* 245:120707",
+  "ho": "meng",
+  "nam": 2026,
+  "doi": "10.1016/j.foodres.2026.120707",
+  "pmid": "42914216",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42914216/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:07"
+  ],
+  "khoa": "meng2026"
+ },
+ {
+  "trich_dan": "Merisko-Liversidge E, Liversidge GG (2011). Nanosizing for oral and parenteral drug delivery: a perspective on formulating poorly-water soluble compounds using wet media milling technology. *Adv Drug Deliv Rev* 63(6):427–440.",
+  "ho": "merisko",
+  "nam": 2011,
+  "doi": "10.1016/j.addr.2010.12.007",
+  "pmid": "21223990",
+  "url": "https://doi.org/10.1016/j.addr.2010.12.007",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S40"
+  ],
+  "khoa": "merisko2011"
+ },
+ {
   "trich_dan": "Mo Y. et al. (2026). Functional additives enhance freeze–thaw stability and retard retrogradation in wheat–potato starch gels... *Foods*.",
   "ho": "mo",
   "nam": 2026,
@@ -2852,6 +4537,22 @@
   "khoa": "moens2019"
  },
  {
+  "trich_dan": "Molina RE, Bohrer BM, Mejia SMV (2023). Phosphate alternatives for meat processing and challenges for the industry: a critical review. *Food Res Int* 166:112624",
+  "ho": "molina",
+  "nam": 2023,
+  "doi": "10.1016/j.foodres.2023.112624",
+  "pmid": "36914330",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/36914330/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01"
+  ],
+  "khoa": "molina2023"
+ },
+ {
   "trich_dan": "Morris V, et al. (2000). Surfactant–protein interactions at air–water and oil–water interfaces observed by AFM.",
   "ho": "morris",
   "nam": 2000,
@@ -2882,6 +4583,22 @@
    "chat-nhu-hoa:B7"
   ],
   "khoa": "morris2008"
+ },
+ {
+  "trich_dan": "Müller RH, Keck CM (2004). Challenges and solutions for the delivery of biotech drugs — a review of drug nanocrystal technology and lipid nanoparticles. *J Biotechnol* 113(1–3):151–170.",
+  "ho": "muller",
+  "nam": 2004,
+  "doi": "10.1016/j.jbiotec.2004.06.007",
+  "pmid": "15380654",
+  "url": "https://doi.org/10.1016/j.jbiotec.2004.06.007",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S39"
+  ],
+  "khoa": "muller2004"
  },
  {
   "trich_dan": "Murayama D, et al. (2021). Surfactant-induced competitive displacement of whey protein conjugated to acid- or alkali-extracted potato pectin. *Food Hydrocolloids*.",
@@ -2964,6 +4681,22 @@
   "khoa": "nie2025"
  },
  {
+  "trich_dan": "Ning C et al. (2019). l-Lysine/l-arginine/l-cysteine synergistically improves the color of cured sausage with NaNO2 by hindering myoglobin oxidation and promoting nitrosylmyoglobin formation. *Food Chem* 284:219–226",
+  "ho": "ning",
+  "nam": 2019,
+  "doi": "10.1016/j.foodchem.2019.01.116",
+  "pmid": "30744849",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/30744849/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02"
+  ],
+  "khoa": "ning2019"
+ },
+ {
   "trich_dan": "Niu F, et al. (2023). Fabrication and stability of W/O/W emulsions stabilized by gum arabic and PGPR. *J Sci Food Agric* 104:797–808. doi 10.1002/jsfa.12972. PMID 37683081",
   "ho": "niu",
   "nam": 2023,
@@ -3012,6 +4745,22 @@
   "khoa": "nooshkam2023"
  },
  {
+  "trich_dan": "Nora'zizi NFF et al. (2025). Physicochemical, microstructural, and sensory attributes of frozen buffalo loins treated with sodium tripolyphosphate and sous-vide cooking. *Meat Sci*",
+  "ho": "norazizi",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/96016c9de325591ebf9d69c3691f8432/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01"
+  ],
+  "khoa": "norazizi2025"
+ },
+ {
   "trich_dan": "Nsengiyumva E. et al. (2022). Xanthan gum in aqueous solutions: fundamentals and applications. *Int. J. Biol. Macromol.*",
   "ho": "nsengiyumva",
   "nam": 2022,
@@ -3058,6 +4807,22 @@
    "chat-nhu-hoa:D14"
   ],
   "khoa": "nunes2009"
+ },
+ {
+  "trich_dan": "Nuñez SM et al. (2020). Bovine skin gelatin hydrolysates as potential substitutes for polyphosphates: the role of degree of hydrolysis and pH on water-holding capacity. *J Food Sci*",
+  "ho": "nunez",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/bcc260de8c985874ae57cd268272c290/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01"
+  ],
+  "khoa": "nunez2020"
  },
  {
   "trich_dan": "NutriNet-Santé: emulsifiers & CVD. *BMJ* 2023.",
@@ -3124,6 +4889,22 @@
   "khoa": "okstate"
  },
  {
+  "trich_dan": "Olson F, Hunt CA, Szoka FC, Vail WJ, Papahadjopoulos D (1979). Preparation of liposomes of defined size distribution by extrusion through polycarbonate membranes. *Biochim Biophys Acta* 557(1):9–23.",
+  "ho": "olson",
+  "nam": 1979,
+  "doi": "10.1016/0005-2736(79)90085-3",
+  "pmid": "95096",
+  "url": "https://doi.org/10.1016/0005-2736(79)90085-3",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S66"
+  ],
+  "khoa": "olson1979"
+ },
+ {
   "trich_dan": "Pai V. et al. (2002). Gelation and rheology of xanthan/enzyme-modified guar blends. *Carbohydr. Polym.*",
   "ho": "pai",
   "nam": 2002,
@@ -3154,6 +4935,38 @@
    "nhu-tuong:R16"
   ],
   "khoa": "park2025"
+ },
+ {
+  "trich_dan": "Pasquali RC, Taurozzi MP, Bregni C (2008). Some considerations about the hydrophilic-lipophilic balance system. *Int J Pharm* 356(1–2):44–51. (Tìm PMID bằng khớp trích dẫn; tóm tắt đọc qua Consensus.)",
+  "ho": "pasquali",
+  "nam": 2008,
+  "doi": null,
+  "pmid": "18258397",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/18258397/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S78"
+  ],
+  "khoa": "pasquali2008"
+ },
+ {
+  "trich_dan": "Patel S, Kaushal AM, Bansal AK (2006). Compression physics in the formulation development of tablets. *Crit Rev Ther Drug Carrier Syst* 23(1):1–65.",
+  "ho": "patel",
+  "nam": 2006,
+  "doi": "10.1615/critrevtherdrugcarriersyst.v23.i1.10",
+  "pmid": "16749898",
+  "url": "https://doi.org/10.1615/critrevtherdrugcarriersyst.v23.i1.10",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S54"
+  ],
+  "khoa": "patel2006"
  },
  {
   "trich_dan": "Peng C. et al. (2025). Direct visualization of the side-by-side self-assembly of high and low acyl gellan gum by AFM. *Carbohydr. Polym.*",
@@ -3188,6 +5001,22 @@
   "khoa": "perazzo2015"
  },
  {
+  "trich_dan": "Petit J et al. (2012). Granulomorphometry: a suitable tool for identifying hydrophobic and disulfide bonds in β-lactoglobulin aggregates. Application to the study of β-lactoglobulin aggregation mechanism between 70 and 95 °C. *J Dairy Sci* 95(8):4188–4202",
+  "ho": "petit",
+  "nam": 2012,
+  "doi": "10.3168/jds.2011-4146",
+  "pmid": "22818432",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/22818432/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:05"
+  ],
+  "khoa": "petit2012"
+ },
+ {
   "trich_dan": "Petrut RF, Danthine S, Blecker C (2015). Assessment of partial coalescence in whippable oil-in-water food emulsions. *Adv Colloid Interface Sci* 229:25–33.",
   "ho": "petrut",
   "nam": 2015,
@@ -3202,6 +5031,38 @@
    "nhu-tuong:R05"
   ],
   "khoa": "petrut2015"
+ },
+ {
+  "trich_dan": "Pham H et al. (2020). Factors affecting acrylamide mitigation in fried potatoes",
+  "ho": "pham",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/d168a770cac350e2833fe5c45e9b2e29/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:03"
+  ],
+  "khoa": "pham2020"
+ },
+ {
+  "trich_dan": "Ph. Eur. 11.5 (2024). Chương chung 2.9.36 Powder flow (07/2024:20936).",
+  "ho": "pheur",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": "https://moodle2.units.it/pluginfile.php/761966/mod_resource/content/0/2.9.36%20Powder%20flow.pdf",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S13"
+  ],
+  "khoa": "pheur2936"
  },
  {
   "trich_dan": "Pickering SU (1907). Emulsions. *J Chem Soc* 91:2001–2021; Ramsden W (1903). *Proc R Soc Lond* 72:156.",
@@ -3220,6 +5081,22 @@
   "khoa": "pickering1907"
  },
  {
+  "trich_dan": "Pifferi G, Restani P (2003). The safety of pharmaceutical excipients. *Farmaco* 58(8):541–550.",
+  "ho": "pifferi",
+  "nam": 2003,
+  "doi": "10.1016/S0014-827X(03)00079-X",
+  "pmid": "12875883",
+  "url": "https://doi.org/10.1016/S0014-827X(03)00079-X",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S77"
+  ],
+  "khoa": "pifferi2003"
+ },
+ {
   "trich_dan": "Portanguen S. et al. (2023). Impact of water content and bloom index on gelatin glycation. *Food Hydrocolloids*.",
   "ho": "portanguen",
   "nam": 2023,
@@ -3234,6 +5111,70 @@
    "chat-on-dinh:S96"
   ],
   "khoa": "portanguen2023"
+ },
+ {
+  "trich_dan": "Pournemati N et al. (2026). Starch selection in sweet food systems: a texture-driven framework across confectionery and dessert matrices. *J Texture Stud* 57(5):e70117",
+  "ho": "pournemati",
+  "nam": 2026,
+  "doi": "10.1111/jtxs.70117",
+  "pmid": "42741808",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42741808/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:04"
+  ],
+  "khoa": "pournemati2026"
+ },
+ {
+  "trich_dan": "Pouton CW (2000). Lipid formulations for oral administration of drugs: non-emulsifying, self-emulsifying and 'self-microemulsifying' drug delivery systems. *Eur J Pharm Sci* 11 Suppl 2:S93–S98.",
+  "ho": "pouton",
+  "nam": 2000,
+  "doi": "10.1016/s0928-0987(00)00167-6",
+  "pmid": "11033431",
+  "url": "https://doi.org/10.1016/s0928-0987(00)00167-6",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S21"
+  ],
+  "khoa": "pouton2000"
+ },
+ {
+  "trich_dan": "Pouton CW (2006). Formulation of poorly water-soluble drugs for oral administration: physicochemical and physiological issues and the lipid formulation classification system. *Eur J Pharm Sci* 29(3–4):278–287.",
+  "ho": "pouton",
+  "nam": 2006,
+  "doi": "10.1016/j.ejps.2006.04.016",
+  "pmid": "16815001",
+  "url": "https://doi.org/10.1016/j.ejps.2006.04.016",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S22"
+  ],
+  "khoa": "pouton2006"
+ },
+ {
+  "trich_dan": "Pouton CW, Porter CJH (2008). Formulation of lipid-based delivery systems for oral administration: materials, methods and strategies. *Adv Drug Deliv Rev* 60(6):625–637.",
+  "ho": "pouton",
+  "nam": 2008,
+  "doi": "10.1016/j.addr.2007.10.010",
+  "pmid": "18068260",
+  "url": "https://doi.org/10.1016/j.addr.2007.10.010",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S23"
+  ],
+  "khoa": "pouton2008"
  },
  {
   "trich_dan": "Qayum A, ... Ma H (2023). Ultrasonic and homogenization: an overview of the preparation of an edible protein–polysaccharide complex emulsion. *Compr Rev Food Sci Food Saf* 22(6):4242–4281.",
@@ -3332,6 +5273,22 @@
   "khoa": "rebry2021"
  },
  {
+  "trich_dan": "Ren Z et al. (2024). Recent insights into bonding technologies in restructured meat production: a review. *Food Chem X* 23:101712",
+  "ho": "ren",
+  "nam": 2024,
+  "doi": "10.1016/j.fochx.2024.101712",
+  "pmid": "39220417",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/39220417/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:05"
+  ],
+  "khoa": "ren2024"
+ },
+ {
   "trich_dan": "Ribeiro E. F. et al. (2021). Protein- and polysaccharide-based particles used for Pickering emulsion stabilisation. *Food Hydrocolloids*.",
   "ho": "ribeiro",
   "nam": 2021,
@@ -3348,6 +5305,54 @@
   "khoa": "ribeiro2021"
  },
  {
+  "trich_dan": "Ribeiro G et al. (2024). Optimizing screw speed and barrel temperature for textural and nutritional improvement of soy-based high-moisture extrudates. *Foods* 13(11):1748",
+  "ho": "ribeiro",
+  "nam": 2024,
+  "doi": "10.3390/foods13111748",
+  "pmid": null,
+  "url": "https://mdpi.com/2304-8158/13/11/1748",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:07"
+  ],
+  "khoa": "ribeiro2024"
+ },
+ {
+  "trich_dan": "Roberts A, Lynch B, Rietjens IMCM (2018). Risk assessment paradigm for glutamate. *Ann Nutr Metab* 73(Suppl 5):53–64",
+  "ho": "roberts",
+  "nam": 2018,
+  "doi": "10.1159/000494783",
+  "pmid": "30508819",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/30508819/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:06"
+  ],
+  "khoa": "roberts2018"
+ },
+ {
+  "trich_dan": "Rodríguez-López JN et al. (1999). Thermal inactivation of mushroom polyphenoloxidase employing 2450 MHz microwave radiation. *J Agric Food Chem* 47(8):3028–3035",
+  "ho": "rodriguezlopez",
+  "nam": 1999,
+  "doi": "10.1021/jf980945o",
+  "pmid": "10552603",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/10552603/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:07"
+  ],
+  "khoa": "rodriguezlopez1999"
+ },
+ {
   "trich_dan": "Rodríguez-Sandoval E, et al. (2026). Influencia de las enzimas y los emulsificantes... pan molde. *Ing Competitiv*.",
   "ho": "rodriguezsandoval",
   "nam": 2026,
@@ -3362,6 +5367,38 @@
    "chat-nhu-hoa:D13"
   ],
   "khoa": "rodriguezsandoval2026"
+ },
+ {
+  "trich_dan": "Roobab U et al. (2022). Emerging trends for nonthermal decontamination of raw and processed meat: ozonation, high-hydrostatic pressure and cold plasma. *Foods* 11(15):2173",
+  "ho": "roobab",
+  "nam": 2022,
+  "doi": "10.3390/foods11152173",
+  "pmid": "35892759",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/35892759/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02"
+  ],
+  "khoa": "roobab2022"
+ },
+ {
+  "trich_dan": "Roos YH (2021). Glass transition and re-crystallization phenomena of frozen materials and their effect on frozen food quality. *Foods* 10(2):447",
+  "ho": "roos",
+  "nam": 2021,
+  "doi": "10.3390/foods10020447",
+  "pmid": null,
+  "url": "https://mdpi.com/2304-8158/10/2/447",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:07"
+  ],
+  "khoa": "roos2021"
  },
  {
   "trich_dan": "Safic-Alcan, \"What is HLB\". https://www.safic-alcan.com/en-it/industry-articles/what-is-hlb/",
@@ -3412,6 +5449,23 @@
   "khoa": "sano2000"
  },
  {
+  "trich_dan": "Santhi D et al. (2017). Application of microbial transglutaminase in meat foods: a review. *Crit Rev Food Sci Nutr* 57(10):2071–2076",
+  "ho": "santhi",
+  "nam": 2017,
+  "doi": "10.1080/10408398.2014.945990",
+  "pmid": "25897817",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/25897817/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01",
+   "05"
+  ],
+  "khoa": "santhi2017"
+ },
+ {
   "trich_dan": "Sato K, Ueno S, Yano J. Molecular interactions and kinetic properties of fats. *Prog Lipid Res* 1999;38(1):91–116",
   "ho": "sato",
   "nam": 1999,
@@ -3442,6 +5496,22 @@
    "chat-beo:B6"
   ],
   "khoa": "sato2018"
+ },
+ {
+  "trich_dan": "Savjani KT, Gajjar AK, Savjani JK (2012). Drug solubility: importance and enhancement techniques. *ISRN Pharm* 2012:195727.",
+  "ho": "savjani",
+  "nam": 2012,
+  "doi": "10.5402/2012/195727",
+  "pmid": "22830056",
+  "url": "https://doi.org/10.5402/2012/195727",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S32"
+  ],
+  "khoa": "savjani2012"
  },
  {
   "trich_dan": "Schreiber C. et al. (2020). Interaction of xanthan gums with galacto- and glucomannans. Part I. *J. Phys. Mater.*",
@@ -3508,6 +5578,22 @@
   "khoa": "sciarini2012"
  },
  {
+  "trich_dan": "Scott WJ (1953). Water relations of Staphylococcus aureus at 30 °C. *Aust J Biol Sci*",
+  "ho": "scott",
+  "nam": 1953,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/aab48fba557658a9b5214588b87c7648/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02"
+  ],
+  "khoa": "scott1953"
+ },
+ {
   "trich_dan": "Seilert J, Holdstock M, Pratama Y, Sadeghpour A, Flöter E, Rappolt M. Polymorphic Structures and Transitions of Triglycerides and Complex Fats: A Guide to X-Ray Scattering Approaches. *Compr Rev Food Sci Food Saf* 2025;24(6):e70271",
   "ho": "seilert",
   "nam": 2025,
@@ -3522,6 +5608,22 @@
    "chat-beo:R2"
   ],
   "khoa": "seilert2025"
+ },
+ {
+  "trich_dan": "Serajuddin ATM (1999). Solid dispersion of poorly water-soluble drugs: early promises, subsequent problems, and recent breakthroughs. *J Pharm Sci* 88(10):1058–1066.",
+  "ho": "serajuddin",
+  "nam": 1999,
+  "doi": "10.1021/js980403l",
+  "pmid": "10514356",
+  "url": "https://doi.org/10.1021/js980403l",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S44"
+  ],
+  "khoa": "serajuddin1999"
  },
  {
   "trich_dan": "Severini L. et al. (2026). How gellan gum gelation is affected by acyl substituents. *Carbohydr. Polym.*",
@@ -3540,6 +5642,22 @@
   "khoa": "severini2026"
  },
  {
+  "trich_dan": "Shah VP, Amidon GL (2014). G.L. Amidon, H. Lennernas, V.P. Shah, and J.R. Crison. A theoretical basis for a biopharmaceutic drug classification… Pharm Res 12, 413–420, 1995 — backstory of BCS. *AAPS J* 16(5):894–898.",
+  "ho": "shah",
+  "nam": 2014,
+  "doi": "10.1208/s12248-014-9620-9",
+  "pmid": "24961917",
+  "url": "https://doi.org/10.1208/s12248-014-9620-9",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S20"
+  ],
+  "khoa": "shah2014"
+ },
+ {
   "trich_dan": "Shahidi F (ed.). *Bailey's Industrial Oil and Fat Products*, 6th ed. Wiley, 2005",
   "ho": "shahidi",
   "nam": 2005,
@@ -3554,6 +5672,22 @@
    "chat-beo:B2"
   ],
   "khoa": "shahidi2005"
+ },
+ {
+  "trich_dan": "Sheard PR et al. (2004). Injection of salt, tripolyphosphate and bicarbonate marinade solutions to improve the yield and tenderness of cooked pork loin. *Meat Sci*",
+  "ho": "sheard",
+  "nam": 2004,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/c2b05c54bc725751895d1a29216e7024/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01"
+  ],
+  "khoa": "sheard2004"
  },
  {
   "trich_dan": "Shen Q, et al. (2023). Quantitative analysis and interfacial properties of mixed pea protein isolate–phospholipid adsorption layer. *Int J Biol Macromol*.",
@@ -3588,6 +5722,39 @@
   "khoa": "sherafati2013"
  },
  {
+  "trich_dan": "Shi HB et al. (2024). Effect of NaCl replacement by other salt mixtures on myofibrillar proteins: underlining protein structure, gel formation, and chewing properties. *J Food Sci*",
+  "ho": "shi",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/60b625588d35555a923381e5b5161e67/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01"
+  ],
+  "khoa": "shi2024"
+ },
+ {
+  "trich_dan": "Shi L et al. (2026). A comparative study on cryoprotective and water-retaining effects of trehalose and sodium pyrophosphate on silver carp surimi during frozen storage. *Food Chem* 522:149962",
+  "ho": "shi",
+  "nam": 2026,
+  "doi": "10.1016/j.foodchem.2026.149962",
+  "pmid": "42275710",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42275710/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01",
+   "07"
+  ],
+  "khoa": "shi2026surimi"
+ },
+ {
   "trich_dan": "Shinoda K, Saito H (1969). The stability of O/W type emulsions as functions of temperature and the HLB of emulsifiers: the emulsification by PIT-method. *J Colloid Interface Sci* 30:258–263.",
   "ho": "shinoda",
   "nam": 1969,
@@ -3620,6 +5787,38 @@
   "khoa": "shobha2009"
  },
  {
+  "trich_dan": "Siepmann J, Peppas NA (2001). Modeling of drug release from delivery systems based on hydroxypropyl methylcellulose (HPMC). *Adv Drug Deliv Rev* 48(2–3):139–157.",
+  "ho": "siepmann",
+  "nam": 2001,
+  "doi": "10.1016/s0169-409x(01)00112-0",
+  "pmid": "11369079",
+  "url": "https://doi.org/10.1016/s0169-409x(01)00112-0",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S31"
+  ],
+  "khoa": "siepmann2001"
+ },
+ {
+  "trich_dan": "Siepmann J, Siepmann F (2013). Mathematical modeling of drug dissolution. *Int J Pharm* 453(1):12–24.",
+  "ho": "siepmann",
+  "nam": 2013,
+  "doi": "10.1016/j.ijpharm.2013.04.044",
+  "pmid": "23618956",
+  "url": "https://doi.org/10.1016/j.ijpharm.2013.04.044",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S30"
+  ],
+  "khoa": "siepmann2013"
+ },
+ {
   "trich_dan": "Silva-Carvalho R. et al. (2025). Polysaccharide-mediated stabilization of bacterial nanocellulose dispersions. *Food Hydrocolloids*.",
   "ho": "silvacarvalho",
   "nam": 2025,
@@ -3636,6 +5835,22 @@
   "khoa": "silvacarvalho2025"
  },
  {
+  "trich_dan": "Singh Y, Meher JG, Raval K, Khan FA, Chaurasia M, Jain NK, Chourasia MK (2017). Nanoemulsion: concepts, development and applications in drug delivery. *J Control Release* 252:28–49.",
+  "ho": "singh",
+  "nam": 2017,
+  "doi": "10.1016/j.jconrel.2017.03.008",
+  "pmid": "28279798",
+  "url": "https://doi.org/10.1016/j.jconrel.2017.03.008",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S59"
+  ],
+  "khoa": "singh2017"
+ },
+ {
   "trich_dan": "Singh PK, Chopra R, Garg M, Dhiman A, Dhyani A. Enzymatic Interesterification of Vegetable Oil: A Review on Physicochemical and Functional Properties, and Its Health Effects. *J Oleo Sci* 2022;71(12):1697–1709",
   "ho": "singh",
   "nam": 2022,
@@ -3650,6 +5865,22 @@
    "chat-beo:R15"
   ],
   "khoa": "singh2022"
+ },
+ {
+  "trich_dan": "Smejkal G et al. (2024). Theoretical and experimental determinations of the hydrophilic–lipophilic balance (HLB) of representative oils and lecithins. *Colloids Interfaces*. (Chỉ đọc tóm tắt qua Consensus; chưa có DOI.)",
+  "ho": "smejkal",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/7da40eb8018c5880bdb7f08c0f8b0276/",
+  "muc_doc": "tieu-de",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S80"
+  ],
+  "khoa": "smejkal2024"
  },
  {
   "trich_dan": "Society of Cosmetic Chemists library (v011n06/1) https://library.scconline.org/v011n06/1 ; (v041n03/2) https://library.scconline.org/v041n03/2",
@@ -3682,6 +5913,22 @@
    "chat-on-dinh:S49"
   ],
   "khoa": "spagnuolo2005"
+ },
+ {
+  "trich_dan": "Stella VJ, Rajewski RA (1997). Cyclodextrins: their future in drug formulation and delivery. *Pharm Res* 14(5):556–567.",
+  "ho": "stella",
+  "nam": 1997,
+  "doi": "10.1023/a:1012136608249",
+  "pmid": "9165524",
+  "url": "https://doi.org/10.1023/a:1012136608249",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S37"
+  ],
+  "khoa": "stella1997"
  },
  {
   "trich_dan": "Stounbjerg L. et al. (2019). Associative phase separation of potato protein and anionic polysaccharides. *Colloids Surf. A*.",
@@ -3730,6 +5977,56 @@
    "nhu-tuong:T04"
   ],
   "khoa": "tadros2013"
+ },
+ {
+  "trich_dan": "Tahergorabi R, Jaczynski J (2012). Physicochemical changes in surimi with salt substitute. *Food Chem* 132(3):1281–1286",
+  "ho": "tahergorabi",
+  "nam": 2012,
+  "doi": "10.1016/j.foodchem.2011.11.104",
+  "pmid": "29243612",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/29243612/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01",
+   "05"
+  ],
+  "khoa": "tahergorabi2012"
+ },
+ {
+  "trich_dan": "Tapia MS et al. (2020). Effects of water activity (aw) on microbial stability: as a hurdle in food preservation (chương sách; mới đọc mục lục chương)",
+  "ho": "tapia",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/9965b2af238c5cb3b5c8768e4f9124e0/",
+  "muc_doc": "tieu-de",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02",
+   "07"
+  ],
+  "khoa": "tapia2020"
+ },
+ {
+  "trich_dan": "Tena J et al. (2025). A computational fluid dynamics model for predicting food browning through melanoidin kinetics during baking. *J Food Eng*",
+  "ho": "tena",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/dbe31c7212c654508287914c3287316c/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:03"
+  ],
+  "khoa": "tena2025"
  },
  {
   "trich_dan": "Teng Y, et al. (2020). Sucrose fatty acid esters: synthesis, emulsifying capacities, biological activities and structure–property profiles. *Crit Rev Food Sci Nutr*.",
@@ -3860,6 +6157,22 @@
   "khoa": "tran2021"
  },
  {
+  "trich_dan": "Troller JA. Adaptation and growth of microorganisms in environments with reduced water activity (chương sách, xuất bản lại 2017)",
+  "ho": "troller",
+  "nam": 2017,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/9a9593eb0dba5d43a203c6429cab683f/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02"
+  ],
+  "khoa": "troller2017"
+ },
+ {
   "trich_dan": "Tsibranska S, et al. (2019). Role of interfacial elasticity for the rheological properties of saponin-stabilized emulsions. *J Colloid Interface Sci* 564:264–275. doi 10.1016/j.jcis.2019.12.108. PMID 31923825",
   "ho": "tsibranska",
   "nam": 2019,
@@ -3874,6 +6187,70 @@
    "chat-nhu-hoa:C16"
   ],
   "khoa": "tsibranska2019"
+ },
+ {
+  "trich_dan": "USP 38–NF 33. Chương chung <1216> Tablet Friability (bản lưu trên drugfuture.com; ấn bản cũ).",
+  "ho": "usp",
+  "nam": 2015,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.drugfuture.com/Pharmacopoeia/usp38/data/v38332/usp38nf33s2_c1216.html",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S17"
+  ],
+  "khoa": "usp1216"
+ },
+ {
+  "trich_dan": "USP 38–NF 33. Chương chung <701> Disintegration (bản lưu trên drugfuture.com; ấn bản cũ).",
+  "ho": "usp",
+  "nam": 2015,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.drugfuture.com/Pharmacopoeia/usp38/data/v38332/usp38nf33s2_c701.html",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S15"
+  ],
+  "khoa": "usp701"
+ },
+ {
+  "trich_dan": "USP 38–NF 33. Chương chung <711> Dissolution (bản lưu trên drugfuture.com; ấn bản cũ).",
+  "ho": "usp",
+  "nam": 2015,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.drugfuture.com/Pharmacopoeia/usp38/data/v38332/usp38nf33s2_c711.html",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S16"
+  ],
+  "khoa": "usp711"
+ },
+ {
+  "trich_dan": "USP 38–NF 33. Chương chung <729> Globule Size Distribution in Lipid Injectable Emulsions (bản lưu trên drugfuture.com; ấn bản cũ).",
+  "ho": "usp",
+  "nam": 2015,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.drugfuture.com/Pharmacopoeia/usp38/data/v38332/usp38nf33s2_c729.html",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S14"
+  ],
+  "khoa": "usp729"
  },
  {
   "trich_dan": "Văn bản hợp nhất 08/VBHN-BYT (02/11/2023).",
@@ -4004,6 +6381,22 @@
   "khoa": "wan2021"
  },
  {
+  "trich_dan": "Wang J, Wen H, Desai D (2010). Lubrication in tablet formulations. *Eur J Pharm Biopharm* 75(1):1–15.",
+  "ho": "wang",
+  "nam": 2010,
+  "doi": "10.1016/j.ejpb.2010.01.007",
+  "pmid": "20096779",
+  "url": "https://doi.org/10.1016/j.ejpb.2010.01.007",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S53"
+  ],
+  "khoa": "wang2010"
+ },
+ {
   "trich_dan": "Wang C.-S. et al. (2017). A mechanism for the synergistic gelation properties of gelatin B and xanthan gum aqueous mixtures. *Carbohydr. Polym.*",
   "ho": "wang",
   "nam": 2017,
@@ -4132,6 +6525,54 @@
   "khoa": "watanabe2018"
  },
  {
+  "trich_dan": "Waterman KC, Adami RC (2005). Accelerated aging: prediction of chemical stability of pharmaceuticals. *Int J Pharm* 293(1–2):101–125.",
+  "ho": "waterman",
+  "nam": 2005,
+  "doi": "10.1016/j.ijpharm.2004.12.013",
+  "pmid": "15778049",
+  "url": "https://doi.org/10.1016/j.ijpharm.2004.12.013",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S26"
+  ],
+  "khoa": "waterman2005"
+ },
+ {
+  "trich_dan": "Waterman KC (2011). The application of the Accelerated Stability Assessment Program (ASAP) to quality by design (QbD) for drug product stability. *AAPS PharmSciTech* 12(3):932–937.",
+  "ho": "waterman",
+  "nam": 2011,
+  "doi": "10.1208/s12249-011-9657-3",
+  "pmid": "21748541",
+  "url": "https://doi.org/10.1208/s12249-011-9657-3",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S24"
+  ],
+  "khoa": "waterman2011"
+ },
+ {
+  "trich_dan": "Waterman R, Lewis J, Waterman KC (2016). Accelerated stability modeling for peptides: a case study with bacitracin. *AAPS PharmSciTech* 18(5):1692–1698.",
+  "ho": "waterman",
+  "nam": 2016,
+  "doi": "10.1208/s12249-016-0635-7",
+  "pmid": "27714699",
+  "url": "https://doi.org/10.1208/s12249-016-0635-7",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S25"
+  ],
+  "khoa": "waterman2016"
+ },
+ {
   "trich_dan": "Webber JL, et al. (2023). ATR FTIR spectroscopy of protein and surfactant adsorption to the oil–water interface. *Colloids Surf A*.",
   "ho": "webber",
   "nam": 2023,
@@ -4146,6 +6587,38 @@
    "chat-nhu-hoa:B16"
   ],
   "khoa": "webber2023"
+ },
+ {
+  "trich_dan": "WHO (2018). Stability testing of active pharmaceutical ingredients and finished pharmaceutical products. WHO Technical Report Series No. 1010, Annex 10.",
+  "ho": "whotrs",
+  "nam": 2018,
+  "doi": null,
+  "pmid": null,
+  "url": "https://extranet.who.int/prequal/sites/default/files/document_files/TRS1010_Annex10.pdf",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S10"
+  ],
+  "khoa": "whotrs1010"
+ },
+ {
+  "trich_dan": "WHO (2009; bảng cập nhật 2018). TRS 953 Annex 2 Appendix 1: điều kiện lưu trữ dài hạn theo quốc gia.",
+  "ho": "whotrs",
+  "nam": 2018,
+  "doi": null,
+  "pmid": null,
+  "url": "https://gmp-compliance.org/files/guidemgr/trs953-annex2-appendix1-stability-conditions-table-2018.pdf",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S11"
+  ],
+  "khoa": "whotrs953t"
  },
  {
   "trich_dan": "Wikipedia. Hydrophilic-lipophilic balance. https://en.wikipedia.org/wiki/Hydrophilic-lipophilic_balance",
@@ -4196,6 +6669,38 @@
   "khoa": "wille1966"
  },
  {
+  "trich_dan": "Williams HD, Trevaskis NL, Charman SA, Shanker RM, Charman WN, Pouton CW, Porter CJH (2013). Strategies to address low drug solubility in discovery and development. *Pharmacol Rev* 65(1):315–499.",
+  "ho": "williams",
+  "nam": 2013,
+  "doi": "10.1124/pr.112.005660",
+  "pmid": "23383426",
+  "url": "https://doi.org/10.1124/pr.112.005660",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S33"
+  ],
+  "khoa": "williams2013"
+ },
+ {
+  "trich_dan": "Wirth DD, Baertschi SW, Johnson RA, Maple SR, Miller MS, Hallenbeck DK, Gregg SM (1998). Maillard reaction of lactose and fluoxetine hydrochloride, a secondary amine. *J Pharm Sci* 87(1):31–39.",
+  "ho": "wirth",
+  "nam": 1998,
+  "doi": "10.1021/js9702067",
+  "pmid": "9452965",
+  "url": "https://doi.org/10.1021/js9702067",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S74"
+  ],
+  "khoa": "wirth1998"
+ },
+ {
   "trich_dan": "Woodward N, et al. (2004). Effect of processing on the displacement of whey proteins: applying the orogenic model to a real system. *J Agric Food Chem*.",
   "ho": "woodward",
   "nam": 2004,
@@ -4228,6 +6733,22 @@
   "khoa": "woodward2010"
  },
  {
+  "trich_dan": "Wooster TJ, Golding M, Sanguansri P (2008). Impact of oil type on nanoemulsion formation and Ostwald ripening stability. *Langmuir* 24(22):12758–12765.",
+  "ho": "wooster",
+  "nam": 2008,
+  "doi": "10.1021/la801685v",
+  "pmid": "18850732",
+  "url": "https://doi.org/10.1021/la801685v",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "duoc-pham:S64"
+  ],
+  "khoa": "wooster2008"
+ },
+ {
   "trich_dan": "Wu Y. et al. (2012). A molecular modeling approach to understand conformation-functionality relationships of galactomannans with different mannose/galactose ratios. *Food Hydrocolloids*.",
   "ho": "wu",
   "nam": 2012,
@@ -4258,6 +6779,40 @@
    "chat-on-dinh:S70"
   ],
   "khoa": "wu2023"
+ },
+ {
+  "trich_dan": "Wu X et al. (2026). Hydroxypropyl distarch phosphate modulates protein-starch interactions and fibrous network formation in high-moisture extruded soy protein isolate–wheat gluten meat analogues. *Food Res Int* 242:120023",
+  "ho": "wu",
+  "nam": 2026,
+  "doi": "10.1016/j.foodres.2026.120023",
+  "pmid": "42680318",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42680318/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:04",
+   "05",
+   "07"
+  ],
+  "khoa": "wu2026hdp"
+ },
+ {
+  "trich_dan": "Wu CY et al. (2026). Feasible approaches of ultraviolet-C light to improve food safety for ready-to-eat salads. *J Food Sci* 91(11)",
+  "ho": "wu",
+  "nam": 2026,
+  "doi": "10.1111/1750-3841.71563",
+  "pmid": "42966727",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42966727/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:02"
+  ],
+  "khoa": "wu2026uvc"
  },
  {
   "trich_dan": "Xiao Y. et al. (2025). Property changes of tilapia gelatin of low bloom value... laccase and tea polyphenols. *Food Chemistry: X*.",
@@ -4306,6 +6861,22 @@
    "chat-beo:R35"
   ],
   "khoa": "xie2024"
+ },
+ {
+  "trich_dan": "Xie J et al. (2026). Low-phosphate myofibrillar protein emulsions stabilized by fractionated fava bean protein fibrils. *Food Chem* 532:151778",
+  "ho": "xie",
+  "nam": 2026,
+  "doi": "10.1016/j.foodchem.2026.151778",
+  "pmid": "42956599",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/42956599/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01"
+  ],
+  "khoa": "xie2026"
  },
  {
   "trich_dan": "Xu X.-J. et al. (2018). Effects of different acyl gellan gums on the rheological properties and colloidal stability of blueberry cloudy juice. *J. Food Sci.*",
@@ -4372,6 +6943,22 @@
   "khoa": "xu2026"
  },
  {
+  "trich_dan": "Xu J et al. (2026). Sodium pyrophosphate-induced actomyosin dissociation, thick filament depolymerization and protein conformation changes synergistically enhance the solubility of myofibrillar proteins. *Food Chem*",
+  "ho": "xu",
+  "nam": 2026,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/d0dbd1fff36a52a5b5686f9df007ab82/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01"
+  ],
+  "khoa": "xu2026tspp"
+ },
+ {
   "trich_dan": "Yan S, et al. (2022). Effect of interfacial composition on physical stability and co-oxidation in a soy protein isolate–EGCG conjugate emulsion. *Food Hydrocolloids*.",
   "ho": "yan",
   "nam": 2022,
@@ -4386,6 +6973,23 @@
    "chat-nhu-hoa:B21"
   ],
   "khoa": "yan2022"
+ },
+ {
+  "trich_dan": "Yan HX et al. (2022). Lactose crystallization and Maillard reaction in simulated milk powder based on the change in water activity. *J Food Sci*",
+  "ho": "yan",
+  "nam": 2022,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/614ca0790df4532aa371eec8aa2f7592/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:03",
+   "07"
+  ],
+  "khoa": "yan2022lactose"
  },
  {
   "trich_dan": "Yang X. et al. (2019). Concentration-dependent rheological behavior and gelation mechanism of high acyl gellan aqueous solutions. *Int. J. Biol. Macromol.*",
@@ -4434,6 +7038,22 @@
    "nhu-tuong:R23"
   ],
   "khoa": "yang2021"
+ },
+ {
+  "trich_dan": "Yang HH et al. (2021). Effects of partial substitution of NaCl on myofibrillar protein properties from pearl mussel Hyriopsis cumingii muscle. *Food Chem*",
+  "ho": "yang",
+  "nam": 2021,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/911da4c32f695d3f95fc65f9f56ca957/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "thuc-pham:01"
+  ],
+  "khoa": "yang2021nacl"
  },
  {
   "trich_dan": "Yang Y. et al. (2022). Effect of coconut protein and xanthan gum, soybean polysaccharide and gelatin interactions in oil-water interface. *Molecules*.",
