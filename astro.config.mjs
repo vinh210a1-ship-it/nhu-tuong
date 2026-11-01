@@ -5,6 +5,7 @@ import { unified } from '@astrojs/markdown-remark';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import remarkNhan from './src/plugins/remark-nhan.mjs';
+import { KHU, THU_TU_KHU } from './src/data/khu.mjs';
 
 const BASE = '/nhu-tuong';
 
@@ -38,6 +39,7 @@ export default defineConfig({
 				'./src/styles/giao-dien.css',
 				'./src/styles/chung.css',
 				'./src/styles/trang-chu.css',
+				'./src/styles/cong-cu.css',
 			],
 			logo: { src: './src/assets/logo.svg' },
 			components: {
@@ -47,6 +49,7 @@ export default defineConfig({
 			head: [
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/may-tinh.js` } },
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/tuong-tac.js` } },
+				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/chan-doan.js` } },
 			],
 			lastUpdated: false,
 			pagination: true,
@@ -58,24 +61,26 @@ export default defineConfig({
 						{ label: 'Cách đọc nhãn tin cậy', slug: 'quy-uoc' },
 					],
 				},
-				{
-					label: 'Nhũ tương',
+				// mỗi khu: trang lộ trình + các bài theo thứ tự trong src/data/khu.mjs
+				...THU_TU_KHU.map((k) => ({
+					label: KHU[k].ten,
+					collapsed: k !== 'nhu-tuong',
 					items: [
-						{ label: 'Lộ trình đọc', slug: 'nhu-tuong' },
-						{ label: '1. Nền tảng', slug: 'nhu-tuong/nen-tang' },
-						{ label: '2. Hình thành', slug: 'nhu-tuong/hinh-thanh' },
-						{ label: '3. Mất ổn định', slug: 'nhu-tuong/mat-on-dinh' },
-						{ label: '4. Ổn định', slug: 'nhu-tuong/chat-on-dinh' },
-						{ label: '5. Đo lường', slug: 'nhu-tuong/do-luong' },
-						{ label: '6. Sản phẩm', slug: 'nhu-tuong/san-pham' },
-						{ label: 'Chuyên sâu: hệ đặc biệt', slug: 'nhu-tuong/he-dac-biet' },
-						{ label: 'Thực hành: xử lý sự cố', slug: 'nhu-tuong/su-co-thiet-ke' },
+						{ label: 'Lộ trình đọc', slug: k },
+						...KHU[k].bai.map((b) => ({ label: b.ten, slug: `${k}/${b.slug}` })),
+					],
+				})),
+				{
+					label: 'Công cụ',
+					items: [
+						{ label: 'Máy tính', slug: 'may-tinh' },
+						{ label: 'Chẩn đoán sự cố', slug: 'chan-doan' },
 					],
 				},
-				{ label: 'Công cụ', items: [{ label: 'Máy tính', slug: 'may-tinh' }] },
 				{
 					label: 'Tra cứu',
 					items: [
+						{ label: 'Phụ gia theo mã INS/E', slug: 'tra-cuu-phu-gia' },
 						{ label: 'Thuật ngữ Việt–Anh', slug: 'nhu-tuong/thuat-ngu' },
 						{ label: 'Nguồn', slug: 'nguon' },
 					],

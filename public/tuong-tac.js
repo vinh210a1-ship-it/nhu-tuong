@@ -212,23 +212,31 @@ function veTienDo() {
 		const tt = a.querySelector('[data-trang-thai]');
 		if (tt) tt.textContent = xong ? 'Đã đọc ✓' : 'Chưa đọc';
 	});
-	const n = [...ds].length;
+	// đếm theo khu: bài nhũ tương lưu slug trần, khu khác lưu "khu/slug"
+	const demKhu = (khu) => [...ds].filter((s) => (khu === 'nhu-tuong' ? !s.includes('/') : s.startsWith(khu + '/'))).length;
+	const n = Math.min(demKhu('nhu-tuong'), TONG_BAI);
 	document.querySelectorAll('[data-tong-tien-do]').forEach((e) => (e.textContent = `Đã đọc ${n}/${TONG_BAI} bài`));
 	document.querySelectorAll('[data-thanh-tien-do]').forEach((e) => (e.style.width = `${(100 * n) / TONG_BAI}%`));
-	// dấu ✓ ở thanh bên
-	document.querySelectorAll('.sidebar-content a[href*="/nhu-tuong/"]').forEach((a) => {
-		const slug = a.getAttribute('href').replace(/\/$/, '').split('/').pop();
-		a.classList.toggle('da-doc', ds.has(slug));
+	document.querySelectorAll('[data-tien-do-khu]').forEach((e) => {
+		const k = demKhu(e.dataset.tienDoKhu);
+		e.textContent = k ? `Đã đọc ${k}/${e.dataset.tong}` : `${e.dataset.tong} bài`;
+	});
+	// dấu ✓ ở thanh bên (mọi khu)
+	document.querySelectorAll('.sidebar-content a[href]').forEach((a) => {
+		const m = a.getAttribute('href').match(/\/(nhu-tuong|chat-beo|chat-nhu-hoa|chat-on-dinh)\/([^/]+)\/?$/);
+		if (!m) return;
+		a.classList.toggle('da-doc', ds.has(m[1] === 'nhu-tuong' ? m[2] : `${m[1]}/${m[2]}`));
 	});
 	// hộp cuối bài
 	const kb = document.querySelector('[data-ket-bai]');
 	if (kb) {
 		const xong = ds.has(kb.dataset.ketBai);
+		const k = demKhu(kb.dataset.khu);
 		kb.classList.toggle('xong', xong);
 		kb.querySelector('[data-danh-dau]').textContent = xong ? 'Đã đọc ✓ (bấm để bỏ)' : 'Đánh dấu đã đọc';
 		kb.querySelector('[data-tien-do]').textContent = xong
-			? `Bạn đã đọc ${n}/${TONG_BAI} bài của lộ trình. Dữ liệu chỉ lưu trên máy này.`
-			: 'Đánh dấu để theo dõi lộ trình của bạn. Dữ liệu chỉ lưu trên máy này.';
+			? `Bạn đã đọc ${k}/${kb.dataset.tong} bài của khu ${kb.dataset.tenKhu}. Dữ liệu chỉ lưu trên máy này.`
+			: 'Đánh dấu để theo dõi tiến độ của bạn. Dữ liệu chỉ lưu trên máy này.';
 	}
 	// thẻ "Tiếp tục đọc"
 	const tiep = document.querySelector('[data-tiep-tuc]');
