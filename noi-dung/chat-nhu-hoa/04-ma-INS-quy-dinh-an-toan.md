@@ -19,7 +19,7 @@ nguon_goc: tai-lieu-chat-hoat-dong-be-mat/04-ma-INS-quy-dinh-an-toan.md
 
 1. **Chất nhũ hóa phổ biến đã được EFSA đánh giá lại; phần lớn không có ADI bằng số hoặc có ADI khá cao**: lecithin (E322) và MDG (E471) *không cần ADI bằng số*; polysorbate 25, PGPR 25, SSL/CSL 22, quillaia 3 (mg/kg bw/ngày). [N]
 2. **Đoạn khó nhất là khoảng trống giữa "đủ an toàn theo đánh giá hóa độc" và "nghiên cứu quan sát/ chuột gợi ý lo ngại".** Hai nhóm chứng cứ khác loại: (a) EFSA dùng nghiên cứu độc chất cổ điển và mức phơi nhiễm; (b) NutriNet-Santé là quan sát (không chứng minh nhân quả), Chassaing 2015 là chuột. Web nên trình bày cả hai, không kết luận thay độc giả. [N]
-3. **Việt Nam:** Thông tư 24/2019/TT-BYT (30/8/2019; hiệu lực 16/10/2019) là khung chính; sửa đổi bởi Thông tư 17/2023/TT-BYT; văn bản hợp nhất số 08/VBHN-BYT ngày 02/11/2023. **Tôi chưa đọc được Phụ lục 1/2A/2B** (danh mục INS và ML), nên chưa đưa số ML. [N]
+3. **Việt Nam:** Thông tư 24/2019/TT-BYT (30/8/2019; hiệu lực 16/10/2019) là khung chính; sửa đổi bởi Thông tư 17/2023/TT-BYT; bản hợp nhất mới nhất đã đọc là 09/VBHN-BYT (2024), gộp thêm Thông tư 08/2024/TT-BYT. Danh mục INS (Phụ lục 1) và ML theo nhóm thực phẩm (Phụ lục 2A, 2B, 3) tra ở [tab Mức tối đa (TT24)](../../tra-cuu/#tt24). [N: @tt24-2019]
 
 ---
 

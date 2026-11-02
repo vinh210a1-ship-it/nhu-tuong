@@ -213,3 +213,38 @@
 @media (max-width: 40rem) { .tk-bang { position: static; } }
 .tk-muc p a, .tk-muc li a:not(.pg-bai):not(.td-lk):not(.nhan-nguon), .tk-doc-ma a { color: var(--sl-color-accent); }
 .tk-muc p, .tk-muc blockquote { max-width: 70ch; }
+
+/* ---- Tab Mức tối đa TT24 và trang Tra cứu tá dược */
+.ds-tt { list-style: none; padding: 0; margin: 0.75rem 0; display: grid; gap: 0.4rem; }
+.tt-hang { margin: 0 !important; border: 1px solid var(--hh-vien); border-radius: 0.6rem; background: var(--hh-be-mat); }
+.tt-hang[hidden] { display: none; }
+.tt-hang summary, .td-chat summary { cursor: pointer; padding: 0.55rem 0.8rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 0.7rem; }
+.tt-vi { font-weight: 600; }
+.tt-en, .td-cas { color: var(--sl-color-gray-3); font-size: 0.88rem; }
+.tt-cn { flex-basis: 100%; color: var(--sl-color-gray-3); font-size: 0.82rem; }
+.tt-co { font-size: 0.74rem; padding: 0.05rem 0.45rem; border-radius: 99px; border: 1px solid var(--hh-vien); background: var(--sl-color-bg); }
+.tt-gmp { border-color: var(--khu-chat-on-dinh); color: var(--khu-chat-on-dinh); font-weight: 600; }
+.tt-than { padding: 0 0.8rem 0.7rem; }
+.tt-h4 { font-size: 0.95rem; margin: 0.8rem 0 0.3rem !important; }
+.tt-chung, .tt-gmp-dong, .tt-goi-y { font-size: 0.88rem; }
+.tt-cuon { overflow-x: auto; }
+.tt-bang { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin: 0.3rem 0 !important; display: table !important; }
+.tt-bang th, .tt-bang td { padding: 0.28rem 0.5rem; border-bottom: 1px solid var(--hh-vien); text-align: start; vertical-align: top; }
+.tt-bang td:nth-child(1) { min-width: 4.2rem; }
+.tt-bang abbr { text-decoration: underline dotted; cursor: help; }
+.tt-gc { margin: 0.4rem 0; font-size: 0.85rem; }
+.tt-gc summary { cursor: pointer; color: var(--sl-color-accent); }
+.tt-gc dl { display: grid; gap: 0.2rem; margin: 0.3rem 0 0; }
+.tt-gc dl div { display: grid; grid-template-columns: 4.5rem 1fr; gap: 0.5rem; }
+.tt-gc dt { font-weight: 600; }
+.tt-gc dd { margin: 0; }
+.tt-nhom { margin: 0.8rem 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.4rem; }
+.tt-nhom select { width: 100%; min-width: 0; }
+.tt-nhom select, .ta-duoc select { max-width: 100%; padding: 0.45rem 0.6rem; border-radius: 0.5rem; border: 1px solid var(--hh-vien); background: var(--sl-color-bg); color: var(--sl-color-text); font: inherit; font-size: 0.9rem; }
+.tt-kq-nhom:not(:empty) { padding: 0.6rem 0.8rem; border: 1px solid var(--hh-vien); border-radius: 0.6rem; background: var(--hh-be-mat); }
+.tt-na { color: var(--sl-color-gray-3); }
+.ta-duoc { position: static; }
+.td-chat { border: 1px solid var(--hh-vien); border-radius: 0.6rem; background: var(--hh-be-mat); margin: 0.4rem 0 !important; }
+.td-chat .tt-cuon { padding: 0 0.8rem 0.6rem; }
+.td-chat small { color: var(--sl-color-gray-3); }
+.pg-tt24 { margin-inline-start: 0.8rem; }

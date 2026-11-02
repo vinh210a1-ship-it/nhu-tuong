@@ -16,7 +16,7 @@ nguon_goc: tai-lieu-duoc-pham/01-ta-duoc-chuc-nang-va-tuong-ky.md
 
 - Tá dược (excipient) là phần **lớn nhất về khối lượng** của thuốc và quyết định liều có đều không, thuốc có bền không, sinh khả dụng ra sao; từng được coi là "trơ" nhưng thực tế không trơ về hóa học, sinh học và độc tính. [N: @pifferi2003]
 - Một tá dược có thể làm **nhiều việc** tùy dạng bào chế (lactose là chất độn trong viên nhưng cũng là nguồn đường khử gây Maillard; polysorbate 80 là chất nhũ hóa nhưng tự oxy hóa tạo peroxide). Vì vậy bảng chức năng phải đi kèm **bảng tương kỵ**.
-- Nơi tra "tá dược nào đã dùng ở đường dùng nào, dạng nào, với lượng tối đa bao nhiêu" là **Inactive Ingredient Database (IID)** của FDA. [N: @fdaiid] Tôi chưa tải được file; bảng nồng độ trong bài này vì thế để nhãn K.
+- Nơi tra "tá dược nào đã dùng ở đường dùng nào, dạng nào, với lượng tối đa bao nhiêu" là **Inactive Ingredient Database (IID)** của FDA. [N: @fdaiid] Toàn bộ bản tải tháng 10/2026 tra được ở trang [Tra cứu tá dược](../../tra-cuu-ta-duoc/). [N: @fda-iid-2026] Bảng nồng độ trong bài này vẫn để nhãn K vì chưa đối chiếu từng dòng với IID.
 
 ## 1. Phân loại tá dược theo chức năng
 
@@ -39,9 +39,9 @@ Cột "ví dụ" và "cơ chế" là kiến thức sách nền chuẩn của bà
 
 ## 2. Cơ sở dữ liệu IID và cách đọc
 
-- IID là các tệp CSV/Excel gồm 7 cột: *Inactive Ingredient, Route, Dosage Form, CAS Number, UNII, Potency Amount, Potency Unit*; **cập nhật hằng quý** (tháng 1, 4, 7, 10). [N: @fdaiid]
+- IID là các tệp CSV/Excel, **cập nhật hằng quý** (tháng 1, 4, 7, 10). [N: @fdaiid] Bản tải tháng 10/2026 (tệp IIR_OCOMM.xlsx) có 10 cột: *Ingredient Name, Route, Dosage Form, CAS Number, UNII, Potency Amount, Potency Unit, Maximum Daily Exposure, Maximum Daily Exposure Unit, Record Updated*; không dòng nào có cả hai loại số (hàm lượng mỗi đơn vị liều, lượng tối đa mỗi ngày). [N: @fda-iid-2026]
 - Trang mô tả không nêu "tối đa", nhưng trong thực hành người ta đọc cột *Potency* như **lượng tá dược lớn nhất đã có trong một chế phẩm được duyệt** theo từng đường dùng và dạng. [G: diễn giải thông dụng, chưa thấy câu chữ chính thức trong trang đã đọc]
-- Một bảng tra "tá dược × dạng bào chế × đường dùng" từ IID là dữ liệu thật để biết lượng tá dược nào đã có tiền lệ; web chưa có bảng này vì file IID chưa tải được. [G]
+- Bảng tra "tá dược × dạng bào chế × đường dùng" từ IID đã có ở trang [Tra cứu tá dược](../../tra-cuu-ta-duoc/): 1.795 tá dược, 9.076 dòng. [N: @fda-iid-2026]
 
 ## 3. An toàn tá dược (nguyên tắc, không phải khuyến cáo lâm sàng)
 

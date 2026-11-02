@@ -10,6 +10,8 @@ function khoiDong() {
 	if (!o || o.dataset.daDung) return;
 	o.dataset.daDung = '1';
 	const theIns = [...document.querySelectorAll('.the-pg')];
+	const hangTt = [...document.querySelectorAll('.tt-hang')];
+	const mucTt = document.querySelector('[data-tk-muc="tt24"]');
 	const hangTu = [...document.querySelectorAll('.td-hang')];
 	const dsTu = document.querySelector('.ds-td');
 	const mucIns = document.querySelector('[data-tk-muc="ins"]');
@@ -23,6 +25,7 @@ function khoiDong() {
 	const ghiLv = [...document.querySelectorAll('.td-ghi-lv')];
 
 	const chuIns = theIns.map((t) => bo(t.textContent));
+	const chuTt = hangTt.map((t) => bo(t.querySelector('summary').textContent));
 	// từ điển: so theo đầu từ (không so giữa chữ) để "nhu" không khớp "nhung"; chữ cuối được phép gõ dở
 	const noiDung = (t) => [...t.querySelectorAll('.td-en,.td-vi,.td-mo,.td-them,.td-lv')].map((x) => x.textContent).join(' ');
 	const tu = (t) => ' ' + bo(noiDung(t)).replace(/[^a-z0-9α-ωβ]+/g, ' ') + ' ';
@@ -48,9 +51,15 @@ function khoiDong() {
 		const toks = q ? q.split(' ') : [];
 		const khop = (chu) => toks.every((t) => chu.includes(t)); // mã INS: khớp giữa chữ ("415" trong "E415")
 		const khopTu = (chu) => toks.every((t, i) => chu.includes(' ' + t + (i < toks.length - 1 ? ' ' : '')));
-		let nIns = 0, nTu = 0;
+		let nIns = 0, nTu = 0, nTt = 0;
 		const hienIns = tab === '' || tab === 'ins';
 		const hienTu = tab === '' || tab === 'td';
+		const hienTt = tab === '' || tab === 'tt24';
+		hangTt.forEach((t, i) => {
+			const hien = hienTt && (q ? khop(chuTt[i]) : tab === 'tt24');
+			t.hidden = !hien;
+			if (hien) nTt++;
+		});
 		theIns.forEach((t, i) => {
 			const hien = hienIns && (!nhom || t.dataset.nhom === nhom) && khop(chuIns[i]);
 			t.hidden = !hien;
@@ -70,14 +79,16 @@ function khoiDong() {
 		thuTu.forEach((h) => dsTu.appendChild(h));
 		if (mucIns) mucIns.hidden = !hienIns || (q !== '' && nIns === 0);
 		if (mucTu) mucTu.hidden = !hienTu || (q !== '' && nTu === 0);
+		if (mucTt) mucTt.hidden = !hienTt || (tab !== 'tt24' && nTt === 0);
 		ghiLv.forEach((p) => (p.hidden = !(lv && p.dataset.linhVuc === lv)));
 		if (dem) {
 			const p = [];
 			if (hienIns) p.push(`${nIns} / ${theIns.length} phụ gia`);
 			if (hienTu) p.push(`${nTu} / ${hangTu.length} thuật ngữ`);
+			if (hienTt && hangTt.length && (q || tab === "tt24")) p.push(`${nTt} / ${hangTt.length} chất theo TT24`);
 			dem.textContent = 'Đang hiện ' + p.join(' và ');
 		}
-		if (khong) khong.hidden = nIns + nTu > 0;
+		if (khong) khong.hidden = nIns + nTu + nTt > 0;
 		// nhớ từ khóa trên thanh địa chỉ
 		try {
 			const u = new URL(location.href);
@@ -99,6 +110,7 @@ function khoiDong() {
 	if (q0) o.value = q0;
 	if (location.hash === '#ins') chonTab('ins');
 	else if (location.hash === '#tu-dien') chonTab('td');
+	else if (location.hash === '#tt24') chonTab('tt24');
 	else chay();
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', khoiDong);

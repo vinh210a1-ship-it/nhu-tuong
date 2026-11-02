@@ -53,6 +53,8 @@ export default defineConfig({
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/tuong-tac.js` } },
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/chan-doan.js` } },
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/tra-cuu.js` } },
+				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/tt24.js` } },
+				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/ta-duoc.js` } },
 			],
 			lastUpdated: false,
 			pagination: true,
@@ -84,7 +86,8 @@ export default defineConfig({
 				{
 					label: 'Tra cứu',
 					items: [
-						{ label: 'Mã INS và từ điển Anh–Việt', slug: 'tra-cuu', badge: { text: 'Mới', variant: 'tip' } },
+						{ label: 'Mã INS, mức tối đa TT24, từ điển', slug: 'tra-cuu', badge: { text: 'Mới', variant: 'tip' } },
+						{ label: 'Tá dược (FDA IID)', slug: 'tra-cuu-ta-duoc', badge: { text: 'Mới', variant: 'tip' } },
 						{ label: 'Thuật ngữ nhũ tương (bảng)', slug: 'nhu-tuong/thuat-ngu' },
 						{ label: 'Nguồn', slug: 'nguon' },
 					],

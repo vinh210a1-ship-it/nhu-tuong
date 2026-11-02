@@ -310,6 +310,15 @@ for (const [chat, jecfa, efsa, nguonTp] of dongBang(tpGoc, '**Kết luận trư�
 	const jecfaCo = /glutamat/i.test(ten) ? '' : jecfa;
 	phuGia.push({ ma, ten, nhom: 'Phụ gia khác', chucNang: '', xacMinh: '', efsa: /chưa tra/.test(efsa) ? '' : efsa, jecfa: /chưa tra/.test(jecfaCo) ? '' : jecfaCo, nguon: nguonTp, bai: 'thuc-pham/quy-dinh-jecfa-efsa-da-kiem' });
 }
+// liên kết từ thẻ phụ gia sang bảng ML của TT24 (chỉ khi mã có trong Phụ lục 1)
+const insTt24 = JSON.parse(fs.readFileSync(path.join(GOC, 'public/du-lieu/tt24.json'), 'utf8')).pl1.map(([ins]) => ins);
+const lkTt24 = (ma) => {
+	// mã đầu tiên sau "E" hoặc "INS" (với khoảng E460–E466 lấy mã đầu); khớp cả khi Phụ lục 1 ghi thêm (i) hay chữ: 960 -> 960a
+	const so = [...String(ma).matchAll(/(?<!–)(?:E|INS )(\d{3,4}[a-z]?)/g)]
+		.map((m) => m[1])
+		.find((x) => insTt24.some((i) => i === x || i.startsWith(x + '(') || (/^\d+$/.test(x) && new RegExp(`^${x}[a-z]`).test(i))));
+	return so ? `<a class="pg-bai pg-tt24" href="${BASE}/tra-cuu/?q=${so}#tt24">Mức tối đa theo TT24 →</a>` : '';
+};
 const theGia = phuGia
 	.map((g) => {
 		const chua = g.chuaXacMinh !== undefined;
@@ -318,7 +327,7 @@ const theGia = phuGia
 <div class="pg-dau"><span class="pg-ma">${esc(g.ma)}</span><span class="pg-nhom">${g.nhom}</span></div>
 <div class="pg-ten">${mdNho(g.ten)}</div>
 <dl class="pg-ds">${dong('Chức năng', g.chucNang)}${dong('Mức xác minh', g.xacMinh)}${dong(g.nhom === 'Phụ gia khác' ? 'EFSA' : 'Kết luận EFSA', g.efsa)}${dong('ADI (mg/kg thể trọng/ngày)', g.adi)}${dong(g.nhom === 'Phụ gia khác' ? 'JECFA (ADI, mg/kg thể trọng/ngày)' : 'JECFA', g.jecfa && g.jecfa !== 'không đọc' ? g.jecfa : '')}${dong('Chưa xác minh', g.chuaXacMinh)}${dong('Nguồn', g.nguon)}</dl>
-<a class="pg-bai" href="${BASE}/${g.bai}/">Đọc trong bài →</a>
+<a class="pg-bai" href="${BASE}/${g.bai}/">Đọc trong bài →</a>${lkTt24(g.ma)}
 </li>`;
 	})
 	.join('\n');

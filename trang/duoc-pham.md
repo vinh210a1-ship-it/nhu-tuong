@@ -25,4 +25,4 @@ Tra từ: [Thuật ngữ bào chế Việt–Anh](thuat-ngu-duoc-bao-che/).
 - **Chưa đọc toàn văn nguồn nào.** 80 nguồn: 18 văn bản quy định đọc trang gốc (ICH Q1A/Q1B/Q1E/Q8/M9, FDA BCS, hòa tan, SUPAC-IR, WHO TRS 1010, ASEAN, chương chung dược điển), 59 bài PubMed đã kiểm siêu dữ liệu và tóm tắt.
 - **Chưa có** Handbook of Pharmaceutical Excipients, USP–NF và Ph. Eur. hiện hành, Dược điển Việt Nam V; số liệu lấy từ sách nền (HLB yêu cầu của từng dầu, nồng độ tá dược điển hình) **đang tạm ẩn**.
 - **Chưa tìm được văn bản Việt Nam** quy định điều kiện thử độ ổn định; web ghi "vùng IVb (30 °C/75% RH) là điều kiện tham chiếu cho khí hậu nhiệt đới", không viết thành quy định bắt buộc.
-- Cơ sở dữ liệu tá dược IID của FDA chưa tải được, nên chưa có bảng lượng tá dược đã có tiền lệ theo đường dùng.
+- Lượng tá dược đã có tiền lệ theo đường dùng và dạng bào chế tra ở trang [Tra cứu tá dược (FDA IID)](../tra-cuu-ta-duoc/) (bản 10/2026, 1.795 tá dược). Đó là tiền lệ đã dùng ở Hoa Kỳ, không phải giới hạn an toàn hay quy định của Việt Nam.

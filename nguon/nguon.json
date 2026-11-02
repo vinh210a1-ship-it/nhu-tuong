@@ -2139,6 +2139,22 @@
   "khoa": "fda-app4"
  },
  {
+  "trich_dan": "FDA (U.S. Food and Drug Administration). Inactive Ingredient Database (IID), bản tải về October 2026 (tệp IIR_OCOMM.xlsx, 9.076 dòng).",
+  "ho": "fda",
+  "nam": 2026,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.fda.gov/drugs/drug-approvals-and-databases/inactive-ingredients-database-download",
+  "muc_doc": "toan-van",
+  "khu": [
+   "duoc-pham"
+  ],
+  "ma_cu": [
+   "tra-cuu:iid"
+  ],
+  "khoa": "fda-iid-2026"
+ },
+ {
   "trich_dan": "FDA (2017, tháng 12). Waiver of In Vivo Bioavailability and Bioequivalence Studies for Immediate-Release Solid Oral Dosage Forms Based on a Biopharmaceutics Classification System. Guidance for Industry.",
   "ho": "fdabcs",
   "nam": 2017,
@@ -6203,6 +6219,22 @@
    "chat-nhu-hoa:C16"
   ],
   "khoa": "tsibranska2019"
+ },
+ {
+  "trich_dan": "BYT (Bộ Y tế). Văn bản hợp nhất 09/VBHN-BYT (2024): Thông tư 24/2019/TT-BYT quy định về quản lý và sử dụng phụ gia thực phẩm (đã hợp nhất TT 17/2023/TT-BYT và TT 08/2024/TT-BYT). Phụ lục 1, 2A, 2B, 3, 4.",
+  "ho": "tt",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": "https://luatvietnam.vn/",
+  "muc_doc": "toan-van",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "tra-cuu:tt24"
+  ],
+  "khoa": "tt24-2019"
  },
  {
   "trich_dan": "USP 38–NF 33. Chương chung <1216> Tablet Friability (bản lưu trên drugfuture.com; ấn bản cũ).",
