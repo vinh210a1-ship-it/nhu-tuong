@@ -67,7 +67,7 @@ export default defineConfig({
 					collapsed: k !== 'nhu-tuong',
 					items: [
 						{ label: 'Lộ trình đọc', slug: k },
-						...KHU[k].bai.map((b) => ({ label: b.ten, slug: `${k}/${b.slug}` })),
+						...[...KHU[k].bai, ...(KHU[k].phu || [])].map((b) => ({ label: b.ten, slug: `${k}/${b.slug}` })),
 					],
 				})),
 				{

@@ -16,8 +16,9 @@ const TEN = {
 	G: 'Suy luận hoặc giả thuyết',
 };
 // số kèm đơn vị đo: dấu hiệu "con số" trong một khối
-const SO_DON_VI =
-	/\d[\d.,]*\s*(?:°C|%|mg|g\/|µm|μm|nm|mN|kg|MPa|bar|mPa|kT|kJ|m\/s|rpm|phút|giờ|ngày)/;
+// (mở rộng 2026-11-01 khi thêm khu thực phẩm, dược: thêm mL, số thập phân, giá trị pH, aw, pKa không có đơn vị)
+export const SO_DON_VI =
+	/\d[\d.,]*\s*(?:°C|%|mg|g\/|µm|μm|nm|mN|kg|MPa|bar|mPa|kT|kJ|m\/s|rpm|phút|giờ|ngày|mL)|\d+,\d+|\b(?:pH|pHu|aw|pKa)\b[^\d\n]{0,12}\d/;
 
 let NGUON = null;
 function nguon() {
@@ -51,7 +52,7 @@ export function tachNhan(nhan) {
 
 function htmlPhan(phan, base, thieu) {
 	let html = esc(phan);
-	html = html.replace(/@([a-z]+\d{0,4}[a-z]?)/g, (_, k) => {
+	html = html.replace(/@([a-z][a-z0-9]*(?:-[a-z0-9]+)*)/g, (_, k) => {
 		const e = nguon().get(k);
 		if (!e) {
 			thieu.add(k);

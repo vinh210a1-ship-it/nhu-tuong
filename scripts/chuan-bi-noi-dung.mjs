@@ -6,13 +6,13 @@
 // Chạy: npm run chuan-bi (tự chạy trong npm run build)
 import fs from 'node:fs';
 import path from 'node:path';
-import { tenNgan, htmlNhan } from '../src/plugins/remark-nhan.mjs';
+import { tenNgan, htmlNhan, tachNhan, SO_DON_VI } from '../src/plugins/remark-nhan.mjs';
 import { KHU } from '../src/data/khu.mjs';
 
 const GOC = process.cwd();
 const DOCS = path.join(GOC, 'src/content/docs');
-const KHU_BAT = ['nhu-tuong', 'chat-beo', 'chat-nhu-hoa', 'chat-on-dinh'];
-const TEN_KHU = { 'nhu-tuong': 'Nhũ tương', 'chat-beo': 'Chất béo', 'chat-nhu-hoa': 'Chất nhũ hóa', 'chat-on-dinh': 'Chất ổn định' };
+const KHU_BAT = ['nhu-tuong', 'chat-beo', 'chat-nhu-hoa', 'chat-on-dinh', 'thuc-pham', 'duoc-pham'];
+const TEN_KHU = { 'nhu-tuong': 'Nhũ tương', 'chat-beo': 'Chất béo', 'chat-nhu-hoa': 'Chất nhũ hóa', 'chat-on-dinh': 'Chất ổn định', 'thuc-pham': 'Thực phẩm', 'duoc-pham': 'Dược phẩm' };
 
 // Khóa lưu "đã đọc" trong máy người xem: bài nhũ tương giữ slug trần (tương thích dữ liệu cũ), khu khác thêm tên khu
 const khoaDaDoc = (khu, slug) => (khu === 'nhu-tuong' ? slug : `${khu}/${slug}`);
@@ -24,6 +24,14 @@ const MAY_TINH = [
 	['nhu-tuong', 'su-co-thiet-ke', '## 3. Quy trình thiết kế công thức', 'chan-doan'],
 	['chat-nhu-hoa', 'nen-tang-vat-ly-hoa-be-mat', '### Bảng HLB tham khảo', 'hlb'],
 	['chat-beo', 'oxy-hoa-lipid-chong-oxy-hoa-han-su-dung', '### 6.2 Bẫy cần tránh', 'arrhenius'],
+	['nhu-tuong', 'nen-tang', '### 3.2 Hấp phụ (Gibbs) và độ phủ', 'laplace'],
+	['nhu-tuong', 'mat-on-dinh', '### Điều kiện hay gặp trong thực phẩm', 'debye'],
+	['nhu-tuong', 'mat-on-dinh', '### Chất ức chế ripening (ripening inhibitor)', 'ostwald'],
+	['nhu-tuong', 'he-dac-biet', '### 2.3 Các loại hạt thực phẩm', 'pickering'],
+	['chat-beo', 'cau-truc-triglyceride-va-acid-beo', '## 8. Điều đã chắc', 'iv-sv'],
+	['chat-beo', 'oxy-hoa-lipid-chong-oxy-hoa-han-su-dung', '## 6. Hạn sử dụng: Arrhenius', 'totox'],
+	['thuc-pham', 'bao-quan-hoat-do-nuoc-va-han-su-dung', '## 4. Nitrit, muối ướp và màu thịt', 'axit-yeu'],
+	['thuc-pham', 'qua-trinh-nhiet-lanh-say-ep-dun', '## 2. Đông lạnh và trạng thái thủy tinh', 'gia-tri-f'],
 ];
 // Tiêu đề gọn: bỏ "Chương 01 — " hay "01. " ở đầu
 const tieuDeGon = (t) => t.replace(/^Chương\s+\d+\s*[—–-]\s*/, '').replace(/^\d{2}\.\s+/, '');
@@ -38,6 +46,47 @@ function boGhiChuDau(body) {
 	if (i === dau) return body.replace(/^\s*(?:---[ \t]*\n\s*)+/, '');
 	const giu = dong.slice(dau, i).filter((d) => !GHI_CHU_NOI_BO.test(d) && d.replace(/^>\s*/, '').trim() !== '');
 	return [...dong.slice(0, dau), ...giu, ...dong.slice(i)].join('\n').replace(/^\s*(?:---[ \t]*\n\s*)+/, '');
+}
+
+// Định dạng của bộ tài liệu mới (thực phẩm, dược): nhãn viết trong dấu `...`, khóa nguồn trần `@a; @b`,
+// dòng giải thích quy ước nhãn, mục ghi "(không đưa lên web)". Đưa về đúng định dạng web và bỏ phần nội bộ.
+const NHAN_TRONG_CODE = /`(\[(?:N|K|T|G)[^\]`\n]*\])`/g;
+const KHOA_TRAN = /`(@[a-z][a-z0-9-]*(?:;\s*@[a-z][a-z0-9-]*)*)`/g;
+const BAO_AN = '<span class="an-so-lieu">Số liệu sách nền ở đây đang chờ đối chiếu số trang nên tạm ẩn. <span class="nhan nhan-K" title="Sách nền, chờ đối chiếu trang">K</span></span>';
+function chuanHoaDinhDang(body) {
+	body = body
+		.replace(/^(?:Quy ước nhãn|Nhãn): `\[N.*\n+/gm, '') // dòng giải thích quy ước (đã có ở trang "Cách đọc nhãn")
+		.replace(NHAN_TRONG_CODE, '$1')
+		.replace(KHOA_TRAN, '[N: $1]')
+		.replace(/^Chú thích dùng khi lên web:/gm, 'Chú thích:')
+		// "## 4. Mô hình lab đề xuất (`[T]` ...)" -> tiêu đề cho người đọc, nhãn T đặt dưới tiêu đề
+		.replace(/^(#{2,4} (?:\d+\. )?)Mô hình lab đề xuất.*$/gm, '$1Mô hình định lượng minh họa [T]');
+	// bỏ cả mục có tiêu đề ghi "(không đưa lên web)" tới tiêu đề cùng cấp kế tiếp
+	body = body.replace(/^(#{2,4}) [^\n]*\(không đưa lên web\)[^\n]*\n[\s\S]*?(?=^#{2,4} |(?![\s\S]))/gm, (m, h) => '');
+	// trong một dòng có cả nhãn N/T lẫn K: đoạn câu nào kết thúc bằng [K] mà có số kèm đơn vị thì ẩn riêng đoạn đó
+	return body
+		.split('\n')
+		.map((d) => {
+			if (!/\[K\]/.test(d) || !/\[(?:N|T)[\]:;]/.test(d)) return d;
+			const re = /\[(?:N|K|T|G)(?:[:;][^\]\n]*)?\]/g;
+			let ra = '', dau = 0, m;
+			while ((m = re.exec(d))) {
+				let doan = d.slice(dau, m.index);
+				const chiK = tachNhan(m[0]).every((x) => x.ma === 'K');
+				let cuoi = m.index + m[0].length;
+				if (chiK && SO_DON_VI.test(doan)) {
+					const tienTo = (/^\s*(?:[-*]|\d+\.)\s+(?:\*\*[^*]+\*\*\s*)?/.exec(doan) || [''])[0];
+					ra += (ra && !/\s$/.test(ra) && !tienTo ? " " : "") + tienTo + BAO_AN;
+					// câu chú kèm ngay sau nhãn ("— chỉ dùng nội bộ ...") cũng bỏ
+					const sau = /^\s*—[^.]*\.?/.exec(d.slice(cuoi));
+					if (sau) cuoi += sau[0].length;
+				} else ra += doan + m[0];
+				dau = cuoi;
+				re.lastIndex = cuoi;
+			}
+			return ra + d.slice(dau);
+		})
+		.join('\n');
 }
 
 function docFrontMatter(text) {
@@ -83,6 +132,7 @@ for (const khu of KHU_BAT) {
 		fm.slug = fm.slug.toLowerCase(); // Astro đổi đường dẫn sang chữ thường
 		fm.title = tieuDeGon(fm.title);
 		let body = boGhiChuDau(than.replace(/^#\s+.+\n+/, '')); // H1 trùng với tiêu đề Starlight
+		body = chuanHoaDinhDang(body);
 		// trong nhãn, ":chữ" (vd. "11(5):3144") bị Starlight hiểu thành cú pháp directive và cắt nhãn làm đôi -> thoát dấu ":"
 		body = body.replace(/\[(?:N|K|T|G)[:;][^\]\n]*\]/g, (m) => m.slice(0, 2) + m.slice(2).replace(/:(?=[\p{L}\d])/gu, '\\:'));
 		// `03-ten-file.md` trong chữ -> liên kết tới bài (hoặc trang Nguồn với file danh mục nguồn)
@@ -249,6 +299,16 @@ for (const [ten, ghiChu] of dongBang(odGoc, '## Đã biết nhưng **chưa xác 
 	const ma = [...maE, ...[...ten.matchAll(/INS (\d+)/g)].map((m) => `INS ${m[1]}`)].join(', ');
 	phuGia.push({ ma: ma || '—', ten: ten.replace(/\s*\(E\d+\)/, ''), nhom: 'Chất ổn định', chucNang: '', xacMinh: '[K]', efsa: '', chuaXacMinh: ghiChu, nguon: '', bai: 'chat-on-dinh/quy-dinh-ins-e' });
 }
+// phụ gia thực phẩm khác: bảng ADI đã kiểm của khu thực phẩm
+const tpGoc = chuanHoaDinhDang(docGoc('thuc-pham', '09-'));
+for (const [chat, jecfa, efsa, nguonTp] of dongBang(tpGoc, '**Kết luận trước.**')) {
+	const m = /^(.*?)\s*\(([^)]*)\)\s*$/.exec(chat);
+	const ten = m ? m[1] : chat;
+	const ma = m ? `INS ${m[2]}` : '—';
+	// glutamat: cột JECFA lấy từ bài phản biện, chưa mở trang JECFA -> không đưa lên thẻ tra cứu
+	const jecfaCo = /glutamat/i.test(ten) ? '' : jecfa;
+	phuGia.push({ ma, ten, nhom: 'Phụ gia khác', chucNang: '', xacMinh: '', efsa: /chưa tra/.test(efsa) ? '' : efsa, jecfa: /chưa tra/.test(jecfaCo) ? '' : jecfaCo, nguon: nguonTp, bai: 'thuc-pham/quy-dinh-jecfa-efsa-da-kiem' });
+}
 const theGia = phuGia
 	.map((g) => {
 		const chua = g.chuaXacMinh !== undefined;
@@ -256,7 +316,7 @@ const theGia = phuGia
 		return `<li class="the-pg${chua ? ' chua' : ''}" data-nhom="${g.nhom}">
 <div class="pg-dau"><span class="pg-ma">${esc(g.ma)}</span><span class="pg-nhom">${g.nhom}</span></div>
 <div class="pg-ten">${mdNho(g.ten)}</div>
-<dl class="pg-ds">${dong('Chức năng', g.chucNang)}${dong('Mức xác minh', g.xacMinh)}${dong('Kết luận EFSA', g.efsa)}${dong('ADI (mg/kg thể trọng/ngày)', g.adi)}${dong('JECFA', g.jecfa && g.jecfa !== 'không đọc' ? g.jecfa : '')}${dong('Chưa xác minh', g.chuaXacMinh)}${dong('Nguồn', g.nguon)}</dl>
+<dl class="pg-ds">${dong('Chức năng', g.chucNang)}${dong('Mức xác minh', g.xacMinh)}${dong(g.nhom === 'Phụ gia khác' ? 'EFSA' : 'Kết luận EFSA', g.efsa)}${dong('ADI (mg/kg thể trọng/ngày)', g.adi)}${dong(g.nhom === 'Phụ gia khác' ? 'JECFA (ADI, mg/kg thể trọng/ngày)' : 'JECFA', g.jecfa && g.jecfa !== 'không đọc' ? g.jecfa : '')}${dong('Chưa xác minh', g.chuaXacMinh)}${dong('Nguồn', g.nguon)}</dl>
 <a class="pg-bai" href="${BASE}/${g.bai}/">Đọc trong bài →</a>
 </li>`;
 	})
@@ -266,12 +326,12 @@ fs.writeFileSync(
 	path.join(DOCS, 'tra-cuu-phu-gia.md'),
 	`---
 title: Tra cứu phụ gia theo mã INS/E
-description: Chất nhũ hóa và chất ổn định thường dùng — mã INS/E, chức năng, kết luận EFSA đã đọc, nguồn.
+description: Chất nhũ hóa, chất ổn định và phụ gia thực phẩm thường dùng — mã INS/E, chức năng, kết luận EFSA đã đọc, nguồn.
 editUrl: false
 tableOfContents: false
 ---
 
-Gõ mã (ví dụ **471**, **E415**) hoặc tên chất để lọc. Thông tin gom tự động từ hai bài [Mã INS/E của chất nhũ hóa](../chat-nhu-hoa/ma-ins-quy-dinh-an-toan/) và [Mã INS/E của chất ổn định](../chat-on-dinh/quy-dinh-ins-e/): ${soNhom('Chất nhũ hóa')} dòng chất nhũ hóa, ${soNhom('Chất ổn định')} dòng chất ổn định, kèm các chất **chưa xác minh** được để riêng.
+Gõ mã (ví dụ **471**, **E415**) hoặc tên chất để lọc. Thông tin gom tự động từ hai bài [Mã INS/E của chất nhũ hóa](../chat-nhu-hoa/ma-ins-quy-dinh-an-toan/) và [Mã INS/E của chất ổn định](../chat-on-dinh/quy-dinh-ins-e/): ${soNhom('Chất nhũ hóa')} dòng chất nhũ hóa, ${soNhom('Chất ổn định')} dòng chất ổn định, ${soNhom('Phụ gia khác')} dòng phụ gia khác (bảo quản, chống oxy hóa, tạo ngọt, điều vị) từ bài [ADI phụ gia đã kiểm](../thuc-pham/quy-dinh-jecfa-efsa-da-kiem/), kèm các chất **chưa xác minh** được để riêng.
 
 > **Không dùng trang này làm căn cứ pháp lý.** Ở Việt Nam, phụ gia được quản lý theo Thông tư 24/2019/TT-BYT (văn bản hợp nhất 08/VBHN-BYT năm 2023); phụ lục danh mục và mức tối đa (ML) theo nhóm thực phẩm **chưa được đối chiếu** trên web này. "Không cần ADI bằng số" không có nghĩa là dùng không giới hạn.
 
@@ -281,6 +341,7 @@ Gõ mã (ví dụ **471**, **E415**) hoặc tên chất để lọc. Thông tin 
 <button type="button" data-loc-nhom="" aria-pressed="true">Tất cả</button>
 <button type="button" data-loc-nhom="Chất nhũ hóa" aria-pressed="false">Chất nhũ hóa</button>
 <button type="button" data-loc-nhom="Chất ổn định" aria-pressed="false">Chất ổn định</button>
+<button type="button" data-loc-nhom="Phụ gia khác" aria-pressed="false">Bảo quản, tạo ngọt, khác</button>
 </div>
 <p class="loc-pg-dem" data-dem-phu-gia></p>
 </div>
