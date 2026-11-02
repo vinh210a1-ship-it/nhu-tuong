@@ -11,8 +11,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const tn = path.join(process.cwd(), 'src/data/thuat-ngu.json');
 const thuatNgu = fs.existsSync(tn) ? JSON.parse(fs.readFileSync(tn, 'utf8')) : [];
 const tn0 = thuatNgu[0];
-const pg = path.join(process.cwd(), 'src/content/docs/tra-cuu-phu-gia.md');
-const soPhuGia = fs.existsSync(pg) ? (fs.readFileSync(pg, 'utf8').match(/class="the-pg/g) || []).length : 0;
+const pg = path.join(process.cwd(), 'src/content/docs/tra-cuu.md');
+const tcText = fs.existsSync(pg) ? fs.readFileSync(pg, 'utf8') : '';
+const soPhuGia = (tcText.match(/class="the-pg/g) || []).length;
+const soTu = (tcText.match(/class="td-hang/g) || []).length;
 
 const soBai = (k) => DS_KHU[k].bai.length;
 const KHU = [
@@ -24,7 +26,7 @@ const KHU = [
 	{ ten: 'Dược phẩm', mo: 'Bào chế: tá dược, hòa tan và BCS, kem và nhũ tương tiêm, hệ nano, viên nén, độ ổn định ICH, QbD.', khu: 'duoc-pham', href: '/duoc-pham/', icon: 'duoc', mau: 'var(--khu-duoc-pham)' },
 	{ ten: 'Phòng lab ảo', mo: 'Trò chơi: tự cân dầu, chạy máy đồng hóa, xem mẻ của bạn có tách lớp hay bị ôi không. Kết quả tính bằng cơ chế thật trong bài.', chip: '4 nhiệm vụ', href: '/phong-lab/', icon: 'vo-giot', mau: 'var(--chang-3)' },
 	{ ten: 'Máy tính và chẩn đoán', mo: 'Stokes, Laplace, Debye, Ostwald, Pickering, HLB, hạn dùng Arrhenius, TOTOX, IV/SV, axit yếu, giá trị F, cây chẩn đoán.', chip: '13 máy tính · 1 cây', href: '/may-tinh/', icon: 'may-tinh', mau: '#2f6fd6' },
-	{ ten: 'Tra cứu phụ gia', mo: 'Gõ mã INS/E hoặc tên chất: chức năng, kết luận EFSA, ADI, nguồn.', chip: `${soPhuGia} chất`, href: '/tra-cuu-phu-gia/', icon: 'tra-cuu', mau: '#5b6b74' },
+	{ ten: 'Tra cứu: INS và từ điển Anh–Việt', mo: 'Một ô tìm kiếm: mã INS/E (kết luận EFSA, ADI, nguồn) và thuật ngữ hóa học, thực phẩm Anh–Việt.', chip: `${soPhuGia} phụ gia · ${soTu} từ`, href: '/tra-cuu/', icon: 'tra-cuu', mau: '#5b6b74' },
 ];
 const NHAN = [
 	['N', 'Có nguồn', 'Đã đọc nguồn; bấm tên nguồn để xem thẻ nguồn.'],

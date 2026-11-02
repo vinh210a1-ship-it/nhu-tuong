@@ -13,6 +13,8 @@ export default defineConfig({
 	site: 'https://vinh210a1-ship-it.github.io',
 	base: BASE,
 	trailingSlash: 'always',
+	// trang tra cứu phụ gia cũ đã gộp vào trang Tra cứu (tab Mã INS/E)
+	redirects: { '/tra-cuu-phu-gia': `${BASE}/tra-cuu/#ins` },
 	markdown: {
 		processor: unified({
 			// remarkMath đọc công thức $...$; remarkNhan đổi nhãn [N]/[T]/[K]/[G] thành huy hiệu màu
@@ -50,6 +52,7 @@ export default defineConfig({
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/may-tinh.js` } },
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/tuong-tac.js` } },
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/chan-doan.js` } },
+				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/tra-cuu.js` } },
 			],
 			lastUpdated: false,
 			pagination: true,
@@ -81,8 +84,8 @@ export default defineConfig({
 				{
 					label: 'Tra cứu',
 					items: [
-						{ label: 'Phụ gia theo mã INS/E', slug: 'tra-cuu-phu-gia' },
-						{ label: 'Thuật ngữ Việt–Anh', slug: 'nhu-tuong/thuat-ngu' },
+						{ label: 'Mã INS và từ điển Anh–Việt', slug: 'tra-cuu', badge: { text: 'Mới', variant: 'tip' } },
+						{ label: 'Thuật ngữ nhũ tương (bảng)', slug: 'nhu-tuong/thuat-ngu' },
 						{ label: 'Nguồn', slug: 'nguon' },
 					],
 				},

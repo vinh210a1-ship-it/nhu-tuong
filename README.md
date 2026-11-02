@@ -17,6 +17,8 @@ Web kiến thức về nhũ tương thực phẩm cho người làm R&D, QA và 
 |---|---|
 | `noi-dung/<khu>/` | **Nội dung gốc** (Markdown) của 4 khu: nhũ tương, chất béo, chất nhũ hóa, chất ổn định. Sửa bài ở đây. |
 | `nguon/nguon.json`, `nguon.csv` | Danh mục nguồn chung; mỗi `@khoa` trong nhãn trỏ vào một dòng. |
+| `noi-dung/tra-cuu/tu-dien-anh-viet.md` | Dữ liệu từ điển Anh–Việt của trang **Tra cứu** (bảng Markdown theo lĩnh vực). Thêm từ: thêm một dòng bảng, build lại. |
+| `scripts/tra-cuu.mjs`, `public/tra-cuu.js` | Dựng trang Tra cứu (mã INS + từ điển, gộp bảng thuật ngữ nhũ tương và dược) và ô tìm kiếm bỏ dấu tiếng Việt. |
 | `trang/` | Trang lộ trình viết tay của từng khu. |
 | `src/content/docs/` | Trang viết tay (trang chủ, quy ước, máy tính). Các trang bài được sinh tự động, không sửa ở đây. |
 | `src/plugins/remark-nhan.mjs` | Đổi nhãn `[N: @khoa]`, `[K]`… thành huy hiệu; tạm ẩn đoạn chỉ có nhãn K mà chứa số liệu. |

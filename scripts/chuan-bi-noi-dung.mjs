@@ -8,6 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { tenNgan, htmlNhan, tachNhan, SO_DON_VI } from '../src/plugins/remark-nhan.mjs';
 import { KHU } from '../src/data/khu.mjs';
+import { dungTraCuu } from './tra-cuu.mjs';
 
 const GOC = process.cwd();
 const DOCS = path.join(GOC, 'src/content/docs');
@@ -235,7 +236,7 @@ ${the}
 </ul>
 `,
 );
-// ---------------- trang Tra cứu phụ gia (gom từ bảng mã INS/E của khu chất nhũ hóa và chất ổn định)
+// ---------------- thẻ phụ gia cho trang Tra cứu (gom từ bảng mã INS/E của khu chất nhũ hóa và chất ổn định)
 const BASE = '/nhu-tuong';
 function dongBang(text, tieuDe) {
 	// các dòng của bảng Markdown đầu tiên ngay sau tiêu đề (bỏ dòng tiêu đề cột và dòng ---)
@@ -322,34 +323,9 @@ const theGia = phuGia
 	})
 	.join('\n');
 const soNhom = (n) => phuGia.filter((g) => g.nhom === n && g.chuaXacMinh === undefined).length;
-fs.writeFileSync(
-	path.join(DOCS, 'tra-cuu-phu-gia.md'),
-	`---
-title: Tra cứu phụ gia theo mã INS/E
-description: Chất nhũ hóa, chất ổn định và phụ gia thực phẩm thường dùng — mã INS/E, chức năng, kết luận EFSA đã đọc, nguồn.
-editUrl: false
-tableOfContents: false
----
-
-Gõ mã (ví dụ **471**, **E415**) hoặc tên chất để lọc. Thông tin gom tự động từ hai bài [Mã INS/E của chất nhũ hóa](../chat-nhu-hoa/ma-ins-quy-dinh-an-toan/) và [Mã INS/E của chất ổn định](../chat-on-dinh/quy-dinh-ins-e/): ${soNhom('Chất nhũ hóa')} dòng chất nhũ hóa, ${soNhom('Chất ổn định')} dòng chất ổn định, ${soNhom('Phụ gia khác')} dòng phụ gia khác (bảo quản, chống oxy hóa, tạo ngọt, điều vị) từ bài [ADI phụ gia đã kiểm](../thuc-pham/quy-dinh-jecfa-efsa-da-kiem/), kèm các chất **chưa xác minh** được để riêng.
-
-> **Không dùng trang này làm căn cứ pháp lý.** Ở Việt Nam, phụ gia được quản lý theo Thông tư 24/2019/TT-BYT (văn bản hợp nhất 08/VBHN-BYT năm 2023); phụ lục danh mục và mức tối đa (ML) theo nhóm thực phẩm **chưa được đối chiếu** trên web này. "Không cần ADI bằng số" không có nghĩa là dùng không giới hạn.
-
-<div class="loc-pg not-content">
-<input id="loc-phu-gia" class="loc-nguon" type="search" placeholder="Lọc theo mã hoặc tên: 471, lecithin, xanthan…" aria-label="Lọc phụ gia" />
-<div class="loc-pg-nut" role="group" aria-label="Nhóm">
-<button type="button" data-loc-nhom="" aria-pressed="true">Tất cả</button>
-<button type="button" data-loc-nhom="Chất nhũ hóa" aria-pressed="false">Chất nhũ hóa</button>
-<button type="button" data-loc-nhom="Chất ổn định" aria-pressed="false">Chất ổn định</button>
-<button type="button" data-loc-nhom="Phụ gia khác" aria-pressed="false">Bảo quản, tạo ngọt, khác</button>
-</div>
-<p class="loc-pg-dem" data-dem-phu-gia></p>
-</div>
-
-<ul class="ds-pg not-content">
-${theGia}
-</ul>
-`,
-);
+// Trang Tra cứu = thẻ phụ gia (ở trên) + từ điển Anh–Việt, dựng ở scripts/tra-cuu.mjs. Trang cũ /tra-cuu-phu-gia/ chuyển hướng (astro.config.mjs).
+fs.rmSync(path.join(DOCS, 'tra-cuu-phu-gia.md'), { force: true });
+const tc = dungTraCuu({ GOC, DOCS, BASE, theGia, soPhuGia: phuGia.length, soNhom });
+console.log(`chuan-bi: trang Tra cứu: ${tc.soTu} từ (${tc.soTuBai} từ bảng thuật ngữ trong bài), ${tc.soLinhVuc} lĩnh vực`);
 console.log(`chuan-bi: ${phuGia.length} dòng phụ gia`);
 console.log(`chuan-bi: ${soBai} bài (${KHU_BAT.join(', ')}), ${ds.length} nguồn`);
