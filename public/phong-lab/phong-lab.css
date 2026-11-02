@@ -440,3 +440,74 @@
 	.pl-tu-dau p, .pl-dich small { display: none; }
 	.pl-tu-ban .pl-the-mon .pl-thanh { grid-template-columns: 5.5rem 1fr 2rem; }
 }
+
+/* ================= Chọn bàn & hai bàn mới (thịt, bảo quản) ================= */
+.pl-chon-ban { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin: 0 0 1rem; }
+.pl-ban-nut { display: grid; grid-template-columns: auto 1fr; column-gap: 0.6rem; align-items: center; text-align: left; padding: 0.7rem 0.9rem; border-radius: 0.9rem; border: 1.5px solid var(--sl-color-gray-5); background: var(--sl-color-bg-nav, var(--sl-color-gray-6)); color: var(--sl-color-white); cursor: pointer; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; font: inherit; }
+.pl-ban-nut .bt { grid-row: span 2; font-size: 1.8rem; }
+.pl-ban-nut b { font-size: 1rem; }
+.pl-ban-nut small { font-size: 0.75rem; color: var(--sl-color-gray-2); line-height: 1.3; }
+.pl-ban-nut:hover { transform: translateY(-2px); border-color: var(--hh-ho-phach, #f0b14a); }
+.pl-ban-nut[aria-pressed='true'] { border-color: var(--hh-ho-phach, #f0b14a); box-shadow: 0 0 0 3px color-mix(in srgb, var(--hh-ho-phach, #f0b14a) 25%, transparent); }
+.pl-ban[hidden] { display: none; }
+
+.pl-so-to { display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; margin: 0.4rem 0 0.6rem; }
+.pl-so-to span { font: 700 2.2rem var(--__sl-font-mono, monospace); color: var(--hh-ho-phach, #f0b14a); }
+.pl-so-to small { font-size: 0.8rem; color: var(--sl-color-gray-2); }
+.pl-truc { font: 10px var(--__sl-font, sans-serif); fill: var(--sl-color-gray-2); }
+.pl-truc-duong { stroke: var(--sl-color-gray-4); stroke-width: 1; }
+.pl-vung-pi { fill: rgba(196, 72, 107, 0.14); }
+.pl-duong-thit { fill: none; stroke: #e07a2f; stroke-width: 2.5; }
+.pl-diem-thit { fill: #c4486b; stroke: #fff; stroke-width: 2; }
+.pl-thang { fill: #3a8fd6; opacity: 0.35; }
+.pl-thang.ph { fill: #e07a2f; }
+.pl-vach { stroke: var(--sl-color-white); stroke-width: 1.5; opacity: 0.7; }
+.pl-vach.men { stroke: #e9b949; opacity: 1; }
+.pl-chi { fill: var(--hh-ho-phach, #f0b14a); }
+.pl-chon { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.85rem; margin: 0.6rem 0; cursor: pointer; }
+
+/* cảnh bàn thịt */
+.pl-canh .pl-xo { cursor: pointer; }
+.pl-canh .pl-xo:hover .may { stroke: var(--hh-ho-phach, #f0b14a); }
+.pl-canh .pl-nuoc-muoi { fill: var(--pl-nuoc); transition: opacity 0.4s; }
+.pl-canh .pl-kim-tiem { stroke: var(--pl-may-toi); stroke-width: 2.5; stroke-linecap: round; }
+.pl-tram.chay .pl-kim-tiem { animation: pl-tiem 0.35s ease-in-out infinite alternate; }
+@keyframes pl-tiem { to { transform: translateY(14px); } }
+.pl-canh .pl-day { fill: none; stroke: var(--pl-may-toi); stroke-width: 2; }
+.pl-canh .pl-bong-nuoc circle { fill: var(--pl-nuoc); opacity: 0; }
+.pl-tram.chay .pl-bong-nuoc circle { animation: pl-bot 0.9s ease-in infinite; }
+.pl-tram.chay .pl-bong-nuoc circle:nth-child(2n) { animation-delay: 0.3s; }
+.pl-tram.chay .pl-bong-nuoc circle:nth-child(3n) { animation-delay: 0.6s; }
+@keyframes pl-bot { 0% { opacity: 0; transform: translateY(0); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(-40px); } }
+.pl-thit .thit-than { fill: #e58a8f; stroke: #b85a62; stroke-width: 1.5; transform-box: fill-box; transform-origin: center; transition: fill 0.8s, transform 0.8s; }
+.pl-thit .thit-mo { fill: none; stroke: #fbe3e1; stroke-width: 2.5; stroke-linecap: round; opacity: 0.85; transition: stroke 0.8s; }
+.pl-thit .thit-uop circle { fill: #bfe3f2; opacity: 0; transition: opacity 0.5s; }
+.pl-thit.da-uop .thit-uop circle { opacity: 0.9; }
+.pl-thit.da-uop .thit-than { fill: #ec9aa0; }
+.pl-thit.chin .thit-than { fill: #c9a089; stroke: #8d6650; }
+.pl-thit.chin .thit-mo { stroke: #e9d6c2; }
+.pl-thit.chin .thit-uop circle { opacity: 0; }
+.xo-vien { fill: rgba(200, 235, 245, 0.12); stroke: var(--pl-vien-coc, #9ab); stroke-width: 2; }
+.xo-nuoc { fill: var(--pl-nuoc); }
+
+/* cảnh bàn bảo quản */
+.pl-lo .lo-nap, .lo-nap { fill: #c9a24a; stroke: #8d6f2a; stroke-width: 1; }
+.pl-lo .lo-ruot, .lo-ruot { fill: #d9a35a; transition: fill 0.5s; }
+.pl-canh .dia-nho { fill: rgba(240, 230, 200, 0.55); stroke: var(--pl-ke); stroke-width: 0.8; }
+.pl-ds-dia { list-style: none; padding: 0; margin: 0.6rem 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(6.4rem, 1fr)); gap: 0.5rem; }
+.pl-dia { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.15rem; padding: 0.4rem; border-radius: 0.6rem; background: var(--sl-color-gray-6); margin: 0 !important; }
+.pl-dia svg { width: 3.4rem; height: 3.4rem; }
+.pl-dia .dia-vien { fill: rgba(220, 240, 245, 0.25); stroke: var(--sl-color-gray-3); stroke-width: 1.5; }
+.pl-dia .dia-thach { fill: #f3e7c3; opacity: 0.85; }
+.pl-dia b { font-size: 0.72rem; font-style: italic; line-height: 1.2; }
+.pl-dia small { font-size: 0.66rem; line-height: 1.25; color: #3fb162; }
+.pl-dia.moc small { color: #e2566f; font-weight: 700; }
+.pl-dia.moc { outline: 1.5px solid rgba(226, 86, 111, 0.6); }
+.pl-dia circle:not(.dia-vien):not(.dia-thach) { animation: pl-moc 0.8s ease-out both; transform-box: fill-box; transform-origin: center; }
+@keyframes pl-moc { from { transform: scale(0); } }
+@media (prefers-reduced-motion: reduce) { .pl-dia circle { animation: none !important; } }
+@media (max-width: 40rem) {
+	.pl-chon-ban { grid-template-columns: 1fr; gap: 0.4rem; }
+	.pl-ban-nut { padding: 0.5rem 0.7rem; }
+	.pl-ban-nut .bt { font-size: 1.4rem; }
+}

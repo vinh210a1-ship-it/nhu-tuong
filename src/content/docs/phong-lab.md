@@ -1,6 +1,6 @@
 ---
 title: Phòng lab ảo
-description: Trò chơi phòng thí nghiệm nhũ tương. Tự cân dầu, chọn chất nhũ hóa, chạy máy đồng hóa và xem mẻ của bạn có tách lớp không. Mọi kết quả tính bằng cơ chế thật trong bài.
+description: Trò chơi phòng thí nghiệm có ba bàn (nhũ tương, thịt, bảo quản). Kéo thả nguyên liệu, chạy máy và xem kết quả tính bằng cơ chế và số liệu có nguồn.
 template: splash
 tableOfContents: false
 editUrl: false
@@ -11,6 +11,12 @@ head:
     attrs: { type: module, src: /nhu-tuong/phong-lab/phong-lab.js }
 ---
 
-Chọn một nhiệm vụ, rồi đi lần lượt qua các trạm: **cân nguyên liệu → khuấy tiền nhũ → đồng hóa → đo kích thước giọt → tua nhanh thời gian**. Bấm vào máy trong phòng hoặc vào các nút bên dưới hình. Kết quả không phải do may rủi: giọt to hay nhỏ, nổi nhanh hay chậm đều tính bằng các công thức trong bài [Hình thành](../nhu-tuong/hinh-thanh/) và [Mất ổn định](../nhu-tuong/mat-on-dinh/). Mỗi lời giải thích có nhãn tin cậy như phần còn lại của web.
+Phòng lab có **ba bàn thí nghiệm**. Chọn bàn, chọn nhiệm vụ, rồi mở tủ lấy nguyên liệu và kéo mẫu qua từng máy:
+
+- **Bàn nhũ tương**: cân dầu và chất nhũ hóa → khuấy → đồng hóa → đo giọt → tua nhanh thời gian xem tách lớp, ôi dầu.
+- **Bàn thịt**: pha nước muối với muối, phosphat → tiêm vào thịt → đo pH → nấu → cân xem thịt còn mọng nước không.
+- **Bàn bảo quản**: pha lọ sản phẩm với muối, đường, axit, chất bảo quản → đo aw và pH → ủ trên đĩa thạch xem vi khuẩn nào mọc.
+
+Kết quả không phải do may rủi: mỗi hiện tượng đều tính bằng cơ chế và số đo có nguồn (Stokes, bảng giới hạn mọc của FDA, các nghiên cứu về phosphat trong thịt…). Mỗi lời giải thích có nhãn tin cậy như phần còn lại của web; số nào là minh họa đều được ghi rõ.
 
 <div id="phong-lab" class="not-content"><noscript>Phòng lab cần bật JavaScript.</noscript></div>
