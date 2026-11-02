@@ -14,7 +14,7 @@ Chất nhũ hóa làm hai việc: **hạ sức căng bề mặt** để giọt d
 | [4. Mã INS/E, quy định, an toàn](ma-ins-quy-dinh-an-toan/) | Mã INS/E, kết luận EFSA và ADI, văn bản Việt Nam, đọc nghiên cứu an toàn thế nào |
 | [5. Ứng dụng và cách chọn](ung-dung-theo-san-pham-va-quy-trinh-chon-chat-nhu-hoa/) | Chọn chất nhũ hóa cho kem lạnh, bánh mì, W/O, nhũ tương kép, đồ uống |
 
-**Công cụ đi kèm:** [máy tính trộn HLB](../may-tinh/#trộn-hai-chất-nhũ-hóa-theo-hlb) (cũng nằm trong bài 1) và trang [tra cứu phụ gia](../tra-cuu-phu-gia/) theo mã INS/E.
+**Công cụ đi kèm:** [máy tính trộn HLB](../may-tinh/#trộn-hai-chất-nhũ-hóa-theo-hlb) (cũng nằm trong bài 1) và trang [tra cứu phụ gia](../tra-cuu/#ins) theo mã INS/E.
 
 ## Giới hạn của nội dung hiện tại
 

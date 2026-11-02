@@ -1,7 +1,7 @@
 node_modules/
 dist/
 .astro/
-# Trang sinh tự động từ noi-dung/ và nguon/ bởi scripts/chuan-bi-noi-dung.mjs
+# Trang sinh tự động từ noi-dung/ và nguon/ bởi scripts/chuan-bi-noi-dung.mjs (và scripts/tra-cuu.mjs)
 src/content/docs/nhu-tuong/
 src/content/docs/nguon.md
 bao-cao-build.json
@@ -9,6 +9,6 @@ src/data/thuat-ngu.json
 src/content/docs/chat-beo/
 src/content/docs/chat-nhu-hoa/
 src/content/docs/chat-on-dinh/
-src/content/docs/tra-cuu-phu-gia.md
+src/content/docs/tra-cuu.md
 src/content/docs/thuc-pham/
 src/content/docs/duoc-pham/

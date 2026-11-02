@@ -1074,6 +1074,22 @@
   "khoa": "choppe2010"
  },
  {
+  "trich_dan": "FAO/WHO Codex Alimentarius. GSFA Online: Food Additive Functional Classes (27 nhóm chức năng, định nghĩa). Tra 2026-11-02.",
+  "ho": "codex",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.fao.org/fao-who-codexalimentarius/gsfa-online/functional-classes/en",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "tra-cuu:1"
+  ],
+  "khoa": "codex-gsfa-nhom-chuc-nang"
+ },
+ {
   "trich_dan": "Công báo Chính phủ: bản Thông tư 24/2019",
   "ho": "cong",
   "nam": 2019,
@@ -6635,6 +6651,22 @@
    "chat-nhu-hoa:A4"
   ],
   "khoa": "wikipedia"
+ },
+ {
+  "trich_dan": "Wikipedia. International Numbering System for Food Additives (bảng tổng hợp; nguồn thứ cấp, chưa đối chiếu bản Codex CXG 36-1989). Tra 2026-11-02.",
+  "ho": "wikipedia",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": "https://en.wikipedia.org/wiki/International_Numbering_System_for_Food_Additives",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [
+   "tra-cuu:2"
+  ],
+  "khoa": "wikipedia-ins"
  },
  {
   "trich_dan": "Wilde P, Mackie A, Husband F, Gunning P, Morris V (2004). Proteins and emulsifiers at liquid interfaces. *Adv Colloid Interface Sci* 108–109:63–71.",

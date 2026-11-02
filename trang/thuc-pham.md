@@ -21,7 +21,7 @@ Khu này mở rộng ra ngoài nhũ tương, sang những câu hỏi hằng ngà
 | [7. Thanh trùng, đông lạnh, sấy, ép đùn](qua-trinh-nhiet-lanh-say-ep-dun/) | Phương trình chủ đạo của từng quá trình: D, z, F; Tg′; đẳng nhiệt hấp phụ; thông số ép đùn |
 | [8. ADI phụ gia đã kiểm](quy-dinh-jecfa-efsa-da-kiem/) | ADI/MTDI của phosphat, chất bảo quản, chống oxy hóa, chất tạo ngọt đã đọc tại JECFA và EFSA |
 
-**Nối sang các khu khác:** bài 1 nối với [chất ổn định](../chat-on-dinh/) (hydrocolloid thay một phần phosphat); bài 2 nối với [oxy hóa lipid và hạn dùng](../chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung/); bài 4 nối với [tinh bột biến tính](../chat-on-dinh/gum-arabic-gelatin-tinh-bot-cellulose/). **Công cụ đi kèm:** [máy tính hạn dùng Arrhenius/Q10](../may-tinh/#hạn-dùng-theo-nhiệt-độ-arrheniusq10), [tra cứu phụ gia](../tra-cuu-phu-gia/).
+**Nối sang các khu khác:** bài 1 nối với [chất ổn định](../chat-on-dinh/) (hydrocolloid thay một phần phosphat); bài 2 nối với [oxy hóa lipid và hạn dùng](../chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung/); bài 4 nối với [tinh bột biến tính](../chat-on-dinh/gum-arabic-gelatin-tinh-bot-cellulose/). **Công cụ đi kèm:** [máy tính hạn dùng Arrhenius/Q10](../may-tinh/#hạn-dùng-theo-nhiệt-độ-arrheniusq10), [tra cứu phụ gia](../tra-cuu/#ins).
 
 ## Giới hạn của nội dung hiện tại
 

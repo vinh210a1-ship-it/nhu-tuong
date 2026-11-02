@@ -15,7 +15,7 @@ Chất ổn định (hydrocolloid) giữ nhũ tương bền chủ yếu bằng c
 | [5. Gum arabic, gelatin, tinh bột, cellulose](gum-arabic-gelatin-tinh-bot-cellulose/) | Gum arabic, gelatin, tinh bột biến tính, MCC và CMC |
 | [6. Mã INS/E và quy định](quy-dinh-ins-e/) | Kết luận EFSA và JECFA đã xác minh, và những phần còn thiếu |
 
-**Công cụ đi kèm:** trang [tra cứu phụ gia](../tra-cuu-phu-gia/) theo mã INS/E; [máy tính Stokes](../may-tinh/) để thấy độ nhớt pha liên tục ảnh hưởng tốc độ kem hóa thế nào.
+**Công cụ đi kèm:** trang [tra cứu phụ gia](../tra-cuu/#ins) theo mã INS/E; [máy tính Stokes](../may-tinh/) để thấy độ nhớt pha liên tục ảnh hưởng tốc độ kem hóa thế nào.
 
 ## Giới hạn của nội dung hiện tại
 
