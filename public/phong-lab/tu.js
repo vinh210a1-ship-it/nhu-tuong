@@ -49,8 +49,8 @@ export const TU = {
 		mon: [
 			{ id: 'tocopherol', loai: 'tocopherol', ten: 'Tocopherol (vitamin E, E306)', nhan: 'Toco', mau: '#e6b75c' },
 			{ id: 'edta', loai: 'edta', ten: 'EDTA canxi dinatri (E385)', nhan: 'EDTA', mau: '#dfe7ef' },
-			{ id: 'khoa:stpp', ten: 'Natri tripolyphosphat (E451)', nhan: 'STPP', mau: '#ffffff', khoaMo: 'Giữ nước cho thịt. Sẽ mở cùng trạm thịt.' },
-			{ id: 'khoa:sorbat', ten: 'Kali sorbat (E202)', nhan: 'Sorb', mau: '#f0f0f0', khoaMo: 'Chất bảo quản. Sẽ mở cùng trạm vi sinh.' },
+			{ id: 'khoa:stpp', ten: 'Natri tripolyphosphat (E451)', nhan: 'STPP', mau: '#ffffff', khoaMo: 'Giữ nước cho thịt. Dùng được ở Bàn thịt (nút chọn bàn phía trên).' },
+			{ id: 'khoa:sorbat', ten: 'Kali sorbat (E202)', nhan: 'Sorb', mau: '#f0f0f0', khoaMo: 'Chất bảo quản chống nấm men. Dùng được ở Bàn bảo quản (nút chọn bàn phía trên).' },
 			{ id: 'khoa:tg', ten: 'Transglutaminase', nhan: 'TG', mau: '#e0d6f0', khoaMo: 'Enzyme nối protein. Sẽ mở cùng trạm protein.' },
 		],
 	},

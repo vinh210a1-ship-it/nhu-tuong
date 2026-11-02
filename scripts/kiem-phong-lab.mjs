@@ -6,6 +6,10 @@ import {
 	dTheoChatNhuHoa, dTheoApSuat, nhietDoRa, dacTrungPhanBo, phanSoTheTich, doNhotXanthan,
 	moPhongMe, NHIEM_VU, chamSao, doKhongNo, thoiGianCamUng, chiSoPeroxide, doNhotNuoc, DAU, PV_NGUONG,
 } from '../public/phong-lab/mo-hinh.js';
+import {
+	moPhongThit, ngayTBARS, heSoPH, NHIEM_VU_THIT, chamSaoThit,
+	awUocTinh, MAM_BENH, moPhongBaoQuan, chiSoUcChe, NHIEM_VU_BQ, chamSaoBQ,
+} from '../public/phong-lab/mo-hinh-thuc-pham.js';
 
 let loi = 0;
 function dung(ten, dk) {
@@ -110,6 +114,65 @@ for (const nv of NHIEM_VU) {
 	const a = chamSao(nv, moPhongMe({ ...tot, ...nv.coDinh })).sao;
 	const b = chamSao(nv, moPhongMe({ ...au, ...nv.coDinh })).sao;
 	dung(`Nhiệm vụ "${nv.ten}": lời giải được ${a}/3 sao, cách làm ẩu ${b}/3`, a === 3 && b < 3);
+}
+
+// 5. Bàn thịt: tái tạo neo đo thật và đúng chiều
+{
+	const T = (o) => moPhongThit(o);
+	const dc = T({});
+	const sh = T({ muoi: 2, phosphat: 'stpp', cPhos: 0.3, bicarb: 0.3 });
+	dung(`Đối chứng: pH 5,45, năng suất ${dc.nangSuat.toFixed(1)}% ≈ 70% (Sheard 2004)`, gan(dc.pH, 5.45, 1e-9) && Math.abs(dc.nangSuat - 70) < 1);
+	dung(`Muối + STPP + bicarbonat: pH ${sh.pH.toFixed(2)} trong 5,75–5,97 (Sheard 2004)`, sh.pH >= 5.75 && sh.pH <= 5.97);
+	dung(`Muối + STPP + bicarbonat: năng suất ${sh.nangSuat.toFixed(1)}% ≈ 85% (±2)`, Math.abs(sh.nangSuat - 85) <= 2);
+	const chiPhos = T({ phosphat: 'stpp', cPhos: 0.3 }).nangSuat, chiMuoi = T({ muoi: 2 }).nangSuat, ca2 = T({ muoi: 2, phosphat: 'stpp', cPhos: 0.3 }).nangSuat;
+	dung('Hiệp lực: muối + phosphat hơn tổng hai tác dụng riêng', ca2 - 70 > chiPhos - 70 + (chiMuoi - 70));
+	dung('Phosphat một mình (không muối) chỉ tăng ít (< 4 điểm)', chiPhos - 70 < 4);
+	dung('SHMP nâng pH và giữ nước kém STPP cùng liều', T({ muoi: 2, phosphat: 'shmp', cPhos: 0.3 }).nangSuat < ca2);
+	dung('Nấu 56 °C cho năng suất cao hơn 72 °C (Kang 2021)', T({ muoi: 2, phosphat: 'stpp', cPhos: 0.3, nhietNau: 56 }).nangSuat > ca2);
+	dung('TBARS khớp neo Norazizi 2025: 7 / 21 / 28 ngày', ngayTBARS(null, 0).ngay === 7 && gan(ngayTBARS('stpp', 0.15).ngay, 21, 1e-9) && gan(ngayTBARS('stpp', 0.3).ngay, 28, 1e-9));
+	dung('Không ngoại suy TBARS ngoài dữ liệu (TSPP: không có số)', ngayTBARS('tspp', 0.3).ngay === null && ngayTBARS('stpp', 0.5).ngay === 28);
+	dung('Hệ số pH có đỉnh: pH 8,5 kém pH 7', heSoPH(8.5) < heSoPH(7));
+	const LG = {
+		'giam-bong': [{ muoi: 2, phosphat: 'stpp', cPhos: 0.3, bicarb: 0.3, nhietNau: 72 }, { muoi: 2, phosphat: 'stpp', cPhos: 0.3, nhietNau: 72 }],
+		'xuc-xich-giam-muoi': [{ muoi: 1.2, phosphat: 'stpp', cPhos: 0.3, bicarb: 0.3, nhietNau: 72 }, { muoi: 1.2, phosphat: 'stpp', cPhos: 0.3, nhietNau: 72 }],
+		'thit-trau-de-lau': [{ muoi: 2, phosphat: 'stpp', cPhos: 0.3, nhietNau: 60 }, { muoi: 2, nhietNau: 72 }],
+	};
+	for (const nv of NHIEM_VU_THIT) {
+		const [tot, au] = LG[nv.id];
+		const a = chamSaoThit(nv, T(tot), tot).sao, b = chamSaoThit(nv, T(au), au).sao;
+		dung(`Nhiệm vụ thịt "${nv.ten}": lời giải ${a}/3, cách làm ẩu ${b}/3`, a === 3 && b < 3);
+	}
+}
+
+// 6. Bàn bảo quản: bảng FDA, aw, axit yếu
+{
+	dung('aw nước muối 10% ≈ 0,935 (khớp cột aw–muối của C. botulinum A trong bảng FDA)', Math.abs(awUocTinh({ muoi: 10 }) - 0.935) < 0.005);
+	dung('aw nước muối 20% trong 0,83–0,86', awUocTinh({ muoi: 20 }) > 0.83 && awUocTinh({ muoi: 20 }) < 0.86);
+	dung('Đường làm giảm aw, càng nhiều càng giảm', awUocTinh({ duong: 65 }) < awUocTinh({ duong: 45 }) && awUocTinh({ duong: 45 }) < 1);
+	const sau = (aw) => MAM_BENH.find((b) => b.id === 'sau').awMin <= aw;
+	dung('S. aureus: aw 0,80 không mọc, aw 0,90 mọc (FDA)', !sau(0.8) && sau(0.9));
+	const BQ = (o) => moPhongBaoQuan(o);
+	const lis = (o) => BQ(o).ketQua.find((r) => r.id === 'lis');
+	dung('Listeria vẫn mọc ở 4 °C nếu không có hàng rào khác', lis({ pH: 6.5, nhietDo: 4 }).moc);
+	dung('C. botulinum không mọc khi lọ để hở (cần kỵ khí)', !BQ({ pH: 6.5, nhietDo: 30 }).ketQua.find((r) => r.id === 'bot-a').moc && BQ({ pH: 6.5, nhietDo: 30, kin: true }).ketQua.find((r) => r.id === 'bot-a').moc);
+	dung('pH 3,6 chặn mọi mầm bệnh trong bảng (Salmonella thấp nhất 3,7)', BQ({ pH: 3.6, nhietDo: 30, kin: true }).soMoc === 0);
+	const uS = (pH) => chiSoUcChe({ pH, sorbat: 0.5 }).tong;
+	dung('Sorbat mạnh hơn khi pH thấp hơn', uS(3.5) > uS(4.0) && uS(4.0) > uS(5.0));
+	dung('Dạng phân ly vẫn có tác dụng: ở pH 6 chỉ số ức chế > 0', uS(6) > 0);
+	dung('Benzoat không ức chế nấm men ở pH ≥ 4,5 (Arroyo-López 2008)', chiSoUcChe({ pH: 4.6, benzoat: 1 }).tong < 0.05);
+	dung('Ở pH 4,2: sorbat 1 g/kg ức chế, benzoat 1 g/kg thì không', chiSoUcChe({ pH: 4.2, sorbat: 1 }).tong >= 1 && chiSoUcChe({ pH: 4.2, benzoat: 1 }).tong < 1);
+	dung('Hai chất bảo quản cộng gộp (FIC)', gan(chiSoUcChe({ pH: 3.8, sorbat: 0.3, benzoat: 0.3 }).tong, chiSoUcChe({ pH: 3.8, sorbat: 0.3 }).tong + chiSoUcChe({ pH: 3.8, benzoat: 0.3 }).tong, 1e-9));
+	const daDo = { aw: true, pH: true };
+	const LG = {
+		'tuong-ot': [{ pH: 3.6, sorbat: 1 }, { pH: 3.6 }],
+		'ca-muoi': [{ muoi: 11.5 }, { muoi: 8 }],
+		'nuoc-trai-cay': [{ pH: 4.2, sorbat: 0.8 }, { pH: 4.2, benzoat: 1 }],
+	};
+	for (const nv of NHIEM_VU_BQ) {
+		const [tot, au] = LG[nv.id].map((m) => ({ pH: 6.5, ...m, ...nv.coDinh }));
+		const a = chamSaoBQ(nv, BQ(tot), { me: tot, daDo }).sao, b = chamSaoBQ(nv, BQ(au), { me: au, daDo }).sao;
+		dung(`Nhiệm vụ bảo quản "${nv.ten}": lời giải ${a}/3, cách làm ẩu ${b}/3`, a === 3 && b < 3);
+	}
 }
 
 console.log(loi ? `\n${loi} phép kiểm SAI` : '\nTất cả phép kiểm phòng lab ĐẠT');
