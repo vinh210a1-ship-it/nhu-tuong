@@ -24,6 +24,14 @@ const MAY_TINH = [
 	['nhu-tuong', 'su-co-thiet-ke', '## 3. Quy trình thiết kế công thức', 'chan-doan'],
 	['chat-nhu-hoa', 'nen-tang-vat-ly-hoa-be-mat', '### Bảng HLB tham khảo', 'hlb'],
 	['chat-beo', 'oxy-hoa-lipid-chong-oxy-hoa-han-su-dung', '### 6.2 Bẫy cần tránh', 'arrhenius'],
+	['nhu-tuong', 'nen-tang', '### 3.2 Hấp phụ (Gibbs) và độ phủ', 'laplace'],
+	['nhu-tuong', 'mat-on-dinh', '### Điều kiện hay gặp trong thực phẩm', 'debye'],
+	['nhu-tuong', 'mat-on-dinh', '### Chất ức chế ripening (ripening inhibitor)', 'ostwald'],
+	['nhu-tuong', 'he-dac-biet', '### 2.3 Các loại hạt thực phẩm', 'pickering'],
+	['chat-beo', 'cau-truc-triglyceride-va-acid-beo', '## 8. Điều đã chắc', 'iv-sv'],
+	['chat-beo', 'oxy-hoa-lipid-chong-oxy-hoa-han-su-dung', '## 6. Hạn sử dụng: Arrhenius', 'totox'],
+	['thuc-pham', 'bao-quan-hoat-do-nuoc-va-han-su-dung', '## 4. Nitrit, muối ướp và màu thịt', 'axit-yeu'],
+	['thuc-pham', 'qua-trinh-nhiet-lanh-say-ep-dun', '## 2. Đông lạnh và trạng thái thủy tinh', 'gia-tri-f'],
 ];
 // Tiêu đề gọn: bỏ "Chương 01 — " hay "01. " ở đầu
 const tieuDeGon = (t) => t.replace(/^Chương\s+\d+\s*[—–-]\s*/, '').replace(/^\d{2}\.\s+/, '');
