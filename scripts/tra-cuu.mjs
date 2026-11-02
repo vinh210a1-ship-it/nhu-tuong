@@ -36,6 +36,7 @@ const tachNhanCuoi = (chu) => {
 };
 
 export function dungTraCuu({ GOC, DOCS, BASE, theGia, soPhuGia, soNhom }) {
+	const tt24 = JSON.parse(fs.readFileSync(path.join(GOC, 'public/du-lieu/tt24.json'), 'utf8'));
 	const mucNoiDung = (khu) => path.join(GOC, 'noi-dung', khu);
 	const tep = (khu, dauTen) => {
 		const f = fs.readdirSync(mucNoiDung(khu)).find((x) => x.startsWith(dauTen));
@@ -149,6 +150,7 @@ export function dungTraCuu({ GOC, DOCS, BASE, theGia, soPhuGia, soNhom }) {
 <button type="button" data-tk-tab="" aria-pressed="true">Tất cả</button>
 <button type="button" data-tk-tab="ins" aria-pressed="false">Mã INS/E <small>${soPhuGia}</small></button>
 <button type="button" data-tk-tab="td" aria-pressed="false">Từ điển Anh–Việt <small>${ds.length}</small></button>
+<button type="button" data-tk-tab="tt24" aria-pressed="false">Mức tối đa (TT24) <small>${tt24.pl1.length}</small></button>
 </div>
 <p class="loc-pg-dem" data-tk-dem aria-live="polite"></p>
 </div>`;
@@ -172,7 +174,7 @@ export function dungTraCuu({ GOC, DOCS, BASE, theGia, soPhuGia, soNhom }) {
 </tbody></table>
 <p>Tên nhóm chức năng (chất nhũ hóa, chất ổn định, chất làm dày…) có trong tab <a href="#tu-dien" data-tk-di="td">Từ điển</a>, lĩnh vực “Phụ gia: nhóm chức năng theo Codex”.</p>
 </details>
-<blockquote class="tk-canh-bao"><p><b>Không dùng làm căn cứ pháp lý.</b> Ở Việt Nam, phụ gia do Thông tư 24/2019/TT-BYT (hợp nhất 08/VBHN-BYT năm 2023) quản lý. Phụ lục danh mục và mức tối đa (ML) theo nhóm thực phẩm <b>chưa được đối chiếu</b> trên web này. “Không cần ADI bằng số” không có nghĩa là dùng không giới hạn.</p></blockquote>
+<blockquote class="tk-canh-bao"><p><b>Không dùng làm căn cứ pháp lý.</b> Ở Việt Nam, phụ gia do Thông tư 24/2019/TT-BYT quản lý (bản hợp nhất 09/VBHN-BYT năm 2024). Danh mục được phép và mức tối đa (ML) theo nhóm thực phẩm nằm ở tab <a href="#tt24" data-tk-di="tt24">Mức tối đa (TT24)</a>. “Không cần ADI bằng số” không có nghĩa là dùng không giới hạn.</p></blockquote>
 <div class="loc-pg-nut" role="group" aria-label="Nhóm phụ gia">
 <button type="button" data-loc-nhom="" aria-pressed="true">Mọi nhóm</button>
 <button type="button" data-loc-nhom="Chất nhũ hóa" aria-pressed="false">Chất nhũ hóa</button>
@@ -181,6 +183,42 @@ export function dungTraCuu({ GOC, DOCS, BASE, theGia, soPhuGia, soNhom }) {
 </div>
 <ul class="ds-pg">
 ${theGia}
+</ul>
+</section>`;
+
+	// ---- Mức tối đa theo TT24: danh sách 400 chất của Phụ lục 1, bảng ML nạp khi mở (public/tt24.js)
+	const gmp = new Set(tt24.gmp);
+	const soDong2a = new Map();
+	for (const [, ins, dong] of tt24.a2) for (const [ma] of ins) soDong2a.set(ma, (soDong2a.get(ma) || 0) + dong.length);
+	const hangTt = tt24.pl1
+		.map(([ins, vi, en, cn]) => {
+			const n = soDong2a.get(ins) || 0;
+			const nhanh = [gmp.has(ins) ? '<span class="tt-co tt-gmp">GMP</span>' : '', n ? `<span class="tt-co">${n} dòng ML</span>` : ''].join('');
+			return `<li class="tt-hang" data-ins="${esc(ins)}"><details><summary><span class="pg-ma">INS ${esc(ins)}</span><b class="tt-vi">${esc(vi)}</b><span class="tt-en">${esc(en)}</span>${nhanh}<span class="tt-cn">${esc(cn)}</span></summary><div class="tt-than" data-tt-than></div></details></li>`;
+		})
+		.join('\n');
+	const nhanTt = htmlNhan('[N: @tt24-2019]', BASE, thieu);
+	const htmlTt = `<section class="tk-muc not-content" data-tk-muc="tt24" id="tt24">
+<h2 class="tk-h2">Mức tối đa phụ gia theo Thông tư 24/2019/TT-BYT</h2>
+<p>Danh mục <b>${tt24.pl1.length} phụ gia được phép</b> (Phụ lục 1) và mức sử dụng tối đa (ML, mg/kg) theo từng nhóm thực phẩm (Phụ lục 2A, 2B), cùng ${tt24.gmp.length} chất dùng theo GMP (Phụ lục 3). Lấy từ văn bản hợp nhất 09/VBHN-BYT (2024). ${nhanTt}</p>
+<details class="tk-doc-ma">
+<summary>Cách đọc bảng và những điều cần biết trước khi dùng</summary>
+<ul>
+<li><b>ML</b> là lượng tối đa tính trên thực phẩm (mg/kg) trừ khi ghi chú nói khác (ví dụ “tính theo acid benzoic”). <b>GMP</b> (thực hành sản xuất tốt) nghĩa là không quy định con số, nhưng chỉ dùng lượng thấp nhất đủ đạt hiệu quả kỹ thuật (Điều 7). ${nhanTt}</li>
+<li>Một phụ gia dùng được cho <b>nhóm lớn</b> thì cũng dùng được cho các phân nhóm bên trong, trừ khi có quy định khác (Điều 6). Vì vậy khi tra theo nhóm thực phẩm, máy cũng lấy các dòng của nhóm cha. ${nhanTt}</li>
+<li>Nhiều chất trong một khối (ví dụ polysorbat 432–436, phosphat) dùng chung một ML: thường là tổng lượng khi dùng đơn lẻ hoặc kết hợp, xem ghi chú từng dòng.</li>
+<li>Theo Điều 5, Phụ lục 2A và 3 <b>được cập nhật theo bảng mới nhất của Codex GSFA</b>; chất chưa có trong 2A và 3 nhưng có trong tiêu chuẩn sản phẩm của Codex thì dùng theo tiêu chuẩn đó. Vì vậy bảng ở đây có thể cũ hơn GSFA hiện hành. ${nhanTt}</li>
+<li>Dữ liệu tách tự động từ PDF. Đã kiểm chéo: cả ${tt24.a2.reduce((t, k) => t + k[2].length, 0).toLocaleString('vi-VN')} dòng của Phụ lục 2A đọc bằng hai bộ đọc PDF khác nhau đều cho cùng mã nhóm và ML. Trước khi dùng cho hồ sơ công bố sản phẩm, vẫn phải đối chiếu văn bản gốc.</li>
+</ul>
+</details>
+<div class="tt-nhom">
+<label for="tt-chon-nhom"><b>Tra theo nhóm thực phẩm:</b></label>
+<select id="tt-chon-nhom"><option value="">Chọn nhóm thực phẩm…</option>${Object.entries(tt24.nhom_tp).map(([ma, ten]) => `<option value="${ma}">${ma} ${esc(ten.length > 90 ? ten.slice(0, 88) + '…' : ten)}</option>`).join('')}</select>
+<div class="tt-kq-nhom" data-tt-kq-nhom aria-live="polite"></div>
+</div>
+<p class="tt-goi-y">Hoặc gõ mã INS hay tên chất vào ô tìm kiếm ở trên, rồi bấm vào một chất để xem bảng ML.</p>
+<ul class="ds-tt">
+${hangTt}
 </ul>
 </section>`;
 
@@ -204,18 +242,20 @@ ${hang}
 		path.join(DOCS, 'tra-cuu.md'),
 		`---
 title: Tra cứu
-description: Tra mã INS/E của phụ gia và từ điển Anh–Việt hóa học, thực phẩm, nhũ tương, dược bào chế; một ô tìm kiếm cho cả hai.
+description: Tra mã INS/E, mức tối đa phụ gia theo Thông tư 24/2019 và từ điển Anh–Việt hóa học, thực phẩm, nhũ tương, dược bào chế.
 editUrl: false
 tableOfContents: false
 ---
 
-Một ô tìm kiếm cho hai kho tra cứu: **mã INS/E của phụ gia** (kèm kết luận EFSA, JECFA đã đọc) và **từ điển Anh–Việt** về hóa học, thực phẩm, nhũ tương, dược bào chế. Mỗi dòng có huy hiệu mức tin cậy, xem cách đọc ở trang [Cách đọc nhãn tin cậy](../quy-uoc/).
+Một ô tìm kiếm cho ba kho tra cứu: **mã INS/E của phụ gia** (kèm kết luận EFSA, JECFA đã đọc), **mức tối đa theo Thông tư 24/2019** (400 chất được phép, ML theo nhóm thực phẩm) và **từ điển Anh–Việt** về hóa học, thực phẩm, nhũ tương, dược bào chế. Mỗi dòng có huy hiệu mức tin cậy, xem cách đọc ở trang [Cách đọc nhãn tin cậy](../quy-uoc/).
 
 ${htmlTienDe}
 
 ${htmlIns}
 
 ${htmlTu}
+
+${htmlTt}
 
 <p class="tk-khong-co not-content" data-tk-khong hidden>Không thấy mục nào khớp. Thử gõ ngắn hơn (chỉ phần số của mã INS, hoặc một từ), hoặc đổi sang tiếng Anh/tiếng Việt.</p>
 `,

@@ -44,7 +44,7 @@ nguon_goc: tai-lieu-chat-on-dinh/06-quy-dinh-INS-E.md
 | Konjac (E425), curdlan (INS 424), gum ghatti, tragacanth... | Chưa tìm |
 | Gelatin | Quy định thực phẩm hay phụ gia; chưa kiểm |
 | Mã INS (Codex) của từng chất | Các mã INS = số E bỏ chữ "E" (kiến thức nền); chưa tra GSFA online. Nguồn cần dùng: [FAO GSFA Online](https://www.fao.org/gsfaonline) |
-| **Quy định Việt Nam** | Phụ gia thực phẩm tại Việt Nam do Bộ Y tế quản lý theo thông tư riêng (theo trí nhớ: Thông tư 24/2019/TT-BYT). **Chưa đọc văn bản**; không dùng số hiệu này lên web trước khi đối chiếu bản hiện hành |
+| **Quy định Việt Nam** | Phụ gia thực phẩm tại Việt Nam do Bộ Y tế quản lý theo Thông tư 24/2019/TT-BYT (bản hợp nhất 09/VBHN-BYT năm 2024). Danh mục được phép và mức tối đa theo nhóm thực phẩm tra ở [tab Mức tối đa (TT24)](../../tra-cuu/#tt24). [N: @tt24-2019] |
 | Giới hạn tối đa (ML) cho từng loại thực phẩm | Chưa thu thập |
 | EFSA xanthan 2017: trang efsa.europa.eu không truy cập được từ môi trường làm việc này (lỗi client) | Đã dùng bản PubMed/PMC làm nguồn thay thế |
 
