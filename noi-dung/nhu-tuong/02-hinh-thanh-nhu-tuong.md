@@ -18,7 +18,7 @@ nguon_goc: tai-lieu-nhu-tuong/02-hinh-thanh-nhu-tuong.md
 
 ---
 
-## 1. Ba quá trình xảy ra gần như đồng thời (khung Walstra) [K: @walstra1993, @walstra2003]
+## 1. Ba quá trình xảy ra gần như đồng thời (khung Walstra) [K: @walstra1993, @walstra2003; N: @mcclements2016 tr.249–251, tr.273–274]
 
 ```
 Thô (pre-emulsion)  ──(1) vỡ giọt──▶  giọt nhỏ, bề mặt trần
@@ -94,7 +94,7 @@ tức **≈ 2,4 K mỗi 10 MPa**. Điều này giải thích vì sao: (i) sản 
 
 ## 4. Thiết bị tạo nhũ tương
 
-> Dải kích thước dưới đây là **khoảng thường gặp**, phụ thuộc hệ (độ nhớt, chất nhũ hóa, φ, số lần qua máy). Không dùng làm cam kết thiết kế. **[K; N: @gupta2016, @qayum2023 về nguyên lý HPH/siêu âm]**
+> Dải kích thước dưới đây là **khoảng thường gặp**, phụ thuộc hệ (độ nhớt, chất nhũ hóa, φ, số lần qua máy). Không dùng làm cam kết thiết kế. **[K; N: @gupta2016, @qayum2023 về nguyên lý HPH/siêu âm]** Cỡ giọt **nhỏ nhất** thường đạt theo McClements 2016 (Table 6.1): trộn cao tốc ≈2 µm; nghiền keo ≈1 µm; đồng hóa áp cao ≈0,1 µm; siêu âm đầu dò ≈0,1 µm; siêu âm dòng ≈1 µm; microfluidizer <0,1 µm; màng ≈0,3 µm. **[N: @mcclements2016 tr.250]** Sách không cho áp suất cụ thể (bao nhiêu bar): phần đó vẫn là khoảng thường gặp. **[K]**
 
 | Thiết bị | Cơ chế | Kích thước giọt đạt được (khoảng) | Ưu | Nhược |
 |---|---|---|---|---|

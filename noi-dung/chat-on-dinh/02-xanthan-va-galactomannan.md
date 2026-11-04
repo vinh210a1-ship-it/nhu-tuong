@@ -26,6 +26,7 @@ nguon_goc: tai-lieu-chat-on-dinh/02-xanthan-va-galactomannan.md
 - Nhánh: cứ hai đơn vị glucose có một nhánh ba đường β-D-mannose-(1→4)-α-D-glucuronic acid-(1→2)-α-D-mannose.
 - Gốc pyruvate (liên kết ketal) trên khoảng một nửa số mannose cuối; mannose cuối cũng mang acetate.
 - Trong nước, xanthan chuyển đổi giữa **xoắn (helix, trật tự)** và **cuộn ngẫu nhiên (disordered)** theo pH, lực ion, nhiệt độ và cắt.
+- Khối lượng phân tử: khoảng 10³–2,5×10³ kDa tùy nguồn (sách McClements 2016 ghi ≈1000 kDa ở phần văn bản nhưng ≈2500 kDa ở bảng), nên đừng dẫn một con số duy nhất. **[N: @mcclements2016 tr.159, tr.164]**
 
 ### 1.2 Muối và nhiệt độ ảnh hưởng thế nào
 

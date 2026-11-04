@@ -337,6 +337,22 @@
   "khoa": "aseanstab"
  },
  {
+  "trich_dan": "Baek M, Jeon S, Jeong S, Mun S. Development of egg yolk-free mayonnaise using rice protein with xanthan gum. Food Sci Biotechnol 34:325–336",
+  "ho": "baek",
+  "nam": 2025,
+  "doi": "10.1007/s10068-024-01672-3",
+  "pmid": null,
+  "url": null,
+  "muc_doc": "toan-van",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:baek2025"
+  ],
+  "khoa": "baek2025"
+ },
+ {
   "trich_dan": "Baghel S, Cathcart H, O'Reilly NJ (2016). Polymeric amorphous solid dispersions: a review of amorphization, crystallization, stabilization, solid-state characterization, and aqueous solubilization of BCS class II drugs. *J Pharm Sci* 105(9):2527–2544.",
   "ho": "baghel",
   "nam": 2016,
@@ -1154,6 +1170,22 @@
   "khoa": "cullis2017"
  },
  {
+  "trich_dan": "Dao D, Le L, Nguyen P, Dang V, Tran P, Le H, Nguyen H, Nguyen H, Kha T, Nguyen V. Refining house cricket (Acheta domesticus) oils and its application to mayonnaise production. J Oleo Sci 74(10):879–885",
+  "ho": "dao",
+  "nam": 2025,
+  "doi": "10.5650/jos.ess25057",
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:dao2025"
+  ],
+  "khoa": "dao2025"
+ },
+ {
   "trich_dan": "Date AA, Desai N, Dixit R, Nagarsenker M (2010). Self-nanoemulsifying drug delivery systems: formulation insights, applications and advances. *Nanomedicine (Lond)* 5(10):1595–1616.",
   "ho": "date",
   "nam": 2010,
@@ -1410,6 +1442,54 @@
    "chat-on-dinh:S3"
   ],
   "khoa": "dickinson2019"
+ },
+ {
+  "trich_dan": "Diep TT, Dao TP, Vu HT, Phan BQ, Dao DN, Bui TH, Truong V, Nguyen V. Double emulsion oil-in-water-in-oil (O/W/O) stabilized by sodium caseinate and κ-carrageenan. J Dispers Sci Technol",
+  "ho": "diep",
+  "nam": 2018,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "toan-van",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:diep2018"
+  ],
+  "khoa": "diep2018"
+ },
+ {
+  "trich_dan": "Do HV, Nguyen SK, Dao DN, Nguyen V. Influence of dextrose equivalent and storage temperature on food-grade rice bran oil-in-water Pickering emulsion stabilized by rice maltodextrins and sodium caseinate. J Dispers Sci Technol",
+  "ho": "do",
+  "nam": 2022,
+  "doi": "10.1080/01932691.2022.2063881",
+  "pmid": null,
+  "url": null,
+  "muc_doc": "toan-van",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:do2022"
+  ],
+  "khoa": "do2022"
+ },
+ {
+  "trich_dan": "Dogan H, Kokini JL. Rheological properties of foods (chương 1, sách CRC)",
+  "ho": "dogan",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:dogan_kokini"
+  ],
+  "khoa": "dogan-kokini"
  },
  {
   "trich_dan": "Donati I. et al. (2023). Alginate-metal cation interactions: macromolecular approach. *Carbohydr. Polym.*",
@@ -2251,6 +2331,22 @@
   "khoa": "fjodorova2022"
  },
  {
+  "trich_dan": "Fomuso LB, Corredig M, Akoh CC. A comparative study of mayonnaise and Italian dressing prepared with lipase-catalyzed transesterified olive oil and caprylic acid. (tạp chí/năm cần xác nhận)",
+  "ho": "fomuso",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:fomuso2002"
+  ],
+  "khoa": "fomuso2002"
+ },
+ {
   "trich_dan": "Frankel EN. *Lipid Oxidation*, 2nd ed. Oily Press, 2005",
   "ho": "frankel",
   "nam": 2005,
@@ -2553,6 +2649,22 @@
    "chat-nhu-hoa:A5"
   ],
   "khoa": "griffin1949b"
+ },
+ {
+  "trich_dan": "Guerrero A, Partal P, Gallegos C. Linear and non-linear viscoelasticity of low-in-cholesterol mayonnaise. (Food Sci Technol Int; năm/số trang cần xác nhận)",
+  "ho": "guerrero",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:guerrero_partal_gallegos"
+  ],
+  "khoa": "guerrero-partal-gallegos"
  },
  {
   "trich_dan": "Gumus CE. *Utilization of natural emulsifiers and their derivatives to formulate emulsion-based delivery systems for hydrophobic nutraceuticals.* Luận án tiến sĩ, UMass Amherst, 05/2017 (hướng dẫn: D.J. McClements). https://scholarworks.umass.edu/server/api/core/bitstreams/14ac3154-28b0-4f62-a8f3-ad64a1376e87/content",
@@ -3303,6 +3415,22 @@
   "khoa": "jecfa-sucralose"
  },
  {
+  "trich_dan": "Ayan K, Boom RM, Nikiforidis CV. Scaling the electrophoretic separation of rapeseed proteins and oleosomes. J Food Eng 381:112188",
+  "ho": "jfe",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:jfe381-oleosome"
+  ],
+  "khoa": "jfe381-oleosome"
+ },
+ {
   "trich_dan": "Jia X. et al. (2025). Conformational and rheological property comparison for three exudates gums containing type II arabinogalactans. *Food Hydrocolloids*.",
   "ho": "jia",
   "nam": 2025,
@@ -3831,6 +3959,22 @@
   "khoa": "lewis1986"
  },
  {
+  "trich_dan": "Li L, Kim H, Yoon J. Rheological characteristics of mayonnaises with different oil contents. Food Eng Prog 16(1):7–13",
+  "ho": "li",
+  "nam": 2012,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "toan-van",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:li2012mayo"
+  ],
+  "khoa": "li2012mayo"
+ },
+ {
   "trich_dan": "Li L, et al. (2021). Competitive adsorption and dilatational rheology of pork myofibrillar and sarcoplasmic proteins at the O/W interface. *Food Hydrocolloids*.",
   "ho": "li",
   "nam": 2021,
@@ -3925,6 +4069,22 @@
    "thuc-pham:04"
   ],
   "khoa": "li2023amylose"
+ },
+ {
+  "trich_dan": "Li M, Doyle L, Velazquez R, Pangloli P, Wu T. The amount of vinegar added before and after emulsification affects the physical property and stability of mayonnaise. LWT 182:114899",
+  "ho": "li",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "toan-van",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:li2023vinegar"
+  ],
+  "khoa": "li2023vinegar"
  },
  {
   "trich_dan": "Li S et al. (2024). The important role of starch fine molecular structures in starch gelatinization property with addition of sugars/sugar alcohols. *Carbohydr Polym*",
@@ -4053,6 +4213,22 @@
    "duoc-pham:S48"
   ],
   "khoa": "lipinski2001"
+ },
+ {
+  "trich_dan": "Liu H, Xu XM, Guo SD. Rheological, texture and sensory properties of low-fat mayonnaise with different fat mimetics. LWT",
+  "ho": "liu",
+  "nam": 2007,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:liu2007"
+  ],
+  "khoa": "liu2007"
  },
  {
   "trich_dan": "Liu Q, Huang H, Chen H, Lin J, Wang Q (2019). Food-grade nanoemulsions: preparation, stability and application in encapsulation of bioactive compounds. *Molecules* 24(23):4242.",
@@ -4295,6 +4471,22 @@
   "khoa": "maleki2026"
  },
  {
+  "trich_dan": "Mangiapelo L, Ianni F, Pagano C, Grispoldi L, Blasi F, Cenci-Goga B, Perioli L, Cossignani L. Role of apple pomace in the formulation of a novel healthy mayonnaise. Eur Food Res Technol 249:2835–2847",
+  "ho": "mangiapelo",
+  "nam": 2023,
+  "doi": "10.1007/s00217-023-04331-9",
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:mangiapelo2023"
+  ],
+  "khoa": "mangiapelo2023"
+ },
+ {
   "trich_dan": "Marangoni AG (ed.). *Fat Crystal Networks*. Marcel Dekker, 2005",
   "ho": "marangoni",
   "nam": 2005,
@@ -4325,22 +4517,6 @@
    "chat-on-dinh:S83"
   ],
   "khoa": "matsusaki2019"
- },
- {
-  "trich_dan": "McClements DJ. *Food Emulsions: Principles, Practices, and Techniques*, 3rd ed. CRC Press / Taylor & Francis (ISBN 9781498726689 – ISBN xuất hiện trong kết quả tìm kiếm của nhà xuất bản).",
-  "ho": "mcclements",
-  "nam": null,
-  "doi": null,
-  "pmid": null,
-  "url": null,
-  "muc_doc": "tri-nho",
-  "khu": [
-   "nhu-tuong"
-  ],
-  "ma_cu": [
-   "nhu-tuong:T01"
-  ],
-  "khoa": "mcclements"
  },
  {
   "trich_dan": "McClements DJ, Decker EA. Lipid oxidation in oil-in-water emulsions: Impact of molecular environment on chemical reactions in heterogeneous food systems. *J Food Sci* 2000;65(8):1270–1282",
@@ -4407,20 +4583,23 @@
   "khoa": "mcclements2015a"
  },
  {
-  "trich_dan": "McClements DJ. *Food Emulsions: Principles, Practices, and Techniques*, 3rd ed. CRC Press, 2015",
+  "trich_dan": "McClements DJ. Food Emulsions: Principles, Practices, and Techniques, 3rd ed. CRC Press/Taylor & Francis (© 2016; ISBN-13 978-1-4987-2669-6 bản PDF)",
   "ho": "mcclements",
-  "nam": 2015,
+  "nam": 2016,
   "doi": null,
   "pmid": null,
   "url": null,
-  "muc_doc": "tri-nho",
+  "muc_doc": "toan-van",
   "khu": [
+   "nhu-tuong",
    "chat-beo"
   ],
   "ma_cu": [
+   "toan-van:mcclements2016",
+   "nhu-tuong:T01",
    "chat-beo:B8"
   ],
-  "khoa": "mcclements2015b"
+  "khoa": "mcclements2016"
  },
  {
   "trich_dan": "McClements J, McClements DJ (2016). Standardization of nanoparticle characterization: methods for testing properties, stability, and functionality of edible nanoparticles. *Crit Rev Food Sci Nutr* 56(8):1334–1362.",
@@ -4517,6 +4696,22 @@
    "duoc-pham:S40"
   ],
   "khoa": "merisko2011"
+ },
+ {
+  "trich_dan": "Miedviedieva N. Mayonnaise quality expertise. Food Technologies (Ukraine)",
+  "ho": "miedviedieva",
+  "nam": 2016,
+  "doi": "10.24263/23101008-2016-4-2-11",
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:miedviedieva2016"
+  ],
+  "khoa": "miedviedieva2016"
  },
  {
   "trich_dan": "Mo Y. et al. (2026). Functional additives enhance freeze–thaw stability and retard retrogradation in wheat–potato starch gels... *Foods*.",
@@ -4647,6 +4842,22 @@
    "chat-nhu-hoa:B19"
   ],
   "khoa": "murayama2021"
+ },
+ {
+  "trich_dan": "Murray BS. Pickering emulsions for food and drinks. Curr Opin Food Sci (bản thảo đã chấp nhận)",
+  "ho": "murray",
+  "nam": 2019,
+  "doi": "10.1016/j.cofs.2019.05.004",
+  "pmid": null,
+  "url": null,
+  "muc_doc": "toan-van",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:murray2019"
+  ],
+  "khoa": "murray2019"
  },
  {
   "trich_dan": "Muschiolik G, Dickinson E (2017). Double emulsions relevant to food systems: preparation, stability, and applications. *Compr Rev Food Sci Food Saf* 16(3):532–555.",
@@ -4937,6 +5148,22 @@
   "khoa": "olson1979"
  },
  {
+  "trich_dan": "Paananen O. Effects of changes in production on stability of mayonnaise. MSc thesis, University of Turku",
+  "ho": "paananen",
+  "nam": 2017,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:paananen2017"
+  ],
+  "khoa": "paananen2017"
+ },
+ {
   "trich_dan": "Pai V. et al. (2002). Gelation and rheology of xanthan/enzyme-modified guar blends. *Carbohydr. Polym.*",
   "ho": "pai",
   "nam": 2002,
@@ -4999,6 +5226,38 @@
    "duoc-pham:S54"
   ],
   "khoa": "patel2006"
+ },
+ {
+  "trich_dan": "Pei Y, Zhang Y, Ding H, Li B, Yang J. Stability and rheological behavior of mayonnaise-like emulsion co-emulsified by konjac glucomannan and whey protein. Foods",
+  "ho": "pei",
+  "nam": 2023,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "toan-van",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:pei2023"
+  ],
+  "khoa": "pei2023"
+ },
+ {
+  "trich_dan": "Peng X, Yao Y. Carbohydrates as fat replacers. Annu Rev Food Sci Technol 8:331–351",
+  "ho": "peng",
+  "nam": 2017,
+  "doi": "10.1146/annurev-food-030216-030034",
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:peng_yao2017"
+  ],
+  "khoa": "peng-yao2017"
  },
  {
   "trich_dan": "Peng C. et al. (2025). Direct visualization of the side-by-side self-assembly of high and low acyl gellan gum by AFM. *Carbohydr. Polym.*",
@@ -5305,6 +5564,22 @@
   "khoa": "rebry2021"
  },
  {
+  "trich_dan": "Relvas ME, Ghirro LC, Martins IM, Lopes JCB, Dias MM, Barreiro MF, Ribeiro A. Nano-hydroxyapatite Pickering emulsions as edible mayonnaise-like food sauce templates. J Food Eng 381:112181",
+  "ho": "relvas",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "toan-van",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:relvas2024"
+  ],
+  "khoa": "relvas2024"
+ },
+ {
   "trich_dan": "Ren Z et al. (2024). Recent insights into bonding technologies in restructured meat production: a review. *Food Chem X* 23:101712",
   "ho": "ren",
   "nam": 2024,
@@ -5544,6 +5819,22 @@
    "duoc-pham:S32"
   ],
   "khoa": "savjani2012"
+ },
+ {
+  "trich_dan": "Schädle CN, Bader-Mittermaier S, Sanahuja S. Characterization of reduced-fat mayonnaise and comparison of sensory perception, rheological, tribological, and textural analyses. Foods",
+  "ho": "schadle",
+  "nam": 2022,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:schadle2022"
+  ],
+  "khoa": "schadle2022"
  },
  {
   "trich_dan": "Schreiber C. et al. (2020). Interaction of xanthan gums with galacto- and glucomannans. Part I. *J. Phys. Mater.*",
@@ -5931,6 +6222,38 @@
   "khoa": "society"
  },
  {
+  "trich_dan": "Sokolan N, Kuranova L, Ershov M, Kuranov D, Grohovsky V. Analysis of the rheological properties of mayonnaise sauces obtained with the use of sodium alginate polysaccharide. BIO Web Conf 181:01042",
+  "ho": "sokolan",
+  "nam": 2025,
+  "doi": "10.1051/bioconf/202518101042",
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:sokolan2025"
+  ],
+  "khoa": "sokolan2025"
+ },
+ {
+  "trich_dan": "Soni et al. Stability, release mechanisms, and applications of double emulsions loaded with Opuntia extracts: a comprehensive review. Beni-Suef Univ J Basic Appl Sci 14:129",
+  "ho": "soni",
+  "nam": 2025,
+  "doi": "10.1186/s43088-025-00711-0",
+  "pmid": null,
+  "url": null,
+  "muc_doc": "toan-van",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:soni2025"
+  ],
+  "khoa": "soni2025"
+ },
+ {
   "trich_dan": "Spagnuolo P. et al. (2005). Kappa-carrageenan interactions in systems containing casein micelles and polysaccharide stabilizers. *Food Hydrocolloids*.",
   "ho": "spagnuolo",
   "nam": 2005,
@@ -5963,6 +6286,22 @@
   "khoa": "stella1997"
  },
  {
+  "trich_dan": "Štern P, Pokorný J, Šediva A, Panovská Z. Rheological and sensory characteristics of yoghurt-modified mayonnaise. Czech J Food Sci 26(3):190–198",
+  "ho": "stern",
+  "nam": 2008,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:stern2008"
+  ],
+  "khoa": "stern2008"
+ },
+ {
   "trich_dan": "Stounbjerg L. et al. (2019). Associative phase separation of potato protein and anionic polysaccharides. *Colloids Surf. A*.",
   "ho": "stounbjerg",
   "nam": 2019,
@@ -5993,6 +6332,38 @@
    "chat-beo:R19"
   ],
   "khoa": "sulaiman2022"
+ },
+ {
+  "trich_dan": "Sylvani MI, Evanuarini H, Rahayu PP. Physicochemical quality of reduced fat mayonnaise with Aloe vera powder as a natural antioxidant. Asian J Biol 21(1):1–7",
+  "ho": "sylvani",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:sylvani2025a"
+  ],
+  "khoa": "sylvani2025a"
+ },
+ {
+  "trich_dan": "Sylvani MI, Evanuarini H, Rahayu PP. Effect of Aloe vera powder as a fat replacement on the quality of reduced fat mayonnaise. J Ilmu-Ilmu Peternakan 35(1):113–125",
+  "ho": "sylvani",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:sylvani2025b"
+  ],
+  "khoa": "sylvani2025b"
  },
  {
   "trich_dan": "Tadros TF. *Emulsion Formation and Stability*. Wiley-VCH, 2013.",
@@ -6045,6 +6416,22 @@
   "khoa": "tapia2020"
  },
  {
+  "trich_dan": "Teklehaimanot WH. Rheology and microscopy of low calorie mayonnaise-type emulsions made with stearic acid-modified maize and teff starches. MSc, University of Pretoria",
+  "ho": "teklehaimanot",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:teklehaimanot"
+  ],
+  "khoa": "teklehaimanot"
+ },
+ {
   "trich_dan": "Tena J et al. (2025). A computational fluid dynamics model for predicting food browning through melanoidin kinetics during baking. *J Food Eng*",
   "ho": "tena",
   "nam": 2025,
@@ -6075,6 +6462,22 @@
    "chat-nhu-hoa:C5"
   ],
   "khoa": "teng2020"
+ },
+ {
+  "trich_dan": "Thaiudom S, Khantarat K. Stability and rheological properties of fat-reduced mayonnaises by using sodium octenyl succinate starch as fat replacer. Procedia Food Sci 1",
+  "ho": "thaiudom",
+  "nam": 2011,
+  "doi": "10.1016/j.profoo.2011.09.049",
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:thaiudom2011"
+  ],
+  "khoa": "thaiudom2011"
  },
  {
   "trich_dan": "Thirumdas R. Partial hydrogenation of oils using cold plasma technology and its effect on lipid oxidation. *J Food Sci Technol* 2023;60(6):1674–1680 (online 2022-04)",
@@ -6187,6 +6590,22 @@
    "chat-on-dinh:S52"
   ],
   "khoa": "tran2021"
+ },
+ {
+  "trich_dan": "Tran TTP et al. Shear crystallization in beeswax oleogels. OCL 33:26",
+  "ho": "tran",
+  "nam": 2026,
+  "doi": "10.1051/ocl/2026018",
+  "pmid": null,
+  "url": null,
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:tran2026oleogel"
+  ],
+  "khoa": "tran2026oleogel"
  },
  {
   "trich_dan": "Troller JA. Adaptation and growth of microorganisms in environments with reduced water activity (chương sách, xuất bản lại 2017)",
@@ -6331,6 +6750,22 @@
    "chat-nhu-hoa:D10"
   ],
   "khoa": "vanwees2026"
+ },
+ {
+  "trich_dan": "Vardar US, Hoogendoorn WG, Bitter JH, Nikiforidis CV, Asadi Tashvigh A. Monitoring and kinetic modeling of curcumin diffusion into oleosomes. J Food Eng 381:112169",
+  "ho": "vardar",
+  "nam": 2024,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "toan-van",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:vardar2024"
+  ],
+  "khoa": "vardar2024"
  },
  {
   "trich_dan": "Villeneuve P, Bourlieu-Lacanal C, Durand E, Lecomte J, McClements DJ, Decker EA. Lipid oxidation in emulsions and bulk oils: a review of the importance of micelles. *Crit Rev Food Sci Nutr* 2023;63(20):4687–4727 (online 2021-11)",
@@ -7246,6 +7681,22 @@
    "chat-beo:R30"
   ],
   "khoa": "yi2020"
+ },
+ {
+  "trich_dan": "Yildirim M, Sumnu G, Sahin S. Rheology, particle-size distribution, and stability of low-fat mayonnaise produced via double emulsions. Food Sci Biotechnol 25(6):1613–1618",
+  "ho": "yildirim",
+  "nam": 2016,
+  "doi": "10.1007/s10068-016-0248-7",
+  "pmid": null,
+  "url": null,
+  "muc_doc": "toan-van",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "toan-van:yildirim2016"
+  ],
+  "khoa": "yildirim2016"
  },
  {
   "trich_dan": "Zambuto S. G. et al. (2024). Evaluation of gelatin bloom strength on gelatin methacryloyl hydrogel properties.",

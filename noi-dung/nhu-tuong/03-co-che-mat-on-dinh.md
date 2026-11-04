@@ -41,7 +41,7 @@ Giọt dầu (tỷ trọng ~910–930 kg/m³) nhẹ hơn nước (~1000), nên n
 
 $$v_{Stokes}=\frac{2\,r^2\,(\rho_c-\rho_d)\,g}{9\,\eta_c}$$
 
-(dấu dương = nổi lên). **[K]**
+(dấu dương = nổi lên). **[N: @mcclements2016 tr.294]**
 
 **[T]** Tính cho Δρ = 80 kg/m³ (dầu thực vật trong nước), η_c = 1 mPa·s, 25 °C:
 
@@ -98,7 +98,8 @@ $$\kappa^{-1}\approx\frac{0{,}304}{\sqrt{I}}\ \text{nm}\quad(I\text{ mol/L, ch�
 ⇒ Ở lực ion thực phẩm điển hình (nước sốt, muối, dạ dày), đẩy tĩnh điện bị **che chắn** gần như hoàn toàn. Điện tích chỉ cứu được hệ có ít muối.
 - **Lập thể**: polymer/protein/chuỗi PEO nhô ra đẩy nhau khi bị nén (entropy + áp suất thẩm thấu) ⇒ bền với muối. Mất khi polymer **mất tan** (nhiệt, pH, ion) hoặc bị thay thế.
 - **Cạn kiệt (depletion)** [K: @asakura1954]: polymer/micelle **tự do** trong pha liên tục không thể xâm nhập khe giữa hai giọt ⇒ chênh áp suất thẩm thấu ép hai giọt lại. Xảy ra khi nồng độ polymer tự do vượt ngưỡng tới hạn (thấp hơn nhiều khi dùng polymer phân tử lớn). Ví dụ phổ biến: **thêm xanthan/guar/alginate vào nhũ tương protein** gây kem hóa nhanh hơn dù độ nhớt tăng, vì cạn kiệt. **[K; G: ngưỡng tùy hệ]**
-- **Bắc cầu (bridging):** một polymer hấp phụ lên hai giọt cùng lúc, thường khi bề mặt giọt phủ chưa đủ (< ~ 50–70% độ phủ). **[K]**
+- **Bắc cầu (bridging):** một polymer hấp phụ lên hai giọt cùng lúc, thường khi bề mặt giọt phủ chưa đủ để che kín. **[N: @mcclements2016 tr.323]**
+  - Ngưỡng độ phủ gây bắc cầu: dưới khoảng 50–70%. **[K]**
 
 ### Điều kiện hay gặp trong thực phẩm
 | Điều kiện | Hiệu ứng | Cách giảm |
@@ -118,7 +119,7 @@ $$\kappa^{-1}\approx\frac{0{,}304}{\sqrt{I}}\ \text{nm}\quad(I\text{ mol/L, ch�
 ### Bản chất
 Hai giọt hòa thành một, màng ngăn vỡ. **Không thuận nghịch.**
 
-### Cơ chế [K: @mcclements, @walstra2003]
+### Cơ chế [K: @mcclements2016, @walstra2003]
 1. Hai giọt lại gần (do kem hóa, keo tụ, dòng cắt).
 2. Màng nước giữa chúng mỏng dần (thoát màng, film drainage).
 3. Nếu màng đạt **độ dày tới hạn** (cỡ vài nm) hoặc xuất hiện nhiễu động bề mặt ⇒ vỡ lỗ ⇒ hợp.
@@ -166,7 +167,7 @@ Giọt chứa **mạng tinh thể mỡ** đâm xuyên qua màng, "móc" vào gi�
 ### Bản chất
 Giọt nhỏ **tan dần** trong pha liên tục, dầu khuếch tán qua nước và lắng vào giọt lớn. Hệ tiến tới ít giọt, to hơn. **Chỉ xảy ra khi dầu tan được trong pha liên tục** (dù rất ít).
 
-### Cơ chế định lượng (LSW) [K: @lifshitz1961, @kabalnov1992]
+### Cơ chế định lượng (LSW) [K: @lifshitz1961, @kabalnov1992; N: @mcclements2016 tr.360]
 Độ tan hiệu dụng quanh giọt nhỏ cao hơn giọt lớn (hiệu ứng Kelvin/Laplace) ⇒ dòng khuếch tán từ giọt nhỏ sang lớn. Trong chế độ giới hạn bởi khuếch tán:
 
 $$\frac{d\bar r^3}{dt}=\omega=\frac{8}{9}\,\frac{\gamma\,c_\infty\,V_m\,D}{R\,T}$$
@@ -174,16 +175,17 @@ $$\frac{d\bar r^3}{dt}=\omega=\frac{8}{9}\,\frac{\gamma\,c_\infty\,V_m\,D}{R\,T}
 $c_\infty$: độ tan khối của dầu trong pha liên tục; $V_m$: thể tích mol dầu; D: hệ số khuếch tán dầu trong nước.
 - **$\bar r^3$ tăng tuyến tính theo thời gian** (kiểm chứng: vẽ $d_{43}^3$ theo t; đường thẳng ⇒ ripening; **kem hóa/hợp giọt không cho đường thẳng**).
 - ω tỷ lệ với **độ tan $c_\infty$**: dầu có độ tan nước đáng kể (tinh dầu, hương, TAG mạch ngắn) ripening mạnh; TAG mạch dài (dầu hướng dương, dầu bắp) gần như không ripening. **[N: @park2025 – dầu như dầu hương, tinh dầu, TAG nhỏ ripening do độ tan nước đáng kể]**
+- **So với thực nghiệm:** ở nhũ tương O/W không có micelle, ripening đo được nhanh hơn dự đoán LSW khoảng 2–3 lần; khi có micelle còn nhanh hơn nhiều. Nếu lớp bề mặt cản khuếch tán thì phải dùng phiên bản có hiệu chỉnh lớp bề mặt. **[N: @mcclements2016 tr.360]**
 - **Chất nhũ hóa ảnh hưởng thế nào?** Nghiên cứu hệ model cho thấy loại chất hoạt động bề mặt phân tử nhỏ và thành phần pha dầu đều làm đổi tốc độ ripening, trong khi thay đổi thành phần pha dầu **không đổi sức căng bề mặt** dầu–nước **[N: @park2025]**. Cơ chế chi tiết (ví dụ vai trò của lớp màng dày/rắn cản khuếch tán) là **[G]**, cần nguồn riêng trước khi khẳng định trên web.
 
 ### Chất ức chế ripening (ripening inhibitor)
-Nguyên tắc (Kabalnov–Webster) **[K: @kabalnov1992]**: thêm vào giọt một thành phần dầu **gần như không tan nước**. Khi giọt nhỏ mất dầu tan, tỷ lệ thành phần không tan tăng, entropy trộn tạo chênh áp suất thẩm thấu **cân bằng với áp suất Laplace** ⇒ ripening dừng. Nhũ tương "ổn định theo thành phần".
+Nguyên tắc (Kabalnov–Webster) **[K: @kabalnov1992; N: @mcclements2016 tr.4]**: thêm vào giọt một thành phần dầu **gần như không tan nước**. Khi giọt nhỏ mất dầu tan, tỷ lệ thành phần không tan tăng, entropy trộn tạo chênh áp suất thẩm thấu **cân bằng với áp suất Laplace** ⇒ ripening dừng. Nhũ tương "ổn định theo thành phần". Sách McClements cũng nêu chất ức chế ripening phải là chất rất kỵ nước, và cho ví dụ dầu MCT trộn vitamin E acetate với Tween 80. **[N: @mcclements2016 tr.4, tr.280]**
 
 **Bằng chứng có số liệu [N: @chang2012]:** nanoemulsion tinh dầu thyme (pH 3.5) bị ripening mạnh do độ tan nước tương đối cao của tinh dầu; ripening bị ức chế bằng cách trộn với chất không tan trước khi đồng hóa: **≥60 wt% dầu bắp hoặc ≥50 wt% MCT trong pha lipid**. Tăng nồng độ chất ức chế còn ảnh hưởng hoạt tính kháng khuẩn.
 
 **Bằng chứng khác [N: @park2025]:** hệ model decane + chất không ion (polyoxyethylene (100) stearyl ether hoặc poloxamer P407); thêm alkane mạch dài hơn (tetradecane, hexadecane, octadecane) giảm ripening nhờ hiệu ứng thành phần (compositional ripening) dù **không đổi sức căng bề mặt**, nhưng đổi cả kích thước giọt ban đầu.
 
-**Ứng dụng:** nanoemulsion đồ uống chứa hương cam, bạc hà; tinh dầu; ester của vitamin; vitamin E acetate được coi như chất ức chế hữu ích do độ tan nước thấp **[K]**.
+**Ứng dụng:** nanoemulsion đồ uống chứa hương cam, bạc hà; tinh dầu; ester của vitamin; vitamin E acetate được coi như chất ức chế hữu ích do độ tan nước thấp **[K; N: @mcclements2016 tr.280]**.
 
 ---
 

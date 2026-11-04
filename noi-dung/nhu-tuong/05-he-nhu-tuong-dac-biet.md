@@ -105,7 +105,7 @@ Giọt nước nhỏ (W₁) trong giọt dầu (O) trong nước (W₂). Dùng �
 
 ### 3.3 Công thức thiết kế
 - **Cân bằng áp suất thẩm thấu** giữa W₁ và W₂: thêm muối/đường/polyol để osmolality gần bằng nhau. **[N: @muschiolik2017 nêu "balancing of the osmotic pressure"]**
-- Chất nhũ hóa **ưa dầu** cho giao diện W₁/O (ví dụ PGPR, HLB nhỏ), chất nhũ hóa **ưa nước** cho giao diện O/W₂ (protein, Tween, gum, hạt). **[K]**
+- Chất nhũ hóa **ưa dầu** cho giao diện W₁/O (ví dụ PGPR, HLB nhỏ), chất nhũ hóa **ưa nước** cho giao diện O/W₂ (protein, Tween, gum, hạt). **[N: @mcclements2016 tr.587, tr.589]**
 - Tăng nhớt hoặc gel hóa W₁ hoặc W₂; tương tác protein–polysaccharide; Pickering hóa giao diện ngoài để giữ W₁. **[N: @muschiolik2017]**
 - Quy trình **hai bước**: bước một (W₁/O) cắt mạnh; bước hai (W₁/O vào W₂) **cắt nhẹ** để không phá W₁. **[N: @muschiolik2017 nêu phương pháp chế tạo; K]**
 - Hiệu suất nhũ tương kép được đánh giá qua "double emulsion yield" (tỷ lệ W₁ còn giữ) và tốc độ rò rỉ chất đánh dấu. **[N: @muschiolik2017 nêu "techniques used to estimate DE yield and emulsification efficiency"]**
@@ -113,6 +113,8 @@ Giọt nước nhỏ (W₁) trong giọt dầu (O) trong nước (W₂). Dùng �
 - Ví dụ thực nghiệm: polyphenol trà bao trong W/O/W với hỗn hợp xanthan–locust bean gum (đánh giá độ bền và khả năng bảo vệ) — PubMed 33548306. **[N: PM; chưa đọc số liệu]**
 
 ### 3.4 Hạn chế
+Bước hai (đưa W₁/O vào pha nước) phải nhẹ hơn bước một để khỏi phá hoặc đẩy giọt nước trong ra ngoài. **[N: @mcclements2016 tr.588]**
+
 Hiệu suất bao gói thường giảm trong bảo quản; chịu nhiệt/cắt kém; chi phí cao; thương mại hóa trong thực phẩm còn hạn chế. **[K; G]**
 
 ---

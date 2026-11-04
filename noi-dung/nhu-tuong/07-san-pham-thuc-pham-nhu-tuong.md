@@ -25,7 +25,7 @@ nguon_goc: tai-lieu-nhu-tuong/07-san-pham-thuc-pham-nhu-tuong.md
 | Sữa nguyên kem/UHT | O/W | ~3–4% béo | Protein sữa (casein, whey), màng cầu mỡ sữa (MFGM) | Kem hóa, keo tụ do nhiệt | — |
 | Kem tươi (cream) | O/W | ~20–40% | Protein sữa + chất nhũ hóa | Hợp giọt, đóng cục | Hợp giọt một phần khi đánh bông (whipping) |
 | Kem lạnh | O/W + bọt khí + tinh thể đá | ~8–15% béo trong mix | Protein sữa + mono/diglyceride, polysorbate | Hợp giọt toàn phần, mất cấu trúc | Hợp giọt một phần để giữ bọt khí **[N: @petrut2015, @moens2018, @cheng2019, @yang2021]** |
-| Mayonnaise/sốt | O/W HIPE | ~65–80% | Lecithin, protein lòng đỏ trứng | Đảo pha, tách dầu | Gel giọt đàn hồi |
+| Mayonnaise/sốt | O/W HIPE | ~75–84% (khối lượng) **[N: @mcclements2016 tr.567]** | Lecithin, protein lòng đỏ trứng | Đảo pha, tách dầu | Gel giọt đàn hồi |
 | Bơ | W/O (từ O/W) | ~80% béo | Mạng tinh thể béo + MFGM | Tách nước | Đảo pha khi đánh kem |
 | Margarine/phết | W/O | ~60–80% béo | Mono/diglyceride, lecithin, PGPR trong một số hệ **[N: @zhang2025 về PGPR trong W/O HIPE]** | Tách nước, kết tinh | Mạng tinh thể |
 | Đồ uống nhũ hóa (hương, vitamin) | O/W | ~5–15% dầu trong cô đặc, loãng đến ppm | Gum arabic, OSA-starch, protein; Tween trong một số hệ | Ripening, kem hóa (ring formation) | — |
@@ -54,9 +54,9 @@ nguon_goc: tai-lieu-nhu-tuong/07-san-pham-thuc-pham-nhu-tuong.md
 
 ## 2. Mayonnaise và sốt dầu giấm
 
-- O/W đậm đặc (HIPE) trong đó lòng đỏ trứng (lipoprotein LDL, phospholipid, protein) là chất nhũ hóa; pH thấp (thường khoảng 3,5–4,2 **[K]**) vừa kìm hãm vi sinh vừa làm protein lòng đỏ tương tác.
-- Quy trình: tạo hỗn hợp nước–trứng–giấm–mù tạt, **thêm dầu chậm** ban đầu để tạo giọt nhỏ, sau đó nhanh hơn; dùng máy nghiền keo cho quy mô công nghiệp. **[K]**
-- Điểm gãy: thêm dầu quá nhanh/thiếu chất nhũ hóa ⇒ đảo pha, tách dầu; nhiệt độ thấp (kết tinh dầu) ⇒ hợp giọt khi đông lạnh. **[K]**
+- O/W đậm đặc (HIPE) trong đó lòng đỏ trứng (lipoprotein LDL, phospholipid, protein) là chất nhũ hóa; pH thấp (đo thực khoảng 3,7–4,4 **[N: @li2012mayo, @paananen2017]**) vừa kìm hãm vi sinh vừa làm protein lòng đỏ tương tác.
+- Quy trình: tạo hỗn hợp nước–trứng–giấm–mù tạt **[K]**. **Cho dầu từng phần nhỏ** vào máy trộn cao tốc để tạo nhũ thô, kiểm soát tốc độ thêm dầu để tránh đảo pha; sau đó đồng hóa bằng máy nghiền keo. **[N: @mcclements2016 tr.569]**
+- Điểm gãy: thêm dầu quá nhanh ⇒ dễ đảo pha; khi bảo quản nên tránh đông lạnh, gia nhiệt hoặc khuấy quá mạnh. **[N: @mcclements2016 tr.569]** Thiếu chất nhũ hóa ⇒ tách dầu; nhiệt độ thấp (kết tinh dầu) ⇒ hợp giọt khi đông lạnh. **[K]** Trong thử nghiệm đông lạnh–rã đông của một nghiên cứu mayonnaise, lượng dầu tách ra tăng khi giấm được thêm vào lòng đỏ trước khi nhũ hóa nhiều hơn. **[N: @li2023vinegar]**
 - **Thay thế trứng:** protein thực vật + hạt Pickering (tinh bột, cellulose, protein đậu) được đề xuất thay mayonnaise; ví dụ nhũ tương không trứng dùng Pickering **[N: @li2022a]**; HIPE O/W bằng phân đoạn lòng đỏ + hydroxypropyl distarch phosphate **[N: PubMed 39662540]**.
 
 ---
