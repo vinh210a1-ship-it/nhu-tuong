@@ -14,6 +14,11 @@ Chủ repo là vinh, làm R&D thực phẩm, không chuyên lập trình. Luôn 
 - **Không đọc nguyên** các file lớn: `public/du-lieu/*.json` (TT24, FDA IID), `nguon/nguon.json`, `nguon/nguon.csv`, `package-lock.json`, `public/phong-lab/phong-lab.js`, `public/phong-lab/phong-lab.css`.
 - `src/content/docs/<khu>/` là trang sinh tự động (đã gitignore). Không sửa ở đó.
 
+## Ghi nhật ký (để Claude trên claude.ai đọc được)
+vinh làm việc với Claude ở hai nơi: terminal trên máy và một dự án trên claude.ai. Hai nơi không tự chia sẻ trí nhớ. Vì vậy, xong mỗi bước (một gói, một PR, một quyết định của vinh), **ghi thêm một mục lên đầu** file `E:\web hóa\NHAT-KY.md` (nằm ngoài repo, mục mới nhất ở trên):
+- ngày giờ; đã làm gì; nhánh/PR; vinh đã duyệt hay quyết định gì; việc còn lại.
+Không xóa hay sửa mục cũ. Mọi thay đổi code đi qua PR trên GitHub, nên Claude trên claude.ai đọc được tiến độ qua PR và nhật ký này.
+
 ## Bản đồ thư mục
 | Muốn làm | Sửa ở đâu |
 |---|---|
