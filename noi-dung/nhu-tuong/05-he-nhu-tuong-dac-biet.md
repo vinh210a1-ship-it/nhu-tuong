@@ -81,7 +81,7 @@ Ví dụ chitin: nhũ tương Pickering hiệp đồng giữa nano tinh bột v�
 Ví dụ protein đậu nành nanoparticle: ổn định các cấu trúc O/W, W/O, HIPE, emulgel; kết hợp polysaccharide/polyphenol. **[N: @yang2025]**
 Biến tính hạt (pH, siêu âm; vật lý/hóa/sinh học) cải thiện hoạt tính nhũ hóa, ứng dụng như giao hoạt chất, thay chất béo, bảo quản thực phẩm, in 3D. **[N: @liu2025]**
 
-### 2.4 Phản biện cần đưa lên web (từ R20)
+### 2.4 Những điểm còn tranh luận
 - **Không phải mọi nhũ tương chứa hạt đều là Pickering thực sự.** Nhiều hệ thực phẩm có **bề mặt hỗn hợp** (hạt + phân tử hoạt động bề mặt có sẵn trong nguyên liệu); ổn định thường nhờ **hạt mềm, bề mặt hỗn hợp và mạng hạt trong pha liên tục**. **[N: @schroen2024]**
 - Hạt sinh học có thể bị phá vỡ khi đồng hóa; hạt nhỏ dễ bị chất nhũ hóa cạnh tranh đẩy ra; hạt thường cần kích thước ~1/10 giọt; scale-up microfluidic khó; công cụ phân tích chuẩn còn thiếu. **[N: @schroen2024]**
 - Ngưỡng zeta ±30 mV được nhắc như ranh giới giữa đẩy tĩnh điện và tạo mạng hạt trong pha liên tục (trong bối cảnh hạt Pickering). **[N: @schroen2024]**

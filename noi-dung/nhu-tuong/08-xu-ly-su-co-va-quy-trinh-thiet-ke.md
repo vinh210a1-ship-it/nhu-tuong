@@ -36,7 +36,7 @@ nguon_goc: tai-lieu-nhu-tuong/08-xu-ly-su-co-va-quy-trinh-thiet-ke.md
 
 ---
 
-## 2. Thứ tự chẩn đoán đề xuất (cho web: sơ đồ quyết định)
+## 2. Thứ tự chẩn đoán đề xuất
 
 ```
 Sản phẩm hỏng
@@ -80,7 +80,7 @@ Sản phẩm hỏng
 
 ---
 
-## 4. Mẫu "phiếu thí nghiệm" cho web (tải về)
+## 4. Mẫu phiếu thí nghiệm
 
 | Trường | Ví dụ |
 |---|---|

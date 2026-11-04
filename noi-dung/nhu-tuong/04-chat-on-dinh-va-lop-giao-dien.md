@@ -1,5 +1,5 @@
 ---
-title: "Chiến lược ổn định – chất nhũ hóa, chất tạo cấu trúc, lớp giao diện (liên kết các luồng khác)"
+title: "Chiến lược ổn định – chất nhũ hóa, chất tạo cấu trúc, lớp giao diện"
 slug: chat-on-dinh
 khu: nhu-tuong
 thu_tu: 4
@@ -12,7 +12,7 @@ nguon_goc: tai-lieu-nhu-tuong/04-chat-on-dinh-va-lop-giao-dien.md
 ---
 # 04. Chiến lược ổn định nhũ tương
 
-> **Phạm vi.** Tài liệu về **bản thân chất nhũ hóa, chất béo, chất ổn định** do 3 luồng riêng đảm nhiệm. File này chỉ giữ **khung ra quyết định**: dùng thành phần nào để chặn cơ chế nào (liên kết file 03), kèm các tham chiếu chéo ngắn để dựng web.
+> **Phạm vi.** Tài liệu về **bản thân chất nhũ hóa, chất béo, chất ổn định** nằm ở các khu riêng ([Chất nhũ hóa](../../chat-nhu-hoa/), [Chất béo](../../chat-beo/), [Chất ổn định](../../chat-on-dinh/)). Bài này chỉ giữ **khung ra quyết định**: dùng thành phần nào để chặn cơ chế nào (liên kết bài 03), kèm vài tham chiếu chéo ngắn.
 
 **Quy tắc vàng:** *mỗi cơ chế mất ổn định có một công cụ riêng*. Dùng sai công cụ không chỉ vô ích mà có thể làm xấu hơn (ví dụ thêm gum gây cạn kiệt).
 
@@ -45,7 +45,7 @@ nguon_goc: tai-lieu-nhu-tuong/04-chat-on-dinh-va-lop-giao-dien.md
 
 ### 2.2 Gum và chất làm đặc
 - Mục đích: tăng η_c, tạo ngưỡng chảy. **Nhưng** chú ý khoảng nồng độ để tránh cạn kiệt (file 03, mục 2). Gum cũng có thể hấp phụ lên giọt (xanthan trên protein) và tạo màng đa lớp.
-- Chi tiết loại gum, độ nhớt, thông số: giao cho luồng "chất ổn định". **[G: nội dung nguồn do luồng khác kiểm]**
+- Chi tiết loại gum, độ nhớt, thông số: xem khu [Chất ổn định](../../chat-on-dinh/).
 
 ### 2.3 Protein và phức protein–polysaccharide
 - Protein tạo màng nhớt–đàn hồi chống hợp giọt, nhưng nhạy pH/ion/nhiệt.
@@ -71,10 +71,10 @@ nguon_goc: tai-lieu-nhu-tuong/04-chat-on-dinh-va-lop-giao-dien.md
 
 ---
 
-## 4. Gợi ý nội dung liên kết cho web (cross-link)
+## 4. Đọc tiếp ở các khu khác
 
-| Chủ đề | Liên kết tới luồng |
+| Chủ đề | Đọc tiếp ở khu |
 |---|---|
-| Chất nhũ hóa phân tử nhỏ (HLB chi tiết, mono/diglyceride, lecithin, Tween, SSL...) | Luồng "chất hoạt động bề mặt" |
-| Protein/polysaccharide như chất ổn định | Luồng "chất ổn định" |
-| Chất béo: kết tinh, SFC, đa hình, oleogel | Luồng "chất béo" |
+| Chất nhũ hóa phân tử nhỏ (HLB chi tiết, mono/diglyceride, lecithin, Tween, SSL...) | [Chất nhũ hóa](../../chat-nhu-hoa/) |
+| Protein/polysaccharide như chất ổn định | [Chất ổn định](../../chat-on-dinh/) |
+| Chất béo: kết tinh, SFC, đa hình, oleogel | [Chất béo](../../chat-beo/) |

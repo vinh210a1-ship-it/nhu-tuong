@@ -9,6 +9,7 @@ import path from 'node:path';
 import { tenNgan, htmlNhan, tachNhan, SO_DON_VI } from '../src/plugins/remark-nhan.mjs';
 import { KHU } from '../src/data/khu.mjs';
 import { dungTraCuu } from './tra-cuu.mjs';
+import { docTep } from './doc-tep.mjs';
 
 const GOC = process.cwd();
 const DOCS = path.join(GOC, 'src/content/docs');
@@ -90,6 +91,13 @@ function chuanHoaDinhDang(body) {
 		.join('\n');
 }
 
+// Công thức viết cả trên MỘT dòng ($$...$$) bị remark-math hiểu là công thức trong dòng (không có khung cuộn,
+// tràn ngang trên điện thoại). Tách thành khối 3 dòng ($$ / công thức / $$) để thành công thức dạng khối.
+// Chỉ đổi dòng mà cả dòng là một công thức; giữ phần thụt đầu dòng hoặc dấu ">" của khối trích.
+function tachCongThucMotDong(body) {
+	return body.replace(/^([ \t]*(?:>[ \t]*)*)\$\$([^$\n]+)\$\$[ \t]*$/gm, (m, tienTo, ct) => `${tienTo}$$\n${tienTo}${ct.trim()}\n${tienTo}$$`);
+}
+
 function docFrontMatter(text) {
 	const m = /^---\n([\s\S]*?)\n---\n/.exec(text);
 	if (!m) return [{}, text];
@@ -115,25 +123,25 @@ for (const khu of KHU_BAT) {
 	const dich = path.join(DOCS, khu);
 	xoaVaTao(dich);
 	// trang lộ trình của khu (viết tay trong trang/<khu>.md)
-	fs.copyFileSync(path.join(GOC, 'trang', `${khu}.md`), path.join(dich, 'index.md'));
+	fs.writeFileSync(path.join(dich, 'index.md'), docTep(path.join(GOC, 'trang', `${khu}.md`)));
 	const tep = fs.readdirSync(nguonDir).filter((f) => f.endsWith('.md')).sort();
 	// bảng tra: tên file gốc / số thứ tự -> slug
 	const slugTheoFile = {};
 	const slugTheoSo = {};
 	for (const f of tep) {
-		const [fm] = docFrontMatter(fs.readFileSync(path.join(nguonDir, f), 'utf8'));
+		const [fm] = docFrontMatter(docTep(path.join(nguonDir, f)));
 		const sl = (fm.slug || '').toLowerCase();
 		const congKhai = fm.hien_tren_web === 'true' && fm.loai !== 'muc-luc';
 		slugTheoFile[f] = congKhai ? sl : null;
 		if (congKhai) slugTheoSo[f.slice(0, 2)] = sl;
 	}
 	for (const f of tep) {
-		const [fm, than] = docFrontMatter(fs.readFileSync(path.join(nguonDir, f), 'utf8'));
+		const [fm, than] = docFrontMatter(docTep(path.join(nguonDir, f)));
 		if (fm.hien_tren_web !== 'true' || fm.loai === 'muc-luc') continue; // trang lộ trình viết tay
 		fm.slug = fm.slug.toLowerCase(); // Astro đổi đường dẫn sang chữ thường
 		fm.title = tieuDeGon(fm.title);
 		let body = boGhiChuDau(than.replace(/^#\s+.+\n+/, '')); // H1 trùng với tiêu đề Starlight
-		body = chuanHoaDinhDang(body);
+		body = tachCongThucMotDong(chuanHoaDinhDang(body));
 		// trong nhãn, ":chữ" (vd. "11(5):3144") bị Starlight hiểu thành cú pháp directive và cắt nhãn làm đôi -> thoát dấu ":"
 		body = body.replace(/\[(?:N|K|T|G)[:;][^\]\n]*\]/g, (m) => m.slice(0, 2) + m.slice(2).replace(/:(?=[\p{L}\d])/gu, '\\:'));
 		// `03-ten-file.md` trong chữ -> liên kết tới bài (hoặc trang Nguồn với file danh mục nguồn)
@@ -174,7 +182,7 @@ for (const khu of KHU_BAT) {
 			'editUrl: false',
 			'---',
 			'',
-			`<p class="nguon-goc-bai">Cập nhật ${fm.updated}. Nội dung gốc: <code>noi-dung/${khu}/${f}</code></p>`,
+			`<p class="nguon-goc-bai">Cập nhật ${fm.updated} · <a href="../../quy-uoc/">Cách đọc nhãn và giới hạn nội dung →</a></p>`,
 			'',
 		].join('\n');
 		// hộp cuối bài: đánh dấu đã đọc (lưu trong máy người xem)
@@ -272,7 +280,7 @@ const maTrongChu = (c) => {
 	}
 	return ra;
 };
-const docGoc = (khu, tep) => fs.readFileSync(path.join(GOC, 'noi-dung', khu, fs.readdirSync(path.join(GOC, 'noi-dung', khu)).find((f) => f.startsWith(tep))), 'utf8');
+const docGoc = (khu, tep) => docTep(path.join(GOC, 'noi-dung', khu, fs.readdirSync(path.join(GOC, 'noi-dung', khu)).find((f) => f.startsWith(tep))));
 const nhGoc = docGoc('chat-nhu-hoa', '04-');
 const odGoc = docGoc('chat-on-dinh', '06-');
 const adi = dongBang(nhGoc, '## 4.2 Bảng EFSA');

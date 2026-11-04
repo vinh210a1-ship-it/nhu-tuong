@@ -14,7 +14,7 @@ nguon_goc: tai-lieu-nhu-tuong/07-san-pham-thuc-pham-nhu-tuong.md
 
 > **Kết luận trước.** Mỗi nhóm sản phẩm nằm ở một "vùng" khác nhau của không gian (loại nhũ tương × φ × cơ chế ổn định chính × cơ chế mất ổn định cần tránh hoặc cần có). Hiểu ba tham số này giúp dự đoán công thức và sự cố mà không cần học thuộc từng sản phẩm.
 
-**Cảnh báo về độ tin cậy.** Phần lớn con số ở file này (phân số dầu, áp suất đồng hóa, pH điển hình) là **kiến thức nền thực hành [K]**, chưa trích được số trang sách (T01, T07) trong phiên này. Chúng là **khoảng thường gặp**, không phải tiêu chuẩn pháp lý hay công thức. Bất kỳ con số nào đưa lên web phải đối chiếu với tiêu chuẩn quốc gia (TCVN/QCVN, Codex) hoặc sách giáo khoa gốc. Các điểm có nguồn kiểm được đánh dấu **[N]**.
+**Cảnh báo về độ tin cậy.** Phần lớn con số ở file này (phân số dầu, áp suất đồng hóa, pH điển hình) là **kiến thức nền thực hành [K]**, chưa trích được số trang sách (T01, T07) trong phiên này. Chúng là **khoảng thường gặp**, không phải tiêu chuẩn pháp lý hay công thức. Bất kỳ con số nào dùng cho sản phẩm thật phải đối chiếu với tiêu chuẩn quốc gia (TCVN/QCVN, Codex) hoặc sách giáo khoa gốc. Các điểm có nguồn kiểm được đánh dấu **[N]**.
 
 ---
 
@@ -93,7 +93,7 @@ nguon_goc: tai-lieu-nhu-tuong/07-san-pham-thuc-pham-nhu-tuong.md
 
 ---
 
-## 7. Gợi ý "bài học" cho web (mỗi bài một sản phẩm)
+## 7. Đọc theo từng sản phẩm
 
 Mỗi trang sản phẩm nên có cùng 6 mục:
 1. Cấu trúc (loại, φ, kích thước).

@@ -17,4 +17,11 @@ Một câu có thể mang nhiều huy hiệu, ví dụ <span class="nhan nhan-K"
 
 **Mức đọc của nguồn** (ghi trên từng thẻ ở trang [Nguồn](../nguon/)): đọc toàn văn → đọc một phần/trang gốc → đọc tóm tắt → chỉ thấy tiêu đề → ghi từ trí nhớ. Hiện phần lớn nguồn ở mức **tóm tắt**.
 
+## Giới hạn của nội dung
+
+- Nguồn bài báo phần lớn mới được **đọc ở mức tóm tắt**; toàn văn nhiều bài trả phí chưa đọc. Mức đọc của từng nguồn ghi ở trang [Nguồn](../nguon/).
+- Công thức và khái niệm kinh điển (Stokes, DLVO, Laplace, HLB, Kolmogorov–Hinze…) là chuẩn trong lĩnh vực nhưng **chưa trích số trang sách**, nên mang nhãn K. Các đoạn có **số liệu** chỉ dựa vào sách nền đang tạm ẩn cho tới khi đối chiếu xong.
+- Các con số điển hình về sản phẩm và thiết bị là khoảng thường gặp, **không phải tiêu chuẩn**. Chưa tra TCVN/QCVN hay Codex.
+- Phòng lab ảo là trò chơi luyện tư duy trên mô hình đơn giản: kết quả không dùng để quyết định chất lượng hay an toàn của sản phẩm thật.
+
 **Thấy sai?** Ghi lại tên bài và câu sai rồi báo cho người soạn; web sẽ có nút báo sai ở bản sau.

@@ -100,6 +100,15 @@ h1, h2, h3 { letter-spacing: -0.012em; }
 	border-radius: 0.6rem;
 	overflow-x: auto;
 }
+/* Dự phòng: công thức nằm TRONG dòng chữ mà dài hơn khung (vd. trên điện thoại) thì cuộn trong khung của nó,
+   không làm rộng cả trang. Công thức riêng một dòng đã thành khối cuộn được ở trên. */
+.sl-markdown-content :is(p, li, td, th) > .katex {
+	display: inline-block;
+	max-width: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
+	vertical-align: bottom;
+}
 .sl-markdown-content code:not(pre code) { border-radius: 0.3rem; }
 
 /* ---------- Máy tính: như mặt máy đo ---------- */

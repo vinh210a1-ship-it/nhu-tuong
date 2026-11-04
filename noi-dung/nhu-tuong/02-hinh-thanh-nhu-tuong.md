@@ -107,7 +107,7 @@ tức **≈ 2,4 K mỗi 10 MPa**. Điều này giải thích vì sao: (i) sản 
 | Màng/membrane (SPG…) | Đẩy dầu qua lỗ màng vào pha nước chảy | Giọt bằng ~2–10 lần đường kính lỗ, rất đơn phân tán | Rất đồng đều; hợp nhũ tương kép nhạy cắt **[N: @muschiolik2017 nhấn mạnh phương pháp nhẹ cho W/O/W]** | Lưu lượng thấp, tắc màng |
 | Microfluidics (chip) | Hình học giọt đơn | 10–1000 µm | Đơn phân tán tuyệt đối; nghiên cứu | Lưu lượng rất thấp (công bố scale-up vẫn là đề tài nghiên cứu, ví dụ post-array devices **[N: PubMed 40444208]**) |
 
-**Điểm cần nhấn cho web:** chọn thiết bị theo **mục tiêu**: (i) kích thước giọt cần đạt, (ii) độ nhạy cắt của vật liệu (protein, nhũ tương kép, tinh thể mỡ), (iii) độ nhớt, (iv) quy mô, (v) tính dễ vệ sinh/CIP.
+**Điểm cần nhớ:** chọn thiết bị theo **mục tiêu**: (i) kích thước giọt cần đạt, (ii) độ nhạy cắt của vật liệu (protein, nhũ tương kép, tinh thể mỡ), (iii) độ nhớt, (iv) quy mô, (v) tính dễ vệ sinh/CIP.
 
 ### 4.1 Quy trình phòng lab điển hình O/W 10–20% dầu (khởi điểm, tinh chỉnh theo hệ) [G]
 1. Hòa tan/hydrat hóa chất nhũ hóa vào pha nước (protein: 30–60 phút, nhiệt độ thấp, chỉnh pH). Kiểm tra pH **sau** khi hydrat hóa.
@@ -176,7 +176,7 @@ Các quy tắc scale ở trên là nguyên lý chung từ chuyên khảo; chưa 
 
 ---
 
-## 7. Ví dụ phân tích nhanh (bài tập cho web)
+## 7. Ví dụ phân tích nhanh (bài tập)
 
 **Bài toán:** nhũ tương O/W 15% dầu hướng dương, 1% protein đậu Hà Lan; HPH 50 MPa 2 lần ⇒ d₃₂ ≈ 3 µm; tăng lên 100 MPa chỉ còn 2,8 µm.
 

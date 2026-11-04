@@ -14,8 +14,6 @@ nguon_goc: tai-lieu-nhu-tuong/01-nen-tang-nhu-tuong.md
 
 > **Kết luận trước.** Nhũ tương là hệ keo **không bền về nhiệt động** nhưng có thể **bền động học** trong thời hạn sử dụng. Toàn bộ công việc của người làm sản phẩm là (1) tạo ra giọt đủ nhỏ và đồng đều, (2) phủ kín bề mặt giọt bằng lớp chất nhũ hóa đủ bền, (3) làm chậm mọi quá trình chuyển động và va chạm của giọt (nhớt, gel, điện tích, lập thể). Phần còn lại chỉ là chi tiết của ba việc này.
 
-**Quy ước độ tin cậy** (dùng xuyên suốt): **[N]** = có nguồn đã kiểm (mã `R..` ở file 10) · **[K]** = kiến thức nền từ sách giáo khoa (T01–T07), chưa trích số trang · **[T]** = tính toán minh họa tôi tự làm (ghi giả thiết) · **[G]** = suy luận/giả thuyết, cần kiểm bằng thí nghiệm.
-
 ---
 
 ## 1. Định nghĩa và phân loại
@@ -146,7 +144,7 @@ HLB thương mại thường gặp **[K: giá trị nhà sản xuất/ICI, cần
 
 **Giới hạn của HLB** (phản biện cần nêu trên web): HLB chỉ tính cấu trúc phân tử, **không** phản ánh nhiệt độ, độ mặn, loại dầu, thành phần hỗn hợp; trong thực phẩm, nhiều chất nhũ hóa quan trọng nhất (protein, lecithin, gum arabic, hạt) **không** dùng HLB để chọn. Khi hệ phức tạp, dùng khái niệm **HLD/PIT** hoặc phương pháp thử nghiệm lưới (DoE). **[K; G]**
 
-### 4.4 Bảng nhóm chất nhũ hóa (tóm tắt; chi tiết thuộc luồng khác)
+### 4.4 Bảng nhóm chất nhũ hóa (tóm tắt; chi tiết ở khu Chất nhũ hóa)
 | Nhóm | Ví dụ | Cơ chế ổn định chính |
 |---|---|---|
 | Phân tử nhỏ không ion | Tween, Span, mono/diglyceride, este đường | Lập thể ngắn, hạ γ mạnh |
@@ -157,7 +155,7 @@ HLB thương mại thường gặp **[K: giá trị nhà sản xuất/ICI, cần
 | Hạt rắn | Tinh bột, cellulose, chitin, protein dạng hạt | Rào cản cơ học, hấp phụ không thuận nghịch |
 | Saponin (chất tạo bọt thực vật) | Quillaja | Màng nhớt–đàn hồi (hiểu biết hạn chế cần kiểm) |
 
-Chi tiết từng nhóm được giao cho luồng "chất hoạt động bề mặt" – file này chỉ giữ các điểm cần để hiểu cơ chế.
+Chi tiết từng nhóm nằm ở khu [Chất nhũ hóa](../../chat-nhu-hoa/); bài này chỉ giữ các điểm cần để hiểu cơ chế.
 
 ---
 
@@ -169,7 +167,7 @@ Chi tiết từng nhóm được giao cho luồng "chất hoạt động bề m�
 
 ---
 
-## 6. Tóm tắt "bản đồ khái niệm" cho web
+## 6. Bản đồ khái niệm
 
 ```
 Giọt nhỏ ──▶ Diện tích lớn ──▶ Cần nhiều chất nhũ hóa + nhiều năng lượng

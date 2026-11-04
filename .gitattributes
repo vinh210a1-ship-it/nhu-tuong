@@ -1,0 +1,13 @@
+# Ép cuối dòng LF cho mọi tệp chữ, kể cả trên Windows: script chuẩn bị nội dung và CI (Linux) đều giả định LF.
+* text=auto eol=lf
+
+# Tệp nhị phân: không đổi cuối dòng.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.zip binary
+*.pdf binary
