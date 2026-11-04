@@ -223,6 +223,7 @@ export function khoiDongBanBaoQuan(goc) {
 					const sao = st.nv ? api.saoHTML(chamSaoBQ(st.nv, kq, { me: st.me, daDo: st.daDoLucU ?? st.daDo })) : '';
 					noiDung = `${sao}<p class="pl-meo">Sau 7 ngày ở ${T} °C, ${kq.kin ? 'đóng kín' : 'có oxy'}: <b>${kq.soMoc}</b>/10 mầm bệnh mọc, nấm men ${kq.men.moc ? '<b>mọc</b>' : 'không mọc'}.</p>
 <ul class="pl-ds-dia">${kq.ketQua.map((r, i) => diaHTML(r.ngan, r.moc, r.chan, r.mau, r.sat, 17 + i * 31)).join('')}${diaHTML('Nấm men gây hỏng', kq.men.moc, kq.men.chan, '#f1e4c8', false, 999)}</ul>
+<p class="pl-luu-y"><b>Lưu ý:</b> Kết quả chỉ để học nguyên lý hàng rào; aw ở đây là ước tính. Không dùng để quyết định an toàn của sản phẩm thật; việc đó cần đo thật và thử thách vi sinh (challenge test).</p>
 ${viSao(st, kq)}<button type="button" class="pl-nut" data-lam="lamMoi">Làm lọ mới</button>`;
 				}
 				return dauBang('Tủ ấm & đĩa thạch', 'Cấy mẫu lên đĩa thạch có từng loài vi khuẩn trong bảng FDA, ủ 7 ngày rồi xem loài nào mọc.', '🧫') + nutT + noiDung;

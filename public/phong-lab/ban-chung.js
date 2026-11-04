@@ -2,6 +2,8 @@
 // cảnh SVG có tủ bấm mở, vật mẫu kéo thả giữa các trạm, bảng điều khiển bên cạnh,
 // linh vật "Giọt", nhiệm vụ có sao. Mỗi bàn chỉ cần khai báo cấu hình.
 
+import { LUAT_CHOI } from './mo-hinh.js';
+
 export const GIAM_CHUYEN_DONG = matchMedia('(prefers-reduced-motion: reduce)').matches;
 export const so = (x, c = 2) => (!isFinite(x) ? '∞' : x.toLocaleString('vi-VN', { maximumSignificantDigits: c }));
 export const soCD = (x, c = 1) => x.toLocaleString('vi-VN', { maximumFractionDigits: c });
@@ -114,7 +116,8 @@ export function taoBan(goc, cfg) {
 		},
 		saoHTML(kqSao) {
 			return `<div class="pl-sao-kq"><span class="pl-sao-to" aria-label="${kqSao.sao} trên 3 sao">${'★'.repeat(kqSao.sao)}<i>${'☆'.repeat(3 - kqSao.sao)}</i></span><b>${['Chưa đạt, thử lại nhé!', 'Được 1 sao, còn cải thiện được.', 'Tốt! Còn một tiêu chí nữa.', 'Xuất sắc! Hoàn hảo.'][kqSao.sao]}</b></div>
-<ul class="pl-tieu-chi">${kqSao.tieuChi.map((t) => `<li class="${t.dat ? 'dat' : 'truot'}">${t.dat ? '✓' : '✗'} ${h(t.chu)}</li>`).join('')}</ul>`;
+<ul class="pl-tieu-chi">${kqSao.tieuChi.map((t) => `<li class="${t.dat ? 'dat' : 'truot'}">${t.dat ? '✓' : '✗'} ${h(t.chu)}</li>`).join('')}</ul>
+<p class="pl-luat">${nhanHTML({ ma: 'T' })} <b>Luật chơi:</b> ${LUAT_CHOI}</p>`;
 		},
 		lamMoi(giuCongThuc = true) {
 			Object.assign(st, cfg.moi(st.nv, giuCongThuc ? st : null), { viTri: cfg.nha, tram: cfg.nha });

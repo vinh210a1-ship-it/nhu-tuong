@@ -31,6 +31,21 @@ export function chatNhuHoaToiThieu(phi, d32Um, gammaMgM2) {
 }
 
 /**
+ * Bán kính giọt nhỏ nhất mà lượng chất nhũ hóa cho phép khi nhũ tương thiếu chất nhũ hóa: r_min = 3·Γ·φ / c_S
+ * (McClements 2016, Eq. 6.11, tr.273; ví dụ sách: Γ = 2 mg/m², φ = 0,1, c_S = 10 g/L cho r_min = 60 nm).
+ * Cùng quan hệ với chatNhuHoaToiThieu nhưng viết ngược: biết lượng chất nhũ hóa, tính giọt nhỏ nhất.
+ * Chỉ đúng khi chất nhũ hóa là yếu tố giới hạn; nếu dư, cỡ giọt do năng lượng đồng hóa quyết định (tr.273–274).
+ * @param {number} phi phân số thể tích pha phân tán
+ * @param {number} gammaMgM2 độ phủ bề mặt Γ (mg/m²)
+ * @param {number} cGL lượng chất nhũ hóa c_S (g/L = kg/m³), theo cách dùng trong ví dụ của sách
+ * @returns {{rNm:number, dNm:number}} bán kính và đường kính nhỏ nhất (nm)
+ */
+export function banKinhNhoNhat(phi, gammaMgM2, cGL) {
+	const rM = (3 * gammaMgM2 * 1e-6 * phi) / cGL; // m
+	return { rNm: rM * 1e9, dNm: 2 * rM * 1e9 };
+}
+
+/**
  * HLB của hỗn hợp hai chất nhũ hóa, trung bình theo khối lượng: HLB = wA·HLB_A + (1−wA)·HLB_B.
  * @param {number} hlbA HLB chất A
  * @param {number} hlbB HLB chất B
