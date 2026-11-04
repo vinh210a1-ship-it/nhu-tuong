@@ -10,6 +10,7 @@ import { tenNgan, htmlNhan, tachNhan, SO_DON_VI } from '../src/plugins/remark-nh
 import { KHU } from '../src/data/khu.mjs';
 import { dungTraCuu } from './tra-cuu.mjs';
 import { docTep } from './doc-tep.mjs';
+import { htmlThuNgay } from '../src/data/cong-cu-bai.mjs';
 
 const GOC = process.cwd();
 const DOCS = path.join(GOC, 'src/content/docs');
@@ -185,6 +186,11 @@ for (const khu of KHU_BAT) {
 			`<p class="nguon-goc-bai">Cập nhật ${fm.updated} · <a href="../../quy-uoc/">Cách đọc nhãn và giới hạn nội dung →</a></p>`,
 			'',
 		].join('\n');
+		// hộp "Thử ngay" (nối bài với máy tính, Phòng lab, tra cứu; dữ liệu ở src/data/cong-cu-bai.mjs), đặt trước hộp "đã đọc"
+		if (fm.loai === 'bai' && khu === 'nhu-tuong') {
+			const thuNgay = htmlThuNgay(fm.slug);
+			if (thuNgay) body += `\n\n${thuNgay}\n`;
+		}
 		// hộp cuối bài: đánh dấu đã đọc (lưu trong máy người xem)
 		if (fm.loai === 'bai')
 			body += `\n\n<div class="ket-bai not-content" data-ket-bai="${khoaDaDoc(khu, fm.slug)}" data-khu="${khu}" data-tong="${KHU[khu].bai.length}" data-ten-khu="${TEN_KHU[khu]}"><div class="kb-chu"><b>Đọc xong bài này?</b><small data-tien-do>Đánh dấu để theo dõi lộ trình của bạn. Dữ liệu chỉ lưu trên máy này.</small></div><button type="button" class="kb-nut" data-danh-dau>Đánh dấu đã đọc</button></div>\n`;

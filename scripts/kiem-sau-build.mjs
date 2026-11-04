@@ -7,6 +7,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { KHU } from '../src/data/khu.mjs';
+import { CONG_CU_BAI } from '../src/data/cong-cu-bai.mjs';
+import { NHIEM_VU } from '../public/phong-lab/mo-hinh.js';
 
 const GOC = process.cwd();
 const DIST = path.resolve(process.argv[2] || path.join(GOC, 'dist'));
@@ -71,6 +73,32 @@ for (const [p, h] of Object.entries(noiDung)) {
 	if (laBaiNhuTuong && /\bR\d{2}\b/.test(t)) (canhBao['mã nguồn nội bộ dạng R18 (trong khu Nhũ tương)'] ??= []).push(ten);
 }
 
+// ---- 1b) hộp "Thử ngay": mỗi bài trong 8 bài có hộp (1 đến 3 dòng, dòng nào cũng có câu "vì sao nên thử")
+const loiThuNgay = [];
+for (const b of KHU['nhu-tuong'].bai) {
+	const p = path.join(DIST, 'nhu-tuong', b.slug, 'index.html');
+	const h = noiDung[p];
+	if (!h) {
+		loiThuNgay.push(`${b.slug}: không thấy trang bài`);
+		continue;
+	}
+	const hop = /<div class="thu-ngay[^"]*"[^>]*>([\s\S]*?)<\/ul><\/div>/.exec(h);
+	if (!hop) {
+		loiThuNgay.push(`${b.slug}: thiếu hộp "Thử ngay"`);
+		continue;
+	}
+	const soDong = (hop[1].match(/<li>/g) || []).length;
+	const soVi = (hop[1].match(/class="tn-vi">[^<]{10,}</g) || []).length;
+	if (soDong < 1 || soDong > 3) loiThuNgay.push(`${b.slug}: hộp "Thử ngay" có ${soDong} dòng (cần 1 đến 3)`);
+	if (soVi !== soDong) loiThuNgay.push(`${b.slug}: ${soDong - soVi} dòng thiếu câu "vì sao nên thử"`);
+	if (!/class="thu-ngay[\s\S]*?class="ket-bai/.test(h)) loiThuNgay.push(`${b.slug}: hộp "Thử ngay" phải nằm trước hộp "Đọc xong bài này?"`);
+}
+for (const k of Object.keys(CONG_CU_BAI)) if (!KHU['nhu-tuong'].bai.some((b) => b.slug === k)) loiThuNgay.push(`cong-cu-bai.mjs: bài "${k}" không có trong khu Nhũ tương`);
+// mọi liên kết #nv-... (ở bất kỳ trang nào) phải trỏ tới nhiệm vụ có thật ("tu-do" = phòng lab tự do)
+const maNhiemVu = new Set([...NHIEM_VU.map((n) => n.id), 'tu-do']);
+for (const [p, h] of Object.entries(noiDung))
+	for (const m of h.matchAll(/href="[^"#]*phong-lab\/#nv-([^"]*)"/g)) if (!maNhiemVu.has(m[1])) loiThuNgay.push(`${tenTrang(p)}: liên kết #nv-${m[1]} không khớp nhiệm vụ nào trong NHIEM_VU`);
+
 // ---- 2) liên kết nội bộ và neo
 const idCache = {};
 const idCua = (p) => (idCache[p] ??= new Set([...noiDung[p].matchAll(/\sid="([^"]+)"/g)].map((m) => m[1])));
@@ -101,7 +129,10 @@ for (const [p, h] of Object.entries(noiDung)) {
 			continue;
 		}
 		const neo = decodeURIComponent(u.hash.slice(1));
-		if (neo && noiDung[f] && !idCua(f).has(neo)) (hong[`mất neo ${u.pathname}#${neo}`] ??= []).push(ten);
+		// #nv-…, #so-tay, #ban-… trên trang Phòng lab do JavaScript xử lý lúc mở trang (không có id sẵn trong HTML);
+		// riêng mã nhiệm vụ được kiểm ở bước 1b.
+		const neoCuaLab = u.pathname.endsWith('/phong-lab/') && /^(nv-.+|so-tay|ban-.+)$/.test(neo);
+		if (neo && !neoCuaLab && noiDung[f] && !idCua(f).has(neo)) (hong[`mất neo ${u.pathname}#${neo}`] ??= []).push(ten);
 	}
 }
 
@@ -117,8 +148,12 @@ if (nhomHong.length) {
 	console.log(`\nLIÊN KẾT HỎNG: ${nhomHong.length} nhóm`);
 	for (const [k, ds] of nhomHong.slice(0, 40)) console.log(`  - ${k}  (từ ${ds.length} trang, vd ${ds[0]})`);
 }
-if (loiCam.length || nhomHong.length) {
+if (loiThuNgay.length) {
+	console.log(`\nHỘP "THỬ NGAY" / LIÊN KẾT PHÒNG LAB: ${loiThuNgay.length} lỗi`);
+	for (const l of loiThuNgay.slice(0, 40)) console.log('  - ' + l);
+}
+if (loiCam.length || nhomHong.length || loiThuNgay.length) {
 	console.log('\nkiem-sau-build: KHÔNG ĐẠT');
 	process.exit(1);
 }
-console.log('kiem-sau-build: đạt (0 chuỗi cấm, 0 liên kết nội bộ hỏng)');
+console.log('kiem-sau-build: đạt (0 chuỗi cấm, 0 liên kết nội bộ hỏng, 8/8 bài có hộp "Thử ngay", mọi #nv-… khớp nhiệm vụ)');

@@ -1213,3 +1213,25 @@ function capNhatCanh() {
 }
 
 if (goc) khoiDong(goc);
+
+/* Liên kết từ bài học:
+   /phong-lab/#nv-<mã nhiệm vụ>  mở bàn nhũ tương và chọn sẵn nhiệm vụ ("tu-do" = phòng lab tự do)
+   /phong-lab/#so-tay            cuộn tới Sổ tay thí nghiệm
+   (#ban-thit và #ban-bao-quan do dungVo xử lý). Mã nhiệm vụ lạ thì bỏ qua, trang vẫn mở bình thường. */
+function theoHash() {
+	if (!goc) return;
+	const nv = location.hash.match(/^#nv-([a-z0-9-]+)$/);
+	if (nv) {
+		const nhiemVu = nv[1] === 'tu-do' ? null : NHIEM_VU.find((n) => n.id === nv[1]);
+		if (nv[1] !== 'tu-do' && !nhiemVu) return;
+		document.querySelector('[data-ban="nhu-tuong"]')?.click();
+		chonNhiemVu(nhiemVu);
+		document.getElementById('phong-lab')?.scrollIntoView({ behavior: GIAM_CHUYEN_DONG ? 'auto' : 'smooth', block: 'start' });
+	} else if (location.hash === '#so-tay') {
+		document.querySelector('[data-ban="nhu-tuong"]')?.click();
+		// chờ một nhịp để bố cục (chọn bàn, vẽ Sổ tay) ổn định rồi mới cuộn
+		setTimeout(() => goc.querySelector('.pl-so-tay-wrap')?.scrollIntoView({ behavior: GIAM_CHUYEN_DONG ? 'auto' : 'smooth', block: 'start' }), 350);
+	}
+}
+theoHash();
+addEventListener('hashchange', theoHash);
