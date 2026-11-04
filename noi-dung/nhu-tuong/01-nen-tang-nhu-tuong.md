@@ -12,7 +12,7 @@ nguon_goc: tai-lieu-nhu-tuong/01-nen-tang-nhu-tuong.md
 ---
 # 01. Nền tảng nhũ tương thực phẩm
 
-> **Kết luận trước.** Nhũ tương là hệ keo **không bền về nhiệt động** nhưng có thể **bền động học** trong thời hạn sử dụng. Toàn bộ công việc của người làm sản phẩm là (1) tạo ra giọt đủ nhỏ và đồng đều, (2) phủ kín bề mặt giọt bằng lớp chất nhũ hóa đủ bền, (3) làm chậm mọi quá trình chuyển động và va chạm của giọt (nhớt, gel, điện tích, lập thể). Phần còn lại chỉ là chi tiết của ba việc này.
+> **Kết luận trước.** Nhũ tương (emulsion) là hệ keo **không bền về nhiệt động** nhưng có thể **bền động học** trong thời hạn sử dụng. Toàn bộ công việc của người làm sản phẩm là (1) tạo ra giọt đủ nhỏ và đồng đều, (2) phủ kín bề mặt giọt bằng lớp chất nhũ hóa (emulsifier) đủ bền, (3) làm chậm mọi quá trình chuyển động và va chạm của giọt (nhớt, gel, điện tích, lập thể). Phần còn lại chỉ là chi tiết của ba việc này.
 
 ---
 
@@ -36,7 +36,7 @@ nguon_goc: tai-lieu-nhu-tuong/01-nen-tang-nhu-tuong.md
 | Nanoemulsion | ≲100–200 nm | Không bền nhiệt động, bền động học rất tốt | Trong mờ đến trong **[N: @gupta2016 nêu "khoảng 100 nm"]** |
 | Microemulsion | ~5–50 nm | **Bền nhiệt động**, tự hình thành | Trong suốt |
 
-> Lưu ý hay nhầm: *nanoemulsion* và *microemulsion* **không phải một thứ**. Microemulsion nằm ở cực tiểu năng lượng tự do và cần lượng chất hoạt động bề mặt lớn; nanoemulsion vẫn là hệ cân bằng giả (kinetically stable) **[N: @gupta2016; K]**.
+> Lưu ý hay nhầm: *nanoemulsion* và *microemulsion* **không phải một thứ**. Microemulsion nằm ở cực tiểu năng lượng tự do và cần lượng chất hoạt động bề mặt (surfactant) lớn; nanoemulsion vẫn là hệ cân bằng giả (kinetically stable) **[N: @gupta2016; K]**.
 
 ---
 
@@ -76,7 +76,7 @@ Giảm đường kính 10 lần ⇒ diện tích bề mặt tăng 10 lần ⇒ c
 
 ### 2.3 Các đường kính trung bình (dùng trong đo lường)
 - $d_{32}$ (Sauter) $=\sum n_i d_i^3\big/\sum n_i d_i^2$: liên quan trực tiếp diện tích bề mặt, dùng cho tính lượng chất nhũ hóa.
-- $d_{43}$ (De Brouckere) $=\sum n_i d_i^4\big/\sum n_i d_i^3$: nhạy với giọt lớn, dùng cho dự đoán kem hóa/hợp giọt.
+- $d_{43}$ (De Brouckere) $=\sum n_i d_i^4\big/\sum n_i d_i^3$: nhạy với giọt lớn, dùng cho dự đoán kem hóa (creaming)/hợp giọt (coalescence).
 - $d_{90}$ hoặc $d_{99}$: cái đuôi giọt lớn **quyết định tốc độ kem hóa** (xem file 03 và 06).
 
 ---
@@ -84,11 +84,11 @@ Giảm đường kính 10 lần ⇒ diện tích bề mặt tăng 10 lần ⇒ c
 ## 3. Giao diện dầu–nước: ba khái niệm cần nắm
 
 ### 3.1 Sức căng bề mặt và áp suất Laplace
-Chất nhũ hóa hấp phụ làm giảm sức căng bề mặt γ. Giọt cầu bán kính r có áp suất bên trong cao hơn bên ngoài:
+Chất nhũ hóa hấp phụ làm giảm sức căng bề mặt (interfacial tension) γ. Giọt cầu bán kính r có áp suất bên trong cao hơn bên ngoài:
 
 $$\Delta P = \frac{2\gamma}{r}$$
 
-**[T]** Hệ quả: để bẻ giọt nhỏ phải thắng áp suất Laplace lớn.
+**[T]** Hệ quả: để bẻ giọt nhỏ phải thắng áp suất Laplace (Laplace pressure) lớn.
 
 | d | γ | ΔP Laplace |
 |---|---|---|
@@ -98,16 +98,16 @@ $$\Delta P = \frac{2\gamma}{r}$$
 | 0,1 µm | 5 mN/m | 2 bar |
 | 0,05 µm | 5 mN/m | 4 bar |
 
-Áp suất này khá nhỏ so với 100–200 MPa của đồng hóa áp suất cao: phần lớn năng lượng thực tế **không** dùng để "thắng Laplace" mà để tạo ứng suất chảy đủ lớn trong thời gian cực ngắn (file 02).
+Áp suất này khá nhỏ so với 100–200 MPa của đồng hóa áp suất cao (high-pressure homogenization): phần lớn năng lượng thực tế **không** dùng để "thắng Laplace" mà để tạo ứng suất chảy đủ lớn trong thời gian cực ngắn (file 02).
 
 ### 3.2 Hấp phụ (Gibbs) và độ phủ
-Chất hoạt động bề mặt/protein tự di chuyển ra giao diện làm giảm năng lượng hệ. Độ phủ bề mặt Γ (mg/m² hoặc mmol/m²) tăng theo nồng độ rồi bão hòa. Với protein cầu, quá trình thường **không thuận nghịch**: sau khi hấp phụ và duỗi/biến dạng, protein khó giải hấp **[K]**; với phân tử nhỏ (Tween, SDS, lecithin) thì thuận nghịch và động. Hệ quả:
+Chất hoạt động bề mặt/protein tự di chuyển ra giao diện làm giảm năng lượng hệ. Độ phủ bề mặt (surface load) Γ (mg/m² hoặc mmol/m²) tăng theo nồng độ rồi bão hòa. Với protein cầu, quá trình thường **không thuận nghịch**: sau khi hấp phụ và duỗi/biến dạng, protein khó giải hấp **[K]**; với phân tử nhỏ (Tween, SDS, lecithin) thì thuận nghịch và động. Hệ quả:
 
 - Phân tử nhỏ: hạ γ mạnh và nhanh ⇒ tạo giọt nhỏ dễ, nhưng lớp màng mỏng, bền chủ yếu nhờ đẩy tĩnh điện/lập thể ngắn.
 - Protein, polymer: hạ γ ít hơn, chậm hơn, nhưng tạo màng nhớt–đàn hồi dày ⇒ bền hợp giọt tốt hơn **[K]**.
 
 ### 3.3 Hiệu ứng Gibbs–Marangoni
-Khi hai giọt tiến lại gần, màng nước giữa chúng bị vắt ra, kéo chất nhũ hóa khỏi vùng màng mỏng; chỗ đó γ tăng cục bộ ⇒ dòng Marangoni kéo chất lỏng và chất nhũ hóa quay lại ⇒ **chống màng mỏng đi**. Đây là cơ chế cơ bản khiến lớp phủ đủ dày, đủ chất nhũ hóa dư trong pha liên tục sẽ chống hợp giọt trong lúc đồng hóa. **[K]**
+Khi hai giọt tiến lại gần, màng nước giữa chúng bị vắt ra, kéo chất nhũ hóa khỏi vùng màng mỏng; chỗ đó γ tăng cục bộ ⇒ dòng Marangoni kéo chất lỏng và chất nhũ hóa quay lại ⇒ **chống màng mỏng đi**. Đây là cơ chế cơ bản khiến lớp phủ đủ dày, đủ chất nhũ hóa dư trong pha liên tục (continuous phase) sẽ chống hợp giọt trong lúc đồng hóa. **[K]**
 
 ---
 
@@ -165,7 +165,7 @@ Chi tiết từng nhóm nằm ở khu [Chất nhũ hóa](../../chat-nhu-hoa/); b
 - Xếp mạng tinh thể (fcc): φ ≈ 0,74. **[K]**
 - Trên ~0,63–0,74 giọt phải **biến dạng thành đa diện** ⇒ hệ chuyển từ lỏng sang chất rắn mềm đàn hồi (HIPE). **[K]**
 - Mayonnaise chứa khoảng 75–84% dầu theo khối lượng, giọt xếp khít và nhiều giọt không cầu; vượt φ của cầu đơn phân tán nhờ giọt nhiều cỡ và biến dạng được. **[N: @mcclements2016 tr.567, tr.429]**
-- Khi φ cao: độ nhớt tăng mạnh, kem hóa bị cản (hindered creaming – hệ số thường mô hình bằng $(1-\varphi)^{k}$ với k cỡ vài đơn vị; Richardson–Zaki k ≈ 4,65 cho cầu cứng **[K]**), nhưng nguy cơ hợp giọt và đảo pha tăng.
+- Khi φ cao: độ nhớt tăng mạnh, kem hóa bị cản (hindered creaming – hệ số thường mô hình bằng $(1-\varphi)^{k}$ với k cỡ vài đơn vị; Richardson–Zaki k ≈ 4,65 cho cầu cứng **[K]**), nhưng nguy cơ hợp giọt và đảo pha (phase inversion) tăng.
 
 ---
 

@@ -12,7 +12,7 @@ nguon_goc: tai-lieu-nhu-tuong/03-co-che-mat-on-dinh.md
 ---
 # 03. Cơ chế mất ổn định nhũ tương
 
-> **Kết luận trước.** Có **6 con đường vật lý** (kem hóa/lắng, keo tụ, hợp giọt, hợp giọt một phần, Ostwald ripening, đảo pha) và **vài con đường hóa học/sinh học** (oxy hóa lipid, thủy phân, vi sinh). Chúng **nối tiếp nhau**: keo tụ đưa giọt lại gần ⇒ hợp giọt; giọt lớn lên ⇒ kem hóa nhanh hơn. Vì vậy khi phân tích sản phẩm hỏng, hãy xác định **mắt xích đầu tiên** chứ không chỉ triệu chứng cuối (tách lớp). Cách chẩn đoán từng mắt xích bằng phép đo nằm ở file 06; bảng sự cố ở file 08.
+> **Kết luận trước.** Có **6 con đường vật lý** (kem hóa/lắng, keo tụ, hợp giọt, hợp giọt một phần, Ostwald ripening, đảo pha) và **vài con đường hóa học/sinh học** (oxy hóa lipid, thủy phân, vi sinh). Chúng **nối tiếp nhau**: keo tụ (flocculation) đưa giọt lại gần ⇒ hợp giọt (coalescence); giọt lớn lên ⇒ kem hóa (creaming) nhanh hơn. Vì vậy khi phân tích sản phẩm hỏng, hãy xác định **mắt xích đầu tiên** chứ không chỉ triệu chứng cuối (tách lớp). Cách chẩn đoán từng mắt xích bằng phép đo nằm ở file 06; bảng sự cố ở file 08.
 
 Độ tin cậy: **[N]** có nguồn kiểm · **[K]** sách giáo khoa · **[T]** tính minh họa · **[G]** giả thuyết.
 
@@ -37,7 +37,7 @@ Các bài tổng quan đã kiểm cho phần này: tổng quan cơ chế mất �
 ## 1. Kem hóa và lắng (Creaming / sedimentation)
 
 ### Bản chất và cơ chế
-Giọt dầu (tỷ trọng ~910–930 kg/m³) nhẹ hơn nước (~1000), nên nổi lên (kem hóa). Giọt tách ra theo vận tốc Stokes:
+Giọt dầu (tỷ trọng ~910–930 kg/m³) nhẹ hơn nước (~1000), nên nổi lên (kem hóa). Giọt tách ra theo vận tốc Stokes (Stokes velocity):
 
 $$v_{Stokes}=\frac{2\,r^2\,(\rho_c-\rho_d)\,g}{9\,\eta_c}$$
 
@@ -57,7 +57,7 @@ $$v_{Stokes}=\frac{2\,r^2\,(\rho_c-\rho_d)\,g}{9\,\eta_c}$$
 
 Hai nhận xét quan trọng:
 1. **v ∝ d²**: giọt 10 µm nổi nhanh gấp 100 lần giọt 1 µm. Kem hóa bị chi phối bởi **đuôi giọt lớn** ⇒ dùng d₉₀/d₄₃, không chỉ trung bình. **[T]**
-2. **v ∝ 1/η_c**: tăng độ nhớt pha liên tục 10 lần ⇒ nổi chậm 10 lần. Ở d = 1 µm và η_c = 10 mPa·s, v ≈ 0,38 mm/ngày; ở 100 mPa·s ≈ 0,04 mm/ngày **[T]**.
+2. **v ∝ 1/η_c**: tăng độ nhớt pha liên tục (continuous phase) 10 lần ⇒ nổi chậm 10 lần. Ở d = 1 µm và η_c = 10 mPa·s, v ≈ 0,38 mm/ngày; ở 100 mPa·s ≈ 0,04 mm/ngày **[T]**.
 
 **Hiệu ứng Brownian:** so với năng lượng nhiệt kT, năng lượng trọng trường của giọt rất nhỏ khi d ≲ 1 µm (≈ 0,05 kT với d = 1 µm), nên chuyển động Brown chống phân lớp một phần; nhưng Stokes dịch chuyển vẫn tích lũy theo ngày/tuần. Kem hóa giọt sub-micromet thường chậm hơn rất nhiều và thực tế bị cản bởi tương tác giọt. **[T]**
 
@@ -76,14 +76,14 @@ Hai nhận xét quan trọng:
 ## 2. Keo tụ (flocculation)
 
 ### Bản chất
-Giọt dính vào nhau thành cụm nhưng **không hợp lại** (màng vẫn nguyên). Xảy ra khi tương tác hút thắng đẩy ở khoảng cách gần.
+**Keo tụ** (flocculation; còn gọi: kết bông) là khi giọt dính vào nhau thành cụm nhưng **không hợp lại** (màng vẫn nguyên). Khác với hợp giọt (coalescence): ở hợp giọt màng vỡ và hai giọt thành một. Xảy ra khi tương tác hút thắng đẩy ở khoảng cách gần.
 
 ### Cơ chế (khung DLVO mở rộng) [K: @israelachvili2011]
 
 Thế tương tác tổng: $W(h)=W_{vdW}+W_{elec}+W_{steric}+W_{depl}+\dots$
 
 - **Van der Waals** luôn hút (hằng số Hamaker cỡ 10⁻²¹–10⁻²⁰ J với dầu/nước).
-- **Tĩnh điện** đẩy; tầm tác dụng là độ dài Debye:
+- **Tĩnh điện** đẩy; tầm tác dụng là độ dài Debye (Debye length):
 
 $$\kappa^{-1}\approx\frac{0{,}304}{\sqrt{I}}\ \text{nm}\quad(I\text{ mol/L, chất điện ly 1:1, 25 °C, nước})$$
 
@@ -139,7 +139,7 @@ Tốc độ hợp giọt phụ thuộc vào:
 Đây là phép thử phân biệt kinh điển **[K; @mcclements2007 mô tả phân bố kích thước/khả năng tái phân tán là kỹ thuật chuẩn]**.
 
 ### Cách giảm hợp giọt
-1. Đủ chất nhũ hóa (xem ước lượng ở file 01, mục 2.2).
+1. Đủ chất nhũ hóa (emulsifier) (xem ước lượng ở file 01, mục 2.2).
 2. Chất nhũ hóa tạo **màng nhớt–đàn hồi**: protein, protein–polysaccharide, chất nhũ hóa polymeric; lớp đa tầng (LbL) **[N: @mcclements2017 đề cập lớp tĩnh điện đa tầng alginate/lactoferrin]**.
 3. **Hạt Pickering** (rào cản cơ học, hấp phụ gần như không thuận nghịch): xem file 05 **[N: @li2022a, @schroen2024]**.
 4. Kiểm soát cắt/áp suất/nhiệt trong chế biến.
@@ -176,10 +176,10 @@ $c_\infty$: độ tan khối của dầu trong pha liên tục; $V_m$: thể tí
 - **$\bar r^3$ tăng tuyến tính theo thời gian** (kiểm chứng: vẽ $d_{43}^3$ theo t; đường thẳng ⇒ ripening; **kem hóa/hợp giọt không cho đường thẳng**).
 - ω tỷ lệ với **độ tan $c_\infty$**: dầu có độ tan nước đáng kể (tinh dầu, hương, TAG mạch ngắn) ripening mạnh; TAG mạch dài (dầu hướng dương, dầu bắp) gần như không ripening. **[N: @park2025 – dầu như dầu hương, tinh dầu, TAG nhỏ ripening do độ tan nước đáng kể]**
 - **So với thực nghiệm:** ở nhũ tương O/W không có micelle, ripening đo được nhanh hơn dự đoán LSW khoảng 2–3 lần; khi có micelle còn nhanh hơn nhiều. Nếu lớp bề mặt cản khuếch tán thì phải dùng phiên bản có hiệu chỉnh lớp bề mặt. **[N: @mcclements2016 tr.360]**
-- **Chất nhũ hóa ảnh hưởng thế nào?** Nghiên cứu hệ model cho thấy loại chất hoạt động bề mặt phân tử nhỏ và thành phần pha dầu đều làm đổi tốc độ ripening, trong khi thay đổi thành phần pha dầu **không đổi sức căng bề mặt** dầu–nước **[N: @park2025]**. Cơ chế chi tiết (ví dụ vai trò của lớp màng dày/rắn cản khuếch tán) là **[G]**, cần nguồn riêng trước khi khẳng định trên web.
+- **Chất nhũ hóa ảnh hưởng thế nào?** Nghiên cứu hệ model cho thấy loại chất hoạt động bề mặt (surfactant) phân tử nhỏ và thành phần pha dầu đều làm đổi tốc độ ripening, trong khi thay đổi thành phần pha dầu **không đổi sức căng bề mặt (interfacial tension)** dầu–nước **[N: @park2025]**. Cơ chế chi tiết (ví dụ vai trò của lớp màng dày/rắn cản khuếch tán) là **[G]**, cần nguồn riêng trước khi khẳng định trên web.
 
 ### Chất ức chế ripening (ripening inhibitor)
-Nguyên tắc (Kabalnov–Webster) **[K: @kabalnov1992; N: @mcclements2016 tr.4]**: thêm vào giọt một thành phần dầu **gần như không tan nước**. Khi giọt nhỏ mất dầu tan, tỷ lệ thành phần không tan tăng, entropy trộn tạo chênh áp suất thẩm thấu **cân bằng với áp suất Laplace** ⇒ ripening dừng. Nhũ tương "ổn định theo thành phần". Sách McClements cũng nêu chất ức chế ripening phải là chất rất kỵ nước, và cho ví dụ dầu MCT trộn vitamin E acetate với Tween 80. **[N: @mcclements2016 tr.4, tr.280]**
+Nguyên tắc (Kabalnov–Webster) **[K: @kabalnov1992; N: @mcclements2016 tr.4]**: thêm vào giọt một thành phần dầu **gần như không tan nước**. Khi giọt nhỏ mất dầu tan, tỷ lệ thành phần không tan tăng, entropy trộn tạo chênh áp suất thẩm thấu **cân bằng với áp suất Laplace (Laplace pressure)** ⇒ ripening dừng. Nhũ tương "ổn định theo thành phần". Sách McClements cũng nêu chất ức chế ripening phải là chất rất kỵ nước, và cho ví dụ dầu MCT trộn vitamin E acetate với Tween 80. **[N: @mcclements2016 tr.4, tr.280]**
 
 **Bằng chứng có số liệu [N: @chang2012]:** nanoemulsion tinh dầu thyme (pH 3.5) bị ripening mạnh do độ tan nước tương đối cao của tinh dầu; ripening bị ức chế bằng cách trộn với chất không tan trước khi đồng hóa: **≥60 wt% dầu bắp hoặc ≥50 wt% MCT trong pha lipid**. Tăng nồng độ chất ức chế còn ảnh hưởng hoạt tính kháng khuẩn.
 

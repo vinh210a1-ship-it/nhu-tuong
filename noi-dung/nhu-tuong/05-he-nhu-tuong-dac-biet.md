@@ -12,7 +12,7 @@ nguon_goc: tai-lieu-nhu-tuong/05-he-nhu-tuong-dac-biet.md
 ---
 # 05. Các hệ nhũ tương đặc biệt
 
-> **Kết luận trước.** Các hệ đặc biệt thực chất vẫn dùng cùng bộ vật lý (file 01–03) nhưng **đổi quy tắc ổn định**: nanoemulsion (kích thước nhỏ ⇒ bền kem hóa, nhưng dễ ripening), Pickering (hạt rắn thay chất nhũ hóa phân tử ⇒ chống hợp giọt rất mạnh nhưng khó tạo giọt nhỏ/chống đồng hóa), nhũ tương kép (giam nước/hoạt chất ⇒ khó nhất về cân bằng thẩm thấu), HIPE (φ cao ⇒ gel mềm, giảm béo hoặc thay mỡ).
+> **Kết luận trước.** Các hệ đặc biệt thực chất vẫn dùng cùng bộ vật lý (file 01–03) nhưng **đổi quy tắc ổn định**: nanoemulsion (kích thước nhỏ ⇒ bền kem hóa, nhưng dễ ripening), Pickering (hạt rắn thay chất nhũ hóa phân tử ⇒ chống hợp giọt rất mạnh nhưng khó tạo giọt nhỏ/chống đồng hóa), nhũ tương kép (double emulsion) (giam nước/hoạt chất ⇒ khó nhất về cân bằng thẩm thấu), HIPE (φ cao ⇒ gel mềm, giảm béo hoặc thay mỡ).
 
 Độ tin cậy: **[N]** có nguồn kiểm · **[K]** sách giáo khoa · **[T]** tính minh họa · **[G]** giả thuyết.
 
@@ -21,15 +21,15 @@ nguon_goc: tai-lieu-nhu-tuong/05-he-nhu-tuong-dac-biet.md
 ## 1. Nanoemulsion và microemulsion
 
 ### 1.1 Định nghĩa (nhắc lại)
-- Nanoemulsion: giọt cỡ ~100 nm; bền động học; hệ có diện tích bề mặt lớn, có thể trong suốt, lưu biến điều chỉnh được. **[N: @gupta2016]**
-- Microemulsion: bền nhiệt động, cần nhiều chất hoạt động bề mặt/đồng chất hoạt động. **[K]**
+- Nanoemulsion: giọt cỡ ~100 nm; bền động học; hệ có diện tích bề mặt lớn, có thể trong suốt, lưu biến (rheology) điều chỉnh được. **[N: @gupta2016]**
+- Microemulsion: bền nhiệt động, cần nhiều chất hoạt động bề mặt (surfactant)/đồng chất hoạt động. **[K]**
 
 ### 1.2 Phương pháp tạo
-- Năng lượng cao: HPH, vi lưu hóa, siêu âm; năng lượng thấp: PIT, EIP, tự nhũ hóa; bubble bursting. **[N: @gupta2016]**
+- Năng lượng cao: HPH, vi lưu hóa, siêu âm; năng lượng thấp: PIT, EIP, tự nhũ hóa (spontaneous emulsification); bubble bursting. **[N: @gupta2016]**
 - Hướng dẫn tính khả thi: lượng chất hoạt động bề mặt cao (~ vài % đến chục %) đối với phương pháp năng lượng thấp **[K; G]**.
 
 ### 1.3 Điểm mạnh và điểm yếu
-- Mạnh: kem hóa rất chậm (v ∝ d²), độ trong, tăng bioaccessibility hoạt chất ưa dầu **[N: @mcclements2015a, @mcclements2017]**.
+- Mạnh: kem hóa (creaming) rất chậm (v ∝ d²), độ trong, tăng bioaccessibility hoạt chất ưa dầu **[N: @mcclements2015a, @mcclements2017]**.
 - Yếu: **ripening** với dầu tan nước (file 03, mục 5), nhạy pH, lực ion, nhiệt **[N: @karthik2017]**, và quan ngại về an toàn/pháp lý với hệ nano **[N: @karthik2017 nêu vấn đề an toàn]**.
 
 ### 1.4 Quy trình chuẩn đo đạc
@@ -40,7 +40,7 @@ Có đề xuất quy trình chuẩn hóa để đo kích thước, điện tích
 ## 2. Nhũ tương Pickering
 
 ### 2.1 Bản chất
-Hạt rắn (nano–micro) hấp phụ lên bề mặt dầu–nước và đóng vai chất nhũ hóa. Ổn định do **năng lượng giải hấp** rất cao (xem 2.2) ⇒ hợp giọt rất khó.
+Hạt rắn (nano–micro) hấp phụ lên bề mặt dầu–nước và đóng vai chất nhũ hóa (emulsifier). Ổn định do **năng lượng giải hấp (desorption energy)** rất cao (xem 2.2) ⇒ hợp giọt (coalescence) rất khó.
 
 ### 2.2 Vật lý [N: @schroen2024; @li2022a]
 **Năng lượng giải hấp phụ** của hạt cầu:
@@ -64,7 +64,7 @@ Nhận xét:
 - Hạt rất nhỏ (< ~10 nm) hoặc γ rất thấp (microemulsion) ⇒ hạt không giữ được. **[N: @schroen2024]**
 - Hạt "mềm" (microgel, protein) hấp phụ với năng lượng cao do chuỗi nhô vào cả hai pha và hạt biến dạng. **[N: @schroen2024]**
 
-**Góc tiếp xúc và loại nhũ tương:** θ (đo trong pha nước) < 90° ⇒ thuận lợi O/W; 90° < θ < 180° ⇒ thuận lợi W/O. **[N: @li2022a]**
+**Góc tiếp xúc (contact angle) và loại nhũ tương:** θ (đo trong pha nước) < 90° ⇒ thuận lợi O/W; 90° < θ < 180° ⇒ thuận lợi W/O. **[N: @li2022a]**
 
 **Limited coalescence (hợp giọt giới hạn):** khi lượng hạt không đủ phủ kín, giọt hợp lại cho đến khi bề mặt được phủ đủ ⇒ **kích thước giọt cuối tỷ lệ nghịch với nồng độ hạt** (dạng đơn giản); khi hạt dư, kích thước được quyết định bởi cường độ đồng hóa. **[N: @li2022a, @schroen2024]**
 
@@ -77,7 +77,7 @@ Nhận xét:
 | Chitosan | Chitosan–TPP, phức protein–chitosan |
 | Polyphenol | Polyphenol trà, EGCG + zein |
 | Lipid/khác | Hạt phytosterol; bào tử thực vật |
-Ví dụ chitin: nhũ tương Pickering hiệp đồng giữa nano tinh bột và nano chitin tỉ lệ 1:1 (xử lý nhiệt pha nước trước đồng hóa) giữ kích thước giọt ~3,4 µm trong bốn tháng dù có kem hóa chậm; tinh bột phủ giao diện chống hợp giọt, chitin tạo mạng ở pha liên tục chống ripening/di chuyển giọt. **[N: @deoliveira2026]**
+Ví dụ chitin: nhũ tương Pickering (Pickering emulsion) hiệp đồng giữa nano tinh bột và nano chitin tỉ lệ 1:1 (xử lý nhiệt pha nước trước đồng hóa) giữ kích thước giọt ~3,4 µm trong bốn tháng dù có kem hóa chậm; tinh bột phủ giao diện chống hợp giọt, chitin tạo mạng ở pha liên tục (continuous phase) chống ripening/di chuyển giọt. **[N: @deoliveira2026]**
 Ví dụ protein đậu nành nanoparticle: ổn định các cấu trúc O/W, W/O, HIPE, emulgel; kết hợp polysaccharide/polyphenol. **[N: @yang2025]**
 Biến tính hạt (pH, siêu âm; vật lý/hóa/sinh học) cải thiện hoạt tính nhũ hóa, ứng dụng như giao hoạt chất, thay chất béo, bảo quản thực phẩm, in 3D. **[N: @liu2025]**
 
@@ -101,7 +101,7 @@ Giọt nước nhỏ (W₁) trong giọt dầu (O) trong nước (W₂). Dùng �
 1. **Hợp giọt của W₁ bên trong** thành giọt nước lớn.
 2. **Rách màng dầu**: W₁ thoát ra W₂ (mất bao gói).
 3. **Khuếch tán/vận chuyển nước** do chênh áp suất thẩm thấu giữa W₁ và W₂ ⇒ W₁ phồng (rách) hoặc xẹp (mất hoạt chất).
-4. **Hợp giọt của O**, keo tụ giọt kép, kem hóa như O/W thường.
+4. **Hợp giọt của O**, keo tụ (flocculation) giọt kép, kem hóa như O/W thường.
 
 ### 3.3 Công thức thiết kế
 - **Cân bằng áp suất thẩm thấu** giữa W₁ và W₂: thêm muối/đường/polyol để osmolality gần bằng nhau. **[N: @muschiolik2017 nêu "balancing of the osmotic pressure"]**
@@ -126,7 +126,7 @@ Hiệu suất bao gói thường giảm trong bảo quản; chịu nhiệt/cắt
 - Ổn định không chỉ bằng chất nhũ hóa mà bằng **mạng tinh thể mỡ** ở pha dầu (Pickering tinh thể béo) và ma trận gel. **[K]**
 
 ### 4.2 W/O HIPE
-Tổng quan: W/O HIPE giúp **giảm béo** và phân phối hoạt chất, nhưng bất ổn nhiệt động do diện tích bề mặt lớn và pha nước linh động; thách thức lớn là **đảo pha và tách pha**. PGPR là chất ổn định truyền thống, nhưng cần chuyển sang thành phần "clean-label": bằng kỹ thuật **kỹ nghệ giao diện và pha khối** (hạt/microgel sinh học). **[N: @zhang2025]**
+Tổng quan: W/O HIPE giúp **giảm béo** và phân phối hoạt chất, nhưng bất ổn nhiệt động do diện tích bề mặt lớn và pha nước linh động; thách thức lớn là **đảo pha (phase inversion) và tách pha**. PGPR là chất ổn định truyền thống, nhưng cần chuyển sang thành phần "clean-label": bằng kỹ thuật **kỹ nghệ giao diện và pha khối** (hạt/microgel sinh học). **[N: @zhang2025]**
 
 ---
 

@@ -12,7 +12,7 @@ nguon_goc: tai-lieu-nhu-tuong/04-chat-on-dinh-va-lop-giao-dien.md
 ---
 # 04. Chiến lược ổn định nhũ tương
 
-> **Phạm vi.** Tài liệu về **bản thân chất nhũ hóa, chất béo, chất ổn định** nằm ở các khu riêng ([Chất nhũ hóa](../../chat-nhu-hoa/), [Chất béo](../../chat-beo/), [Chất ổn định](../../chat-on-dinh/)). Bài này chỉ giữ **khung ra quyết định**: dùng thành phần nào để chặn cơ chế nào (liên kết bài 03), kèm vài tham chiếu chéo ngắn.
+> **Phạm vi.** Tài liệu về **bản thân chất nhũ hóa (emulsifier), chất béo, chất ổn định** nằm ở các khu riêng ([Chất nhũ hóa](../../chat-nhu-hoa/), [Chất béo](../../chat-beo/), [Chất ổn định](../../chat-on-dinh/)). Bài này chỉ giữ **khung ra quyết định**: dùng thành phần nào để chặn cơ chế nào (liên kết bài 03), kèm vài tham chiếu chéo ngắn.
 
 **Quy tắc vàng:** *mỗi cơ chế mất ổn định có một công cụ riêng*. Dùng sai công cụ không chỉ vô ích mà có thể làm xấu hơn (ví dụ thêm gum gây cạn kiệt).
 
@@ -44,11 +44,11 @@ nguon_goc: tai-lieu-nhu-tuong/04-chat-on-dinh-va-lop-giao-dien.md
 - Ảnh hưởng thành phần pha dầu (alkane dài hơn) lên ripening ở hệ model: **[N: @park2025]**.
 
 ### 2.2 Gum và chất làm đặc
-- Mục đích: tăng η_c, tạo ngưỡng chảy. **Nhưng** chú ý khoảng nồng độ để tránh cạn kiệt (file 03, mục 2). Gum cũng có thể hấp phụ lên giọt (xanthan trên protein) và tạo màng đa lớp.
+- Mục đích: tăng η_c, tạo ngưỡng chảy (yield stress). **Nhưng** chú ý khoảng nồng độ để tránh cạn kiệt (file 03, mục 2). Gum cũng có thể hấp phụ lên giọt (xanthan trên protein) và tạo màng đa lớp.
 - Chi tiết loại gum, độ nhớt, thông số: xem khu [Chất ổn định](../../chat-on-dinh/).
 
 ### 2.3 Protein và phức protein–polysaccharide
-- Protein tạo màng nhớt–đàn hồi chống hợp giọt, nhưng nhạy pH/ion/nhiệt.
+- Protein tạo màng nhớt–đàn hồi chống hợp giọt (coalescence), nhưng nhạy pH/ion/nhiệt.
 - **Liên hợp (Maillard) hoặc phức coacervate** protein–polysaccharide mở rộng vùng pH–ion bền. Có tổng quan ứng dụng HPH/siêu âm với nhũ tương protein–polysaccharide **[N: @qayum2023]**; ví dụ nghiên cứu cho nhũ tương ổn định bằng liên hợp protein–polysaccharide từ bã củ cải đường được lập chỉ mục trong PubMed (36436597) **[N: PM, cần đọc thêm để trích số liệu]**.
 - Lớp đa tầng (layer-by-layer): thêm polymer trái dấu điện tích (ví dụ alginate lên lactoferrin) để tăng độ bền với lực ion/tiêu hóa **[N: @mcclements2017]**.
 
@@ -66,7 +66,7 @@ nguon_goc: tai-lieu-nhu-tuong/04-chat-on-dinh-va-lop-giao-dien.md
 2. **Xác định môi trường:** pH, muối/Ca²⁺, nhiệt xử lý (UHT, retort), đông lạnh, thời hạn.
 3. **Chọn nhóm chất nhũ hóa chính** theo (1)–(2): ví dụ pH thấp + muối ⇒ gum arabic/OSA-starch/protein phản ứng; pH trung tính, ít muối ⇒ protein sữa/đậu; nhiệt cao ⇒ nhóm lập thể không phụ thuộc nhiệt hoặc polymer ổn định nhiệt.
 4. **Xác định rủi ro chính** bằng file 03 (kem hóa? ripening? oxy hóa?) và chọn công cụ trong mục 1.
-5. **Thiết kế thực nghiệm** (DoE): nồng độ chất nhũ hóa (3 mức) × áp suất đồng hóa (3 mức) × gum (3 mức) ⇒ đo d₃₂, d₉₀, zeta, kem hóa 7–14 ngày ở 4 °C và 25–37 °C.
+5. **Thiết kế thực nghiệm** (DoE): nồng độ chất nhũ hóa (3 mức) × áp suất đồng hóa (3 mức) × gum (3 mức) ⇒ đo d₃₂, d₉₀, zeta, kem hóa (creaming) 7–14 ngày ở 4 °C và 25–37 °C.
 6. **Xác nhận bằng thử nghiệm thực tế** theo điều kiện bảo quản và tiêu thụ.
 
 ---

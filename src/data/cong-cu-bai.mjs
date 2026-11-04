@@ -74,3 +74,54 @@ export function htmlThuNgay(slug) {
 	});
 	return `<div class="thu-ngay not-content" data-thu-ngay="${slug}"><b class="tn-tieu-de">Thử ngay</b><ul class="tn-ds">${li.join('')}</ul></div>`;
 }
+
+// ---------------------------------------------------------------------------------------------
+// Gói 6: nhãn mức độ và "Cần biết trước" (hai dòng ở đầu bài, hiện cạnh dòng "Cập nhật").
+// Trục chính vẫn là 6 chặng; mức độ chỉ là nhãn phụ lấy từ trường `level` trong front-matter của bài gốc.
+// Quyết định (vinh giao tự quyết, 2026-11-04): 1-nen-tang và 2-co-che đều là "Nền tảng", vì cơ chế (Hình thành, Mất ổn định)
+// là nền cho mọi chặng sau; 3-ung-dung-co-che là "Chuyên sâu"; 4-thuc-hanh là "R&D".
+// ---------------------------------------------------------------------------------------------
+import { CHANG, MO_RONG } from './chang.mjs';
+
+export const MUC_DO = {
+	'1-nen-tang': ['nen-tang', 'Nền tảng'],
+	'2-co-che': ['nen-tang', 'Nền tảng'],
+	'3-ung-dung-co-che': ['chuyen-sau', 'Chuyên sâu'],
+	'4-thuc-hanh': ['rnd', 'R&D'],
+};
+
+export function htmlMucDo(level) {
+	const m = MUC_DO[level];
+	if (!m) throw new Error(`cong-cu-bai: trường level "${level}" chưa có trong MUC_DO`);
+	return `<span class="muc-do muc-do-${m[0]}" title="Nhãn mức độ phụ; trục chính của khu là 6 chặng">Mức: ${m[1]}</span>`;
+}
+
+// "Cần biết trước": mặc định là chặng ngay trước; chỗ nào cần khác thì ghi đè ở đây. Chặng 1 không có mục này.
+const CAN_BIET_TRUOC = {
+	'mat-on-dinh': ['nen-tang'],
+	'chat-on-dinh': ['nen-tang', 'mat-on-dinh'],
+	'do-luong': ['nen-tang', 'mat-on-dinh'],
+	'san-pham': ['mat-on-dinh', 'chat-on-dinh'],
+	'he-dac-biet': ['nen-tang', 'mat-on-dinh', 'chat-on-dinh'],
+	'su-co-thiet-ke': ['mat-on-dinh', 'chat-on-dinh', 'do-luong'],
+};
+
+export function canBietTruoc(slug) {
+	if (CAN_BIET_TRUOC[slug]) return CAN_BIET_TRUOC[slug];
+	const i = CHANG.findIndex((c) => c.slug === slug);
+	if (i < 0) throw new Error(`cong-cu-bai: bài "${slug}" không có trong CHANG/MO_RONG và không có mục ghi đè CAN_BIET_TRUOC`);
+	return i === 0 ? [] : [CHANG[i - 1].slug];
+}
+
+export function htmlCanBietTruoc(slug) {
+	const ds = canBietTruoc(slug);
+	if (!ds.length) return '';
+	const ten = (s) => {
+		const c = CHANG.find((x) => x.slug === s);
+		if (c) return `Chặng ${c.so} · ${c.ten}`;
+		const m = MO_RONG.find((x) => x.slug === s);
+		if (m) return m.ten;
+		throw new Error(`cong-cu-bai: "Cần biết trước" trỏ tới bài lạ "${s}"`);
+	};
+	return `<p class="can-biet-truoc"><b>Cần biết trước:</b> ${ds.map((s) => `<a href="../${s}/">${ten(s)}</a>`).join(' · ')}</p>`;
+}

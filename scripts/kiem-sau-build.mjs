@@ -92,8 +92,26 @@ for (const b of KHU['nhu-tuong'].bai) {
 	if (soDong < 1 || soDong > 3) loiThuNgay.push(`${b.slug}: hộp "Thử ngay" có ${soDong} dòng (cần 1 đến 3)`);
 	if (soVi !== soDong) loiThuNgay.push(`${b.slug}: ${soDong - soVi} dòng thiếu câu "vì sao nên thử"`);
 	if (!/class="thu-ngay[\s\S]*?class="ket-bai/.test(h)) loiThuNgay.push(`${b.slug}: hộp "Thử ngay" phải nằm trước hộp "Đọc xong bài này?"`);
+	// Gói 6: hộp "Tự kiểm tra" (2–3 câu, mỗi câu có nhãn căn cứ N/T), nhãn mức độ, "Cần biết trước" (trừ chặng 1)
+	const tkt = /<div class="tu-kiem-tra[^"]*"[^>]*>([\s\S]*?)<\/div>(?=\s*<div class="thu-ngay)/.exec(h);
+	if (!tkt) loiThuNgay.push(`${b.slug}: thiếu hộp "Tự kiểm tra" (phải nằm trước hộp "Thử ngay")`);
+	else {
+		const soCau = (tkt[1].match(/<details class="tkt-cau"/g) || []).length;
+		const soCanCu = (tkt[1].match(/class="tkt-xem"><span class="nhan nhan-[NT]"/g) || []).length;
+		if (soCau < 2 || soCau > 3) loiThuNgay.push(`${b.slug}: hộp "Tự kiểm tra" có ${soCau} câu (cần 2 đến 3)`);
+		if (soCanCu !== soCau) loiThuNgay.push(`${b.slug}: ${soCau - soCanCu} câu tự kiểm tra thiếu dòng căn cứ N/T`);
+	}
+	if (!/class="muc-do muc-do-/.test(h)) loiThuNgay.push(`${b.slug}: thiếu nhãn mức độ`);
+	if (b.slug !== 'nen-tang' && !/class="can-biet-truoc"/.test(h)) loiThuNgay.push(`${b.slug}: thiếu dòng "Cần biết trước"`);
+	// thuật ngữ chuẩn: "kết bông" chỉ được xuất hiện trong cụm "còn gọi: kết bông"; còn lại dùng "keo tụ (flocculation)"
+	const chuBai = chuHienRa(h);
+	const soKetBong = (chuBai.match(/kết bông/gi) || []).length - (chuBai.match(/còn gọi: kết bông/gi) || []).length;
+	if (soKetBong > 0) loiThuNgay.push(`${b.slug}: còn ${soKetBong} chỗ "kết bông" ngoài cụm "còn gọi: kết bông" (tên chuẩn là "keo tụ")`);
 }
 for (const k of Object.keys(CONG_CU_BAI)) if (!KHU['nhu-tuong'].bai.some((b) => b.slug === k)) loiThuNgay.push(`cong-cu-bai.mjs: bài "${k}" không có trong khu Nhũ tương`);
+// Phòng lab dùng chung tên chuẩn "keo tụ", không dùng "kết bông"
+for (const tep of fs.readdirSync(path.join(GOC, 'public/phong-lab')).filter((x) => x.endsWith('.js')))
+	if (/kết bông/i.test(fs.readFileSync(path.join(GOC, 'public/phong-lab', tep), 'utf8'))) loiThuNgay.push(`public/phong-lab/${tep}: còn "kết bông" (tên chuẩn là "keo tụ")`);
 // mọi liên kết #nv-... (ở bất kỳ trang nào) phải trỏ tới nhiệm vụ có thật ("tu-do" = phòng lab tự do)
 const maNhiemVu = new Set([...NHIEM_VU.map((n) => n.id), 'tu-do']);
 for (const [p, h] of Object.entries(noiDung))
@@ -185,4 +203,4 @@ if (loiCam.length || nhomHong.length || loiThuNgay.length || loiRnd.length) {
 	console.log('\nkiem-sau-build: KHÔNG ĐẠT');
 	process.exit(1);
 }
-console.log('kiem-sau-build: đạt (0 chuỗi cấm, 0 liên kết nội bộ hỏng, 8/8 bài có hộp "Thử ngay", mọi #nv-… khớp nhiệm vụ, trang Số liệu R&D đủ 30 + 7 + 16 dòng)');
+console.log('kiem-sau-build: đạt (0 chuỗi cấm, 0 liên kết nội bộ hỏng, 8/8 bài có hộp "Thử ngay", mọi #nv-… khớp nhiệm vụ, trang Số liệu R&D đủ 30 + 7 + 16 dòng, 8/8 bài có Tự kiểm tra, mức độ và Cần biết trước)');

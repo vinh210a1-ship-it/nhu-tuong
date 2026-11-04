@@ -763,7 +763,7 @@ ${thanhDo('Oleic C18:1', d.c181, 100, '#e9b949')}${thanhDo('Linoleic C18:2', d.c
 		const n = NHU_HOA[mon.khoa];
 		noiDung = `<p class="pl-meo">${h(n.ghiChu)}</p><p class="pl-meo">Độ phủ bề mặt Γ ≈ ${soCD(n.gamma)} mg/m²${n.gammaMinhHoa ? ` ${nhanHTML(NHAN.gammaMinhHoa)} số minh họa, chưa có nguồn` : ''}${n.nhayNhiet ? ` · trong mô phỏng bắt đầu biến tính từ ~${n.nhayNhiet} °C${n.nhayNhietMinhHoa ? ` ${nhanHTML(NHAN.nguongBienTinh)} số minh họa` : ''}` : ''}</p>`;
 	} else if (mon.loai === 'xanthan')
-		noiDung = `<p class="pl-meo">Polysaccharide chuỗi cứng, làm pha nước đặc lên rất mạnh dù chỉ dùng vài phần nghìn. Ít quá thì gây kết bông do cạn kiệt; đủ nhiều thì tạo mạng giữ giọt đứng yên ${nhanHTML(NHAN.canKiet)}.</p>`;
+		noiDung = `<p class="pl-meo">Polysaccharide chuỗi cứng, làm pha nước đặc lên rất mạnh dù chỉ dùng vài phần nghìn. Ít quá thì gây keo tụ do cạn kiệt; đủ nhiều thì tạo mạng giữ giọt đứng yên ${nhanHTML(NHAN.canKiet)}.</p>`;
 	else if (mon.loai === 'tocopherol') noiDung = `<p class="pl-meo">Chất chống oxy hóa phá chuỗi: cho nguyên tử H để dập gốc peroxyl ${nhanHTML(NHAN.chongOxy)}.</p>`;
 	else if (mon.loai === 'edta') noiDung = `<p class="pl-meo">Chất chống oxy hóa phòng ngừa: bắt ion Fe, Cu trong pha nước, nơi oxy hóa nhũ tương bắt đầu ${nhanHTML(NHAN.chongOxy)}.</p>`;
 	const daCo = trongCoc(mon);

@@ -12,7 +12,7 @@ nguon_goc: tai-lieu-nhu-tuong/06-do-luong-va-dac-trung.md
 ---
 # 06. Đo lường và đặc trưng nhũ tương
 
-> **Kết luận trước.** Một nhũ tương chỉ được coi là "đã đặc trưng" khi có **ít nhất 4 nhóm số liệu**: (1) phân bố kích thước giọt (không chỉ trung bình), (2) điện tích/tính chất bề mặt, (3) lưu biến, (4) **diễn tiến theo thời gian** dưới điều kiện bảo quản (kích thước, kem hóa, vi cấu trúc, hóa học). Thiếu (4) thì không có cơ sở nói "ổn định". Mỗi kỹ thuật có **dải đo** và **cạm bẫy** riêng; dùng sai ngoài dải là lỗi phổ biến nhất.
+> **Kết luận trước.** Một nhũ tương (emulsion) chỉ được coi là "đã đặc trưng" khi có **ít nhất 4 nhóm số liệu**: (1) phân bố kích thước giọt (không chỉ trung bình), (2) điện tích/tính chất bề mặt, (3) lưu biến (rheology), (4) **diễn tiến theo thời gian** dưới điều kiện bảo quản (kích thước, kem hóa, vi cấu trúc, hóa học). Thiếu (4) thì không có cơ sở nói "ổn định". Mỗi kỹ thuật có **dải đo** và **cạm bẫy** riêng; dùng sai ngoài dải là lỗi phổ biến nhất.
 
 Nguồn khung: McClements, tổng quan về kỹ thuật và quy trình đặc trưng độ ổn định nhũ tương **[N: @mcclements2007]**; tổng quan về kỹ thuật đặc trưng nhũ tương thực phẩm (2024) **[N: @kupikowskastobba2024]**; đề xuất quy trình chuẩn đo hạt ăn được **[N: @mcclements2016a]**.
 
@@ -37,10 +37,10 @@ Nguồn khung: McClements, tổng quan về kỹ thuật và quy trình đặc t
 | PDI (DLS) theo hướng dẫn nhà sản xuất | <0,1 đơn phân tán; 0,1–0,4 đa phân tán vừa; >0,4 đa phân tán | Chỉ là quy ước; không so sánh PDI giữa các máy |
 
 ### 1.2 Quy tắc đọc kết quả [K]
-1. Báo cáo **d₃₂, d₄₃ và d₉₀ (hoặc d₉₉)**, kèm **span** = (d₉₀ − d₁₀)/d₅₀. Hai mẫu cùng d₃₂ có thể có kem hóa rất khác vì d₉₀ khác.
+1. Báo cáo **d₃₂, d₄₃ và d₉₀ (hoặc d₉₉)**, kèm **span** = (d₉₀ − d₁₀)/d₅₀. Hai mẫu cùng d₃₂ có thể có kem hóa (creaming) rất khác vì d₉₀ khác.
 2. **Hai kỹ thuật cho kết quả khác nhau là bình thường** (DLS cho đường kính thủy động, nhiễu xạ laser cho đường kính tương đương thể tích). Chọn một kỹ thuật chuẩn và nêu rõ.
-3. **Pha loãng** phải dùng pha liên tục có thành phần giống hệt (pH, muối) để không phá cụm/giọt; pha loãng bằng nước tinh khiết có thể làm tan cụm keo tụ hoặc gây ripening.
-4. Thêm một mẫu "phân tán lại" bằng SDS 1% hoặc siêu âm nhẹ để **phân biệt keo tụ và hợp giọt** (file 03, mục 3).
+3. **Pha loãng** phải dùng pha liên tục (continuous phase) có thành phần giống hệt (pH, muối) để không phá cụm/giọt; pha loãng bằng nước tinh khiết có thể làm tan cụm keo tụ (flocculation) hoặc gây ripening.
+4. Thêm một mẫu "phân tán lại" bằng SDS 1% hoặc siêu âm nhẹ để **phân biệt keo tụ và hợp giọt (coalescence)** (file 03, mục 3).
 5. Đo ở **0 h, 24 h, 7 d, 30 d** và ở nhiệt độ bảo quản thực; dựng đồ thị $d_{43}$ và $d_{43}^3$ theo thời gian để phân biệt hợp giọt/ripening (ripening cho $d^3$ tuyến tính).
 
 ---
@@ -65,7 +65,7 @@ Nguồn khung: McClements, tổng quan về kỹ thuật và quy trình đặc t
 
 ### 4.1 Kem hóa/lắng
 - **Quan sát thẳng + chỉ số kem hóa (CI):** CI(%) = (chiều cao lớp kem hoặc lớp trong / chiều cao toàn mẫu) × 100; theo dõi theo ngày. Dễ nhưng chỉ phát hiện muộn. **[K]**
-- **Quét quang học đa tán xạ (Turbiscan):** theo dõi đồng thời kem hóa, lắng và thay đổi kích thước ở 850 nm trong chai nguyên vẹn; nhạy hơn mắt thường nhiều ngày. **[N: @kupikowskastobba2024]**
+- **Quét quang học đa tán xạ (Turbiscan):** theo dõi đồng thời kem hóa, lắng (sedimentation) và thay đổi kích thước ở 850 nm trong chai nguyên vẹn; nhạy hơn mắt thường nhiều ngày. **[N: @kupikowskastobba2024]**
 - **Ly tâm tăng tốc:** ly tâm ở nhiều gia tốc, đo tốc độ phân lớp; phù hợp sàng lọc nhưng nén giọt và có thể gây hợp giọt không có trong bảo quản thực. **[K; @mcclements2007 thảo luận quy trình thử độ ổn định]**
 
 ### 4.2 Thử thách môi trường (screening) [K; N: @mcclements2007, @mcclements2016a]
@@ -84,15 +84,15 @@ Nên thiết lập ma trận tối thiểu:
 
 ### 4.3 Hợp giọt một phần và kết tinh mỡ
 - **DSC** (kết tinh và nóng chảy mỡ trong giọt) — liệt kê trong R18 như một kỹ thuật bổ sung. **[N: @kupikowskastobba2024]**
-- **Pulsed NMR / SFC**, hiển vi ánh sáng phân cực (tinh thể mỡ), phương pháp pha loãng thuốc nhuộm, độ đục, calorimetry, kích thước hạt mỡ đo hợp giọt một phần: các phương pháp định lượng này được so sánh trong tổng quan; một số tương quan tốt (dye dilution, calorimetry, kích thước hạt mỡ) còn một số tương quan kém. **[N: @petrut2015]**
+- **Pulsed NMR / SFC**, hiển vi ánh sáng phân cực (tinh thể mỡ), phương pháp pha loãng thuốc nhuộm, độ đục, calorimetry, kích thước hạt mỡ đo hợp giọt một phần (partial coalescence): các phương pháp định lượng này được so sánh trong tổng quan; một số tương quan tốt (dye dilution, calorimetry, kích thước hạt mỡ) còn một số tương quan kém. **[N: @petrut2015]**
 
 ---
 
 ## 5. Hóa học và chức năng
-- **Oxy hóa lipid:** peroxide value (sản phẩm đầu), p-anisidine/TBARS (sản phẩm thứ cấp), hexanal bằng headspace GC; đo **thời gian cảm ứng**. Tổng quan R18 nhắc đến "đo oxy hóa lipid" và FTIR như kỹ thuật bổ sung. **[N: @kupikowskastobba2024; K]**
-- **Độ phủ bề mặt Γ:** tách pha nước bằng ly tâm/siêu lọc, đo protein không hấp phụ bằng BCA/Bradford; Γ = lượng hấp phụ / diện tích bề mặt (tính từ d₃₂). **[K]**
-- **Sức căng bề mặt và lưu biến bề mặt:** tensiometer giọt treo/giọt quay; lưu biến giãn nở (dilatational) cho độ đàn hồi bề mặt, dự đoán chống hợp giọt. **[K]**
-- **Tiêu hóa in vitro** (INFOGEST): tốc độ lipolysis phụ thuộc kích thước giọt, kết tụ trong dạ dày, chất nhũ hóa cạnh tranh muối mật. **[N: @mcclements2017; K: INFOGEST là đồng thuận quốc tế – cần tra khi trích]**
+- **Oxy hóa lipid (lipid oxidation):** peroxide value (sản phẩm đầu), p-anisidine/TBARS (sản phẩm thứ cấp), hexanal bằng headspace GC; đo **thời gian cảm ứng**. Tổng quan R18 nhắc đến "đo oxy hóa lipid" và FTIR như kỹ thuật bổ sung. **[N: @kupikowskastobba2024; K]**
+- **Độ phủ bề mặt (surface load) Γ:** tách pha nước bằng ly tâm/siêu lọc, đo protein không hấp phụ bằng BCA/Bradford; Γ = lượng hấp phụ / diện tích bề mặt (tính từ d₃₂). **[K]**
+- **Sức căng bề mặt (interfacial tension) và lưu biến bề mặt:** tensiometer giọt treo/giọt quay; lưu biến giãn nở (dilatational) cho độ đàn hồi bề mặt, dự đoán chống hợp giọt. **[K]**
+- **Tiêu hóa in vitro (in vitro digestion)** (INFOGEST): tốc độ lipolysis phụ thuộc kích thước giọt, kết tụ trong dạ dày, chất nhũ hóa (emulsifier) cạnh tranh muối mật. **[N: @mcclements2017; K: INFOGEST là đồng thuận quốc tế – cần tra khi trích]**
 
 ---
 

@@ -10,7 +10,8 @@ import { tenNgan, htmlNhan, tachNhan, SO_DON_VI } from '../src/plugins/remark-nh
 import { KHU } from '../src/data/khu.mjs';
 import { dungTraCuu } from './tra-cuu.mjs';
 import { docTep } from './doc-tep.mjs';
-import { htmlThuNgay } from '../src/data/cong-cu-bai.mjs';
+import { htmlThuNgay, htmlMucDo, htmlCanBietTruoc, CONG_CU_BAI } from '../src/data/cong-cu-bai.mjs';
+import { docTuKiemTra, kiemTuKiemTra, htmlTuKiemTra } from './tu-kiem-tra.mjs';
 
 const GOC = process.cwd();
 const DOCS = path.join(GOC, 'src/content/docs');
@@ -18,6 +19,8 @@ const KHU_BAT = ['nhu-tuong', 'chat-beo', 'chat-nhu-hoa', 'chat-on-dinh', 'thuc-
 const TEN_KHU = { 'nhu-tuong': 'Nhũ tương', 'chat-beo': 'Chất béo', 'chat-nhu-hoa': 'Chất nhũ hóa', 'chat-on-dinh': 'Chất ổn định', 'thuc-pham': 'Thực phẩm', 'duoc-pham': 'Dược phẩm' };
 
 // Khóa lưu "đã đọc" trong máy người xem: bài nhũ tương giữ slug trần (tương thích dữ liệu cũ), khu khác thêm tên khu
+// câu hỏi tự kiểm tra của 8 bài nhũ tương (noi-dung/nhu-tuong/tu-kiem-tra.md); mỗi đáp án phải có căn cứ N hoặc T trong bài
+const TU_KIEM_TRA = docTuKiemTra(path.join(GOC, 'noi-dung/nhu-tuong/tu-kiem-tra.md'));
 const khoaDaDoc = (khu, slug) => (khu === 'nhu-tuong' ? slug : `${khu}/${slug}`);
 
 // Máy tính chèn vào bài: [khu, slug, dòng mốc (máy tính đặt NGAY TRƯỚC dòng này), loại]
@@ -183,9 +186,18 @@ for (const khu of KHU_BAT) {
 			'editUrl: false',
 			'---',
 			'',
-			`<p class="nguon-goc-bai">Cập nhật ${fm.updated} · <a href="../../quy-uoc/">Cách đọc nhãn và giới hạn nội dung →</a></p>`,
+			`<p class="nguon-goc-bai">${khu === 'nhu-tuong' && fm.loai === 'bai' ? htmlMucDo(fm.level) + ' · ' : ''}Cập nhật ${fm.updated} · <a href="../../quy-uoc/">Cách đọc nhãn và giới hạn nội dung →</a></p>`,
+			...(khu === 'nhu-tuong' && fm.loai === 'bai' && htmlCanBietTruoc(fm.slug) ? [htmlCanBietTruoc(fm.slug)] : []),
 			'',
 		].join('\n');
+		// hộp "Tự kiểm tra": 2 đến 3 câu, đáp án gập; kiểm căn cứ N/T ngay lúc dựng (sai thì dừng build)
+		if (fm.loai === 'bai' && khu === 'nhu-tuong') {
+			kiemTuKiemTra(fm.slug, TU_KIEM_TRA[fm.slug], body);
+			body += `
+
+${htmlTuKiemTra(fm.slug, TU_KIEM_TRA[fm.slug])}
+`;
+		}
 		// hộp "Thử ngay" (nối bài với máy tính, Phòng lab, tra cứu; dữ liệu ở src/data/cong-cu-bai.mjs), đặt trước hộp "đã đọc"
 		if (fm.loai === 'bai' && khu === 'nhu-tuong') {
 			const thuNgay = htmlThuNgay(fm.slug);

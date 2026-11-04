@@ -48,7 +48,7 @@ nguon_goc: tai-lieu-nhu-tuong/09-thuat-ngu.md
 | Kem hóa | Creaming | Giọt nhẹ nổi lên | 03 |
 | Lắng | Sedimentation | Giọt nặng chìm xuống | 03 |
 | Vận tốc Stokes | Stokes velocity | v = 2r²Δρg/(9η) | 03 |
-| Keo tụ | Flocculation | Giọt dính thành cụm, màng còn nguyên | 03 |
+| Keo tụ | Flocculation | Giọt dính thành cụm, màng còn nguyên (còn gọi: kết bông) | 03 |
 | Lực cạn kiệt | Depletion attraction | Polymer tự do ép giọt lại | 03 |
 | Bắc cầu | Bridging | Polymer nối hai giọt | 03 |
 | Độ dài Debye | Debye length | Tầm tác dụng của đẩy tĩnh điện | 03 |
