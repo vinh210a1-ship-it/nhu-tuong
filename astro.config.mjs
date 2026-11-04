@@ -88,6 +88,7 @@ export default defineConfig({
 					items: [
 						{ label: 'Mã INS, mức tối đa TT24, từ điển', slug: 'tra-cuu', badge: { text: 'Mới', variant: 'tip' } },
 						{ label: 'Tá dược (FDA IID)', slug: 'tra-cuu-ta-duoc', badge: { text: 'Mới', variant: 'tip' } },
+						{ label: 'Số liệu R&D (bảng tra)', slug: 'so-lieu-rnd', badge: { text: 'Mới', variant: 'tip' } },
 						{ label: 'Thuật ngữ nhũ tương (bảng)', slug: 'nhu-tuong/thuat-ngu' },
 						{ label: 'Nguồn', slug: 'nguon' },
 					],

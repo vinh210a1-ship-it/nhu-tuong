@@ -99,6 +99,31 @@ const maNhiemVu = new Set([...NHIEM_VU.map((n) => n.id), 'tu-do']);
 for (const [p, h] of Object.entries(noiDung))
 	for (const m of h.matchAll(/href="[^"#]*phong-lab\/#nv-([^"]*)"/g)) if (!maNhiemVu.has(m[1])) loiThuNgay.push(`${tenTrang(p)}: liên kết #nv-${m[1]} không khớp nhiệm vụ nào trong NHIEM_VU`);
 
+// ---- 1c) trang "Số liệu R&D": ba bảng đọc từ src/data/so-lieu-rnd/*.json, ra HTML tĩnh, đủ dòng, mỗi dòng đủ nguồn/trang/điều kiện/nhãn
+const loiRnd = [];
+{
+	const htmlRnd = noiDung[path.join(DIST, 'so-lieu-rnd', 'index.html')];
+	if (!htmlRnd) loiRnd.push('không thấy trang so-lieu-rnd/');
+	else {
+		const BANG = [['hlb.json', 30], ['dong-hoa.json', 7], ['mayo-li2012.json', 16]];
+		const thanBang = [...htmlRnd.matchAll(/<tbody[^>]*>([\s\S]*?)<\/tbody>/g)].map((m) => (m[1].match(/<tr/g) || []).length);
+		if (thanBang.length !== BANG.length) loiRnd.push(`trang có ${thanBang.length} bảng, cần ${BANG.length}`);
+		BANG.forEach(([tep, soDong], i) => {
+			const j = JSON.parse(fs.readFileSync(path.join(GOC, 'src/data/so-lieu-rnd', tep), 'utf8'));
+			if (j.dong.length !== soDong) loiRnd.push(`${tep}: ${j.dong.length} dòng, cần ${soDong}`);
+			if (thanBang[i] !== j.dong.length) loiRnd.push(`${tep}: trang hiện ${thanBang[i]} dòng, JSON có ${j.dong.length}`);
+			j.dong.forEach((r, n) => {
+				for (const k of ['nguon', 'dieu_kien_do', 'nhan']) if (!r[k]) loiRnd.push(`${tep} dòng ${n + 1}: thiếu "${k}"`);
+				if (!r.trang && !r.vi_tri) loiRnd.push(`${tep} dòng ${n + 1}: thiếu cả trang lẫn vị trí (bảng/hình)`);
+			});
+		});
+		const chuRnd = chuHienRa(htmlRnd);
+		if ((chuRnd.match(/Nguồn và điều kiện đo/g) || []).length < BANG.length) loiRnd.push('thiếu khung "Nguồn và điều kiện đo" ở một bảng');
+		for (const [ten, re] of [['cảnh báo HLB đổi theo nhiệt độ', /HLB đổi theo nhiệt độ/], ['cảnh báo không có HLB yêu cầu của từng dầu', /HLB yêu cầu/], ['cảnh báo thiếu Span 85', /Span 85 không có trong bảng/], ['ghi rõ cone–plate 20 °C', /cone–plate ở 20 °C/], ['ghi rõ đường kính theo thể tích, không phải d₃₂', /không phải d₃₂/]])
+			if (!re.test(chuRnd)) loiRnd.push(`trang thiếu ${ten}`);
+	}
+}
+
 // ---- 2) liên kết nội bộ và neo
 const idCache = {};
 const idCua = (p) => (idCache[p] ??= new Set([...noiDung[p].matchAll(/\sid="([^"]+)"/g)].map((m) => m[1])));
@@ -152,8 +177,12 @@ if (loiThuNgay.length) {
 	console.log(`\nHỘP "THỬ NGAY" / LIÊN KẾT PHÒNG LAB: ${loiThuNgay.length} lỗi`);
 	for (const l of loiThuNgay.slice(0, 40)) console.log('  - ' + l);
 }
-if (loiCam.length || nhomHong.length || loiThuNgay.length) {
+if (loiRnd.length) {
+	console.log(`\nTRANG "SỐ LIỆU R&D": ${loiRnd.length} lỗi`);
+	for (const l of loiRnd.slice(0, 40)) console.log('  - ' + l);
+}
+if (loiCam.length || nhomHong.length || loiThuNgay.length || loiRnd.length) {
 	console.log('\nkiem-sau-build: KHÔNG ĐẠT');
 	process.exit(1);
 }
-console.log('kiem-sau-build: đạt (0 chuỗi cấm, 0 liên kết nội bộ hỏng, 8/8 bài có hộp "Thử ngay", mọi #nv-… khớp nhiệm vụ)');
+console.log('kiem-sau-build: đạt (0 chuỗi cấm, 0 liên kết nội bộ hỏng, 8/8 bài có hộp "Thử ngay", mọi #nv-… khớp nhiệm vụ, trang Số liệu R&D đủ 30 + 7 + 16 dòng)');

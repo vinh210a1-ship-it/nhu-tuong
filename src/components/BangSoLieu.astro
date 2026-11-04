@@ -1,0 +1,109 @@
+---
+// Bảng tra tĩnh cho trang "Số liệu R&D": đọc JSON trong src/data/so-lieu-rnd/ lúc build, ra HTML thường (không cần máy chủ).
+// Mỗi dòng JSON giữ nguon, trang, vi_tri, dieu_kien_do, nhan. Component gom các cặp giống nhau thành khung
+// "Nguồn và điều kiện đo" phía trên bảng; nếu một bảng có nhiều vị trí khác nhau thì thêm cột "Vị trí" vào bảng.
+import { htmlNhan } from '../plugins/remark-nhan.mjs';
+
+interface Cot {
+	k: string; // khóa trong JSON
+	t: string; // tên cột
+	so?: boolean; // căn phải (số)
+}
+const { bang, cot, ghiChu } = Astro.props as { bang: { dong: Record<string, string | null>[] }; cot: Cot[]; ghiChu?: string };
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const thieu = new Set<string>();
+const nhan = (r: Record<string, string | null>) =>
+	htmlNhan(`[${r.nhan}: @${r.nguon}${r.trang ? ' ' + r.trang : ''}]`, base, thieu);
+
+// gom nguồn/điều kiện đo giống nhau
+const nhom = new Map<string, { r: Record<string, string | null>; soDong: number }>();
+for (const r of bang.dong) {
+	const khoa = [r.nguon, r.trang, r.vi_tri, r.dieu_kien_do, r.nhan].join('|');
+	const g = nhom.get(khoa);
+	if (g) g.soDong++;
+	else nhom.set(khoa, { r, soDong: 1 });
+}
+const dsNhom = [...nhom.values()];
+const hienViTri = dsNhom.length > 1;
+const o = (v: string | null | undefined) => (v === null || v === undefined || v === '' ? '—' : v);
+const html = dsNhom.map(({ r, soDong }) => ({
+	nhan: nhan(r),
+	viTri: r.vi_tri, // số trang đã nằm trong huy hiệu nguồn
+	dk: r.dieu_kien_do,
+	soDong,
+}));
+if (thieu.size) throw new Error(`BangSoLieu: khóa nguồn không có trong nguon.json: ${[...thieu].join(', ')}`);
+---
+
+<div class="bsl">
+	<div class="bsl-nguon">
+		<b>Nguồn và điều kiện đo</b>
+		<ul>
+			{
+				html.map((g) => (
+					<li>
+						<span set:html={g.nhan} /> <span class="bsl-vt">{g.viTri}</span>
+						{hienViTri && <span class="bsl-n"> ({g.soDong} dòng)</span>}
+						<br />
+						<span class="bsl-dk">{g.dk}</span>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				{cot.map((c) => <th class={c.so ? 'so' : ''}>{c.t}</th>)}
+				{hienViTri && <th>Vị trí</th>}
+			</tr>
+		</thead>
+		<tbody>
+			{
+				bang.dong.map((r) => (
+					<tr>
+						{cot.map((c) => <td class={c.so ? 'so' : ''}>{o(r[c.k])}</td>)}
+						{hienViTri && <td class="bsl-vt">{[r.vi_tri, r.trang].filter(Boolean).join(', ')}</td>}
+					</tr>
+				))
+			}
+		</tbody>
+	</table>
+	{ghiChu && <p class="bsl-ghi-chu">{ghiChu}</p>}
+</div>
+
+<style>
+	.bsl-nguon {
+		margin: 0.5rem 0 0.75rem;
+		padding: 0.7rem 0.9rem;
+		border: 1px solid var(--hh-vien);
+		border-inline-start: 4px solid var(--hh-ho-phach);
+		border-radius: 0.6rem;
+		background: var(--hh-be-mat);
+		font-size: 0.88rem;
+	}
+	.bsl-nguon ul {
+		margin: 0.35rem 0 0;
+		padding-inline-start: 1.1rem;
+	}
+	.bsl-nguon li + li {
+		margin-top: 0.4rem;
+	}
+	.bsl-vt {
+		font-weight: 650;
+	}
+	.bsl-n {
+		color: var(--sl-color-gray-3);
+	}
+	.bsl-dk {
+		color: var(--sl-color-gray-2);
+	}
+	.bsl-ghi-chu {
+		font-size: 0.85rem;
+		color: var(--sl-color-gray-2);
+	}
+	.so {
+		text-align: end;
+		font-variant-numeric: tabular-nums;
+	}
+</style>
