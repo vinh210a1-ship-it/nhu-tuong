@@ -257,6 +257,38 @@
   "khoa": "amidon1995"
  },
  {
+  "trich_dan": "Anton M, Gandemer G (1999). Effect of pH on interface composition and on quality of oil-in-water emulsions made with hen egg yolk. *Colloids Surf B Biointerfaces* 12(3-6):351–358 [Mức đọc gốc: Đọc tóm tắt (trang nhà xuất bản)]",
+  "ho": "anton",
+  "nam": 1999,
+  "doi": "10.1016/S0927-7765(98)00089-7",
+  "pmid": null,
+  "url": "https://doi.org/10.1016/S0927-7765(98)00089-7",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:anton1999"
+  ],
+  "khoa": "anton1999"
+ },
+ {
+  "trich_dan": "Anton M (2013). Egg yolk: structures, functionalities and processes. *J Sci Food Agric* 93 (tổng quan; chỉ thấy tên trong danh sách trích dẫn, CHƯA ĐỌC) [Mức đọc gốc: Chưa đọc]",
+  "ho": "anton",
+  "nam": 2013,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tieu-de",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:anton2013"
+  ],
+  "khoa": "anton2013"
+ },
+ {
   "trich_dan": "Aphibanthammakit C. et al. (2020). Emulsifying properties of *Acacia senegal* gum: impact of high molar mass protein-rich AGPs. *Food Chemistry: X*.",
   "ho": "aphibanthammakit",
   "nam": 2020,
@@ -271,6 +303,22 @@
    "chat-on-dinh:S88"
   ],
   "khoa": "aphibanthammakit2020"
+ },
+ {
+  "trich_dan": "Ariizumi M, Kubo M, Handa A, Hayakawa T, Matsumiya K, Matsumura Y (2017). Influence of processing factors on the stability of model mayonnaise with whole egg during long-term storage. *Biosci Biotechnol Biochem* 81(4):803–811",
+  "ho": "ariizumi",
+  "nam": 2017,
+  "doi": "10.1080/09168451.2017.1281725",
+  "pmid": "28118791",
+  "url": "https://doi.org/10.1080/09168451.2017.1281725",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:ariizumi2017"
+  ],
+  "khoa": "ariizumi2017"
  },
  {
   "trich_dan": "Arltoft D. et al. (2007). Interactions between carrageenans and milk proteins: a microstructural and rheological study. *Biomacromolecules*.",
@@ -367,6 +415,22 @@
    "duoc-pham:S46"
   ],
   "khoa": "baghel2016"
+ },
+ {
+  "trich_dan": "Bahtz J, Gunes DZ, Syrbe A, Mosca N, Fischer P, Windhab EJ (2016). Quantification of spontaneous W/O emulsification and its impact on the swelling kinetics of multiple W/O/W emulsions. *Langmuir* 32(23):5787–5795",
+  "ho": "bahtz",
+  "nam": 2016,
+  "doi": "10.1021/acs.langmuir.6b00425",
+  "pmid": "27195479",
+  "url": "https://doi.org/10.1021/acs.langmuir.6b00425",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:bahtz2016"
+  ],
+  "khoa": "bahtz2016"
  },
  {
   "trich_dan": "Bak J. (2024). A comparative study on the rheological properties of concentrated xanthan gum in combination with gum arabic or gum arabic-based emulsion. *Int. J. Biol. Macromol.*",
@@ -578,6 +642,38 @@
   "khoa": "binarjo2025"
  },
  {
+  "trich_dan": "Binks BP, Lumsdon SO (2000). Influence of particle wettability on the type and stability of surfactant-free emulsions. *Langmuir* 16(23):8622–8631 [Mức đọc gốc: Đọc tóm tắt (abstract qua Semantic Scholar; toàn văn chưa đọc)]",
+  "ho": "binks",
+  "nam": 2000,
+  "doi": "10.1021/la000189s",
+  "pmid": null,
+  "url": "https://doi.org/10.1021/la000189s",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:binks2000"
+  ],
+  "khoa": "binks2000"
+ },
+ {
+  "trich_dan": "Binks BP (2002). Particles as surfactants—similarities and differences. *Curr Opin Colloid Interface Sci* 7(1-2):21–41 [Mức đọc gốc: Chỉ thấy trích đoạn tìm kiếm (công thức ΔE là kiến thức chuẩn; chưa đọc toàn văn; DOI suy từ mã PII của trang nhà xuất bản)]",
+  "ho": "binks",
+  "nam": 2002,
+  "doi": "10.1016/S1359-0294(02)00008-0",
+  "pmid": null,
+  "url": "https://www.sciencedirect.com/science/article/abs/pii/S1359029402000080",
+  "muc_doc": "tieu-de",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:binks2002"
+  ],
+  "khoa": "binks2002"
+ },
+ {
   "trich_dan": "Binks BP, Horozov TS (eds). *Colloidal Particles at Liquid Interfaces*. Cambridge University Press, 2006.",
   "ho": "binks",
   "nam": 2006,
@@ -592,6 +688,54 @@
    "nhu-tuong:T05"
   ],
   "khoa": "binks2006"
+ },
+ {
+  "trich_dan": "Bonnet M, Cansell M, Berkaoui A, Ropers MH, Anton M, Leal-Calderon F (2009). Release rate profiles of magnesium from multiple W/O/W emulsions. *Food Hydrocolloids* 23(1):92–101 [Mức đọc gốc: Đọc tóm tắt (trang nhà xuất bản)]",
+  "ho": "bonnet",
+  "nam": 2009,
+  "doi": "10.1016/j.foodhyd.2007.11.016",
+  "pmid": null,
+  "url": "https://doi.org/10.1016/j.foodhyd.2007.11.016",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:bonnet2009"
+  ],
+  "khoa": "bonnet2009"
+ },
+ {
+  "trich_dan": "Bonnet M, Cansell M, Placin F, David-Briand E, Anton M, Leal-Calderon F (2010). Influence of ionic complexation on release rate profiles from multiple W/O/W emulsions. *J Agric Food Chem* 58(13):7762–7769",
+  "ho": "bonnet",
+  "nam": 2010,
+  "doi": "10.1021/jf100917w",
+  "pmid": "20545343",
+  "url": "https://doi.org/10.1021/jf100917w",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:bonnet2010a"
+  ],
+  "khoa": "bonnet2010a"
+ },
+ {
+  "trich_dan": "Bonnet M, Cansell M, Placin F, Monteil J, Anton M, Leal-Calderon F (2010). Influence of the oil globule fraction on the release rate profiles from multiple W/O/W emulsions. *Colloids Surf B Biointerfaces* 78(1):44–52",
+  "ho": "bonnet",
+  "nam": 2010,
+  "doi": "10.1016/j.colsurfb.2010.02.010",
+  "pmid": "20207114",
+  "url": "https://doi.org/10.1016/j.colsurfb.2010.02.010",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:bonnet2010b"
+  ],
+  "khoa": "bonnet2010b"
  },
  {
   "trich_dan": "Boostani S, ... Jafari SM (2024). Multiple Pickering emulsions stabilized by food-grade particles as innovative delivery systems for bioactive compounds. *Adv Colloid Interface Sci* 328:103174.",
@@ -1284,6 +1428,22 @@
   "khoa": "deoliveira2026"
  },
  {
+  "trich_dan": "Derkach SR (2009). Rheology of emulsions. *Adv Colloid Interface Sci* 151 [Mức đọc gốc: Chỉ thấy trích đoạn tìm kiếm (chỉ đoạn trích dẫn)]",
+  "ho": "derkach",
+  "nam": 2009,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.sciencedirect.com/science/article/pii/S0001868609000517",
+  "muc_doc": "tieu-de",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:derkach2009"
+  ],
+  "khoa": "derkach2009"
+ },
+ {
   "trich_dan": "Desai PM, Liew CV, Heng PWS (2016). Review of disintegrants and the disintegration phenomena. *J Pharm Sci* 105(9):2545–2555.",
   "ho": "desai",
   "nam": 2016,
@@ -1298,6 +1458,22 @@
    "duoc-pham:S56"
   ],
   "khoa": "desai2016"
+ },
+ {
+  "trich_dan": "Destribats M, Rouvet M, Gehin-Delval C, Schmitt C, Binks BP (2014). Emulsions stabilised by whey protein microgel particles: towards food-grade Pickering emulsions. *Soft Matter* 10(36):6941–6954",
+  "ho": "destribats",
+  "nam": 2014,
+  "doi": "10.1039/c4sm00179f",
+  "pmid": "24675994",
+  "url": "https://doi.org/10.1039/c4sm00179f",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:destribats2014w"
+  ],
+  "khoa": "destribats2014w"
  },
  {
   "trich_dan": "Dewi B. P. C. (2020). Phase separation in biopolymer mixtures (luận án).",
@@ -1506,6 +1682,22 @@
    "chat-on-dinh:S62"
   ],
   "khoa": "donati2023"
+ },
+ {
+  "trich_dan": "do Prado Silva JT, Benetti JVM, Alexandrino TTB, Assis OBG, de Ruiter J, Schroën K, Nicoletti VR (2021). Whey protein isolate microgel properties tuned by crosslinking with organic acids to achieve stabilization of Pickering emulsions. *Foods* 10(6):1296 [Mức đọc gốc: Đọc toàn văn (bản mở) (qua WebFetch)]",
+  "ho": "doprado",
+  "nam": 2021,
+  "doi": "10.3390/foods10061296",
+  "pmid": "34199941",
+  "url": "https://www.mdpi.com/2304-8158/10/6/1296",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:doprado2021"
+  ],
+  "khoa": "doprado2021"
  },
  {
   "trich_dan": "D'Oria G. et al. (2023). Effect of stirring speed on low acyl gellan gum fluid gels' rheology, particle morphology and physical ageing. *Food Hydrocolloids*.",
@@ -2347,6 +2539,22 @@
   "khoa": "fomuso2002"
  },
  {
+  "trich_dan": "Rheological and physicochemical properties of mayonnaise enriched with functional vegetable oils: a comparative screening study. *Foods* 15(12):2184 (tác giả chưa ghi) [Mức đọc gốc: Chỉ thấy trích đoạn tìm kiếm (chỉ pH 3,3–3,6 từ đoạn trích)]",
+  "ho": "foods",
+  "nam": 2026,
+  "doi": "10.3390/foods15122184",
+  "pmid": null,
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13297992/",
+  "muc_doc": "tieu-de",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:foods2026-mayo"
+  ],
+  "khoa": "foods2026-mayo"
+ },
+ {
   "trich_dan": "Frankel EN. *Lipid Oxidation*, 2nd ed. Oily Press, 2005",
   "ho": "frankel",
   "nam": 2005,
@@ -2972,6 +3180,22 @@
   "khoa": "hippal2010"
  },
  {
+  "trich_dan": "Ho J-H, Lee T-A, Namai N, Sakai S, Lou S-S, Handa A, Lin W-T (2022). Thermal processing of liquid egg yolks modulates physio-chemical properties of mayonnaise. *Foods* 11(10):1426 [Mức đọc gốc: Đọc toàn văn (bản mở) (công thức, qua WebFetch)]",
+  "ho": "ho",
+  "nam": 2022,
+  "doi": "10.3390/foods11101426",
+  "pmid": "35626996",
+  "url": "https://www.mdpi.com/2304-8158/11/10/1426",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:ho2022"
+  ],
+  "khoa": "ho2022"
+ },
+ {
   "trich_dan": "Hörter D, Dressman JB (2001). Influence of physicochemical properties on dissolution of drugs in the gastrointestinal tract. *Adv Drug Deliv Rev* 46(1–3):75–87.",
   "ho": "horter",
   "nam": 2001,
@@ -3226,6 +3450,22 @@
    "nhu-tuong:T06"
   ],
   "khoa": "israelachvili2011"
+ },
+ {
+  "trich_dan": "Pickering emulsion gels prepared by hydrogen-bonded zein/tannic acid complex colloidal particles. *J Agric Food Chem* (2015) (tác giả chưa ghi) [Mức đọc gốc: Chỉ thấy trích đoạn tìm kiếm]",
+  "ho": "jafc",
+  "nam": 2015,
+  "doi": "10.1021/acs.jafc.5b03113",
+  "pmid": "26226053",
+  "url": "https://doi.org/10.1021/acs.jafc.5b03113",
+  "muc_doc": "tieu-de",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:jafc2015-zein-tannic"
+  ],
+  "khoa": "jafc2015-zein-tannic"
  },
  {
   "trich_dan": "JECFA database. Acesulfame potassium (INS 950): ADI 0–15 mg/kg bw; 1990, meeting 46. https://apps.who.int/food-additives-contaminants-jecfa-database/chemical.aspx?chemID=926",
@@ -3799,6 +4039,38 @@
   "khoa": "kupikowskastobba2024"
  },
  {
+  "trich_dan": "Kurt S, Zorba O (2009). Response surface optimization of pH and ionic strength for emulsion characteristics of egg yolk. *Poult Sci* 88(11):2422–2427",
+  "ho": "kurt",
+  "nam": 2009,
+  "doi": "10.3382/ps.2008-00567",
+  "pmid": "19834095",
+  "url": "https://doi.org/10.3382/ps.2008-00567",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:kurt2009"
+  ],
+  "khoa": "kurt2009"
+ },
+ {
+  "trich_dan": "Lacasse M-D et al. (1996). Model for the elasticity of compressed emulsions. *Phys Rev Lett* 76:3448 [Mức đọc gốc: Đọc tóm tắt (qua Consensus)]",
+  "ho": "lacasse",
+  "nam": 1996,
+  "doi": "10.1103/PhysRevLett.76.3448",
+  "pmid": null,
+  "url": "https://doi.org/10.1103/PhysRevLett.76.3448",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:lacasse1996"
+  ],
+  "khoa": "lacasse1996"
+ },
+ {
   "trich_dan": "Lains J. et al. (2025). Sustainable stabilisation of microcrystalline cellulose oil-in-water Pickering emulsions. *Colloids Surf. A*.",
   "ho": "lains",
   "nam": 2025,
@@ -3877,6 +4149,22 @@
    "duoc-pham:S63"
   ],
   "khoa": "lawrence2000"
+ },
+ {
+  "trich_dan": "Le Denmat M, Anton M, Beaumal V (2000). Characterisation of emulsion properties and of interface composition in O/W emulsions prepared with hen egg yolk, plasma and granules. *Food Hydrocolloids* [Mức đọc gốc: Đọc tóm tắt (không có số trong abstract; toàn văn chưa đọc)]",
+  "ho": "ledenmat",
+  "nam": 2000,
+  "doi": "10.1016/S0268-005X(00)00034-5",
+  "pmid": null,
+  "url": "https://doi.org/10.1016/S0268-005X(00)00034-5",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:ledenmat2000"
+  ],
+  "khoa": "ledenmat2000"
  },
  {
   "trich_dan": "Lee CH, Moturi V, Lee Y (2009). Thixotropic property in pharmaceutical formulations. *J Control Release* 136(2):88–98.",
@@ -3991,6 +4279,22 @@
   "khoa": "li2021"
  },
  {
+  "trich_dan": "Li T, Su H, Zhu J, Fu Y (2021). Janus effects of NaCl on structure of egg yolk granules. *Food Chem* 371:131077",
+  "ho": "li",
+  "nam": 2021,
+  "doi": "10.1016/j.foodchem.2021.131077",
+  "pmid": "34536655",
+  "url": "https://doi.org/10.1016/j.foodchem.2021.131077",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:li2021granule"
+  ],
+  "khoa": "li2021granule"
+ },
+ {
   "trich_dan": "Li C (2022). Recent progress in understanding starch gelatinization – an important property determining food quality. *Carbohydr Polym*",
   "ho": "li",
   "nam": 2022,
@@ -4039,6 +4343,22 @@
   "khoa": "li2022b"
  },
  {
+  "trich_dan": "Li S, Jiao B, Meng S, Fu W, Faisal S, Li X, Liu H, Wang Q (2021/2022). Edible mayonnaise-like Pickering emulsion stabilized by pea protein isolate microgels: effect of food ingredients in commercial mayonnaise recipe. *Food Chem* 376:131866",
+  "ho": "li",
+  "nam": 2022,
+  "doi": "10.1016/j.foodchem.2021.131866",
+  "pmid": "34974399",
+  "url": "https://doi.org/10.1016/j.foodchem.2021.131866",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:li2022ppi"
+  ],
+  "khoa": "li2022ppi"
+ },
+ {
   "trich_dan": "Li L. et al. (2023). Characterization of complex coacervation between chia seed gum and whey protein isolate. *Food Hydrocolloids*.",
   "ho": "li",
   "nam": 2023,
@@ -4069,6 +4389,22 @@
    "thuc-pham:04"
   ],
   "khoa": "li2023amylose"
+ },
+ {
+  "trich_dan": "Li Y, Liu H, Wu Y, Li P, Du B, Xie X-A, Li L (2024). Differences in the structural properties of three OSA starches and their effects on the performance of high internal phase Pickering emulsions. *Int J Biol Macromol* 258(Pt 2):128992 (online 2023-12)",
+  "ho": "li",
+  "nam": 2024,
+  "doi": "10.1016/j.ijbiomac.2023.128992",
+  "pmid": "38151085",
+  "url": "https://doi.org/10.1016/j.ijbiomac.2023.128992",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:li2023osa"
+  ],
+  "khoa": "li2023osa"
  },
  {
   "trich_dan": "Li M, Doyle L, Velazquez R, Pangloli P, Wu T. The amount of vinegar added before and after emulsification affects the physical property and stability of mayonnaise. LWT 182:114899",
@@ -4375,6 +4711,22 @@
   "khoa": "lopeztenorio2015"
  },
  {
+  "trich_dan": "Lou W, Huang Z, Xie H, Muhammad AH, Zhang C, Gharsallaoui A, Cai M, Wang J (2025). Dual modification of sweet potato starch: effects of sequence based on ultrasound-assisted nanoprecipitation and OSA esterification for superior functional properties. *Int J Biol Macromol* 310(Pt 4):143450",
+  "ho": "lou",
+  "nam": 2025,
+  "doi": "10.1016/j.ijbiomac.2025.143450",
+  "pmid": "40280520",
+  "url": "https://doi.org/10.1016/j.ijbiomac.2025.143450",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:lou2025"
+  ],
+  "khoa": "lou2025"
+ },
+ {
   "trich_dan": "Lu Z. et al. (2023). Kappa-carrageenan improves the gelation and structures of soy protein isolate... *Food Hydrocolloids*.",
   "ho": "lu",
   "nam": 2023,
@@ -4389,6 +4741,22 @@
    "chat-on-dinh:S55"
   ],
   "khoa": "lu2023"
+ },
+ {
+  "trich_dan": "Mayonnaise: quality and catastrophic phase inversion (luận án, tác giả/trường chưa xác minh). Thứ cấp, không dùng làm số chính [Mức đọc gốc: Chỉ thấy trích đoạn tìm kiếm]",
+  "ho": "luan",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": "https://scispace.com/pdf/mayonnaise-quality-and-catastrophic-phase-inversion-27oicolmkg.pdf",
+  "muc_doc": "tieu-de",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:luan-an-mayo-lund"
+  ],
+  "khoa": "luan-an-mayo-lund"
  },
  {
   "trich_dan": "MacDougall CJ, Razul MS, Papp-Szabo E, Peyronel F, Hanna CB, Marangoni AG, Pink DA. Nanoscale characteristics of triacylglycerol oils: phase separation and binding energies of two-component oils to crystalline nanoplatelets. *Faraday Discuss* 2012;158:425–433",
@@ -4501,6 +4869,86 @@
    "chat-beo:B5"
   ],
   "khoa": "marangoni2005"
+ },
+ {
+  "trich_dan": "Márquez AL, Medrano A, Panizzolo LA, Wagner JR (2009). Effect of calcium salts and surfactant concentration on the stability of water-in-oil (w/o) emulsions prepared with polyglycerol polyricinoleate. *J Colloid Interface Sci* 341(1):101–108",
+  "ho": "marquez",
+  "nam": 2009,
+  "doi": "10.1016/j.jcis.2009.09.020",
+  "pmid": "19822323",
+  "url": "https://doi.org/10.1016/j.jcis.2009.09.020",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:marquez2009"
+  ],
+  "khoa": "marquez2009"
+ },
+ {
+  "trich_dan": "Marze S (2009). Relaxation processes of PGPR at the water/oil interface inferred by oscillatory or transient viscoelasticity measurements. *Langmuir* 25(20):12066–12072",
+  "ho": "marze",
+  "nam": 2009,
+  "doi": "10.1021/la9016849",
+  "pmid": "19764774",
+  "url": "https://doi.org/10.1021/la9016849",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:marze2009"
+  ],
+  "khoa": "marze2009"
+ },
+ {
+  "trich_dan": "Mason TG, Bibette J, Weitz DA (1995). Elasticity of compressed emulsions. *Phys Rev Lett* 75(10):2051–2054",
+  "ho": "mason",
+  "nam": 1995,
+  "doi": "10.1103/PhysRevLett.75.2051",
+  "pmid": "10059196",
+  "url": "https://doi.org/10.1103/PhysRevLett.75.2051",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:mason1995"
+  ],
+  "khoa": "mason1995"
+ },
+ {
+  "trich_dan": "Mason TG et al. (1997). Osmotic pressure and viscoelastic shear moduli of concentrated emulsions. *Phys Rev E* [Mức đọc gốc: Đọc tóm tắt (qua Consensus; DOI chưa kiểm)]",
+  "ho": "mason",
+  "nam": 1997,
+  "doi": null,
+  "pmid": null,
+  "url": "https://consensus.app/papers/details/dc7354ce4aa355c8aff976fe95702d21/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:mason1997"
+  ],
+  "khoa": "mason1997"
+ },
+ {
+  "trich_dan": "Investigation and characterization of Pickering emulsion stabilized by alkali-treated zein (AZ)/sodium alginate (SA) composite particles. *Materials* 16(8):3164 (tác giả chưa ghi) [Mức đọc gốc: Đọc toàn văn (bản mở) (qua WebFetch tóm tắt; kiểm lại bảng gốc)]",
+  "ho": "mat",
+  "nam": 2023,
+  "doi": "10.3390/ma16083164",
+  "pmid": "37110002",
+  "url": "https://www.mdpi.com/1996-1944/16/8/3164",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:mat2023-zein"
+  ],
+  "khoa": "mat2023-zein"
  },
  {
   "trich_dan": "Matsusaki M. et al. (2019). Fabrication of perfusable pseudo blood vessels by controlling sol-gel transition of gellan gum templates. *ACS Biomater. Sci. Eng.* PMID 33405694, DOI 10.1021/acsbiomaterials.8b01272.",
@@ -4698,6 +5146,22 @@
   "khoa": "merisko2011"
  },
  {
+  "trich_dan": "Mezzenga R, Folmer BM, Hughes E (2004). Design of double emulsions by osmotic pressure tailoring. *Langmuir* 20(9):3574–3582",
+  "ho": "mezzenga",
+  "nam": 2004,
+  "doi": "10.1021/la036396k",
+  "pmid": "15875386",
+  "url": "https://doi.org/10.1021/la036396k",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:mezzenga2004"
+  ],
+  "khoa": "mezzenga2004"
+ },
+ {
   "trich_dan": "Miedviedieva N. Mayonnaise quality expertise. Food Technologies (Ukraine)",
   "ho": "miedviedieva",
   "nam": 2016,
@@ -4712,6 +5176,22 @@
    "toan-van:miedviedieva2016"
   ],
   "khoa": "miedviedieva2016"
+ },
+ {
+  "trich_dan": "Mine Y (1998). Adsorption behavior of egg yolk low-density lipoproteins in oil-in-water emulsions. *J Agric Food Chem* 46(1):36–41 [Mức đọc gốc: Đọc tóm tắt; số 1,35–1,4 mg/m² chỉ từ trích đoạn tìm kiếm]",
+  "ho": "mine",
+  "nam": 1998,
+  "doi": "10.1021/jf970306y",
+  "pmid": "10554193",
+  "url": "https://doi.org/10.1021/jf970306y",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:mine1998"
+  ],
+  "khoa": "mine1998"
  },
  {
   "trich_dan": "Mo Y. et al. (2026). Functional additives enhance freeze–thaw stability and retard retrogradation in wheat–potato starch gels... *Foods*.",
@@ -4924,6 +5404,22 @@
   "khoa": "nie2025"
  },
  {
+  "trich_dan": "Nilsson L, Osmark P, Fernandez C, Andersson M, Bergenståhl B (2006). Competitive adsorption of water soluble plasma proteins from egg yolk at the oil/water interface. *J Agric Food Chem* 54(18):6881–6887",
+  "ho": "nilsson",
+  "nam": 2006,
+  "doi": "10.1021/jf060738l",
+  "pmid": "16939353",
+  "url": "https://doi.org/10.1021/jf060738l",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:nilsson2006"
+  ],
+  "khoa": "nilsson2006"
+ },
+ {
   "trich_dan": "Ning C et al. (2019). l-Lysine/l-arginine/l-cysteine synergistically improves the color of cured sausage with NaNO2 by hindering myoglobin oxidation and promoting nitrosylmyoglobin formation. *Food Chem* 284:219–226",
   "ho": "ning",
   "nam": 2019,
@@ -4948,7 +5444,8 @@
   "url": "https://doi.org/10.1002/jsfa.12972",
   "muc_doc": "tom-tat",
   "khu": [
-   "chat-nhu-hoa"
+   "chat-nhu-hoa",
+   "nhu-tuong"
   ],
   "ma_cu": [
    "chat-nhu-hoa:C11"
@@ -4970,6 +5467,38 @@
    "chat-nhu-hoa:C12"
   ],
   "khoa": "niu2024"
+ },
+ {
+  "trich_dan": "Nollet M, Laurichesse E, Besse S, Soubabère O, Schmitt V (2018). Determination of formulation conditions allowing double emulsions stabilized by PGPR and sodium caseinate to be used as capsules. *Langmuir* 34(8):2823–2833",
+  "ho": "nollet",
+  "nam": 2018,
+  "doi": "10.1021/acs.langmuir.7b04085",
+  "pmid": "29406736",
+  "url": "https://doi.org/10.1021/acs.langmuir.7b04085",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:nollet2018"
+  ],
+  "khoa": "nollet2018"
+ },
+ {
+  "trich_dan": "Nollet M, Laurichesse E, Schmitt V (2024). Double emulsions stabilized by PGPR and Arabic gum as capsules: the surprising stabilizing role of inner droplets. *Langmuir* 40(3):1646–1657 [Mức đọc gốc: Đọc toàn văn (bản mở) (HAL, bản tác giả)]",
+  "ho": "nollet",
+  "nam": 2024,
+  "doi": "10.1021/acs.langmuir.3c02554",
+  "pmid": "38206825",
+  "url": "https://hal.science/hal-04487703",
+  "muc_doc": "toan-van",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:nollet2024"
+  ],
+  "khoa": "nollet2024"
  },
  {
   "trich_dan": "Nooshkam M. et al. (2023). Behavior of protein-polysaccharide conjugate-stabilized food emulsions under various destabilization conditions. *Food Chemistry: X*.",
@@ -5034,6 +5563,22 @@
    "chat-on-dinh:S24"
   ],
   "khoa": "nsengiyumva2023"
+ },
+ {
+  "trich_dan": "Nunes MC, Raymundo A, Empis J, Sousa I (2002). Physical characterisation of commercial mayonnaises and salad dressings. *e-rheo.pt* 2:30–41 (không có DOI) [Mức đọc gốc: Đọc toàn văn (bản mở) (d32, G°N qua WebFetch)]",
+  "ho": "nunes",
+  "nam": 2002,
+  "doi": null,
+  "pmid": null,
+  "url": "https://fenix.isa.ulisboa.pt/downloadFile/844497944576992/Nunes,2002_e-rheo.pdf",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:nunes2002"
+  ],
+  "khoa": "nunes2002"
  },
  {
   "trich_dan": "Nunes MGB, et al. (2009). Impact of emulsifiers on the quality and rheological properties of gluten-free breads and batters. *Eur Food Res Technol*.",
@@ -5226,6 +5771,22 @@
    "duoc-pham:S54"
   ],
   "khoa": "patel2006"
+ },
+ {
+  "trich_dan": "Pays K, Giermanska-Kahn J, Pouligny B, Bibette J, Leal-Calderon F (2002). Double emulsions: how does release occur? *J Control Release* 79(1-3):193–205",
+  "ho": "pays",
+  "nam": 2002,
+  "doi": "10.1016/s0168-3659(01)00535-1",
+  "pmid": "11853931",
+  "url": "https://doi.org/10.1016/s0168-3659(01)00535-1",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:pays2002"
+  ],
+  "khoa": "pays2002"
  },
  {
   "trich_dan": "Pei Y, Zhang Y, Ding H, Li B, Yang J. Stability and rheological behavior of mayonnaise-like emulsion co-emulsified by konjac glucomannan and whey protein. Foods",
@@ -5466,6 +6027,22 @@
    "duoc-pham:S23"
   ],
   "khoa": "pouton2008"
+ },
+ {
+  "trich_dan": "Princen HM, Kiss AD (1986). Rheology of foams and highly concentrated emulsions: III. Static shear modulus. *J Colloid Interface Sci* 112(2):427–437 [Mức đọc gốc: Đọc tóm tắt (trang nhà xuất bản)]",
+  "ho": "princen",
+  "nam": 1986,
+  "doi": "10.1016/0021-9797(86)90111-6",
+  "pmid": null,
+  "url": "https://doi.org/10.1016/0021-9797(86)90111-6",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:princen1986"
+  ],
+  "khoa": "princen1986"
  },
  {
   "trich_dan": "Qayum A, ... Ma H (2023). Ultrasonic and homogenization: an overview of the preparation of an edible protein–polysaccharide complex emulsion. *Compr Rev Food Sci Food Saf* 22(6):4242–4281.",
@@ -6190,6 +6767,22 @@
   "khoa": "singh2022"
  },
  {
+  "trich_dan": "Sirvente H, Beaumal V, Gaillard C, Bialek L, Hamm D, Anton M (2007). Structuring and functionalization of dispersions containing egg yolk, plasma and granules induced by mechanical treatments. *J Agric Food Chem* 55(23):9537–9544",
+  "ho": "sirvente",
+  "nam": 2007,
+  "doi": "10.1021/jf0719398",
+  "pmid": "17941695",
+  "url": "https://doi.org/10.1021/jf0719398",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:sirvente2007"
+  ],
+  "khoa": "sirvente2007"
+ },
+ {
   "trich_dan": "Smejkal G et al. (2024). Theoretical and experimental determinations of the hydrophilic–lipophilic balance (HLB) of representative oils and lecithins. *Colloids Interfaces*. (Chỉ đọc tóm tắt qua Consensus; chưa có DOI.)",
   "ho": "smejkal",
   "nam": 2024,
@@ -6204,6 +6797,22 @@
    "duoc-pham:S80"
   ],
   "khoa": "smejkal2024"
+ },
+ {
+  "trich_dan": "Smits J, Giri RP, Shen C, Mendonça D, Murphy B, Huber P, Rezwan K, Maas M. Assessment of nanoparticle immersion depth at liquid interfaces from chemically equivalent macroscopic surfaces. arXiv:2202.03727 (bản thảo; bài đăng và DOI chưa xác minh) [Mức đọc gốc: Đọc toàn văn (bản mở) (arXiv, qua WebFetch)]",
+  "ho": "smits",
+  "nam": 2022,
+  "doi": null,
+  "pmid": null,
+  "url": "https://arxiv.org/pdf/2202.03727",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:smits2022"
+  ],
+  "khoa": "smits2022"
  },
  {
   "trich_dan": "Society of Cosmetic Chemists library (v011n06/1) https://library.scconline.org/v011n06/1 ; (v041n03/2) https://library.scconline.org/v041n03/2",
@@ -6896,6 +7505,22 @@
   "khoa": "wang2017"
  },
  {
+  "trich_dan": "Wang A, Xiao Z, Wang J, Li G, Wang L (2020). Fabrication and characterization of emulsion stabilized by table egg-yolk granules at different pH levels. *J Sci Food Agric* 100(4):1470–1478 (online 2019-12)",
+  "ho": "wang",
+  "nam": 2020,
+  "doi": "10.1002/jsfa.10154",
+  "pmid": "31756278",
+  "url": "https://doi.org/10.1002/jsfa.10154",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:wang2019yolk"
+  ],
+  "khoa": "wang2019yolk"
+ },
+ {
   "trich_dan": "Wang Y-N, et al. (2021). The stability of aerated emulsions: effects of emulsifier synergy on partial coalescence and crystallization of milk fat. *J Food Eng*.",
   "ho": "wang",
   "nam": 2021,
@@ -7280,6 +7905,22 @@
   "khoa": "wu2023"
  },
  {
+  "trich_dan": "Wu X, Zhang J, Wu X, Yan X, Zhang Q, Zhang B (2024). Octenyl succinic anhydride tigernut starch: structure, physicochemical properties and stability of curcumin-loaded Pickering emulsion. *Int J Biol Macromol* 275(Pt 1):133475",
+  "ho": "wu",
+  "nam": 2024,
+  "doi": "10.1016/j.ijbiomac.2024.133475",
+  "pmid": "38945344",
+  "url": "https://doi.org/10.1016/j.ijbiomac.2024.133475",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:wu2024"
+  ],
+  "khoa": "wu2024"
+ },
+ {
   "trich_dan": "Wu X et al. (2026). Hydroxypropyl distarch phosphate modulates protein-starch interactions and fibrous network formation in high-moisture extruded soy protein isolate–wheat gluten meat analogues. *Food Res Int* 242:120023",
   "ho": "wu",
   "nam": 2026,
@@ -7408,6 +8049,22 @@
    "chat-on-dinh:S38"
   ],
   "khoa": "xu2022"
+ },
+ {
+  "trich_dan": "Xu J, Liu Y, Guo T, Sun G, Luo J, Liu R, Tse Y-LS, Ngai T (2022). Investigation of the contact angle and packing density of silica nanoparticles at a Pickering emulsion interface fixed by UV polymerization. *Langmuir* 38(14):4234–4242",
+  "ho": "xu",
+  "nam": 2022,
+  "doi": "10.1021/acs.langmuir.1c03259",
+  "pmid": "35357199",
+  "url": "https://doi.org/10.1021/acs.langmuir.1c03259",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:xu2022"
+  ],
+  "khoa": "xu2022-silica"
  },
  {
   "trich_dan": "Xu W. et al. (2023). Insight into the mechanism of the decrease in mechanical strength and water-holding capacity of gels made from oxidized gelatin. *Int. J. Biol. Macromol.*",
@@ -7699,6 +8356,22 @@
   "khoa": "yildirim2016"
  },
  {
+  "trich_dan": "Yu Z-Y, Jiang S-W, Zheng Z, Cao X-M, Hou Z-G, Xu J-J, Wang H-L, Jiang S-T, Pan L-J (2019). Preparation and properties of OSA-modified taro starches and their application for stabilizing Pickering emulsions. *Int J Biol Macromol* 137:277–285",
+  "ho": "yu",
+  "nam": 2019,
+  "doi": "10.1016/j.ijbiomac.2019.06.230",
+  "pmid": "31260771",
+  "url": "https://doi.org/10.1016/j.ijbiomac.2019.06.230",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:yu2019"
+  ],
+  "khoa": "yu2019"
+ },
+ {
   "trich_dan": "Zambuto S. G. et al. (2024). Evaluation of gelatin bloom strength on gelatin methacryloyl hydrogel properties.",
   "ho": "zambuto",
   "nam": 2024,
@@ -7905,6 +8578,22 @@
    "chat-on-dinh:S69"
   ],
   "khoa": "zhao2024"
+ },
+ {
+  "trich_dan": "Zheng R, Binks BP, Cui Z (2020). Pickering emulsions of hydrophilic silica particles and symmetrical organic electrolytes. *Langmuir* 36(17):4619–4629",
+  "ho": "zheng",
+  "nam": 2020,
+  "doi": "10.1021/acs.langmuir.0c00261",
+  "pmid": "32315533",
+  "url": "https://doi.org/10.1021/acs.langmuir.0c00261",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [
+   "ban-lab-moi:zheng2020"
+  ],
+  "khoa": "zheng2020"
  },
  {
   "trich_dan": "Zhu J-P, et al. (2021). Enzymatic synthesis of long- and very-long-chain sucrose esters... *Food Hydrocolloids*.",
