@@ -12,7 +12,7 @@ nguon_goc: tai-lieu-nhu-tuong/08-xu-ly-su-co-va-quy-trinh-thiet-ke.md
 ---
 # 08. Xử lý sự cố và quy trình thiết kế công thức
 
-> **Kết luận trước.** Gần như mọi sự cố nhũ tương đều quy về một trong 7 mắt xích ở file 03. Quy trình chẩn đoán gồm **ba câu hỏi theo thứ tự**: (1) giọt có **đổi kích thước** không (hợp giọt/ripening) hay chỉ **di chuyển** (kem hóa/keo tụ)? (2) có **phân tán lại được** không (keo tụ) hay không (hợp giọt)? (3) quá trình có **tuyến tính theo d³** không (ripening)? Ba phép thử này tốn ít công mà loại được phần lớn giả thuyết.
+> **Kết luận trước.** Gần như mọi sự cố nhũ tương (emulsion) đều quy về một trong 7 mắt xích ở file 03. Quy trình chẩn đoán gồm **ba câu hỏi theo thứ tự**: (1) giọt có **đổi kích thước** không (hợp giọt/ripening) hay chỉ **di chuyển** (kem hóa/keo tụ)? (2) có **phân tán lại được** không (keo tụ) hay không (hợp giọt)? (3) quá trình có **tuyến tính theo d³** không (ripening)? Ba phép thử này tốn ít công mà loại được phần lớn giả thuyết.
 
 Độ tin cậy: các hướng giải quyết dưới đây là **[K]/[G]** tổng hợp từ cơ chế ở file 02–03 (có nguồn ở đó); chưa phải số liệu thực nghiệm cho một sản phẩm cụ thể.
 
@@ -36,7 +36,7 @@ nguon_goc: tai-lieu-nhu-tuong/08-xu-ly-su-co-va-quy-trinh-thiet-ke.md
 
 ---
 
-## 2. Thứ tự chẩn đoán đề xuất (cho web: sơ đồ quyết định)
+## 2. Thứ tự chẩn đoán đề xuất
 
 ```
 Sản phẩm hỏng
@@ -61,7 +61,7 @@ Sản phẩm hỏng
 
 **Bước 1 – Chọn pha dầu:** độ tan trong nước (có ripening không?), điểm chảy/SFC (kết tinh?), tỷ trọng (cần chất làm nặng?), nhạy oxy hóa.
 
-**Bước 2 – Chọn chất nhũ hóa chính theo môi trường (file 04):** protein / phospholipid / polysaccharide / phân tử nhỏ / hạt; nồng độ khởi đầu theo **diện tích bề mặt** (file 01, mục 2.2) nhân hệ số 1,5–3.
+**Bước 2 – Chọn chất nhũ hóa (emulsifier) chính theo môi trường (file 04):** protein / phospholipid / polysaccharide / phân tử nhỏ / hạt; nồng độ khởi đầu theo **diện tích bề mặt** (file 01, mục 2.2) nhân hệ số 1,5–3.
 
 **Bước 3 – Chọn thiết bị và quy trình (file 02):** pre-emulsion (rotor-stator) ⇒ HPH hoặc siêu âm; xác định chế độ giới hạn (năng lượng vs chất nhũ hóa).
 
@@ -80,7 +80,7 @@ Sản phẩm hỏng
 
 ---
 
-## 4. Mẫu "phiếu thí nghiệm" cho web (tải về)
+## 4. Mẫu phiếu thí nghiệm
 
 | Trường | Ví dụ |
 |---|---|

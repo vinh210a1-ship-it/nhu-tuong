@@ -47,7 +47,7 @@ Hệ: sữa gầy pha loãng 100 lần trong permeate, đo kích thước thủy
 
 ### 2.4 So sánh ι, κ, hybrid trong sữa gầy [N: @arltoft2007]
 
-- Liều thấp 0,2 đến 0,25% cho cấu trúc sợi mảnh carrageenan–protein, có "giọt giống nhũ tương"; liều cao 0,7 đến 1,0% gây kết bông mạnh; hybrid kết bông ở cả hai liều.
+- Liều thấp 0,2 đến 0,25% cho cấu trúc sợi mảnh carrageenan–protein, có "giọt giống nhũ tương"; liều cao 0,7 đến 1,0% gây keo tụ mạnh; hybrid keo tụ ở cả hai liều.
 - ι liều thấp trong sữa gần như không nóng chảy lại: dấu hiệu mạng **cùng liên kết** (coupled network) thật sự.
 - Kết luận: cả ba loại đều tương tác với micelle, nhưng mức ảnh hưởng lên gel khác nhau.
 

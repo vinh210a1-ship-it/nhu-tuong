@@ -1,7 +1,7 @@
 // Phòng lab ảo: giao diện. Mọi con số đều lấy từ mo-hinh.js (đã có phép kiểm).
 // Cách chơi: bấm tủ để mở, kéo chai thả vào cốc trên cân; kéo cốc sang từng máy.
 import { stokes } from '../cong-thuc.js';
-import { doNhotNuoc, moPhongMe, chamSao, NHIEM_VU, NHU_HOA, DAU, NHAN, lopKichThuoc, CAO_ONG_MM, doKhongNo, thoiGianCamUng } from './mo-hinh.js';
+import { doNhotNuoc, moPhongMe, chamSao, LUAT_CHOI, NHIEM_VU, NHU_HOA, DAU, NHAN, lopKichThuoc, CAO_ONG_MM, doKhongNo, thoiGianCamUng } from './mo-hinh.js';
 import { TU } from './tu.js';
 
 const BASE = '/nhu-tuong/';
@@ -761,9 +761,9 @@ ${thanhDo('Oleic C18:1', d.c181, 100, '#e9b949')}${thanhDo('Linoleic C18:2', d.c
 <p class="pl-meo">Độ không no U = <b>${soCD(U)}</b> ${nhanHTML(NHAN.khongNo)} → bền oxy hóa ước tính ${so(ip, 2)} ngày ở 25 °C (trong nhũ tương, minh họa).</p>`;
 	} else if (mon.loai === 'nhuHoa') {
 		const n = NHU_HOA[mon.khoa];
-		noiDung = `<p class="pl-meo">${h(n.ghiChu)}</p><p class="pl-meo">Độ phủ bề mặt Γ ≈ ${soCD(n.gamma)} mg/m²${n.nhayNhiet ? ` · trong mô phỏng bắt đầu biến tính từ ~${n.nhayNhiet} °C` : ''}</p>`;
+		noiDung = `<p class="pl-meo">${h(n.ghiChu)}</p><p class="pl-meo">Độ phủ bề mặt Γ ≈ ${soCD(n.gamma)} mg/m²${n.gammaMinhHoa ? ` ${nhanHTML(NHAN.gammaMinhHoa)} số minh họa, chưa có nguồn` : ''}${n.nhayNhiet ? ` · trong mô phỏng bắt đầu biến tính từ ~${n.nhayNhiet} °C${n.nhayNhietMinhHoa ? ` ${nhanHTML(NHAN.nguongBienTinh)} số minh họa` : ''}` : ''}</p>`;
 	} else if (mon.loai === 'xanthan')
-		noiDung = `<p class="pl-meo">Polysaccharide chuỗi cứng, làm pha nước đặc lên rất mạnh dù chỉ dùng vài phần nghìn. Ít quá thì gây kết bông do cạn kiệt; đủ nhiều thì tạo mạng giữ giọt đứng yên ${nhanHTML(NHAN.canKiet)}.</p>`;
+		noiDung = `<p class="pl-meo">Polysaccharide chuỗi cứng, làm pha nước đặc lên rất mạnh dù chỉ dùng vài phần nghìn. Ít quá thì gây keo tụ do cạn kiệt; đủ nhiều thì tạo mạng giữ giọt đứng yên ${nhanHTML(NHAN.canKiet)}.</p>`;
 	else if (mon.loai === 'tocopherol') noiDung = `<p class="pl-meo">Chất chống oxy hóa phá chuỗi: cho nguyên tử H để dập gốc peroxyl ${nhanHTML(NHAN.chongOxy)}.</p>`;
 	else if (mon.loai === 'edta') noiDung = `<p class="pl-meo">Chất chống oxy hóa phòng ngừa: bắt ion Fe, Cu trong pha nước, nơi oxy hóa nhũ tương bắt đầu ${nhanHTML(NHAN.chongOxy)}.</p>`;
 	const daCo = trongCoc(mon);
@@ -861,6 +861,8 @@ function veKetQua(kq, kqSao, ngay) {
 	if (kq.cheDo === 'mang') ly.push([NHAN.canKiet, 'Xanthan đủ nhiều tạo mạng yếu có ứng suất chảy. Lực nổi của giọt không thắng nổi mạng nên giọt đứng yên.']);
 	if (kq.bienTinh) ly.push([NHAN.bienTinh, `Mẫu nóng tới ${soCD(kq.nhietRa)} °C. Whey biến tính, giọt dính thành cụm và nổi nhanh. Thử làm lạnh giữa các lần qua máy.`]);
 	if (kq.saiLoai) ly.push([NHAN.hlb, 'Span 80 ưa dầu, thích hợp cho nước trong dầu (bơ thực vật), không giữ được giọt dầu trong nước.']);
+	if (kq.bienTinh) ly.push([NHAN.nguongBienTinh, NHAN.nguongBienTinh.chu]);
+	if (S.me.nhuHoa === 'tween80' || S.me.nhuHoa === 'span80') ly.push([NHAN.gammaMinhHoa, NHAN.gammaMinhHoa.chu]);
 	if (kq.canhBao.some((c) => c.ma === 'khong-tien-nhu')) ly.push([NHAN.hangSo, 'Không có tiền nhũ, lần qua máy đầu chỉ kịp xé mảng dầu lớn.']);
 	if (S.tab === 'oxy' || S.nv?.id === 'omega-3') {
 		const ox = kq.oxyHoa(ngay, nhiet, S.bq.sang);
@@ -881,6 +883,7 @@ function veKetQua(kq, kqSao, ngay) {
 	const dau = kqSao
 		? `<div class="pl-sao-kq"><span class="pl-sao-to" aria-label="${kqSao.sao} trên 3 sao">${'★'.repeat(kqSao.sao)}<i>${'☆'.repeat(3 - kqSao.sao)}</i></span><b>${['Chưa đạt, thử lại nhé!', 'Được 1 sao, còn cải thiện được.', 'Tốt! Còn một tiêu chí nữa.', 'Xuất sắc! Mẻ hoàn hảo.'][kqSao.sao]}</b></div>
 <ul class="pl-tieu-chi">${kqSao.tieuChi.map((t) => `<li class="${t.dat ? 'dat' : 'truot'}">${t.dat ? '✓' : '✗'} ${h(t.chu)}</li>`).join('')}</ul>
+<p class="pl-luat">${nhanHTML({ ma: 'T' })} <b>Luật chơi:</b> ${LUAT_CHOI}</p>
 <p class="pl-meo">Chi phí mẻ này ≈ ${soCD(kq.chiPhi)} nghìn đồng/kg (minh họa).</p>`
 		: `<p class="pl-ok">Đã ghi mẻ vào sổ tay.</p>`;
 	return `${dau}<h4>Vì sao?</h4><ul class="pl-vi-sao">${ly.map(([n, t]) => `<li>${nhanHTML(n)} ${t}${lienKet(n)}</li>`).join('')}</ul>
@@ -1213,3 +1216,25 @@ function capNhatCanh() {
 }
 
 if (goc) khoiDong(goc);
+
+/* Liên kết từ bài học:
+   /phong-lab/#nv-<mã nhiệm vụ>  mở bàn nhũ tương và chọn sẵn nhiệm vụ ("tu-do" = phòng lab tự do)
+   /phong-lab/#so-tay            cuộn tới Sổ tay thí nghiệm
+   (#ban-thit và #ban-bao-quan do dungVo xử lý). Mã nhiệm vụ lạ thì bỏ qua, trang vẫn mở bình thường. */
+function theoHash() {
+	if (!goc) return;
+	const nv = location.hash.match(/^#nv-([a-z0-9-]+)$/);
+	if (nv) {
+		const nhiemVu = nv[1] === 'tu-do' ? null : NHIEM_VU.find((n) => n.id === nv[1]);
+		if (nv[1] !== 'tu-do' && !nhiemVu) return;
+		document.querySelector('[data-ban="nhu-tuong"]')?.click();
+		chonNhiemVu(nhiemVu);
+		document.getElementById('phong-lab')?.scrollIntoView({ behavior: GIAM_CHUYEN_DONG ? 'auto' : 'smooth', block: 'start' });
+	} else if (location.hash === '#so-tay') {
+		document.querySelector('[data-ban="nhu-tuong"]')?.click();
+		// chờ một nhịp để bố cục (chọn bàn, vẽ Sổ tay) ổn định rồi mới cuộn
+		setTimeout(() => goc.querySelector('.pl-so-tay-wrap')?.scrollIntoView({ behavior: GIAM_CHUYEN_DONG ? 'auto' : 'smooth', block: 'start' }), 350);
+	}
+}
+theoHash();
+addEventListener('hashchange', theoHash);

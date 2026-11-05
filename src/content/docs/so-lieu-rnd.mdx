@@ -1,0 +1,80 @@
+---
+title: Số liệu R&D (bảng tra)
+description: Ba bảng tra tĩnh cho người làm R&D nhũ tương, HLB của 30 chất nhũ hóa, 7 loại máy đồng hóa và mayonnaise theo hàm lượng dầu. Mỗi bảng ghi nguồn, trang và điều kiện đo.
+editUrl: false
+---
+
+import BangSoLieu from '../../components/BangSoLieu.astro';
+import hlb from '../../data/so-lieu-rnd/hlb.json';
+import dongHoa from '../../data/so-lieu-rnd/dong-hoa.json';
+import mayo from '../../data/so-lieu-rnd/mayo-li2012.json';
+
+Ba bảng tra nhanh, chép nguyên từ sách McClements (2016) và từ một nghiên cứu mayonnaise. Số trong bảng **không được làm tròn lại hay tính lại**. Trước khi dùng một số, đọc khung "Nguồn và điều kiện đo" ngay trên bảng: nó nói số đó đo ở đâu và dùng được đến đâu. Ý nghĩa các huy hiệu ở trang [Cách đọc nhãn tin cậy](../quy-uoc/).
+
+## 1. HLB của 30 chất nhũ hóa phân tử nhỏ
+
+HLB (hydrophilic–lipophilic balance, cân bằng ưa nước–ưa dầu) là thang cho biết chất nhũ hóa hợp với dầu hay với nước hơn. Theo sách: HLB 3–6 tan trong dầu và ổn định nhũ tương W/O; 7–9 là chất thấm ướt, nhũ tương dễ hợp giọt; 10–18 tan trong nước và ổn định O/W. [N: @mcclements2016 tr.134–135] Lý thuyết đầy đủ ở bài [Nền tảng](../nhu-tuong/nen-tang/); trộn hai chất để đạt HLB mục tiêu thì dùng [máy tính HLB](../may-tinh/#mt-hlb).
+
+**Lưu ý khi dùng bảng này:**
+
+- HLB đổi theo nhiệt độ và điều kiện dung dịch, nên một con số HLB chỉ là điểm xuất phát để sàng lọc. [N: @mcclements2016 tr.136]
+- Sách **không có** bảng "HLB yêu cầu" của từng loại dầu; giá trị này phải xác định bằng thực nghiệm cho từng dầu. [N: @mcclements2016 tr.136]
+- **Span 85 không có trong bảng** của sách (bảng có Span 80, 65, 60, 40, 20). Cần HLB của Span 85 thì lấy từ phiếu kỹ thuật của nhà cung cấp, đừng suy từ bảng này. [N: @mcclements2016 tr.135]
+- Ba chất để trống cột HLB (CITREM, lauroyl arginate, sucrose monooleate) vì sách không ghi số cho chúng. [N: @mcclements2016 tr.135]
+
+<BangSoLieu
+	bang={hlb}
+	cot={[
+		{ k: 'ten', t: 'Chất nhũ hóa' },
+		{ k: 'viet_tat', t: 'Viết tắt' },
+		{ k: 'tan_trong', t: 'Tan trong (O = dầu, W = nước)' },
+		{ k: 'hlb', t: 'HLB', so: true },
+		{ k: 'dien_tich', t: 'Điện tích, điểm đục' },
+	]}
+/>
+
+## 2. Bảy loại thiết bị đồng hóa
+
+So sánh các loại máy tạo nhũ tương theo chế độ dòng, mật độ năng lượng và cỡ giọt nhỏ nhất thường đạt được. [N: @mcclements2016 tr.250] Cách chọn máy theo mục tiêu ở bài [Hình thành nhũ tương](../nhu-tuong/hinh-thanh/).
+
+**Lưu ý khi dùng bảng này:**
+
+- "Cỡ giọt nhỏ nhất" là giá trị điển hình sách tổng hợp, không phải cam kết thiết kế cho sản phẩm của bạn. Sách không cho áp suất cụ thể (bao nhiêu bar) cho từng máy. [N: @mcclements2016 tr.250]
+- Cỡ giọt thực tế còn phụ thuộc chất nhũ hóa, độ nhớt và phân số pha dầu φ. [G: suy luận từ các bài cơ chế, cần thử trên hệ của bạn]
+
+<BangSoLieu
+	bang={dongHoa}
+	ghiChu={dongHoa.ghi_chu}
+	cot={[
+		{ k: 'thiet_bi', t: 'Thiết bị' },
+		{ k: 'cong_suat', t: 'Vận hành' },
+		{ k: 'che_do_dong', t: 'Chế độ dòng chủ đạo' },
+		{ k: 'mat_do_nang_luong', t: 'Mật độ năng lượng (J/m³)' },
+		{ k: 'hieu_suat', t: 'Hiệu suất năng lượng tương đối' },
+		{ k: 'co_giot_nho_nhat', t: 'Cỡ giọt nhỏ nhất', so: true },
+		{ k: 'do_nhot_mau', t: 'Độ nhớt mẫu' },
+	]}
+/>
+
+## 3. Mayonnaise theo hàm lượng dầu
+
+Ba mẫu mayonnaise làm với 75, 80 và 85% dầu, đo thành phần, kích thước giọt và lưu biến trong cùng một nghiên cứu. [N: @li2012mayo] Đây là bảng **một nghiên cứu, một công thức**, dùng để thấy xu hướng khi tăng lượng dầu chứ không để lấy làm tiêu chuẩn.
+
+**Lưu ý khi dùng bảng này:**
+
+- Công thức là dầu đậu nành, lưu biến đo bằng cone–plate ở 20 °C (xem khung nguồn bên dưới). Mayonnaise làm từ dầu khác, lòng đỏ khác hay đo bằng thiết bị khác có thể cho số khác. [N: @li2012mayo]
+- "Đường kính trung bình theo thể tích" **không phải d₃₂** (đường kính Sauter). Hai đại lượng này không thay thế cho nhau, đừng đặt chung một đồ thị. [N: @li2012mayo]
+- Dải hàm lượng dầu của mayonnaise nói chung theo sách là 75–84% khối lượng. [N: @mcclements2016 tr.567] Mẫu 85% của nghiên cứu này nằm ngay ngoài mốc đó.
+- Các số mà bài này chỉ trích lại từ nghiên cứu khác (không tự đo) **không** đưa vào bảng.
+
+<BangSoLieu
+	bang={mayo}
+	cot={[
+		{ k: 'dai_luong', t: 'Đại lượng' },
+		{ k: 'dau_75', t: 'Dầu 75%', so: true },
+		{ k: 'dau_80', t: 'Dầu 80%', so: true },
+		{ k: 'dau_85', t: 'Dầu 85%', so: true },
+		{ k: 'don_vi', t: 'Đơn vị' },
+	]}
+	ghiChu={mayo.ghi_chu}
+/>

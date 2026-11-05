@@ -10,6 +10,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { htmlNhan, SO_DON_VI } from '../src/plugins/remark-nhan.mjs';
+import { docTep } from './doc-tep.mjs';
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const NHAN_RE = /\[(?:N|K|T|G)(?:[:;][^\]\n]*)?\]/g;
@@ -48,11 +49,11 @@ export function dungTraCuu({ GOC, DOCS, BASE, theGia, soPhuGia, soNhom }) {
 	// ---- (1) thuật ngữ nhũ tương: slug theo số thứ tự file ("01" -> nen-tang)
 	const slugTheoSo = {};
 	for (const f of fs.readdirSync(mucNoiDung('nhu-tuong'))) {
-		const [fm] = docFrontMatter(fs.readFileSync(path.join(mucNoiDung('nhu-tuong'), f), 'utf8'));
+		const [fm] = docFrontMatter(docTep(path.join(mucNoiDung('nhu-tuong'), f)));
 		if (fm.hien_tren_web === 'true' && fm.loai === 'bai') slugTheoSo[f.slice(0, 2)] = fm.slug.toLowerCase();
 	}
 	{
-		const [, than] = docFrontMatter(fs.readFileSync(tep('nhu-tuong', '09-'), 'utf8'));
+		const [, than] = docFrontMatter(docTep(tep('nhu-tuong', '09-')));
 		for (const d of than.split('\n').filter(hangBang).slice(1)) {
 			const c = oBang(d);
 			if (c.length < 3 || !c[0]) continue;
@@ -67,7 +68,7 @@ export function dungTraCuu({ GOC, DOCS, BASE, theGia, soPhuGia, soNhom }) {
 	}
 	// ---- (2) thuật ngữ dược bào chế
 	{
-		const [, than] = docFrontMatter(fs.readFileSync(tep('duoc-pham', '09-'), 'utf8'));
+		const [, than] = docFrontMatter(docTep(tep('duoc-pham', '09-')));
 		for (const d of than.split('\n').filter(hangBang).slice(1)) {
 			const c = oBang(d);
 			if (c.length < 3 || !c[0]) continue;
@@ -83,7 +84,7 @@ export function dungTraCuu({ GOC, DOCS, BASE, theGia, soPhuGia, soNhom }) {
 	// ---- (3) từ điển chung
 	const ghiChuLinhVuc = {};
 	{
-		const [, than] = docFrontMatter(fs.readFileSync(path.join(mucNoiDung('tra-cuu'), 'tu-dien-anh-viet.md'), 'utf8'));
+		const [, than] = docFrontMatter(docTep(path.join(mucNoiDung('tra-cuu'), 'tu-dien-anh-viet.md')));
 		let lv = '';
 		let daThayTieuDe = false;
 		for (const d of than.split('\n')) {

@@ -12,13 +12,13 @@ nguon_goc: tai-lieu-nhu-tuong/02-hinh-thanh-nhu-tuong.md
 ---
 # 02. Hình thành nhũ tương
 
-> **Kết luận trước.** Kích thước giọt cuối cùng là kết quả của **cuộc đua giữa ba tốc độ**: (1) giọt bị bẻ nhỏ bởi ứng suất chảy, (2) chất nhũ hóa hấp phụ lên bề mặt mới, (3) giọt va chạm và hợp lại. Có hai chế độ: **giới hạn bởi năng lượng** (tăng áp suất/công suất thì giọt nhỏ đi) và **giới hạn bởi chất nhũ hóa** (tăng áp suất nhưng giọt không nhỏ thêm vì giọt mới hợp lại; phải tăng chất nhũ hóa hoặc dùng chất hấp phụ nhanh hơn). Chẩn đoán đúng chế độ là bước quan trọng nhất khi giọt không đạt cỡ mong muốn.
+> **Kết luận trước.** Kích thước giọt cuối cùng là kết quả của **cuộc đua giữa ba tốc độ**: (1) giọt bị bẻ nhỏ bởi ứng suất chảy, (2) chất nhũ hóa (emulsifier) hấp phụ lên bề mặt mới, (3) giọt va chạm và hợp lại. Có hai chế độ: **giới hạn bởi năng lượng** (tăng áp suất/công suất thì giọt nhỏ đi) và **giới hạn bởi chất nhũ hóa** (tăng áp suất nhưng giọt không nhỏ thêm vì giọt mới hợp lại; phải tăng chất nhũ hóa hoặc dùng chất hấp phụ nhanh hơn). Chẩn đoán đúng chế độ là bước quan trọng nhất khi giọt không đạt cỡ mong muốn.
 
 Độ tin cậy: **[N]** có nguồn kiểm · **[K]** sách giáo khoa · **[T]** tính minh họa · **[G]** giả thuyết.
 
 ---
 
-## 1. Ba quá trình xảy ra gần như đồng thời (khung Walstra) [K: @walstra1993, @walstra2003]
+## 1. Ba quá trình xảy ra gần như đồng thời (khung Walstra) [K: @walstra1993, @walstra2003; N: @mcclements2016 tr.249–251, tr.273–274]
 
 ```
 Thô (pre-emulsion)  ──(1) vỡ giọt──▶  giọt nhỏ, bề mặt trần
@@ -44,11 +44,11 @@ Thô (pre-emulsion)  ──(1) vỡ giọt──▶  giọt nhỏ, bề mặt tr
 ## 2. Vật lý của vỡ giọt
 
 ### 2.1 Dòng chảy lớp (laminar) – số Capillary [K: @grace1982]
-Giọt bị biến dạng bởi ứng suất nhớt $\eta_c\dot\gamma$ và bị giữ bởi áp suất Laplace $\gamma/r$. Số Capillary:
+Giọt bị biến dạng bởi ứng suất nhớt $\eta_c\dot\gamma$ và bị giữ bởi áp suất Laplace (Laplace pressure) $\gamma/r$. Số Capillary (Capillary number):
 
 $$Ca = \frac{\eta_c\,\dot\gamma\,r}{\gamma}$$
 
-Giọt vỡ khi $Ca > Ca_{crit}$. $Ca_{crit}$ phụ thuộc **tỷ lệ nhớt** $\lambda = \eta_d/\eta_c$ (đường cong Grace):
+Giọt vỡ khi $Ca > Ca_{crit}$. $Ca_{crit}$ phụ thuộc **tỷ lệ nhớt (viscosity ratio)** $\lambda = \eta_d/\eta_c$ (đường cong Grace):
 - λ ≈ 0,1–1: $Ca_{crit}$ nhỏ nhất (cỡ vài phần mười) ⇒ vỡ dễ nhất.
 - λ ≳ 4: trong **cắt đơn thuần (simple shear)** giọt **không vỡ được** dù tăng tốc độ cắt; cần dòng kéo giãn (extensional flow).
 - Hệ quả thực hành: dầu rất nhớt hoặc pha dầu chứa nhiều mỡ rắn cần **làm nóng pha dầu** (hạ $\eta_d$) và/hoặc dùng thiết bị có thành phần kéo giãn (khe hẹp, van đồng hóa).
@@ -69,14 +69,14 @@ $\varepsilon$ là tốc độ tiêu tán năng lượng riêng (W/kg). **[T]** V
 
 Hai vùng:
 - **Giọt lớn hơn η_K (vùng quán tính):** kích thước giọt cực đại $d_{max}\propto \gamma^{0.6}\rho_c^{-0.2}\varepsilon^{-0.4}$. Tăng ε gấp 10 lần ⇒ giọt nhỏ đi ≈ 2,5 lần (theo lý thuyết).
-- **Giọt nhỏ hơn η_K (vùng nhớt):** $d_{max}\propto \gamma\,(\rho_c\eta_c\varepsilon)^{-1/2}$, tức phụ thuộc $\varepsilon^{-0,5}$ và **độ nhớt pha liên tục**.
+- **Giọt nhỏ hơn η_K (vùng nhớt):** $d_{max}\propto \gamma\,(\rho_c\eta_c\varepsilon)^{-1/2}$, tức phụ thuộc $\varepsilon^{-0,5}$ và **độ nhớt pha liên tục (continuous phase)**.
 
 Khi cỡ giọt sub-micromet (cỡ η_K hoặc nhỏ hơn) bạn đã ở vùng nhớt: **tăng độ nhớt pha liên tục** (thêm gum, đường, glycerol) thường giúp tạo giọt nhỏ hơn ở cùng ε. **[K; G: ứng dụng cụ thể cần thử]**
 
 > Thực nghiệm HPH thường cho quan hệ log–log giữa $d_{32}$ và áp suất với độ dốc âm khoảng từ −0,3 đến −0,6 (tùy hệ, tùy van). Đây là quan sát phổ biến, **không phải hằng số**; phải đo trên chính hệ của bạn. **[G]**
 
 ### 2.3 Cavitation
-Áp suất giảm cục bộ dưới áp suất hơi ⇒ bọt hơi hình thành rồi sụp đổ ⇒ vi tia và sóng xung kích bẻ giọt. Quan trọng trong siêu âm cường độ cao (HIUS) và ở van HPH. **[N: @qayum2023 mô tả "HIUS-induced acoustic cavitation ... HPH-induced shear stress, turbulence, and cavitation lead to droplet disruption"]**
+Áp suất giảm cục bộ dưới áp suất hơi ⇒ bọt hơi hình thành rồi sụp đổ ⇒ vi tia và sóng xung kích bẻ giọt. Quan trọng trong siêu âm cường độ cao (high-intensity ultrasound) (HIUS) và ở van HPH. **[N: @qayum2023 mô tả "HIUS-induced acoustic cavitation ... HPH-induced shear stress, turbulence, and cavitation lead to droplet disruption"]**
 
 ---
 
@@ -94,7 +94,7 @@ tức **≈ 2,4 K mỗi 10 MPa**. Điều này giải thích vì sao: (i) sản 
 
 ## 4. Thiết bị tạo nhũ tương
 
-> Dải kích thước dưới đây là **khoảng thường gặp**, phụ thuộc hệ (độ nhớt, chất nhũ hóa, φ, số lần qua máy). Không dùng làm cam kết thiết kế. **[K; N: @gupta2016, @qayum2023 về nguyên lý HPH/siêu âm]**
+> Dải kích thước dưới đây là **khoảng thường gặp**, phụ thuộc hệ (độ nhớt, chất nhũ hóa, φ, số lần qua máy). Không dùng làm cam kết thiết kế. **[K; N: @gupta2016, @qayum2023 về nguyên lý HPH/siêu âm]** Cỡ giọt **nhỏ nhất** thường đạt theo McClements 2016 (Table 6.1): trộn cao tốc ≈2 µm; nghiền keo ≈1 µm; đồng hóa áp cao ≈0,1 µm; siêu âm đầu dò ≈0,1 µm; siêu âm dòng ≈1 µm; microfluidizer <0,1 µm; màng ≈0,3 µm. **[N: @mcclements2016 tr.250]** Sách không cho áp suất cụ thể (bao nhiêu bar): phần đó vẫn là khoảng thường gặp. **[K]**
 
 | Thiết bị | Cơ chế | Kích thước giọt đạt được (khoảng) | Ưu | Nhược |
 |---|---|---|---|---|
@@ -107,14 +107,14 @@ tức **≈ 2,4 K mỗi 10 MPa**. Điều này giải thích vì sao: (i) sản 
 | Màng/membrane (SPG…) | Đẩy dầu qua lỗ màng vào pha nước chảy | Giọt bằng ~2–10 lần đường kính lỗ, rất đơn phân tán | Rất đồng đều; hợp nhũ tương kép nhạy cắt **[N: @muschiolik2017 nhấn mạnh phương pháp nhẹ cho W/O/W]** | Lưu lượng thấp, tắc màng |
 | Microfluidics (chip) | Hình học giọt đơn | 10–1000 µm | Đơn phân tán tuyệt đối; nghiên cứu | Lưu lượng rất thấp (công bố scale-up vẫn là đề tài nghiên cứu, ví dụ post-array devices **[N: PubMed 40444208]**) |
 
-**Điểm cần nhấn cho web:** chọn thiết bị theo **mục tiêu**: (i) kích thước giọt cần đạt, (ii) độ nhạy cắt của vật liệu (protein, nhũ tương kép, tinh thể mỡ), (iii) độ nhớt, (iv) quy mô, (v) tính dễ vệ sinh/CIP.
+**Điểm cần nhớ:** chọn thiết bị theo **mục tiêu**: (i) kích thước giọt cần đạt, (ii) độ nhạy cắt của vật liệu (protein, nhũ tương kép, tinh thể mỡ), (iii) độ nhớt, (iv) quy mô, (v) tính dễ vệ sinh/CIP.
 
 ### 4.1 Quy trình phòng lab điển hình O/W 10–20% dầu (khởi điểm, tinh chỉnh theo hệ) [G]
 1. Hòa tan/hydrat hóa chất nhũ hóa vào pha nước (protein: 30–60 phút, nhiệt độ thấp, chỉnh pH). Kiểm tra pH **sau** khi hydrat hóa.
 2. Đưa pha dầu (nếu có mỡ rắn: ấm hơn điểm chảy hoàn toàn ~10 °C) vào pha nước đang khuấy để tạo **nhũ tương thô**.
 3. Tạo nhũ tương mịn: HPH 2 lần, ví dụ 5–10 MPa ở van thứ hai (tách cụm) và 50–100 MPa ở van thứ nhất; hoặc siêu âm có làm lạnh trong bể đá.
 4. Làm lạnh ngay, đo d₃₂/d₄₃ ở 30 phút và 24 giờ.
-5. Nếu d tăng sau 24 giờ ⇒ nghi chế độ giới hạn chất nhũ hóa hoặc ripening/hợp giọt: quay lại mục 1.
+5. Nếu d tăng sau 24 giờ ⇒ nghi chế độ giới hạn chất nhũ hóa hoặc ripening/hợp giọt (coalescence): quay lại mục 1.
 
 Các thông số trong bước 3 là ví dụ khởi đầu thường dùng trong thực hành phòng lab **[G]**; không phải tiêu chuẩn.
 
@@ -122,11 +122,11 @@ Các thông số trong bước 3 là ví dụ khởi đầu thường dùng tron
 
 ## 5. Phương pháp năng lượng thấp
 
-Lợi thế: không cần máy đắt tiền, tạo được giọt rất nhỏ (nanoemulsion) với chất hoạt động bề mặt không ion; nhược: cần **lượng chất hoạt động bề mặt cao** và thành phần cụ thể. **[N: @gupta2016 liệt kê PIT, EIP, bubble bursting; @perazzo2015]**
+Lợi thế: không cần máy đắt tiền, tạo được giọt rất nhỏ (nanoemulsion) với chất hoạt động bề mặt (surfactant) không ion; nhược: cần **lượng chất hoạt động bề mặt cao** và thành phần cụ thể. **[N: @gupta2016 liệt kê PIT, EIP, bubble bursting; @perazzo2015]**
 
 ### 5.1 Đảo pha theo nhiệt độ (PIT – transitional) [N: @perazzo2015; K: @shinoda1969]
 - Chất không ion ethoxyl hóa **mất nước dần khi tăng nhiệt độ** ⇒ HLB hiệu dụng giảm.
-- Ở **nhiệt độ đảo pha (PIT)** hệ ở điểm cân bằng ưa nước/ưa dầu: sức căng bề mặt cực thấp, có thể hình thành cấu trúc song liên tục.
+- Ở **nhiệt độ đảo pha (phase inversion temperature) (PIT)** hệ ở điểm cân bằng ưa nước/ưa dầu: sức căng bề mặt (interfacial tension) cực thấp, có thể hình thành cấu trúc song liên tục.
 - Quy trình: tạo hỗn hợp ở T > PIT (W/O) rồi **làm lạnh nhanh** qua PIT ⇒ O/W giọt rất nhỏ (cỡ vài chục nm đến ~100 nm, tùy hệ).
 - Hạn chế: nhạy với muối, đồng dung môi, lipid; phải kiểm soát tốc độ làm lạnh; nanoemulsion sau đó thường dễ ripening nếu dầu tan nước.
 
@@ -167,7 +167,7 @@ Lợi thế: không cần máy đắt tiền, tạo được giọt rất nhỏ 
 3. **Trình tự hydrat hóa** chất nhũ hóa: ở quy mô lớn, thời gian hòa tan dài hơn; protein bị biến tính ở điểm nóng.
 4. **Cuốn khí** (foam): đặc biệt với protein, saponin. Ảnh hưởng độ đục, đo kích thước.
 5. **Thời gian chờ** giữa pha chuẩn bị và đồng hóa; ripening đã xảy ra nếu chờ lâu.
-6. **Vật liệu tiếp xúc** (đầu dò titan, van): mài mòn, nhiễm kim loại, xúc tác oxy hóa lipid.
+6. **Vật liệu tiếp xúc** (đầu dò titan, van): mài mòn, nhiễm kim loại, xúc tác oxy hóa lipid (lipid oxidation).
 7. **CIP** và tồn dư chất nhũ hóa lô trước.
 8. **Độ lặp lại**: ít nhất 3 mẻ liên tiếp ở quy mô mới.
 
@@ -176,7 +176,7 @@ Các quy tắc scale ở trên là nguyên lý chung từ chuyên khảo; chưa 
 
 ---
 
-## 7. Ví dụ phân tích nhanh (bài tập cho web)
+## 7. Ví dụ phân tích nhanh (bài tập)
 
 **Bài toán:** nhũ tương O/W 15% dầu hướng dương, 1% protein đậu Hà Lan; HPH 50 MPa 2 lần ⇒ d₃₂ ≈ 3 µm; tăng lên 100 MPa chỉ còn 2,8 µm.
 

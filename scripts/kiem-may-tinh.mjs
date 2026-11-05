@@ -1,6 +1,6 @@
 // Kiểm máy tính với các bảng ví dụ [T] trong bài (nhũ tương 01 mục 2.2 và 03 mục kem hóa).
 // Chạy: npm run kiem
-import { stokes, chatNhuHoaToiThieu, hlbTron, hlbPhanA, q10DoiThoiGian, arrhenius, laplace, lucIon, debye, pickering, ostwald, totox, ivSv, mAcidBeo, phanChuaPhanLy, giaTriF } from '../public/cong-thuc.js';
+import { banKinhNhoNhat, stokes, chatNhuHoaToiThieu, hlbTron, hlbPhanA, q10DoiThoiGian, arrhenius, laplace, lucIon, debye, pickering, ostwald, totox, ivSv, mAcidBeo, phanChuaPhanLy, giaTriF } from '../public/cong-thuc.js';
 
 let loi = 0;
 function gan(ten, thuc, mong, saiSo = 0.05) {
@@ -30,6 +30,11 @@ gan('Stokes η=100', stokes(1, 1000, 920, 100).mmMoiNgay, 0.038, 0.06);
 // Bảng diện tích (φ = 0,2) và lượng chất nhũ hóa (Γ = 2 mg/m²) (bài 01)
 for (const [d, A] of [[10, 1.2e5], [1, 1.2e6], [0.2, 6.0e6]]) gan(`A, d32=${d}`, chatNhuHoaToiThieu(0.2, d, 2).A, A);
 for (const [d, c] of [[5, 0.5], [1, 2.4], [0.3, 8]]) gan(`c_min, d32=${d}`, chatNhuHoaToiThieu(0.2, d, 2).cGL, c, 0.05);
+// Eq. 6.11 (McClements 2016, tr.273): Γ = 2 mg/m², φ = 0,1, 1% chất nhũ hóa (10 g/L) → r_min ≈ 60 nm (ví dụ trong sách)
+gan('Eq. 6.11 r_min (ví dụ sách tr.273), nm', banKinhNhoNhat(0.1, 2, 10).rNm, 60, 0.01);
+gan('Eq. 6.11 d_min = 2·r_min, nm', banKinhNhoNhat(0.1, 2, 10).dNm, 120, 0.01);
+// Eq. 6.11 là phép đảo của máy tính lượng chất nhũ hóa: đưa c_min của d32 = 1 µm (φ = 0,2, Γ = 2) vào thì ra lại d32 = 1 µm
+gan('Eq. 6.11 đảo của máy tính c_min (d32 = 1 µm), nm', banKinhNhoNhat(0.2, 2, chatNhuHoaToiThieu(0.2, 1, 2).cGL).dNm, 1000, 1e-9);
 
 // HLB trộn: phép tính số học, kiểm bằng ví dụ tự đặt (không phải số của chất thật)
 gan('HLB 50:50 của 4 và 15', hlbTron(4, 15, 0.5), 9.5, 1e-9);

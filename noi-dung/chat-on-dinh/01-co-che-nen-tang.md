@@ -14,7 +14,7 @@ nguon_goc: tai-lieu-chat-on-dinh/01-co-che-nen-tang.md
 
 ## Kết luận trước
 
-1. Cùng một hydrocolloid có thể **làm hệ ổn định hơn hoặc kém ổn định hơn tùy nồng độ**. Ở nồng độ thấp, polysaccharide không hấp phụ lên giọt dầu gây **depletion flocculation** (kết bông do hiệu ứng loại trừ thể tích), làm kem hóa (creaming) nhanh hơn; vượt một nồng độ tới hạn, hệ thành mạng lưới giọt hoặc độ nhớt pha liên tục đủ cao thì creaming bị chặn. [N: @mcclements2000b; @cao1990; @aben2012; @gunning1988]
+1. Cùng một hydrocolloid có thể **làm hệ ổn định hơn hoặc kém ổn định hơn tùy nồng độ**. Ở nồng độ thấp, polysaccharide không hấp phụ lên giọt dầu gây **depletion flocculation** (keo tụ, còn gọi là keo tụ, do hiệu ứng loại trừ thể tích), làm kem hóa (creaming) nhanh hơn; vượt một nồng độ tới hạn, hệ thành mạng lưới giọt hoặc độ nhớt pha liên tục đủ cao thì creaming bị chặn. [N: @mcclements2000b; @cao1990; @aben2012; @gunning1988]
 2. Thông số quyết định "ổn định lâu" thường không phải độ nhớt cắt cao mà là **độ nhớt ở cắt rất thấp và ứng suất chảy (yield stress)**, vì creaming/sa lắng là quá trình rất chậm, lực tác dụng rất nhỏ. [G: suy luận, phù hợp @aben2012 dùng thời gian hồi phục đàn hồi để dự đoán creaming]
 3. Hydrocolloid hầu như **không phải chất nhũ hóa thật** (trừ gum arabic và một số loại có phần protein). Khả năng nhũ hóa được báo cáo của nhiều polysaccharide chủ yếu do lẫn hoặc phức với một phần nhỏ protein bề mặt. [N: @dickinson2002, tóm tắt]
 4. Với hệ có protein (sữa, sữa thực vật), tương tác **protein–polysaccharide** (kết hợp tĩnh điện, hay đẩy nhau tách pha) quyết định ổn định hơn cả độ nhớt. pH, tỉ lệ protein:polysaccharide và lực ion là ba biến chính. [N: @benichou2002; @wang2025; @drusch2024]
@@ -29,18 +29,18 @@ nguon_goc: tai-lieu-chat-on-dinh/01-co-che-nen-tang.md
 
 [G: suy luận: bảng phân loại do tôi tổng hợp từ các nguồn ở các file sau; không phải trích một bài.]
 
-## 2. Depletion flocculation (kết bông do cạn kiệt)
+## 2. Depletion flocculation (keo tụ do cạn kiệt)
 
 **Hiện tượng**: thêm một lượng nhỏ xanthan (hoặc CMC, guar...) vào nhũ tương O/W làm kem hóa nhanh hơn, không phải chậm hơn.
 
-**Cơ chế** [G: suy luận, giải thích học thuật chuẩn]: cuộn polymer không hấp phụ có bán kính quay lớn hơn khe giữa hai giọt khi chúng đến gần nhau, nên polymer bị đẩy ra khỏi khe (vùng "cạn kiệt"). Áp suất thẩm thấu của polymer bên ngoài khe lớn hơn bên trong, đẩy hai giọt lại gần nhau như một lực hút hiệu dụng. Lực hút tăng theo nồng độ và kích thước polymer. Giọt kết bông (floc) lớn nên nổi nhanh hơn nhiều so với giọt đơn.
+**Cơ chế** [G: suy luận, giải thích học thuật chuẩn]: cuộn polymer không hấp phụ có bán kính quay lớn hơn khe giữa hai giọt khi chúng đến gần nhau, nên polymer bị đẩy ra khỏi khe (vùng "cạn kiệt"). Áp suất thẩm thấu của polymer bên ngoài khe lớn hơn bên trong, đẩy hai giọt lại gần nhau như một lực hút hiệu dụng. Lực hút tăng theo nồng độ và kích thước polymer. Giọt keo tụ (floc) lớn nên nổi nhanh hơn nhiều so với giọt đơn.
 
 **Bằng chứng thực nghiệm**:
 
-- Xanthan là polysaccharide anion dùng rộng rãi, gây kết bông bằng cơ chế depletion trong nhũ tương O/W 20% dầu; floc tạo "meniscus" rõ nét, kem hóa nhanh, rồi lớp kem bị nén dưới trọng lực. [N: @gunning1988]
-- Nhũ tương hydrocarbon/caseinate: nồng độ polymer nhỏ làm kem hóa tăng mạnh; tăng nồng độ thì ổn định lại nhờ hiệu ứng lưu biến pha liên tục. Xếp hạng khả năng ổn định: **succinoglycan > xanthan ≫ CMC độ nhớt cao (CMC7HOF) > CMC độ nhớt trung bình (CMC7MF)**. Có bằng chứng kết bông cho cả bốn polymer anion; ảnh hưởng của lực ion đã được khảo sát. [N: @cao1990]
+- Xanthan là polysaccharide anion dùng rộng rãi, gây keo tụ bằng cơ chế depletion trong nhũ tương O/W 20% dầu; floc tạo "meniscus" rõ nét, kem hóa nhanh, rồi lớp kem bị nén dưới trọng lực. [N: @gunning1988]
+- Nhũ tương hydrocarbon/caseinate: nồng độ polymer nhỏ làm kem hóa tăng mạnh; tăng nồng độ thì ổn định lại nhờ hiệu ứng lưu biến pha liên tục. Xếp hạng khả năng ổn định: **succinoglycan > xanthan ≫ CMC độ nhớt cao (CMC7HOF) > CMC độ nhớt trung bình (CMC7MF)**. Có bằng chứng keo tụ cho cả bốn polymer anion; ảnh hưởng của lực ion đã được khảo sát. [N: @cao1990]
 - Nhũ tương O/W ổn định không gian + xanthan: dưới nồng độ nhất định thì creaming; trên ngưỡng hình thành **mạng ba chiều của giọt** (do lực hút depletion) ngăn creaming. Thời gian hồi phục đo bằng lưu biến cơ học tương quan tốt với quan sát bằng mắt, nên đề xuất làm thông số dự đoán. Tác giả giả thuyết thời gian hồi phục liên quan tốc độ sắp xếp lại vi mô trong mạng. [N: @aben2012]
-- Nhũ tương 20% dầu perilla với 6% SSPS (soy soluble polysaccharide), thêm xanthan hoặc guar 0,03 đến 0,3% khối lượng: nồng độ rất thấp làm giảm kích thước giọt khi đồng hóa, nhưng không đủ độ nhớt để chặn creaming; vẫn thấy kết bông do depletion ngay cả ở nồng độ cao; tất cả mẫu có hành vi pseudoplastic. [N: @chivero2015]
+- Nhũ tương 20% dầu perilla với 6% SSPS (soy soluble polysaccharide), thêm xanthan hoặc guar 0,03 đến 0,3% khối lượng: nồng độ rất thấp làm giảm kích thước giọt khi đồng hóa, nhưng không đủ độ nhớt để chặn creaming; vẫn thấy keo tụ do depletion ngay cả ở nồng độ cao; tất cả mẫu có hành vi pseudoplastic. [N: @chivero2015]
 - Nhũ tương caseinate 30% dầu: hai chế độ, caseinate trung gian (1,5 đến 4%) tách pha nhanh vì mạng floc bị nén chặt; caseinate cao (5 đến 10%) ổn định hơn. Maltodextrin làm giảm tương tác giọt–giọt (trái dự đoán đơn giản "độ nhớt zero-shear cao thì ổn định"), còn xanthan làm tăng cả lực depletion lẫn độ nhớt pha liên tục. [N: @liang2014]
 - Mô hình: McClements (2000) đưa ra giản đồ pha lý thuyết liên hệ cấu trúc phân tử polysaccharide, nồng độ và mức bất ổn do creaming. [N: @mcclements2000b, tóm tắt]
 
@@ -73,14 +73,14 @@ Ví dụ định lượng:
 - **Cảnh báo**: protein dừa + xanthan tạo phức dạng bông ở pH acid, nhũ tương phân lớp nhanh; thêm polysaccharide đậu nành cũng bất ổn do giảm tương hợp nhiệt động, trong khi gelatin cho hệ ổn định hơn. [N: @yang2022]. Đây là minh họa tốt rằng "thêm gum" không mặc nhiên làm ổn định.
 - Pectin–protein: yếu tố enthalpy (mật độ điện tích, tỉ lệ, pH, lực ion) đã hiểu tốt, yếu tố entropy (khối lượng, cấu hình) hiểu kém. [N: @drusch2024]
 
-**Phức cộng hóa trị (Maillard conjugate)**: đóng gói protein–polysaccharide bằng phản ứng Maillard tạo lớp polymer dày bao giọt dầu, bền hơn trước nhiệt, pH acid, lực ion cao, đông–rã đông, nhờ cản không gian + đẩy tĩnh điện. [N: @nooshkam2023]. Dickinson (2019) nhận định chuyển protein thành conjugate cộng hóa trị là chiến lược nhất quán thành công trong chống kết bông trên dải điều kiện rộng. [N: @dickinson2019, tóm tắt]
+**Phức cộng hóa trị (Maillard conjugate)**: đóng gói protein–polysaccharide bằng phản ứng Maillard tạo lớp polymer dày bao giọt dầu, bền hơn trước nhiệt, pH acid, lực ion cao, đông–rã đông, nhờ cản không gian + đẩy tĩnh điện. [N: @nooshkam2023]. Dickinson (2019) nhận định chuyển protein thành conjugate cộng hóa trị là chiến lược nhất quán thành công trong chống keo tụ trên dải điều kiện rộng. [N: @dickinson2019, tóm tắt]
 
 **Nhũ tương nhiều lớp (layer-by-layer)**: hấp phụ lớp polysaccharide anion lên giọt đã bọc protein; cải thiện ổn định trước stress môi trường và dùng cho phóng thích có kiểm soát. [N: @burgosdiaz2016; @albano2019: nhấn mạnh WPC, SPI, pectin, alginate]
 
 ## 5. Hydrocolloid ở bề mặt: ai thật sự nhũ hóa?
 
 - Dickinson (2002): nhiều khả năng nhũ hóa của polysaccharide giải thích được bằng phức hoặc nhiễm một phần protein bề mặt hoạt tính; ví dụ chi tiết cho gum arabic, galactomannan, pectin. Phức protein–hydrocolloid tại bề mặt có thể gây bridging flocculation hoặc ổn định cản không gian. [N: @dickinson2002]
-- Dickinson (2009): đặc điểm phân tử để hydrocolloid vừa nhũ hóa vừa ổn định: bảo vệ giọt mới hình thành khỏi kết bông/hợp nhất, khác với yêu cầu ổn định dài hạn chống aggregation, creaming, Ostwald ripening. [N: @dickinson2009]
+- Dickinson (2009): đặc điểm phân tử để hydrocolloid vừa nhũ hóa vừa ổn định: bảo vệ giọt mới hình thành khỏi keo tụ/hợp nhất, khác với yêu cầu ổn định dài hạn chống aggregation, creaming, Ostwald ripening. [N: @dickinson2009]
 - Hạt Pickering protein/polysaccharide và HIPE: ổn định nhờ hạt, độ nhớt cao. [N: @ribeiro2021]
 
 **Liên hệ chéo (không đào sâu ở đây)**: các luồng khác của dự án lo chất nhũ hóa/chất hoạt động bề mặt, nhũ tương và chất béo; tại đây chỉ giữ phần hydrocolloid.

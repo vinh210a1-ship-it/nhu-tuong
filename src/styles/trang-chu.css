@@ -448,6 +448,49 @@ a.tc-khu-the:hover { transform: translateY(-3px); border-color: var(--mau); }
 .ket-bai.xong { border-style: solid; border-color: var(--chang-4); background: color-mix(in srgb, var(--chang-4) 8%, var(--hh-be-mat)); }
 .ket-bai.xong .kb-nut { background: var(--chang-4); }
 
+/* ================= Cuối bài: hộp "Thử ngay" (máy tính, Phòng lab, tra cứu liên quan) ================= */
+.thu-ngay {
+	margin-top: 2.5rem !important;
+	padding: 1rem 1.15rem;
+	border: 1px solid var(--hh-vien);
+	border-inline-start: 5px solid var(--mau-chang, var(--hh-thuong-hieu));
+	border-radius: 1rem;
+	background: var(--hh-be-mat);
+}
+.thu-ngay + .ket-bai { margin-top: 1rem !important; }
+.tn-tieu-de { display: block; margin-bottom: 0.5rem; font-size: 1.05rem; color: var(--sl-color-white); }
+.tn-ds { display: grid; gap: 0.6rem; margin: 0 !important; padding: 0 !important; list-style: none; }
+.tn-ds li { display: grid; grid-template-columns: 6.2rem minmax(0, 1fr); column-gap: 0.75rem; row-gap: 0.1rem; margin: 0 !important; align-items: baseline; }
+.tn-loai { grid-row: 1 / span 2; justify-self: start; padding: 0.1rem 0.55rem; border-radius: 999px; background: color-mix(in srgb, var(--mau-chang, var(--hh-thuong-hieu)) 14%, var(--hh-be-mat)); color: var(--sl-color-white); font-size: 0.75rem; font-weight: 700; white-space: nowrap; }
+.tn-ten, .tn-ten:visited { font-weight: 700; color: var(--sl-color-text-accent); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+.tn-ten:hover { color: var(--sl-color-white); }
+.tn-vi { color: var(--sl-color-gray-2); font-size: 0.92rem; line-height: 1.45; }
+@media (max-width: 40rem) {
+	.tn-ds li { grid-template-columns: minmax(0, 1fr); }
+	.tn-loai { grid-row: auto; }
+}
+/* ================= Gói 6: nhãn mức độ, "Cần biết trước", "Tự kiểm tra" ================= */
+.muc-do { display: inline-block; padding: 0.05rem 0.55rem; border-radius: 999px; font-size: 0.78rem; font-weight: 700; border: 1px solid var(--hh-vien); background: var(--hh-be-mat); color: var(--sl-color-white); }
+.muc-do-nen-tang { border-color: color-mix(in srgb, var(--chang-4) 55%, var(--hh-vien)); }
+.muc-do-chuyen-sau { border-color: color-mix(in srgb, var(--chang-5) 55%, var(--hh-vien)); }
+.muc-do-rnd { border-color: color-mix(in srgb, var(--chang-3) 55%, var(--hh-vien)); }
+.can-biet-truoc { margin-top: 0.25rem !important; font-size: 0.9rem; color: var(--sl-color-gray-2); }
+.tu-kiem-tra { margin-top: 2.5rem !important; padding: 1rem 1.15rem; border: 1px solid var(--hh-vien); border-inline-start: 5px solid var(--chang-5); border-radius: 1rem; background: var(--hh-be-mat); }
+.tkt-tieu-de { display: block; font-size: 1.05rem; color: var(--sl-color-white); }
+.tkt-meo { display: block; margin-bottom: 0.6rem; color: var(--sl-color-gray-3); }
+.tkt-cau { margin-top: 0.5rem; border: 1px solid var(--hh-vien); border-radius: 0.7rem; background: var(--sl-color-bg); }
+.tkt-cau > summary { cursor: pointer; padding: 0.6rem 0.8rem; font-weight: 650; list-style-position: inside; }
+.tkt-so { display: inline-block; min-width: 1.4rem; margin-inline-end: 0.5rem; text-align: center; border-radius: 999px; background: color-mix(in srgb, var(--chang-5) 18%, var(--hh-be-mat)); }
+.tkt-dap { padding: 0.1rem 0.9rem 0.8rem; font-size: 0.95rem; }
+.tkt-dap p { margin: 0.4rem 0 !important; }
+.tkt-xem { font-size: 0.85rem; color: var(--sl-color-gray-3); }
+.tkt-xem a { color: var(--sl-color-text-accent); }
+.thu-ngay { margin-top: 1rem !important; }
+.tu-kiem-tra + .thu-ngay { margin-top: 1rem !important; }
+
+/* Đích của liên kết #mt-... từ bài học: chừa chỗ cho thanh đầu trang cố định */
+.may-tinh[id] { scroll-margin-top: 5rem; }
+
 /* Dấu ✓ ở thanh bên */
 .sidebar-content a.da-doc::after { content: ' ✓'; color: var(--chang-4); font-weight: 800; }
 .sidebar-content a.da-doc[aria-current='page']::after { color: #fff; }

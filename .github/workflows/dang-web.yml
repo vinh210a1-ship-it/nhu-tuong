@@ -32,6 +32,8 @@ jobs:
         run: npm run kiem
       - name: Build web
         run: npm run build
+      - name: Kiểm sau build (chuỗi cấm, liên kết nội bộ)
+        run: npm run kiem-sau-build
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main'
         with:

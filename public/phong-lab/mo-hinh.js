@@ -5,19 +5,22 @@
 //  - Lượng chất nhũ hóa giới hạn kích thước giọt: Γ·6φ/d (đã kiểm ở máy tính lượng chất nhũ hóa).
 //  - Nhiệt sinh ra khi đồng hóa: ΔT = ΔP/(ρ·cp) ≈ 2,4 K mỗi 10 MPa (bài 02 khu nhũ tương).
 //  - d32 giảm theo áp suất theo quy luật mũ, độ dốc log–log −0,3 đến −0,6 (bài 02, nhãn G).
-//  - Xanthan nồng độ thấp gây kết bông do cạn kiệt, nồng độ đủ cao tạo mạng chặn kem hóa
+//  - Xanthan nồng độ thấp gây keo tụ do cạn kiệt, nồng độ đủ cao tạo mạng chặn kem hóa
 //    (khu chất ổn định, bài 01, nguồn Gunning 1988).
 // Các hằng số "cho vừa với thực tế" (vd. d32 ở 100 bar) là TÍNH MINH HỌA (nhãn T), ghi rõ ở NHAN.
 
 import { stokes, chatNhuHoaToiThieu, q10DoiThoiGian } from '../cong-thuc.js';
 
+/** Dòng nhãn T hiện dưới danh sách tiêu chí ✓/✗ ở mọi bàn: ngưỡng chấm sao là luật chơi, không phải tiêu chuẩn. */
+export const LUAT_CHOI = 'Ngưỡng chấm sao do trò chơi đặt ra để luyện tư duy, không phải tiêu chuẩn sản phẩm.';
+
 /** Nhãn tin cậy cho từng giả định của mô hình, hiện ra ở màn hình "Vì sao?" */
 export const NHAN = {
 	stokes: { ma: 'N', chu: 'Vận tốc kem hóa theo Stokes: v = 2r²Δρg/9η', bai: 'nhu-tuong/mat-on-dinh' },
-	gamma: { ma: 'N', chu: 'Giọt không thể nhỏ hơn 6φΓ/c khi chất nhũ hóa không đủ phủ bề mặt', bai: 'nhu-tuong/nen-tang' },
+	gamma: { ma: 'N', chu: 'Giọt không thể nhỏ hơn 6φΓ/c khi chất nhũ hóa không đủ phủ bề mặt (McClements 2016, Eq. 6.11, tr.273)', bai: 'nhu-tuong/nen-tang' },
 	apSuat: { ma: 'G', chu: 'd32 ∝ P^−0,5 (độ dốc thực nghiệm thường −0,3 đến −0,6, tùy hệ và van)', bai: 'nhu-tuong/hinh-thanh' },
 	nhiet: { ma: 'N', chu: 'Mỗi 100 bar làm mẫu nóng thêm ≈ 2,4 °C (cân bằng năng lượng ΔP/ρcp)', bai: 'nhu-tuong/hinh-thanh' },
-	canKiet: { ma: 'N', chu: 'Xanthan ít: kết bông do cạn kiệt, kem hóa nhanh hơn. Xanthan đủ: mạng yếu giữ giọt', bai: 'chat-on-dinh/co-che-nen-tang' },
+	canKiet: { ma: 'N', chu: 'Xanthan ít: keo tụ do cạn kiệt, kem hóa nhanh hơn. Xanthan đủ: mạng yếu giữ giọt', bai: 'chat-on-dinh/co-che-nen-tang' },
 	hlb: { ma: 'K', chu: 'HLB cao (như Tween 80) hợp dầu trong nước, HLB thấp (như Span 80) hợp nước trong dầu (quy tắc Bancroft)', bai: 'chat-nhu-hoa/nen-tang-vat-ly-hoa-be-mat' },
 	bienTinh: { ma: 'K', chu: 'Protein whey biến tính khi nóng, lộ vùng kỵ nước, làm các giọt dính thành cụm', bai: 'nhu-tuong/mat-on-dinh' },
 	khongNo: { ma: 'N', chu: 'Độ không no quy đổi U = %C18:2 + 0,08·%C18:1 + 2,08·%C18:3; tốc độ oxy hóa (100/thời gian cảm ứng) tăng theo U (Kochhar 2009)', bai: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung' },
@@ -26,6 +29,8 @@ export const NHAN = {
 	q10: { ma: 'T', chu: 'Q10 = 2: tăng 10 °C thì oxy hóa nhanh gấp đôi (số minh họa; Q10 thật phải đo bằng nhiều nhiệt độ)', bai: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung' },
 	pv: { ma: 'K', chu: 'Ngưỡng chỉ số peroxide 10 meq O₂/kg dầu dùng làm mốc "bắt đầu ôi" trong trò chơi', bai: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung' },
 	hangSo: { ma: 'T', chu: 'Hằng số mô hình (d32 ở 100 bar, ngưỡng xanthan, cỡ floc...) là số minh họa, không dùng để thiết kế' },
+	gammaMinhHoa: { ma: 'T', chu: 'Γ = 2,5 mg/m² của Tween 80 và Span 80 là số minh họa, chưa có nguồn đã kiểm (sách McClements 2016 chỉ nêu Γ của chất nhũ hóa thực phẩm cỡ vài mg/m², tr.193)' },
+	nguongBienTinh: { ma: 'T', chu: 'Ngưỡng biến tính ~72 °C của WPI trong trò chơi là số minh họa; nhiệt độ biến tính thật phụ thuộc pH, muối, nồng độ và phải đo trên chính hệ' },
 };
 
 export const G_CP_NUOC = 4180; // J/(kg·K)
@@ -52,13 +57,13 @@ export const DAU = {
  * loai: 'OW' (hợp nhũ tương dầu trong nước) hoặc 'WO'. nhayNhiet: °C bắt đầu biến tính (null nếu không).
  */
 export const NHU_HOA = {
-	wpi: { ten: 'Whey protein isolate (WPI)', gamma: 1.4, hieuQua: 0.9, tocDo: 1.0, loai: 'OW', nhayNhiet: 72, gia: 300,
+	wpi: { ten: 'Whey protein isolate (WPI)', gamma: 1.4, hieuQua: 0.9, tocDo: 1.0, loai: 'OW', nhayNhiet: 72, nhayNhietMinhHoa: true, gia: 300,
 		ghiChu: 'Γ ≈ 1,4 mg/m² (Hinderink 2021). β-lactoglobulin biến tính khi nóng, protein lộ vùng kỵ nước làm giọt dính nhau.' },
 	ppi: { ten: 'Protein đậu Hà Lan (PPI)', gamma: 2.5, hieuQua: 0.5, tocDo: 1.1, loai: 'OW', nhayNhiet: null, gia: 120,
 		ghiChu: 'Γ ≈ 2,5 mg/m² (Hinderink 2021). Độ tan thấp: chỉ phần hòa tan mới nhũ hóa được (hiệu quả 50% là số minh họa).' },
-	tween80: { ten: 'Polysorbate 80 (Tween 80, E433)', gamma: 2.5, hieuQua: 1.0, tocDo: 0.85, loai: 'OW', nhayNhiet: null, gia: 200,
+	tween80: { ten: 'Polysorbate 80 (Tween 80, E433)', gamma: 2.5, gammaMinhHoa: true, hieuQua: 1.0, tocDo: 0.85, loai: 'OW', nhayNhiet: null, gia: 200,
 		ghiChu: 'HLB cao: ưa nước, hợp dầu trong nước. Phân tử nhỏ hấp phụ nhanh nên giọt vừa vỡ đã được phủ kịp.' },
-	span80: { ten: 'Sorbitan monooleate (Span 80, E494)', gamma: 2.5, hieuQua: 1.0, tocDo: 0.85, loai: 'WO', nhayNhiet: null, gia: 180,
+	span80: { ten: 'Sorbitan monooleate (Span 80, E494)', gamma: 2.5, gammaMinhHoa: true, hieuQua: 1.0, tocDo: 0.85, loai: 'WO', nhayNhiet: null, gia: 180,
 		ghiChu: 'HLB thấp: ưa dầu, hợp nước trong dầu. Dùng cho dầu trong nước thì giọt hợp nhất, nổi váng dầu.' },
 };
 
@@ -242,7 +247,7 @@ export function moPhongMe(me) {
 	const cheDo = cheDoXanthan(me.phanTramXanthan ?? 0, phi);
 	const etaC = doNhotXanthan(me.phanTramXanthan ?? 0);
 	if (cheDo === 'can-kiet')
-		canhBao.push({ ma: 'can-kiet', chu: 'Xanthan ở nồng độ thấp không hấp phụ lên giọt, chen vào khe giữa các giọt rồi ép chúng thành cụm (kết bông do cạn kiệt). Cụm to nổi nhanh hơn giọt lẻ.' });
+		canhBao.push({ ma: 'can-kiet', chu: 'Xanthan ở nồng độ thấp không hấp phụ lên giọt, chen vào khe giữa các giọt rồi ép chúng thành cụm (keo tụ do cạn kiệt). Cụm to nổi nhanh hơn giọt lẻ.' });
 
 	const ketQua = {
 		phi, d32, ...pb, sigma, dPre, dE, dGamma, nhietRa, etaC, cheDo, bienTinh, saiLoai, thieuNhuHoa, nhuHoaToiThieu,

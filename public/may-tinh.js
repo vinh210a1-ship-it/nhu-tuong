@@ -1,6 +1,6 @@
 // Máy tính tương tác. Tìm mọi <div class="may-tinh" data-may-tinh="..."> trên trang và dựng biểu mẫu.
 // Phép tính chạy trong trình duyệt; không gửi số liệu đi đâu.
-import { stokes, chatNhuHoaToiThieu, hlbTron, hlbPhanA, q10DoiThoiGian, arrhenius, laplace, lucIon, debye, pickering, ostwald, totox, ivSv, phanChuaPhanLy, giaTriF } from './cong-thuc.js';
+import { stokes, chatNhuHoaToiThieu, banKinhNhoNhat, hlbTron, hlbPhanA, q10DoiThoiGian, arrhenius, laplace, lucIon, debye, pickering, ostwald, totox, ivSv, phanChuaPhanLy, giaTriF } from './cong-thuc.js';
 
 const BASE = new URL('.', import.meta.url).pathname; // '/nhu-tuong/'
 // huy hiệu N có liên kết tới thẻ nguồn (giống nhãn trong bài)
@@ -73,17 +73,23 @@ const MAY = {
 	},
 	'chat-nhu-hoa-toi-thieu': {
 		tieuDe: 'Diện tích bề mặt và lượng chất nhũ hóa tối thiểu',
-		congThuc: 'A = 6φ / d<sub>32</sub> ; c<sub>min</sub> = Γ · A',
+		congThuc: 'A = 6φ / d<sub>32</sub> ; c<sub>min</sub> = Γ · A ; r<sub>min</sub> = 3Γφ / c<sub>S</sub>',
 		o: [
 			o('phi', 'Phân số thể tích pha phân tán φ', '', '0,2', 'Ví dụ 20% dầu thể tích → 0,2'),
 			o('d32', 'Đường kính Sauter d<sub>32</sub>', 'µm', '1'),
 			o('gam', 'Độ phủ bề mặt Γ', 'mg/m²', '2', 'Protein cầu: cỡ vài mg/m². Nhập theo số liệu của chất bạn dùng'),
+			o('cs', 'Lượng chất nhũ hóa có sẵn c<sub>S</sub> (tùy chọn)', 'g/L', '', 'Để trống nếu chỉ cần lượng tối thiểu. Có số thì máy cho biết giọt nhỏ nhất đạt được (Eq. 6.11 của McClements 2016)'),
 		].join(''),
 		tinh(f) {
-			const phi = doc(f.phi), d32 = doc(f.d32), gam = doc(f.gam);
+			const phi = doc(f.phi), d32 = doc(f.d32), gam = doc(f.gam), cs = doc(f.cs);
 			if (![phi, d32, gam].every((x) => x > 0)) return '<p class="mt-loi">Nhập số dương cho tất cả các ô.</p>';
 			if (phi >= 1) return '<p class="mt-loi">φ là phân số (0–1), ví dụ 0,2 cho 20%.</p>';
 			const { A, cGL, phanTramWV } = chatNhuHoaToiThieu(phi, d32, gam);
+			const giotNhoNhat =
+				cs > 0
+					? (({ rNm, dNm }) => `<div class="mt-kq"><div><span class="mt-kq-nhan">Giọt nhỏ nhất (Eq. 6.11)</span><strong>r<sub>min</sub> = ${so(rNm)} nm</strong> (d ≈ ${so(dNm)} nm) với c<sub>S</sub> = ${so(cs)} g/L ${N(['mcclements2016', 'McClements 2016 tr.273'])}</div></div>
+<p class="mt-meo">Chỉ đúng khi chất nhũ hóa là thứ bị thiếu. Nếu chất nhũ hóa dư, cỡ giọt do năng lượng đồng hóa quyết định (tr.273–274).</p>`)(banKinhNhoNhat(phi, gam, cs))
+					: '';
 			const canhBao =
 				phi > 0.74
 					? '<p class="mt-loi">φ > 0,74: giọt buộc phải biến dạng (HIPE), công thức giọt cầu không còn đúng.</p>'
@@ -93,11 +99,12 @@ const MAY = {
 <div><span class="mt-kq-nhan">Tối thiểu lý thuyết</span><strong>${so(cGL)} g/L</strong> ≈ ${so(phanTramWV)}% w/v</div>
 <div><span class="mt-kq-nhan">Dư 1,5–3 lần</span><strong>${so(cGL * 1.5)}–${so(cGL * 3)} g/L</strong> ≈ ${so(phanTramWV * 1.5)}–${so(phanTramWV * 3)}% w/v ${G}</div>
 </div>
-<p class="mt-meo">Giảm d<sub>32</sub> 10 lần thì diện tích và lượng chất nhũ hóa cần tăng 10 lần.</p>`;
+<p class="mt-meo">Giảm d<sub>32</sub> 10 lần thì diện tích và lượng chất nhũ hóa cần tăng 10 lần.</p>${giotNhoNhat}`;
 		},
 		chuY: `<li>Giọt cầu; tính cho thể tích nhũ tương, Γ là độ phủ khi bão hòa. ${K}</li>
 <li>Thực tế cần dư 1,5–3 lần để bù phần không nằm trên bề mặt, tránh bắc cầu khi thiếu phủ và bù giải hấp khi bảo quản. ${G}</li>
-<li>Kiểm máy tính: φ = 0,2, d<sub>32</sub> = 1 µm, Γ = 2 mg/m² cho ≈ 2,4 g/L, khớp bảng ví dụ trong bài. ${T}</li>`,
+<li>Kiểm máy tính: φ = 0,2, d<sub>32</sub> = 1 µm, Γ = 2 mg/m² cho ≈ 2,4 g/L, khớp bảng ví dụ trong bài. ${T}</li>
+<li>Kiểm máy tính (Eq. 6.11): φ = 0,1, Γ = 2 mg/m², c<sub>S</sub> = 10 g/L (1% chất nhũ hóa) cho r<sub>min</sub> ≈ 60 nm, khớp ví dụ trong sách (tr.273). ${T}</li>`,
 	},
 	hlb: {
 		tieuDe: 'Trộn hai chất nhũ hóa theo HLB',
@@ -277,7 +284,7 @@ ${tang ? `<div><span class="mt-kq-nhan">Ở ${so(du)} ngày</span><strong>${isFi
 		o: [
 			o('r', 'Bán kính hạt r', 'nm', '50'),
 			o('g', 'Sức căng dầu–nước γ', 'mN/m', '30'),
-			o('th', 'Góc tiếp xúc θ (đo trong pha nước)', '°', '90', '90° là hạt thấm ướt như nhau bởi dầu và nước'),
+			o('th', 'Góc tiếp xúc θ (đo trong pha nước)', '°', '90', '90° là hạt thấm ướt như nhau bởi dầu và nước. Cần góc tại mặt phân cách dầu–nước; ghi rõ phương pháp đo'),
 			o('T', 'Nhiệt độ', '°C', '25'),
 		].join(''),
 		tinh(f) {
@@ -290,11 +297,14 @@ ${tang ? `<div><span class="mt-kq-nhan">Ở ${so(du)} ngày</span><strong>${isFi
 <div><span class="mt-kq-nhan">Theo góc θ</span>${bang}</div>
 <div><span class="mt-kq-nhan">Hạt nhỏ đi 10 lần</span><strong>${soKH(pickering(r / 10, g, th, T + 273.15).kT)} kT</strong></div>
 </div>
-<p class="mt-meo">kT là năng lượng chuyển động nhiệt. ΔE gấp hàng nghìn kT trở lên nghĩa là hạt gần như bám vĩnh viễn; θ lệch xa 90° hoặc hạt quá nhỏ thì ΔE tụt nhanh ${G}.</p>`;
+<p class="mt-meo">kT là năng lượng chuyển động nhiệt. ΔE gấp hàng nghìn kT trở lên nghĩa là hạt gần như bám vĩnh viễn; θ lệch xa 90° hoặc hạt quá nhỏ thì ΔE tụt nhanh ${G}.</p>
+<p class="mt-meo"><strong>Lưu ý:</strong> microgel và protein không có góc tiếp xúc cố định, nên với hạt mềm kết quả chỉ để minh họa ${N(['murray2019', 'Murray 2019'])}. Số θ đo bằng giọt nước trên màng hạt khô trong không khí không phải θ dầu–nước.</p>`;
 		},
 		chuY: `<li>Công thức cho hạt cầu cứng, đơn lẻ, giọt lớn hơn hạt rất nhiều ${N(['schroen2024', 'Schroën 2024'])}.</li>
 <li>Nhiều hệ thực phẩm có hạt mềm, bề mặt hỗn hợp với phân tử hoạt động bề mặt sẵn có trong nguyên liệu; khi đó ổn định không chỉ do ΔE ${N(['schroen2024', 'Schroën 2024'])}.</li>
 <li>Góc θ của hạt thực phẩm khó đo và thay đổi theo pH, muối; một sai số nhỏ ở θ gần 30° hoặc 150° làm ΔE đổi nhiều lần ${G}.</li>
+<li><strong>Hạt mềm không có góc tiếp xúc cố định.</strong> Microgel và protein là hạt mềm, đổi hình khi hấp phụ, nên không có một θ cố định; Murray (2019) chỉ xem là "Pickering thật" các vật liệu có mô đun cắt hoặc mô đun Young trên khoảng 0,1 MPa. Với hạt mềm, kết quả ΔE chỉ để minh họa. ${N(['murray2019', 'Murray 2019'])}</li>
+<li><strong>Ghi rõ phương pháp đo θ.</strong> Máy này cần θ tại mặt phân cách dầu–nước, đo qua pha nước. Nhiều bài về tinh bột và protein đo bằng giọt nước đặt trên màng hạt khô trong không khí: đó không phải θ dầu–nước và hai loại số đo không so trực tiếp được. ${G}</li>
 <li>Kiểm máy tính: r = 50 nm, γ = 30 mN/m, θ = 90° cho ≈ 5,7 × 10⁴ kT, khớp bảng trong bài Hệ nhũ tương đặc biệt ${T}.</li>`,
 	},
 	totox: {
