@@ -515,3 +515,33 @@
 /* Gói 4: dòng "Luật chơi" dưới tiêu chí sao, và lưu ý ở Bàn bảo quản */
 .pl-luat { font-size: 0.8rem; color: var(--sl-color-gray-2); line-height: 1.5; margin: 0.4rem 0 0.6rem; }
 .pl-luu-y { font-size: 0.82rem; line-height: 1.5; margin: 0.6rem 0; padding: 0.5rem 0.7rem; border-inline-start: 3px solid #e0a030; background: color-mix(in srgb, #e0a030 10%, transparent); border-radius: 0.4rem; color: var(--sl-color-gray-1); }
+
+/* Gói 7: ba bàn mới */
+.kep-ban-do table { display: table !important; table-layout: fixed; width: 100%; border: 0 !important; background: none !important; border-collapse: separate; border-spacing: 3px; font-size: 0.75rem; margin: 0.5rem 0; }
+.kep-ban-do th { background: none !important; font-weight: 600; padding: 0.15rem !important; text-align: center; border: 0 !important; color: var(--sl-color-white); }
+.kep-ban-do th.goc { width: 24%; font-size: 0.62rem; font-weight: 500; line-height: 1.2; text-align: start; }
+.kep-ban-do td.kep-o { height: 1.7rem; text-align: center; border-radius: 0.3rem; border: 0 !important; padding: 0 !important; font-weight: 800; color: #fff; }
+.kep-ban-do td.kep-o.xanh { background: #3fb162 !important; }
+.kep-ban-do td.kep-o.cam { background: #e8963c !important; }
+.kep-ban-do td.kep-o.do { background: #d65a7a !important; }
+.kep-ban-do td.kep-o.trong { background: var(--sl-color-gray-5) !important; color: var(--sl-color-gray-3); }
+.kep-ban-do td.kep-o.dang { outline: 3px solid var(--sl-color-white); outline-offset: -3px; }
+.kep-ban-do td.kep-o.trong.dang { color: var(--sl-color-white); }
+.kep-ngoai { fill: #e9c84a; stroke: #b08a20; }
+.kep-trong { fill: #cfe4ee; stroke: #6d9bb0; }
+.kep-dich { fill: #cfe4ee; transition: fill 0.3s; }
+.pick-hat { fill: #d8c28a; stroke: #8f7a44; }
+.pick-mat { stroke: var(--pl-man-chu, #9fe3d0); stroke-width: 2; fill: none; }
+.pick-giot { fill: rgba(159, 227, 208, 0.35); stroke: var(--pl-man-chu, #9fe3d0); }
+.pick-nhu { fill: #f4ecc9; }
+.pick-pp { font-size: 0.82rem; line-height: 1.45; margin: 0.5rem 0; padding: 0.45rem 0.65rem; border-radius: 0.4rem; border-inline-start: 3px solid; }
+.pick-pp.dung { border-color: #3fb162; background: color-mix(in srgb, #3fb162 10%, transparent); }
+.pick-pp.luu-y { border-color: #e0a030; background: color-mix(in srgb, #e0a030 12%, transparent); }
+.mayo-dich { fill: #ece6d2; transition: fill 0.3s; }
+.mayo-nen-bat { fill: #f4e6a8; opacity: 0.6; }
+.mayo-rot { fill: none; stroke: #e7cf6a; stroke-width: 3; opacity: 0.7; }
+.mayo-dai { fill: color-mix(in srgb, #3fb162 16%, transparent); }
+.mayo-nen { fill: none; stroke: var(--sl-color-gray-3); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.mayo-diem { fill: #e8963c; stroke: #fff; stroke-width: 1; }
+.mayo-diem.dang { fill: #d65a7a; stroke-width: 2; }
+@media (max-width: 40rem) { .pl-chon-ban { grid-template-columns: repeat(2, 1fr); } }

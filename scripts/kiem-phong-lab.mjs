@@ -1,7 +1,10 @@
 // Kiểm bộ máy tính toán của Phòng lab ảo: công thức con khớp với bài, và các hiện tượng
 // hóa học đi đúng chiều (áp suất thấp → giọt to → kem hóa nhanh, v.v.).
 // Chạy: npm run kiem
+import fs from 'node:fs';
 import { chatNhuHoaToiThieu, stokes } from '../public/cong-thuc.js';
+import { KEP, CHUNG, HAT, PP_DO, MAYO, moiKhoaNguon } from '../public/phong-lab/so-lieu-ban-moi.js';
+import { mienKep, moPhongKep, pgprHapPhu, chenhThamThau, phiHieuDung, phiTheTich, roMinhHoa, chamSaoKep, NHIEM_VU_KEP, moPhongPickering, hatTheoId, soSanhTheta, laThetaDauNuoc, chamSaoPickering, NHIEM_VU_PICKERING, gNen, phiMayo, moPhongMayo, chamSaoMayo, NHIEM_VU_MAYO } from '../public/phong-lab/mo-hinh-ban-moi.js';
 import {
 	dTheoChatNhuHoa, dTheoApSuat, nhietDoRa, dacTrungPhanBo, phanSoTheTich, doNhotXanthan,
 	moPhongMe, NHIEM_VU, chamSao, doKhongNo, thoiGianCamUng, chiSoPeroxide, doNhotNuoc, DAU, PV_NGUONG,
@@ -172,6 +175,73 @@ for (const nv of NHIEM_VU) {
 		const [tot, au] = LG[nv.id].map((m) => ({ pH: 6.5, ...m, ...nv.coDinh }));
 		const a = chamSaoBQ(nv, BQ(tot), { me: tot, daDo }).sao, b = chamSaoBQ(nv, BQ(au), { me: au, daDo }).sao;
 		dung(`Nhiệm vụ bảo quản "${nv.ten}": lời giải ${a}/3, cách làm ẩu ${b}/3`, a === 3 && b < 3);
+	}
+}
+
+// 7. Ba bàn mới (Gói 7): số khớp nguồn, không ngoại suy, nhiệm vụ giải được
+{
+	const nguonJson = JSON.parse(fs.readFileSync(new URL('../nguon/nguon.json', import.meta.url), 'utf8'));
+	const coKhoa = new Set(nguonJson.map((e) => e.khoa));
+	const thieuKhoa = moiKhoaNguon().filter((k) => !coKhoa.has(k));
+	dung(`Mọi khóa nguồn của tham số có trong nguon.json (${moiKhoaNguon().length} khóa)`, thieuKhoa.length === 0);
+	for (const [ten, nhom] of Object.entries({ KEP, CHUNG, ...Object.fromEntries(HAT.map((x) => [x.id, { x }])) }))
+		for (const [k, v] of Object.entries(nhom)) dung(`${ten}.${k} có nhãn N/T/K/G`, ['N', 'T', 'K', 'G'].includes(v.nhan) && !!v.chac);
+	dung('Nhãn G (số minh họa rò rỉ) không nằm trong tiêu chí chấm sao', !NHIEM_VU_KEP.some((n) => n.tieuChi.some((t) => /rò rỉ|hiệu suất/i.test(t.chu))));
+
+	// Nhũ tương kép
+	dung('Bản đồ khớp bảng Nollet 2024', mienKep(0.36, 5) === 'xanh' && mienKep(0.36, 40) === 'xanh' && mienKep(2.5, 10) === 'do' && mienKep(2.5, 20) === 'cam' && mienKep(2.5, 40) === 'xanh' && mienKep(5, 20) === 'do' && mienKep(10, 40) === 'cam' && mienKep(10, 47.1) === 'xanh');
+	dung('Ô không có trong bài: ngoài vùng có dữ liệu, không ngoại suy', mienKep(1, 40) === null && mienKep(5, 40) === null && mienKep(0.36, 47.1) === null && moPhongKep({ cFree: 1, phiD: 40 }).ngoaiVung);
+	dung(`PGPR hấp phụ ở 40 wt%, d 1,9 µm = ${pgprHapPhu(40).toFixed(3)} ≈ 1,28 wt% (Nollet 2024)`, Math.abs(pgprHapPhu(40) - KEP.pgpr_hap_phu_40.gia_tri) < 0.03);
+	dung('PGPR hấp phụ tỉ lệ nghịch cỡ giọt: d 1 µm ≈ 2,4; d 3 µm ≈ 0,8', Math.abs(pgprHapPhu(40, 1) - 2.4) < 0.1 && Math.abs(pgprHapPhu(40, 3) - 0.8) < 0.05);
+	dung('Tổng PGPR ứng C_free 0,36 ≈ 1,64 wt% (bảng công thức)', Math.abs(moPhongKep({ cFree: 0.36, phiD: 40 }).tongPgpr - 1.64) < 0.03);
+	dung(`Chênh thẩm thấu 0,1 M NaCl = ${chenhThamThau(0.1, 0).toFixed(2)} ≈ 4,96 bar`, Math.abs(chenhThamThau(0.1, 0) - 4.96) < 0.01);
+	dung('Hướng nước: W₁ đậm hơn thì nước vào, W₂ đậm hơn thì nước ra', moPhongKep({ cFree: 0.36, phiD: 40, cW2: 0 }).huongNuoc === 'vao' && moPhongKep({ cFree: 0.36, phiD: 40, cW2: 0.2 }).huongNuoc === 'ra');
+	dung('Đổi muối W₂ khỏi 0,1 M thì ra ngoài bản đồ', moPhongKep({ cFree: 0.36, phiD: 40, cW2: 0.2 }).ngoaiVung);
+	dung('φ hiệu dụng = φ_O + φ_W₁ > φ_O', phiHieuDung(0.1, 40) > 0.1 && Math.abs(phiHieuDung(0.1, 40) - 0.1 / (1 - phiTheTich(40))) < 1e-9);
+	dung('Rò rỉ minh họa: miền xanh neo EE ≈ 90% ở cuối trục', Math.abs(roMinhHoa('xanh', 1) - 0.9) < 1e-9);
+	{
+		const me1 = { cFree: 0.36, phiD: 40, buoc2: 'nhe' };
+		const a = chamSaoKep(NHIEM_VU_KEP[0], moPhongKep(me1), me1).sao;
+		const au = { cFree: 2.5, phiD: 10, buoc2: 'manh' };
+		const b = chamSaoKep(NHIEM_VU_KEP[0], moPhongKep(au), au).sao;
+		dung(`Nhiệm vụ "${NHIEM_VU_KEP[0].ten}": lời giải ${a}/3, làm ẩu ${b}/3`, a === 3 && b < 3);
+		const c = chamSaoKep(NHIEM_VU_KEP[1], moPhongKep(me1), me1).sao;
+		const nhieu = { cFree: 2.5, phiD: 40, buoc2: 'nhe' };
+		const d = chamSaoKep(NHIEM_VU_KEP[1], moPhongKep(nhieu), nhieu).sao;
+		dung(`Nhiệm vụ "${NHIEM_VU_KEP[1].ten}": lời giải ${c}/3, nhiều PGPR ${d}/3`, c === 3 && d < 3);
+	}
+
+	// Pickering
+	dung('Mọi hạt đều ghi phương pháp đo θ', HAT.every((x) => !!PP_DO[x.pp]));
+	dung('Protein, microgel đánh dấu hạt mềm nên ΔE chỉ minh họa', HAT.filter((x) => /wpi|zein/.test(x.id)).every((x) => x.mem && moPhongPickering({ hat: x, dNm: 100 }).minhHoa));
+	dung('θ đo trong không khí không được coi là θ dầu–nước', !laThetaDauNuoc(hatTheoId('wpi-vi-gel')) && laThetaDauNuoc(hatTheoId('zein-alginate')));
+	dung('Khác phương pháp đo thì không so trực tiếp', !soSanhTheta(hatTheoId('wpi-goc'), hatTheoId('zein')) && soSanhTheta(hatTheoId('wpi-goc'), hatTheoId('wpi-citric')) && !soSanhTheta(hatTheoId('osa-nano'), hatTheoId('osa-tigernut')));
+	const heSo = (t) => (1 - Math.abs(Math.cos((t * Math.PI) / 180))) ** 2;
+	dung(`Hệ số ΔE θ 70,1° so với 25,4° = ${(heSo(70.1) / heSo(25.4)).toFixed(1)} ≈ 46,7 lần`, Math.abs(heSo(70.1) / heSo(25.4) - 46.7) < 0.3);
+	const si = moPhongPickering({ hat: 'silica-amin', dNm: 19 });
+	dung(`Silica amin 19 nm, θ 22°: ΔE = ${si.kT.toFixed(1)} ≈ 12 kT`, Math.abs(si.kT - 12) < 1.5 && !si.bamChac);
+	dung('θ dưới 90° là O/W, trên 90° là W/O', moPhongPickering({ hat: 'zein', dNm: 100 }).loai === 'W/O' && moPhongPickering({ hat: 'zein-alginate', dNm: 80 }).loai === 'O/W');
+	{
+		const tot = moPhongPickering({ hat: 'osa-tigernut', dNm: 7710 }), au = moPhongPickering({ hat: 'silica-amin', dNm: 19 });
+		dung(`Nhiệm vụ "${NHIEM_VU_PICKERING[0].ten}": lời giải ${chamSaoPickering(NHIEM_VU_PICKERING[0], tot).sao}/3, silica ${chamSaoPickering(NHIEM_VU_PICKERING[0], au).sao}/3`, chamSaoPickering(NHIEM_VU_PICKERING[0], tot).sao === 3 && chamSaoPickering(NHIEM_VU_PICKERING[0], au).sao < 3);
+		const tin = moPhongPickering({ hat: 'zein-alginate', dNm: 80 }), kk = moPhongPickering({ hat: 'wpi-citric', dNm: 1000 });
+		dung(`Nhiệm vụ "${NHIEM_VU_PICKERING[1].ten}": lời giải ${chamSaoPickering(NHIEM_VU_PICKERING[1], tin).sao}/3, θ đo trong không khí ${chamSaoPickering(NHIEM_VU_PICKERING[1], kk).sao}/3`, chamSaoPickering(NHIEM_VU_PICKERING[1], tin).sao === 3 && chamSaoPickering(NHIEM_VU_PICKERING[1], kk).sao < 3);
+	}
+
+	// Mayonnaise
+	dung(`Princen–Kiss φ 0,75, σ 10, d₃₂ 3,5: ${gNen(0.75).toFixed(0)} ≈ 349 Pa; φ ≤ 0,712 thì 0`, Math.abs(gNen(0.75) - 349) < 3 && gNen(0.712) === 0 && gNen(0.7) === 0);
+	dung('Quy đổi φ: 73% khối lượng ≈ 0,75 thể tích (Ho 2022)', Math.abs(phiMayo(73) - 0.75) < 0.01);
+	dung('Điểm đo Li 2012 giữ nguyên số', MAYO.li2012.diem[80].tau0 === 133.5 && MAYO.li2012.diem[75].Gp === 492 && MAYO.li2012.diem[85].d_tt === 3.15);
+	const M = (o) => moPhongMayo({ dauPct: 80, ...o });
+	dung('Dầu ngoài 75, 80, 85%: báo ngoài vùng có dữ liệu, không có số', M({ dauPct: 70 }).ngoaiVung && M({ dauPct: 70 }).duLieu === null && M({ dauPct: 90 }).duLieu === null);
+	dung('Đổ dầu quá nhanh: đảo pha hoặc vỡ, không in số', M({ tocDo: 'nhanh' }).trangThai === 'dao-pha' && M({ tocDo: 'nhanh' }).duLieu === null);
+	dung('Không có lòng đỏ: không nhũ hóa', M({ coLongDo: false }).trangThai === 'khong-nhu-hoa');
+	dung('Không có giấm: khác công thức bảng đo, không in số', M({ coGiam: false }).duLieu === null);
+	dung('Kết quả mayonnaise không có trường hạn dùng hay vi sinh', !Object.keys(M({})).some((k) => /han|sinh|shelf/i.test(k)));
+	{
+		const a = M({ quaNghien: true }), b = M({ tocDo: 'nhanh' }), c = M({ dauPct: 75 }), d = M({ dauPct: 85, quaNghien: true });
+		dung(`Nhiệm vụ "${NHIEM_VU_MAYO[0].ten}": lời giải ${chamSaoMayo(NHIEM_VU_MAYO[0], a).sao}/3, đổ nhanh ${chamSaoMayo(NHIEM_VU_MAYO[0], b).sao}/3`, chamSaoMayo(NHIEM_VU_MAYO[0], a).sao === 3 && chamSaoMayo(NHIEM_VU_MAYO[0], b).sao < 3);
+		dung(`Nhiệm vụ "${NHIEM_VU_MAYO[1].ten}": dầu 80% ${chamSaoMayo(NHIEM_VU_MAYO[1], a).sao}/3, dầu 75% ${chamSaoMayo(NHIEM_VU_MAYO[1], c).sao}/3, dầu 85% ${chamSaoMayo(NHIEM_VU_MAYO[1], d).sao}/3`, chamSaoMayo(NHIEM_VU_MAYO[1], a).sao === 3 && chamSaoMayo(NHIEM_VU_MAYO[1], c).sao < 3 && chamSaoMayo(NHIEM_VU_MAYO[1], d).sao < 3);
 	}
 }
 

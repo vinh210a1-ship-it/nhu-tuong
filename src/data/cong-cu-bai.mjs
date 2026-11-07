@@ -7,12 +7,12 @@
 //   loai 'may-tinh' : id = mã máy trên trang Máy tính (data-may-tinh), liên kết tới /may-tinh/#mt-<id>
 //   loai 'lab'      : id = mã nhiệm vụ trong NHIEM_VU (public/phong-lab/mo-hinh.js) hoặc 'tu-do' (phòng lab tự do),
 //                     liên kết tới /phong-lab/#nv-<id>; không có id thì mở /phong-lab/
+//   loai 'ban'      : id = 'kep' | 'pickering' | 'mayo'; liên kết tới /phong-lab/#ban-<id>
 //   loai 'so-tay'   : /phong-lab/#so-tay (Sổ tay thí nghiệm)
 //   loai 'tra-cuu'  : id = 'ins' | 'tt24'; liên kết tới /tra-cuu/#<id>
 //   loai 'chan-doan': /chan-doan/
-// Các mục "sau gói 7" (bàn nhũ tương kép, Pickering, mayonnaise) chưa đưa vào vì bàn chưa có.
 
-export const NHAN_LOAI = { 'may-tinh': 'Máy tính', lab: 'Phòng lab', 'so-tay': 'Phòng lab', 'tra-cuu': 'Tra cứu', 'chan-doan': 'Chẩn đoán' };
+export const NHAN_LOAI = { 'may-tinh': 'Máy tính', lab: 'Phòng lab', ban: 'Phòng lab', 'so-tay': 'Phòng lab', 'tra-cuu': 'Tra cứu', 'chan-doan': 'Chẩn đoán' };
 
 export const CONG_CU_BAI = {
 	'nen-tang': [
@@ -36,6 +36,8 @@ export const CONG_CU_BAI = {
 	],
 	'he-dac-biet': [
 		{ loai: 'may-tinh', id: 'pickering', ten: 'Năng lượng giải hấp hạt Pickering', vi: 'Đổi góc tiếp xúc và kích thước hạt để thấy hạt rắn bám giọt chặt hơn chất nhũ hóa phân tử thế nào.' },
+		{ loai: 'ban', id: 'kep', ten: 'Bàn nhũ tương kép', vi: 'Chọn PGPR và tỉ lệ giọt trong rồi xem công thức rơi vào miền nào trên bản đồ ổn định.' },
+		{ loai: 'ban', id: 'pickering', ten: 'Bàn Pickering', vi: 'So các loại hạt và tập đọc số góc tiếp xúc kèm cách đo.' },
 	],
 	'do-luong': [
 		{ loai: 'may-tinh', id: 'stokes', ten: 'Vận tốc kem hóa (Stokes)', vi: 'Từ kích thước giọt đo được, ước tính tốc độ kem hóa để biết số đo có báo trước sự tách lớp không.' },
@@ -45,6 +47,7 @@ export const CONG_CU_BAI = {
 	'san-pham': [
 		{ loai: 'tra-cuu', id: 'tt24', ten: 'Tra cứu mã INS và mức tối đa (TT24/2019)', vi: 'Kiểm phụ gia bạn định dùng trong sản phẩm có được phép và ở mức nào.' },
 		{ loai: 'lab', ten: 'Bàn nhũ tương: bốn nhiệm vụ sản phẩm', vi: 'Sữa hạt, đồ uống whey, sốt salad, sữa omega-3: mỗi nhiệm vụ là một sản phẩm với ràng buộc riêng.' },
+		{ loai: 'ban', id: 'mayo', ten: 'Bàn mayonnaise', vi: 'Thử đổ dầu nhanh và chậm, rồi so mẻ của bạn với bảng đo theo hàm lượng dầu.' },
 	],
 	'su-co-thiet-ke': [
 		{ loai: 'chan-doan', ten: 'Cây chẩn đoán sự cố', vi: 'Chọn triệu chứng của mẫu hỏng và đi theo cây quyết định để biết nên kiểm gì trước.' },
@@ -56,6 +59,7 @@ export const CONG_CU_BAI = {
 export function hrefCongCu(d) {
 	if (d.loai === 'may-tinh') return `../../may-tinh/#mt-${d.id}`;
 	if (d.loai === 'lab') return d.id ? `../../phong-lab/#nv-${d.id}` : '../../phong-lab/';
+	if (d.loai === 'ban') return `../../phong-lab/#ban-${d.id}`;
 	if (d.loai === 'so-tay') return '../../phong-lab/#so-tay';
 	if (d.loai === 'tra-cuu') return `../../tra-cuu/#${d.id}`;
 	if (d.loai === 'chan-doan') return '../../chan-doan/';

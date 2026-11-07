@@ -14,6 +14,9 @@ function dungVo(vo) {
 		{ id: 'nhu-tuong', ten: 'Bàn nhũ tương', bt: '🥛', de: 'Dầu, chất nhũ hóa, đồng hóa, tách lớp, ôi dầu' },
 		{ id: 'thit', ten: 'Bàn thịt', bt: '🥩', de: 'Muối, phosphat, pH: vì sao thịt mọng nước?' },
 		{ id: 'bao-quan', ten: 'Bàn bảo quản', bt: '🧫', de: 'aw, pH, muối, lạnh, chất bảo quản: vi khuẩn có mọc?' },
+		{ id: 'kep', ten: 'Bàn nhũ tương kép', bt: '🫧', de: 'PGPR, giọt trong, bước hai: giọt kép có bền?' },
+		{ id: 'pickering', ten: 'Bàn Pickering', bt: '⚪', de: 'Hạt, góc tiếp xúc, năng lượng giải hấp' },
+		{ id: 'mayo', ten: 'Bàn mayonnaise', bt: '🥚', de: 'Khung minh họa: thêm dầu, bảng đo theo hàm lượng dầu' },
 	];
 	vo.innerHTML = `<nav class="pl-chon-ban" aria-label="Chọn bàn thí nghiệm">${BAN.map((b) => `<button type="button" class="pl-ban-nut" data-ban="${b.id}" aria-pressed="false"><span class="bt" aria-hidden="true">${b.bt}</span><b>${b.ten}</b><small>${b.de}</small></button>`).join('')}</nav>
 ${BAN.map((b) => `<div class="pl-ban" data-ban-vung="${b.id}"${b.id === 'nhu-tuong' ? '' : ' hidden'}></div>`).join('')}`;
@@ -26,6 +29,9 @@ ${BAN.map((b) => `<div class="pl-ban" data-ban-vung="${b.id}"${b.id === 'nhu-tuo
 			daMo.add(id);
 			if (id === 'thit') (await import('./ban-thit.js')).khoiDongBanThit(vung);
 			if (id === 'bao-quan') (await import('./ban-bao-quan.js')).khoiDongBanBaoQuan(vung);
+			if (id === 'kep') (await import('./ban-kep.js')).khoiDongBanKep(vung);
+			if (id === 'pickering') (await import('./ban-pickering.js')).khoiDongBanPickering(vung);
+			if (id === 'mayo') (await import('./ban-mayo.js')).khoiDongBanMayo(vung);
 		}
 		try {
 			history.replaceState(null, '', id === 'nhu-tuong' ? location.pathname : `#ban-${id}`);
@@ -33,7 +39,7 @@ ${BAN.map((b) => `<div class="pl-ban" data-ban-vung="${b.id}"${b.id === 'nhu-tuo
 		if (cuon) vo.scrollIntoView({ behavior: 'smooth', block: 'start' });
 	};
 	vo.querySelectorAll('[data-ban]').forEach((n) => n.addEventListener('click', () => chon(n.dataset.ban, false)));
-	const tuHash = location.hash.match(/^#ban-(thit|bao-quan)$/)?.[1];
+	const tuHash = location.hash.match(/^#ban-(thit|bao-quan|kep|pickering|mayo)$/)?.[1];
 	setTimeout(() => chon(tuHash ?? 'nhu-tuong', !!tuHash), 0);
 	return vo.querySelector('[data-ban-vung="nhu-tuong"]');
 }
