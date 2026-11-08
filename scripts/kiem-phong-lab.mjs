@@ -246,6 +246,16 @@ for (const nv of NHIEM_VU) {
 		dung(`Nhiệm vụ "${NHIEM_VU_MAYO[1].ten}": dầu 80% ${chamSaoMayo(NHIEM_VU_MAYO[1], a).sao}/3, dầu 75% ${chamSaoMayo(NHIEM_VU_MAYO[1], c).sao}/3, dầu 85% ${chamSaoMayo(NHIEM_VU_MAYO[1], d).sao}/3`, chamSaoMayo(NHIEM_VU_MAYO[1], a).sao === 3 && chamSaoMayo(NHIEM_VU_MAYO[1], c).sao < 3 && chamSaoMayo(NHIEM_VU_MAYO[1], d).sao < 3);
 	}
 
+	// Mẫu mang sang bàn bảo quản: aw lấy từ mẫu thay cho ước tính, không đổi hành vi cũ
+	{
+		const cu = moPhongBaoQuan({ muoi: 5, duong: 0, pH: 6.5, nhietDo: 25 });
+		const moi = moPhongBaoQuan({ muoi: 5, duong: 0, pH: 6.5, nhietDo: 25, awDo: 0.5 });
+		dung('Bảo quản: không có awDo thì aw vẫn là ước tính từ muối và đường', cu.awTuMau === false && Math.abs(cu.aw - 0.9) < 0.1 && cu.aw < 1);
+		dung('Bảo quản: có awDo thì dùng đúng aw của mẫu và đánh dấu', moi.awTuMau === true && moi.aw === 0.5);
+		dung('Bảo quản: aw 0,5 chặn mọi mầm bệnh trong bảng FDA (aw thấp nhất của họ đều cao hơn 0,5)', moi.soMoc === 0);
+		dung('Bảo quản: awDo ngoài (0, 1] bị bỏ qua', moPhongBaoQuan({ muoi: 5, awDo: 1.5 }).awTuMau === false && moPhongBaoQuan({ muoi: 5, awDo: 0 }).awTuMau === false);
+	}
+
 	// Nâu hóa
 	dung('k bánh quy: hai đầu khoảng giữ nguyên số (165 và 195 °C)', Math.abs(kNoiSuy(NAU.banhQuy.kBI, 165) - 0.019) < 1e-9 && Math.abs(kNoiSuy(NAU.banhQuy.kBI, 195) - 0.063) < 1e-9 && Math.abs(kNoiSuy(NAU.banhQuy.kAcryl, 195) - 0.077) < 1e-9);
 	dung('k bánh quy: ngoài 165–195 °C không ngoại suy (null)', kNoiSuy(NAU.banhQuy.kBI, 160) === null && kNoiSuy(NAU.banhQuy.kBI, 200) === null);

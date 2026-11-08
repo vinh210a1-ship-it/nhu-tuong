@@ -30,7 +30,7 @@ const MAC_DINH = () => ({ muoi: 0, duong: 0, coAxit: false, pH: 6.5, sorbat: 0, 
 const PH_NEN = 6.5;
 const meThuc = (st) => {
 	const cd = st.nv?.coDinh ?? {};
-	return { ...st.me, pH: cd.pH ?? (st.me.coAxit ? st.me.pH : PH_NEN), nhietDo: cd.nhietDo ?? st.me.nhietDo, kin: cd.kin ?? st.me.kin };
+	return { ...st.me, pH: cd.pH ?? (st.me.coAxit ? st.me.pH : (st.me.pHMau ?? PH_NEN)), nhietDo: cd.nhietDo ?? st.me.nhietDo, kin: cd.kin ?? st.me.kin };
 };
 const tinh = (st) => moPhongBaoQuan(meThuc(st));
 const coTrong = (st, mon) =>
@@ -60,7 +60,7 @@ function viSao(st, kq) {
 	const lis = kq.ketQua.find((r) => r.id === 'lis');
 	if (kq.nhietDo <= 5 && lis.moc) ly.push([NHAN_TP.fda, 'Listeria mọc được cả ở nhiệt độ tủ lạnh (tối thiểu −0,4 °C). Tủ lạnh một mình không đủ: cần thêm muối, aw thấp hoặc pH dưới 4,4.']);
 	if (!kq.kin && kq.ketQua.some((r) => r.kyKhi)) ly.push([NHAN_TP.fda, 'Lọ để hở có oxy nên các Clostridium (kỵ khí) không mọc. Đóng hộp kín thì phải tính tới C. botulinum.']);
-	ly.push([NHAN_TP.aw, `aw ước tính ${soCD(kq.aw, 3)}, muối pha nước ${soCD(kq.wps)}%.`]);
+	ly.push([NHAN_TP.aw, `${kq.awTuMau ? 'aw lấy từ mẫu mang sang' : 'aw ước tính'} ${soCD(kq.aw, 3)}, muối pha nước ${soCD(kq.wps)}%.`]);
 	const uc = kq.men.ucChe;
 	if (st.me.sorbat || st.me.benzoat) {
 		const ct = Object.entries(uc.chiTiet).map(([k, v]) => `${k === 'sorbic' ? 'sorbic' : 'benzoic'}: ${soCD(v.phanHA * 100, 0)}% ở dạng chưa phân ly`).join('; ');
@@ -121,6 +121,42 @@ const TRAM_BQ = [
 export function khoiDongBanBaoQuan(goc) {
 	return taoBan(goc, {
 		khoaSao: 'pl:sao-bq',
+		tt: (st) => {
+			const kq = tinh(st);
+			const ds = [];
+			if (st.me.muoi > 0) ds.push({ k: 'muoi', ten: 'Muối', v: st.me.muoi, dv: 'g/100 g', nhan: 'T' });
+			if (st.me.duong > 0) ds.push({ k: 'duong', ten: 'Đường', v: st.me.duong, dv: 'g/100 g', nhan: 'T' });
+			ds.push({ k: 'pH', ten: 'pH', v: Math.round(kq.pH * 100) / 100, dv: '', nhan: 'T' });
+			ds.push({ k: 'aw', ten: kq.awTuMau ? 'aw (lấy từ mẫu trước)' : 'aw (ước tính)', v: Math.round(kq.aw * 1000) / 1000, dv: '', nhan: 'T' });
+			return ds;
+		},
+		nhanTu: {
+			thit(tt, st) {
+				const muoi = tt.find((t) => t.k === 'muoi')?.v ?? 0;
+				const pH = tt.find((t) => t.k === 'pH')?.v;
+				if (typeof pH !== 'number') return { ok: false, ly: 'mẫu thịt không có pH.' };
+				Object.assign(st, { me: { ...MAC_DINH(), muoi: Math.min(25, muoi), pHMau: Math.min(7, Math.max(3, pH)) }, daDo: { aw: false, pH: false }, daU: false });
+				return {
+					ok: true,
+					ghiChu: [
+						`Đã đọc muối ${soCD(muoi)} g/100 g và pH ${soCD(pH, 2)}.`,
+						'Chưa đọc được: phosphat, nitrit và lượng nước thật của thịt (bàn này coi phần còn lại của 100 g là nước, nên muối trong pha nước ở đây thấp hơn thịt thật). Chỉ để học nguyên lý hàng rào.',
+					],
+				};
+			},
+			'nau-hoa'(tt, st) {
+				const aw = tt.find((t) => t.k === 'aw')?.v;
+				if (typeof aw !== 'number') return { ok: false, ly: 'mẫu nâu hóa này không có aw (mẫu chip chỉ có mức giảm acrylamide, bàn này không đọc được).' };
+				Object.assign(st, { me: { ...MAC_DINH(), awDo: aw }, daDo: { aw: false, pH: false }, daU: false });
+				return {
+					ok: true,
+					ghiChu: [
+						`Đã đọc aw ${soCD(aw, 2)} (số bạn đặt ở bàn nâu hóa, nhãn G).`,
+						'Chưa đọc được: pH, muối, đường của bánh quy; bàn dùng pH 6,5 mặc định và muối, đường bằng 0. Hãy đo pH thật nếu có. Đổi muối hoặc đường thì aw mang sang sẽ bị bỏ và tính lại.',
+					],
+				};
+			},
+		},
 		nhiemVu: NHIEM_VU_BQ,
 		nha: 'ban',
 		tram: TRAM_BQ,
@@ -144,6 +180,7 @@ export function khoiDongBanBaoQuan(goc) {
 				api.noi(`Đề bài không cho thêm chua: pH cố định ${soCD(st.nv.coDinh.pH, 1)}.`, 'lo');
 				return false;
 			}
+			if (mon.id === 'muoi' || mon.id === 'duong') me.awDo = null;
 			if (mon.id === 'muoi') me.muoi = me.muoi || 5;
 			else if (mon.id === 'duong') me.duong = me.duong || 30;
 			else if (mon.id === 'axit') Object.assign(me, { coAxit: true, pH: me.coAxit ? me.pH : 4.5 });
@@ -156,6 +193,7 @@ export function khoiDongBanBaoQuan(goc) {
 			const me = st.me;
 			if (mon.id === 'axit') Object.assign(me, { coAxit: false, pH: PH_NEN });
 			else me[mon.id] = 0;
+			if (mon.id === 'muoi' || mon.id === 'duong') me.awDo = null;
 			doiMe(st, api);
 		},
 		theMon: (st, mon) => `<p class="pl-meo">${MO_TA[mon.id] ?? ''}</p>`,
@@ -190,7 +228,7 @@ export function khoiDongBanBaoQuan(goc) {
 				if (me.sorbat) ds.push(dong('#e8f0f6', 'Kali sorbat', 'boSorbat', thanhTruot('sorbat', 'Sorbat (tính theo sorbic acid)', 0.1, 1, 0.05, me.sorbat, 'g/kg')));
 				if (me.benzoat) ds.push(dong('#f0e8f6', 'Natri benzoat', 'boBenzoat', thanhTruot('benzoat', 'Benzoat (tính theo benzoic acid)', 0.1, 1, 0.05, me.benzoat, 'g/kg')));
 				return (
-					dauBang('Pha lọ sản phẩm', `Lọ nền là nước sốt pH ${soCD(cd.pH ?? PH_NEN, 1)}. Mở tủ, kéo chai thả vào lọ. Chất bảo quản tối đa 1 g/kg trong trò chơi (giới hạn pháp lý theo từng nhóm thực phẩm chưa tra).`, '🫙') +
+					dauBang('Pha lọ sản phẩm', `Lọ nền là nước sốt pH ${soCD(cd.pH ?? me.pHMau ?? PH_NEN, 1)}. Mở tủ, kéo chai thả vào lọ. Chất bảo quản tối đa 1 g/kg trong trò chơi (giới hạn pháp lý theo từng nhóm thực phẩm chưa tra).`, '🫙') +
 					`<div class="pl-nut-tu"><button type="button" class="pl-nut-tu-1" data-mo-tu="tu-bq">🧂 Tủ gia vị & bảo quản</button></div>` +
 					(ds.length ? `<ul class="pl-ds-coc">${ds.join('')}</ul>` : `<p class="pl-meo">Lọ chưa có gì thêm.</p>`) +
 					(cd.kin != null ? `<p class="pl-meo">🔒 Đề bài: lọ ${cd.kin ? 'đóng kín, không có oxy' : 'đã mở nắp, có oxy'}.</p>` : `<label class="pl-chon"><input type="checkbox" data-lam="kin" ${me.kin ? 'checked' : ''}/> Đóng hộp kín (không có oxy, như đồ hộp, túi hút chân không)</label>`) +
@@ -201,7 +239,7 @@ export function khoiDongBanBaoQuan(goc) {
 				const kq = tinh(st);
 				return dauBang('Máy đo hoạt độ nước', 'aw = áp suất hơi của mẫu chia cho của nước nguyên chất. Nước cất = 1. aw đo lượng nước vi sinh vật dùng được, khác với độ ẩm.', '💧') +
 					(st.daDo.aw
-						? `<div class="pl-so-to"><span>${soCD(kq.aw, 3)}</span><small>aw ước tính ${nhanHTML(NHAN_TP.aw)} · muối pha nước ${soCD(kq.wps)}%</small></div>${thangAw(kq.aw)}<p class="pl-ok">Kéo lọ sang <button type="button" class="pl-link" data-dua="ph">máy đo pH</button>.</p>`
+						? `<div class="pl-so-to"><span>${soCD(kq.aw, 3)}</span><small>${kq.awTuMau ? 'aw lấy từ mẫu mang sang' : 'aw ước tính'} ${nhanHTML(NHAN_TP.aw)} · muối pha nước ${soCD(kq.wps)}%</small></div>${thangAw(kq.aw)}<p class="pl-ok">Kéo lọ sang <button type="button" class="pl-link" data-dua="ph">máy đo pH</button>.</p>`
 						: `<p class="pl-canh-bao">Kéo lọ thả vào máy, hoặc <button type="button" class="pl-link" data-dua="aw">mang lọ tới đây</button>.</p>`);
 			},
 			ph(st) {
@@ -231,6 +269,7 @@ ${viSao(st, kq)}<button type="button" class="pl-nut" data-lam="lamMoi">Làm lọ
 		},
 		doi(st, k, v, api) {
 			st.me[k] = v;
+			if (k === 'muoi' || k === 'duong') st.me.awDo = null;
 			if (st.me.muoi + st.me.duong > 75) st.me[k === 'muoi' ? 'duong' : 'muoi'] = Math.max(0, 75 - v);
 			if (st.daU || st.daDo.aw || st.daDo.pH) {
 				doiMe(st, api, 'Công thức đã đổi.');
@@ -239,8 +278,8 @@ ${viSao(st, kq)}<button type="button" class="pl-nut" data-lam="lamMoi">Làm lọ
 		},
 		hienO: (st, k) => ({ muoi: `${soCD(st.me.muoi)} g`, duong: `${soCD(st.me.duong)} g`, pH: soCD(st.me.pH, 1), sorbat: `${soCD(st.me.sorbat, 2)} g/kg`, benzoat: `${soCD(st.me.benzoat, 2)} g/kg` })[k],
 		lam: {
-			boMuoi: (st, api) => { st.me.muoi = 0; doiMe(st, api); api.ve(); },
-			boDuong: (st, api) => { st.me.duong = 0; doiMe(st, api); api.ve(); },
+			boMuoi: (st, api) => { st.me.muoi = 0; st.me.awDo = null; doiMe(st, api); api.ve(); },
+			boDuong: (st, api) => { st.me.duong = 0; st.me.awDo = null; doiMe(st, api); api.ve(); },
 			boAxit: (st, api) => { Object.assign(st.me, { coAxit: false, pH: PH_NEN }); doiMe(st, api); api.ve(); },
 			boSorbat: (st, api) => { st.me.sorbat = 0; doiMe(st, api); api.ve(); },
 			boBenzoat: (st, api) => { st.me.benzoat = 0; doiMe(st, api); api.ve(); },

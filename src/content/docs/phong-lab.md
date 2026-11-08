@@ -21,6 +21,13 @@ Phòng lab có **sáu bàn thí nghiệm**. Chọn bàn, chọn nhiệm vụ, r�
 - **Bàn mayonnaise** (khung minh họa): thêm dầu nhanh hay chậm → nghiền keo → so với bảng đo ở dầu 75, 80, 85%.
 - **Bàn nâu hóa** (học nguyên lý): bánh quy hoặc chip chiên; đường, aw, nhiệt độ, hạ nhiệt chiên, asparaginase. Số có nguồn giữ đúng điều kiện đã công bố; đường cong bánh quy là nội suy nhãn T trong 165–195 °C; ngoài vùng thì báo không có dữ liệu.
 
+## Tủ lưu mẫu
+
+Mỗi bàn có nút **Lưu mẫu vào tủ**. Mẫu nằm trong **Tủ lưu mẫu** ở cuối trang, dùng chung cho mọi bàn, lưu trong trình duyệt này và **chỉ mất khi bạn bấm Xóa** (hai bước, để tránh lỡ tay) hoặc khi xóa dữ liệu trình duyệt.
+
+- **Lấy ra ở bàn gốc:** khôi phục đúng trạng thái lúc lưu.
+- **Mang sang bàn khác:** bàn nhận chỉ đọc những thuộc tính nó tính được, kèm nhãn N/T/G, và nói rõ phần chưa đọc được; không đoán số. Hiện có hai lối: **bàn thịt → bàn bảo quản** (đọc muối và pH) và **bàn nâu hóa (bánh quy) → bàn bảo quản** (đọc aw bạn đã đặt; pH, muối, đường chưa biết nên bàn dùng mặc định và nói rõ). Các cặp bàn khác báo chưa có phép chuyển đã kiểm.
+
 Kết quả không phải do may rủi: mỗi hiện tượng đều tính bằng cơ chế và số đo có nguồn (Stokes, bảng giới hạn mọc của FDA, các nghiên cứu về phosphat trong thịt…). Mỗi lời giải thích có nhãn tin cậy như phần còn lại của web; số nào là minh họa đều được ghi rõ.
 
 <div id="phong-lab" class="not-content"><noscript>Phòng lab cần bật JavaScript.</noscript></div>

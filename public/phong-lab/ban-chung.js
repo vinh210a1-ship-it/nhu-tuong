@@ -3,6 +3,7 @@
 // linh vật "Giọt", nhiệm vụ có sao. Mỗi bàn chỉ cần khai báo cấu hình.
 
 import { LUAT_CHOI } from './mo-hinh.js';
+import { luuMau, dangKyBan, tenBan } from './tu-luu-mau.js';
 
 export const GIAM_CHUYEN_DONG = matchMedia('(prefers-reduced-motion: reduce)').matches;
 export const so = (x, c = 2) => (!isFinite(x) ? '∞' : x.toLocaleString('vi-VN', { maximumSignificantDigits: c }));
@@ -64,7 +65,9 @@ const GIOT_SVG = `<svg viewBox="0 0 40 46" aria-hidden="true"><path d="M20 2 C20
  *   canh() → SVG, vat() → SVG của vật kéo được (g.pl-coc), tu{id:{ten,moTa,mon[]}},
  *   dich(st), coTrong(st,mon), cho(st,mon,api) → bool, bo(st,mon,api), theMon(st,mon),
  *   choToi(st,tram) → chuỗi lý do nếu chưa cho đặt, khiToi(st,tram,api), bang{tram: (st,api)→html},
- *   doi(st,k,v,api), lam{ten:(st,api,nut)}, capNhatCanh(st,svg), chao, huongDan, tenVat
+ *   doi(st,k,v,api), lam{ten:(st,api,nut)}, capNhatCanh(st,svg), chao, huongDan, tenVat,
+ *   tt(st) → [{k, ten, v, dv, nhan}] thuộc tính chung để mang sang bàn khác (tùy chọn),
+ *   nhanTu{maBanGoc: (tt, st) → {ok, ly?, ghiChu?[]}} cách đọc mẫu từ bàn khác (tùy chọn; không có thì báo chưa đọc được)
  * }
  */
 export function taoBan(goc, cfg) {
@@ -147,6 +150,7 @@ export function taoBan(goc, cfg) {
     <svg class="pl-canh" viewBox="0 10 1000 360" role="group" aria-label="${h(cfg.nhanCanh)}">${cfg.canh()}${cfg.vat()}</svg>
     <nav class="pl-buoc" aria-label="Các bước"></nav>
     <p class="pl-huong-dan">${cfg.huongDan}</p>
+    <div class="pl-luu-mau"><button type="button" class="pl-nut pl-luu-mau-nut">💾 Lưu mẫu vào tủ</button><span class="pl-luu-mau-tb" role="status" aria-live="polite"></span></div>
   </div>
   <aside class="pl-bang" aria-live="polite"></aside>
 </div>`;
@@ -172,6 +176,45 @@ export function taoBan(goc, cfg) {
 		g.dispatchEvent(new MouseEvent('click', { bubbles: true }));
 	});
 	ganKeo();
+
+	/* ---------- tủ lưu mẫu ---------- */
+	const idBan = goc.dataset.banVung;
+	const banSach = (o) => JSON.parse(JSON.stringify(o));
+	const chup = () => {
+		const { nv, viTri, tram, dangChay, canVeLai, ...con } = st;
+		return banSach(con);
+	};
+	const noiLuu = (t) => {
+		const e = goc.querySelector('.pl-luu-mau-tb');
+		if (e) e.textContent = t;
+	};
+	goc.querySelector('.pl-luu-mau-nut').addEventListener('click', () => {
+		const tom = (() => {
+			const d = document.createElement('div');
+			d.innerHTML = cfg.dich(st);
+			return d.textContent.trim();
+		})();
+		const kq = luuMau({ ban: idBan, tom: tom || 'Mẫu chưa có nguyên liệu', goc: chup(), tt: cfg.tt ? cfg.tt(st) : [] });
+		noiLuu(kq.ok ? `Đã lưu “${kq.mau.ten}” vào tủ lưu mẫu.` : kq.ly);
+		if (kq.ok) api.noi('Đã cất mẫu vào <b>tủ lưu mẫu</b>. Sang bàn khác lấy ra bất cứ lúc nào!', 'vui');
+	});
+	dangKyBan(idBan, document.querySelector(`[data-ban="${idBan}"] b`)?.textContent ?? idBan, (mau) => {
+		if (st.dangChay) return { ok: false, ly: 'máy đang chạy, đợi xong rồi lấy mẫu.' };
+		if (mau.ban === idBan) {
+			Object.assign(st, cfg.moi(null), banSach(mau.goc ?? {}), { viTri: cfg.nha, tram: cfg.nha, dangChay: false });
+			ve();
+			api.noi(`Đã lấy <b>${h(mau.ten)}</b> ra khỏi tủ.`, 'vui');
+			return { ok: true, ghiChu: ['Trạng thái được khôi phục đúng như lúc lưu.'] };
+		}
+		const doc = cfg.nhanTu?.[mau.ban];
+		if (!doc) return { ok: false, ly: `bàn này chưa có cách đọc mẫu từ ${tenBan(mau.ban)} (hai bàn đo những đại lượng khác nhau và chưa có phép chuyển đã kiểm).` };
+		const kq = doc(mau.tt ?? [], st, mau);
+		if (!kq.ok) return kq;
+		Object.assign(st, { viTri: cfg.nha, tram: cfg.nha, dangChay: false });
+		ve();
+		api.noi(`Đã mang <b>${h(mau.ten)}</b> từ ${h(tenBan(mau.ban))} sang. ${(kq.ghiChu ?? []).map(h).join(' ')}`, 'vui');
+		return kq;
+	});
 
 	function veNhiemVu() {
 		const sao = docLS(cfg.khoaSao, {});

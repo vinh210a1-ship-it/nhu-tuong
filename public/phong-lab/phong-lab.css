@@ -563,3 +563,20 @@
 .nau-thu-tu li { counter-increment: nau; padding: 0.15rem 0.55rem; border: 1px solid var(--hh-vien, #bbb); border-radius: 999px; font-size: 0.8rem; }
 .nau-thu-tu li::before { content: counter(nau) '. '; opacity: 0.6; }
 .nau-thu-tu li.dang { background: var(--sl-color-accent, #0a7); color: #fff; border-color: transparent; }
+
+/* Tủ lưu mẫu */
+.pl-luu-mau { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-top: 0.6rem; }
+.pl-luu-mau-tb, .pl-tu-mau-tb { font-size: 0.85rem; color: var(--hh-ho-phach, #8a5a00); }
+.pl-tu-mau { margin-top: 2.5rem; }
+.pl-ds-mau { list-style: none; padding: 0; margin: 0.8rem 0 0; display: grid; gap: 0.8rem; grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); }
+.pl-mau { border: 1px solid var(--hh-vien, #bbb); border-radius: 0.6rem; padding: 0.75rem 0.9rem; }
+.pl-mau-dau { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.6rem; }
+.pl-mau-ten { flex: 1 1 8rem; font: inherit; font-weight: 600; padding: 0.15rem 0.35rem; border: 1px solid transparent; border-radius: 0.3rem; background: transparent; color: inherit; }
+.pl-mau-ten:hover, .pl-mau-ten:focus { border-color: var(--hh-vien, #bbb); background: var(--sl-color-bg, #fff); }
+.pl-mau-ban { font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 999px; background: var(--sl-color-accent-low, #def); }
+.pl-mau-tom { margin: 0.35rem 0; font-size: 0.9rem; }
+.pl-mau-tt { list-style: none; padding: 0; margin: 0 0 0.5rem; font-size: 0.82rem; }
+.pl-mau-tt li { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.pl-mau-tt li span:first-child { color: var(--sl-color-gray-3, #666); }
+.pl-mau-nut { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+.pl-xoa.sap-xoa { color: #b3261e; font-weight: 700; }

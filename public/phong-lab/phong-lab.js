@@ -20,8 +20,15 @@ function dungVo(vo) {
 		{ id: 'nau-hoa', ten: 'Bàn nâu hóa', bt: '🍪', de: 'Maillard và acrylamide: đường, aw, nhiệt độ, enzyme' },
 	];
 	vo.innerHTML = `<nav class="pl-chon-ban" aria-label="Chọn bàn thí nghiệm">${BAN.map((b) => `<button type="button" class="pl-ban-nut" data-ban="${b.id}" aria-pressed="false"><span class="bt" aria-hidden="true">${b.bt}</span><b>${b.ten}</b><small>${b.de}</small></button>`).join('')}</nav>
-${BAN.map((b) => `<div class="pl-ban" data-ban-vung="${b.id}"${b.id === 'nhu-tuong' ? '' : ' hidden'}></div>`).join('')}`;
+${BAN.map((b) => `<div class="pl-ban" data-ban-vung="${b.id}"${b.id === 'nhu-tuong' ? '' : ' hidden'}></div>`).join('')}
+<section class="pl-tu-mau" aria-label="Tủ lưu mẫu"></section>`;
 	const daMo = new Set(['nhu-tuong']);
+	const banDangMo = () => vo.querySelector('[data-ban][aria-pressed="true"]')?.dataset.ban ?? 'nhu-tuong';
+	import('./tu-luu-mau.js').then((m) => {
+		const tuMau = m.ganTuMau(vo.querySelector('.pl-tu-mau'), { banDangMo, tenBanDe: (id) => BAN.find((b) => b.id === id)?.ten ?? id });
+		vo.addEventListener('pl-ban-doi', () => tuMau.ve());
+		tuMau.ve();
+	});
 	const chon = async (id, cuon) => {
 		vo.querySelectorAll('[data-ban]').forEach((n) => n.setAttribute('aria-pressed', String(n.dataset.ban === id)));
 		vo.querySelectorAll('[data-ban-vung]').forEach((v) => (v.hidden = v.dataset.banVung !== id));
@@ -38,6 +45,7 @@ ${BAN.map((b) => `<div class="pl-ban" data-ban-vung="${b.id}"${b.id === 'nhu-tuo
 		try {
 			history.replaceState(null, '', id === 'nhu-tuong' ? location.pathname : `#ban-${id}`);
 		} catch {}
+		vo.dispatchEvent(new CustomEvent('pl-ban-doi'));
 		if (cuon) vo.scrollIntoView({ behavior: 'smooth', block: 'start' });
 	};
 	vo.querySelectorAll('[data-ban]').forEach((n) => n.addEventListener('click', () => chon(n.dataset.ban, false)));
@@ -143,6 +151,7 @@ function khoiDong(el) {
     <svg class="pl-canh" viewBox="0 10 1000 360" role="group" aria-label="Phòng thí nghiệm. Bấm tủ để mở, kéo cốc sang các máy">${veCanh()}</svg>
     <nav class="pl-buoc" aria-label="Các bước"></nav>
     <p class="pl-huong-dan">Mẹo: bấm vào tủ để mở, <b>kéo chai thả vào cốc</b>; rồi <b>kéo cốc</b> sang từng máy. Trên điện thoại có thể bấm thay vì kéo.</p>
+    <div class="pl-luu-mau"><button type="button" class="pl-nut pl-luu-mau-nut">💾 Lưu mẫu vào tủ</button><span class="pl-luu-mau-tb" role="status" aria-live="polite"></span></div>
   </div>
   <aside class="pl-bang" aria-live="polite"></aside>
 </div>
@@ -1278,7 +1287,44 @@ function capNhatCanh() {
 	svg.querySelector('[data-man="ngay"]').textContent = S.xong.tua ? `${S.ngay} ngày · ${S.bq.nhietDo}°C` : '—';
 }
 
-if (goc) khoiDong(goc);
+if (goc) {
+	khoiDong(goc);
+	ganTuMauBanGoc();
+}
+
+/* ---------------- tủ lưu mẫu cho bàn nhũ tương (bàn gốc) ---------------- */
+async function ganTuMauBanGoc() {
+	const { luuMau, dangKyBan, tenBan } = await import('./tu-luu-mau.js');
+	const chup = () => structuredClone({ coc: S.coc, may: S.may, xong: S.xong, ngay: S.ngay, bq: S.bq });
+	const noiLuu = (t) => {
+		const e = goc.querySelector('.pl-luu-mau-tb');
+		if (e) e.textContent = t;
+	};
+	goc.querySelector('.pl-luu-mau-nut').addEventListener('click', () => {
+		if (!coMau()) return noiLuu('Cốc chưa có dầu và nước nên chưa có gì để lưu.');
+		tinh();
+		const m = meThuc();
+		const kq = S.kq;
+		const tt = [{ k: 'dauPct', ten: 'Dầu', v: m.phanTramDau, dv: '% khối lượng', nhan: 'T' }];
+		if (m.nhuHoa) tt.push({ k: 'nhuHoa', ten: NHU_HOA[m.nhuHoa].ten.split(' (')[0], v: m.phanTramNhuHoa, dv: '%', nhan: 'T' });
+		if (S.xong.khuay || S.xong.dongHoa) tt.push({ k: 'd43', ten: 'd₄₃ (mô phỏng)', v: Math.round(kq.d43 * 100) / 100, dv: 'µm', nhan: 'T' });
+		const tom = `${soCD(m.phanTramDau, 0)}% ${DAU[m.dau].ten.replace('Dầu ', '')}${m.nhuHoa ? ' · ' + NHU_HOA[m.nhuHoa].ten.split(' (')[0] : ' · không nhũ hóa'}${S.xong.khuay ? ' · đã khuấy' : ''}${S.xong.dongHoa ? ' · đã đồng hóa' : ''}`;
+		const r = luuMau({ ban: 'nhu-tuong', tom, goc: chup(), tt });
+		noiLuu(r.ok ? `Đã lưu “${r.mau.ten}” vào tủ lưu mẫu.` : r.ly);
+		if (r.ok) noi('Đã cất mẫu vào <b>tủ lưu mẫu</b>. Lấy ra bất cứ lúc nào!', 'vui');
+	});
+	dangKyBan('nhu-tuong', 'Bàn nhũ tương', (mau) => {
+		if (S.dangChay) return { ok: false, ly: 'máy đang chạy, đợi xong rồi lấy mẫu.' };
+		if (mau.ban !== 'nhu-tuong') return { ok: false, ly: `bàn này chưa có cách đọc mẫu từ ${tenBan(mau.ban)} (hai bàn đo những đại lượng khác nhau và chưa có phép chuyển đã kiểm).` };
+		const g = mau.goc ?? {};
+		if (!g.coc || !g.may || !g.xong || !g.bq) return { ok: false, ly: 'mẫu thiếu dữ liệu để khôi phục.' };
+		Object.assign(S, structuredClone({ coc: g.coc, may: g.may, xong: g.xong, ngay: Number(g.ngay) || 0, bq: g.bq }), { viTri: 'can', tram: 'can', dangChay: false });
+		veLai();
+		noi(`Đã lấy <b>${h(mau.ten)}</b> ra khỏi tủ.`, 'vui');
+		return { ok: true, ghiChu: ['Trạng thái được khôi phục đúng như lúc lưu.'] };
+	});
+}
+
 
 /* Liên kết từ bài học:
    /phong-lab/#nv-<mã nhiệm vụ>  mở bàn nhũ tương và chọn sẵn nhiệm vụ ("tu-do" = phòng lab tự do)

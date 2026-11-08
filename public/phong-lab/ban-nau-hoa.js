@@ -100,6 +100,16 @@ const TRAM_NAU = [
 export function khoiDongBanNauHoa(goc) {
 	return taoBan(goc, {
 		khoaSao: 'pl:sao-nau',
+		tt: (st) => {
+			const kq = tinh(st);
+			if (kq.loai === 'chip') return kq.giam != null && st.daDo ? [{ k: 'giamAcryl', ten: 'Acrylamide giảm so với chiên 190 °C', v: kq.giam, dv: '%', nhan: 'N' }] : [];
+			const ds = [{ k: 'aw', ten: 'aw (bạn đặt cho bột)', v: Math.round(kq.aw * 100) / 100, dv: '', nhan: 'G' }];
+			if (st.daNau && !kq.ngoaiVung) {
+				ds.push({ k: 'nhietNuong', ten: 'Nhiệt độ nướng', v: kq.T, dv: '°C', nhan: 'T' });
+				ds.push({ k: 'chiSoNau', ten: 'Độ tiến chỉ số nâu f', v: Math.round(kq.BI * 100) / 100, dv: '', nhan: 'T' });
+			}
+			return ds;
+		},
 		nhiemVu: NHIEM_VU_NAU,
 		nha: 'pha',
 		tram: TRAM_NAU,
