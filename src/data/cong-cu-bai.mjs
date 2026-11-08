@@ -10,9 +10,10 @@
 //   loai 'ban'      : id = 'kep' | 'pickering' | 'mayo'; liên kết tới /phong-lab/#ban-<id>
 //   loai 'so-tay'   : /phong-lab/#so-tay (Sổ tay thí nghiệm)
 //   loai 'tra-cuu'  : id = 'ins' | 'tt24'; liên kết tới /tra-cuu/#<id>
+//   loai 'ta-duoc'  : /tra-cuu-ta-duoc/ (tra cứu tá dược FDA IID)
 //   loai 'chan-doan': /chan-doan/
 
-export const NHAN_LOAI = { 'may-tinh': 'Máy tính', lab: 'Phòng lab', ban: 'Phòng lab', 'so-tay': 'Phòng lab', 'tra-cuu': 'Tra cứu', 'chan-doan': 'Chẩn đoán' };
+export const NHAN_LOAI = { 'may-tinh': 'Máy tính', lab: 'Phòng lab', ban: 'Phòng lab', 'so-tay': 'Phòng lab', 'tra-cuu': 'Tra cứu', 'ta-duoc': 'Tra cứu', 'chan-doan': 'Chẩn đoán' };
 
 export const CONG_CU_BAI = {
 	'nen-tang': [
@@ -62,6 +63,7 @@ export function hrefCongCu(d) {
 	if (d.loai === 'ban') return `../../phong-lab/#ban-${d.id}`;
 	if (d.loai === 'so-tay') return '../../phong-lab/#so-tay';
 	if (d.loai === 'tra-cuu') return `../../tra-cuu/#${d.id}`;
+	if (d.loai === 'ta-duoc') return '../../tra-cuu-ta-duoc/';
 	if (d.loai === 'chan-doan') return '../../chan-doan/';
 	throw new Error(`cong-cu-bai: loại lạ "${d.loai}"`);
 }
@@ -140,18 +142,21 @@ import { CONG_CU_CHAT_BEO, CAN_BIET_CHAT_BEO } from './cong-cu-khu/chat-beo.mjs'
 import { CONG_CU_CHAT_NHU_HOA, CAN_BIET_CHAT_NHU_HOA } from './cong-cu-khu/chat-nhu-hoa.mjs';
 import { CONG_CU_CHAT_ON_DINH, CAN_BIET_CHAT_ON_DINH } from './cong-cu-khu/chat-on-dinh.mjs';
 import { CONG_CU_THUC_PHAM, CAN_BIET_THUC_PHAM } from './cong-cu-khu/thuc-pham.mjs';
+import { CONG_CU_DUOC_PHAM, CAN_BIET_DUOC_PHAM } from './cong-cu-khu/duoc-pham.mjs';
 
 export const CONG_CU_KHU = {
 	'chat-beo': CONG_CU_CHAT_BEO,
 	'chat-nhu-hoa': CONG_CU_CHAT_NHU_HOA,
 	'chat-on-dinh': CONG_CU_CHAT_ON_DINH,
 	'thuc-pham': CONG_CU_THUC_PHAM,
+	'duoc-pham': CONG_CU_DUOC_PHAM,
 };
 const CAN_BIET_KHU = {
 	'chat-beo': CAN_BIET_CHAT_BEO,
 	'chat-nhu-hoa': CAN_BIET_CHAT_NHU_HOA,
 	'chat-on-dinh': CAN_BIET_CHAT_ON_DINH,
 	'thuc-pham': CAN_BIET_THUC_PHAM,
+	'duoc-pham': CAN_BIET_DUOC_PHAM,
 };
 
 /** Danh sách "Cần biết trước" của bài ngoài khu Nhũ tương. Mục ghi 'slug' = cùng khu, 'khu/slug' = khu khác. Mặc định: bài ngay trước trong khu; ghi [] nếu bài độc lập. */

@@ -54,7 +54,7 @@ const CAM_BAI = [
 	['luồng "…" (tên luồng nội bộ)', /luồng "/],
 	['"file 10"', /\bfile 10\b/],
 	['"(từ R" + số', /\(từ R\d+/],
-	['mã nguồn nội bộ dạng "(R12)"', /\(R\d{1,2}[,)]/],
+	['mã nguồn nội bộ dạng "(R12)"', /(?<![A-Za-z0-9])\(R\d{1,2}[,)]/],
 	['mục "Bước tiếp theo" của người soạn', /Bước tiếp theo/],
 	['"các luồng" / "luồng nhũ tương…" (tên luồng nội bộ)', /\bcác luồng\b|\bluồng (?:nhũ|chất|khác|này)/],
 	['lời người soạn nói với người đọc ("bạn gửi/cho biết…")', /bạn (?:gửi|cho biết|xác nhận) /],
