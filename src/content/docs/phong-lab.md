@@ -1,6 +1,6 @@
 ---
 title: Phòng lab ảo
-description: Trò chơi phòng thí nghiệm có sáu bàn (nhũ tương, thịt, bảo quản, nhũ tương kép, Pickering, mayonnaise). Kéo thả nguyên liệu, chạy máy và xem kết quả tính bằng cơ chế và số liệu có nguồn.
+description: Trò chơi phòng thí nghiệm có bảy bàn (nhũ tương, thịt, bảo quản, nhũ tương kép, Pickering, mayonnaise, nâu hóa). Kéo thả nguyên liệu, chạy máy và xem kết quả tính bằng cơ chế và số liệu có nguồn.
 template: splash
 tableOfContents: false
 editUrl: false
@@ -19,6 +19,7 @@ Phòng lab có **sáu bàn thí nghiệm**. Chọn bàn, chọn nhiệm vụ, r�
 - **Bàn nhũ tương kép**: chọn PGPR và tỉ lệ giọt trong → bước 1 → bước 2 nhẹ hơn → xem bản đồ miền ổn định theo một nghiên cứu.
 - **Bàn Pickering**: chọn hạt → đọc góc tiếp xúc kèm cách đo → tính năng lượng giải hấp → xem loại nhũ tương.
 - **Bàn mayonnaise** (khung minh họa): thêm dầu nhanh hay chậm → nghiền keo → so với bảng đo ở dầu 75, 80, 85%.
+- **Bàn nâu hóa** (học nguyên lý): bánh quy hoặc chip chiên; đường, aw, nhiệt độ, hạ nhiệt chiên, asparaginase. Số có nguồn giữ đúng điều kiện đã công bố; đường cong bánh quy là nội suy nhãn T trong 165–195 °C; ngoài vùng thì báo không có dữ liệu.
 
 Kết quả không phải do may rủi: mỗi hiện tượng đều tính bằng cơ chế và số đo có nguồn (Stokes, bảng giới hạn mọc của FDA, các nghiên cứu về phosphat trong thịt…). Mỗi lời giải thích có nhãn tin cậy như phần còn lại của web; số nào là minh họa đều được ghi rõ.
 

@@ -551,3 +551,15 @@
 .pl-so-tay-nut .pl-link:disabled { opacity: 0.5; cursor: not-allowed; }
 .pl-nhap-nhan { cursor: pointer; }
 .pl-so-tay-tb { font-size: 0.8rem; color: var(--hh-ho-phach); }
+
+/* Bàn nâu hóa */
+.nau-bi, .nau-acr { fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.nau-bi { stroke: #b4661f; }
+.nau-acr { stroke: #5b3fa0; stroke-dasharray: 5 3; }
+.nau-chu-bi { color: #b4661f; }
+.nau-chu-acr { color: #5b3fa0; }
+.nau-dai-aw { fill: rgb(214 140 40 / 0.35); stroke: #b4661f; stroke-width: 1; }
+.nau-thu-tu { display: flex; flex-wrap: wrap; gap: 0.35rem; list-style: none; padding: 0; margin: 0.6rem 0 0.2rem; counter-reset: nau; }
+.nau-thu-tu li { counter-increment: nau; padding: 0.15rem 0.55rem; border: 1px solid var(--hh-vien, #bbb); border-radius: 999px; font-size: 0.8rem; }
+.nau-thu-tu li::before { content: counter(nau) '. '; opacity: 0.6; }
+.nau-thu-tu li.dang { background: var(--sl-color-accent, #0a7); color: #fff; border-color: transparent; }

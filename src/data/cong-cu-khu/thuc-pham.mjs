@@ -10,6 +10,9 @@ export const CONG_CU_THUC_PHAM = {
 		{ loai: 'may-tinh', id: 'axit-yeu', ten: 'Phần chất bảo quản axit yếu chưa phân ly', vi: 'Nhập pH và pKa để thấy vì sao sorbat, benzoat mạnh yếu theo pH.' },
 		{ loai: 'may-tinh', id: 'arrhenius', ten: 'Hạn dùng theo nhiệt độ (Arrhenius)', vi: 'Nhập các điểm đo ở nhiều nhiệt độ để xem hạn dùng ngoại suy thay đổi thế nào.' },
 	],
+	'maillard-caramel-acrylamide': [
+		{ loai: 'ban', id: 'nau-hoa', ten: 'Bàn nâu hóa', vi: 'Thử hạ nhiệt chiên, asparaginase, đường và aw để thấy yếu tố nào làm acrylamide và màu thay đổi; số nào không có thì bàn nói ngoài vùng có dữ liệu.' },
+	],
 	'protein-bien-tinh-gel-hoa-va-enzym': [
 		{ loai: 'ban', id: 'thit', ten: 'Bàn thịt', vi: 'Thử muối và phosphat trên khối thịt để thấy protein sợi cơ giữ nước ra sao.' },
 	],

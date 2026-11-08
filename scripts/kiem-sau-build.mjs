@@ -154,7 +154,7 @@ for (const khu of KHU_CHUAN) {
 for (const tep of fs.readdirSync(path.join(GOC, 'public/phong-lab')).filter((x) => x.endsWith('.js')))
 	if (/kết bông/i.test(fs.readFileSync(path.join(GOC, 'public/phong-lab', tep), 'utf8'))) loiThuNgay.push(`public/phong-lab/${tep}: còn "kết bông" (tên chuẩn là "keo tụ")`);
 // mọi liên kết #ban-... trên trang bài phải trỏ tới bàn có thật
-const maBan = new Set(['thit', 'bao-quan', 'kep', 'pickering', 'mayo']);
+const maBan = new Set(['thit', 'bao-quan', 'kep', 'pickering', 'mayo', 'nau-hoa']);
 for (const [p, h] of Object.entries(noiDung))
 	for (const m of h.matchAll(/href="[^"#]*phong-lab\/#ban-([^"]*)"/g)) if (!maBan.has(m[1])) loiThuNgay.push(`${tenTrang(p)}: liên kết #ban-${m[1]} không khớp bàn nào`);
 // mọi liên kết #nv-... (ở bất kỳ trang nào) phải trỏ tới nhiệm vụ có thật ("tu-do" = phòng lab tự do)

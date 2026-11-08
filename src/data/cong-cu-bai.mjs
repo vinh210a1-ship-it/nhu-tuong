@@ -7,7 +7,7 @@
 //   loai 'may-tinh' : id = mã máy trên trang Máy tính (data-may-tinh), liên kết tới /may-tinh/#mt-<id>
 //   loai 'lab'      : id = mã nhiệm vụ trong NHIEM_VU (public/phong-lab/mo-hinh.js) hoặc 'tu-do' (phòng lab tự do),
 //                     liên kết tới /phong-lab/#nv-<id>; không có id thì mở /phong-lab/
-//   loai 'ban'      : id = 'kep' | 'pickering' | 'mayo'; liên kết tới /phong-lab/#ban-<id>
+//   loai 'ban'      : id = 'kep' | 'pickering' | 'mayo' | 'nau-hoa'; liên kết tới /phong-lab/#ban-<id>
 //   loai 'so-tay'   : /phong-lab/#so-tay (Sổ tay thí nghiệm)
 //   loai 'tra-cuu'  : id = 'ins' | 'tt24'; liên kết tới /tra-cuu/#<id>
 //   loai 'ta-duoc'  : /tra-cuu-ta-duoc/ (tra cứu tá dược FDA IID)
