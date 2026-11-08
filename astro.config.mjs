@@ -56,6 +56,7 @@ export default defineConfig({
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/tt24.js` } },
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/ta-duoc.js` } },
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/bao-loi.js` } },
+				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/chu-giai.js` } },
 			],
 			lastUpdated: false,
 			pagination: true,

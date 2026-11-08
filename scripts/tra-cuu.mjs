@@ -119,6 +119,20 @@ export function dungTraCuu({ GOC, DOCS, BASE, theGia, soPhuGia, soNhom }) {
 	}
 	ds.sort((a, b) => khoaTrung(a.en).localeCompare(khoaTrung(b.en), 'en'));
 
+	// ---- chú giải thuật ngữ khi rê chuột (public/chu-giai.json, sinh tự động, đã gitignore)
+	// Chỉ lấy mục đã qua kiểm "K không có số kèm đơn vị" ở trên. Mô tả giữ nguyên nhãn để tooltip nói rõ mức tin cậy.
+	{
+		const gia = [];
+		for (const m of ds) {
+			const vi = m.vi.replace(/\([^)]*\)/g, ' ').split('/').map((x) => x.replace(/\s+/g, ' ').trim()).filter((x) => [...x].length >= 5 && /\p{L}/u.test(x));
+			if (!vi.length || !m.mo) continue;
+			if (m.nhan.every((n) => /^\[K[\]:;]/.test(n)) && SO_DON_VI.test(`${m.vi} ${m.mo}`)) continue; // số sách nền còn ẩn trên web thì tooltip cũng không hiện
+			const ma = [...new Set(m.nhan.flatMap((n) => [...n.matchAll(/\b([NTKG])\b/g)].map((x) => x[1])))].join('');
+			gia.push({ t: vi, mo: m.mo, ma: ma || 'K', en: m.en });
+		}
+		fs.writeFileSync(path.join(GOC, 'public/chu-giai.json'), JSON.stringify(gia));
+	}
+
 	// ---- HTML
 	const thieu = new Set();
 	const lvDem = {};
