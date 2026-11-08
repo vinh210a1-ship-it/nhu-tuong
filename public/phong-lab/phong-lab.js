@@ -7,30 +7,51 @@ import { TU } from './tu.js';
 const BASE = '/nhu-tuong/';
 const goc = dungVo(document.getElementById('phong-lab'));
 
-/* Ba bàn thí nghiệm: nhũ tương (bàn gốc), thịt, bảo quản. Bàn mới chỉ tải khi được chọn. */
+/* Bốn bàn thí nghiệm: nhũ tương (bốn chế độ), thịt, bảo quản, nâu hóa. Bàn/chế độ mới chỉ tải khi được chọn.
+   Bàn nhũ tương gộp bốn mô hình: mỗi chế độ giữ mô hình, số liệu có nguồn, nhiệm vụ và sao riêng (khóa localStorage không đổi);
+   địa chỉ cũ #ban-kep, #ban-pickering, #ban-mayo vẫn mở đúng chế độ. */
 function dungVo(vo) {
 	if (!vo) return null;
 	const BAN = [
-		{ id: 'nhu-tuong', ten: 'Bàn nhũ tương', bt: '🥛', de: 'Dầu, chất nhũ hóa, đồng hóa, tách lớp, ôi dầu' },
+		{ id: 'nhu-tuong', ten: 'Bàn nhũ tương', bt: '🥛', de: 'Bốn chế độ: cơ bản, mayonnaise, Pickering, nhũ tương kép' },
 		{ id: 'thit', ten: 'Bàn thịt', bt: '🥩', de: 'Muối, phosphat, pH: vì sao thịt mọng nước?' },
 		{ id: 'bao-quan', ten: 'Bàn bảo quản', bt: '🧫', de: 'aw, pH, muối, lạnh, chất bảo quản: vi khuẩn có mọc?' },
-		{ id: 'kep', ten: 'Bàn nhũ tương kép', bt: '🫧', de: 'PGPR, giọt trong, bước hai: giọt kép có bền?' },
-		{ id: 'pickering', ten: 'Bàn Pickering', bt: '⚪', de: 'Hạt, góc tiếp xúc, năng lượng giải hấp' },
-		{ id: 'mayo', ten: 'Bàn mayonnaise', bt: '🥚', de: 'Khung minh họa: thêm dầu, bảng đo theo hàm lượng dầu' },
 		{ id: 'nau-hoa', ten: 'Bàn nâu hóa', bt: '🍪', de: 'Maillard và acrylamide: đường, aw, nhiệt độ, enzyme' },
 	];
-	vo.innerHTML = `<nav class="pl-chon-ban" aria-label="Chọn bàn thí nghiệm">${BAN.map((b) => `<button type="button" class="pl-ban-nut" data-ban="${b.id}" aria-pressed="false"><span class="bt" aria-hidden="true">${b.bt}</span><b>${b.ten}</b><small>${b.de}</small></button>`).join('')}</nav>
-${BAN.map((b) => `<div class="pl-ban" data-ban-vung="${b.id}"${b.id === 'nhu-tuong' ? '' : ' hidden'}></div>`).join('')}
+	// Chế độ của bàn nhũ tương: cấu trúc (đơn/kép) và chất ổn định; mỗi chế độ dùng đúng mô hình riêng, không ép chung công thức.
+	const CHE_DO = [
+		{ id: 'nhu-tuong', nhom: 'Nhũ tương đơn (O/W)', ten: 'Cơ bản', bt: '🥛', ten_day_du: 'Nhũ tương cơ bản', de: 'Chất nhũ hóa thực phẩm, đồng hóa, kem hóa, ôi dầu' },
+		{ id: 'mayo', nhom: 'Nhũ tương đơn (O/W)', ten: 'Mayonnaise', bt: '🥚', ten_day_du: 'Mayonnaise', de: 'Dầu rất đậm đặc, lòng đỏ, bảng đo theo hàm lượng dầu (khung minh họa)' },
+		{ id: 'pickering', nhom: 'Nhũ tương đơn (O/W)', ten: 'Pickering', bt: '⚪', ten_day_du: 'Nhũ tương Pickering', de: 'Hạt rắn làm chất ổn định: góc tiếp xúc, năng lượng giải hấp' },
+		{ id: 'kep', nhom: 'Nhũ tương kép', ten: 'W/O/W', bt: '🫧', ten_day_du: 'Nhũ tương kép W/O/W', de: 'PGPR, giọt trong, bước hai: giọt kép có bền?' },
+	];
+	const TEN = { ...Object.fromEntries(BAN.map((b) => [b.id, b.ten])), ...Object.fromEntries(CHE_DO.map((c) => [c.id, c.ten_day_du])) };
+	const NHOM = [...new Set(CHE_DO.map((c) => c.nhom))];
+	const VUNG = [...CHE_DO.map((c) => c.id), ...BAN.filter((b) => b.id !== 'nhu-tuong').map((b) => b.id)];
+	const laCheDo = (id) => CHE_DO.some((c) => c.id === id);
+	vo.innerHTML = `<nav class="pl-chon-ban" aria-label="Chọn bàn thí nghiệm">${BAN.map((b) => `<button type="button" class="pl-ban-nut" data-tab-ban="${b.id}" aria-pressed="false"><span class="bt" aria-hidden="true">${b.bt}</span><b>${b.ten}</b><small>${b.de}</small></button>`).join('')}</nav>
+<div class="pl-che-do" role="group" aria-label="Chế độ của bàn nhũ tương" hidden>${NHOM.map((n) => `<div class="pl-che-do-nhom"><span>${n}</span>${CHE_DO.filter((c) => c.nhom === n).map((c) => `<button type="button" class="pl-che-do-nut" data-che-do="${c.id}" aria-pressed="false" title="${c.de}"><span aria-hidden="true">${c.bt}</span> ${c.ten}</button>`).join('')}</div>`).join('')}<p class="pl-che-do-de" role="status"></p></div>
+${VUNG.map((id) => `<div class="pl-ban" data-ban-vung="${id}"${id === 'nhu-tuong' ? '' : ' hidden'}></div>`).join('')}
 <section class="pl-tu-mau" aria-label="Tủ lưu mẫu"></section>`;
 	const daMo = new Set(['nhu-tuong']);
-	const banDangMo = () => vo.querySelector('[data-ban][aria-pressed="true"]')?.dataset.ban ?? 'nhu-tuong';
+	let dang = 'nhu-tuong'; // chế độ hoặc bàn đang mở (mã vùng)
+	let cheDoCuoi = 'nhu-tuong';
+	const banDangMo = () => dang;
 	import('./tu-luu-mau.js').then((m) => {
-		const tuMau = m.ganTuMau(vo.querySelector('.pl-tu-mau'), { banDangMo, tenBanDe: (id) => BAN.find((b) => b.id === id)?.ten ?? id });
+		m.datTenBan(TEN);
+		const tuMau = m.ganTuMau(vo.querySelector('.pl-tu-mau'), { banDangMo, tenBanDe: m.tenBan });
 		vo.addEventListener('pl-ban-doi', () => tuMau.ve());
 		tuMau.ve();
 	});
 	const chon = async (id, cuon) => {
-		vo.querySelectorAll('[data-ban]').forEach((n) => n.setAttribute('aria-pressed', String(n.dataset.ban === id)));
+		dang = id;
+		if (laCheDo(id)) cheDoCuoi = id;
+		const tab = laCheDo(id) ? 'nhu-tuong' : id;
+		vo.querySelectorAll('[data-tab-ban]').forEach((n) => n.setAttribute('aria-pressed', String(n.dataset.tabBan === tab)));
+		const hop = vo.querySelector('.pl-che-do');
+		hop.hidden = tab !== 'nhu-tuong';
+		vo.querySelectorAll('[data-che-do]').forEach((n) => n.setAttribute('aria-pressed', String(n.dataset.cheDo === id)));
+		hop.querySelector('.pl-che-do-de').textContent = CHE_DO.find((c) => c.id === id)?.de ?? '';
 		vo.querySelectorAll('[data-ban-vung]').forEach((v) => (v.hidden = v.dataset.banVung !== id));
 		const vung = vo.querySelector(`[data-ban-vung="${id}"]`);
 		if (!daMo.has(id)) {
@@ -48,7 +69,8 @@ ${BAN.map((b) => `<div class="pl-ban" data-ban-vung="${b.id}"${b.id === 'nhu-tuo
 		vo.dispatchEvent(new CustomEvent('pl-ban-doi'));
 		if (cuon) vo.scrollIntoView({ behavior: 'smooth', block: 'start' });
 	};
-	vo.querySelectorAll('[data-ban]').forEach((n) => n.addEventListener('click', () => chon(n.dataset.ban, false)));
+	vo.querySelectorAll('[data-tab-ban]').forEach((n) => n.addEventListener('click', () => chon(n.dataset.tabBan === 'nhu-tuong' ? cheDoCuoi : n.dataset.tabBan, false)));
+	vo.querySelectorAll('[data-che-do]').forEach((n) => n.addEventListener('click', () => chon(n.dataset.cheDo, false)));
 	const tuHash = location.hash.match(/^#ban-(thit|bao-quan|kep|pickering|mayo|nau-hoa)$/)?.[1];
 	setTimeout(() => chon(tuHash ?? 'nhu-tuong', !!tuHash), 0);
 	return vo.querySelector('[data-ban-vung="nhu-tuong"]');
@@ -1329,18 +1351,18 @@ async function ganTuMauBanGoc() {
 /* Liên kết từ bài học:
    /phong-lab/#nv-<mã nhiệm vụ>  mở bàn nhũ tương và chọn sẵn nhiệm vụ ("tu-do" = phòng lab tự do)
    /phong-lab/#so-tay            cuộn tới Sổ tay thí nghiệm
-   (#ban-thit và #ban-bao-quan do dungVo xử lý). Mã nhiệm vụ lạ thì bỏ qua, trang vẫn mở bình thường. */
+   (#ban-… do dungVo xử lý; #ban-kep, #ban-pickering, #ban-mayo mở đúng chế độ của bàn nhũ tương). Mã nhiệm vụ lạ thì bỏ qua, trang vẫn mở bình thường. */
 function theoHash() {
 	if (!goc) return;
 	const nv = location.hash.match(/^#nv-([a-z0-9-]+)$/);
 	if (nv) {
 		const nhiemVu = nv[1] === 'tu-do' ? null : NHIEM_VU.find((n) => n.id === nv[1]);
 		if (nv[1] !== 'tu-do' && !nhiemVu) return;
-		document.querySelector('[data-ban="nhu-tuong"]')?.click();
+		document.querySelector('[data-che-do="nhu-tuong"]')?.click();
 		chonNhiemVu(nhiemVu);
 		document.getElementById('phong-lab')?.scrollIntoView({ behavior: GIAM_CHUYEN_DONG ? 'auto' : 'smooth', block: 'start' });
 	} else if (location.hash === '#so-tay') {
-		document.querySelector('[data-ban="nhu-tuong"]')?.click();
+		document.querySelector('[data-che-do="nhu-tuong"]')?.click();
 		// chờ một nhịp để bố cục (chọn bàn, vẽ Sổ tay) ổn định rồi mới cuộn
 		setTimeout(() => goc.querySelector('.pl-so-tay-wrap')?.scrollIntoView({ behavior: GIAM_CHUYEN_DONG ? 'auto' : 'smooth', block: 'start' }), 350);
 	}

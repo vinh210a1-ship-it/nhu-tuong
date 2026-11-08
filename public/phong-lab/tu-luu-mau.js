@@ -6,6 +6,8 @@ const KHOA = 'pl:tu-mau';
 const SU_KIEN = 'pl-tu-mau-doi';
 const BAN_HOP_LE = new Set();
 const dangKy = new Map(); // mã bàn -> { ten, nhan(mau) → {ok, ly?, ghiChu?[]} }
+const TEN_SAN = {}; // tên hiển thị do trang đặt (mã bàn/chế độ -> tên)
+export const datTenBan = (o) => Object.assign(TEN_SAN, o);
 
 const h = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 
@@ -32,7 +34,7 @@ export function luuMau({ ban, tom, goc, tt, ten }) {
 	const mau = {
 		id: `m${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`,
 		luc: Date.now(),
-		ten: ten || `${dangKy.get(ban)?.ten ?? ban} · ${new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}`,
+		ten: ten || `${tenBan(ban)} · ${new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}`,
 		ban,
 		tom: String(tom ?? '').slice(0, 300),
 		goc,
@@ -62,7 +64,7 @@ export const dangKyBan = (id, ten, nhan) => {
 	dangKy.set(id, { ten, nhan });
 	BAN_HOP_LE.add(id);
 };
-export const tenBan = (id) => dangKy.get(id)?.ten ?? id;
+export const tenBan = (id) => TEN_SAN[id] ?? dangKy.get(id)?.ten ?? id;
 
 const dinhDang = (x) => (typeof x === 'number' ? x.toLocaleString('vi-VN', { maximumSignificantDigits: 4 }) : String(x));
 const NHAN_CHU = { N: 'Có nguồn', T: 'Tính minh họa', K: 'Sách nền, chờ đối chiếu trang', G: 'Suy luận hoặc giả thuyết' };

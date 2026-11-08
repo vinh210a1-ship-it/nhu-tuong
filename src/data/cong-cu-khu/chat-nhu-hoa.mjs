@@ -19,7 +19,7 @@ export const CONG_CU_CHAT_NHU_HOA = {
 		{ loai: 'tra-cuu', id: 'ins', ten: 'Tra mã INS/E', vi: 'Đối chiếu mã INS với tên và chức năng của chất.' },
 	],
 	'ung-dung-theo-san-pham-va-quy-trinh-chon-chat-nhu-hoa': [
-		{ loai: 'ban', id: 'kep', ten: 'Bàn nhũ tương kép', vi: 'Chọn PGPR và tỉ lệ giọt trong rồi xem công thức rơi vào miền nào trên bản đồ ổn định.' },
+		{ loai: 'ban', id: 'kep', ten: 'Bàn nhũ tương, chế độ W/O/W', vi: 'Chọn PGPR và tỉ lệ giọt trong rồi xem công thức rơi vào miền nào trên bản đồ ổn định.' },
 		{ loai: 'lab', id: 'sot-salad', ten: 'Nhiệm vụ "Sốt salad đứng yên"', vi: 'Thử đổi chất nhũ hóa và chất làm đặc để thấy chọn theo loại hệ ảnh hưởng thế nào.' },
 		{ loai: 'chan-doan', ten: 'Cây chẩn đoán sự cố', vi: 'Khi mẻ thử hỏng, đi theo cây quyết định để biết nên đổi chất nhũ hóa hay đổi điều kiện.' },
 	],

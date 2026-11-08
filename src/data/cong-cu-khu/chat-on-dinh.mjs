@@ -10,7 +10,7 @@ export const CONG_CU_CHAT_ON_DINH = {
 		{ loai: 'lab', id: 'sot-salad', ten: 'Nhiệm vụ "Sốt salad đứng yên"', vi: 'Thử đổi chất nhũ hóa và thêm chất làm đặc xem cách nào giữ sốt đứng yên.' },
 	],
 	'gum-arabic-gelatin-tinh-bot-cellulose': [
-		{ loai: 'ban', id: 'pickering', ten: 'Bàn Pickering', vi: 'So các loại hạt và tập đọc số góc tiếp xúc kèm cách đo.' },
+		{ loai: 'ban', id: 'pickering', ten: 'Bàn nhũ tương, chế độ Pickering', vi: 'So các loại hạt và tập đọc số góc tiếp xúc kèm cách đo.' },
 	],
 	'quy-dinh-ins-e': [
 		{ loai: 'tra-cuu', id: 'ins', ten: 'Tra mã INS/E', vi: 'Đối chiếu mã INS với tên và chức năng của chất.' },

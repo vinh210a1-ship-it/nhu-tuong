@@ -12,7 +12,7 @@ export const CONG_CU_CHAT_BEO = {
 	],
 	'chat-beo-dac-thu-va-chat-beo-trong-nhu-tuong': [
 		{ loai: 'lab', id: 'omega-3', ten: 'Nhiệm vụ "Sữa omega-3 không ôi"', vi: 'Dầu giàu PUFA dễ oxy hóa: thử xem cách nhũ hóa và chất chống oxy hóa thay đổi kết quả thế nào.' },
-		{ loai: 'ban', id: 'mayo', ten: 'Bàn mayonnaise', vi: 'Thử đổ dầu nhanh và chậm, rồi so mẻ của bạn với bảng đo theo hàm lượng dầu.' },
+		{ loai: 'ban', id: 'mayo', ten: 'Bàn nhũ tương, chế độ mayonnaise', vi: 'Thử đổ dầu nhanh và chậm, rồi so mẻ của bạn với bảng đo theo hàm lượng dầu.' },
 	],
 };
 

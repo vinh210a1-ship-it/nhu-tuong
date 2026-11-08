@@ -198,7 +198,7 @@ export function taoBan(goc, cfg) {
 		noiLuu(kq.ok ? `Đã lưu “${kq.mau.ten}” vào tủ lưu mẫu.` : kq.ly);
 		if (kq.ok) api.noi('Đã cất mẫu vào <b>tủ lưu mẫu</b>. Sang bàn khác lấy ra bất cứ lúc nào!', 'vui');
 	});
-	dangKyBan(idBan, document.querySelector(`[data-ban="${idBan}"] b`)?.textContent ?? idBan, (mau) => {
+	dangKyBan(idBan, tenBan(idBan), (mau) => {
 		if (st.dangChay) return { ok: false, ly: 'máy đang chạy, đợi xong rồi lấy mẫu.' };
 		if (mau.ban === idBan) {
 			Object.assign(st, cfg.moi(null), banSach(mau.goc ?? {}), { viTri: cfg.nha, tram: cfg.nha, dangChay: false });
