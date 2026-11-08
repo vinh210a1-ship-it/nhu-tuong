@@ -133,7 +133,7 @@ Sucrose este hóa với 1–8 nhóm axit béo; mức este hóa và độ dài m�
 - Review cập nhật: Cholakova 2024 (Curr Opin Colloid Interface Sci) — hành vi pha, nhũ tương, bọt, oleogel. [N: abstract]
 
 ### An toàn
-Tôi nhớ EFSA đánh giá lại E473 năm 2010 với ADI 40 mg/kg bw/ngày và có đánh giá bổ sung cho trẻ dưới 16 tuần, nhưng **chưa mở nguồn trong phiên**. [K: cần kiểm] Kết quả tìm kiếm có "Refined exposure assessment of sucrose esters of fatty acids (E 473)" và "Re-evaluation ... in foods for infants below 16 weeks of age" (xem `06-...`).
+Theo trí nhớ, EFSA đánh giá lại E473 năm 2010 với ADI 40 mg/kg bw/ngày và có đánh giá bổ sung cho trẻ dưới 16 tuần, nhưng **chưa đối chiếu nguồn**. [K: cần kiểm] Kết quả tìm kiếm có "Refined exposure assessment of sucrose esters of fatty acids (E 473)" và "Re-evaluation ... in foods for infants below 16 weeks of age" (xem `06-...`).
 
 ---
 
@@ -155,7 +155,7 @@ Polyglycerol este hóa với axit polyricinoleic (từ dầu thầu dầu). Đ�
 PGPR giảm giới hạn chảy của sô-cô-la lỏng; chưa có nguồn trong phiên.
 
 ### An toàn
-EFSA: ADI 25 mg/kg bw/ngày (từ NOAEL 2.500 mg/kg bw/ngày, một liều duy nhất trong nghiên cứu 2 năm; trước đó SCF 1978 là 7,5 mg/kg). Phơi nhiễm ước lượng dưới ADI. [N: EFSA, pub 4743] Năm công bố tôi suy ra từ mã ấn phẩm (2017) — **trang không ghi**.
+EFSA: ADI 25 mg/kg bw/ngày (từ NOAEL 2.500 mg/kg bw/ngày, một liều duy nhất trong nghiên cứu 2 năm; trước đó SCF 1978 là 7,5 mg/kg). Phơi nhiễm ước lượng dưới ADI. [N: EFSA, pub 4743] Năm công bố (2017) suy ra từ mã ấn phẩm, **trang không ghi**.
 
 ---
 
@@ -176,11 +176,11 @@ EFSA 2019: ADI 3 mg saponin/kg bw/ngày; theo EFSA 2024 chỉ được phép tro
 
 ---
 
-## 2.10 Các nhóm bổ sung cần luồng khác lo (nhắc chéo)
+## 2.10 Các nhóm liên quan nằm ở khu khác (nhắc chéo)
 
 - **Protein sữa, protein thực vật:** file 03 (cạnh tranh hấp phụ).
-- **Gum arabic, tinh bột biến tính OSA, pectin củ cải đường, hạt Pickering:** thuộc luồng chất ổn định/ nhũ tương.
-- **Dầu/ chất béo:** luồng chất béo.
+- **Gum arabic, tinh bột biến tính OSA, pectin củ cải đường, hạt Pickering:** xem khu [Chất ổn định](../../chat-on-dinh/) và [Nhũ tương](../../nhu-tuong/).
+- **Dầu/ chất béo:** xem khu [Chất béo](../../chat-beo/).
 
 ---
 

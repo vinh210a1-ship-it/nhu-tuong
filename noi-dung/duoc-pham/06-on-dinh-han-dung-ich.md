@@ -66,7 +66,7 @@ Gọi X là thời gian có dữ liệu dài hạn: [N: @ichq1e]
 
 - **ASEAN Guideline on Stability Study of Drug Product v2.0 (Rev. 2, 2018):** điều kiện dài hạn chung là **30 °C/75% RH**, gọi là điều kiện vùng IVb; cấp tốc **40 °C/75% RH**; **không đặt điều kiện trung gian**; bao bì bán thấm dài hạn 30 ± 2 °C/75 ± 5% RH. [N: @aseanstab]
 - **Số liệu tối thiểu khi nộp hồ sơ (ASEAN):** hoạt chất mới: 12 tháng dài hạn + 6 tháng cấp tốc, ≥ 3 mẻ; generic: 6 + 6 tháng, ≥ 2 mẻ (dạng thường, hoạt chất bền: 12 tháng dài hạn, 3 mẻ); thay đổi lớn: 6 + 6, ≥ 2 mẻ; thay đổi nhỏ: 3 + 3 tháng. [N: @aseanstab] (Bản trích tự động; cách ghép điều kiện "dạng thường, hoạt chất bền" với từng loại hồ sơ cần đối chiếu bản gốc.)
-- **Việt Nam là thành viên ASEAN**; việc chọn điều kiện 30/75 cho thuốc đăng ký ở Việt Nam là hợp lý. [G] Tôi **chưa đọc được** văn bản Việt Nam (ví dụ thông tư đăng ký thuốc) nêu bắt buộc điều kiện này: **cần xác minh** trước khi viết "Việt Nam yêu cầu" lên web.
+- **Việt Nam là thành viên ASEAN**; việc chọn điều kiện 30/75 cho thuốc đăng ký ở Việt Nam là hợp lý. [G] **Chưa đọc được** văn bản Việt Nam (ví dụ thông tư đăng ký thuốc) nêu bắt buộc điều kiện này: **cần xác minh** trước khi viết "Việt Nam yêu cầu".
 - Vì vậy web này ghi "vùng IVb (nóng ẩm) là điều kiện tham chiếu cho khí hậu nhiệt đới", không viết thành "luật Việt Nam bắt buộc". [G]
 
 ## 4. Động học hóa học: Arrhenius, Q10, ASAP

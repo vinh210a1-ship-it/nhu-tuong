@@ -87,7 +87,7 @@ Cho Tween 20 vào màng β-casein hoặc β-lg ở mặt không khí–nước h
 | | SPI-EGCG + CTAB (cation) | hiệp đồng, nhưng tăng oxy hóa protein và lipid | Yan 2022 [N] |
 | **Đồng hấp phụ** | β-lg + Tween 60 ở bề mặt MCT–nước (ATR-FTIR + PAT) | protein hấp phụ mạnh và không đảo ngược; Tween **xen vào** chứ không đẩy | Webber 2023 [N] |
 
-→ **Hệ quả cho web:** thay vì nói "Tween đẩy protein", hãy nói "Tween *có thể* đẩy protein, tùy loại protein, độ dày màng, nồng độ, mô hình đo, loại dầu".
+→ **Hệ quả khi diễn đạt:** thay vì nói "Tween đẩy protein", hãy nói "Tween *có thể* đẩy protein, tùy loại protein, độ dày màng, nồng độ, mô hình đo, loại dầu".
 
 ---
 

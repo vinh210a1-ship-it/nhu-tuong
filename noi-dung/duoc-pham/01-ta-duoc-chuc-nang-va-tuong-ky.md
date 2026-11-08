@@ -46,7 +46,7 @@ Cột "ví dụ" và "cơ chế" là kiến thức sách nền chuẩn của bà
 ## 3. An toàn tá dược (nguyên tắc, không phải khuyến cáo lâm sàng)
 
 - Tá dược đã bị đánh giá thấp về an toàn do cho rằng "trơ"; với các chất cũng dùng trong thực phẩm (chống oxy hóa, ngọt, màu) thì có độc tính học của JECFA, còn tá dược thuần dược thì dữ liệu mỏng hơn. [N: @pifferi2003]
-- Lưu ý an toàn của tá dược nên đọc ở mức *tá dược nhạy cảm theo nhóm đối tượng/đường dùng* và trỏ tới văn bản gốc (EMA, FDA), không tự diễn giải. Tôi **chưa đọc được** hướng dẫn EMA về tá dược trên nhãn (xem bài 10), nên chưa nêu từng chất cụ thể. [G]
+- Lưu ý an toàn của tá dược nên đọc ở mức *tá dược nhạy cảm theo nhóm đối tượng/đường dùng* và trỏ tới văn bản gốc (EMA, FDA), không tự diễn giải. **Chưa đọc được** hướng dẫn EMA về tá dược trên nhãn (xem bài 10), nên chưa nêu từng chất cụ thể. [G]
 
 ## 4. Tương kỵ có bằng chứng
 

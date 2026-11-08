@@ -65,6 +65,13 @@ const KHOA_TRAN = /`(@[a-z][a-z0-9-]*(?:;\s*@[a-z][a-z0-9-]*)*)`/g;
 const BAO_AN = '<span class="an-so-lieu">Số liệu sách nền ở đây đang chờ đối chiếu số trang nên tạm ẩn. <span class="nhan nhan-K" title="Sách nền, chờ đối chiếu trang">K</span></span>';
 function chuanHoaDinhDang(body) {
 	body = body
+		// ghi chú của người soạn gửi người giao việc: mục "Bước tiếp theo", dòng "Đề xuất:" (không phải nội dung cho người đọc)
+		.replace(/^[ \t]*(?:[-*]\s+)?\*\*(?:Bước tiếp theo|Đề xuất)[^\n]*\n?/gm, '')
+		// tiêu đề "Chắc chắn / giả thuyết / bước tiếp theo" -> bỏ phần "bước tiếp theo" vì mục đó đã bị bỏ
+		.replace(/^(#{2,4} (?:\d+\. )?)(?:Điều chắc|Điều đã chắc|Chắc chắn)[^\n]*bước tiếp theo[^\n]*$/gm, '$1Điều đã chắc và điều còn là giả thuyết')
+		// "phiên" = phiên làm việc của người soạn: người đọc không biết phiên nào
+		.replace(/ ?\(đọc trong phiên\)/g, '')
+		.replace(/ (?:trong|từ) phiên(?: này)?(?! bản)/g, '')
 		.replace(/^(?:Quy ước nhãn|Nhãn): `\[N.*\n+/gm, '') // dòng giải thích quy ước (đã có ở trang "Cách đọc nhãn")
 		.replace(NHAN_TRONG_CODE, '$1')
 		.replace(KHOA_TRAN, '[N: $1]')
@@ -72,7 +79,7 @@ function chuanHoaDinhDang(body) {
 		// "## 4. Mô hình lab đề xuất (`[T]` ...)" -> tiêu đề cho người đọc, nhãn T đặt dưới tiêu đề
 		.replace(/^(#{2,4} (?:\d+\. )?)Mô hình lab đề xuất.*$/gm, '$1Mô hình định lượng minh họa [T]');
 	// bỏ cả mục có tiêu đề ghi "(không đưa lên web)" tới tiêu đề cùng cấp kế tiếp
-	body = body.replace(/^(#{2,4}) [^\n]*\(không đưa lên web\)[^\n]*\n[\s\S]*?(?=^#{2,4} |(?![\s\S]))/gm, (m, h) => '');
+	body = body.replace(/^(#{2,4}) [^\n]*(?:\(không đưa lên web\)|Cách bổ sung cho web|Đề xuất khung trình bày trên web)[^\n]*\n[\s\S]*?(?=^#{2,4} |(?![\s\S]))/gm, (m, h) => '');
 	// trong một dòng có cả nhãn N/T lẫn K: đoạn câu nào kết thúc bằng [K] mà có số kèm đơn vị thì ẩn riêng đoạn đó
 	return body
 		.split('\n')

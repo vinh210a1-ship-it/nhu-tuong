@@ -27,7 +27,7 @@ nguon_goc: tai-lieu-chat-on-dinh/01-co-che-nen-tang.md
 | (b) Mạng yếu có ứng suất chảy | Chuỗi cứng/ liên kết thuận nghịch tạo mạng, giữ hạt lơ lửng như "lưới" | xanthan, gellan acyl cao, MCC/CMC, carrageenan trong sữa | G′, G″, tan δ, yield stress, thời gian hồi phục |
 | (c) Hấp phụ bề mặt, cản không gian/tĩnh điện | Phân đoạn có protein bám dầu–nước, phần polysaccharide tạo lớp cản | gum arabic (AGP), phức protein–polysaccharide, tinh bột octenyl succinate (E1450) | sức căng liên diện, zeta, kích thước giọt |
 
-[G: suy luận: bảng phân loại do tôi tổng hợp từ các nguồn ở các file sau; không phải trích một bài.]
+[G: suy luận: bảng phân loại do người soạn tổng hợp từ các nguồn ở các bài sau; không phải trích một bài.]
 
 ## 2. Depletion flocculation (keo tụ do cạn kiệt)
 

@@ -45,7 +45,7 @@ nguon_goc: tai-lieu-chat-on-dinh/05-gum-arabic-gelatin-tinh-bot-cellulose.md
 
 ## 2. Gelatin
 
-(Lưu ý: tôi **chưa đọc** đánh giá an toàn gelatin; theo kiến thức nền gelatin ở EU được coi là thực phẩm chứ không phải phụ gia, cần xác minh bằng nguồn trước khi đưa lên web.)
+(Lưu ý: **chưa đọc** đánh giá an toàn gelatin; theo kiến thức nền gelatin ở EU được coi là thực phẩm chứ không phải phụ gia, cần xác minh bằng nguồn trước khi dùng.)
 
 - **Bloom** là chỉ số chuẩn công nghiệp, Bloom cao liên hệ với gelatin có khối lượng phân tử cao. [N: @zambuto2024, mô tả]
 - **Xoắn ba (triple helix)**: hàm lượng xoắn ba (suy từ enthalpy biến tính ~41 °C bằng DSC, xác nhận bằng XRD) **tăng theo Bloom**; tăng xoắn ba thì giảm trương nở và cải thiện cơ tính màng. [N: @bigi2004]
