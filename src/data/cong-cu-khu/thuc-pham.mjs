@@ -1,0 +1,34 @@
+// Khu Thực phẩm: hộp "Thử ngay" và "Cần biết trước". Quy tắc ở đầu src/data/cong-cu-bai.mjs.
+// Bài không có công cụ thật sự liên quan thì không có hộp "Thử ngay".
+
+export const CONG_CU_THUC_PHAM = {
+	'giu-nuoc-thit-phosphat-muoi-ph': [
+		{ loai: 'ban', id: 'thit', ten: 'Bàn thịt', vi: 'Đổi muối, phosphat và pH rồi xem thịt giữ nước hay chảy nước; kiểm trực tiếp điều bài vừa nói về nâng pH.' },
+	],
+	'bao-quan-hoat-do-nuoc-va-han-su-dung': [
+		{ loai: 'ban', id: 'bao-quan', ten: 'Bàn bảo quản', vi: 'Chỉnh aw, pH, muối, nhiệt độ và chất bảo quản để xem vi khuẩn có mọc không.' },
+		{ loai: 'may-tinh', id: 'axit-yeu', ten: 'Phần chất bảo quản axit yếu chưa phân ly', vi: 'Nhập pH và pKa để thấy vì sao sorbat, benzoat mạnh yếu theo pH.' },
+		{ loai: 'may-tinh', id: 'arrhenius', ten: 'Hạn dùng theo nhiệt độ (Arrhenius)', vi: 'Nhập các điểm đo ở nhiều nhiệt độ để xem hạn dùng ngoại suy thay đổi thế nào.' },
+	],
+	'protein-bien-tinh-gel-hoa-va-enzym': [
+		{ loai: 'ban', id: 'thit', ten: 'Bàn thịt', vi: 'Thử muối và phosphat trên khối thịt để thấy protein sợi cơ giữ nước ra sao.' },
+	],
+	'qua-trinh-nhiet-lanh-say-ep-dun': [
+		{ loai: 'may-tinh', id: 'gia-tri-f', ten: 'Giá trị F ở nhiệt độ không đổi', vi: 'Quy một bước gia nhiệt về số phút tương đương ở nhiệt độ chuẩn để so các chế độ thanh trùng.' },
+	],
+	'quy-dinh-jecfa-efsa-da-kiem': [
+		{ loai: 'tra-cuu', id: 'tt24', ten: 'Tra cứu mức tối đa (TT24/2019)', vi: 'ADI chỉ là mức sức khỏe tham chiếu; mức được phép dùng trong sản phẩm tra ở đây.' },
+	],
+};
+
+// Mặc định "Cần biết trước" là bài ngay trước trong khu; chỗ nào cần khác thì ghi đè. 'slug' = cùng khu, 'khu/slug' = khu khác.
+export const CAN_BIET_THUC_PHAM = {
+	'giu-nuoc-thit-phosphat-muoi-ph': [],
+	'bao-quan-hoat-do-nuoc-va-han-su-dung': [],
+	'maillard-caramel-acrylamide': [],
+	'tinh-bot-ho-hoa-thoai-hoa': [],
+	'protein-bien-tinh-gel-hoa-va-enzym': ['giu-nuoc-thit-phosphat-muoi-ph'],
+	'chat-tao-ngot-mau-dieu-vi': [],
+	'qua-trinh-nhiet-lanh-say-ep-dun': ['bao-quan-hoat-do-nuoc-va-han-su-dung'],
+	'quy-dinh-jecfa-efsa-da-kiem': ['chat-nhu-hoa/ma-ins-quy-dinh-an-toan'],
+};

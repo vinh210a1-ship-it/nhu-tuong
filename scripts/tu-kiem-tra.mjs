@@ -9,7 +9,7 @@ const bo = (t) => t.replace(/\s*\[(?:N|K|T|G)(?:[:;][^\]\n]*)?\]/g, '').trim();
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 /** Neo (id) mà Starlight gán cho tiêu đề: chữ thường, bỏ dấu câu, mỗi khoảng trắng thành "-" (giống github-slugger). */
-export const neoMuc = (tieuDe) => bo(tieuDe).toLowerCase().replace(/[^\p{L}\p{M}\p{N}\p{Pc} -]/gu, '').replace(/ /g, '-');
+export const neoMuc = (tieuDe) => bo(tieuDe).toLowerCase().replace(/[^\p{L}\p{M}\p{Nd}\p{Pc} -]/gu, '').replace(/ /g, '-');
 
 export function docTuKiemTra(duongDan) {
 	const ra = {};

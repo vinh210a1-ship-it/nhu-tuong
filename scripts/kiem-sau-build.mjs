@@ -8,7 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { KHU } from '../src/data/khu.mjs';
 import { docTuKiemTra } from './tu-kiem-tra.mjs';
-import { CONG_CU_BAI, CONG_CU_KHU } from '../src/data/cong-cu-bai.mjs';
+import { CONG_CU_BAI, CONG_CU_KHU, canBietTruocKhu } from '../src/data/cong-cu-bai.mjs';
 import { NHIEM_VU } from '../public/phong-lab/mo-hinh.js';
 
 const GOC = process.cwd();
@@ -136,7 +136,7 @@ for (const khu of KHU_CHUAN) {
 			if (soCau < 2 || soCau > 3) loiThuNgay.push(`${ma}: hộp "Tự kiểm tra" có ${soCau} câu (cần 2 đến 3)`);
 			if (soCanCu !== soCau) loiThuNgay.push(`${ma}: ${soCau - soCanCu} câu tự kiểm tra thiếu dòng căn cứ N/T`);
 		}
-		if (i > 0 && !/class="can-biet-truoc"/.test(h)) loiThuNgay.push(`${ma}: thiếu dòng "Cần biết trước"`);
+		if (canBietTruocKhu(khu, b.slug).length && !/class="can-biet-truoc"/.test(h)) loiThuNgay.push(`${ma}: thiếu dòng "Cần biết trước"`);
 		const hop = /<div class="thu-ngay[^"]*"[^>]*>([\s\S]*?)<\/ul><\/div>/.exec(h);
 		if (hop) {
 			const soDong = (hop[1].match(/<li>/g) || []).length;
