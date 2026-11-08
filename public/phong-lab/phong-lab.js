@@ -638,7 +638,7 @@ const LAM = {
 			nhiet: nhietGhi,
 			sao: kqSao?.sao ?? null,
 		});
-		ghiLS('pl:so-tay', st.slice(0, 30));
+		ghiLS('pl:so-tay', st.slice(0, SO_MAU_TOI_DA));
 		veBang();
 		capNhatCanh();
 		veSoTay();
@@ -907,12 +907,67 @@ function veSoTay() {
 						(r) =>
 							`<tr><td>${h(r.nv)}</td><td>${h(r.ct)}</td><td>${h(r.qt)}</td><td>${so(r.d43)} µm</td><td>${soCD(r.ci)}% <small>sau ${r.ngay} ngày${r.nhiet != null ? ', ' + r.nhiet + ' °C' : ''}</small></td><td>${r.pv != null ? soCD(r.pv) : '–'}</td><td>${r.sao === null ? '–' : '★'.repeat(r.sao) + '☆'.repeat(3 - r.sao)}</td></tr>`,
 					)
-					.join('')}</tbody></table></div><button type="button" class="pl-link pl-xoa">Xóa sổ tay</button>`
-			: `<p class="pl-meo">Chưa có mẻ nào. Mỗi lần bạn nộp mẻ ở tủ tua nhanh, kết quả sẽ được ghi vào đây (lưu trên máy này) để so sánh.</p>`);
+					.join('')}</tbody></table></div>`
+			: `<p class="pl-meo">Chưa có mẻ nào. Mỗi lần bạn nộp mẻ ở tủ tua nhanh, kết quả sẽ được ghi vào đây (lưu trên máy này) để so sánh.</p>`) +
+		`<div class="pl-so-tay-nut"><button type="button" class="pl-link pl-xuat"${st.length ? '' : ' disabled'}>Xuất file (.json)</button> <label class="pl-link pl-nhap-nhan">Nhập file<input type="file" accept=".json,application/json" class="pl-nhap" hidden></label>${st.length ? ' <button type="button" class="pl-link pl-xoa">Xóa sổ tay</button>' : ''}<span class="pl-so-tay-tb" role="status" aria-live="polite"></span></div><p class="pl-meo">Sổ tay chỉ lưu trong trình duyệt này; xóa dữ liệu trình duyệt là mất. Hãy xuất file để giữ lại hoặc chuyển sang máy khác.</p>`;
+	const tb = (t) => {
+		const e = w.querySelector('.pl-so-tay-tb');
+		if (e) e.textContent = t;
+	};
 	w.querySelector('.pl-xoa')?.addEventListener('click', () => {
 		ghiLS('pl:so-tay', []);
 		veSoTay();
 	});
+	w.querySelector('.pl-xuat')?.addEventListener('click', () => {
+		try {
+			const goi = { loai: 'so-tay-phong-lab', phienBan: 1, xuatLuc: new Date().toISOString(), mau: st };
+			const url = URL.createObjectURL(new Blob([JSON.stringify(goi, null, 2)], { type: 'application/json' }));
+			const a = document.createElement('a');
+			a.href = url;
+			a.download = `so-tay-phong-lab-${new Date().toISOString().slice(0, 10)}.json`;
+			document.body.appendChild(a);
+			a.click();
+			a.remove();
+			setTimeout(() => URL.revokeObjectURL(url), 1000);
+			tb(`Đã xuất ${st.length} mẻ.`);
+		} catch {
+			tb('Không xuất được file trên trình duyệt này.');
+		}
+	});
+	w.querySelector('.pl-nhap')?.addEventListener('change', async (ev) => {
+		const f = ev.target.files?.[0];
+		if (!f) return;
+		try {
+			if (f.size > 1_000_000) throw new Error('quá lớn');
+			const goi = JSON.parse(await f.text());
+			const ds = Array.isArray(goi) ? goi : goi?.loai === 'so-tay-phong-lab' ? goi.mau : null;
+			if (!Array.isArray(ds)) throw new Error('sai định dạng');
+			const hop = ds.map(lamSachMau).filter(Boolean);
+			if (!hop.length) throw new Error('không có mẻ hợp lệ');
+			const co = new Set(st.map((r) => r.luc));
+			const moi = hop.filter((r) => !co.has(r.luc));
+			const gop = [...st, ...moi].sort((a, b) => b.luc - a.luc).slice(0, SO_MAU_TOI_DA);
+			ghiLS('pl:so-tay', gop);
+			veSoTay();
+			goc.querySelector('.pl-so-tay-tb').textContent = `Đã nhập ${moi.length} mẻ mới (bỏ ${ds.length - moi.length} mẻ trùng hoặc không hợp lệ).`;
+		} catch {
+			tb('File không đọc được hoặc không phải sổ tay phòng lab.');
+		}
+		ev.target.value = '';
+	});
+}
+
+const SO_MAU_TOI_DA = 100;
+/* Chỉ nhận đúng các trường đã biết, đúng kiểu; trường lạ bị bỏ (dữ liệu nhập từ file là dữ liệu không tin cậy). */
+function lamSachMau(r) {
+	if (!r || typeof r !== 'object') return null;
+	const so = (x) => (typeof x === 'number' && Number.isFinite(x) ? x : null);
+	const chu = (x) => (typeof x === 'string' ? x.slice(0, 300) : null);
+	const luc = so(r.luc), d43 = so(r.d43), ci = so(r.ci), ngay = so(r.ngay);
+	const nv = chu(r.nv), ct = chu(r.ct), qt = chu(r.qt);
+	if (luc === null || d43 === null || ci === null || ngay === null || nv === null || ct === null || qt === null) return null;
+	const sao = so(r.sao);
+	return { luc, nv, ct, qt, d43, ngay, ci, pv: so(r.pv), nhiet: so(r.nhiet), sao: sao === null ? null : Math.min(3, Math.max(0, Math.round(sao))) };
 }
 
 /* ---------------- hình vẽ: biểu đồ, kính hiển vi, ống nghiệm ---------------- */

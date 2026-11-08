@@ -18,6 +18,6 @@ Chất nhũ hóa làm hai việc: **hạ sức căng bề mặt** để giọt d
 
 ## Giới hạn của nội dung hiện tại
 
-- HLB và CPP là **công cụ tư duy có giới hạn**; bài 1 nêu rõ các phản ví dụ có nguồn. Bảng HLB từng chất chưa được kiểm với tài liệu kỹ thuật của nhà sản xuất nên chưa đưa số cụ thể lên web.
+- HLB và CPP là **công cụ tư duy có giới hạn**; bài 1 nêu rõ các phản ví dụ có nguồn. Bảng HLB từng chất chưa được kiểm với tài liệu kỹ thuật của nhà sản xuất nên chưa nêu số cụ thể.
 - Phụ lục danh mục và mức tối đa (ML) của Thông tư 24/2019/TT-BYT **chưa đối chiếu được**. Đừng dùng web này làm căn cứ pháp lý.
 - Phần lớn nguồn mới đọc ở mức **tóm tắt**. Nghiên cứu quan sát về an toàn (NutriNet-Santé) chỉ cho thấy liên quan, chưa chứng minh nhân quả.
