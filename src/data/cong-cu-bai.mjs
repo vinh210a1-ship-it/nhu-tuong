@@ -67,8 +67,8 @@ export function hrefCongCu(d) {
 }
 
 /** Dựng HTML hộp "Thử ngay" (một khối HTML liền, không dòng trống, để Markdown không cắt đôi). */
-export function htmlThuNgay(slug) {
-	const ds = CONG_CU_BAI[slug];
+export function htmlThuNgay(slug, khu = 'nhu-tuong') {
+	const ds = khu === 'nhu-tuong' ? CONG_CU_BAI[slug] : CONG_CU_KHU[khu]?.[slug];
 	if (!ds) return '';
 	if (ds.length > 3) throw new Error(`cong-cu-bai: bài "${slug}" có ${ds.length} dòng, tối đa 3`);
 	const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -76,7 +76,7 @@ export function htmlThuNgay(slug) {
 		if (!d.vi || !d.ten) throw new Error(`cong-cu-bai: bài "${slug}" có dòng thiếu tên hoặc câu "vì sao nên thử"`);
 		return `<li><span class="tn-loai">${NHAN_LOAI[d.loai]}</span><a class="tn-ten" href="${hrefCongCu(d)}">${esc(d.ten)}</a><span class="tn-vi">${esc(d.vi)}</span></li>`;
 	});
-	return `<div class="thu-ngay not-content" data-thu-ngay="${slug}"><b class="tn-tieu-de">Thử ngay</b><ul class="tn-ds">${li.join('')}</ul></div>`;
+	return `<div class="thu-ngay not-content" data-thu-ngay="${khu === 'nhu-tuong' ? slug : `${khu}/${slug}`}"><b class="tn-tieu-de">Thử ngay</b><ul class="tn-ds">${li.join('')}</ul></div>`;
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -128,4 +128,35 @@ export function htmlCanBietTruoc(slug) {
 		throw new Error(`cong-cu-bai: "Cần biết trước" trỏ tới bài lạ "${s}"`);
 	};
 	return `<p class="can-biet-truoc"><b>Cần biết trước:</b> ${ds.map((s) => `<a href="../${s}/">${ten(s)}</a>`).join(' · ')}</p>`;
+}
+
+// ---------------------------------------------------------------------------------------------
+// Đợt mở rộng (2026-11-08): hộp "Thử ngay" và "Cần biết trước" cho 5 khu còn lại.
+// Khóa = slug bài trong khu. Quy tắc giống khu Nhũ tương: mỗi bài tối đa 3 dòng, mỗi dòng có câu "vì sao nên thử",
+// mô tả chỉ nói công cụ làm gì, không đưa số liệu khoa học. Dữ liệu từng khu nằm ở src/data/cong-cu-khu/<khu>.mjs.
+// ---------------------------------------------------------------------------------------------
+import { KHU } from './khu.mjs';
+import { CONG_CU_CHAT_BEO, CAN_BIET_CHAT_BEO } from './cong-cu-khu/chat-beo.mjs';
+
+export const CONG_CU_KHU = {
+	'chat-beo': CONG_CU_CHAT_BEO,
+};
+const CAN_BIET_KHU = {
+	'chat-beo': CAN_BIET_CHAT_BEO,
+};
+
+/** "Cần biết trước" cho bài ngoài khu Nhũ tương. Mục ghi 'slug' = cùng khu, 'khu/slug' = khu khác. Mặc định: bài ngay trước trong khu. */
+export function htmlCanBietTruocKhu(khu, slug) {
+	const bai = KHU[khu].bai;
+	const i = bai.findIndex((b) => b.slug === slug);
+	if (i < 0) throw new Error(`cong-cu-bai: bài "${khu}/${slug}" không có trong KHU`);
+	const ds = CAN_BIET_KHU[khu]?.[slug] ?? (i === 0 ? [] : [bai[i - 1].slug]);
+	if (!ds.length) return '';
+	const lk = ds.map((m) => {
+		const [k, s] = m.includes('/') ? m.split('/') : [khu, m];
+		const b = KHU[k]?.bai.find((x) => x.slug === s);
+		if (!b) throw new Error(`cong-cu-bai: "Cần biết trước" của ${khu}/${slug} trỏ tới bài lạ "${m}"`);
+		return k === khu ? `<a href="../${s}/">${b.ten}</a>` : `<a href="../../${k}/${s}/">${KHU[k].ten} · ${b.ten}</a>`;
+	});
+	return `<p class="can-biet-truoc"><b>Cần biết trước:</b> ${lk.join(' · ')}</p>`;
 }

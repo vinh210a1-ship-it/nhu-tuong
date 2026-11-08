@@ -10,7 +10,7 @@ import { tenNgan, htmlNhan, tachNhan, SO_DON_VI } from '../src/plugins/remark-nh
 import { KHU } from '../src/data/khu.mjs';
 import { dungTraCuu } from './tra-cuu.mjs';
 import { docTep } from './doc-tep.mjs';
-import { htmlThuNgay, htmlMucDo, htmlCanBietTruoc, CONG_CU_BAI } from '../src/data/cong-cu-bai.mjs';
+import { htmlThuNgay, htmlMucDo, htmlCanBietTruoc, htmlCanBietTruocKhu, CONG_CU_BAI } from '../src/data/cong-cu-bai.mjs';
 import { docTuKiemTra, kiemTuKiemTra, htmlTuKiemTra } from './tu-kiem-tra.mjs';
 
 const GOC = process.cwd();
@@ -21,6 +21,10 @@ const TEN_KHU = { 'nhu-tuong': 'Nhũ tương', 'chat-beo': 'Chất béo', 'chat-
 // Khóa lưu "đã đọc" trong máy người xem: bài nhũ tương giữ slug trần (tương thích dữ liệu cũ), khu khác thêm tên khu
 // câu hỏi tự kiểm tra của 8 bài nhũ tương (noi-dung/nhu-tuong/tu-kiem-tra.md); mỗi đáp án phải có căn cứ N hoặc T trong bài
 const TU_KIEM_TRA = docTuKiemTra(path.join(GOC, 'noi-dung/nhu-tuong/tu-kiem-tra.md'));
+// các khu khác: mỗi khu có thể có tệp noi-dung/<khu>/tu-kiem-tra.md; khu nào có tệp thì MỌI bài của khu đó phải có 2–3 câu
+const TU_KIEM_TRA_KHU = Object.fromEntries(
+	KHU_BAT.filter((k) => k !== 'nhu-tuong' && fs.existsSync(path.join(GOC, 'noi-dung', k, 'tu-kiem-tra.md'))).map((k) => [k, docTuKiemTra(path.join(GOC, 'noi-dung', k, 'tu-kiem-tra.md'))]),
+);
 const khoaDaDoc = (khu, slug) => (khu === 'nhu-tuong' ? slug : `${khu}/${slug}`);
 
 // Máy tính chèn vào bài: [khu, slug, dòng mốc (máy tính đặt NGAY TRƯỚC dòng này), loại]
@@ -188,6 +192,7 @@ for (const khu of KHU_BAT) {
 			'',
 			`<p class="nguon-goc-bai">${khu === 'nhu-tuong' && fm.loai === 'bai' ? htmlMucDo(fm.level) + ' · ' : ''}Cập nhật ${fm.updated} · <a href="../../quy-uoc/">Cách đọc nhãn và giới hạn nội dung →</a></p>`,
 			...(khu === 'nhu-tuong' && fm.loai === 'bai' && htmlCanBietTruoc(fm.slug) ? [htmlCanBietTruoc(fm.slug)] : []),
+			...(khu in TU_KIEM_TRA_KHU && fm.loai === 'bai' && htmlCanBietTruocKhu(khu, fm.slug) ? [htmlCanBietTruocKhu(khu, fm.slug)] : []),
 			'',
 		].join('\n');
 		// hộp "Tự kiểm tra": 2 đến 3 câu, đáp án gập; kiểm căn cứ N/T ngay lúc dựng (sai thì dừng build)
@@ -197,6 +202,17 @@ for (const khu of KHU_BAT) {
 
 ${htmlTuKiemTra(fm.slug, TU_KIEM_TRA[fm.slug])}
 `;
+		}
+		if (fm.loai === 'bai' && khu in TU_KIEM_TRA_KHU) {
+			kiemTuKiemTra(`${khu}/${fm.slug}`, TU_KIEM_TRA_KHU[khu][fm.slug], body);
+			body += `
+
+${htmlTuKiemTra(`${khu}/${fm.slug}`, TU_KIEM_TRA_KHU[khu][fm.slug])}
+`;
+		}
+		if (fm.loai === 'bai' && khu in TU_KIEM_TRA_KHU) {
+			const thuNgay = htmlThuNgay(fm.slug, khu);
+			if (thuNgay) body += `\n\n${thuNgay}\n`;
 		}
 		// hộp "Thử ngay" (nối bài với máy tính, Phòng lab, tra cứu; dữ liệu ở src/data/cong-cu-bai.mjs), đặt trước hộp "đã đọc"
 		if (fm.loai === 'bai' && khu === 'nhu-tuong') {

@@ -182,4 +182,4 @@ Giọt nhỏ ──▶ Diện tích lớn ──▶ Cần nhiều chất nhũ h�
                 chặn ripening (dầu không tan) + chặn oxy hóa
 ```
 
-**Bước tiếp theo trong tài liệu:** file 02 (hình thành), 03 (mất ổn định).
+**Đọc tiếp:** file 02 (hình thành), 03 (mất ổn định).

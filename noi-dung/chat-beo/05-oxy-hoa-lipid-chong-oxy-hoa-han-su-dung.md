@@ -15,7 +15,7 @@ nguon_goc: tai-lieu-chat-beo/05-oxy-hoa-lipid-chong-oxy-hoa-han-su-dung.md
 - Oxy hóa lipid không chỉ là phản ứng hóa học trong một "dung dịch dầu đồng nhất": **tốc độ, mức độ và con đường oxy hóa phụ thuộc cấu trúc keo và giao diện** — nơi phản ứng thường xảy ra. Trong dầu khối là **micelle đảo (association colloids)**; trong nhũ tương là **bề mặt giọt và micelle chất hoạt động bề mặt**. [N: @villeneuve2023, @chaiyasit2007]
 - Hệ quả thực hành: cùng một chất chống oxy hóa có thể hiệu quả ở dầu khối nhưng yếu ở nhũ tương (và ngược lại); **điện tích của chất nhũ hóa** có thể thúc đẩy hoặc ức chế oxy hóa. Ví dụ DTAB (cation) tăng hydroperoxide và hexanal trong nhũ tương W/O dầu óc chó, SDS (anion) làm giảm, Tween 20 không đáng kể, whey protein ức chế. [N: @yi2014]
 - **Rancimat/Oxitest** là chỉ báo xếp hạng nhanh, nhưng **dự đoán hạn sử dụng ngoại suy theo Arrhenius có thể sai rất xa**: với dầu óc chó, dự đoán thấp hơn hạn dùng ghi trên nhãn từ 15–20 lần. [N: @kochhar2009]
-- Với mọi con số hạn dùng bạn đưa lên web, **phải kèm điều kiện**: nhiệt độ, bao bì, oxy dư, ánh sáng, chỉ tiêu đã dùng.
+- Mọi con số hạn dùng **phải kèm điều kiện**: nhiệt độ, bao bì, oxy dư, ánh sáng, chỉ tiêu đã dùng.
 
 ## 2. Bản chất: cơ chế
 
@@ -33,7 +33,7 @@ Oxy đơn tuyến (¹O₂) sinh ra khi chất nhạy sáng (chlorophyll, ribofla
 ### 2.3 Tại sao PUFA dễ oxy hóa
 - Tốc độ tương đối của oleate : linoleate : linolenate khoảng 1 : 12 : 25 trong nhiều giáo trình. [K]
 - Phù hợp với chỉ số thực nghiệm: dầu giàu MUFA cho quan hệ **tuyến tính** giữa 100/(thời gian cảm ứng Rancimat) và tổng "độ không bão hòa" tính bằng %C18:2 + 0,08 × %C18:1 + 2,08 × %C18:3; dầu giàu PUFA cho quan hệ **mũ**. [N: @kochhar2009]
-- Thứ tự bền Rancimat (90–120 °C) trong bài R36: mắc-ca > cám gạo ≈ mè rang > bơ > hạnh nhân > phỉ > hạt nho > óc chó. [N: @kochhar2009]
+- Thứ tự bền Rancimat (90–120 °C) trong bài Kochhar và cs. 2009: mắc-ca > cám gạo ≈ mè rang > bơ > hạnh nhân > phỉ > hạt nho > óc chó. [N: @kochhar2009]
 
 ### 2.4 Những yếu tố chi phối ngoài thành phần acid béo [K]
 | Yếu tố | Tác động |
@@ -49,16 +49,16 @@ Oxy đơn tuyến (¹O₂) sinh ra khi chất nhạy sáng (chlorophyll, ribofla
 
 ### 3.1 Dầu khối
 - Trong dầu thô/tinh luyện luôn có lượng vết chất hoạt động bề mặt (phospholipid, FFA, mono-/diacylglycerol, hydroperoxide) tạo **association colloids (micelle đảo)** quanh giọt nước siêu nhỏ. Chúng là nơi **tập trung chất tiền oxy hóa** và là điểm khởi đầu phản ứng. [N: @chaiyasit2007]
-- R27 (2021): micelle trong nhũ tương và association colloids trong dầu khối là **kho chứa chất chống oxy hóa/tiền oxy hóa**, kênh vận chuyển chúng, và đóng vai "lò phản ứng nano". [N: @villeneuve2023]
+- Villeneuve và cs. 2023 (2021): micelle trong nhũ tương và association colloids trong dầu khối là **kho chứa chất chống oxy hóa/tiền oxy hóa**, kênh vận chuyển chúng, và đóng vai "lò phản ứng nano". [N: @villeneuve2023]
 
 ### 3.2 Nhũ tương
 - Oxy hóa bắt đầu tại **bề mặt giọt**, nơi hydroperoxide ở giao diện gặp kim loại tan trong pha nước. Điện tích bề mặt giọt (do chất nhũ hóa) điều khiển lượng Fe²⁺/Fe³⁺ tiếp cận: giọt tích điện dương đẩy ion sắt, giọt tích điện âm hút sắt. [K: McClements & Decker, J Food Sci 2000 — chưa kiểm bản gốc]
 - Dữ liệu thực nghiệm trong **nhũ tương W/O** dầu óc chó, ổn định bằng PGPR: DTAB 0,1–0,2 wt% tăng hydroperoxide và hexanal; SDS giảm; Tween 20 không ảnh hưởng đáng kể; whey protein isolate (WPI) ức chế ở 0,05–0,2 wt%, hiệu quả hơn khi pH cao hơn; WPI triệt tiêu hiệu ứng tiền oxy hóa của DTAB; WPI + SDS ức chế tốt hơn ở pH 7,0 so với pH 3,0. [N: @yi2014]
 - Trong nhũ tương O/W ổn định bởi whey protein, **anthocyanin gạo đen** 0,02–0,06% (w/v), bảo quản 35 °C trong 5 ngày: giảm hydroperoxide và MDA, giảm carbonyl protein và base Schiff, đồng thời cải thiện ổn định vật lý (chống kết tụ giọt) theo liều. [N: @yi2020]
-- Cảnh báo: R29 và R30 chỉ thực hiện **trong thời gian ngắn** (vài ngày ở 35 °C) và trên mô hình phòng lab. [N: @yi2014, @yi2020; G: không ngoại suy ra hạn sử dụng thương phẩm]
+- Cảnh báo: Yi và cs. 2014 và Yi và cs. 2020 chỉ thực hiện **trong thời gian ngắn** (vài ngày ở 35 °C) và trên mô hình phòng lab. [N: @yi2014, @yi2020; G: không ngoại suy ra hạn sử dụng thương phẩm]
 
 ### 3.3 "Nghịch lý phân cực" (polar paradox) [K]
-Quan sát của Porter và cs.: chất chống oxy hóa **phân cực** thường hiệu quả hơn ở dầu khối, chất **không phân cực** hiệu quả hơn ở nhũ tương. Cách giải thích hiện đại hơn: chất chống oxy hóa phải **tập trung ở nơi phản ứng** (giao diện/micelle đảo), nên sự phân bố giữa các pha, hình dạng micelle và chất hoạt động bề mặt quyết định hơn độ phân cực tuyệt đối. [K; G: diễn giải] — R27 và R28 cung cấp khung này nhưng tóm tắt chưa đủ để trích chi tiết.
+Quan sát của Porter và cs.: chất chống oxy hóa **phân cực** thường hiệu quả hơn ở dầu khối, chất **không phân cực** hiệu quả hơn ở nhũ tương. Cách giải thích hiện đại hơn: chất chống oxy hóa phải **tập trung ở nơi phản ứng** (giao diện/micelle đảo), nên sự phân bố giữa các pha, hình dạng micelle và chất hoạt động bề mặt quyết định hơn độ phân cực tuyệt đối. [K; G: diễn giải] — Villeneuve và cs. 2023 và Chaiyasit và cs. 2007 cung cấp khung này nhưng tóm tắt chưa đủ để trích chi tiết.
 
 ## 4. Chất chống oxy hóa
 
@@ -70,7 +70,7 @@ Quan sát của Porter và cs.: chất chống oxy hóa **phân cực** thườn
 | **Đồng vận (synergist)** | Tái sinh chất chống oxy hóa chính | Ascorbate tái sinh tocopherol; phospholipid |
 
 ### 4.2 Bằng chứng có nguồn: dầu cọ
-Trong thí nghiệm chiên khoai tây ở 163 °C với olein cọ vàng và đỏ (R31): [N: @schroeder2006]
+Trong thí nghiệm chiên khoai tây ở 163 °C với olein cọ vàng và đỏ (Schroeder và cs. 2006): [N: @schroeder2006]
 - Olein đỏ có tổng tocopherol/tocotrienol 1260 ppm so với 940 ppm ở olein vàng và thời gian cảm ứng Rancimat (120 °C) dài hơn.
 - Mức tiêu hao chất phenol: γ-T3 > α-T3 > δ-T3 trong olein vàng; ở olein đỏ chỉ γ-T3 giảm đáng kể và chậm hơn — do carotene bị tiêu hao trước, tuyến tính theo số lần chiên.
 - Thêm 100–1000 ppm β-carotene vào olein đã khử chất chống oxy hóa **không** bảo vệ; trong liposome có **đồng vận** giữa β-carotene/lycopene với α-T, α-T3, γ-T3 ở tỷ lệ carotene/phenol 1:10 và 1:2 nhưng không ở 1:1.
@@ -78,10 +78,10 @@ Trong thí nghiệm chiên khoai tây ở 163 °C với olein cọ vàng và đ�
 - Suy luận R&D [G]: phối tocotrienol với carotenoid có thể đồng vận ở tỷ lệ cụ thể; **tỷ lệ phải khảo sát**, không phải càng nhiều càng tốt.
 
 ### 4.3 Chất chống oxy hóa tự nhiên
-R32 (2008) tổng quan cơ chế vitamin và phenolic tự nhiên (flavonoid, phenol dầu ô liu, chiết xuất thảo mộc) trong hệ chất béo. [N: @kiokias2008] Chi tiết (loại nào hiệu quả ở dầu nào, liều dùng) cần đọc toàn văn; chưa có trong tài liệu này.
+Kiokias và cs. 2008 (2008) tổng quan cơ chế vitamin và phenolic tự nhiên (flavonoid, phenol dầu ô liu, chiết xuất thảo mộc) trong hệ chất béo. [N: @kiokias2008] Chi tiết (loại nào hiệu quả ở dầu nào, liều dùng) cần đọc toàn văn; chưa có trong tài liệu này.
 
 ### 4.4 Ví dụ phenolic và hạn dùng của dầu ô liu
-R37: dầu ô liu giàu phenolic từ chiết xuất tuần tự (ép expeller, CO₂ siêu tới hạn) có **OSI ngoại suy ở 20 °C**: dầu ô liu thông thường 38,5 (Rancimat) và 42,5 (Oxitest) tháng; expeller (eOO) 43,3 và 67 tháng; CO₂ siêu tới hạn (SCOO) 138,6 và 142 tháng; tương quan mạnh giữa hàm lượng phenolic và OSI. [N: @chabni2024] Đây là **chỉ số ngoại suy từ thử nghiệm tăng tốc 90–160 °C**, không phải hạn dùng đo trực tiếp.
+Chabni và cs. 2024: dầu ô liu giàu phenolic từ chiết xuất tuần tự (ép expeller, CO₂ siêu tới hạn) có **OSI ngoại suy ở 20 °C**: dầu ô liu thông thường 38,5 (Rancimat) và 42,5 (Oxitest) tháng; expeller (eOO) 43,3 và 67 tháng; CO₂ siêu tới hạn (SCOO) 138,6 và 142 tháng; tương quan mạnh giữa hàm lượng phenolic và OSI. [N: @chabni2024] Đây là **chỉ số ngoại suy từ thử nghiệm tăng tốc 90–160 °C**, không phải hạn dùng đo trực tiếp.
 
 ## 5. Đo lường oxy hóa: bảng chọn chỉ tiêu
 
@@ -89,23 +89,23 @@ R37: dầu ô liu giàu phenolic từ chiết xuất tuần tự (ép expeller, 
 |---|---|---|---|
 | **PV** (peroxide value) | Hydroperoxide | Đơn giản, quen thuộc | Tăng rồi giảm khi hydroperoxide phân hủy → dễ hiểu nhầm |
 | **p-Anisidine (AV)** | Aldehyde không bão hòa (thứ cấp) | Bổ sung PV; TOTOX = 2·PV + AV [K] | Nhạy với màu |
-| **Conjugated dienes (CD)** | Hệ liên hợp từ PUFA | Nhanh; dùng cho nhũ tương/liposome (R31 dùng CD để đo thời gian cảm ứng) [N: @schroeder2006] | Cần tách chiết lipid |
-| **Hexanal đầu không gian (HS-GC)** | Aldehyde bay hơi thứ cấp | Liên hệ tốt với mùi; R29 dùng [N: @yi2014] | Cần GC |
-| **MDA/TBARS** | Malondialdehyde | Dùng trong nhũ tương (R30) [N: @yi2020] | Không đặc hiệu |
+| **Conjugated dienes (CD)** | Hệ liên hợp từ PUFA | Nhanh; dùng cho nhũ tương/liposome (Schroeder và cs. 2006 dùng CD để đo thời gian cảm ứng) [N: @schroeder2006] | Cần tách chiết lipid |
+| **Hexanal đầu không gian (HS-GC)** | Aldehyde bay hơi thứ cấp | Liên hệ tốt với mùi; Yi và cs. 2014 dùng [N: @yi2014] | Cần GC |
+| **MDA/TBARS** | Malondialdehyde | Dùng trong nhũ tương (Yi và cs. 2020) [N: @yi2020] | Không đặc hiệu |
 | **Rancimat / Oxitest** | Thời gian cảm ứng (OIT) ở nhiệt cao | Nhanh; xếp hạng | Xem mục 6 |
 | **Cảm quan** | Mùi ôi, mùi hóa chất | Tiêu chuẩn cuối cùng | Cần panel huấn luyện |
 
 ## 6. Hạn sử dụng: Arrhenius, Q10 và các bẫy
 
 ### 6.1 Phương pháp [K; N: @kochhar2009, @chabni2024, @aktar2019]
-1. Đo thời gian cảm ứng (IP) ở ít nhất 3–4 nhiệt độ (R36 dùng 90, 100, 110, 120 °C Rancimat).
+1. Đo thời gian cảm ứng (IP) ở ít nhất 3–4 nhiệt độ (Kochhar và cs. 2009 dùng 90, 100, 110, 120 °C Rancimat).
 2. Vẽ ln(IP) hoặc ln k theo 1/T; tuyến tính theo Arrhenius cho năng lượng hoạt hóa Ea.
 3. Ngoại suy tới nhiệt độ bảo quản (20–25 °C); hoặc dùng Q10 (hệ số tăng tốc khi tăng 10 °C).
-4. R38 (dầu bơ): hạn dùng dự đoán 210 ngày ở 25 °C bằng Arrhenius từ Rancimat. [N: @aktar2019]
-5. R37 cung cấp thêm động học (Ea, enthalpy, entropy, Gibbs activation) và OSI ở 20 °C.
+4. Aktar và cs. 2019 (dầu bơ): hạn dùng dự đoán 210 ngày ở 25 °C bằng Arrhenius từ Rancimat. [N: @aktar2019]
+5. Chabni và cs. 2024 cung cấp thêm động học (Ea, enthalpy, entropy, Gibbs activation) và OSI ở 20 °C.
 
 ### 6.2 Bẫy cần tránh
-- **Ngoại suy sai:** R36 so sánh dự đoán với hạn dùng nhà sản xuất: hợp với dầu cám gạo và phỉ, nhưng với phần lớn dầu còn lại dự đoán **thấp hơn rõ rệt**; dầu óc chó thấp hơn **15–20 lần**. [N: @kochhar2009] Nguyên nhân chưa được tóm tắt giải thích. [G: ở 100–120 °C cơ chế, độ hòa tan oxy, tạo acid bay hơi và vai trò chất chống oxy hóa khác với 25 °C; không có tính đại diện cho nhũ tương, bột, hay sản phẩm có nước]
+- **Ngoại suy sai:** Kochhar và cs. 2009 so sánh dự đoán với hạn dùng nhà sản xuất: hợp với dầu cám gạo và phỉ, nhưng với phần lớn dầu còn lại dự đoán **thấp hơn rõ rệt**; dầu óc chó thấp hơn **15–20 lần**. [N: @kochhar2009] Nguyên nhân chưa được tóm tắt giải thích. [G: ở 100–120 °C cơ chế, độ hòa tan oxy, tạo acid bay hơi và vai trò chất chống oxy hóa khác với 25 °C; không có tính đại diện cho nhũ tương, bột, hay sản phẩm có nước]
 - **Nhiệt độ cao làm đổi trạng thái vật lý** (nóng chảy chất béo, phá nhũ tương) — thử nghiệm tăng tốc cho bột/nhũ tương nên dùng nhiệt độ thấp hơn (ví dụ 35–55 °C) và nhiều điểm thời gian. [G]
 - **Một chỉ tiêu không đủ:** nên kết hợp PV/AV hoặc hexanal với cảm quan; tiêu chí chấp nhận phải xác định trước.
 - **Đối chứng:** luôn có mẫu không chống oxy hóa và một mẫu bảo quản thực ở nhiệt độ mục tiêu để hiệu chuẩn.
@@ -117,12 +117,10 @@ R37: dầu ô liu giàu phenolic từ chiết xuất tuần tự (ép expeller, 
 4. Xác nhận bằng bảo quản thực ở nhiệt độ mục tiêu trong ít nhất 1/3 thời gian dự đoán.
 
 ## 7. PUFA, omega-3 và bao vi nang
-R39 (2024): làm giàu omega-3 cho chất béo bánh nướng gặp thách thức **PUFA dễ oxy hóa** gây mùi và mất giá trị dinh dưỡng; các cách: trộn vật lý, interesterification enzyme, bao vi nang; **bao vi nang** được đánh giá là hiệu quả để tăng ổn định và hạn dùng. [N: @dhiman2024] Mức độ hiệu quả cần đọc từ nghiên cứu gốc.
+Dhiman và cs. 2024 (2024): làm giàu omega-3 cho chất béo bánh nướng gặp thách thức **PUFA dễ oxy hóa** gây mùi và mất giá trị dinh dưỡng; các cách: trộn vật lý, interesterification enzyme, bao vi nang; **bao vi nang** được đánh giá là hiệu quả để tăng ổn định và hạn dùng. [N: @dhiman2024] Mức độ hiệu quả cần đọc từ nghiên cứu gốc.
 
-## 8. Điều đã chắc / còn giả thuyết / bước tiếp theo
+## 8. Điều đã chắc và điều còn là giả thuyết
 
-- **Đã chắc (có nguồn):** oxy hóa phụ thuộc cấu trúc keo; ví dụ định lượng của R29, R30, R31; thang bền oxy hóa theo thành phần và Rancimat (R36); Rancimat/Oxitest tương quan cao (R37); dự đoán hạn dùng có thể sai (R36).
+- **Đã chắc (có nguồn):** oxy hóa phụ thuộc cấu trúc keo; ví dụ định lượng của Yi và cs. 2014, Yi và cs. 2020, Schroeder và cs. 2006; thang bền oxy hóa theo thành phần và Rancimat (Kochhar và cs. 2009); Rancimat/Oxitest tương quan cao (Chabni và cs. 2024); dự đoán hạn dùng có thể sai (Kochhar và cs. 2009).
 - **Chưa kiểm sách:** cơ chế autoxidation chi tiết, tốc độ tương đối oleate/linoleate/linolenate, polar paradox, vai trò của aw, cấu trúc TOTOX.
 - **Giả thuyết:** nguyên nhân dự đoán Arrhenius lệch; mô hình thử nghiệm hạn dùng cho nhũ tương/bột.
-- **Đề xuất:** làm trang "Bảng chọn chất chống oxy hóa" gồm 3 cột: hệ (dầu khối, O/W, W/O, bột), cơ chế, ví dụ có nguồn — chỉ điền khi có nguồn.
-- **Bước tiếp theo:** (1) bạn cho biết hệ chính (dầu, nhũ tương, bột béo) để tôi tập trung tìm nguồn; (2) tôi đọc toàn văn R27 nếu có PMC để thay các ô [K] ở mục 3 bằng [N]; (3) tìm nguồn mở cho cơ chế autoxidation chuẩn (Frankel không có mở; tìm review PMC thay thế).
