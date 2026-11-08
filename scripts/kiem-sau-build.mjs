@@ -7,6 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { KHU } from '../src/data/khu.mjs';
+import { docTuKiemTra } from './tu-kiem-tra.mjs';
 import { CONG_CU_BAI, CONG_CU_KHU } from '../src/data/cong-cu-bai.mjs';
 import { NHIEM_VU } from '../public/phong-lab/mo-hinh.js';
 
@@ -119,13 +120,16 @@ for (const k of Object.keys(CONG_CU_BAI)) if (!KHU['nhu-tuong'].bai.some((b) => 
 // ---- 1b'. các khu đã chuẩn hóa: mỗi bài có "Tự kiểm tra" (2–3 câu, căn cứ N/T), "Cần biết trước" (trừ bài đầu); "Thử ngay" nếu có dữ liệu
 for (const [k, ds] of Object.entries(CONG_CU_KHU))
 	for (const sl of Object.keys(ds)) if (!KHU[k]?.bai.some((b) => b.slug === sl)) loiThuNgay.push(`cong-cu-khu/${k}: bài "${sl}" không có trong khu`);
-for (const khu of KHU_CHUAN)
+for (const khu of KHU_CHUAN) {
+	const tkk = docTuKiemTra(path.join(GOC, 'noi-dung', khu, 'tu-kiem-tra.md'));
 	KHU[khu].bai.forEach((b, i) => {
 		const ma = `${khu}/${b.slug}`;
 		const h = noiDung[path.join(DIST, khu, b.slug, 'index.html')];
 		if (!h) return void loiThuNgay.push(`${ma}: không thấy trang bài`);
 		const tkt = /<div class="tu-kiem-tra[^"]*"[^>]*>([\s\S]*?)<\/div>(?=\s*(?:<div class="thu-ngay|<div class="ket-bai))/.exec(h);
-		if (!tkt) loiThuNgay.push(`${ma}: thiếu hộp "Tự kiểm tra"`);
+		if (tkk[b.slug]?.mien) {
+			if (tkt) loiThuNgay.push(`${ma}: được miễn Tự kiểm tra nhưng trang vẫn có hộp`);
+		} else if (!tkt) loiThuNgay.push(`${ma}: thiếu hộp "Tự kiểm tra"`);
 		else {
 			const soCau = (tkt[1].match(/<details class="tkt-cau"/g) || []).length;
 			const soCanCu = (tkt[1].match(/class="tkt-xem"><span class="nhan nhan-[NT]"/g) || []).length;
@@ -145,6 +149,7 @@ for (const khu of KHU_CHUAN)
 		const soKetBong = (chuBai.match(/kết bông/gi) || []).length - (chuBai.match(/còn gọi: kết bông/gi) || []).length;
 		if (soKetBong > 0) loiThuNgay.push(`${ma}: còn ${soKetBong} chỗ "kết bông" ngoài cụm "còn gọi: kết bông" (tên chuẩn là "keo tụ")`);
 	});
+}
 // Phòng lab dùng chung tên chuẩn "keo tụ", không dùng "kết bông"
 for (const tep of fs.readdirSync(path.join(GOC, 'public/phong-lab')).filter((x) => x.endsWith('.js')))
 	if (/kết bông/i.test(fs.readFileSync(path.join(GOC, 'public/phong-lab', tep), 'utf8'))) loiThuNgay.push(`public/phong-lab/${tep}: còn "kết bông" (tên chuẩn là "keo tụ")`);

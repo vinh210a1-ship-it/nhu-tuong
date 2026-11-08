@@ -19,8 +19,11 @@ export function docTuKiemTra(duongDan) {
 		if ((m = /^## ([a-z0-9-]+)\s*$/.exec(d))) { bai = ra[m[1]] = []; cau = null; }
 		else if (/^### Câu \d+/.test(d)) { if (!bai) throw new Error('tu-kiem-tra.md: "### Câu" nằm ngoài mục "## <slug>"'); cau = {}; bai.push(cau); }
 		else if (cau && (m = /^(Hỏi|Đáp|Căn cứ):\s*(.+)$/.exec(d))) cau[m[1]] = m[2].trim();
+		// bài chỉ gồm bảng quy định, không có câu N/T để đặt câu hỏi: ghi "Miễn: <lý do>" dưới mục "## <slug>" (không có câu nào)
+		else if (bai && !cau && (m = /^Miễn:\s*(.+)$/.exec(d))) bai.mien = m[1].trim();
 	}
-	for (const [slug, ds] of Object.entries(ra))
+	for (const [slug, ds] of Object.entries(ra)) {
+		if (ds.mien && ds.length) throw new Error(`tu-kiem-tra.md: bài "${slug}" vừa "Miễn" vừa có câu hỏi`);
 		ds.forEach((c, i) => {
 			if (!c['Hỏi'] || !c['Đáp'] || !c['Căn cứ']) throw new Error(`tu-kiem-tra.md: bài "${slug}" câu ${i + 1} thiếu Hỏi, Đáp hoặc Căn cứ`);
 			const k = /^(N|T)\s*\|\s*(.+)$/.exec(c['Căn cứ']);
@@ -28,11 +31,13 @@ export function docTuKiemTra(duongDan) {
 			c.nhan = k[1];
 			c.muc = k[2].trim();
 		});
+	}
 	return ra;
 }
 
 /** Kiểm các câu của một bài với thân bài gốc (đã chuẩn bị). Ném lỗi nếu: số câu ngoài 2–3, mục không có, mục thiếu nhãn đúng loại. */
 export function kiemTuKiemTra(slug, cau, than) {
+	if (cau?.mien) return; // bài được miễn (xem docTuKiemTra)
 	if (!cau || cau.length < 2 || cau.length > 3) throw new Error(`tu-kiem-tra.md: bài "${slug}" cần 2 đến 3 câu, đang có ${cau?.length ?? 0}`);
 	const dong = than.split('\n');
 	const tieuDe = [];
@@ -52,6 +57,7 @@ export function kiemTuKiemTra(slug, cau, than) {
 }
 
 export function htmlTuKiemTra(slug, cau) {
+	if (cau?.mien) return '';
 	const TEN = { N: 'Có nguồn', T: 'Tính minh họa' };
 	const ds = cau
 		.map(

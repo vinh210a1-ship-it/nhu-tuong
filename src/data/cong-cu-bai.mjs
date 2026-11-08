@@ -138,14 +138,17 @@ export function htmlCanBietTruoc(slug) {
 import { KHU } from './khu.mjs';
 import { CONG_CU_CHAT_BEO, CAN_BIET_CHAT_BEO } from './cong-cu-khu/chat-beo.mjs';
 import { CONG_CU_CHAT_NHU_HOA, CAN_BIET_CHAT_NHU_HOA } from './cong-cu-khu/chat-nhu-hoa.mjs';
+import { CONG_CU_CHAT_ON_DINH, CAN_BIET_CHAT_ON_DINH } from './cong-cu-khu/chat-on-dinh.mjs';
 
 export const CONG_CU_KHU = {
 	'chat-beo': CONG_CU_CHAT_BEO,
 	'chat-nhu-hoa': CONG_CU_CHAT_NHU_HOA,
+	'chat-on-dinh': CONG_CU_CHAT_ON_DINH,
 };
 const CAN_BIET_KHU = {
 	'chat-beo': CAN_BIET_CHAT_BEO,
 	'chat-nhu-hoa': CAN_BIET_CHAT_NHU_HOA,
+	'chat-on-dinh': CAN_BIET_CHAT_ON_DINH,
 };
 
 /** "Cần biết trước" cho bài ngoài khu Nhũ tương. Mục ghi 'slug' = cùng khu, 'khu/slug' = khu khác. Mặc định: bài ngay trước trong khu. */
