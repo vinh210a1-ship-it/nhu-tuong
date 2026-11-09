@@ -77,7 +77,7 @@ const SITE = 'https://vinh210a1-ship-it.github.io/nhu-tuong';
 const TEN_WEB = 'Web kiến thức nhũ tương thực phẩm';
 /** Hộp "Cách trích dẫn trang này": đóng sẵn, có nút chép; ngày truy cập do public/trich-dan.js điền theo máy người đọc. */
 function htmlTrichDan(khu, slug, tieuDe, moc) {
-	return `<details class="trich-dan-trang not-content"><summary>Cách trích dẫn trang này</summary><p class="td-chu">${escHtml(TEN_WEB)} (2026). ${escHtml(tieuDe)}. ${escHtml(moc)}. ${SITE}/${khu}/${slug}/ (truy cập <span data-truy-cap>(ngày truy cập)</span>).</p><button type="button" class="td-chep" data-chep-trich-dan>Chép</button></details>`;
+	return `<details class="trich-dan-trang not-content" data-pagefind-ignore><summary>Cách trích dẫn trang này</summary><p class="td-chu">${escHtml(TEN_WEB)} (2026). ${escHtml(tieuDe)}. ${escHtml(moc)}. ${SITE}/${khu}/${slug}/ (truy cập <span data-truy-cap>(ngày truy cập)</span>).</p><button type="button" class="td-chep" data-chep-trich-dan>Chép</button></details>`;
 }
 /** Thẻ meta cho Google Scholar và Dublin Core, ghi vào front matter (Starlight đọc khóa head). */
 function dauMetaTrichDan(tieuDe, dang, capNhat) {
@@ -315,7 +315,7 @@ ${htmlTuKiemTra(`${khu}/${fm.slug}`, TU_KIEM_TRA_KHU[khu][fm.slug])}
 				const ten = [...new Set(tep.map((t) => tenBaiTheoTep[t.trim()]).filter(Boolean))];
 				if (!ten.length) continue;
 				const hien = ten.length > 3 ? `${ten.slice(0, 3).join(', ')} và ${ten.length - 3} bài khác` : ten.join(', ');
-				dong.push(`- **${ngay}** · ${hien} · ${tt.join('\t').replace(/\s*\(#\d+\)\s*$/, '').replace(/([*_`\[\]<>])/g, '\\$1')}`);
+				dong.push(`- **${ngay}** · ${hien} · ${tt.join('\t').replace(/\s*\(#\d+\)\s*$/, '').replace(/\s*\((?:gói\s+)?[A-Z]\d[^)]*\)\s*$/, '').replace(/([*_`\[\]<>])/g, '\\$1')}`);
 				if (dong.length >= 100) break;
 			}
 		} catch {

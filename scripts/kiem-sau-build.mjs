@@ -190,7 +190,7 @@ for (const khu of KHU_CHUAN) {
 		const dong = /<p class="nguon-goc-bai">([\s\S]*?)<\/p>/.exec(h)?.[1] ?? '';
 		if (!/(?:Đăng lần đầu \d{4}-\d{2}-\d{2}(?: · Sửa nội dung lớn \d{4}-\d{2}-\d{2})?|Sửa nội dung lớn \d{4}-\d{2}-\d{2})/.test(dong)) loi.push('dòng ngày sai khuôn');
 		const coDang = /Đăng lần đầu/.test(dong);
-		if (!/<details class="trich-dan-trang[^"]*"><summary>Cách trích dẫn trang này<\/summary>[\s\S]*?data-truy-cap[\s\S]*?data-chep-trich-dan/.test(h)) loi.push('thiếu hộp "Cách trích dẫn trang này"');
+		if (!/<details class="trich-dan-trang[^"]*" data-pagefind-ignore(?:="")?><summary>Cách trích dẫn trang này<\/summary>[\s\S]*?data-truy-cap[\s\S]*?data-chep-trich-dan/.test(h)) loi.push('thiếu hộp "Cách trích dẫn trang này" (hoặc thiếu data-pagefind-ignore, nếu không Pagefind sẽ lập chỉ mục hộp này)');
 		else if (!h.includes(`https://vinh210a1-ship-it.github.io/nhu-tuong/${ma}/`)) loi.push('hộp trích dẫn sai địa chỉ');
 		for (const ten of ['citation_title', 'citation_author', 'citation_online_date', 'citation_language', 'DC.rights', ...(coDang ? ['citation_publication_date'] : [])])
 			if (!new RegExp(`<meta[^>]*name="${ten.replace('.', '\\.')}"`).test(h)) loi.push(`thiếu thẻ meta ${ten}`);
@@ -204,6 +204,7 @@ for (const khu of KHU_CHUAN) {
 	if (!fs.existsSync(path.join(GOC, 'LICENSE')) || !fs.existsSync(path.join(GOC, 'LICENSE-NOI-DUNG.md'))) loiThuNgay.push('thiếu LICENSE hoặc LICENSE-NOI-DUNG.md');
 	const nk = noiDung[path.join(DIST, 'nhat-ky-thay-doi', 'index.html')];
 	if (!nk) loiThuNgay.push('thiếu trang /nhat-ky-thay-doi/');
+	else if (/\((?:gói\s+)?[A-Z]\d[^)]*\)/.test(chuHienRa(nk))) loiThuNgay.push('trang Nhật ký thay đổi còn mã nội bộ dạng "(gói L6)" hoặc "(L1–L3)" trong tên việc');
 	else if (process.env.CI && !/\d{4}-\d{2}-\d{2}<\/strong> · /.test(nk)) loiThuNgay.push('trang Nhật ký thay đổi không có dòng nào khi build trên CI (kiểm fetch-depth: 0)');
 	if (!noiDung[path.join(DIST, 'giay-phep', 'index.html')]) loiThuNgay.push('thiếu trang /giay-phep/');
 }
