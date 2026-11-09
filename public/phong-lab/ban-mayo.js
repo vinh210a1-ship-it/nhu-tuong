@@ -3,6 +3,8 @@
 import { taoBan, h, soCD, nhanHTML, thanhTruot, dauBang, tram, tuTreo, nenPhong } from './ban-chung.js';
 import { moPhongMayo, gNen, phiMayo, chamSaoMayo, NHIEM_VU_MAYO, NHAN_MOI } from './mo-hinh-ban-moi.js';
 import { MAYO } from './so-lieu-ban-moi.js';
+import { doHat, chuDai } from './may-do-hat.js';
+import { THIET_BI } from './thiet-bi.js';
 
 const TU = {
 	'tu-mayo': {
@@ -57,6 +59,33 @@ function bangDo(d) {
 <p class="pl-meo">${nhanHTML(NHAN_MOI.li2012)} Số đo thật của một nghiên cứu (Li, Kim, Yoon 2012), không phải dự đoán cho mẻ của bạn. Đường kính theo thể tích, không phải d₃₂.</p>`;
 }
 
+/** Máy đo cỡ hạt dùng chung. Mayonnaise chỉ có MỘT số: đường kính trung bình theo thể tích (Li 2012), nên không có phân bố. */
+function mayDoHat(st, kq) {
+	if (kq.trangThai !== 'tot' || !kq.duLieu) return `<p class="pl-meo">Chưa có số đo cỡ giọt cho công thức này (ngoài vùng có dữ liệu).</p>`;
+	const id = st.mayDo ?? 'nhieuXaLaser';
+	const may = THIET_BI[id];
+	const dh = doHat({ dTheTich: kq.duLieu.d_tt, nhan: 'N', nguon: 'li2012mayo' }, id);
+	const nut = [['nhieuXaLaser', 'doLaser', 'Nhiễu xạ laser'], ['dls', 'doDls', 'DLS']]
+		.map(([m, lam, ten]) => `<button type="button" class="pl-nut${id === m ? ' chon' : ''}" data-lam="${lam}" aria-pressed="${id === m}">${ten}</button>`)
+		.join('');
+	const canh = dh.canhBao.map((w) => `<p class="${w.muc === 'vang' ? 'pl-canh-bao' : 'pl-canh-xam'}">${w.muc === 'vang' ? '⚠ ' : ''}${h(w.chu)}</p>`).join('');
+	const ghi = dh.ghiChu.map((g) => `<p class="pl-meo">${h(g)}</p>`).join('');
+	const so = id === 'nhieuXaLaser' && dh.so.dTheTich != null ? `<div class="pl-so-lon"><div><span>Đường kính TB theo thể tích</span><b>${soCD(dh.so.dTheTich, 2)} µm</b><small>không phải d₃₂</small></div></div>` : '';
+	return `<h4 class="pl-h4">Máy đo cỡ hạt</h4><div class="pl-chon-may" role="group" aria-label="Chọn máy đo">${nut}</div>
+<p class="pl-meo"><b>${h(may.ten)}</b> · dải máy ${chuDai(may.daiMay)} ${nhanHTML({ ma: 'N' })} · tin cậy ~${chuDai(may.daiTinCay)} ${nhanHTML({ ma: 'N' })}</p>${so}${canh}${ghi}${id === 'nhieuXaLaser' && dh.doDuoc ? mocThucTe(kq.duLieu.d_tt) : ''}`;
+}
+/** Mốc thực tế: d32 của 7 mayo thương mại (Nunes 2002). Số của mẻ là trung bình theo thể tích, mốc là d32: chỉ so tương đối. */
+function mocThucTe(d) {
+	const [a, b] = MAYO.d32_tm.gia_tri;
+	const W = 300, L = 10, lo = Math.log10(0.5), hi = Math.log10(10);
+	const X = (v) => L + ((Math.log10(Math.min(10, Math.max(0.5, v))) - lo) / (hi - lo)) * (W - 2 * L);
+	return `<figure class="pl-moc"><svg viewBox="0 0 ${W} 54" role="img" aria-label="Mốc thực tế: d32 mayonnaise thương mại từ ${a} đến ${b} µm; mẻ của bạn ${soCD(d, 2)} µm theo thể tích">
+<line x1="${L}" y1="34" x2="${W - L}" y2="34" class="truc"/><rect x="${X(a)}" y="26" width="${X(b) - X(a)}" height="16" class="mayo-dai"/>
+<line x1="${X(d)}" y1="16" x2="${X(d)}" y2="46" class="d43"/><text x="${X(d)}" y="12" text-anchor="middle" class="d43-chu">${soCD(d, 2)}</text>
+${[0.5, 1, 2, 5, 10].map((m) => `<text x="${X(m)}" y="53" text-anchor="middle" font-size="8">${m}</text>`).join('')}</svg>
+<figcaption>Mốc thực tế: mayonnaise thương mại, d₃₂ ${soCD(a, 2)}–${soCD(b, 2)} µm ${nhanHTML(NHAN_MOI.nunes)}. Số của mẻ là trung bình theo thể tích, mốc là d₃₂: hai loại trung bình khác nhau nên chỉ so tương đối ${nhanHTML({ ma: 'G' })}.</figcaption></figure>`;
+}
+
 function viSao(st, kq) {
 	const ly = [];
 	if (kq.trangThai === 'khong-nhu-hoa') ly.push([NHAN_MOI.quyTrinhMayo, 'Không có lòng đỏ nên không có chất nhũ hóa giữ giọt: dầu tách ra.']);
@@ -95,7 +124,12 @@ export function khoiDongBanMayo(goc) {
 		tt: (st) => {
 			const kq = tinh(st);
 			const ds = [{ k: 'dauPct', ten: 'Dầu', v: st.me.dauPct, dv: '% khối lượng', nhan: 'N' }];
-			if (kq.duLieu && st.daDo) ds.push({ k: 'tau0', ten: 'τ₀ theo bảng đo Li 2012', v: kq.duLieu.tau0, dv: 'Pa', nhan: 'N' });
+			if (kq.duLieu && st.daDo) {
+				ds.push({ k: 'tau0', ten: 'τ₀ theo bảng đo Li 2012', v: kq.duLieu.tau0, dv: 'Pa', nhan: 'N' });
+				ds.push({ k: 'dTheTich', ten: 'Đường kính TB theo thể tích (Li 2012)', v: kq.duLieu.d_tt, dv: 'µm', nhan: 'N' });
+				ds.push({ k: 'pH', ten: 'pH đo được (Li 2012)', v: kq.duLieu.pH, dv: '', nhan: 'N' });
+				ds.push({ k: 'aw', ten: 'aw đo được (Li 2012)', v: kq.duLieu.aw, dv: '', nhan: 'N' });
+			}
 			return ds;
 		},
 		nhiemVu: NHIEM_VU_MAYO,
@@ -174,7 +208,7 @@ export function khoiDongBanMayo(goc) {
 				if (!st.daDo) return dauBang('Đo lưu biến', 'So mẻ của bạn với bảng đo thật.', '📈') + `<p class="pl-canh-bao">Kéo bát thả vào máy đo.</p>`;
 				const kq = tinh(st);
 				const dau = kq.trangThai !== 'tot' ? `<p class="pl-canh-bao"><b>Nhũ hỏng:</b> không đo được. Bàn này không tính lượng dầu tách.</p>` : kq.duLieu ? bangDo(kq.duLieu) : `<p class="pl-canh-bao"><b>Ngoài vùng có dữ liệu.</b> ${st.me.coGiam ? `Bảng đo chỉ có dầu 75, 80, 85%, nên không có số cho ${kq.dauPct}%.` : 'Mẻ không có giấm, khác công thức của bảng đo.'}</p>`;
-				return dauBang('Kết quả', 'Số thật từ bảng đo, đường nền chỉ để tham khảo.', '📈') + (st.nv ? api.saoHTML(chamSaoMayo(st.nv, kq)) : '') + dau + doThi(kq) + viSao(st, kq) + `<button type="button" class="pl-nut" data-lam="lamMoi">Làm mẻ mới</button>`;
+				return dauBang('Kết quả', 'Số thật từ bảng đo, đường nền chỉ để tham khảo.', '📈') + (st.nv ? api.saoHTML(chamSaoMayo(st.nv, kq)) : '') + dau + mayDoHat(st, kq) + doThi(kq) + viSao(st, kq) + `<button type="button" class="pl-nut" data-lam="lamMoi">Làm mẻ mới</button>`;
 			},
 		},
 		doi(st, k, v, api) {
@@ -188,6 +222,8 @@ export function khoiDongBanMayo(goc) {
 		},
 		hienO: (st, k) => (k === 'dauPct' ? `${st.me.dauPct} %` : ''),
 		lam: {
+			doLaser: (st, api) => { st.mayDo = 'nhieuXaLaser'; api.ve(); },
+			doDls: (st, api) => { st.mayDo = 'dls'; api.ve(); },
 			cham: (st, api) => { st.me.tocDo = 'cham'; st.me.quaNghien = false; st.daTron = st.daDo = false; api.ve(); },
 			nhanh: (st, api) => { st.me.tocDo = 'nhanh'; st.me.quaNghien = false; st.daTron = st.daDo = false; api.ve(); },
 			chayTron: (st, api) => api.chay('tron', 1600, () => {

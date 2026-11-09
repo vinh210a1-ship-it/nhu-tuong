@@ -2,6 +2,9 @@
 // Quy tắc: mẫu chỉ bị xóa khi người dùng bấm Xóa (hai bước). Không tự dọn, không giới hạn số mẫu.
 // Mẫu = { id, luc, ten, ban (mã bàn gốc), tom (mô tả ngắn), goc (ảnh chụp trạng thái, chỉ bàn gốc đọc), tt: [{k, ten, v, dv, nhan}] }.
 // Mang sang bàn khác: bàn nhận chỉ đọc những thuộc tính tt mà nó tính được, nói rõ phần chưa đọc được; không đoán số.
+import { doHat, chuDai } from './may-do-hat.js';
+import { THIET_BI } from './thiet-bi.js';
+
 const KHOA = 'pl:tu-mau';
 const SU_KIEN = 'pl-tu-mau-doi';
 const BAN_HOP_LE = new Set();
@@ -94,7 +97,7 @@ const NHAN_CHU = { N: 'Có nguồn', T: 'Tính minh họa', K: 'Sách nền, ch�
 
 /** Dựng bảng Tủ lưu mẫu vào phần tử vung. banDangMo() trả về mã bàn đang mở. */
 export function ganTuMau(vung, { banDangMo, tenBanDe }) {
-	const trangThai = { xacNhanXoa: null, tb: '', moSoDo: null };
+	const trangThai = { xacNhanXoa: null, tb: '', moSoDo: null, moDo: null }; // moDo: { id, may } mẫu đang mở hộp đo cỡ hạt
 	let hetGio = null;
 	function ve() {
 		const ds = docMau();
@@ -114,8 +117,36 @@ ${ds.length ? `<ul class="pl-ds-mau">${ds.map((m) => hang(m, dang, tenDang)).joi
 <p class="pl-mau-tom">${h(m.tom)}</p>
 ${tt ? `<ul class="pl-mau-tt">${tt}</ul>` : '<p class="pl-meo">Mẫu này chưa có thuộc tính chung để mang sang bàn khác; chỉ mở lại được ở bàn gốc.</p>'}
 ${soDo(m)}
+${doHatHTML(m)}
 <div class="pl-mau-nut"><button type="button" class="pl-nut" data-lay="${h(m.id)}">${cungBan ? 'Lấy ra ở bàn này' : `Mang sang bàn đang mở (${h(tenDang)})`}</button>
 <button type="button" class="pl-link pl-xoa${xoa ? ' sap-xoa' : ''}" data-xoa="${h(m.id)}">${xoa ? 'Bấm lần nữa để xóa hẳn' : 'Xóa'}</button></div></li>`;
+	}
+	/** Hộp "Đo cỡ hạt" của một mẫu: dùng cùng doHat với bàn gốc. Chỉ hiện khi mẫu có d32 + σ hoặc đường kính TB theo thể tích. */
+	function doHatHTML(m) {
+		const lay = (k) => (m.tt ?? []).find((x) => x.k === k);
+		const d32 = lay('d32')?.v;
+		const sigma = lay('sigma')?.v;
+		const dTT = lay('dTheTich')?.v;
+		const coPhanBo = Number.isFinite(d32) && Number.isFinite(sigma);
+		if (!coPhanBo && !Number.isFinite(dTT)) {
+			const d43 = lay('d43')?.v;
+			return Number.isFinite(d43) ? `<p class="pl-meo">Mẫu lưu trước bản cập nhật, chỉ có d₄₃ ≈ ${h(dinhDang(d43))} µm; lấy ra ở bàn gốc rồi lưu lại để đo đủ.</p>` : '';
+		}
+		const mo = trangThai.moDo?.id === m.id;
+		const nut = `<button type="button" class="pl-link" data-do-hat="${h(m.id)}" aria-expanded="${mo}">🔬 Đo cỡ hạt</button>`;
+		if (!mo) return `<div class="pl-do-hat">${nut}</div>`;
+		const may = trangThai.moDo.may;
+		const mau = coPhanBo ? { d32, sigma, nhan: lay('d32').nhan ?? 'T' } : { dTheTich: dTT, nhan: lay('dTheTich').nhan ?? 'N' };
+		const dh = doHat(mau, may);
+		const chon = ['nhieuXaLaser', 'dls'].map((id) => `<button type="button" class="pl-nut${may === id ? ' chon' : ''}" data-do-may="${id}" data-mau-do="${h(m.id)}" aria-pressed="${may === id}">${id === 'dls' ? 'DLS' : 'Nhiễu xạ laser'}</button>`).join('');
+		const canh = dh.canhBao.map((w) => `<p class="${w.muc === 'vang' ? 'pl-canh-bao' : 'pl-canh-xam'}">${w.muc === 'vang' ? '⚠ ' : ''}${h(w.chu)}</p>`).join('');
+		const so = dh.so.d32 != null
+			? `<ul class="pl-mau-tt"><li><span>d₃₂</span> <b>${h(dinhDang(dh.so.d32))} µm</b></li><li><span>d₄₃</span> <b>${h(dinhDang(dh.so.d43))} µm</b></li><li><span>d₉₀</span> <b>${h(dinhDang(dh.so.dv90))} µm</b></li><li><span>span</span> <b>${h(dinhDang(dh.so.span))}</b></li></ul>`
+			: dh.so.dTheTich != null
+				? `<ul class="pl-mau-tt"><li><span>Đường kính TB theo thể tích</span> <b>${h(dinhDang(dh.so.dTheTich))} µm</b> <small>(không phải d₃₂)</small></li></ul>`
+				: '';
+		return `<div class="pl-do-hat mo">${nut}<div class="pl-chon-may" role="group" aria-label="Chọn máy đo">${chon}</div>
+<p class="pl-meo"><b>${h(THIET_BI[may].ten)}</b> · dải máy ${chuDai(THIET_BI[may].daiMay)} · tin cậy ~${chuDai(THIET_BI[may].daiTinCay)}</p>${so}${canh}${dh.ghiChu.map((g) => `<p class="pl-meo">${h(g)}</p>`).join('')}</div>`;
 	}
 	function soDo(m) {
 		const o = SO_DO.map((s) => {
@@ -130,6 +161,19 @@ ${soDo(m)}
 		if (e) e.textContent = t;
 	}
 	vung.addEventListener('click', (ev) => {
+		const doBtn = ev.target.closest('[data-do-hat]');
+		if (doBtn) {
+			const id = doBtn.dataset.doHat;
+			trangThai.moDo = trangThai.moDo?.id === id ? null : { id, may: 'nhieuXaLaser' };
+			ve();
+			return;
+		}
+		const doMay = ev.target.closest('[data-do-may]');
+		if (doMay) {
+			trangThai.moDo = { id: doMay.dataset.mauDo, may: doMay.dataset.doMay };
+			ve();
+			return;
+		}
 		const lay = ev.target.closest('[data-lay]');
 		if (lay) {
 			const m = docMau().find((x) => x.id === lay.dataset.lay);

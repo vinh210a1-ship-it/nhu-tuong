@@ -598,3 +598,43 @@
 .pl-so-do-o { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.3rem; }
 .pl-so-do-o label { display: inline-flex; align-items: center; gap: 0.3rem; }
 .pl-so-do-o input { width: 4.5rem; }
+
+/* ---- Cốc có khối lượng mẻ tự chọn, máy chạy được, máy đo cỡ hạt dùng chung (P1, P2) ---- */
+.pl-o-gram .pl-o-dong { flex-wrap: wrap; }
+.pl-o-so { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.85rem; white-space: nowrap; }
+.pl-so-nhap { width: 6.2rem; padding: 0.3rem 0.4rem; border-radius: 0.4rem; font: 600 0.9rem var(--__sl-font-mono, monospace); text-align: end; background: var(--sl-color-black); color: var(--sl-color-white); border: 1px solid var(--sl-color-gray-5); }
+.pl-so-nhap:focus-visible { outline: 2px solid var(--sl-color-accent); outline-offset: 1px; }
+.pl-o-g { color: var(--sl-color-gray-3); font-size: 0.78rem; }
+.pl-o-me { margin-bottom: 0.2rem !important; }
+.pl-ly { min-height: 1.1rem; margin: 0.1rem 0 0.4rem; font-size: 0.8rem; color: #e0a458; line-height: 1.4; }
+.pl-ly:empty { min-height: 0; margin: 0; }
+.pl-cach { border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem; padding: 0.3rem 0.7rem 0.4rem; margin: 0 0 0.5rem; display: flex; flex-wrap: wrap; gap: 0.2rem 1rem; }
+.pl-cach legend { font-size: 0.78rem; color: var(--sl-color-gray-3); padding: 0 0.3rem; }
+.pl-cach label { font-size: 0.86rem; display: inline-flex; align-items: center; gap: 0.35rem; }
+.pl-chitiet { margin: 0.5rem 0; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem; padding: 0.35rem 0.7rem; }
+.pl-chitiet summary { cursor: pointer; font-size: 0.86rem; font-weight: 600; }
+.pl-qd, .pl-ds-may { margin: 0.4rem 0 0; padding-inline-start: 1rem; font-size: 0.84rem; line-height: 1.55; }
+.pl-ds-may { list-style: none; padding: 0; }
+.pl-ds-may li { margin: 0.2rem 0; }
+.pl-may-ok > span:first-child { color: #3fb162; font-weight: 700; }
+.pl-may-khong > span:first-child { color: #d65a7a; font-weight: 700; }
+.pl-may-ly { display: block; color: #e0a458; margin-top: 0.1rem; }
+.pl-doan { border: 1px dashed var(--sl-color-accent); border-radius: 0.6rem; padding: 0.5rem 0.7rem; margin: 0.4rem 0 0.6rem; font-size: 0.86rem; }
+.pl-doan p { margin: 0.2rem 0 !important; }
+.pl-doan-nut { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; margin-top: 0.3rem; }
+.pl-chia-se { margin: 0.6rem 0 0; display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; font-size: 0.84rem; }
+.pl-chia-o { flex: 1 1 100%; min-width: 0; padding: 0.35rem 0.5rem; font: 0.78rem var(--__sl-font-mono, monospace); background: var(--sl-color-black); color: var(--sl-color-white); border: 1px solid var(--sl-color-gray-5); border-radius: 0.4rem; }
+.pl-chon-may { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.3rem 0 0.5rem; }
+.pl-chon-may .pl-nut.chon { background: var(--sl-color-accent); color: var(--sl-color-black); }
+.pl-canh-xam { font-size: 0.84rem; padding: 0.45rem 0.7rem; border-radius: 0.5rem; background: color-mix(in srgb, var(--sl-color-gray-3) 16%, transparent); border-inline-start: 3px solid var(--sl-color-gray-3); }
+.pl-bieu-do .tin-cay { fill: color-mix(in srgb, #3fb162 14%, transparent); }
+.pl-do-hat { margin-top: 0.4rem; }
+.pl-do-hat.mo { border-top: 1px solid var(--sl-color-gray-5); padding-top: 0.4rem; }
+.pl-moc svg { width: 100%; height: auto; }
+.pl-moc .truc { stroke: var(--sl-color-gray-3); }
+.pl-moc text { fill: var(--sl-color-gray-3); font-size: 8px; }
+.pl-moc .d43 { stroke: var(--sl-color-accent); stroke-width: 1.5; }
+.pl-moc .d43-chu { fill: var(--sl-color-accent); font-weight: 700; font-size: 9px; }
+.pl-moc figcaption { font-size: 0.78rem; color: var(--sl-color-gray-3); line-height: 1.45; }
+.pl-h4 { margin: 0.8rem 0 0.2rem; font-size: 1rem; }
+.pl-chon-may .pl-nut:not(.chon) { background: transparent; color: var(--sl-color-accent); border: 1px solid var(--sl-color-accent); }

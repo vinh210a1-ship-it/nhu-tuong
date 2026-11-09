@@ -2392,6 +2392,20 @@
   "khoa": "farahani2023"
  },
  {
+  "trich_dan": "Farkas N, Kramar JA (2021). Dynamic light scattering distributions by any means. *J Nanopart Res* 23(5):120.",
+  "ho": "farkas",
+  "nam": 2021,
+  "doi": "10.1007/s11051-021-05220-6",
+  "pmid": "39381776",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11459661/",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [],
+  "khoa": "farkas2021"
+ },
+ {
   "trich_dan": "Faure A, York P, Rowe RC (2001). Process control and scale-up of pharmaceutical wet granulation processes: a review. *Eur J Pharm Biopharm* 52(3):269–277.",
   "ho": "faure",
   "nam": 2001,
@@ -2647,6 +2661,20 @@
    "thuc-pham:01"
   ],
   "khoa": "gault1985"
+ },
+ {
+  "trich_dan": "GEA. Technical Data Sheet: PandaPLUS Lab Homogenizer 2000 (2025).",
+  "ho": "gea",
+  "nam": 2025,
+  "doi": null,
+  "pmid": null,
+  "url": "https://gea-nirosoavi.com.br/wp-content/uploads/2025/06/GEA_TechnicalDataSheet_PandaPLUS_Lab_Homogenizer_2000.pdf",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [],
+  "khoa": "gea-pandaplus2000-2025"
  },
  {
   "trich_dan": "Gelin J-L, et al. (1996). Interactions between food components in ice cream. Part 1: unfrozen emulsions. *Food Hydrocolloids*.",
@@ -3431,6 +3459,20 @@
    "chat-beo:R14"
   ],
   "khoa": "idris2005"
+ },
+ {
+  "trich_dan": "IKA. T 25 digital ULTRA-TURRAX, Technical Data (thể tích xử lý 1–2.000 mL; truy cập 2026-11-09).",
+  "ho": "ika",
+  "nam": 2026,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.ika.com/en/Products-LabEq/Dispersers-pg177/T-25-digital-ULTRA-TURRAX-3725000/Technical-Data-cptd.html",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [],
+  "khoa": "ika-t25-2026"
  },
  {
   "trich_dan": "Isleroglu H et al. (2012). Effect of steam baking on acrylamide formation and browning kinetics of cookies. *J Food Sci* 77(10):E257–E263",
@@ -4866,6 +4908,48 @@
    "thuc-pham:01"
   ],
   "khoa": "maleki2026"
+ },
+ {
+  "trich_dan": "Malvern Panalytical. Dynamic light scattering: common terms defined (white paper WP111214; ISO 13321 và ISO 22412: Z-average là 'harmonic intensity averaged particle diameter').",
+  "ho": "malvern",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.malvernpanalytical.com/en/learn/knowledge-center/whitepapers/wp111214dlstermsdefined",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [],
+  "khoa": "malvern-dls-thuat-ngu"
+ },
+ {
+  "trich_dan": "Malvern Panalytical. Mastersizer range (dải đo 0,01–3.500 µm; truy cập 2026-11-09).",
+  "ho": "malvern",
+  "nam": 2026,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.malvernpanalytical.com/en/products/product-range/mastersizer-range",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [],
+  "khoa": "malvern-mastersizer-2026"
+ },
+ {
+  "trich_dan": "Malvern Panalytical. Zetasizer Advance range, brochure (bản của ATA Scientific, 2020; dải kích thước 0,3 nm–10 µm).",
+  "ho": "malvern",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.atascientific.com.au/wp-content/uploads/2020/07/Zetasizer-Lab.pdf",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [],
+  "khoa": "malvern-zetasizer-advance"
  },
  {
   "trich_dan": "Mangiapelo L, Ianni F, Pagano C, Grispoldi L, Blasi F, Cenci-Goga B, Perioli L, Cossignani L. Role of apple pomace in the formulation of a novel healthy mayonnaise. Eur Food Res Technol 249:2835–2847",
