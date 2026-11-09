@@ -2841,15 +2841,16 @@
   "khoa": "gregersen2025"
  },
  {
-  "trich_dan": "Griffin WC (1949). Classification of surface-active agents by \"HLB\". *J Soc Cosmet Chem* 1:311–326.",
+  "trich_dan": "Griffin WC (1949). Classification of surface-active agents by \"HLB\". *J Soc Cosmet Chem* 1(5):311–326.",
   "ho": "griffin",
   "nam": 1949,
   "doi": null,
   "pmid": null,
-  "url": null,
-  "muc_doc": "tri-nho",
+  "url": "https://library.scconline.org/v001n05/8",
+  "muc_doc": "mot-phan",
   "khu": [
-   "nhu-tuong"
+   "nhu-tuong",
+   "chat-nhu-hoa"
   ],
   "ma_cu": [
    "nhu-tuong:C02"
@@ -2871,6 +2872,20 @@
    "chat-nhu-hoa:A5"
   ],
   "khoa": "griffin1949b"
+ },
+ {
+  "trich_dan": "Griffin WC (1954). Calculation of HLB values of non-ionic surfactants. *J Soc Cosmet Chem* 5(4):249–256.",
+  "ho": "griffin",
+  "nam": 1954,
+  "doi": null,
+  "pmid": null,
+  "url": null,
+  "muc_doc": "tieu-de",
+  "khu": [
+   "chat-nhu-hoa"
+  ],
+  "ma_cu": [],
+  "khoa": "griffin1954"
  },
  {
   "trich_dan": "Guerrero A, Partal P, Gallegos C. Linear and non-linear viscoelasticity of low-in-cholesterol mayonnaise. (Food Sci Technol Int; năm/số trang cần xác nhận)",
