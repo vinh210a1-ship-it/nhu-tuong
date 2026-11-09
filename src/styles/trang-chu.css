@@ -542,3 +542,29 @@ a.tc-khu-the:hover { transform: translateY(-3px); border-color: var(--mau); }
 	.dc-ten { display: none; }
 	.ket-bai { flex-direction: column; align-items: stretch; }
 }
+
+/* ================= Cuối bài: cách trích dẫn trang ================= */
+.trich-dan-trang {
+	margin-top: 1rem !important;
+	padding: 0.7rem 1.15rem;
+	border: 1px solid var(--hh-vien);
+	border-radius: 1rem;
+	background: var(--hh-be-mat);
+	font-size: 0.9rem;
+}
+.trich-dan-trang summary { cursor: pointer; font-weight: 600; color: var(--sl-color-white); }
+.trich-dan-trang .td-chu { margin: 0.6rem 0; overflow-wrap: anywhere; color: var(--sl-color-gray-2); }
+.trich-dan-trang .td-chep {
+	padding: 0.35rem 0.95rem;
+	border: 1px solid var(--hh-vien);
+	border-radius: 999px;
+	background: transparent;
+	color: var(--sl-color-white);
+	font: inherit;
+	font-weight: 600;
+	cursor: pointer;
+}
+@media print {
+	.trich-dan-trang .td-chep { display: none; }
+	.trich-dan-trang { border: 0; }
+}

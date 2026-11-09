@@ -22,7 +22,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # fetch-depth: 0 để lấy đủ lịch sử git: ngày đăng lần đầu của bài và trang Nhật ký thay đổi lấy từ đó
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
