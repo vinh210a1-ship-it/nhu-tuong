@@ -1314,6 +1314,20 @@
   "khoa": "cullis2017"
  },
  {
+  "trich_dan": "Formulaction (nhà sản xuất), qua nhà phân phối Dafratec. TurbiScan MA 2000 (dòng Turbiscan Classic cũ): tài liệu kỹ thuật của hãng, mục Specifications (không ghi năm).",
+  "ho": "dafratec",
+  "nam": null,
+  "doi": null,
+  "pmid": null,
+  "url": "https://dafratec.com/wp-content/uploads/2020/11/Turbiscan_Classic-1.pdf",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [],
+  "khoa": "dafratec-turbiscan-classic"
+ },
+ {
   "trich_dan": "Dao D, Le L, Nguyen P, Dang V, Tran P, Le H, Nguyen H, Nguyen H, Kha T, Nguyen V. Refining house cricket (Acheta domesticus) oils and its application to mayonnaise production. J Oleo Sci 74(10):879–885",
   "ho": "dao",
   "nam": 2025,
@@ -5160,6 +5174,20 @@
    "ban-lab-moi:mezzenga2004"
   ],
   "khoa": "mezzenga2004"
+ },
+ {
+  "trich_dan": "Microtrac MRB (hãng; một đơn vị của Verder) (2026). Turbiscan Range: shelf-life and dispersibility analyzers (tài liệu giới thiệu thiết bị của hãng, 24 trang).",
+  "ho": "microtrac",
+  "nam": 2026,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.microtrac.com/files/423008/turbiscan-range.pdf",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [],
+  "khoa": "microtrac-turbiscan"
  },
  {
   "trich_dan": "Miedviedieva N. Mayonnaise quality expertise. Food Technologies (Ukraine)",
