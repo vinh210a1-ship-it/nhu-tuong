@@ -1,0 +1,23 @@
+---
+// Chân trang: giữ nguyên chân trang mặc định của Starlight (liên kết trang trước/sau) rồi thêm một dòng giấy phép ở mọi trang.
+import Default from '@astrojs/starlight/components/Footer.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Default {...Astro.props}><slot /></Default>
+<p class="gp-dong">Chữ và hình: CC BY 4.0 · Mã: MIT · Số liệu trích dẫn thuộc nguồn gốc. <a href={`${base}/giay-phep/`}>Giấy phép</a></p>
+
+<style>
+	@layer starlight.core {
+		.gp-dong {
+			margin: 1.5rem 0 0;
+			font-size: var(--sl-text-xs);
+			color: var(--sl-color-gray-3);
+			text-align: center;
+		}
+		.gp-dong a {
+			color: inherit;
+			text-decoration: underline;
+		}
+	}
+</style>

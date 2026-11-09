@@ -5,6 +5,7 @@
 //  - sinh trang Nguồn từ nguon/nguon.json
 // Chạy: npm run chuan-bi (tự chạy trong npm run build)
 import fs from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import { tenNgan, htmlNhan, tachNhan, SO_DON_VI } from '../src/plugins/remark-nhan.mjs';
 import { KHU } from '../src/data/khu.mjs';
@@ -51,6 +52,42 @@ const tenBaiNgan = (khu, slug) => {
 	const b = (KHU[khu]?.bai ?? []).find((x) => x.slug === slug);
 	return b ? b.ten.replace(/^\d+\.\s+/, '') : null;
 };
+// ---- Gói T5: ngày đăng lần đầu lấy từ lịch sử git (commit đầu tiên chạm tệp nguồn).
+// Bản clone nông (CI không có fetch-depth: 0) sẽ báo sai ngày, nên chỉ tin git khi lịch sử đầy đủ; không thì bỏ, không báo lỗi.
+const gitDayDu = (() => {
+	try {
+		return execFileSync('git', ['rev-parse', '--is-shallow-repository'], { cwd: GOC, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim() === 'false';
+	} catch {
+		return false;
+	}
+})();
+function ngayDangDau(tepTuongDoi) {
+	if (!gitDayDu) return null;
+	try {
+		const ra = execFileSync('git', ['log', '--follow', '--diff-filter=A', '--format=%as', '--', tepTuongDoi], { cwd: GOC, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] })
+			.split('\n')
+			.filter(Boolean);
+		return ra.length ? ra[ra.length - 1] : null;
+	} catch {
+		return null;
+	}
+}
+const escHtml = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const SITE = 'https://vinh210a1-ship-it.github.io/nhu-tuong';
+const TEN_WEB = 'Web kiến thức nhũ tương thực phẩm';
+/** Hộp "Cách trích dẫn trang này": đóng sẵn, có nút chép; ngày truy cập do public/trich-dan.js điền theo máy người đọc. */
+function htmlTrichDan(khu, slug, tieuDe, moc) {
+	return `<details class="trich-dan-trang not-content" data-pagefind-ignore><summary>Cách trích dẫn trang này</summary><p class="td-chu">${escHtml(TEN_WEB)} (2026). ${escHtml(tieuDe)}. ${escHtml(moc)}. ${SITE}/${khu}/${slug}/ (truy cập <span data-truy-cap>(ngày truy cập)</span>).</p><button type="button" class="td-chep" data-chep-trich-dan>Chép</button></details>`;
+}
+/** Thẻ meta cho Google Scholar và Dublin Core, ghi vào front matter (Starlight đọc khóa head). */
+function dauMetaTrichDan(tieuDe, dang, capNhat) {
+	const dinhDang = (d) => d.replace(/-/g, '/');
+	const the = [['citation_title', tieuDe], ['citation_author', TEN_WEB]];
+	if (dang) the.push(['citation_publication_date', dinhDang(dang)]);
+	the.push(['citation_online_date', dinhDang(capNhat)], ['citation_language', 'vi'], ['DC.rights', 'CC BY 4.0']);
+	return ['head:', ...the.map(([ten, nd]) => `  - tag: meta\n    attrs: ${JSON.stringify({ name: ten, content: nd })}`)].join('\n');
+}
+
 const tieuDeGon = (t) => t.replace(/^Chương\s+\d+\s*[—–-]\s*/, '').replace(/^\d{2}\.\s+/, '');
 // Dòng ghi chú nội bộ ở khối trích đầu bài (chú giải nhãn, ngày soạn, tên file): không đưa lên web
 const GHI_CHU_NOI_BO = /Nhãn|Soạn ngày|Luồng "|chú giải|Mức tin cậy|Mức xác minh|\[(?:N|K|G|T)[^\]]*\]\s*=|\.md`/;
@@ -202,14 +239,19 @@ for (const khu of KHU_BAT) {
 			const khoi = loai === 'chan-doan' ? '<div class="chan-doan" data-chan-doan></div>' : `<div class="may-tinh" data-may-tinh="${loai}"></div>`;
 			body = body.replace(moc, `${khoi}\n\n${moc}`);
 		}
+		const dangDau = ngayDangDau(`noi-dung/${khu}/${f}`);
+		// Ngày "updated" ghi trong bài gốc có thể sớm hơn ngày bài lên repo; khi đó chưa có lần sửa lớn nào sau lúc đăng, nên chỉ in ngày đăng
+		const chuaSuaLon = Boolean(dangDau) && fm.updated <= dangDau;
+		const dongNgay = !dangDau ? `Sửa nội dung lớn ${fm.updated}` : chuaSuaLon ? `Đăng lần đầu ${dangDau}` : `Đăng lần đầu ${dangDau} · Sửa nội dung lớn ${fm.updated}`;
 		const dau = [
 			'---',
 			`title: ${yaml(fm.title)}`,
 			`description: ${yaml(`${TEN_KHU[khu]} – ${fm.title}`)}`,
 			'editUrl: false',
+			...(fm.loai === 'bai' ? [dauMetaTrichDan(fm.title, dangDau, chuaSuaLon ? dangDau : fm.updated)] : []),
 			'---',
 			'',
-			`<p class="nguon-goc-bai">${khu === 'nhu-tuong' && fm.loai === 'bai' ? htmlMucDo(fm.level) + ' · ' : ''}Cập nhật ${fm.updated} · <a href="../../quy-uoc/">Cách đọc nhãn và giới hạn nội dung →</a></p>`,
+			`<p class="nguon-goc-bai">${khu === 'nhu-tuong' && fm.loai === 'bai' ? htmlMucDo(fm.level) + ' · ' : ''}${dongNgay} · <a href="../../quy-uoc/">Cách đọc nhãn và giới hạn nội dung →</a></p>`,
 			...(khu === 'nhu-tuong' && fm.loai === 'bai' && htmlCanBietTruoc(fm.slug) ? [htmlCanBietTruoc(fm.slug)] : []),
 			...(khu in TU_KIEM_TRA_KHU && fm.loai === 'bai' && htmlCanBietTruocKhu(khu, fm.slug) ? [htmlCanBietTruocKhu(khu, fm.slug)] : []),
 			'',
@@ -246,10 +288,54 @@ ${htmlTuKiemTra(`${khu}/${fm.slug}`, TU_KIEM_TRA_KHU[khu][fm.slug])}
 		// hộp cuối bài: đánh dấu đã đọc (lưu trong máy người xem)
 		if (fm.loai === 'bai')
 			body += `\n\n<div class="ket-bai not-content" data-ket-bai="${khoaDaDoc(khu, fm.slug)}" data-khu="${khu}" data-tong="${KHU[khu].bai.length}" data-ten-khu="${TEN_KHU[khu]}"><div class="kb-chu"><b>Đọc xong bài này?</b><small data-tien-do>Đánh dấu để theo dõi lộ trình của bạn. Dữ liệu chỉ lưu trên máy này.</small></div><button type="button" class="kb-nut" data-danh-dau>Đánh dấu đã đọc</button></div>\n`;
+		// hộp "Cách trích dẫn trang này" (T5), cuối bài, sau hộp "Đọc xong bài này?"
+		if (fm.loai === 'bai') body += `\n${htmlTrichDan(khu, fm.slug, fm.title, chuaSuaLon ? `Đăng ${dangDau}` : `Sửa nội dung lớn ${fm.updated}`)}\n`;
 		// dòng trống sau thẻ <p> để Markdown không nuốt dòng đầu của bài vào khối HTML
 		fs.writeFileSync(path.join(dich, `${fm.slug}.md`), dau + '\n' + body);
 		soBai++;
 	}
+}
+
+// ---------------- trang Nhật ký thay đổi (T5): 100 dòng mới nhất từ git log, chỉ tính commit chạm bài công khai
+{
+	// tệp nguồn công khai -> tên bài (tên bài lấy từ front matter hiện tại; tệp đã xóa hoặc không công khai thì bỏ)
+	const tenBaiTheoTep = {};
+	for (const khu of KHU_BAT)
+		for (const f of fs.readdirSync(path.join(GOC, 'noi-dung', khu)).filter((x) => x.endsWith('.md'))) {
+			const [fm] = docFrontMatter(docTep(path.join(GOC, 'noi-dung', khu, f)));
+			if (fm.hien_tren_web === 'true' && fm.loai !== 'muc-luc' && fm.title) tenBaiTheoTep[`noi-dung/${khu}/${f}`] = (fm.slug && tenBaiNgan(khu, fm.slug.toLowerCase())) || tieuDeGon(fm.title);
+		}
+	const dong = [];
+	if (gitDayDu) {
+		try {
+			const ra = execFileSync('git', ['log', '-n', '600', '--name-only', '--format=%x01%as%x09%s', '--', 'noi-dung/'], { cwd: GOC, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+			for (const khoi of ra.split('\x01').filter(Boolean)) {
+				const [dauKhoi, ...tep] = khoi.split('\n');
+				const [ngay, ...tt] = dauKhoi.split('\t');
+				const ten = [...new Set(tep.map((t) => tenBaiTheoTep[t.trim()]).filter(Boolean))];
+				if (!ten.length) continue;
+				const hien = ten.length > 3 ? `${ten.slice(0, 3).join(', ')} và ${ten.length - 3} bài khác` : ten.join(', ');
+				dong.push(`- **${ngay}** · ${hien} · ${tt.join('\t').replace(/\s*\(#\d+\)\s*$/, '').replace(/\s*\((?:gói\s+)?[A-Z]\d[^)]*\)\s*$/, '').replace(/([*_`\[\]<>])/g, '\\$1')}`);
+				if (dong.length >= 100) break;
+			}
+		} catch {
+			/* không đọc được git: để trang trống, không báo lỗi */
+		}
+	}
+	fs.writeFileSync(
+		path.join(DOCS, 'nhat-ky-thay-doi.md'),
+		`---
+title: Nhật ký thay đổi
+description: Những lần sửa nội dung bài gần đây của web, mới nhất ở trên.
+editUrl: false
+tableOfContents: false
+---
+
+Mỗi dòng là một lần sửa làm đổi chữ trong ít nhất một bài (ngày · bài bị sửa · việc đã làm). Chỉ tính bài công khai; lần sửa chỉ chạm tệp nội bộ không hiện ở đây. Danh sách lấy từ lịch sử sửa tệp của web, tối đa 100 lần gần nhất.
+
+${dong.length ? dong.join('\n') : '_Chưa đọc được lịch sử sửa tệp ở lần dựng này._'}
+`,
+	);
 }
 
 // ---------------- trang Nguồn

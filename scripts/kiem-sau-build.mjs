@@ -189,6 +189,35 @@ for (const khu of KHU_CHUAN) {
 		if (soKetBong > 0) loiThuNgay.push(`${ma}: còn ${soKetBong} chỗ "kết bông" ngoài cụm "còn gọi: kết bông" (tên chuẩn là "keo tụ")`);
 	});
 }
+// ---- T5: lý lịch bài (dòng ngày, hộp trích dẫn, thẻ meta), chân trang giấy phép, trang Nhật ký thay đổi
+{
+	const baiCongKhai = Object.entries(KHU).flatMap(([k, v]) => v.bai.map((b) => `${k}/${b.slug}`));
+	let soBaiDu = 0;
+	for (const ma of baiCongKhai) {
+		const h = noiDung[path.join(DIST, ma, 'index.html')];
+		if (!h) continue;
+		const loi = [];
+		const dong = /<p class="nguon-goc-bai">([\s\S]*?)<\/p>/.exec(h)?.[1] ?? '';
+		if (!/(?:Đăng lần đầu \d{4}-\d{2}-\d{2}(?: · Sửa nội dung lớn \d{4}-\d{2}-\d{2})?|Sửa nội dung lớn \d{4}-\d{2}-\d{2})/.test(dong)) loi.push('dòng ngày sai khuôn');
+		const coDang = /Đăng lần đầu/.test(dong);
+		if (!/<details class="trich-dan-trang[^"]*" data-pagefind-ignore(?:="")?><summary>Cách trích dẫn trang này<\/summary>[\s\S]*?data-truy-cap[\s\S]*?data-chep-trich-dan/.test(h)) loi.push('thiếu hộp "Cách trích dẫn trang này" (hoặc thiếu data-pagefind-ignore, nếu không Pagefind sẽ lập chỉ mục hộp này)');
+		else if (!h.includes(`https://vinh210a1-ship-it.github.io/nhu-tuong/${ma}/`)) loi.push('hộp trích dẫn sai địa chỉ');
+		for (const ten of ['citation_title', 'citation_author', 'citation_online_date', 'citation_language', 'DC.rights', ...(coDang ? ['citation_publication_date'] : [])])
+			if (!new RegExp(`<meta[^>]*name="${ten.replace('.', '\\.')}"`).test(h)) loi.push(`thiếu thẻ meta ${ten}`);
+		if (coDang && !/Đăng lần đầu/.test(h)) loi.push('dòng ngày');
+		if (loi.length) loiThuNgay.push(`${ma}: ${loi.join('; ')}`);
+		else soBaiDu++;
+	}
+	if (!soBaiDu) loiThuNgay.push('T5: không có bài nào đủ dòng ngày, hộp trích dẫn và thẻ meta');
+	const thieuChanTrang = trang.filter((p) => !/<meta http-equiv="refresh"/.test(noiDung[p]) && !/Chữ và hình: CC BY 4\.0 · Mã: MIT/.test(noiDung[p])).map(tenTrang);
+	if (thieuChanTrang.length) loiThuNgay.push(`chân trang thiếu dòng giấy phép ở ${thieuChanTrang.length} trang, vd ${thieuChanTrang.slice(0, 3).join(', ')}`);
+	if (!fs.existsSync(path.join(GOC, 'LICENSE')) || !fs.existsSync(path.join(GOC, 'LICENSE-NOI-DUNG.md'))) loiThuNgay.push('thiếu LICENSE hoặc LICENSE-NOI-DUNG.md');
+	const nk = noiDung[path.join(DIST, 'nhat-ky-thay-doi', 'index.html')];
+	if (!nk) loiThuNgay.push('thiếu trang /nhat-ky-thay-doi/');
+	else if (/\((?:gói\s+)?[A-Z]\d[^)]*\)/.test(chuHienRa(nk))) loiThuNgay.push('trang Nhật ký thay đổi còn mã nội bộ dạng "(gói L6)" hoặc "(L1–L3)" trong tên việc');
+	else if (process.env.CI && !/\d{4}-\d{2}-\d{2}<\/strong> · /.test(nk)) loiThuNgay.push('trang Nhật ký thay đổi không có dòng nào khi build trên CI (kiểm fetch-depth: 0)');
+	if (!noiDung[path.join(DIST, 'giay-phep', 'index.html')]) loiThuNgay.push('thiếu trang /giay-phep/');
+}
 // Phòng lab dùng chung tên chuẩn "keo tụ", không dùng "kết bông"
 for (const tep of fs.readdirSync(path.join(GOC, 'public/phong-lab')).filter((x) => x.endsWith('.js')))
 	if (/kết bông/i.test(fs.readFileSync(path.join(GOC, 'public/phong-lab', tep), 'utf8'))) loiThuNgay.push(`public/phong-lab/${tep}: còn "kết bông" (tên chuẩn là "keo tụ")`);
