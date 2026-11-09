@@ -216,7 +216,7 @@ const bai0LienKet = [];
 		for (const m of than.matchAll(/<a [^>]*href="([^"#][^"]*)"/g)) {
 			let u;
 			try {
-				u = new URL(m[1], 'http://x/' + ma + '/');
+				u = new URL(m[1], 'http://x' + BASE + '/' + ma + '/'); // gốc có BASE để liên kết tương đối và tuyệt đối cùng qua một phép cắt BASE (khu "nhu-tuong" trùng tên với BASE)
 			} catch {
 				continue;
 			}
@@ -225,7 +225,7 @@ const bai0LienKet = [];
 		}
 		if (!dem) bai0LienKet.push(ma);
 	}
-	if (bai0LienKet.length) canhBao[`bài không có liên kết nào trong thân bài tới bài khác (${bai0LienKet.length}/${slugCong.size}; mục tiêu sau gói L7c: dưới 15)`] = bai0LienKet.map((x) => '/' + x + '/');
+	if (bai0LienKet.length) canhBao[`bài không có liên kết nào trong thân bài tới bài khác (${bai0LienKet.length}/${slugCong.size}; mục tiêu sau gói L7c: dưới 15, tức thêm liên kết cho ít nhất 3 bài)`] = bai0LienKet.map((x) => '/' + x + '/');
 }
 // ---- T5: lý lịch bài (dòng ngày, hộp trích dẫn, thẻ meta), chân trang giấy phép, trang Nhật ký thay đổi
 {
