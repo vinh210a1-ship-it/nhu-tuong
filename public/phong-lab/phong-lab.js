@@ -1,9 +1,9 @@
 // Phòng lab ảo: giao diện. Mọi con số đều lấy từ mo-hinh.js (đã có phép kiểm).
 // Cách chơi: bấm tủ để mở, kéo chai thả vào cốc trên cân; kéo cốc sang từng máy.
 import { stokes } from '../cong-thuc.js';
-import { doNhotNuoc, doNhotXanthan, moPhongMe, chamSao, LUAT_CHOI, NHIEM_VU, NHU_HOA, DAU, NHAN, lopKichThuoc, CAO_ONG_MM, doKhongNo, thoiGianCamUng } from './mo-hinh.js';
+import { doNhotNuoc, doNhotXanthan, moPhongMe, chamSao, SIEU_AM, nangLuongDanhDinh, LUAT_CHOI, NHIEM_VU, NHU_HOA, DAU, NHAN, lopKichThuoc, CAO_ONG_MM, doKhongNo, thoiGianCamUng } from './mo-hinh.js';
 import { TU } from './tu.js';
-import { COC_RONG, MAY_MAC_DINH, ME, PT, PPM, LY, chuanCoc, quyDoiMe, tongMe, khoiLuongSauDongHoa, gioiHan, kepMe, doiKhoiLuongMe, hienThiO, datO, datTuBu, taoThamSo, docThamSo, tachHash } from './cong-thuc-me.js';
+import { COC_RONG, MAY_MAC_DINH, MAY_LAM_MIN, ME, PT, PPM, LY, chuanCoc, quyDoiMe, tongMe, khoiLuongSauDongHoa, gioiHan, kepMe, doiKhoiLuongMe, hienThiO, datO, datTuBu, taoThamSo, docThamSo, tachHash } from './cong-thuc-me.js';
 import { THIET_BI, kiemMay } from './thiet-bi.js';
 import { doHat, chuDai, chuKichThuoc, DONG_PHA_LOANG } from './may-do-hat.js';
 
@@ -124,6 +124,10 @@ const S = {
 };
 
 const coMau = () => S.coc.nuoc && !!S.coc.dau;
+/* Gói P3: nhiệm vụ cũ chỉ bày máy đồng hóa ("mở dần"); chế độ tự do và ba nhiệm vụ mới bày cả ba máy làm mịn. */
+const moTatCaMay = () => !S.nv || !!S.nv.moMay;
+const lamMinHienTai = () => (moTatCaMay() && MAY_LAM_MIN.includes(S.may.lamMin) ? S.may.lamMin : 'dongHoa');
+const TEN_LAM_MIN = { dongHoa: 'máy đồng hóa áp cao', microfluidizer: 'microfluidizer', sieuAm: 'máy siêu âm đầu dò' };
 function dongBo() {
 	const c = S.coc;
 	const qd = quyDoiMe(c); // gram → phần trăm; mô hình vẫn nhận phần trăm nên khối lượng mẻ không làm đổi d32
@@ -137,6 +141,11 @@ function dongBo() {
 		edta: c.edta,
 		khuay: S.may.khuay,
 		dongHoa: S.may.dongHoa,
+		lamMin: lamMinHienTai(),
+		microfluidizer: S.may.microfluidizer,
+		sieuAm: S.may.sieuAm,
+		tongGam: qd.tong,
+		theTichML: qd.theTichML,
 		nhietVao: 25,
 	};
 }
@@ -144,7 +153,12 @@ function meThuc() {
 	dongBo();
 	const m = structuredClone(S.me);
 	if (!S.xong.khuay) m.khuay = { rpm: 0, phut: 0 };
-	if (!S.xong.dongHoa) m.dongHoa = { bar: 0, soLan: 0, lamLanh: false };
+	if (!S.xong.dongHoa) {
+		m.dongHoa = { bar: 0, soLan: 0, lamLanh: false };
+		m.microfluidizer = { bar: 0, soLan: 0, lamLanh: false };
+		m.sieuAm = { W: 0, phut: 0 };
+	}
+	m.conLaiGam = khoiLuongConLai();
 	return m;
 }
 function tinh() {
@@ -218,11 +232,11 @@ function khoiDong(el) {
 const TRAM = [
 	{ id: 'can', ten: 'Nguyên liệu', so: 1 },
 	{ id: 'khuay', ten: 'Khuấy', so: 2 },
-	{ id: 'dongHoa', ten: 'Đồng hóa', so: 3 },
+	{ id: 'dongHoa', ten: 'Làm mịn', so: 3 },
 	{ id: 'do', ten: 'Đo hạt', so: 4 },
 	{ id: 'tua', ten: 'Bảo quản', so: 5 },
 ];
-const TEN_TRAM = { can: 'cân', khuay: 'máy khuấy', dongHoa: 'máy đồng hóa', do: 'máy đo hạt', tua: 'tủ bảo quản' };
+const TEN_TRAM = { can: 'cân', khuay: 'máy khuấy', dongHoa: 'máy làm mịn', do: 'máy đo hạt', tua: 'tủ bảo quản' };
 
 function moTram(id) {
 	if (S.dangChay) return;
@@ -244,19 +258,24 @@ function veBuoc() {
 /* ---------------- nhiệm vụ ---------------- */
 function veNhiemVu() {
 	const sao = docLS('pl:sao', {});
-	const the = (id, ten, de, s) =>
-		`<button type="button" class="pl-the-nv${(S.nv?.id ?? 'tu-do') === id ? ' chon' : ''}" data-nv="${id}">
-  <span class="pl-nv-ten">${ten}</span><span class="pl-nv-de">${de}</span>
+	const khoaCua = (n) => (n.moKhoa && (sao[n.moKhoa.can] ?? 0) < n.moKhoa.sao ? `Mở sau khi được ${n.moKhoa.sao} sao ở nhiệm vụ "${NHIEM_VU.find((x) => x.id === n.moKhoa.can)?.ten}"` : '');
+	const the = (id, ten, de, s, khoa = '') =>
+		`<button type="button" class="pl-the-nv${(S.nv?.id ?? 'tu-do') === id ? ' chon' : ''}${khoa ? ' khoa' : ''}" data-nv="${id}"${khoa ? ' aria-disabled="true"' : ''}>
+  <span class="pl-nv-ten">${khoa ? '🔒 ' : ''}${ten}</span><span class="pl-nv-de">${de}</span>${khoa ? `<span class="pl-nv-khoa">${h(khoa)}</span>` : ''}
   ${s === null ? '<span class="pl-nv-sao tu-do">Thử gì cũng được</span>' : `<span class="pl-nv-sao" aria-label="${s} trên 3 sao">${'★'.repeat(s)}${'☆'.repeat(3 - s)}</span>`}
 </button>`;
 	goc.querySelector('.pl-nv').innerHTML =
 		`<h2 class="pl-h">Chọn nhiệm vụ</h2><div class="pl-ds-nv">` +
-		NHIEM_VU.map((n) => the(n.id, n.ten, n.de, sao[n.id] ?? 0)).join('') +
+		NHIEM_VU.map((n) => the(n.id, n.ten, n.de, sao[n.id] ?? 0, khoaCua(n))).join('') +
 		the('tu-do', 'Phòng lab tự do', 'Không đề bài, không chấm điểm. Thử mọi công thức và xem chuyện gì xảy ra.', null) +
 		`</div>`;
 	goc.querySelectorAll('[data-nv]').forEach((b) => b.addEventListener('click', () => chonNhiemVu(NHIEM_VU.find((n) => n.id === b.dataset.nv) ?? null)));
 }
 function chonNhiemVu(nv) {
+	if (nv?.moKhoa && (docLS('pl:sao', {})[nv.moKhoa.can] ?? 0) < nv.moKhoa.sao) {
+		noi(`Nhiệm vụ <b>${h(nv.ten)}</b> mở sau khi bạn được ${nv.moKhoa.sao} sao ở nhiệm vụ <b>${h(NHIEM_VU.find((x) => x.id === nv.moKhoa.can)?.ten ?? '')}</b>.`, 'lo');
+		return;
+	}
 	S.nv = nv;
 	S.coc = COC_RONG();
 	S.may = MAY_MAC_DINH();
@@ -374,6 +393,21 @@ function veBang() {
 			if (n.dataset.doan === 'bo') S.doan = null;
 			else if (S.doan) S.doan.daChon = n.dataset.doan;
 			veBang();
+		}),
+	);
+	b.querySelectorAll('[data-lam-min]').forEach((n) =>
+		n.addEventListener('click', () => {
+			if (S.dangChay || S.may.lamMin === n.dataset.lamMin) return;
+			S.may.lamMin = n.dataset.lamMin;
+			S.chiaSe = '';
+			// đổi máy làm mịn là đổi quy trình: mẻ đã chạy thành mẻ mới, phải chạy lại từ máy làm mịn
+			if (S.xong.dongHoa || S.xong.do || S.xong.tua) S.xong = { ...S.xong, dongHoa: false, do: false, tua: false };
+			tinh();
+			veBuoc();
+			veBang();
+			capNhatCanh();
+			goc.querySelector(`[data-lam-min="${n.dataset.lamMin}"]`)?.focus();
+			noi(S.may.lamMin === 'sieuAm' ? 'Siêu âm: năng lượng chia cho thể tích mẻ, nên mẻ to thì mỗi mL nhận ít hơn.' : S.may.lamMin === 'microfluidizer' ? 'Microfluidizer: cùng đường giọt–áp suất, nhưng phân bố giọt hẹp hơn và mẻ tối thiểu chỉ 14 mL.' : 'Máy đồng hóa áp cao: năng lượng mỗi mL gần bằng áp suất, không phụ thuộc cỡ mẻ.');
 		}),
 	);
 	b.querySelectorAll('[data-may-do]').forEach((n) =>
@@ -498,7 +532,11 @@ function htmlMay() {
 		`<ul class="pl-ds-may">` +
 		dong(k.chay, 'Máy khuấy cắt cao', `(${T.khuay.theTichML[0]} mL–${T.khuay.theTichML[1] / 1000} L, ≤ ${T.khuay.nhotToiDaMPas.toLocaleString('vi-VN')} mPa·s) ${nhanHTML({ ma: 'N' })}`, k.ly) +
 		dong(d.chay, 'Máy đồng hóa áp cao', `(tối thiểu ${T.dongHoa.theTichToiThieuML} mL ${nhanHTML({ ma: 'N' })}; thể tích trong máy ${T.dongHoa.theTichNamLaiML} mL ${nhanHTML({ ma: 'N' })}, coi như nằm lại sau mỗi lượt ${nhanHTML({ ma: 'G' })})`, d.ly) +
-		`</ul><p class="pl-meo">Thông số theo ${T.khuay.vd} và ${T.dongHoa.vd}. ${T.dongHoa.ghiChu}</p>`
+		(moTatCaMay()
+			? dong(kiemMayHienTai('microfluidizer').chay, 'Microfluidizer', `(tối thiểu ${T.microfluidizer.theTichToiThieuML} mL ${nhanHTML({ ma: 'N' })}; chưa có số hao hụt của máy này)`, kiemMayHienTai('microfluidizer').ly) +
+				dong(kiemMayHienTai('sieuAm').chay, 'Máy siêu âm đầu dò', `(${T.sieuAm.theTichML[0]} mL–${T.sieuAm.theTichML[1].toLocaleString('vi-VN')} mL ${nhanHTML({ ma: 'N' })})`, kiemMayHienTai('sieuAm').ly)
+			: '') +
+		`</ul><p class="pl-meo">Thông số theo ${T.khuay.vd}, ${T.dongHoa.vd}${moTatCaMay() ? `, ${T.microfluidizer.vd} và ${T.sieuAm.vd}` : ''}. ${T.dongHoa.ghiChu}</p>`
 	);
 }
 function htmlDoan() {
@@ -506,12 +544,18 @@ function htmlDoan() {
 	const lk = `<a href="${BASE}nhu-tuong/hinh-thanh/">Đọc bài</a>`;
 	if (!S.doan.daChon) {
 		return `<div class="pl-doan" role="group" aria-label="Đoán trước khi chạy lại">
-<p><b>Giọt hỏi:</b> Bạn vừa đổi khối lượng mẻ. Đoán xem: chạy lại đúng áp suất và số lần qua máy như cũ, giọt sẽ…</p>
+<p><b>Giọt hỏi:</b> Bạn vừa đổi khối lượng mẻ. Đoán xem: chạy lại đúng ${S.doan.may === 'sieuAm' ? 'công suất và thời gian' : 'áp suất và số lần qua máy'} như cũ, giọt sẽ…</p>
 <div class="pl-doan-nut"><button type="button" class="pl-nut" data-doan="to">to hơn</button><button type="button" class="pl-nut" data-doan="nho">nhỏ hơn</button><button type="button" class="pl-nut" data-doan="nhu-cu">như cũ</button><button type="button" class="pl-link" data-doan="bo">Bỏ qua</button></div></div>`;
 	}
 	const chu = { to: 'to hơn', nho: 'nhỏ hơn', 'nhu-cu': 'như cũ' }[S.doan.daChon];
+	const dap = S.doan.dap ?? 'nhu-cu';
+	const tenDap = { to: 'to hơn', nho: 'nhỏ hơn', 'nhu-cu': 'như cũ' }[dap];
+	if (S.doan.may === 'sieuAm')
+		return `<div class="pl-doan xong"><p>Bạn đoán: <b>${chu}</b>. ${S.doan.daChon === dap ? 'Đúng rồi.' : `Đáp án là <b>${tenDap}</b>.`}</p>
+<p class="pl-meo">Ở máy siêu âm, năng lượng chia cho thể tích mẻ (E = P·t/V) ${nhanHTML({ ma: 'N' })}: mẻ to hơn thì mỗi mL nhận ít năng lượng hơn và giọt to hơn, mẻ nhỏ đi thì ngược lại. Chiều tác động theo mô hình d ∝ E^−0,5 của bàn này ${nhanHTML({ ma: 'G' })}. Máy đồng hóa áp cao thì khác: E ≈ ΔP nên không phụ thuộc mẻ. ${lk}</p>
+<button type="button" class="pl-link" data-doan="bo">Đóng</button></div>`;
 	return `<div class="pl-doan xong"><p>Bạn đoán: <b>${chu}</b>. ${S.doan.daChon === 'nhu-cu' ? 'Đúng rồi.' : 'Đáp án là <b>như cũ</b>.'}</p>
-<p class="pl-meo">Ở máy đồng hóa áp cao, năng lượng cấp cho mỗi mL mẫu xấp xỉ bằng độ giảm áp qua van, nên không phụ thuộc mẻ to hay nhỏ. Mẻ to chỉ tốn thời gian bơm lâu hơn. (Máy siêu âm thì khác: năng lượng chia cho thể tích mẻ. Sẽ có ở phòng lab sau.) ${nhanHTML({ ma: 'N' })} ${lk}</p>
+<p class="pl-meo">Ở máy đồng hóa áp cao, năng lượng cấp cho mỗi mL mẫu xấp xỉ bằng độ giảm áp qua van, nên không phụ thuộc mẻ to hay nhỏ. Mẻ to chỉ tốn thời gian bơm lâu hơn. (Máy siêu âm thì khác: năng lượng chia cho thể tích mẻ, thử ở máy làm mịn.) ${nhanHTML({ ma: 'N' })} ${lk}</p>
 <button type="button" class="pl-link" data-doan="bo">Đóng</button></div>`;
 }
 
@@ -598,15 +642,19 @@ function capNhatSoCan() {
 }
 
 /** Sau mọi thay đổi gram hoặc khối lượng mẻ: mẻ đã chạy máy thì thành mẻ mới. `truocDo`: trước đó mẫu đã được đo? */
-function sauKhiDoiCan(lyDo, { doiMeG = false, truocDo = false } = {}) {
+function sauKhiDoiCan(lyDo, { doiMeG = false, truocDo = false, meCu = null } = {}) {
 	S.lyKep = lyDo[0] ?? '';
 	if (S.xong.khuay || S.xong.dongHoa || S.xong.do || S.xong.tua) {
 		doiMe('Đổi lượng cân.');
 		veBuoc();
 	}
-	if (doiMeG && truocDo && !docLS('pl:da-doan-me', false)) {
-		ghiLS('pl:da-doan-me', true);
-		S.doan = { daChon: null };
+	const sa = lamMinHienTai() === 'sieuAm';
+	const khoaDoan = sa ? 'pl:da-doan-me-sa' : 'pl:da-doan-me';
+	if (doiMeG && truocDo && !docLS(khoaDoan, false)) {
+		ghiLS(khoaDoan, true);
+		// đồng hóa: E ≈ ΔP không phụ thuộc mẻ → "như cũ"; siêu âm: E = P·t/V → mẻ to hơn thì giọt to hơn
+		const moi = tongMe(S.coc);
+		S.doan = { daChon: null, may: sa ? 'sieuAm' : 'dongHoa', dap: !sa || meCu == null || Math.abs(moi - meCu) < 1e-9 ? 'nhu-cu' : moi > meCu ? 'to' : 'nho' };
 		S.chiaSe = '';
 		tinh();
 		veBang();
@@ -623,10 +671,11 @@ function doiO(n) {
 	const k = n.dataset.n;
 	const v = parseFloat(String(n.value).replace(',', '.'));
 	const truocDo = S.xong.do;
+	const meCu = tongMe(S.coc);
 	const r = k === 'me' ? doiKhoiLuongMe(S.coc, v) : datO(S.coc, k, v);
 	S.coc = r.coc;
 	S.chiaSe = '';
-	sauKhiDoiCan(r.ly, { doiMeG: k === 'me', truocDo });
+	sauKhiDoiCan(r.ly, { doiMeG: k === 'me', truocDo, meCu });
 	n.value = soO(k === 'me' ? tongMe(S.coc) : hienThiO(S.coc, k)); // gõ ngoài dải thì ô hiện lại số đã kẹp
 }
 
@@ -649,24 +698,97 @@ function bangKhuay() {
 function khoiLuongConLai() {
 	const q = quyDoiMe(S.coc);
 	if (!S.xong.dongHoa) return q.tong;
-	return khoiLuongSauDongHoa(q.tong, q.theTichML, kiemMayHienTai('dongHoa').haoML);
+	return khoiLuongSauDongHoa(q.tong, q.theTichML, kiemMayHienTai(lamMinHienTai()).haoML);
 }
 
+const SVG_LAM_MIN = {
+	dongHoa: '<svg viewBox="0 0 64 40" aria-hidden="true"><rect x="3" y="10" width="22" height="20" rx="3"/><path d="M25 20h12"/><path d="M37 8v10M37 22v10" class="day"/><path d="M41 20h18"/><path d="M45 14l6 6-6 6"/></svg>',
+	microfluidizer: '<svg viewBox="0 0 64 40" aria-hidden="true"><path d="M4 6l26 14M4 34l26-14"/><path d="M30 20h30"/><circle cx="30" cy="20" r="3" class="dac"/><path d="M50 14l8 6-8 6"/></svg>',
+	sieuAm: '<svg viewBox="0 0 64 40" aria-hidden="true"><path d="M30 2v22"/><rect x="26" y="2" width="8" height="6" rx="1"/><path d="M16 14v18a3 3 0 0 0 3 3h22a3 3 0 0 0 3-3V14"/><path d="M22 28q2-3 4 0t4 0 4 0 4 0M22 32q2-3 4 0t4 0 4 0 4 0" class="song"/><path d="M12 36h40" class="da"/></svg>',
+};
+function theMayLamMin(id, dangChon) {
+	const T = THIET_BI;
+	const N = nhanHTML({ ma: 'N' });
+	const dong = {
+		dongHoa: [`${T.dongHoa.vd}`, `Tối thiểu ${T.dongHoa.theTichToiThieuML} mL ${N}`, `Hiệu suất năng lượng cao, giọt nhỏ nhất ≈ 0,1 µm ${N}`],
+		microfluidizer: [`${T.microfluidizer.vd}`, `Áp tới 30.000 psi (${T.microfluidizer.apToiDaBar.toLocaleString('vi-VN')} bar) ${N}; mô hình mới kiểm tới 1.500 bar`, `Mẫu tối thiểu ${T.microfluidizer.theTichToiThieuML} mL, ${T.microfluidizer.luuLuongMLPhut[0]}–${T.microfluidizer.luuLuongMLPhut[1]} mL/phút; giọt nhỏ nhất < 0,1 µm ${N}`],
+		sieuAm: [`${T.sieuAm.vd}`, `${T.sieuAm.congSuatToiDaW} W, ${T.sieuAm.tanSoKHz} kHz, mẫu ${T.sieuAm.theTichML[0]} mL–${T.sieuAm.theTichML[1].toLocaleString('vi-VN')} mL ${N}`, `Hiệu suất năng lượng thấp, giọt nhỏ nhất ≈ 0,1 µm ${N}`],
+	}[id];
+	const ten = { dongHoa: 'Đồng hóa áp cao', microfluidizer: 'Microfluidizer', sieuAm: 'Siêu âm đầu dò' }[id];
+	return `<button type="button" class="pl-the-may${dangChon ? ' chon' : ''}" data-lam-min="${id}" aria-pressed="${dangChon}"><span class="pl-the-hinh">${SVG_LAM_MIN[id]}</span><span class="pl-the-ten">${ten}</span>${dong.map((d) => `<small>${d}</small>`).join('')}</button>`;
+}
+/** Mật độ năng lượng của lần chạy đang đặt (J/mL), tính từ thông số trên thanh trượt dù máy chưa chạy. */
+function nangLuongDuKien() {
+	const lm = lamMinHienTai();
+	const V = quyDoiMe(S.coc).theTichML;
+	if (lm === 'sieuAm') {
+		const eDD = nangLuongDanhDinh(S.may.sieuAm.W, S.may.sieuAm.phut, V);
+		return { lm, V, eDD, eHD: SIEU_AM.ETA * eDD };
+	}
+	const m = S.may[lm];
+	const e = 0.1 * m.bar * m.soLan;
+	return { lm, V, eDD: e, eHD: e };
+}
+/** Vị trí kim đồng hồ (0–1): áp suất của máy đang chọn, hoặc công suất với siêu âm. */
+const giaTriKim = () => (lamMinHienTai() === 'sieuAm' ? S.may.sieuAm.W / 200 : S.may[lamMinHienTai()].bar / 1500);
+/** Dòng mật độ năng lượng, cảnh báo quá xử lý và thời gian chạy: cập nhật tại chỗ khi kéo thanh trượt. */
+function htmlNangLuongLamMin() {
+	const lm = lamMinHienTai();
+	const nl = nangLuongDuKien();
+	const bangNL =
+		lm === 'sieuAm'
+			? `<p class="pl-meo pl-nang-luong">Mật độ năng lượng: <b>${soCD(nl.eDD, 0)} J/mL</b> danh định, ≈ <b>${soCD(nl.eHD, 1)} J/mL</b> hiệu dụng ${nhanHTML({ ma: 'T' })}. Hiệu suất ${SIEU_AM.ETA * 100}% là số minh họa; sách ghi hiệu suất siêu âm đầu dò là "thấp" ${nhanHTML({ ma: 'N' })}.</p>`
+			: `<p class="pl-meo pl-nang-luong">Mật độ năng lượng ≈ <b>${soCD(nl.eHD, 1)} J/mL</b> (bằng áp suất × số lần) ${nhanHTML({ ma: 'G' })}. Dùng số này để so ba máy.</p>`;
+	const canhNL = lm === 'sieuAm' && nl.eDD >= SIEU_AM.E_QUA_XU_LY ? `<p class="pl-canh-bao">Từ ${SIEU_AM.E_QUA_XU_LY.toLocaleString('vi-VN')} J/mL trở lên, một nghiên cứu thấy giọt to lại vì quá xử lý (Belgheisi 2021). Mô phỏng giữ cỡ giọt không nhỏ thêm.</p>` : '';
+	const thoiGian =
+		lm === 'microfluidizer'
+			? `<p class="pl-meo">Thời gian chạy thật cho cả mẻ ≈ ${soCD(nl.V / THIET_BI.microfluidizer.luuLuongMLPhut[1] * S.may.microfluidizer.soLan, 1)}–${soCD((nl.V / THIET_BI.microfluidizer.luuLuongMLPhut[0]) * S.may.microfluidizer.soLan, 1)} phút theo lưu lượng hãng ${nhanHTML({ ma: 'N' })}.</p>`
+			: '';
+	return bangNL + canhNL + thoiGian;
+}
 function bangDongHoa() {
-	const d = S.may.dongHoa;
+	const lm = lamMinHienTai();
 	const kq = S.kq;
-	const kM = kiemMayHienTai('dongHoa');
+	const kM = kiemMayHienTai(lm);
+	const tatCa = moTatCaMay();
+	const chon = tatCa ? `<div class="pl-the-may-ds" role="group" aria-label="Chọn máy làm mịn">${MAY_LAM_MIN.map((id) => theMayLamMin(id, id === lm)).join('')}</div>` : '';
+	const moTa = {
+		dongHoa: 'Bơm piston ép mẫu qua khe van rất hẹp. Dòng chảy rối, lực cắt và cavitation xé giọt xuống dưới 1 µm. Áp suất càng cao, giọt càng nhỏ, và mẫu càng nóng.',
+		microfluidizer: 'Mẫu bị ép qua các kênh nhỏ rồi hai dòng đâm vào nhau trong buồng tương tác. Cùng đường giọt–năng lượng với máy đồng hóa, nhưng phân bố cỡ giọt hẹp hơn.',
+		sieuAm: 'Đầu dò rung 26 kHz tạo bọt cavitation ngay trong cốc. Năng lượng chia cho thể tích mẻ nên mẻ to thì mỗi mL nhận ít hơn; mẫu luôn ngâm bể đá.',
+	}[lm];
+	let thongSo;
+	if (lm === 'sieuAm') {
+		const d = S.may.sieuAm;
+		thongSo =
+			thanhTruot('sieuAm.W', 'Công suất danh định', 20, 200, 10, d.W, 'W') +
+			thanhTruot('sieuAm.phut', 'Thời gian', 0.5, 20, 0.5, d.phut, 'phút') +
+			`<p class="pl-meo">Mẫu ngâm bể đá, giữ khoảng 25 °C như nghiên cứu nguồn ${nhanHTML({ ma: 'N' })} (Belgheisi 2021: 25 ± 2 °C). Mô phỏng chưa tính nóng lên khi không làm lạnh vì chưa có số đo.</p>`;
+	} else {
+		const d = S.may[lm];
+		thongSo =
+			thanhTruot(`${lm}.bar`, 'Áp suất', 50, 1500, 10, d.bar, 'bar', (v) => v.toLocaleString('vi-VN')) +
+			thanhTruot(`${lm}.soLan`, 'Số lần qua máy', 1, 5, 1, d.soLan, 'lần') +
+			`<label class="pl-o pl-tick"><input type="checkbox" data-o="${lm}.lamLanh" ${d.lamLanh ? 'checked' : ''}/> Làm lạnh mẫu về 25 °C giữa các lần qua máy</label>`;
+	}
+	let xong = '';
+	if (S.xong.dongHoa && kq) {
+		const conLai = soCD(khoiLuongConLai(), 0);
+		if (lm === 'sieuAm') xong = `<p class="pl-ok">Xong ${S.may.sieuAm.W} W × ${soCD(S.may.sieuAm.phut)} phút. Nhiệt độ mẫu ra: <b>${soCD(kq.nhietRa)} °C</b> (bể đá). Còn lại ≈ <b>${conLai} g</b>. Kéo cốc sang máy đo hạt.</p>`;
+		else if (lm === 'microfluidizer') xong = `<p class="pl-ok">Xong ${S.may.microfluidizer.soLan} lần ở ${S.may.microfluidizer.bar.toLocaleString('vi-VN')} bar. Nhiệt độ mẫu ra: <b>${soCD(kq.nhietRa)} °C</b>. Còn lại ≈ <b>${conLai} g</b> (chưa có số hao hụt của máy này). Kéo cốc sang máy đo hạt.</p>`;
+		else xong = `<p class="pl-ok">Xong ${S.may.dongHoa.soLan} lần ở ${S.may.dongHoa.bar.toLocaleString('vi-VN')} bar. Nhiệt độ mẫu ra: <b>${soCD(kq.nhietRa)} °C</b>. Còn lại ≈ <b>${conLai} g</b> (${THIET_BI.dongHoa.theTichNamLaiML} mL nằm lại trong máy ${nhanHTML({ ma: 'G' })}). Kéo cốc sang máy đo hạt.</p>`;
+	}
+	const meoCuoi = lm === 'sieuAm' ? '' : `<p class="pl-meo">Mỗi 100 bar làm mẫu nóng thêm khoảng 2,4 °C ${nhanHTML(NHAN.nhiet)}. Áp suất được biến gần hết thành nhiệt.</p>`;
 	return (
-		dauBang('Máy đồng hóa áp suất cao', 'Bơm piston ép mẫu qua khe van rất hẹp. Dòng chảy rối, lực cắt và cavitation xé giọt xuống dưới 1 µm. Áp suất càng cao, giọt càng nhỏ, và mẫu càng nóng.', '🔩') +
+		dauBang(tatCa ? 'Máy làm mịn' : 'Máy đồng hóa áp suất cao', moTa, lm === 'sieuAm' ? '🔊' : '🔩') +
+		chon +
 		canCoc('dongHoa') +
 		(coMau() && !kM.chay ? `<p class="pl-canh-bao">${h(kM.ly)}</p>` : '') +
-		`<div class="pl-luoi">` +
-		thanhTruot('dongHoa.bar', 'Áp suất', 50, 1500, 10, d.bar, 'bar', (v) => v.toLocaleString('vi-VN')) +
-		thanhTruot('dongHoa.soLan', 'Số lần qua máy', 1, 5, 1, d.soLan, 'lần') +
-		`<label class="pl-o pl-tick"><input type="checkbox" data-o="dongHoa.lamLanh" ${d.lamLanh ? 'checked' : ''}/> Làm lạnh mẫu về 25 °C giữa các lần qua máy</label>` +
-		`</div><button type="button" class="pl-nut" data-lam="dongHoa" ${coMau() && S.viTri === 'dongHoa' && kM.chay ? '' : 'disabled'}>▶ Chạy máy đồng hóa</button>` +
-		(S.xong.dongHoa && kq ? `<p class="pl-ok">Xong ${d.soLan} lần ở ${d.bar.toLocaleString('vi-VN')} bar. Nhiệt độ mẫu ra: <b>${soCD(kq.nhietRa)} °C</b>. Còn lại ≈ <b>${soCD(khoiLuongConLai(), 0)} g</b> (${THIET_BI.dongHoa.theTichNamLaiML} mL nằm lại trong máy ${nhanHTML({ ma: 'G' })}). Kéo cốc sang máy đo hạt.</p>` : '') +
-		`<p class="pl-meo">Mỗi 100 bar làm mẫu nóng thêm khoảng 2,4 °C ${nhanHTML(NHAN.nhiet)}. Áp suất được biến gần hết thành nhiệt.</p>`
+		`<div class="pl-luoi">${thongSo}</div>` +
+		`<div class="pl-nl-wrap">${htmlNangLuongLamMin()}</div>` +
+		`<button type="button" class="pl-nut" data-lam="dongHoa" ${coMau() && S.viTri === 'dongHoa' && kM.chay ? '' : 'disabled'}>▶ Chạy ${TEN_LAM_MIN[lm]}</button>` +
+		xong +
+		meoCuoi
 	);
 }
 
@@ -785,16 +907,17 @@ function doiThongSo(o) {
 	if (k === 'me' || ['gDau', 'gNhuHoa', 'gXanthan'].includes(k)) {
 		// thanh trượt gram hoặc khối lượng mẻ: đổi tại chỗ để thanh đang kéo không bị vẽ lại
 		const truocDo = S.xong.do;
+		const meCu = tongMe(S.coc);
 		const r = k === 'me' ? doiKhoiLuongMe(S.coc, v) : kepMe({ ...S.coc, [k]: v });
 		S.coc = r.coc;
 		S.chiaSe = '';
-		sauKhiDoiCan(r.ly, { doiMeG: k === 'me', truocDo });
+		sauKhiDoiCan(r.ly, { doiMeG: k === 'me', truocDo, meCu });
 		return;
 	} else {
 		const [may, ts] = k.split('.');
 		S.may[may][ts] = v;
 		if (may === 'khuay' && S.xong.khuay) S.xong = { ...S.xong, khuay: false, dongHoa: false, do: false, tua: false };
-		if (may === 'dongHoa' && S.xong.dongHoa) S.xong = { ...S.xong, dongHoa: false, do: false, tua: false };
+		if (MAY_LAM_MIN.includes(may) && S.xong.dongHoa) S.xong = { ...S.xong, dongHoa: false, do: false, tua: false };
 		veBuoc();
 	}
 	tinh();
@@ -805,6 +928,8 @@ function doiThongSo(o) {
 			out.textContent = `${k.includes('rpm') || k.includes('bar') ? v.toLocaleString('vi-VN') : soCD(v, 2)} ${dv}`;
 		}
 		goc.querySelectorAll('.pl-bang .pl-ok').forEach((p) => p.remove());
+		const nl = goc.querySelector('.pl-nl-wrap');
+		if (nl && MAY_LAM_MIN.includes(k.split('.')[0])) nl.innerHTML = htmlNangLuongLamMin();
 		capNhatCanh();
 	} else {
 		veBang();
@@ -859,7 +984,7 @@ function duaCocToi(tram) {
 		else if (o.CI > 10) noi(`Sau ${S.ngay} ngày, lớp nước trong ở đáy cao ${soCD(o.serum)} mm. Tách lớp rồi!`, 'lo');
 		else noi(`Sau ${S.ngay} ngày ống nghiệm vẫn khá đều. Kéo thanh thời gian để xem tiếp, hoặc chuyển sang tab Oxy hóa.`, 'vui');
 	} else if (tram === 'khuay' && !S.xong.khuay) noi('Đặt thông số rồi bấm <b>Chạy máy khuấy</b>.');
-	else if (tram === 'dongHoa' && !S.xong.dongHoa) noi(S.xong.khuay ? 'Chọn áp suất và số lần qua máy. Nhớ để ý nhiệt độ!' : 'Chưa khuấy tiền nhũ mà cho thẳng vào máy đồng hóa à? Được thôi, xem chuyện gì xảy ra nhé.');
+	else if (tram === 'dongHoa' && !S.xong.dongHoa) noi(S.xong.khuay ? (lamMinHienTai() === 'sieuAm' ? 'Chọn công suất và thời gian. Nhớ chia năng lượng cho thể tích mẻ!' : 'Chọn áp suất và số lần qua máy. Nhớ để ý nhiệt độ!') : 'Chưa khuấy tiền nhũ mà cho thẳng vào máy đồng hóa à? Được thôi, xem chuyện gì xảy ra nhé.');
 	S.tram = tram;
 	veBuoc();
 	veBang();
@@ -880,17 +1005,20 @@ const LAM = {
 		});
 	},
 	dongHoa: () => {
-		const kM = kiemMayHienTai('dongHoa');
+		const lm = lamMinHienTai();
+		const kM = kiemMayHienTai(lm);
 		if (!kM.chay) return noi(h(kM.ly), 'lo');
 		const kim = goc.querySelector('.pl-kim');
-		if (kim) kim.style.transform = `rotate(${-120 + (240 * S.may.dongHoa.bar) / 1500}deg)`;
-		chay('dongHoa', 1100 + 500 * S.may.dongHoa.soLan, () => {
+		if (kim) kim.style.transform = `rotate(${-120 + 240 * giaTriKim()}deg)`;
+		chay('dongHoa', lm === 'sieuAm' ? 1800 : 1100 + 500 * S.may[lm].soLan, () => {
 			S.xong = { ...S.xong, dongHoa: true, do: false, tua: false };
 			tinh();
 			veLai();
 			const kq = S.kq;
 			if (kq.bienTinh) noi(`Nóng quá! Mẫu ra <b>${soCD(kq.nhietRa)} °C</b>, protein bị biến tính rồi. Lần sau thử làm lạnh giữa các lần qua máy.`, 'lo');
 			else if (kq.thieuNhuHoa) noi('Máy chạy ngon, nhưng hình như chất nhũ hóa không đủ phủ hết các giọt mới…', 'lo');
+			else if (kq.quaXuLy) noi('Siêu âm quá tay: từ 3.240 J/mL trở lên giọt không nhỏ thêm, thậm chí to lại vì quá xử lý. Năng lượng thừa là phí.', 'lo');
+			else if (lm === 'sieuAm') noi(`Xong! Năng lượng danh định ${soCD(kq.nangLuong.danhDinh, 0)} J/mL, hiệu dụng ≈ ${soCD(kq.nangLuong.hieuDung, 1)} J/mL, mẫu vẫn ${soCD(kq.nhietRa)} °C nhờ bể đá. Kéo cốc sang <b>máy đo hạt</b>.`, 'vui');
 			else noi(`Xong! Mẫu ra ${soCD(kq.nhietRa)} °C, còn lại ≈ ${soCD(khoiLuongConLai(), 0)} g. Kéo cốc sang <b>máy đo hạt</b> xem giọt nhỏ cỡ nào.`, 'vui');
 		});
 	},
@@ -898,8 +1026,21 @@ const LAM = {
 		const kq = S.kq;
 		const m = meThuc();
 		let kqSao = null;
+		const st = docLS('pl:so-tay', []);
+		// mục Sổ tay của mẻ này dựng trước để nhiệm vụ nhiều mẻ (ba-may) chấm cả mẻ vừa nộp
+		const lmNop = lamMinHienTai();
+		const muc = {
+			nvId: S.nv?.id ?? null,
+			lamMin: S.xong.dongHoa ? lmNop : null,
+			pNhuHoa: m.nhuHoa ? Math.round(m.phanTramNhuHoa * 1000) / 1000 : 0,
+			laser: daDoDuoc() && S.may_do === 'nhieuXaLaser',
+			d32: kq.d32,
+			dv90: kq.dv90,
+			eHD: S.xong.dongHoa ? Math.round(kq.nangLuong.hieuDung * 10) / 10 : null,
+			eTongKJ: S.xong.dongHoa ? Math.round(kq.nangLuongTongJ / 100) / 10 : null,
+		};
 		if (S.nv) {
-			kqSao = chamSao(S.nv, kq, S.bq);
+			kqSao = chamSao(S.nv, kq, S.bq, [muc, ...st]);
 			const sao = docLS('pl:sao', {});
 			sao[S.nv.id] = Math.max(sao[S.nv.id] ?? 0, kqSao.sao);
 			ghiLS('pl:sao', sao);
@@ -909,12 +1050,12 @@ const LAM = {
 		const nhietGhi = S.nv?.baoQuan?.nhietDo ?? S.bq.nhietDo;
 		const o = kq.ongNghiem(ngayGhi, nhietGhi);
 		const pv = kq.oxyHoa(ngayGhi, nhietGhi, S.bq.sang).pv;
-		const st = docLS('pl:so-tay', []);
 		st.unshift({
+			...muc,
 			luc: Date.now(),
 			nv: S.nv?.ten ?? 'Tự do',
 			ct: `${soCD(m.phanTramDau)}% ${DAU[m.dau].ten.replace('Dầu ', '')} · ${m.nhuHoa ? soCD(m.phanTramNhuHoa, 2) + '% ' + NHU_HOA[m.nhuHoa].ten.split(' (')[0] : 'không nhũ hóa'}${m.phanTramXanthan ? ' · xanthan ' + soCD(m.phanTramXanthan, 2) + '%' : ''}${m.tocopherol ? ' · tocopherol' : ''}${m.edta ? ' · EDTA' : ''}`,
-			qt: `${m.khuay.rpm ? (m.khuay.rpm / 1000).toLocaleString('vi-VN') + 'k vòng ' + soCD(m.khuay.phut) + "'" : 'không khuấy'} · ${m.dongHoa.bar ? m.dongHoa.bar + ' bar × ' + m.dongHoa.soLan + (m.dongHoa.lamLanh ? ' (làm lạnh)' : '') : 'không đồng hóa'}`,
+			qt: `${m.khuay.rpm ? (m.khuay.rpm / 1000).toLocaleString('vi-VN') + 'k vòng ' + soCD(m.khuay.phut) + "'" : 'không khuấy'} · ${chuQuyTrinhLamMin(m)}`,
 			d43: kq.d43,
 			me: Math.round(tongMe(S.coc) * 100) / 100,
 			conLai: S.xong.dongHoa ? Math.round(khoiLuongConLai() * 10) / 10 : null,
@@ -1159,10 +1300,19 @@ function veKetQua(kq, kqSao, ngay) {
 	const nhiet = S.nv?.baoQuan?.nhietDo ?? S.bq.nhietDo;
 	const o = kq.ongNghiem(ngay, nhiet);
 	const ly = [];
-	const dongHoa = S.xong.dongHoa ? S.me.dongHoa : null;
+	const lm = S.me.lamMin ?? 'dongHoa';
+	const dongHoa = S.xong.dongHoa && lm === 'dongHoa' ? S.me.dongHoa : null;
 	if (kq.thieuNhuHoa)
 		ly.push([NHAN.gamma, `Máy xé được tới ${so(Math.min(kq.dPre, kq.dE))} µm nhưng lượng chất nhũ hóa chỉ đủ phủ giọt cỡ ${so(kq.dGamma)} µm (d = 6φΓ/c). Tăng áp suất thêm cũng vô ích, phải tăng chất nhũ hóa.`]);
-	else if (dongHoa)
+	else if (S.xong.dongHoa && lm === 'sieuAm') {
+		const su = S.me.sieuAm;
+		ly.push([NHAN.nangLuongSA, `Siêu âm ${su.W} W × ${soCD(su.phut)} phút cho ${soCD(S.me.theTichML, 0)} mL: E danh định = P·t/V ≈ ${soCD(kq.nangLuong.danhDinh, 0)} J/mL.`]);
+		ly.push([NHAN.hieuSuatSA, `Chỉ khoảng ${SIEU_AM.ETA * 100}% là năng lượng hiệu dụng (≈ ${soCD(kq.nangLuong.hieuDung, 1)} J/mL), tương đương máy đồng hóa ở ≈ ${soCD(kq.nangLuong.barTuongDuong, 0)} bar. Giọt xuống d₃₂ ≈ ${so(kq.d32)} µm. Mẻ to gấp đôi, giữ P và t, thì E giảm một nửa và giọt to ra.`]);
+		ly.push([NHAN.hangSo, 'Mẫu ngâm bể đá nên không nóng thêm, và protein không bị biến tính vì nhiệt trong mô phỏng này.']);
+	} else if (S.xong.dongHoa && lm === 'microfluidizer') {
+		const mf = S.me.microfluidizer;
+		ly.push([NHAN.microfluidizer, `${mf.soLan} lần ở ${mf.bar.toLocaleString('vi-VN')} bar, giọt xuống d₃₂ ≈ ${so(kq.d32)} µm: cùng đường giọt–áp suất với máy đồng hóa, nhưng phân bố hẹp hơn (d₉₀ ≈ ${so(kq.dv90)} µm).`]);
+	} else if (dongHoa)
 		ly.push([NHAN.apSuat, `Ở ${dongHoa.bar.toLocaleString('vi-VN')} bar × ${dongHoa.soLan} lần, giọt xuống d₃₂ ≈ ${so(kq.d32)} µm. Muốn giọt nhỏ đi một nửa phải tăng áp suất khoảng 4 lần.`]);
 	else ly.push([NHAN.hangSo, `Không qua máy đồng hóa nên giọt còn rất to (d₃₂ ≈ ${so(kq.d32)} µm). Máy khuấy chỉ tạo được tiền nhũ.`]);
 	const etaNay = kq.etaC * (doNhotNuoc(nhiet) / doNhotNuoc(25));
@@ -1174,6 +1324,7 @@ function veKetQua(kq, kqSao, ngay) {
 	if (kq.saiLoai) ly.push([NHAN.hlb, 'Span 80 ưa dầu, thích hợp cho nước trong dầu (bơ thực vật), không giữ được giọt dầu trong nước.']);
 	if (kq.bienTinh) ly.push([NHAN.nguongBienTinh, NHAN.nguongBienTinh.chu]);
 	if (S.me.nhuHoa === 'tween80' || S.me.nhuHoa === 'span80') ly.push([NHAN.gammaMinhHoa, NHAN.gammaMinhHoa.chu]);
+	if (kq.quaXuLy) ly.push([NHAN.quaXuLy, NHAN.quaXuLy.chu]);
 	if (kq.canhBao.some((c) => c.ma === 'khong-tien-nhu')) ly.push([NHAN.hangSo, 'Không có tiền nhũ, lần qua máy đầu chỉ kịp xé mảng dầu lớn.']);
 	if (S.tab === 'oxy' || S.nv?.id === 'omega-3') {
 		const ox = kq.oxyHoa(ngay, nhiet, S.bq.sang);
@@ -1202,6 +1353,14 @@ function veKetQua(kq, kqSao, ngay) {
 }
 
 /* ---------------- sổ tay ---------------- */
+/** Chữ "Quy trình" của Sổ tay cho máy làm mịn đã chạy (`m` = meThuc(): máy chưa chạy thì thông số bằng 0). */
+function chuQuyTrinhLamMin(m) {
+	const lm = m.lamMin ?? 'dongHoa';
+	if (lm === 'sieuAm') return m.sieuAm?.W ? `siêu âm ${m.sieuAm.W} W × ${soCD(m.sieuAm.phut)} phút (E ≈ ${soCD(nangLuongDanhDinh(m.sieuAm.W, m.sieuAm.phut, m.theTichML), 0)} J/mL danh định)` : 'không làm mịn';
+	const d = lm === 'microfluidizer' ? m.microfluidizer : m.dongHoa;
+	const ten = lm === 'microfluidizer' ? 'microfluidizer' : '';
+	return d?.bar ? `${ten ? ten + ' ' : ''}${d.bar} bar × ${d.soLan}${d.lamLanh ? ' (làm lạnh)' : ''}` : 'không đồng hóa';
+}
 function veSoTay() {
 	const st = docLS('pl:so-tay', []);
 	const w = goc.querySelector('.pl-so-tay-wrap');
@@ -1430,7 +1589,7 @@ ${nhanTram('Tủ dầu béo', 18, 28)}</g>`;
 	);
 	const dongHoa = tram(
 		'dongHoa',
-		'3 · Máy đồng hóa',
+		'3 · Máy làm mịn',
 		`<g class="pl-rung"><rect x="410" y="170" width="200" height="155" rx="10" class="may"/><rect x="410" y="170" width="200" height="26" rx="10" class="may-dau"/>
 <circle cx="470" cy="250" r="36" class="dong-ho-ap"/><g class="vach">${Array.from({ length: 9 }, (_, i) => {
 			const a = ((-120 + i * 30) * Math.PI) / 180;
@@ -1567,9 +1726,9 @@ function capNhatCanh() {
 	}
 	svg.querySelector('[data-man="can"]').textContent = S.viTri === 'can' && (S.coc.nuoc || S.coc.dau) ? (S.coc.nuoc ? soCD(tongMe(S.coc), 1) : soCD(S.coc.gDau, 1)) : '0,0';
 	const manDH = svg.querySelector('[data-man="dongHoa"]');
-	manDH.textContent = S.xong.dongHoa && S.kq ? `${soCD(S.kq.nhietRa, 0)} °C` : `${S.may.dongHoa.bar} bar`;
+	manDH.textContent = S.xong.dongHoa && S.kq ? `${soCD(S.kq.nhietRa, 0)} °C` : lamMinHienTai() === 'sieuAm' ? `${S.may.sieuAm.W} W` : `${S.may[lamMinHienTai()].bar} bar`;
 	const kim = svg.querySelector('.pl-kim');
-	if (!S.dangChay) kim.style.transform = `rotate(${S.xong.dongHoa ? -120 + (240 * S.may.dongHoa.bar) / 1500 : -120}deg)`;
+	if (!S.dangChay) kim.style.transform = `rotate(${S.xong.dongHoa ? -120 + 240 * giaTriKim() : -120}deg)`;
 	const duong = svg.querySelector('[data-man="do"]');
 	if (S.kq && S.xong.do) {
 		const lop = lopKichThuoc(S.kq.dv50, S.kq.sigma, 31);
@@ -1609,7 +1768,7 @@ async function ganTuMauBanGoc() {
 			tt.push({ k: 'd32', ten: 'd₃₂ (mô phỏng)', v: Math.round(kq.d32 * 1000) / 1000, dv: 'µm', nhan: 'T' });
 			tt.push({ k: 'sigma', ten: 'Độ rộng phân bố σ (mô phỏng)', v: kq.sigma, dv: '', nhan: 'T' });
 		}
-		const tom = `${soCD(m.phanTramDau, 0)}% ${DAU[m.dau].ten.replace('Dầu ', '')}${m.nhuHoa ? ' · ' + NHU_HOA[m.nhuHoa].ten.split(' (')[0] : ' · không nhũ hóa'}${S.xong.khuay ? ' · đã khuấy' : ''}${S.xong.dongHoa ? ' · đã đồng hóa' : ''}`;
+		const tom = `${soCD(m.phanTramDau, 0)}% ${DAU[m.dau].ten.replace('Dầu ', '')}${m.nhuHoa ? ' · ' + NHU_HOA[m.nhuHoa].ten.split(' (')[0] : ' · không nhũ hóa'}${S.xong.khuay ? ' · đã khuấy' : ''}${S.xong.dongHoa ? (lamMinHienTai() === 'dongHoa' ? ' · đã đồng hóa' : ` · đã làm mịn (${TEN_LAM_MIN[lamMinHienTai()]})`) : ''}`;
 		const r = luuMau({ ban: 'nhu-tuong', tom, goc: chup(), tt });
 		noiLuu(r.ok ? `Đã lưu “${r.mau.ten}” vào tủ lưu mẫu.` : r.ly);
 		if (r.ok) noi('Đã cất mẫu vào <b>tủ lưu mẫu</b>. Lấy ra bất cứ lúc nào!', 'vui');
@@ -1619,7 +1778,7 @@ async function ganTuMauBanGoc() {
 		if (mau.ban !== 'nhu-tuong') return { ok: false, ly: `bàn này chưa có cách đọc mẫu từ ${tenBan(mau.ban)} (hai bàn đo những đại lượng khác nhau và chưa có phép chuyển đã kiểm).` };
 		const g = mau.goc ?? {};
 		if (!g.coc || !g.may || !g.xong || !g.bq) return { ok: false, ly: 'mẫu thiếu dữ liệu để khôi phục.' };
-		Object.assign(S, structuredClone({ coc: chuanCoc(g.coc), may: g.may, xong: g.xong, ngay: Number(g.ngay) || 0, bq: g.bq }), { viTri: 'can', tram: 'can', dangChay: false });
+		Object.assign(S, structuredClone({ coc: chuanCoc(g.coc), may: { ...MAY_MAC_DINH(), ...g.may }, xong: g.xong, ngay: Number(g.ngay) || 0, bq: g.bq }), { viTri: 'can', tram: 'can', dangChay: false });
 		veLai();
 		noi(`Đã lấy <b>${h(mau.ten)}</b> ra khỏi tủ.`, 'vui');
 		return { ok: true, ghiChu: ['Trạng thái được khôi phục đúng như lúc lưu.'] };

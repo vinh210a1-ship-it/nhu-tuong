@@ -23,9 +23,16 @@ export const COC_RONG = () => ({
 	edta: false,
 	cachNhap: 'gam', // 'gam' | 'phan-tram' | 'ty-le'
 });
-export const MAY_MAC_DINH = () => ({ khuay: { rpm: 10000, phut: 2 }, dongHoa: { bar: 300, soLan: 1, lamLanh: false } });
+export const MAY_LAM_MIN = ['dongHoa', 'microfluidizer', 'sieuAm'];
+export const MAY_MAC_DINH = () => ({
+	khuay: { rpm: 10000, phut: 2 },
+	dongHoa: { bar: 300, soLan: 1, lamLanh: false },
+	lamMin: 'dongHoa', // máy làm mịn đang chọn (gói P3); mặc định giữ nguyên mẻ và mẫu cũ
+	microfluidizer: { bar: 300, soLan: 1, lamLanh: false },
+	sieuAm: { W: 100, phut: 5 },
+});
 /** Dải thanh trượt của hai máy (khớp thanhTruot trong phong-lab.js). */
-export const DAI_MAY = { rpm: [2000, 20000], phut: [0.5, 10], bar: [50, 1500], soLan: [1, 5] };
+export const DAI_MAY = { rpm: [2000, 20000], phut: [0.5, 10], bar: [50, 1500], soLan: [1, 5], W: [20, 200], phutSA: [0.5, 20] };
 
 export const LY = {
 	me: 'Phòng lab này mô phỏng quy mô bàn thí nghiệm. Dưới 20 g không còn máy nào trong phòng chạy được; khoảng 2 kg trở lên vượt sức chứa của máy khuấy cắt cao để bàn (2 L).',
@@ -223,7 +230,7 @@ export function datTuBu(coc, bat) {
 
 /* ---------------- đường dẫn chia sẻ công thức ---------------- */
 
-const SO_HASH = ['me', 'gDau', 'gNhuHoa', 'gXanthan', 'rpm', 'phut', 'bar', 'lan'];
+const SO_HASH = ['me', 'gDau', 'gNhuHoa', 'gXanthan', 'rpm', 'phut', 'bar', 'lan', 'W', 'tSA', 'barMF', 'lanMF'];
 const so01 = (v) => (v === '1' ? true : v === '0' ? false : null);
 const docSo = (v) => (typeof v === 'string' && v.trim() !== '' && Number.isFinite(Number(v)) ? Number(v) : null);
 const kepKhoang = (x, [lo, hi]) => Math.min(hi, Math.max(lo, x));
@@ -259,6 +266,13 @@ export function taoThamSo({ coc, may }) {
 	if (mm.dongHoa.bar !== md.dongHoa.bar) them('bar', mm.dongHoa.bar);
 	if (mm.dongHoa.soLan !== md.dongHoa.soLan) them('lan', mm.dongHoa.soLan);
 	if (mm.dongHoa.lamLanh) them('lamLanh', 1);
+	// gói P3: máy làm mịn
+	const lm = MAY_LAM_MIN.includes(mm.lamMin) ? mm.lamMin : 'dongHoa';
+	if (lm !== 'dongHoa') them('lm', lm);
+	if (mm.sieuAm && mm.sieuAm.W !== md.sieuAm.W) them('W', mm.sieuAm.W);
+	if (mm.sieuAm && mm.sieuAm.phut !== md.sieuAm.phut) them('tSA', mm.sieuAm.phut);
+	if (mm.microfluidizer && mm.microfluidizer.bar !== md.microfluidizer.bar) them('barMF', mm.microfluidizer.bar);
+	if (mm.microfluidizer && mm.microfluidizer.soLan !== md.microfluidizer.soLan) them('lanMF', mm.microfluidizer.soLan);
 	return p.join('&');
 }
 
@@ -326,6 +340,15 @@ export function docThamSo(chuoi, coDinh = {}) {
 	if (so.phut !== undefined) may.khuay.phut = Math.round(kepKhoang(so.phut, DAI_MAY.phut) * 2) / 2;
 	if (so.bar !== undefined) may.dongHoa.bar = Math.round(kepKhoang(so.bar, DAI_MAY.bar) / 10) * 10;
 	if (so.lan !== undefined) may.dongHoa.soLan = Math.round(kepKhoang(so.lan, DAI_MAY.soLan));
+	const lm = lay('lm');
+	if (lm !== null) {
+		if (MAY_LAM_MIN.includes(lm)) may.lamMin = lm;
+		else bo.push('lm');
+	}
+	if (so.W !== undefined) may.sieuAm.W = Math.round(kepKhoang(so.W, DAI_MAY.W) / 10) * 10;
+	if (so.tSA !== undefined) may.sieuAm.phut = Math.round(kepKhoang(so.tSA, DAI_MAY.phutSA) * 2) / 2;
+	if (so.barMF !== undefined) may.microfluidizer.bar = Math.round(kepKhoang(so.barMF, DAI_MAY.bar) / 10) * 10;
+	if (so.lanMF !== undefined) may.microfluidizer.soLan = Math.round(kepKhoang(so.lanMF, DAI_MAY.soLan));
 	if (so.me !== undefined || so.gDau !== undefined || so.gNhuHoa !== undefined || so.gXanthan !== undefined) coGiaTri = true;
 	// đề bài cố định thắng đường dẫn
 	if (coDinh.dau) c.dau = coDinh.dau;

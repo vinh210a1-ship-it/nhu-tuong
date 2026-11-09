@@ -21,6 +21,29 @@ export const THIET_BI = {
 		ghiChu: 'Hãng ghi: thể tích tối thiểu có thể thay đổi theo sản phẩm.',
 		nhan: 'N',
 	},
+	sieuAm: {
+		ten: 'Máy siêu âm đầu dò',
+		vd: 'Hielscher UP200St',
+		congSuatToiDaW: 200, // công suất danh định
+		tanSoKHz: 26,
+		theTichML: [2, 1000],
+		bienDoPhanTram: [20, 100],
+		khoaNguon: 'hielscher-up200st',
+		khoaNguonNangLuong: 'mcclements2016', // Bảng 6.1 tr.250: mật độ năng lượng trung bình–cao, hiệu suất thấp, giọt nhỏ nhất ≈ 0,1 µm
+		khoaNguonThiNghiem: 'belgheisi2021', // mẫu giữ 25 ± 2 °C trong bể đá; mức 3.240 J/cm³ gây quá xử lý
+		giotNhoNhatUm: 0.1,
+		nhan: 'N',
+	},
+	microfluidizer: {
+		ten: 'Microfluidizer (buồng tương tác)',
+		vd: 'Microfluidics LM20',
+		apToiDaBar: 2068, // 30.000 psi theo hãng; mô hình mới kiểm tới 1.500 bar
+		theTichToiThieuML: 14,
+		luuLuongMLPhut: [60, 100],
+		khoaNguon: 'microfluidics-lm20',
+		khoaNguonNangLuong: 'mcclements2016', // Bảng 6.1 tr.250: hiệu suất cao, giọt nhỏ nhất < 0,1 µm
+		nhan: 'N',
+	},
 	nhieuXaLaser: {
 		ten: 'Máy nhiễu xạ laser',
 		vd: 'Malvern Mastersizer 3000+ Ultra',
@@ -47,7 +70,7 @@ export const THIET_BI = {
 export function khoaNguonThietBi() {
 	const ds = new Set();
 	for (const m of Object.values(THIET_BI)) {
-		for (const k of [m.khoaNguon, m.khoaNguonTinCay, ...(m.khoaNguonZ ?? [])]) if (k) ds.add(k);
+		for (const k of [m.khoaNguon, m.khoaNguonTinCay, m.khoaNguonNangLuong, m.khoaNguonThiNghiem, ...(m.khoaNguonZ ?? [])]) if (k) ds.add(k);
 	}
 	return [...ds];
 }
@@ -80,6 +103,19 @@ export function kiemMay(idMay, { theTichML, nhotMPas = 1 }) {
 			};
 		}
 		return { chay: true, ly: null, haoML: m.theTichNamLaiML };
+	}
+	if (idMay === 'sieuAm') {
+		const [lo, hi] = m.theTichML;
+		if (!(theTichML >= lo) || theTichML > hi) {
+			return { chay: false, ly: `Máy siêu âm đầu dò xử lý mẫu từ ${lo} mL đến ${hi.toLocaleString('vi-VN')} mL (theo bảng thông số của hãng). Mẻ này ≈ ${Math.round(theTichML).toLocaleString('vi-VN')} mL.`, haoML: 0 };
+		}
+		return { chay: true, ly: null, haoML: 0 };
+	}
+	if (idMay === 'microfluidizer') {
+		if (!(theTichML >= m.theTichToiThieuML)) {
+			return { chay: false, ly: `Microfluidizer cần tối thiểu ${m.theTichToiThieuML} mL mẫu (theo bảng thông số của hãng). Mẻ này ≈ ${Math.round(theTichML).toLocaleString('vi-VN')} mL.`, haoML: 0 };
+		}
+		return { chay: true, ly: null, haoML: 0 }; // chưa có số thể tích nằm lại trong máy này nên không mô phỏng hao hụt
 	}
 	return { chay: false, ly: 'Máy này chưa có quy tắc kiểm.', haoML: 0 };
 }

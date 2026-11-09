@@ -9,7 +9,7 @@ import { NAU } from '../public/phong-lab/so-lieu-nau-hoa.js';
 import { mienKep, moPhongKep, pgprHapPhu, chenhThamThau, phiHieuDung, phiTheTich, roMinhHoa, chamSaoKep, NHIEM_VU_KEP, moPhongPickering, hatTheoId, soSanhTheta, laThetaDauNuoc, chamSaoPickering, NHIEM_VU_PICKERING, gNen, phiMayo, moPhongMayo, chamSaoMayo, NHIEM_VU_MAYO } from '../public/phong-lab/mo-hinh-ban-moi.js';
 import {
 	dTheoChatNhuHoa, dTheoApSuat, nhietDoRa, dacTrungPhanBo, phanSoTheTich, doNhotXanthan,
-	moPhongMe, NHIEM_VU, chamSao, doKhongNo, thoiGianCamUng, chiSoPeroxide, doNhotNuoc, DAU, PV_NGUONG,
+	moPhongMe, NHIEM_VU, chamSao, SIEU_AM, NANG_LUONG_SAO, nangLuongDanhDinh, doKhongNo, thoiGianCamUng, chiSoPeroxide, doNhotNuoc, DAU, PV_NGUONG,
 } from '../public/phong-lab/mo-hinh.js';
 import {
 	moPhongThit, ngayTBARS, heSoPH, NHIEM_VU_THIT, chamSaoThit,
@@ -118,7 +118,7 @@ const LOI_GIAI = {
 		{ ...sot, dongHoa: { bar: 600, soLan: 2, lamLanh: true } },
 	],
 };
-for (const nv of NHIEM_VU) {
+for (const nv of NHIEM_VU.filter((n) => LOI_GIAI[n.id])) { // ba nhiệm vụ P3 có phép kiểm riêng ở khối P3
 	const [tot, au] = LOI_GIAI[nv.id];
 	const a = chamSao(nv, moPhongMe({ ...tot, ...nv.coDinh })).sao;
 	const b = chamSao(nv, moPhongMe({ ...au, ...nv.coDinh })).sao;
@@ -335,7 +335,7 @@ for (const nv of NHIEM_VU) {
 	let hong;
 	try { hong = docThamSo('me=abc&gDau=-5&la=1&dau=khong-co&bar=ab&nuoc=-3'); } catch { hong = null; }
 	dung('P1: chuỗi hỏng không ném lỗi: mẻ về mặc định, gDau kẹp về 1%, khóa lạ bị bỏ', !!hong && hong.coc.me === 100 && hong.coc.gDau === 1 && hong.coc.dau === null && hong.may.dongHoa.bar === 300);
-	const S1 = { coc: coc({ me: 400, gDau: 80, gXanthan: 0.8, tocopherol: true, edta: true }), may: { khuay: { rpm: 15000, phut: 3.5 }, dongHoa: { bar: 750, soLan: 3, lamLanh: true } } };
+	const S1 = { coc: coc({ me: 400, gDau: 80, gXanthan: 0.8, tocopherol: true, edta: true }), may: { ...MAY_MAC_DINH(), khuay: { rpm: 15000, phut: 3.5 }, dongHoa: { bar: 750, soLan: 3, lamLanh: true } } }; // MAY_MAC_DINH(): gói P3 thêm lamMin, sieuAm, microfluidizer vào trạng thái máy
 	const r1 = docThamSo(taoThamSo(S1));
 	dung('P1: chép rồi đọc lại đường dẫn (khứ hồi) ra cùng trạng thái', JSON.stringify([r1.coc.me, r1.coc.dau, r1.coc.gDau, r1.coc.nhuHoa, r1.coc.gNhuHoa, r1.coc.gXanthan, r1.coc.nuoc, r1.coc.tocopherol, r1.coc.edta, r1.may]) === JSON.stringify([400, 'huong-duong', 80, 'tween80', 1, 0.8, true, true, true, S1.may]));
 	dung('P1: đường dẫn chỉ ghi khóa khác mặc định', taoThamSo({ coc: COC_RONG(), may: MAY_MAC_DINH() }) === '');
@@ -377,6 +377,104 @@ for (const nv of NHIEM_VU) {
 	dung('P2: mayonnaise 78% dầu → ngoài vùng có dữ liệu, không có số để đo', m78.duLieu === null && m78.ngoaiVung);
 	dung('P2: bàn chưa tính cỡ giọt thì máy đo không đoán số', !doHat({}, 'nhieuXaLaser').doDuoc && /chưa tính cỡ giọt/.test(doHat({}, 'dls').canhBao[0].chu));
 	dung('P2: chữ dải đo đúng dạng "0,01–3.500 µm" và "0,3 nm–10 µm"', chuDai(T.nhieuXaLaser.daiMay) === '0,01–3.500 µm' && chuDai(T.dls.daiMay) === '0,3 nm–10 µm');
+}
+
+// Gói P3: máy làm mịn (đồng hóa áp cao, microfluidizer, siêu âm đầu dò)
+{
+	const T = THIET_BI;
+	const CT = { dau: 'huong-duong', phanTramDau: 10, nhuHoa: 'tween80', phanTramNhuHoa: 1, phanTramXanthan: 0, khuay: { rpm: 10000, phut: 2 }, nhietVao: 25 };
+	const sa = (W, phut, V, extra = {}) => moPhongMe({ ...CT, lamMin: 'sieuAm', sieuAm: { W, phut }, theTichML: V, ...extra });
+	const hph = (bar, soLan, extra = {}) => moPhongMe({ ...CT, dongHoa: { bar, soLan, lamLanh: false }, ...extra });
+	const mf = (bar, soLan, extra = {}) => moPhongMe({ ...CT, lamMin: 'microfluidizer', microfluidizer: { bar, soLan, lamLanh: false }, ...extra });
+
+	dung('P3: không khai lamMin thì giống hệt khai lamMin = dongHoa (mẻ và mẫu cũ không đổi)', (() => {
+		const a = hph(600, 2);
+		const b = moPhongMe({ ...CT, lamMin: 'dongHoa', dongHoa: { bar: 600, soLan: 2, lamLanh: false } });
+		return a.d32 === b.d32 && a.dv90 === b.dv90 && a.nhietRa === b.nhietRa && a.sigma === b.sigma && a.chiPhi === b.chiPhi;
+	})());
+	dung('P3: siêu âm 200 W, 5 phút, 100 mL → E danh định = 600 J/mL (sai số 1e-9)', Math.abs(nangLuongDanhDinh(200, 5, 100) - 600) < 1e-9 && Math.abs(sa(200, 5, 100).nangLuong.danhDinh - 600) < 1e-9);
+	dung('P3: siêu âm, gấp đôi thể tích giữ P và t → E giảm một nửa và d₃₂ tăng (đúng chiều)', (() => {
+		const a = sa(200, 5, 100), b = sa(200, 5, 200);
+		return Math.abs(b.nangLuong.danhDinh - a.nangLuong.danhDinh / 2) < 1e-9 && b.d32 > a.d32;
+	})());
+	dung('P3: E hiệu dụng của siêu âm = 0,1 × E danh định [T]', Math.abs(sa(200, 5, 100).nangLuong.hieuDung - SIEU_AM.ETA * 600) < 1e-9 && SIEU_AM.ETA === 0.1);
+	dung('P3: siêu âm không làm mẫu nóng thêm (ngâm bể đá)', sa(200, 20, 20).nhietRa === 25);
+	dung('P3: siêu âm từ 3.240 J/mL trở lên giọt không nhỏ thêm và có cảnh báo quá xử lý', (() => {
+		const a = sa(200, (3240 * 20) / (200 * 60), 20), b = sa(200, 20, 20);
+		return Math.abs(a.nangLuong.danhDinh - 3240) < 1e-6 && b.nangLuong.danhDinh > 3240 && b.d32 >= a.d32 - 1e-12 && b.canhBao.some((w) => w.ma === 'qua-xu-ly') && a.canhBao.some((w) => w.ma === 'qua-xu-ly') && !sa(200, 5, 100).canhBao.some((w) => w.ma === 'qua-xu-ly');
+	})());
+	dung('P3: siêu âm có sàn 0,1 µm', (() => {
+		const k = sa(200, 20, 2, { phanTramDau: 1, nhuHoa: 'tween80', phanTramNhuHoa: 3 });
+		return k.dE >= SIEU_AM.SAN_D - 1e-12;
+	})());
+	dung('P3: kiemMay siêu âm chặn 1 mL và 1.500 mL, cho 2 mL và 1.000 mL', !kiemMay('sieuAm', { theTichML: 1 }).chay && !kiemMay('sieuAm', { theTichML: 1500 }).chay && kiemMay('sieuAm', { theTichML: 2 }).chay && kiemMay('sieuAm', { theTichML: 1000 }).chay);
+	dung('P3: kiemMay microfluidizer chặn 10 mL, cho 14 mL, không hao hụt', !kiemMay('microfluidizer', { theTichML: 10 }).chay && kiemMay('microfluidizer', { theTichML: 14 }).chay && kiemMay('microfluidizer', { theTichML: 14 }).haoML === 0);
+	dung('P3: microfluidizer cùng bar và số lần → d₃₂ bằng máy đồng hóa (trên sàn), phân bố hẹp hơn, nhiệt ra bằng nhau', (() => {
+		const a = hph(600, 2), b = mf(600, 2);
+		return Math.abs(a.d32 - b.d32) < 1e-12 && b.dE > SIEU_AM.SAN_D_MF && b.dv90 / b.d32 < a.dv90 / a.d32 && a.nhietRa === b.nhietRa && b.sigma === SIEU_AM.SIGMA_MF;
+	})());
+	dung('P3: đường dẫn chia sẻ giữ máy làm mịn, P, t, bar và số lần của microfluidizer (khứ hồi); đường dẫn cũ vẫn là máy đồng hóa', (() => {
+		const may = { ...MAY_MAC_DINH(), lamMin: 'sieuAm', sieuAm: { W: 150, phut: 7.5 }, microfluidizer: { bar: 900, soLan: 2, lamLanh: false } };
+		const r = docThamSo(taoThamSo({ coc: COC_RONG(), may }));
+		const cu = docThamSo('bar=600&lan=2');
+		const hong = docThamSo('lm=laser&W=abc');
+		return JSON.stringify(r.may) === JSON.stringify(may) && cu.may.lamMin === 'dongHoa' && hong.may.lamMin === 'dongHoa' && hong.bo.includes('lm') && !taoThamSo({ coc: COC_RONG(), may: MAY_MAC_DINH() }).includes('lm=');
+	})());
+	dung('P3: số trong THIET_BI.sieuAm và microfluidizer khớp bảng hãng', T.sieuAm.congSuatToiDaW === 200 && T.sieuAm.tanSoKHz === 26 && T.sieuAm.theTichML[0] === 2 && T.sieuAm.theTichML[1] === 1000 && T.sieuAm.bienDoPhanTram[0] === 20 && T.sieuAm.bienDoPhanTram[1] === 100 && T.microfluidizer.apToiDaBar === 2068 && T.microfluidizer.theTichToiThieuML === 14 && T.microfluidizer.luuLuongMLPhut[0] === 60 && T.microfluidizer.luuLuongMLPhut[1] === 100);
+
+	// Ba nhiệm vụ mới có lời giải 3 sao (dò lưới thông số)
+	const nv = (id) => NHIEM_VU.find((n) => n.id === id);
+	const cocMe = (tong, nhuHoa, pNH) => {
+		const coc = { ...COC_RONG(), me: tong, nuoc: true, dau: 'huong-duong', gDau: tong * 0.1, nhuHoa, gNhuHoa: (tong * pNH) / 100 };
+		return quyDoiMe(coc);
+	};
+	const chayLon = (nhuHoa, pNH, may, cauHinh) => {
+		const q = cocMe(800, nhuHoa, pNH);
+		const base = { ...CT, nhuHoa, phanTramDau: q.phanTramDau, phanTramNhuHoa: q.phanTramNhuHoa, tongGam: 800, theTichML: q.theTichML };
+		const hao = may === 'dongHoa' ? kiemMay('dongHoa', { theTichML: q.theTichML }).haoML : 0;
+		const conLaiGam = khoiLuongSauDongHoa(800, q.theTichML, hao);
+		const me = may === 'sieuAm' ? { ...base, lamMin: 'sieuAm', sieuAm: cauHinh, conLaiGam } : may === 'microfluidizer' ? { ...base, lamMin: 'microfluidizer', microfluidizer: cauHinh, conLaiGam } : { ...base, dongHoa: cauHinh, conLaiGam };
+		return moPhongMe(me);
+	};
+	let tot = { sao: 0, E: Infinity };
+	let tot3 = 0;
+	for (const may of ['dongHoa', 'microfluidizer']) {
+		for (let bar = 50; bar <= 1500; bar += 10) {
+			for (let n = 1; n <= 5; n++) {
+				const kq = chayLon('tween80', 1, may, { bar, soLan: n, lamLanh: false });
+				const s = chamSao(nv('me-lon'), kq).sao;
+				if (s === 3) tot3++;
+				const s2 = chamSao(nv('it-nang-luong'), kq).sao;
+				if (s2 > tot.sao || (s2 === tot.sao && kq.nangLuongTongJ < tot.E)) tot = { sao: s2, E: kq.nangLuongTongJ };
+			}
+		}
+	}
+	dung(`P3: nhiệm vụ me-lon có lời giải 3 sao bằng máy đồng hóa hoặc microfluidizer (${tot3} cấu hình trong lưới)`, tot3 > 0);
+	dung(`P3: nhiệm vụ it-nang-luong có lời giải 3 sao (E nhỏ nhất ≈ ${Math.round(tot.E / 1000)} kJ, ngưỡng ${NANG_LUONG_SAO[1] / 1000} kJ)`, tot.sao === 3 && tot.E <= NANG_LUONG_SAO[1]);
+	dung('P3: các ngưỡng năng lượng của it-nang-luong giảm dần và đủ rộng để ngưỡng sao 2 dễ hơn sao 3', NANG_LUONG_SAO[0] > NANG_LUONG_SAO[1]);
+	dung('P3: me-lon không đạt 3 sao bằng siêu âm ở mẻ 800 g (thử cả lưới P × t)', (() => {
+		let toiDa = 0;
+		for (let W = 20; W <= 200; W += 10) for (let t = 0.5; t <= 20; t += 0.5) toiDa = Math.max(toiDa, chamSao(nv('me-lon'), chayLon('tween80', 1, 'sieuAm', { W, phut: t })).sao);
+		return toiDa < 3;
+	})());
+	dung('P3: me-lon trên 1.000 mL thì máy siêu âm không chạy được (mẻ 800 g ≈ 807 mL vẫn chạy được, 1.500 g thì không)', kiemMay('sieuAm', { theTichML: cocMe(800, 'tween80', 1).theTichML }).chay && !kiemMay('sieuAm', { theTichML: cocMe(1500, 'tween80', 1).theTichML }).chay);
+	dung('P3: it-nang-luong khóa cho tới khi me-lon đủ 3 sao', nv('it-nang-luong').moKhoa.can === 'me-lon' && nv('it-nang-luong').moKhoa.sao === 3);
+	dung('P3: me-lon thiếu khối lượng (mẻ 100 g) thì mất sao khối lượng', (() => {
+		const k = moPhongMe({ ...CT, tongGam: 100, conLaiGam: 100, theTichML: 100, dongHoa: { bar: 1500, soLan: 3, lamLanh: false } });
+		return chamSao(nv('me-lon'), k).tieuChi[0].dat === false;
+	})());
+
+	// ba-may: Sổ tay giả lập có đủ ba mẻ cùng công thức, mỗi mẻ 100 g, đã đo laser
+	const mucSo = (lamMin, ex = {}) => ({ nvId: 'ba-may', lamMin, pNhuHoa: 1, me: 100, laser: true, ...ex });
+	const kqBa = hph(300, 1);
+	dung('P3: ba-may đủ 3 sao khi Sổ tay có đủ ba máy, cùng công thức, 100 g, đã đo laser', chamSao(nv('ba-may'), kqBa, { sang: false }, [mucSo('sieuAm'), mucSo('microfluidizer'), mucSo('dongHoa')]).sao === 3);
+	dung('P3: ba-may thiếu một máy thì mất ít nhất sao đầu', chamSao(nv('ba-may'), kqBa, { sang: false }, [mucSo('microfluidizer'), mucSo('dongHoa')]).tieuChi[0].dat === false);
+	dung('P3: ba-may lệch Tween 80 quá 0,5 điểm thì mất sao công thức', chamSao(nv('ba-may'), kqBa, { sang: false }, [mucSo('sieuAm', { pNhuHoa: 2 }), mucSo('microfluidizer'), mucSo('dongHoa')]).tieuChi[0].dat === false);
+	dung('P3: ba-may chưa đo laser ở một mẻ thì mất sao đo', chamSao(nv('ba-may'), kqBa, { sang: false }, [mucSo('sieuAm', { laser: false }), mucSo('microfluidizer'), mucSo('dongHoa')]).tieuChi[2].dat === false);
+	dung('P3: ba-may lấy mẻ mới nhất của mỗi máy (mẻ cũ cùng máy không tính)', (() => {
+		const st = [mucSo('sieuAm'), mucSo('microfluidizer'), mucSo('dongHoa'), mucSo('dongHoa', { me: 500 })];
+		return chamSao(nv('ba-may'), kqBa, { sang: false }, st).sao === 3;
+	})());
 }
 
 // Thuật ngữ: trong chữ của phòng lab, hiện tượng giọt nhập lại với nhau gọi là "hợp giọt" (không dùng "hợp nhất")
