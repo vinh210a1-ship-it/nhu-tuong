@@ -277,4 +277,4 @@ if (loiCam.length || nhomHong.length || loiThuNgay.length || loiRnd.length) {
 	console.log('\nkiem-sau-build: KHÔNG ĐẠT');
 	process.exit(1);
 }
-console.log(`kiem-sau-build: đạt (0 chuỗi cấm, 0 liên kết nội bộ hỏng, 8/8 bài có hộp "Thử ngay", ${Object.keys(LIEN_QUAN).length} bài có hộp "Liên quan ở khu khác", mọi #nv-… khớp nhiệm vụ, trang Số liệu R&D đủ 30 + 7 + 16 dòng, 8/8 bài có Tự kiểm tra, mức độ và Cần biết trước; khu đã chuẩn hóa: ${KHU_CHUAN.join(', ') || 'chưa có'})`);
+console.log(`kiem-sau-build: đạt (0 chuỗi cấm, 0 liên kết nội bộ hỏng, 8/8 bài có hộp "Thử ngay", ${Object.keys(LIEN_QUAN).length} bài có hộp "Liên quan ở khu khác" (${Object.values(LIEN_QUAN).reduce((t, d) => t + d.length, 0)} liên kết, 13 cặp hai chiều), mọi #nv-… khớp nhiệm vụ, trang Số liệu R&D đủ 30 + 7 + 16 dòng, 8/8 bài có Tự kiểm tra, mức độ và Cần biết trước; khu đã chuẩn hóa: ${KHU_CHUAN.join(', ') || 'chưa có'})`);
