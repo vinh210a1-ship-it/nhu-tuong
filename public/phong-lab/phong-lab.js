@@ -1,8 +1,11 @@
 // Phòng lab ảo: giao diện. Mọi con số đều lấy từ mo-hinh.js (đã có phép kiểm).
 // Cách chơi: bấm tủ để mở, kéo chai thả vào cốc trên cân; kéo cốc sang từng máy.
 import { stokes } from '../cong-thuc.js';
-import { doNhotNuoc, moPhongMe, chamSao, LUAT_CHOI, NHIEM_VU, NHU_HOA, DAU, NHAN, lopKichThuoc, CAO_ONG_MM, doKhongNo, thoiGianCamUng } from './mo-hinh.js';
+import { doNhotNuoc, doNhotXanthan, moPhongMe, chamSao, LUAT_CHOI, NHIEM_VU, NHU_HOA, DAU, NHAN, lopKichThuoc, CAO_ONG_MM, doKhongNo, thoiGianCamUng } from './mo-hinh.js';
 import { TU } from './tu.js';
+import { COC_RONG, MAY_MAC_DINH, ME, PT, PPM, LY, chuanCoc, quyDoiMe, tongMe, khoiLuongSauDongHoa, gioiHan, kepMe, doiKhoiLuongMe, hienThiO, datO, datTuBu, taoThamSo, docThamSo, tachHash } from './cong-thuc-me.js';
+import { THIET_BI, kiemMay } from './thiet-bi.js';
+import { doHat, chuDai, chuKichThuoc, DONG_PHA_LOANG } from './may-do-hat.js';
 
 const BASE = '/nhu-tuong/';
 const goc = dungVo(document.getElementById('phong-lab'));
@@ -99,8 +102,6 @@ const nhanHTML = (n) =>
 const lienKet = (n) => (n.bai ? ` <a href="${BASE}${n.bai}/">Đọc bài</a>` : '');
 
 /* ---------------- trạng thái ---------------- */
-const COC_RONG = () => ({ nuoc: false, dau: null, gDau: 10, nhuHoa: null, gNhuHoa: 1, gXanthan: 0, tocopherol: false, edta: false });
-const MAY_MAC_DINH = () => ({ khuay: { rpm: 10000, phut: 2 }, dongHoa: { bar: 300, soLan: 1, lamLanh: false } });
 const XONG_RONG = () => ({ khuay: false, dongHoa: false, do: false, tua: false });
 
 const S = {
@@ -116,17 +117,22 @@ const S = {
 	dangChay: false,
 	tab: 'tach',
 	bq: { nhietDo: 25, sang: false },
+	may_do: 'nhieuXaLaser', // máy đo cỡ hạt đang chọn (đọc mẫu, không đổi mẫu)
+	lyKep: '', // lý do ô vừa bị kẹp về giới hạn
+	doan: null, // thẻ đoán trước khi đổi khối lượng mẻ: null | { daChon: null | 'to' | 'nho' | 'nhu-cu' }
+	chiaSe: '', // chuỗi đường dẫn đang hiện để người dùng tự chép
 };
 
 const coMau = () => S.coc.nuoc && !!S.coc.dau;
 function dongBo() {
 	const c = S.coc;
+	const qd = quyDoiMe(c); // gram → phần trăm; mô hình vẫn nhận phần trăm nên khối lượng mẻ không làm đổi d32
 	S.me = {
 		dau: c.dau ?? 'huong-duong',
-		phanTramDau: c.gDau,
+		phanTramDau: qd.phanTramDau,
 		nhuHoa: c.nhuHoa,
-		phanTramNhuHoa: c.gNhuHoa,
-		phanTramXanthan: c.gXanthan,
+		phanTramNhuHoa: qd.phanTramNhuHoa,
+		phanTramXanthan: qd.phanTramXanthan,
 		tocopherol: c.tocopherol,
 		edta: c.edta,
 		khuay: S.may.khuay,
@@ -228,7 +234,7 @@ function moTram(id) {
 }
 
 function veBuoc() {
-	const daXong = { can: coMau(), ...S.xong };
+	const daXong = { can: coMau(), ...S.xong, do: daDoDuoc() };
 	goc.querySelector('.pl-buoc').innerHTML = TRAM.map(
 		(t) => `<button type="button" class="pl-chip${S.tram === t.id ? ' dang' : ''}${daXong[t.id] ? ' xong' : ''}" data-chip="${t.id}"><span>${daXong[t.id] ? '✓' : t.so}</span>${t.ten}</button>`,
 	).join('');
@@ -289,7 +295,7 @@ function themVaoCoc(mon) {
 		}
 		const doi = c.dau && c.dau !== mon.khoa;
 		c.dau = mon.khoa;
-		c.gDau = cd.phanTramDau ?? c.gDau;
+		c.gDau = cd.phanTramDau != null ? Math.round(((cd.phanTramDau * tongMe(c)) / 100) * 1e6) / 1e6 : c.gDau;
 		const U = doKhongNo(DAU[mon.khoa]);
 		doiMe(doi ? `Đã đổi sang ${h(mon.ten.toLowerCase())} (mỗi mẻ chỉ một loại dầu).` : `${h(mon.ten)}: độ không no U ≈ ${soCD(U)}. ${U > 60 ? 'Khá dễ ôi đấy!' : U < 20 ? 'Rất bền oxy hóa.' : 'Bền vừa phải.'}${c.nuoc ? '' : ' Nhớ thêm <b>nước cất</b> từ bình trên tường.'}`);
 	} else if (mon.loai === 'nhuHoa') {
@@ -302,7 +308,7 @@ function themVaoCoc(mon) {
 		c.nhuHoa = mon.khoa;
 		doiMe(doi ? `Đã đổi chất nhũ hóa sang ${h(nh.ten.split(' (')[0])}.` : nh.loai === 'WO' ? `Hmm, ${h(nh.ten.split(' (')[0])} có HLB thấp, ưa dầu… bạn chắc chứ?` : `${h(nh.ten.split(' (')[0])} vào cốc rồi.`);
 	} else if (mon.loai === 'xanthan') {
-		c.gXanthan = c.gXanthan || 0.2;
+		c.gXanthan = c.gXanthan || Math.round(((0.2 * tongMe(c)) / 100) * 1e6) / 1e6;
 		doiMe('Xanthan làm đặc pha nước. Nhưng cẩn thận: dùng ít quá có khi còn tệ hơn không dùng!');
 	} else if (mon.loai === 'tocopherol') {
 		c.tocopherol = true;
@@ -328,7 +334,7 @@ function boKhoiCoc(loai) {
 	veTuMo();
 }
 function themNuoc() {
-	if (S.coc.nuoc) return noi('Cốc đã có nước cất rồi. Lượng nước tự bù cho đủ 100 g.');
+	if (S.coc.nuoc) return noi('Cốc đã có nước cất rồi. Lượng nước tự bù cho đủ ' + soCD(S.coc.me, 1) + ' g.');
 	S.coc.nuoc = true;
 	S.viTri = 'can';
 	doiMe(S.coc.dau ? 'Nước vào rồi! Dầu nổi thành lớp trên mặt nước. Giờ kéo cốc sang <b>máy khuấy</b>.' : 'Nước vào rồi! Giờ mở <b>tủ dầu béo</b> lấy dầu.');
@@ -347,6 +353,38 @@ function veBang() {
 	b.querySelectorAll('[data-o]').forEach((o) => o.addEventListener('input', () => doiThongSo(o)));
 	b.querySelectorAll('[data-lam]').forEach((n) => n.addEventListener('click', () => LAM[n.dataset.lam](n)));
 	b.querySelectorAll('[data-bo]').forEach((n) => n.addEventListener('click', () => boKhoiCoc(n.dataset.bo)));
+	b.querySelectorAll('[data-n]').forEach((n) => n.addEventListener('change', () => doiO(n)));
+	b.querySelectorAll('[data-cach]').forEach((n) =>
+		n.addEventListener('change', () => {
+			S.coc.cachNhap = n.dataset.cach;
+			veBang();
+			goc.querySelector(`[data-cach="${n.dataset.cach}"]`)?.focus();
+		}),
+	);
+	b.querySelector('[data-tubu]')?.addEventListener('change', (e) => {
+		S.coc = datTuBu(S.coc, e.target.checked);
+		S.chiaSe = '';
+		veBang();
+		capNhatCanh();
+		goc.querySelector('[data-tubu]')?.focus();
+	});
+	b.querySelectorAll('[data-chi]').forEach((d) => d.addEventListener('toggle', () => (S[d.dataset.chi] = d.open)));
+	b.querySelectorAll('[data-doan]').forEach((n) =>
+		n.addEventListener('click', () => {
+			if (n.dataset.doan === 'bo') S.doan = null;
+			else if (S.doan) S.doan.daChon = n.dataset.doan;
+			veBang();
+		}),
+	);
+	b.querySelectorAll('[data-may-do]').forEach((n) =>
+		n.addEventListener('click', () => {
+			S.may_do = n.dataset.mayDo;
+			veBuoc();
+			veBang();
+			capNhatCanh();
+		}),
+	);
+	b.querySelector('.pl-chia-o')?.select();
 	b.querySelectorAll('[data-mo-tu]').forEach((n) => n.addEventListener('click', () => moTu(n.dataset.moTu)));
 	b.querySelectorAll('[data-dua]').forEach((n) => n.addEventListener('click', () => duaCocToi(n.dataset.dua)));
 	b.querySelectorAll('[data-tab]').forEach((n) =>
@@ -388,20 +426,115 @@ function canCoc(tram) {
 function dongCoc(loai, ten, chiTiet, thanh = '') {
 	return `<li class="pl-dong-coc"><div class="pl-dong-dau"><span class="pl-cham pl-cham-${loai}"></span><b>${ten}</b><span class="pl-dong-ct">${chiTiet}</span><button type="button" class="pl-bo" data-bo="${loai}" aria-label="Bỏ ${h(ten)} khỏi cốc">✕</button></div>${thanh}</li>`;
 }
+/* ---------------- bàn cân: khối lượng mẻ tự chọn (20–2.000 g) ---------------- */
+const NAC_BUOC = [0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10];
+const buocDep = (x) => NAC_BUOC.filter((s) => s <= x * 1.0000001).pop() ?? 0.001;
+const BUOC_GRAM = { gDau: 100, gNhuHoa: 2000, gXanthan: 10000 }; // bước thanh trượt = tổng mẻ / số này (mẻ 100 g: 1; 0,05; 0,01 g như cũ)
+const soO = (v) => String(Number(Number(v).toPrecision(5)));
+const soG = (v) => soCD(v, v < 1 ? 3 : v < 10 ? 2 : 1);
+const donViO = (k) => {
+	const x = S.coc.cachNhap;
+	if (k === 'gNuoc') return x === 'phan-tram' ? '%' : 'g';
+	if (x === 'phan-tram') return '%';
+	if (x === 'ty-le') return k === 'gDau' ? '' : '%';
+	return 'g';
+};
+
+function oGram(k, nhan, khoa = false) {
+	const c = S.coc;
+	const gh = gioiHan(c, k);
+	const x = c.cachNhap;
+	return `<div class="pl-o pl-o-gram${khoa ? ' khoa' : ''}">
+<label class="pl-o-nhan" for="pl-n-${k}">${nhan}${khoa ? ' <small>🔒 đề bài cố định</small>' : ''}</label>
+<span class="pl-o-dong"><input type="range" data-o="${k}" min="${gh.min}" max="${gh.max}" step="${buocDep(tongMe(c) / BUOC_GRAM[k])}" value="${c[k]}" ${khoa ? 'disabled' : ''} aria-label="${h(nhan)} (thanh trượt, tính bằng gram)"/>
+<span class="pl-o-so">${x === 'ty-le' && k === 'gDau' ? '1 :' : ''}<input id="pl-n-${k}" class="pl-so-nhap" type="number" inputmode="decimal" step="any" min="0" data-n="${k}" value="${soO(hienThiO(c, k))}" ${khoa ? 'disabled' : ''}/> ${donViO(k)}</span></span>
+${x !== 'gam' ? `<small class="pl-o-g" data-g="${k}">≈ ${soG(c[k])} g</small>` : ''}</div>`;
+}
+function oNuoc() {
+	return `<div class="pl-o pl-o-gram"><label class="pl-o-nhan" for="pl-n-gNuoc">Lượng nước</label>
+<span class="pl-o-dong"><span class="pl-o-so"><input id="pl-n-gNuoc" class="pl-so-nhap" type="number" inputmode="decimal" step="any" min="0" data-n="gNuoc" value="${soO(hienThiO(S.coc, 'gNuoc'))}"/> ${donViO('gNuoc')}</span></span></div>`;
+}
+function oMe() {
+	const tong = tongMe(S.coc);
+	return `<div class="pl-o pl-o-gram pl-o-me"><label class="pl-o-nhan" for="pl-n-me">Khối lượng mẻ</label>
+<span class="pl-o-dong"><input type="range" data-o="me" min="${ME.min}" max="${ME.max}" step="1" value="${tong}" aria-label="Khối lượng mẻ (thanh trượt, tính bằng gram)"/>
+<span class="pl-o-so"><input id="pl-n-me" class="pl-so-nhap" type="number" inputmode="decimal" step="0.1" min="${ME.min}" max="${ME.max}" data-n="me" value="${soO(tong)}"/> g</span></span>
+<small class="pl-o-g">Từ ${ME.min} đến ${ME.max.toLocaleString('vi-VN')} g: quy mô bàn thí nghiệm.</small></div>`;
+}
+
+function htmlQuyDoi() {
+	if (!coMau()) return `<p class="pl-meo">Cần có nước và dầu trong cốc thì bảng quy đổi mới có số.</p>`;
+	const q = quyDoiMe(S.coc);
+	const dong = [
+		`Dầu <b>${soCD(q.phanTramDau, 1)}%</b> khối lượng · φ = <b>${soCD(q.phi, 3)}</b> thể tích ${nhanHTML({ ma: 'N' })}`,
+		`${q.tyLeDauNuoc != null ? `Dầu : nước = 1 : <b>${so(q.tyLeDauNuoc, 2)}</b>` : ''}${q.tyLeNhuHoaDau != null ? ` · Chất nhũ hóa : dầu = 1 : <b>${so(q.tyLeNhuHoaDau, 2)}</b>` : ''}`,
+		`Thể tích mẻ ≈ <b>${soCD(q.theTichML, 0)} mL</b> ${nhanHTML({ ma: 'T' })} <small>(coi chất nhũ hóa và xanthan nặng 1 g/mL; sai số dưới 1% vì lượng nhỏ)</small>`,
+	];
+	if (S.kq?.nhuHoaToiThieu) dong.push(`Chất nhũ hóa tối thiểu để phủ giọt cỡ hiện tại ≈ <b>${soG((S.kq.nhuHoaToiThieu * q.tong) / 100)} g</b> ${nhanHTML(NHAN.gamma)}`);
+	return `<ul class="pl-qd">${dong.filter(Boolean).map((d) => `<li>${d}</li>`).join('')}</ul>${q.loi.map((l) => `<p class="pl-canh-bao">${h(l)}</p>`).join('')}`;
+}
+const kiemMayHienTai = (id) => {
+	const q = quyDoiMe(S.coc);
+	return kiemMay(id, { theTichML: q.theTichML, nhotMPas: S.kq?.etaC ?? doNhotXanthan(q.phanTramXanthan) });
+};
+function htmlMay() {
+	if (!coMau()) return `<p class="pl-meo">Cần có nước và dầu trong cốc để biết máy nào chạy được.</p>`;
+	const k = kiemMayHienTai('khuay');
+	const d = kiemMayHienTai('dongHoa');
+	const T = THIET_BI;
+	const dong = (ok, ten, ct, ly) =>
+		`<li class="${ok ? 'pl-may-ok' : 'pl-may-khong'}"><span aria-hidden="true">${ok ? '✓' : '✗'}</span> <b>${ten}</b> <small>${ct}</small>${ly ? `<small class="pl-may-ly">${h(ly)}</small>` : ''}</li>`;
+	return (
+		`<ul class="pl-ds-may">` +
+		dong(k.chay, 'Máy khuấy cắt cao', `(${T.khuay.theTichML[0]} mL–${T.khuay.theTichML[1] / 1000} L, ≤ ${T.khuay.nhotToiDaMPas.toLocaleString('vi-VN')} mPa·s) ${nhanHTML({ ma: 'N' })}`, k.ly) +
+		dong(d.chay, 'Máy đồng hóa áp cao', `(tối thiểu ${T.dongHoa.theTichToiThieuML} mL; ${T.dongHoa.theTichNamLaiML} mL nằm lại máy) ${nhanHTML({ ma: 'N' })}`, d.ly) +
+		`</ul><p class="pl-meo">Thông số theo ${T.khuay.vd} và ${T.dongHoa.vd}. ${T.dongHoa.ghiChu}</p>`
+	);
+}
+function htmlDoan() {
+	if (!S.doan) return '';
+	const lk = `<a href="${BASE}nhu-tuong/hinh-thanh/">Đọc bài</a>`;
+	if (!S.doan.daChon) {
+		return `<div class="pl-doan" role="group" aria-label="Đoán trước khi chạy lại">
+<p><b>Giọt hỏi:</b> Bạn vừa đổi khối lượng mẻ. Đoán xem: chạy lại đúng áp suất và số lần qua máy như cũ, giọt sẽ…</p>
+<div class="pl-doan-nut"><button type="button" class="pl-nut" data-doan="to">to hơn</button><button type="button" class="pl-nut" data-doan="nho">nhỏ hơn</button><button type="button" class="pl-nut" data-doan="nhu-cu">như cũ</button><button type="button" class="pl-link" data-doan="bo">Bỏ qua</button></div></div>`;
+	}
+	const chu = { to: 'to hơn', nho: 'nhỏ hơn', 'nhu-cu': 'như cũ' }[S.doan.daChon];
+	return `<div class="pl-doan xong"><p>Bạn đoán: <b>${chu}</b>. ${S.doan.daChon === 'nhu-cu' ? 'Đúng rồi.' : 'Đáp án là <b>như cũ</b>.'}</p>
+<p class="pl-meo">Ở máy đồng hóa áp cao, năng lượng cấp cho mỗi mL mẫu xấp xỉ bằng độ giảm áp qua van, nên không phụ thuộc mẻ to hay nhỏ. Mẻ to chỉ tốn thời gian bơm lâu hơn. (Máy siêu âm thì khác: năng lượng chia cho thể tích mẻ. Sẽ có ở phòng lab sau.) ${nhanHTML({ ma: 'N' })} ${lk}</p>
+<button type="button" class="pl-link" data-doan="bo">Đóng</button></div>`;
+}
+
 function bangCan() {
 	const c = S.coc;
 	const cd = S.nv?.coDinh ?? {};
 	const ds = [];
-	if (c.dau) ds.push(dongCoc('dau', DAU[c.dau].ten, '', thanhTruot('gDau', 'Lượng dầu', 1, 40, 1, c.gDau, 'g', undefined, cd.phanTramDau != null)));
-	if (c.nhuHoa) ds.push(dongCoc('nhuHoa', NHU_HOA[c.nhuHoa].ten.split(' (')[0], '', thanhTruot('gNhuHoa', 'Lượng chất nhũ hóa', 0.05, 3, 0.05, c.gNhuHoa, 'g', (v) => soCD(v, 2))));
-	if (c.gXanthan) ds.push(dongCoc('xanthan', 'Xanthan gum', '', thanhTruot('gXanthan', 'Lượng xanthan', 0.01, 0.5, 0.01, c.gXanthan, 'g', (v) => soCD(v, 2))));
-	if (c.tocopherol) ds.push(dongCoc('tocopherol', 'Tocopherol', '200 ppm'));
-	if (c.edta) ds.push(dongCoc('edta', 'EDTA', '50 ppm'));
-	const gKhac = (c.dau ? c.gDau : 0) + (c.nhuHoa ? c.gNhuHoa : 0) + c.gXanthan;
-	if (c.nuoc) ds.push(dongCoc('nuoc', 'Nước cất', `${soCD(100 - gKhac)} g (tự bù đủ 100 g)`));
+	const tong = tongMe(c);
+	if (c.dau) ds.push(dongCoc('dau', DAU[c.dau].ten, '', oGram('gDau', 'Lượng dầu', cd.phanTramDau != null)));
+	if (c.nhuHoa) ds.push(dongCoc('nhuHoa', NHU_HOA[c.nhuHoa].ten.split(' (')[0], '', oGram('gNhuHoa', 'Lượng chất nhũ hóa')));
+	if (c.gXanthan) ds.push(dongCoc('xanthan', 'Xanthan gum', '', oGram('gXanthan', 'Lượng xanthan')));
+	if (c.tocopherol) ds.push(dongCoc('tocopherol', 'Tocopherol', `${PPM.tocopherol} ppm ≈ ${soG(PPM.tocopherol * 1e-6 * tong)} g`));
+	if (c.edta) ds.push(dongCoc('edta', 'EDTA', `${PPM.edta} ppm ≈ ${soG(PPM.edta * 1e-6 * tong)} g`));
+	if (c.nuoc) {
+		ds.push(
+			dongCoc(
+				'nuoc',
+				'Nước cất',
+				c.nuocTuBu ? `<span data-nuoc-so>${soG(quyDoiMe(c).gNuocThuc)}</span> g` : '',
+				`<label class="pl-o pl-tick"><input type="checkbox" data-tubu ${c.nuocTuBu ? 'checked' : ''}/> tự bù cho đủ mẻ</label>${c.nuocTuBu ? '' : oNuoc()}`,
+			),
+		);
+	}
 	const thieu = [!c.nuoc && 'nước cất (bấm bình trên tường)', !c.dau && 'dầu (tủ dầu béo)'].filter(Boolean);
+	const mo = (ten) => ((S[ten] ?? matchMedia('(min-width: 60rem)').matches) ? ' open' : '');
 	return (
-		dauBang('Cốc trên cân', 'Mở tủ, kéo chai thả vào cốc (hoặc bấm chai rồi bấm “Cho vào cốc”). Cốc luôn là 100 g, nước tự bù phần còn lại.', '⚖️') +
+		dauBang('Cốc trên cân', `Mở tủ, kéo chai thả vào cốc (hoặc bấm chai rồi bấm “Cho vào cốc”). Bạn chọn khối lượng mẻ; nước tự bù phần còn lại (tắt tự bù nếu muốn tự cân nước).`, '⚖️') +
+		htmlDoan() +
+		oMe() +
+		`<p class="pl-ly" role="status" aria-live="polite" data-ly>${h(S.lyKep)}</p>` +
+		`<fieldset class="pl-cach"><legend>Nhập theo</legend>${[['gam', 'gram'], ['phan-tram', '% khối lượng'], ['ty-le', 'tỷ lệ dầu : nước']]
+			.map(([id, ten]) => `<label><input type="radio" name="pl-cach" data-cach="${id}" ${c.cachNhap === id ? 'checked' : ''}/> ${ten}</label>`)
+			.join('')}</fieldset>` +
 		`<div class="pl-nut-tu">
   <button type="button" class="pl-nut-tu-1" data-mo-tu="tu-dau">🛢️ Tủ dầu béo</button>
   <button type="button" class="pl-nut-tu-1" data-mo-tu="tu-nhu-hoa">🧴 Tủ nhũ hóa & ổn định</button>
@@ -411,58 +544,159 @@ function bangCan() {
 		(ds.length ? `<ul class="pl-ds-coc">${ds.join('')}</ul>` : `<p class="pl-meo">Cốc đang trống.</p>`) +
 		(thieu.length
 			? `<p class="pl-meo">Còn thiếu: ${thieu.join(', ')}.</p>`
-			: `<p class="pl-ok">Cốc sẵn sàng. ${c.nhuHoa ? '' : '<b>Chưa có chất nhũ hóa</b>, cứ thử nếu bạn tò mò. '}Kéo cốc sang máy khuấy, hoặc <button type="button" class="pl-link" data-dua="khuay">mang cốc sang máy khuấy</button>.</p>`)
+			: `<p class="pl-ok">Cốc sẵn sàng. ${c.nhuHoa ? '' : '<b>Chưa có chất nhũ hóa</b>, cứ thử nếu bạn tò mò. '}Kéo cốc sang máy khuấy, hoặc <button type="button" class="pl-link" data-dua="khuay">mang cốc sang máy khuấy</button>.</p>`) +
+		`<details class="pl-chitiet" data-chi="moQuyDoi"${mo('moQuyDoi')}><summary>Quy đổi</summary><div class="pl-quy-doi-nd">${htmlQuyDoi()}</div></details>` +
+		`<details class="pl-chitiet" data-chi="moMay"${mo('moMay')}><summary>Máy chạy được với mẻ này</summary><div class="pl-may-nd">${htmlMay()}</div></details>` +
+		`<div class="pl-chia-se"><button type="button" class="pl-link" data-lam="chepLink">🔗 Chép đường dẫn công thức</button><span class="pl-chia-tb" role="status" aria-live="polite"></span>${S.chiaSe ? `<input class="pl-chia-o" readonly value="${h(S.chiaSe)}" aria-label="Đường dẫn công thức, bấm để chọn rồi chép"/>` : ''}</div>`
 	);
+}
+
+/** Cập nhật tại chỗ các số trên bàn cân (không vẽ lại cả bảng, để ô đang gõ không mất con trỏ). */
+function capNhatSoCan() {
+	const b = goc.querySelector('.pl-bang');
+	if (!b || S.tram !== 'can') return;
+	const c = S.coc;
+	const dangGo = document.activeElement;
+	for (const k of ['gDau', 'gNhuHoa', 'gXanthan']) {
+		const r = b.querySelector(`[data-o="${k}"]`);
+		if (!r) continue;
+		const gh = gioiHan(c, k);
+		r.min = String(gh.min);
+		r.max = String(gh.max);
+		r.step = String(buocDep(tongMe(c) / BUOC_GRAM[k]));
+		r.value = String(c[k]);
+		const n = b.querySelector(`[data-n="${k}"]`);
+		if (n && n !== dangGo) n.value = soO(hienThiO(c, k));
+		const g = b.querySelector(`[data-g="${k}"]`);
+		if (g) g.textContent = `≈ ${soG(c[k])} g`;
+	}
+	const tong = tongMe(c);
+	const rm = b.querySelector('[data-o="me"]');
+	if (rm) rm.value = String(tong);
+	const nm = b.querySelector('[data-n="me"]');
+	if (nm && nm !== dangGo) nm.value = soO(tong);
+	const nn = b.querySelector('[data-n="gNuoc"]');
+	if (nn && nn !== dangGo) nn.value = soO(hienThiO(c, 'gNuoc'));
+	const ns = b.querySelector('[data-nuoc-so]');
+	if (ns) ns.textContent = soG(quyDoiMe(c).gNuocThuc);
+	const qd = b.querySelector('.pl-quy-doi-nd');
+	if (qd) qd.innerHTML = htmlQuyDoi();
+	const my = b.querySelector('.pl-may-nd');
+	if (my) my.innerHTML = htmlMay();
+	const ly = b.querySelector('[data-ly]');
+	if (ly) ly.textContent = S.lyKep;
+}
+
+/** Sau mọi thay đổi gram hoặc khối lượng mẻ: mẻ đã chạy máy thì thành mẻ mới. `truocDo`: trước đó mẫu đã được đo? */
+function sauKhiDoiCan(lyDo, { doiMeG = false, truocDo = false } = {}) {
+	S.lyKep = lyDo[0] ?? '';
+	if (S.xong.khuay || S.xong.dongHoa || S.xong.do || S.xong.tua) {
+		doiMe('Đổi lượng cân.');
+		veBuoc();
+	}
+	if (doiMeG && truocDo && !docLS('pl:da-doan-me', false)) {
+		ghiLS('pl:da-doan-me', true);
+		S.doan = { daChon: null };
+		S.chiaSe = '';
+		tinh();
+		veBang();
+		capNhatCanh();
+		return;
+	}
+	tinh();
+	capNhatSoCan();
+	capNhatCanh();
+}
+
+/** Ô số được gõ xong (Enter hoặc rời ô). */
+function doiO(n) {
+	const k = n.dataset.n;
+	const v = parseFloat(String(n.value).replace(',', '.'));
+	const truocDo = S.xong.do;
+	const r = k === 'me' ? doiKhoiLuongMe(S.coc, v) : datO(S.coc, k, v);
+	S.coc = r.coc;
+	S.chiaSe = '';
+	sauKhiDoiCan(r.ly, { doiMeG: k === 'me', truocDo });
+	n.value = soO(k === 'me' ? tongMe(S.coc) : hienThiO(S.coc, k)); // gõ ngoài dải thì ô hiện lại số đã kẹp
 }
 
 function bangKhuay() {
 	const k = S.may.khuay;
+	const kM = kiemMayHienTai('khuay');
 	return (
 		dauBang('Máy khuấy tốc độ cao (rotor–stator)', 'Đầu rotor quay trong lồng stator, xé dầu thành giọt cỡ vài chục µm: đây là bước tạo <b>tiền nhũ</b>. Giọt còn to, nhưng giúp máy đồng hóa làm việc hiệu quả hơn.', '🌀') +
 		canCoc('khuay') +
+		(coMau() && !kM.chay ? `<p class="pl-canh-bao">${h(kM.ly)}</p>` : '') +
 		`<div class="pl-luoi">` +
 		thanhTruot('khuay.rpm', 'Tốc độ', 2000, 20000, 500, k.rpm, 'vòng/phút', (v) => v.toLocaleString('vi-VN')) +
 		thanhTruot('khuay.phut', 'Thời gian', 0.5, 10, 0.5, k.phut, 'phút') +
-		`</div><button type="button" class="pl-nut" data-lam="khuay" ${coMau() && S.viTri === 'khuay' ? '' : 'disabled'}>▶ Chạy máy khuấy</button>` +
+		`</div><button type="button" class="pl-nut" data-lam="khuay" ${coMau() && S.viTri === 'khuay' && kM.chay ? '' : 'disabled'}>▶ Chạy máy khuấy</button>` +
 		(S.xong.khuay && S.kq ? `<p class="pl-ok">Tiền nhũ xong: giọt cỡ ${so(S.kq.dPre)} µm. Mẫu đục, nhưng để yên vài phút là tách. Kéo cốc sang máy đồng hóa.</p>` : '') +
-		`<p class="pl-meo">Có thể bỏ qua bước này và cho thẳng vào máy đồng hóa, nhưng hãy xem chuyện gì xảy ra.</p>`
+		`<p class="pl-meo">Có thể bỏ qua bước này và cho thẳng vào máy đồng hóa, nhưng hãy xem chuyện gì xảy ra. Mô hình máy khuấy của bàn này chưa tính ảnh hưởng của thể tích mẻ ${nhanHTML({ ma: 'T' })}.</p>`
 	);
+}
+
+function khoiLuongConLai() {
+	const q = quyDoiMe(S.coc);
+	if (!S.xong.dongHoa) return q.tong;
+	return khoiLuongSauDongHoa(q.tong, q.theTichML, kiemMayHienTai('dongHoa').haoML);
 }
 
 function bangDongHoa() {
 	const d = S.may.dongHoa;
 	const kq = S.kq;
+	const kM = kiemMayHienTai('dongHoa');
 	return (
 		dauBang('Máy đồng hóa áp suất cao', 'Bơm piston ép mẫu qua khe van rất hẹp. Dòng chảy rối, lực cắt và cavitation xé giọt xuống dưới 1 µm. Áp suất càng cao, giọt càng nhỏ, và mẫu càng nóng.', '🔩') +
 		canCoc('dongHoa') +
+		(coMau() && !kM.chay ? `<p class="pl-canh-bao">${h(kM.ly)}</p>` : '') +
 		`<div class="pl-luoi">` +
 		thanhTruot('dongHoa.bar', 'Áp suất', 50, 1500, 10, d.bar, 'bar', (v) => v.toLocaleString('vi-VN')) +
 		thanhTruot('dongHoa.soLan', 'Số lần qua máy', 1, 5, 1, d.soLan, 'lần') +
 		`<label class="pl-o pl-tick"><input type="checkbox" data-o="dongHoa.lamLanh" ${d.lamLanh ? 'checked' : ''}/> Làm lạnh mẫu về 25 °C giữa các lần qua máy</label>` +
-		`</div><button type="button" class="pl-nut" data-lam="dongHoa" ${coMau() && S.viTri === 'dongHoa' ? '' : 'disabled'}>▶ Chạy máy đồng hóa</button>` +
-		(S.xong.dongHoa && kq ? `<p class="pl-ok">Xong ${d.soLan} lần ở ${d.bar.toLocaleString('vi-VN')} bar. Nhiệt độ mẫu ra: <b>${soCD(kq.nhietRa)} °C</b>. Kéo cốc sang máy đo hạt.</p>` : '') +
+		`</div><button type="button" class="pl-nut" data-lam="dongHoa" ${coMau() && S.viTri === 'dongHoa' && kM.chay ? '' : 'disabled'}>▶ Chạy máy đồng hóa</button>` +
+		(S.xong.dongHoa && kq ? `<p class="pl-ok">Xong ${d.soLan} lần ở ${d.bar.toLocaleString('vi-VN')} bar. Nhiệt độ mẫu ra: <b>${soCD(kq.nhietRa)} °C</b>. Còn lại ≈ <b>${soCD(khoiLuongConLai(), 0)} g</b> (${THIET_BI.dongHoa.theTichNamLaiML} mL nằm lại trong máy ${nhanHTML({ ma: 'G' })}). Kéo cốc sang máy đo hạt.</p>` : '') +
 		`<p class="pl-meo">Mỗi 100 bar làm mẫu nóng thêm khoảng 2,4 °C ${nhanHTML(NHAN.nhiet)}. Áp suất được biến gần hết thành nhiệt.</p>`
 	);
 }
 
+/* ---------------- máy đo kích thước hạt (nhiễu xạ laser hoặc DLS) ---------------- */
+const MAY_DO = ['nhieuXaLaser', 'dls'];
+const mauDo = () => (S.kq ? { d32: S.kq.d32, sigma: S.kq.sigma, nhan: 'T' } : null);
+const daDoDuoc = () => !!(S.xong.do && S.kq && doHat(mauDo(), S.may_do).doDuoc);
+
 function bangDo() {
-	const dau = dauBang('Máy đo kích thước hạt', 'Chiếu laser qua mẫu, đo ánh sáng tán xạ để suy ra phân bố kích thước giọt.', '🔬');
+	const dau = dauBang('Máy đo kích thước hạt', 'Hai máy thật, hai dải đo. Chọn máy hợp với cỡ giọt dự kiến: máy nào cũng đo hẹp hơn dải quảng cáo.', '🔬');
 	if (!S.xong.do) return dau + (canCoc('do') || `<p class="pl-meo">Đặt cốc vào máy là máy tự đo.</p>`);
 	const kq = S.kq;
+	const may = THIET_BI[S.may_do];
+	const dh = doHat(mauDo(), S.may_do);
+	const chon = `<div class="pl-chon-may" role="group" aria-label="Chọn máy đo">${MAY_DO.map(
+		(id) => `<button type="button" class="pl-nut${S.may_do === id ? ' chon' : ''}" data-may-do="${id}" aria-pressed="${S.may_do === id}">${id === 'dls' ? 'DLS' : 'Nhiễu xạ laser'}</button>`,
+	).join('')}</div>`;
+	const tenMay = `<p class="pl-meo"><b>${h(may.ten)}</b> (ví dụ ${h(may.vd)}) · dải máy ${chuDai(may.daiMay)} ${nhanHTML({ ma: 'N' })} · tin cậy ~${chuDai(may.daiTinCay)} ${nhanHTML({ ma: 'N' })}<br><small>Dải máy là khả năng của máy theo hãng. Dải tin cậy là vùng các tổng quan khuyên dùng; ngoài vùng này số đo kém tin cậy.</small></p>`;
+	const canh = dh.canhBao.map((w) => `<p class="${w.muc === 'vang' ? 'pl-canh-bao' : 'pl-canh-xam'}">${w.muc === 'vang' ? '⚠ ' : ''}${h(w.chu)}</p>`).join('');
+	const ghiChu = dh.ghiChu.map((g) => `<p class="pl-meo">${h(g)}</p>`).join('');
+	if (!dh.doDuoc) return dau + chon + tenMay + canh;
 	const giaiHan = kq.thieuNhuHoa ? 'chất nhũ hóa' : S.xong.dongHoa ? 'năng lượng máy đồng hóa' : S.xong.khuay ? 'máy khuấy' : 'chưa trộn';
+	if (S.may_do === 'dls') {
+		return dau + chon + tenMay + `<p class="pl-ok">Đo được trong dải máy.</p>` + canh + ghiChu +
+			`<p class="pl-ok">Kéo cốc vào <b>tủ bảo quản</b> để tua nhanh thời gian, hoặc <button type="button" class="pl-link" data-dua="tua">mang cốc tới đó</button>.</p>`;
+	}
 	return (
-		dau +
+		dau + chon + tenMay +
 		`<div class="pl-so-lon">
-  <div><span>d₃₂</span><b>${so(kq.d32)} µm</b><small>trung bình theo diện tích</small></div>
-  <div><span>d₄₃</span><b>${so(kq.d43)} µm</b><small>trung bình theo thể tích</small></div>
-  <div><span>d₉₀</span><b>${so(kq.dv90)} µm</b><small>90% thể tích nhỏ hơn</small></div>
-</div>
-<div class="pl-hai-cot">
-  <figure class="pl-bieu-do">${veBieuDo(kq)}<figcaption>Phân bố theo thể tích (trục ngang chia log)</figcaption></figure>
+  <div><span>d₃₂</span><b>${so(dh.so.d32)} µm</b><small>trung bình theo diện tích</small></div>
+  <div><span>d₄₃</span><b>${so(dh.so.d43)} µm</b><small>trung bình theo thể tích</small></div>
+  <div><span>d₉₀</span><b>${so(dh.so.dv90)} µm</b><small>90% thể tích nhỏ hơn</small></div>
+  <div><span>span</span><b>${so(dh.so.span)}</b><small>(d₉₀ − d₁₀) / d₅₀</small></div>
+</div>` + canh +
+		`<div class="pl-hai-cot">
+  <figure class="pl-bieu-do">${veBieuDo(kq, may.daiTinCay)}<figcaption>Phân bố theo thể tích (trục ngang chia log). Vùng tô nhạt: dải tin cậy của máy.</figcaption></figure>
   <figure class="pl-kinh">${veKinh(kq)}<figcaption>Dưới kính hiển vi (minh họa)</figcaption></figure>
 </div>
-<p class="pl-meo">Kích thước giọt đang bị giới hạn bởi: <b>${giaiHan}</b>.${kq.nhuHoaToiThieu ? ` Để phủ hết bề mặt giọt cỡ này cần tối thiểu ≈ ${so(kq.nhuHoaToiThieu)}% chất nhũ hóa ${nhanHTML(NHAN.gamma)}.` : ''}</p>
-<p class="pl-ok">Kéo cốc vào <b>tủ bảo quản</b> để tua nhanh thời gian, hoặc <button type="button" class="pl-link" data-dua="tua">mang cốc tới đó</button>.</p>`
+<p class="pl-meo">Kích thước giọt đang bị giới hạn bởi: <b>${giaiHan}</b>.${kq.nhuHoaToiThieu ? ` Để phủ hết bề mặt giọt cỡ này cần tối thiểu ≈ ${so(kq.nhuHoaToiThieu)}% chất nhũ hóa ${nhanHTML(NHAN.gamma)}.` : ''}</p>` + ghiChu +
+		`<p class="pl-ok">Kéo cốc vào <b>tủ bảo quản</b> để tua nhanh thời gian, hoặc <button type="button" class="pl-link" data-dua="tua">mang cốc tới đó</button>.</p>`
 	);
 }
 
@@ -538,12 +772,14 @@ function doiThongSo(o) {
 		goc.querySelector('[data-o="ngay"]')?.focus();
 		return;
 	}
-	if (['gDau', 'gNhuHoa', 'gXanthan'].includes(k)) {
-		S.coc[k] = v;
-		if (S.xong.khuay || S.xong.dongHoa || S.xong.do || S.xong.tua) {
-			doiMe('Đổi lượng cân.');
-			veBuoc();
-		}
+	if (k === 'me' || ['gDau', 'gNhuHoa', 'gXanthan'].includes(k)) {
+		// thanh trượt gram hoặc khối lượng mẻ: đổi tại chỗ để thanh đang kéo không bị vẽ lại
+		const truocDo = S.xong.do;
+		const r = k === 'me' ? doiKhoiLuongMe(S.coc, v) : kepMe({ ...S.coc, [k]: v });
+		S.coc = r.coc;
+		S.chiaSe = '';
+		sauKhiDoiCan(r.ly, { doiMeG: k === 'me', truocDo });
+		return;
 	} else {
 		const [may, ts] = k.split('.');
 		S.may[may][ts] = v;
@@ -771,7 +1007,7 @@ function veTuMo() {
 	const tu = TU[tuDangMo];
 	el.querySelector('.pl-tu-ke').innerHTML = tu.mon.map(chaiHTML).join('');
 	const c = S.coc;
-	const gCan = c.nuoc ? 100 : (c.dau ? c.gDau : 0) + (c.nhuHoa ? c.gNhuHoa : 0) + c.gXanthan;
+	const gCan = c.nuoc ? tongMe(c) : (c.dau ? c.gDau : 0) + (c.nhuHoa ? c.gNhuHoa : 0) + c.gXanthan;
 	el.querySelector('.pl-dich').innerHTML = `${veCocNho()}<div class="pl-can-so"><span>${soCD(gCan, 1)}</span> g</div><small>${c.nuoc ? 'Kéo chai thả vào cốc' : 'Kéo chai thả vào cốc. Nhớ thêm nước cất (bình trên tường)'}</small>`;
 	const mon = tu.mon.find((m) => m.id === monChon);
 	el.querySelector('.pl-the-mon').innerHTML = mon ? theMon(mon) : `<p class="pl-meo">Bấm vào một chai để xem thông tin. Kéo chai thả vào cốc để cho vào mẻ.</p>`;
@@ -867,7 +1103,7 @@ function hieuUngRot(mon) {
 }
 function veCocNho() {
 	const c = S.coc;
-	const dau = c.dau ? Math.max(4, c.gDau * 0.9) : 0;
+	const dau = c.dau ? Math.max(4, quyDoiMe(c).phanTramDau * 0.9) : 0;
 	const nuoc = c.nuoc ? 52 - dau : 0;
 	return `<svg viewBox="0 0 80 90" class="pl-coc-nho" aria-hidden="true">
 <defs><clipPath id="pl-coc-nho-cat"><path d="M14 10 h52 l-4 68 a5 5 0 0 1 -5 5 h-34 a5 5 0 0 1 -5 -5 z"/></clipPath></defs>
@@ -1004,7 +1240,7 @@ function lamSachMau(r) {
 }
 
 /* ---------------- hình vẽ: biểu đồ, kính hiển vi, ống nghiệm ---------------- */
-function veBieuDo(kq) {
+function veBieuDo(kq, daiTinCay = null) {
 	const W = 320, H = 150, L = 8, B = 128;
 	const xMin = Math.log10(0.05), xMax = Math.log10(500);
 	const X = (d) => L + ((Math.log10(d) - xMin) / (xMax - xMin)) * (W - 2 * L);
@@ -1014,6 +1250,7 @@ function veBieuDo(kq) {
 	const moc = [0.1, 1, 10, 100];
 	return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Phân bố kích thước giọt, đỉnh quanh ${so(kq.dv50)} µm">
 <line x1="${L}" y1="${B}" x2="${W - L}" y2="${B}" class="truc"/>
+${daiTinCay ? `<rect x="${X(Math.max(daiTinCay[0], 0.05)).toFixed(1)}" y="${B - 108}" width="${Math.max(0, X(Math.min(daiTinCay[1], 500)) - X(Math.max(daiTinCay[0], 0.05))).toFixed(1)}" height="108" class="tin-cay"/>` : ''}
 ${moc.map((m) => `<line x1="${X(m)}" y1="${B}" x2="${X(m)}" y2="${B - 104}" class="luoi"/><text x="${X(m)}" y="${B + 14}" text-anchor="middle">${m.toLocaleString('vi-VN')} µm</text>`).join('')}
 ${diem.length ? `<polygon points="${X(lop.find((l) => l.d > 0.05)?.d ?? 0.05)},${B} ${diem.join(' ')} ${X(lop.filter((l) => l.d < 500).at(-1)?.d ?? 500)},${B}" class="vung"/>` : ''}
 <line x1="${X(kq.d43)}" y1="${B}" x2="${X(kq.d43)}" y2="${B - 110}" class="d43"/><text x="${X(kq.d43) + 4}" y="${B - 100}" class="d43-chu">d₄₃</text>
@@ -1278,7 +1515,7 @@ function capNhatCanh() {
 	coc.classList.toggle('chua-du', !coMau());
 	const daTron = S.xong.khuay || S.xong.dongHoa;
 	coc.classList.toggle('da-tron', daTron);
-	const dDay = S.coc.dau ? Math.max(2, (S.coc.gDau / 100) * 34) : 0;
+	const dDay = S.coc.dau ? Math.max(2, (quyDoiMe(S.coc).phanTramDau / 100) * 34) : 0;
 	const nuocCao = S.coc.nuoc ? 32 : 0;
 	const dau = coc.querySelector('.coc-dau');
 	dau.setAttribute('y', String(2 - nuocCao - dDay));
@@ -1292,7 +1529,7 @@ function capNhatCanh() {
 		const t = Math.min(1, Math.max(0, Math.log10(S.kq.d32 / 0.3) / 2));
 		coc.querySelector('.coc-nhu').style.fill = `color-mix(in srgb, var(--pl-nhu-to) ${Math.round(t * 100)}%, var(--pl-nhu-nho))`;
 	}
-	svg.querySelector('[data-man="can"]').textContent = S.viTri === 'can' && (S.coc.nuoc || S.coc.dau) ? (S.coc.nuoc ? '100,0' : soCD(S.coc.gDau, 1)) : '0,0';
+	svg.querySelector('[data-man="can"]').textContent = S.viTri === 'can' && (S.coc.nuoc || S.coc.dau) ? (S.coc.nuoc ? soCD(tongMe(S.coc), 1) : soCD(S.coc.gDau, 1)) : '0,0';
 	const manDH = svg.querySelector('[data-man="dongHoa"]');
 	manDH.textContent = S.xong.dongHoa && S.kq ? `${soCD(S.kq.nhietRa, 0)} °C` : `${S.may.dongHoa.bar} bar`;
 	const kim = svg.querySelector('.pl-kim');
