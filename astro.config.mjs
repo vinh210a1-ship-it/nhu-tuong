@@ -47,6 +47,7 @@ export default defineConfig({
 			components: {
 				Hero: './src/components/Hero.astro',
 				PageTitle: './src/components/PageTitle.astro',
+				Footer: './src/components/Footer.astro',
 			},
 			head: [
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/may-tinh.js` } },
@@ -57,6 +58,7 @@ export default defineConfig({
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/ta-duoc.js` } },
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/bao-loi.js` } },
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/chu-giai.js` } },
+				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/trich-dan.js` } },
 			],
 			lastUpdated: false,
 			pagination: true,
@@ -93,6 +95,8 @@ export default defineConfig({
 						{ label: 'Số liệu R&D (bảng tra)', slug: 'so-lieu-rnd', badge: { text: 'Mới', variant: 'tip' } },
 						{ label: 'Thuật ngữ nhũ tương (bảng)', slug: 'nhu-tuong/thuat-ngu' },
 						{ label: 'Nguồn', slug: 'nguon' },
+						{ label: 'Nhật ký thay đổi', slug: 'nhat-ky-thay-doi' },
+						{ label: 'Giấy phép và trích dẫn', slug: 'giay-phep' },
 					],
 				},
 			],
