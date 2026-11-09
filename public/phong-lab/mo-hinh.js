@@ -24,7 +24,8 @@ export const NHAN = {
 	nangLuongSA: { ma: 'N', chu: 'Mật độ năng lượng siêu âm danh định E = P·t/V (cách tính ở Belgheisi 2021, bảng 1)', bai: 'nhu-tuong/hinh-thanh' },
 	hieuSuatSA: { ma: 'T', chu: 'Chỉ một phần năng lượng danh định làm vỡ giọt: sách ghi hiệu suất siêu âm đầu dò là "thấp" (McClements 2016, bảng 6.1, tr.250); hệ số 0,1 là số minh họa', bai: 'nhu-tuong/hinh-thanh' },
 	quaXuLy: { ma: 'N', chu: 'Ở mức năng lượng cao nhất họ thử (3.240 J/cm³), giọt to lại và phân bố rộng ra vì quá xử lý (Belgheisi 2021, nhũ tương lycopene); mô phỏng giữ cỡ giọt không nhỏ thêm', bai: 'nhu-tuong/hinh-thanh' },
-	microfluidizer: { ma: 'N', chu: 'Microfluidizer cho giọt nhỏ nhất dưới 0,1 µm với hiệu suất năng lượng cao (McClements 2016, bảng 6.1, tr.250); độ rộng phân bố hẹp hơn đồng hóa van tiêu chuẩn là số minh họa', bai: 'nhu-tuong/hinh-thanh' },
+	microfluidizer: { ma: 'N', chu: 'Microfluidizer cho giọt nhỏ nhất dưới 0,1 µm với hiệu suất năng lượng cao (McClements 2016, bảng 6.1, tr.250)', bai: 'nhu-tuong/hinh-thanh' },
+	phanBoMF: { ma: 'T', chu: 'Độ rộng phân bố của microfluidizer (σ = 0,35, hẹp hơn σ = 0,45 của siêu âm và 0,75 của mẻ chưa qua máy) là số minh họa; d₉₀ tính từ σ này', bai: 'nhu-tuong/hinh-thanh' },
 	hlb: { ma: 'K', chu: 'HLB cao (như Tween 80) hợp dầu trong nước, HLB thấp (như Span 80) hợp nước trong dầu (quy tắc Bancroft)', bai: 'chat-nhu-hoa/nen-tang-vat-ly-hoa-be-mat' },
 	bienTinh: { ma: 'K', chu: 'Protein whey biến tính khi nóng, lộ vùng kỵ nước, làm các giọt dính thành cụm', bai: 'nhu-tuong/mat-on-dinh' },
 	khongNo: { ma: 'N', chu: 'Độ không no quy đổi U = %C18:2 + 0,08·%C18:1 + 2,08·%C18:3; tốc độ oxy hóa (100/thời gian cảm ứng) tăng theo U (Kochhar 2009)', bai: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung' },
@@ -401,7 +402,7 @@ export function ongNghiem(kq, ngay, nhietDo = 25) {
 /* ------------------------------------------------------------------ */
 
 /** Ngưỡng năng lượng (J) của hai sao cuối ở nhiệm vụ it-nang-luong: luật chơi [T], đã dò lưới là đạt được. */
-export const NANG_LUONG_SAO = [150000, 110000];
+export const NANG_LUONG_SAO = [150000, 120000];
 
 export const NHIEM_VU = [
 	{

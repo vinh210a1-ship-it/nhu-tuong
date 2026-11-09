@@ -763,7 +763,7 @@ function bangDongHoa() {
 		thongSo =
 			thanhTruot('sieuAm.W', 'Công suất danh định', 20, 200, 10, d.W, 'W') +
 			thanhTruot('sieuAm.phut', 'Thời gian', 0.5, 20, 0.5, d.phut, 'phút') +
-			`<p class="pl-meo">Mẫu ngâm bể đá, giữ khoảng 25 °C như nghiên cứu nguồn ${nhanHTML({ ma: 'N' })} (Belgheisi 2021: 25 ± 2 °C). Mô phỏng chưa tính nóng lên khi không làm lạnh vì chưa có số đo.</p>`;
+			`<p class="pl-meo">Mô phỏng giả định mẫu ngâm bể đá ${nhanHTML({ ma: 'G' })}; nghiên cứu nguồn giữ 25 ± 2 °C ${nhanHTML({ ma: 'N' })} (Belgheisi 2021). Mô phỏng chưa tính nóng lên khi không làm lạnh vì chưa có số đo.</p>`;
 	} else {
 		const d = S.may[lm];
 		thongSo =
@@ -1311,7 +1311,9 @@ function veKetQua(kq, kqSao, ngay) {
 		ly.push([NHAN.hangSo, 'Mẫu ngâm bể đá nên không nóng thêm, và protein không bị biến tính vì nhiệt trong mô phỏng này.']);
 	} else if (S.xong.dongHoa && lm === 'microfluidizer') {
 		const mf = S.me.microfluidizer;
-		ly.push([NHAN.microfluidizer, `${mf.soLan} lần ở ${mf.bar.toLocaleString('vi-VN')} bar, giọt xuống d₃₂ ≈ ${so(kq.d32)} µm: cùng đường giọt–áp suất với máy đồng hóa, nhưng phân bố hẹp hơn (d₉₀ ≈ ${so(kq.dv90)} µm).`]);
+		ly.push([NHAN.microfluidizer, 'Microfluidizer là máy cho giọt nhỏ nhất (dưới 0,1 µm) với hiệu suất năng lượng cao.']);
+		ly.push([NHAN.apSuat, `${mf.soLan} lần ở ${mf.bar.toLocaleString('vi-VN')} bar, giọt xuống d₃₂ ≈ ${so(kq.d32)} µm: mô phỏng cho cùng đường giọt–áp suất với máy đồng hóa.`]);
+		ly.push([NHAN.phanBoMF, `Phân bố hẹp hơn máy đồng hóa: d₉₀ ≈ ${so(kq.dv90)} µm.`]);
 	} else if (dongHoa)
 		ly.push([NHAN.apSuat, `Ở ${dongHoa.bar.toLocaleString('vi-VN')} bar × ${dongHoa.soLan} lần, giọt xuống d₃₂ ≈ ${so(kq.d32)} µm. Muốn giọt nhỏ đi một nửa phải tăng áp suất khoảng 4 lần.`]);
 	else ly.push([NHAN.hangSo, `Không qua máy đồng hóa nên giọt còn rất to (d₃₂ ≈ ${so(kq.d32)} µm). Máy khuấy chỉ tạo được tiền nhũ.`]);
