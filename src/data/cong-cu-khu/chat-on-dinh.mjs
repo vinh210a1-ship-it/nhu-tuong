@@ -9,6 +9,12 @@ export const CONG_CU_CHAT_ON_DINH = {
 	'xanthan-va-galactomannan': [
 		{ loai: 'lab', id: 'sot-salad', ten: 'Nhiệm vụ "Sốt salad đứng yên"', vi: 'Thử đổi chất nhũ hóa và thêm chất làm đặc xem cách nào giữ sốt đứng yên.' },
 	],
+	'carrageenan-va-he-sua': [
+		{ loai: 'tra-cuu', id: 'ins', q: 'carrageenan', ten: 'Tra cứu mã INS: carrageenan', vi: 'Tra mã INS của carrageenan và nhóm thực phẩm được phép dùng.' },
+	],
+	'alginate-pectin-gellan': [
+		{ loai: 'tra-cuu', id: 'tt24', q: 'alginat', ten: 'Tra cứu mức tối đa (TT24/2019): alginat', vi: 'Tra mã INS của các muối alginat và mức tối đa theo nhóm thực phẩm; pectin và gellan tra theo cách tương tự.' },
+	],
 	'gum-arabic-gelatin-tinh-bot-cellulose': [
 		{ loai: 'ban', id: 'pickering', ten: 'Bàn nhũ tương, chế độ Pickering', vi: 'So các loại hạt và tập đọc số góc tiếp xúc kèm cách đo.' },
 	],

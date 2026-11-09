@@ -5,6 +5,12 @@ export const CONG_CU_DUOC_PHAM = {
 	'ta-duoc-chuc-nang-va-tuong-ky': [
 		{ loai: 'ta-duoc', ten: 'Tra cứu tá dược (FDA IID)', vi: 'Tra một tá dược theo đường dùng và dạng bào chế để thấy nó đã được dùng ở đâu và với lượng tối đa nào.' },
 	],
+	'hoa-tan-sinh-kha-dung-bcs': [
+		{ loai: 'may-tinh', id: 'axit-yeu', ten: 'Phần chất axit yếu chưa phân ly', vi: 'Nhập pH và pKa để thấy phần không phân ly đổi theo pH, nền của độ tan phụ thuộc pH.' },
+	],
+	'dang-ran-vien-nen-tao-hat': [
+		{ loai: 'ta-duoc', ten: 'Tra cứu tá dược (FDA IID)', vi: 'Tra mức tá dược đã có trong thuốc được duyệt, ví dụ magnesi stearat trong viên nén.' },
+	],
 	'dang-bao-che-long-va-ban-ran': [
 		{ loai: 'may-tinh', id: 'stokes', ten: 'Vận tốc kem hóa (Stokes)', vi: 'Đổi cỡ giọt và độ nhớt để thấy vì sao hỗn dịch và nhũ tương lắng hay kem hóa nhanh chậm khác nhau.' },
 		{ loai: 'may-tinh', id: 'hlb', ten: 'Trộn hai chất nhũ hóa theo HLB', vi: 'Phối hai chất nhũ hóa để đạt HLB mục tiêu, như cách chọn cặp Tween và Span ở bài.' },

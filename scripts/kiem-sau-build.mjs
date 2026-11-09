@@ -8,7 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { KHU } from '../src/data/khu.mjs';
 import { docTuKiemTra } from './tu-kiem-tra.mjs';
-import { CONG_CU_BAI, CONG_CU_KHU, canBietTruocKhu } from '../src/data/cong-cu-bai.mjs';
+import { CONG_CU_BAI, CONG_CU_KHU, MIEN_THU_NGAY, canBietTruocKhu } from '../src/data/cong-cu-bai.mjs';
 import { LIEN_QUAN } from '../src/data/lien-quan-khu.mjs';
 import { NHIEM_VU } from '../public/phong-lab/mo-hinh.js';
 
@@ -149,6 +149,10 @@ for (const [ma, ds] of Object.entries(LIEN_QUAN)) {
 // ---- 1b'. các khu đã chuẩn hóa: mỗi bài có "Tự kiểm tra" (2–3 câu, căn cứ N/T), "Cần biết trước" (trừ bài đầu); "Thử ngay" nếu có dữ liệu
 for (const [k, ds] of Object.entries(CONG_CU_KHU))
 	for (const sl of Object.keys(ds)) if (!KHU[k]?.bai.some((b) => b.slug === sl)) loiThuNgay.push(`cong-cu-khu/${k}: bài "${sl}" không có trong khu`);
+for (const ma of Object.keys(MIEN_THU_NGAY)) {
+	const [k, sl] = ma.split('/');
+	if (!KHU[k]?.bai.some((b) => b.slug === sl)) loiThuNgay.push(`MIEN_THU_NGAY: bài "${ma}" không có trong khu`);
+}
 for (const khu of KHU_CHUAN) {
 	const tkk = docTuKiemTra(path.join(GOC, 'noi-dung', khu, 'tu-kiem-tra.md'));
 	KHU[khu].bai.forEach((b, i) => {
@@ -165,7 +169,13 @@ for (const khu of KHU_CHUAN) {
 			if (soCau < 2 || soCau > 3) loiThuNgay.push(`${ma}: hộp "Tự kiểm tra" có ${soCau} câu (cần 2 đến 3)`);
 			if (soCanCu !== soCau) loiThuNgay.push(`${ma}: ${soCau - soCanCu} câu tự kiểm tra thiếu dòng căn cứ N/T`);
 		}
-		if (canBietTruocKhu(khu, b.slug).length && !/class="can-biet-truoc"/.test(h)) loiThuNgay.push(`${ma}: thiếu dòng "Cần biết trước"`);
+		// L5: mọi bài trừ bài đầu khu đều có dòng "Cần biết trước" (có liên kết, hoặc "không cần, bài này đọc độc lập")
+		if (i > 0 && !/class="can-biet-truoc"/.test(h)) loiThuNgay.push(`${ma}: thiếu dòng "Cần biết trước"`);
+		if (i > 0 && !canBietTruocKhu(khu, b.slug).length && !/bài này đọc độc lập/.test(h)) loiThuNgay.push(`${ma}: khai độc lập nhưng trang không có dòng "bài này đọc độc lập"`);
+		if (i === 0 && !canBietTruocKhu(khu, b.slug).length && /class="can-biet-truoc"/.test(h)) loiThuNgay.push(`${ma}: bài đầu khu không có bài nào đứng trước nên không in dòng "Cần biết trước"`);
+		if (MIEN_THU_NGAY[ma]) {
+			if (CONG_CU_KHU[khu]?.[b.slug]) loiThuNgay.push(`${ma}: được miễn "Thử ngay" nhưng vẫn có dữ liệu`);
+		} else if (!CONG_CU_KHU[khu]?.[b.slug]) loiThuNgay.push(`${ma}: không có "Thử ngay" và cũng không có lý do miễn trong MIEN_THU_NGAY`);
 		const hop = /<div class="thu-ngay[^"]*"[^>]*>([\s\S]*?)<\/ul><\/div>/.exec(h);
 		if (hop) {
 			const soDong = (hop[1].match(/<li>/g) || []).length;
