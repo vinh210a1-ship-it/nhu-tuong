@@ -97,7 +97,9 @@ Chú ý khi dạy: đây là **giới hạn do thiếu chất nhũ hóa** (emuls
 ### Dải HLB theo ứng dụng
 Theo McClements 2016: HLB 3–6 ổn định W/O; 7–9 là chất thấm ướt, nhũ tương dễ hợp giọt; 10–18 ổn định O/W. **[N: @mcclements2016 tr.134–135]** Một số nguồn giáo dục nêu O/W rộng hơn, từ khoảng 8. **[N: OSU Extension "Food Emulsifiers"]** Hai cách ghi lệch nhau ở vùng 8–10, nơi chất thấm ướt và chất nhũ hóa O/W giao nhau; chọn chất ở vùng này phải thử thực nghiệm. **[G]**
 
-### Thang ứng dụng HLB theo Griffin (1949) [N: @griffin1949a tr.314, Table 2]
+### Thang ứng dụng HLB theo Griffin (1949)
+Bảng dưới chép nguyên số liệu từ bảng phân loại ứng dụng của bài gốc. **[N: @griffin1949a tr.314, Table 2]**
+
 | Dải HLB | Ứng dụng (Griffin 1949) |
 |---|---|
 | 4–6 | nhũ hóa nước-trong-dầu (W/O) |
