@@ -21,10 +21,10 @@ nguon_goc: tai-lieu-chat-hoat-dong-be-mat/01-nen-tang-vat-ly-hoa-be-mat.md
 
 ## Kết luận trước
 
-1. Chất nhũ hóa làm **ba việc** theo thứ tự thời gian: (i) hấp phụ nhanh lên mặt phân cách trong lúc đồng hóa, (ii) hạ sức căng bề mặt γ để giọt dễ vỡ nhỏ, (iii) tạo lớp áo đẩy nhau (tĩnh điện/lập thể) hoặc lớp màng nhớt–đàn hồi để giọt không hợp nhất sau đó. [N: @gumus2017 luận án, ch.1]
+1. Chất nhũ hóa làm **ba việc** theo thứ tự thời gian: (i) hấp phụ nhanh lên mặt phân cách trong lúc đồng hóa, (ii) hạ sức căng bề mặt γ để giọt dễ vỡ nhỏ, (iii) tạo lớp áo đẩy nhau (tĩnh điện/lập thể) hoặc lớp màng nhớt–đàn hồi để giọt không hợp giọt sau đó. [N: @gumus2017 luận án, ch.1]
 2. **HLB** là con số thực dụng để chọn loại nhũ tương (O/W hay W/O) và ghép phối, nhưng **không đủ** để dự đoán hành vi thật. Ví dụ trong kem, khả năng gây mất ổn định mỡ của chất nhũ hóa không giải thích hết bằng HLB mà tương ứng với sức căng bề mặt mà nó tạo ra. [N: @goff1989]
 3. **Tham số đóng gói (CPP)** mô tả hình dạng phân tử → cấu trúc tự lắp ghép (mixen cầu, trụ, lớp đôi, mixen đảo). Rất đẹp để dạy, nhưng tác giả Steven Abbott cảnh báo nó chủ yếu hợp với chất hoạt động bề mặt nguyên chất trong nước, ít liên quan khi có dầu và nhũ tương. [N: @abbott]
-4. Với web: nên dạy HLB và CPP như **công cụ tư duy có giới hạn**, kèm các ví dụ phản chứng.
+4. Nên dạy HLB và CPP như **công cụ tư duy có giới hạn**, kèm các ví dụ phản chứng.
 
 ---
 
@@ -61,7 +61,7 @@ Tiến trình của một phân tử chất nhũ hóa (mô hình giáo khoa [K])
 Hệ quả [G: dựa trên K]: phân tử nhỏ (Tween, lecithin, MDG) thắng về tốc độ → tạo giọt mịn nhanh; protein chậm hơn nhưng tạo màng nhớt–đàn hồi bền. Đây là lý do nhiều công thức dùng **cả hai**, và là gốc rễ của chủ đề cạnh tranh hấp phụ (file 03).
 
 ### Công thức kích thước giọt tối thiểu (khi thiếu chất nhũ hóa)
-d_min ∝ Γ·φ / c_S (φ: phần thể tích dầu; c_S: nồng độ chất nhũ hóa; Γ: tải bề mặt). Vẽ d₃₂ theo 1/C ở nồng độ thấp cho đường thẳng qua gốc có độ dốc 6Γφ, nên Γ = độ dốc/(6φ). [N: @gumus2017, ch.1]
+d_min ∝ Γ·φ / c_S (φ: phần thể tích dầu; c_S: nồng độ chất nhũ hóa; Γ: độ phủ bề mặt). Vẽ d₃₂ theo 1/C ở nồng độ thấp cho đường thẳng qua gốc có độ dốc 6Γφ, nên Γ = độ dốc/(6φ). [N: @gumus2017, ch.1]
 
 Chú ý khi dạy: đây là **giới hạn do thiếu chất nhũ hóa** (emulsifier-limited), khác với **giới hạn do năng lượng** (energy-limited).
 
@@ -69,7 +69,7 @@ Chú ý khi dạy: đây là **giới hạn do thiếu chất nhũ hóa** (emuls
 - Thứ tự theo Gumus: saponin nhỏ < protein cầu (whey) < protein mềm dẻo (caseinate) < polysaccharide (gum arabic). [N]
 - Whey ≈ 1 mg/m², gum arabic ≈ 25 mg/m² (số theo luận án). [N]
 - Con số saponin (0,001 mg/m²) mà công cụ trích ra từ bản đọc **có vẻ bất thường**; **cần mở bản gốc để xác nhận trước khi dùng** vì có thể đã mất dấu thập phân hoặc bị đổi đơn vị khi trích. `[cảnh báo]`
-- Số liệu thực nghiệm khác: tải bề mặt protein trong nhũ tương dầu hướng dương 10 wt%: WPI ≈ 1,4 mg/m², pea PPI ≈ 2,5 mg/m². [N: @hinderink2021]
+- Số liệu thực nghiệm khác: độ phủ bề mặt protein trong nhũ tương dầu hướng dương 10 wt%: WPI ≈ 1,4 mg/m², pea PPI ≈ 2,5 mg/m². [N: @hinderink2021]
 
 ---
 
@@ -130,7 +130,7 @@ Với hai chất A và B có phần khối lượng w_A, w_B: **HLB_mix = w_A·H
 | SSL | ~8–10 (rất dao động theo nguồn) | — | [K] |
 | DATEM | ~8–10 | — | [K] |
 
-**Quy tắc làm web:** bảng HLB nên có cột "nguồn" và cột "phương pháp (tính/đo/công bố của nhà sản xuất)". Các giá trị "kiểm lại từ nhà cung cấp (TDS)" được ưu tiên.
+**Lưu ý khi đọc bảng HLB:** mỗi giá trị nên kèm nguồn và phương pháp (tính, đo hay công bố của nhà sản xuất); giá trị đã kiểm lại từ bảng thông số của nhà cung cấp (TDS) được ưu tiên.
 
 ### Giới hạn của HLB — cần nói thẳng khi dạy
 1. HLB là một con số tĩnh, không tính đến dầu, nhiệt độ, muối, pH, tỉ lệ pha. (Abbott nói rõ CPP/HLB-NAC phụ thuộc dầu, độ mặn, nhiệt độ.) [N: @abbott]
@@ -163,10 +163,10 @@ Với hai chất A và B có phần khối lượng w_A, w_B: **HLB_mix = w_A·H
 ## 1.6 Quy tắc Bancroft và các cơ chế bất ổn nhũ tương
 
 - **Quy tắc Bancroft:** pha mà chất nhũ hóa tan tốt hơn thường là pha liên tục. Chất ưa nước → O/W; ưa dầu → W/O. [K] Có ngoại lệ (nhũ hóa bằng hạt Pickering, nhũ tương đảo pha khi nồng độ cao).
-- **Các cơ chế mất ổn định:** tạo kem/lắng (creaming/sedimentation), keo tụ (flocculation), hợp nhất (coalescence), Ostwald ripening (đặc biệt với dầu tan chút ít trong nước), đảo pha. [K]
-- **Hợp nhất từng phần (partial coalescence):** giọt chứa tinh thể mỡ gắn dính nhưng không hợp thành giọt tròn — cốt lõi của kem tươi đánh bông và kem lạnh (file 03). [N: @goff1997]
+- **Các cơ chế mất ổn định:** kem hóa/lắng (creaming/sedimentation), keo tụ (flocculation), hợp giọt (coalescence), Ostwald ripening (đặc biệt với dầu tan chút ít trong nước), đảo pha. [K]
+- **Hợp giọt một phần (partial coalescence):** giọt chứa tinh thể mỡ gắn dính nhưng không hợp thành giọt tròn — cốt lõi của kem tươi đánh bông và kem lạnh (file 03). [N: @goff1997]
 - **Hiệu ứng Gibbs–Marangoni:** khi một bề mặt giãn cục bộ, gradient γ kéo chất nhũ hóa và chất lỏng về chỗ mỏng → "tự sửa". Cần chất nhũ hóa có sẵn trong pha liên tục. [K]
-- **Độ nhớt–đàn hồi liên diện:** màng nhớt–đàn hồi cản hợp nhất. Ví dụ, PGPR tạo màng có mô-đun giãn nở cao hơn polyglycerol-2 dioleate nhờ chuỗi ricinoleate phân nhánh và dài. [N: @jin2021]
+- **Độ nhớt–đàn hồi liên diện:** màng nhớt–đàn hồi cản hợp giọt. Ví dụ, PGPR tạo màng có mô-đun giãn nở cao hơn polyglycerol-2 dioleate nhờ chuỗi ricinoleate phân nhánh và dài. [N: @jin2021]
 
 ---
 
@@ -175,7 +175,7 @@ Với hai chất A và B có phần khối lượng w_A, w_B: **HLB_mix = w_A·H
 | Đại lượng | Phương pháp | Ý nghĩa |
 |---|---|---|
 | γ cân bằng, γ(t) | giọt treo, Wilhelmy, bong bóng | tốc độ và độ mạnh hấp phụ |
-| Mô-đun giãn nở E_d | giọt dao động | khả năng cản hợp nhất, Marangoni |
+| Mô-đun giãn nở E_d | giọt dao động | khả năng cản hợp giọt, Marangoni |
 | Mô-đun cắt liên diện | lưu biến liên diện | độ rắn của màng (protein, saponin) |
 | Tải bề mặt Γ (mg/m²) | kem rửa/ ly tâm + định lượng | đo lượng protein hấp phụ, theo dõi bị đẩy ra |
 | Thế zeta | điện di | ổn định tĩnh điện |

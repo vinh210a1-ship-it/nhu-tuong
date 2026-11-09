@@ -72,7 +72,7 @@ Cột "ví dụ" và "cơ chế" là kiến thức sách nền chuẩn của bà
 
 - Cơ sở dùng **Dược điển Việt Nam** hoặc một trong các dược điển tham chiếu: **EP, BP, USP, Ph.Int, JP**; khi áp dụng dược điển tham chiếu phải áp dụng *toàn bộ* chỉ tiêu, mức chất lượng và phương pháp thử; thuốc đã cấp phép phải cập nhật tiêu chuẩn theo bản dược điển mới nhất **trong tối đa 2 năm**. [N: @bytett11] (Thông tư 11/2018/TT-BYT ngày 04/05/2018, hiệu lực 20/06/2018; văn bản hợp nhất 01/VBHN-BYT ngày 02/01/2025; sửa bởi TT 03/2020, 23/2021, 45/2024.)
 - Chỉ đọc qua trang tổng hợp luật bên thứ ba, **cần đối chiếu văn bản chính thức** trước khi đăng. [G]
-- Dược điển Việt Nam V ban hành bằng Quyết định 5358/QĐ-BYT (2017): mới chỉ thấy tiêu đề trong kết quả tìm kiếm, chưa mở nội dung. [K]
+- Dược điển Việt Nam V ban hành bằng Quyết định 5358/QĐ-BYT (2017): mới chỉ thấy tiêu đề, chưa mở nội dung. [K]
 
 ## 6. Việc tiếp theo cho bài này
 

@@ -80,7 +80,7 @@ Ví dụ định lượng:
 ## 5. Hydrocolloid ở bề mặt: ai thật sự nhũ hóa?
 
 - Dickinson (2002): nhiều khả năng nhũ hóa của polysaccharide giải thích được bằng phức hoặc nhiễm một phần protein bề mặt hoạt tính; ví dụ chi tiết cho gum arabic, galactomannan, pectin. Phức protein–hydrocolloid tại bề mặt có thể gây bridging flocculation hoặc ổn định cản không gian. [N: @dickinson2002]
-- Dickinson (2009): đặc điểm phân tử để hydrocolloid vừa nhũ hóa vừa ổn định: bảo vệ giọt mới hình thành khỏi keo tụ/hợp nhất, khác với yêu cầu ổn định dài hạn chống aggregation, creaming, Ostwald ripening. [N: @dickinson2009]
+- Dickinson (2009): đặc điểm phân tử để hydrocolloid vừa nhũ hóa vừa ổn định: bảo vệ giọt mới hình thành khỏi keo tụ/hợp giọt, khác với yêu cầu ổn định dài hạn chống aggregation, creaming, Ostwald ripening. [N: @dickinson2009]
 - Hạt Pickering protein/polysaccharide và HIPE: ổn định nhờ hạt, độ nhớt cao. [N: @ribeiro2021]
 
 **Liên hệ chéo (không đào sâu ở đây)**: chất nhũ hóa và chất hoạt động bề mặt xem khu [Chất nhũ hóa](../../chat-nhu-hoa/), nhũ tương xem khu [Nhũ tương](../../nhu-tuong/), chất béo xem khu [Chất béo](../../chat-beo/); tại đây chỉ giữ phần hydrocolloid.

@@ -69,7 +69,7 @@ Lưu ý khi dùng trong lab: (1) aw ở đây là aw đạt được bằng **mu
 
 ## 5. Sulfit (SO₂)
 
-EFSA (2022) **rút ADI tạm thời 0,7 mg SO₂/kg tt/ngày** vì cơ sở dữ liệu độc tính không đủ để đặt ADI, chuyển sang phương pháp MOE (BMDL 38 mg SO₂/kg tt/ngày, hệ số đánh giá 80); ở mức phơi nhiễm ước tính MOE < 80 ở hầu hết nhóm → **có lo ngại an toàn** `[N: @efsa2022sulfite]`. Khi hiển thị trên web, nói rõ đây là kết luận EFSA, không phải toàn cầu.
+EFSA (2022) **rút ADI tạm thời 0,7 mg SO₂/kg tt/ngày** vì cơ sở dữ liệu độc tính không đủ để đặt ADI, chuyển sang phương pháp MOE (BMDL 38 mg SO₂/kg tt/ngày, hệ số đánh giá 80); ở mức phơi nhiễm ước tính MOE < 80 ở hầu hết nhóm → **có lo ngại an toàn** `[N: @efsa2022sulfite]`. Đây là kết luận của EFSA, không phải kết luận toàn cầu.
 
 ## 6. Chống oxy hóa (nhóm ngắn, chi tiết lipid xem tài liệu chất béo)
 

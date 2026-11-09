@@ -67,8 +67,8 @@ Gần như toàn bộ cột "Dạng đa hình" và "Điểm cần chú ý" là [
 - Moens và cs. 2018 ghi nhận nhũ hóa có "tác động khác nhau" lên kết tinh của từng loại béo, giải thích bằng khác biệt hình thái tinh thể. [N: @moens2018]
 - Hướng nghiên cứu đã được Sato và cs. 1999 nêu: dùng nhiễu xạ tia X synchrotron theo thời gian cho chất béo trong **giọt O/W và W/O**, ảnh hưởng của emulsifier, protein, carbohydrate. [N: @sato1999]
 
-### 3.2 Partial coalescence (hợp nhất một phần)
-**Bản chất:** hai giọt có tinh thể béo xuyên qua màng bề mặt va chạm; tinh thể của giọt này đâm xuyên vào giọt kia, giữ chúng dính nhau nhưng không hợp nhất hoàn toàn nhờ khung tinh thể → hình thành cụm giọt/mạng, tạo kết cấu bọt và độ cứng của kem đánh bông, kem lạnh. [K]
+### 3.2 Partial coalescence (hợp giọt một phần)
+**Bản chất:** hai giọt có tinh thể béo xuyên qua màng bề mặt va chạm; tinh thể của giọt này đâm xuyên vào giọt kia, giữ chúng dính nhau nhưng không hợp giọt hoàn toàn nhờ khung tinh thể → hình thành cụm giọt/mạng, tạo kết cấu bọt và độ cứng của kem đánh bông, kem lạnh. [K]
 **Điều kiện:** cần có **mạng tinh thể béo trong giọt** — đây là yêu cầu bắt buộc. [N: @moens2019]
 
 Bằng chứng định lượng:
