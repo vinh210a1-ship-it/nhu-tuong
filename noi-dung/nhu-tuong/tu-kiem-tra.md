@@ -109,7 +109,7 @@ Căn cứ: N | 3. Lưu biến
 
 ### Câu 3
 Hỏi: Quét quang học đa tán xạ (Turbiscan) theo dõi những gì và có lợi gì so với quan sát bằng mắt?
-Đáp: Theo dõi đồng thời kem hóa, lắng và thay đổi kích thước ở bước sóng 850 nm, ngay trong chai nguyên vẹn. Nó nhạy hơn mắt thường nhiều ngày.
+Đáp: Theo dõi đồng thời kem hóa, lắng và thay đổi kích thước bằng ánh sáng cận hồng ngoại (880 nm ở dòng Turbiscan hiện nay, 850 nm ở đời Classic cũ), ngay trong chai nguyên vẹn. Nó nhạy hơn mắt thường nhiều ngày.
 Căn cứ: N | 4.1 Kem hóa/lắng
 
 ## san-pham
