@@ -10,6 +10,7 @@
     "build": "npm run chuan-bi && astro build",
     "kiem": "node scripts/kiem-may-tinh.mjs && node scripts/kiem-phong-lab.mjs",
     "kiem-sau-build": "node scripts/kiem-sau-build.mjs",
+    "kiem-truy-cap": "node scripts/kiem-truy-cap.mjs",
     "preview": "astro preview"
   },
   "dependencies": {
@@ -22,5 +23,8 @@
     "rehype-katex": "7.0.1",
     "remark-math": "6.0.0",
     "unist-util-visit": "5.0.0"
+  },
+  "devDependencies": {
+    "axe-core": "4.10.2"
   }
 }
