@@ -87,22 +87,30 @@ Chú ý khi dạy: đây là **giới hạn do thiếu chất nhũ hóa** (emuls
 ## 1.4 HLB — cân bằng ưa nước–ưa dầu
 
 ### Định nghĩa và lịch sử
-- Griffin đề xuất HLB năm 1949 và 1954 (thang 0–20, cho chất không ion, dựa trên tỉ lệ khối lượng phần ưa nước/toàn phân tử). Davies đề xuất cách khác năm 1957 dựa trên số nhóm hóa học. [N: Wikipedia — chưa kiểm nguyên bản Griffin]
+- Griffin đề xuất HLB năm 1949 và 1954 (thang 0–20, cho chất không ion, dựa trên tỉ lệ khối lượng phần ưa nước/toàn phân tử). Davies đề xuất cách khác năm 1957 dựa trên số nhóm hóa học. [N: Wikipedia; bản gốc Griffin 1949 đã đối chiếu, xem bảng dưới]
 - Công thức Griffin (1954) cho chất không ion [K]:
   - Este polyol/ axit béo: **HLB = 20 × (1 − S/A)**, S = chỉ số xà phòng hóa của este, A = chỉ số axit của axit béo.
   - Chất polyethoxy (không có este polyol): **HLB = E/5**, E = % khối lượng phần polyoxyethylene.
   - Chung: **HLB = 20 × M_ưa nước / M_phân tử**.
 - Davies [N: @wikipedia, một phần]: nhóm ưa dầu CH, CH₂, CH₃, =CH mỗi nhóm −0,475; ví dụ nhóm sulfat muối 38,6; OH tự do 1,9. Công thức đầy đủ [K]: **HLB = 7 + Σ(số nhóm ưa nước) − Σ(số nhóm ưa dầu)**.
 
-### Thang ứng dụng (kinh điển) [K: kiểm lại bằng sách của Griffin hoặc Becher]
-| Dải HLB | Vai trò thường được nêu |
+### Dải HLB theo ứng dụng
+Theo McClements 2016: HLB 3–6 ổn định W/O; 7–9 là chất thấm ướt, nhũ tương dễ hợp giọt; 10–18 ổn định O/W. **[N: @mcclements2016 tr.134–135]** Một số nguồn giáo dục nêu O/W rộng hơn, từ khoảng 8. **[N: OSU Extension "Food Emulsifiers"]** Hai cách ghi lệch nhau ở vùng 8–10, nơi chất thấm ướt và chất nhũ hóa O/W giao nhau; chọn chất ở vùng này phải thử thực nghiệm. **[G]**
+
+### Thang ứng dụng HLB theo Griffin (1949) [N: @griffin1949a tr.314, Table 2]
+| Dải HLB | Ứng dụng (Griffin 1949) |
 |---|---|
-| 1–3 | chống tạo bọt |
-| 3–6 | nhũ hóa nước-trong-dầu (W/O) |
+| 4–6 | nhũ hóa nước-trong-dầu (W/O) |
 | 7–9 | tác nhân thấm ướt |
-| 8–16 | nhũ hóa dầu-trong-nước (O/W) |
-| 13–16 | chất tẩy |
+| 8–18 | nhũ hóa dầu-trong-nước (O/W) |
+| 13–15 | chất tẩy |
 | 15–18 | chất hòa tan (solubilizer) |
+
+Griffin viết thêm rằng các chất nhũ hóa O/W dùng nhiều nhất có HLB khoảng 9–12. **[N: @griffin1949a tr.313–314]**
+
+Nhiều sách và trang web sau này chép bảng này với số hơi khác (W/O 3–6, O/W 8–16, chất tẩy 13–16) và thêm dòng "1–3 chống tạo bọt". Các con số đó không có trong bảng gốc; chưa tìm được văn bản gốc cho dòng chống tạo bọt. **[G]**
+
+Ba dải O/W hay gặp nói ba việc khác nhau: 8–18 là dải Griffin xếp loại ứng dụng; 10–18 là dải McClements gọi là ổn định O/W; 9–12 là vùng của các chất nhũ hóa O/W hay dùng. Vùng 8–10 là chỗ chất thấm ướt và chất nhũ hóa O/W giao nhau, chọn chất ở vùng này phải thử thực nghiệm. **[G]**
 
 ### HLB của hỗn hợp
 Với hai chất A và B có phần khối lượng w_A, w_B: **HLB_mix = w_A·HLB_A + w_B·HLB_B** (cộng tuyến tính, khối lượng-trung bình). [K] Đây là cơ sở của công cụ "pha trộn Tween–Span" trong bào chế và thực phẩm. Một nghiên cứu về este sucrose cho thấy trộn sucrose tallowate mono/di tuyến tính theo HLB trong dải 10–16. [N: @gupta1983]
