@@ -16,6 +16,12 @@ export const CONG_CU_THUC_PHAM = {
 	'protein-bien-tinh-gel-hoa-va-enzym': [
 		{ loai: 'ban', id: 'thit', ten: 'Bàn thịt', vi: 'Thử muối và phosphat trên khối thịt để thấy protein sợi cơ giữ nước ra sao.' },
 	],
+	'tinh-bot-ho-hoa-thoai-hoa': [
+		{ loai: 'tra-cuu', id: 'ins', q: 'tinh bột biến tính', ten: 'Tra cứu mã INS: tinh bột biến tính', vi: 'Tra mã INS của các tinh bột biến tính (nhóm 14xx).' },
+	],
+	'chat-tao-ngot-mau-dieu-vi': [
+		{ loai: 'tra-cuu', id: 'tt24', q: 'acesulfam', ten: 'Tra cứu mức tối đa (TT24/2019): chất tạo ngọt', vi: 'Tra mức tối đa của chất tạo ngọt theo nhóm thực phẩm.' },
+	],
 	'qua-trinh-nhiet-lanh-say-ep-dun': [
 		{ loai: 'may-tinh', id: 'gia-tri-f', ten: 'Giá trị F ở nhiệt độ không đổi', vi: 'Quy một bước gia nhiệt về số phút tương đương ở nhiệt độ chuẩn để so các chế độ thanh trùng.' },
 	],
@@ -26,12 +32,12 @@ export const CONG_CU_THUC_PHAM = {
 
 // Mặc định "Cần biết trước" là bài ngay trước trong khu; chỗ nào cần khác thì ghi đè. 'slug' = cùng khu, 'khu/slug' = khu khác.
 export const CAN_BIET_THUC_PHAM = {
-	'giu-nuoc-thit-phosphat-muoi-ph': [],
-	'bao-quan-hoat-do-nuoc-va-han-su-dung': [],
-	'maillard-caramel-acrylamide': [],
-	'tinh-bot-ho-hoa-thoai-hoa': [],
+	'giu-nuoc-thit-phosphat-muoi-ph': ['chat-nhu-hoa/protein-nhu-hoa-va-canh-tranh-hap-phu'], // bài dựa trên điện tích protein so với điểm đẳng điện
+	'bao-quan-hoat-do-nuoc-va-han-su-dung': [], // chưa có bài nền về aw trên web: hiện "đọc độc lập", không gắn cho có
+	'maillard-caramel-acrylamide': ['bao-quan-hoat-do-nuoc-va-han-su-dung'], // tốc độ nâu hóa phụ thuộc aw
+	'tinh-bot-ho-hoa-thoai-hoa': ['chat-on-dinh/co-che-nen-tang'], // độ nhớt, mạng gel
 	'protein-bien-tinh-gel-hoa-va-enzym': ['giu-nuoc-thit-phosphat-muoi-ph'],
-	'chat-tao-ngot-mau-dieu-vi': [],
+	'chat-tao-ngot-mau-dieu-vi': ['chat-nhu-hoa/ma-ins-quy-dinh-an-toan'], // cách đọc mã INS và ADI
 	'qua-trinh-nhiet-lanh-say-ep-dun': ['bao-quan-hoat-do-nuoc-va-han-su-dung'],
 	'quy-dinh-jecfa-efsa-da-kiem': ['chat-nhu-hoa/ma-ins-quy-dinh-an-toan'],
 };

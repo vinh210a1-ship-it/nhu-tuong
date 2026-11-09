@@ -9,7 +9,7 @@
 //                     liên kết tới /phong-lab/#nv-<id>; không có id thì mở /phong-lab/
 //   loai 'ban'      : id = 'kep' | 'pickering' | 'mayo' | 'nau-hoa'; liên kết tới /phong-lab/#ban-<id>
 //   loai 'so-tay'   : /phong-lab/#so-tay (Sổ tay thí nghiệm)
-//   loai 'tra-cuu'  : id = 'ins' | 'tt24'; liên kết tới /tra-cuu/#<id>
+//   loai 'tra-cuu'  : id = 'ins' | 'tt24'; liên kết tới /tra-cuu/#<id>; trường tùy chọn q = từ khóa điền sẵn: /tra-cuu/?q=<q>#<id>
 //   loai 'ta-duoc'  : /tra-cuu-ta-duoc/ (tra cứu tá dược FDA IID)
 //   loai 'chan-doan': /chan-doan/
 
@@ -62,7 +62,7 @@ export function hrefCongCu(d) {
 	if (d.loai === 'lab') return d.id ? `../../phong-lab/#nv-${d.id}` : '../../phong-lab/';
 	if (d.loai === 'ban') return `../../phong-lab/#ban-${d.id}`;
 	if (d.loai === 'so-tay') return '../../phong-lab/#so-tay';
-	if (d.loai === 'tra-cuu') return `../../tra-cuu/#${d.id}`;
+	if (d.loai === 'tra-cuu') return `../../tra-cuu/${d.q ? `?q=${encodeURIComponent(d.q)}` : ''}#${d.id}`;
 	if (d.loai === 'ta-duoc') return '../../tra-cuu-ta-duoc/';
 	if (d.loai === 'chan-doan') return '../../chan-doan/';
 	throw new Error(`cong-cu-bai: loại lạ "${d.loai}"`);
@@ -159,6 +159,14 @@ const CAN_BIET_KHU = {
 	'duoc-pham': CAN_BIET_DUOC_PHAM,
 };
 
+// Bài ngoài khu Nhũ tương KHÔNG có hộp "Thử ngay" vì chưa có công cụ đúng chủ đề (không gắn công cụ cho có). Khóa 'khu/slug', giá trị = lý do.
+// scripts/kiem-sau-build.mjs: mọi bài của 5 khu phải có hộp "Thử ngay" hoặc nằm ở đây; bài nằm ở đây mà vẫn có dữ liệu "Thử ngay" thì build dừng.
+export const MIEN_THU_NGAY = {
+	'chat-beo/da-hinh-ket-tinh-va-ban-do-pha': 'Chưa có công cụ kết tinh béo; Thiết kế phòng lab có thể thêm sau.',
+	'chat-beo/sfc-mang-tinh-the-oleogel': 'Chưa có công cụ kết tinh béo (như bài đa hình).',
+	'duoc-pham/qbd-scale-up-quy-trinh': 'Không có công cụ đúng chủ đề QbD và scale-up.',
+};
+
 /** Danh sách "Cần biết trước" của bài ngoài khu Nhũ tương. Mục ghi 'slug' = cùng khu, 'khu/slug' = khu khác. Mặc định: bài ngay trước trong khu; ghi [] nếu bài độc lập. */
 export function canBietTruocKhu(khu, slug) {
 	const bai = KHU[khu].bai;
@@ -169,7 +177,10 @@ export function canBietTruocKhu(khu, slug) {
 
 export function htmlCanBietTruocKhu(khu, slug) {
 	const ds = canBietTruocKhu(khu, slug);
-	if (!ds.length) return '';
+	if (!ds.length) {
+		// Bài đầu khu không có bài nào đứng trước nên không in gì; bài khác khai [] thì nói rõ là đọc độc lập (L5)
+		return KHU[khu].bai[0].slug === slug ? '' : '<p class="can-biet-truoc"><b>Cần biết trước:</b> không cần, bài này đọc độc lập.</p>';
+	}
 	const lk = ds.map((m) => {
 		const [k, s] = m.includes('/') ? m.split('/') : [khu, m];
 		const b = KHU[k]?.bai.find((x) => x.slug === s);

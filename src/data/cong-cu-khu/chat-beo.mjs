@@ -10,6 +10,9 @@ export const CONG_CU_CHAT_BEO = {
 		{ loai: 'may-tinh', id: 'arrhenius', ten: 'Hạn dùng theo nhiệt độ (Arrhenius)', vi: 'Nhập các điểm đo ở nhiều nhiệt độ để xem hạn dùng ngoại suy thay đổi thế nào, và vì sao con số luôn cần đi kèm điều kiện.' },
 		{ loai: 'lab', id: 'omega-3', ten: 'Nhiệm vụ "Sữa omega-3 không ôi"', vi: 'Chọn chất nhũ hóa và chất chống oxy hóa cho dầu dễ ôi rồi xem peroxide của mẻ sau thời gian bảo quản.' },
 	],
+	'phan-doan-interesterification-hydro-hoa': [
+		{ loai: 'may-tinh', id: 'iv-sv', ten: 'IV và SV từ thành phần acid béo', vi: 'Nhập thành phần acid béo trước và sau hydro hóa để thấy IV giảm khi nối đôi mất đi.' },
+	],
 	'chat-beo-dac-thu-va-chat-beo-trong-nhu-tuong': [
 		{ loai: 'lab', id: 'omega-3', ten: 'Nhiệm vụ "Sữa omega-3 không ôi"', vi: 'Dầu giàu PUFA dễ oxy hóa: thử xem cách nhũ hóa và chất chống oxy hóa thay đổi kết quả thế nào.' },
 		{ loai: 'ban', id: 'mayo', ten: 'Bàn nhũ tương, chế độ mayonnaise', vi: 'Thử đổ dầu nhanh và chậm, rồi so mẻ của bạn với bảng đo theo hàm lượng dầu.' },
