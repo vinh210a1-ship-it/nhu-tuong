@@ -64,7 +64,7 @@ export const NHU_HOA = {
 	tween80: { ten: 'Polysorbate 80 (Tween 80, E433)', gamma: 2.5, gammaMinhHoa: true, hieuQua: 1.0, tocDo: 0.85, loai: 'OW', nhayNhiet: null, gia: 200,
 		ghiChu: 'HLB cao: ưa nước, hợp dầu trong nước. Phân tử nhỏ hấp phụ nhanh nên giọt vừa vỡ đã được phủ kịp.' },
 	span80: { ten: 'Sorbitan monooleate (Span 80, E494)', gamma: 2.5, gammaMinhHoa: true, hieuQua: 1.0, tocDo: 0.85, loai: 'WO', nhayNhiet: null, gia: 180,
-		ghiChu: 'HLB thấp: ưa dầu, hợp nước trong dầu. Dùng cho dầu trong nước thì giọt hợp giọt, nổi váng dầu.' },
+		ghiChu: 'HLB thấp: ưa dầu, hợp nước trong dầu. Dùng cho dầu trong nước thì các giọt hợp giọt với nhau, nổi váng dầu.' },
 };
 
 /* ------------------------------------------------------------------ */

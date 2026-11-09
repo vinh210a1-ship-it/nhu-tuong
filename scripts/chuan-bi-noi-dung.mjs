@@ -175,7 +175,7 @@ for (const khu of KHU_BAT) {
 		// "bài 04–06" và "bài 04" bằng chữ (số theo tên tệp nguồn) -> liên kết bằng tên bài, không để số nội bộ lộ ra
 		const lkBai = (so) => (slugTheoSo[so] && tenBaiNgan(khu, slugTheoSo[so]) ? `[${tenBaiNgan(khu, slugTheoSo[so])}](../${slugTheoSo[so]}/)` : null);
 		body = body.replace(/(?<!\[)\b([Bb]ài) (0[1-9])\s*[–-]\s*(0[1-9])\b/g, (m, bai, a, b) => (lkBai(a) && lkBai(b) ? `${bai === 'Bài' ? 'Các bài' : 'các bài'} ${lkBai(a)} đến ${lkBai(b)}` : m));
-		if (khu === 'duoc-pham') body = body.replace(/(?<!\[)\b([Bb]ài) 10\b/g, (m, bai) => `${bai} [trang Nguồn](../../nguon/)`); // tệp 10 là danh mục nguồn, không công khai
+		if (khu === 'duoc-pham') body = body.replace(/(?<!\[)\b([Bb])ài 10\b/g, (m, b) => `[${b === 'B' ? 'Trang' : 'trang'} Nguồn](../../nguon/)`); // tệp 10 là danh mục nguồn, không công khai
 		body = body.replace(/(?<!\[)\b([Bb]ài) (0[1-9])\b/g, (m, bai, so) => (lkBai(so) ? `${bai} ${lkBai(so)}` : m));
 		// cột "Xem" của bảng thuật ngữ: | 01 | -> | [01](../nen-tang/) |
 		if (fm.loai === 'thuat-ngu')
