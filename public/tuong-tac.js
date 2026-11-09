@@ -284,17 +284,21 @@ function khaiNiem() {
 }
 
 // 4. Vùng cuộn ngang (công thức dài, bảng rộng) phải với tới được bằng bàn phím (WCAG 2.1.1; axe: scrollable-region-focusable).
-//    Chỉ gắn cho vùng THỰC SỰ tràn khung; đo lại khi đổi cỡ cửa sổ hoặc khi phông chữ công thức tải xong.
+//    Chỉ gắn cho vùng tràn khung hơn 8 px (lấn ít hơn thì không cuộn được thật); đo lại khi đổi cỡ cửa sổ hoặc khi phông chữ công thức tải xong.
 const VUNG_CUON = '.sl-markdown-content :is(.katex-display, .katex, table)';
 function vungCuonBanPhim() {
 	const gan = () => {
 		document.querySelectorAll(VUNG_CUON).forEach((e) => {
 			if (e.classList.contains('katex') && e.closest('.katex-display') && !e.classList.contains('katex-display')) return; // công thức nằm trong khối: khối đã lo
 			const bang = e.tagName === 'TABLE';
-			if (e.scrollWidth > e.clientWidth + 1) {
+			const khoi = e.classList.contains('katex-display');
+			const lan = e.scrollWidth - e.clientWidth;
+			// Công thức trong dòng chỉ lấn 1–8 px là do phần chữ nghiêng của KaTeX, không cuộn được thật: bỏ vùng cuộn bằng CSS, không thêm điểm dừng Tab
+			if (!bang && !khoi) e.classList.toggle('katex-nhe', lan > 0 && lan <= 8);
+			if (lan > 8) {
 				if (!e.hasAttribute('tabindex')) e.setAttribute('tabindex', '0');
 				e.setAttribute('aria-label', bang ? 'Bảng, cuộn ngang để xem hết' : 'Công thức, cuộn ngang để xem hết');
-				if (!bang) e.setAttribute('role', 'region'); // bảng giữ vai trò bảng để trình đọc màn hình vẫn đọc theo hàng, cột
+				if (!bang) e.setAttribute('role', khoi ? 'region' : 'group'); // bảng giữ vai trò bảng để trình đọc màn hình vẫn đọc theo hàng, cột
 				e.dataset.cuonBanPhim = '1';
 			} else if (e.dataset.cuonBanPhim) {
 				e.removeAttribute('tabindex');
