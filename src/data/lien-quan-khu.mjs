@@ -23,7 +23,7 @@ export const LIEN_QUAN_CAP = [
 		viB: 'Cùng phép ngoại suy Arrhenius, áp cho oxy hóa dầu, kèm các bẫy khi ngoại suy.' }, // 5
 	{ a: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung', b: 'duoc-pham/on-dinh-han-dung-ich',
 		viA: 'Cách ngành dược thử ổn định theo ICH và ASAP, nơi dữ liệu thử nhanh được dùng để định hạn dùng.',
-		viB: 'Ngoại suy hạn dùng cho dầu và nhũ tương thực phẩm, nơi phản ứng ít khi theo một bậc.' }, // 6
+		viB: 'Ngoại suy hạn dùng cho dầu và nhũ tương thực phẩm, chọn động học bậc 0 hoặc bậc 1 theo dữ liệu.' }, // 6
 	{ a: 'thuc-pham/bao-quan-hoat-do-nuoc-va-han-su-dung', b: 'duoc-pham/on-dinh-han-dung-ich',
 		viA: 'Điều kiện thử và vùng khí hậu IVb mà dược dùng để định hạn dùng.',
 		viB: 'Hàng rào aw, pH, nhiệt độ mà thực phẩm dùng để chặn vi sinh.' }, // 7
@@ -37,7 +37,7 @@ export const LIEN_QUAN_CAP = [
 		viA: 'Gelatin: gel protein tạo bằng làm lạnh, khác gel tạo bằng gia nhiệt.',
 		viB: 'Cơ chế chung của gel protein tạo bằng nhiệt, muối và enzym.' }, // 10
 	{ a: 'nhu-tuong/he-dac-biet', b: 'duoc-pham/he-phan-tan-nano',
-		viA: 'Nanoemulsion, SEDDS và liposome trong bào chế, với chỉ tiêu chất lượng của dược.',
+		viA: 'Nanoemulsion, SEDDS, liposome và LNP nhìn từ phía bào chế thuốc, kèm thông số đồng hóa áp lực cao và rotor–stator.',
 		viB: 'Nền vật lý của nanoemulsion và Ostwald ripening, phía thực phẩm.' }, // 11
 	{ a: 'nhu-tuong/chat-on-dinh', b: 'chat-on-dinh/co-che-nen-tang',
 		viA: 'Các cơ chế hydrocolloid giữ hệ ổn định: độ nhớt, ứng suất chảy, keo tụ do cạn kiệt.',
