@@ -47,7 +47,7 @@ npm ci
 npm run kiem    # phép kiểm máy tính và phòng lab; sai một phép là CI không đăng web
 npm run build   # chạy chuan-bi rồi astro build ra dist/
 npm run dev     # xem thử tại http://localhost:4321/nhu-tuong/
-npm run kiem-truy-cap   # sau khi build: axe-core quét 12 trang (sáng/tối, 1280/390 px); cần `npm install --no-save playwright` và trình duyệt; thêm `-- --chat` để có lỗi thì thoát mã 1
+npm run kiem-truy-cap   # sau khi build: axe-core quét 14 trang (sáng/tối, 1280/390 px); cần `npm install --no-save playwright` và trình duyệt; thêm `-- --chat` để có lỗi thì thoát mã 1
 ```
 Đăng web: `.github/workflows/dang-web.yml`. Với PR thì chỉ kiểm và build thử; khi gộp vào main thì build và đăng.
 

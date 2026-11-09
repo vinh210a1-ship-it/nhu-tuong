@@ -30,6 +30,8 @@ const TRANG = [
 	['tá dược', `${BASE}/tra-cuu-ta-duoc/`],
 	['số liệu R&D', `${BASE}/so-lieu-rnd/`],
 	['nguồn', `${BASE}/nguon/`],
+	['giấy phép', `${BASE}/giay-phep/`],
+	['nhật ký thay đổi', `${BASE}/nhat-ky-thay-doi/`],
 ];
 // quy tắc axe cần pass; "best-practice" không tính (chỉ WCAG A/AA)
 const THE_AXE = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
