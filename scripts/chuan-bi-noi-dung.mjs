@@ -10,10 +10,12 @@ import { tenNgan, htmlNhan, tachNhan, SO_DON_VI } from '../src/plugins/remark-nh
 import { KHU } from '../src/data/khu.mjs';
 import { dungTraCuu } from './tra-cuu.mjs';
 import { docTep } from './doc-tep.mjs';
+import { htmlLienQuan, kiemLienQuan } from '../src/data/lien-quan-khu.mjs';
 import { htmlThuNgay, htmlMucDo, htmlCanBietTruoc, htmlCanBietTruocKhu, CONG_CU_BAI } from '../src/data/cong-cu-bai.mjs';
 import { docTuKiemTra, kiemTuKiemTra, htmlTuKiemTra } from './tu-kiem-tra.mjs';
 
 const GOC = process.cwd();
+kiemLienQuan(); // dữ liệu hộp "Liên quan ở khu khác" sai (bài lạ, cùng khu, quá 3 dòng) thì dừng build
 const DOCS = path.join(GOC, 'src/content/docs');
 const KHU_BAT = ['nhu-tuong', 'chat-beo', 'chat-nhu-hoa', 'chat-on-dinh', 'thuc-pham', 'duoc-pham'];
 const TEN_KHU = { 'nhu-tuong': 'Nhũ tương', 'chat-beo': 'Chất béo', 'chat-nhu-hoa': 'Chất nhũ hóa', 'chat-on-dinh': 'Chất ổn định', 'thuc-pham': 'Thực phẩm', 'duoc-pham': 'Dược phẩm' };
@@ -235,6 +237,11 @@ ${htmlTuKiemTra(`${khu}/${fm.slug}`, TU_KIEM_TRA_KHU[khu][fm.slug])}
 		if (fm.loai === 'bai' && khu === 'nhu-tuong') {
 			const thuNgay = htmlThuNgay(fm.slug);
 			if (thuNgay) body += `\n\n${thuNgay}\n`;
+		}
+		// hộp "Liên quan ở khu khác" (gói L4; dữ liệu ở src/data/lien-quan-khu.mjs), đặt sau "Thử ngay", trước hộp "đã đọc"
+		if (fm.loai === 'bai') {
+			const lienQuan = htmlLienQuan(khu, fm.slug);
+			if (lienQuan) body += `\n\n${lienQuan}\n`;
 		}
 		// hộp cuối bài: đánh dấu đã đọc (lưu trong máy người xem)
 		if (fm.loai === 'bai')

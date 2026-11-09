@@ -469,6 +469,25 @@ a.tc-khu-the:hover { transform: translateY(-3px); border-color: var(--mau); }
 	.tn-ds li { grid-template-columns: minmax(0, 1fr); }
 	.tn-loai { grid-row: auto; }
 }
+/* ================= Gói L4: hộp "Liên quan ở khu khác" (cùng dáng với "Thử ngay", nhãn mang màu khu đích) ================= */
+.lien-quan {
+	margin-top: 1rem !important;
+	padding: 1rem 1.15rem;
+	border: 1px solid var(--hh-vien);
+	border-inline-start: 5px solid var(--sl-color-gray-4);
+	border-radius: 1rem;
+	background: var(--hh-be-mat);
+}
+.tu-kiem-tra + .lien-quan { margin-top: 1rem !important; }
+.lien-quan + .ket-bai { margin-top: 1rem !important; }
+.lq-khu { background: color-mix(in srgb, var(--lq-mau, var(--hh-thuong-hieu)) 16%, var(--hh-be-mat)) !important; border: 1px solid color-mix(in srgb, var(--lq-mau, var(--hh-thuong-hieu)) 55%, var(--hh-vien)); }
+.lq-nhu-tuong { --lq-mau: var(--chang-1); }
+.lq-chat-beo { --lq-mau: var(--khu-chat-beo); }
+.lq-chat-nhu-hoa { --lq-mau: var(--khu-chat-nhu-hoa); }
+.lq-chat-on-dinh { --lq-mau: var(--khu-chat-on-dinh); }
+.lq-thuc-pham { --lq-mau: var(--khu-thuc-pham); }
+.lq-duoc-pham { --lq-mau: var(--khu-duoc-pham); }
+
 /* ================= Gói 6: nhãn mức độ, "Cần biết trước", "Tự kiểm tra" ================= */
 .muc-do { display: inline-block; padding: 0.05rem 0.55rem; border-radius: 999px; font-size: 0.78rem; font-weight: 700; border: 1px solid var(--hh-vien); background: var(--hh-be-mat); color: var(--sl-color-white); }
 .muc-do-nen-tang { border-color: color-mix(in srgb, var(--chang-4) 55%, var(--hh-vien)); }
