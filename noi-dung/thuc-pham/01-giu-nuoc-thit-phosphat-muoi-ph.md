@@ -71,17 +71,15 @@ cook_loss = L0*(1 - A*swell) ; L0 = 30% (thịt nạc, không muối)  [T]
 yield     = 100 - cook_loss   # neo: control ≈70%, ướp đủ ≈85%  [N: @sheard2004]
 ```
 
-Gợi ý hiển thị: biểu đồ "đường cong WHC theo pH" với vạch pI; thanh trượt NaCl; cảnh báo khi (i) pH > 7,5 ("phosphat dư, gel sụp"), (ii) phosphat > mức tối đa cho phép (tra TT 24/2019/TT-BYT & Codex GSFA — **chưa đọc**, xem file 09), (iii) NaCl = 0 mà có phosphat ("hiệp lực thấp").
-
 ## 5. An toàn và quy định (đã xác minh)
 
 - EFSA (2019): nhóm phosphat (E 338–341, 343, 450–452) có **ADI nhóm 40 mg P/kg thể trọng/ngày**; ước tính phơi nhiễm vượt ADI ở trẻ nhỏ và trẻ em ở mức trung bình, ở thanh thiếu niên ở P95 `[N: @efsa2019phos]`.
 - JECFA: **MTDI nhóm 70 mg P/kg thể trọng** (từ mọi nguồn, tính theo P), đánh giá năm 1982 `[N: @jecfa-phosphoric]`.
-- Hai giá trị khác nhau về nguyên tắc (ADI vs MTDI, khác năm, khác dữ liệu): **không trộn** khi hiển thị trên web.
+- Hai giá trị khác nhau về nguyên tắc (ADI vs MTDI, khác năm, khác dữ liệu): **không trộn** hai giá trị này với nhau.
 
 ## 6. Việc còn thiếu
 
 1. Đọc toàn văn các bài chính (hầu hết mới đọc tóm tắt).
-2. Mức sử dụng tối đa theo nhóm thực phẩm: TT 24/2019/TT-BYT và Codex GSFA (GSFA không mở được từ container; xem file 99).
+2. Mức sử dụng tối đa theo nhóm thực phẩm: TT 24/2019/TT-BYT và Codex GSFA (chưa tra được GSFA).
 3. Số liệu pH dung dịch/hệ số phosphat: cần bảng từ nhà cung cấp hoặc sách (Fennema; Toldrá *Handbook of Meat Processing*).
 4. Thử nghiệm xác nhận mô hình `[T]` bằng đo thật (pH, drip loss, cook loss) trên 3 mức muối × 3 mức STPP.

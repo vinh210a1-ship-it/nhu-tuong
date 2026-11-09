@@ -53,7 +53,7 @@ nguon_goc: tai-lieu-nhu-tuong/09-thuat-ngu.md
 | Bắc cầu | Bridging | Polymer nối hai giọt | 03 |
 | Độ dài Debye | Debye length | Tầm tác dụng của đẩy tĩnh điện | 03 |
 | Thế zeta | Zeta potential | Thế tại mặt trượt, đo bằng điện di | 03, 06 |
-| Hợp giọt | Coalescence | Hai giọt thành một, không đảo ngược | 03 |
+| Hợp giọt | Coalescence | Hai giọt thành một, không đảo ngược (một số tài liệu tiếng Việt gọi là hợp nhất) | 03 |
 | Hợp giọt một phần | Partial coalescence | Giọt dính nhờ tinh thể mỡ | 03 |
 | Ostwald ripening | Ostwald ripening | Giọt nhỏ tan, giọt lớn lớn lên | 03 |
 | Chất ức chế ripening | Ripening inhibitor | Dầu không tan trộn trong giọt | 03, 04 |

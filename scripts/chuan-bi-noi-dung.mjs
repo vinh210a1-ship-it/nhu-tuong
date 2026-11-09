@@ -44,6 +44,11 @@ const MAY_TINH = [
 	['thuc-pham', 'qua-trinh-nhiet-lanh-say-ep-dun', '## 2. Đông lạnh và trạng thái thủy tinh', 'gia-tri-f'],
 ];
 // Tiêu đề gọn: bỏ "Chương 01 — " hay "01. " ở đầu
+// tên bài (ngắn, như ở thanh bên) theo khu và slug; dùng làm chữ liên kết thay cho số tệp nội bộ như "bài 03"
+const tenBaiNgan = (khu, slug) => {
+	const b = (KHU[khu]?.bai ?? []).find((x) => x.slug === slug);
+	return b ? b.ten.replace(/^\d+\.\s+/, '') : null;
+};
 const tieuDeGon = (t) => t.replace(/^Chương\s+\d+\s*[—–-]\s*/, '').replace(/^\d{2}\.\s+/, '');
 // Dòng ghi chú nội bộ ở khối trích đầu bài (chú giải nhãn, ngày soạn, tên file): không đưa lên web
 const GHI_CHU_NOI_BO = /Nhãn|Soạn ngày|Luồng "|chú giải|Mức tin cậy|Mức xác minh|\[(?:N|K|G|T)[^\]]*\]\s*=|\.md`/;
@@ -161,16 +166,21 @@ for (const khu of KHU_BAT) {
 		body = body.replace(/\[(?:N|K|T|G)[:;][^\]\n]*\]/g, (m) => m.slice(0, 2) + m.slice(2).replace(/:(?=[\p{L}\d])/gu, '\\:'));
 		// `03-ten-file.md` trong chữ -> liên kết tới bài (hoặc trang Nguồn với file danh mục nguồn)
 		body = body.replace(/`(\d{2}-[\w-]+\.md)`/g, (m, ten) =>
-			slugTheoFile[ten] ? `[bài ${ten.slice(0, 2)}](../${slugTheoFile[ten]}/)` : ten in slugTheoFile ? '[trang Nguồn](../../nguon/)' : m,
+			slugTheoFile[ten] ? `[bài ${tenBaiNgan(khu, slugTheoFile[ten]) ?? ten.slice(0, 2)}](../${slugTheoFile[ten]}/)` : ten in slugTheoFile ? '[trang Nguồn](../../nguon/)' : m,
 		);
 		// liên kết tới bài khác: (03-co-che-mat-on-dinh.md) -> (../mat-on-dinh/)
 		body = body.replace(/\]\((\d{2}-[\w-]+\.md)\)/g, (m, ten) => (slugTheoFile[ten] ? `](../${slugTheoFile[ten]}/)` : m));
 		// "file 03" trong chữ -> liên kết tới bài 03
-		body = body.replace(/\b[Ff]ile (0[1-9])\b/g, (m, so) => (slugTheoSo[so] ? `[bài ${so}](../${slugTheoSo[so]}/)` : m));
+		body = body.replace(/\b[Ff]ile (0[1-9])\b/g, (m, so) => (slugTheoSo[so] ? `[bài ${tenBaiNgan(khu, slugTheoSo[so]) ?? so}](../${slugTheoSo[so]}/)` : m));
+		// "bài 04–06" và "bài 04" bằng chữ (số theo tên tệp nguồn) -> liên kết bằng tên bài, không để số nội bộ lộ ra
+		const lkBai = (so) => (slugTheoSo[so] && tenBaiNgan(khu, slugTheoSo[so]) ? `[${tenBaiNgan(khu, slugTheoSo[so])}](../${slugTheoSo[so]}/)` : null);
+		body = body.replace(/(?<!\[)\b([Bb]ài) (0[1-9])\s*[–-]\s*(0[1-9])\b/g, (m, bai, a, b) => (lkBai(a) && lkBai(b) ? `${bai === 'Bài' ? 'Các bài' : 'các bài'} ${lkBai(a)} đến ${lkBai(b)}` : m));
+		if (khu === 'duoc-pham') body = body.replace(/(?<!\[)\b([Bb]ài) 10\b/g, (m, bai) => `${bai} [trang Nguồn](../../nguon/)`); // tệp 10 là danh mục nguồn, không công khai
+		body = body.replace(/(?<!\[)\b([Bb]ài) (0[1-9])\b/g, (m, bai, so) => (lkBai(so) ? `${bai} ${lkBai(so)}` : m));
 		// cột "Xem" của bảng thuật ngữ: | 01 | -> | [01](../nen-tang/) |
 		if (fm.loai === 'thuat-ngu')
 			body = body.replace(/\|\s*(0[1-9](?:,\s*0[1-9])*)\s*\|\s*$/gm, (m, ds) =>
-				'| ' + ds.split(/,\s*/).map((so) => (slugTheoSo[so] ? `[${so}](../${slugTheoSo[so]}/)` : so)).join(', ') + ' |',
+				'| ' + ds.split(/,\s*/).map((so) => (slugTheoSo[so] ? `[${tenBaiNgan(khu, slugTheoSo[so]) ?? so}](../${slugTheoSo[so]}/)` : so)).join(', ') + ' |',
 			);
 		// bảng thuật ngữ -> src/data/thuat-ngu.json cho thẻ "Khái niệm hôm nay" ở trang chủ
 		if (fm.loai === 'thuat-ngu') {

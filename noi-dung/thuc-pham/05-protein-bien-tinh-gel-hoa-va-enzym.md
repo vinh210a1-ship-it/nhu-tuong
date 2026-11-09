@@ -65,6 +65,6 @@ cảnh báo: gia nhiệt quá nhanh → gel thô, ít giữ nước (liên kết
 
 ## 5. Việc còn thiếu
 
-1. Đọc toàn văn các tổng quan gel whey/đậu nành (Consensus giới hạn còn 3 lượt tháng 11; xem file 99).
+1. Đọc toàn văn các tổng quan gel whey/đậu nành (chưa đọc toàn văn).
 2. Dữ liệu Td của từng protein: đối chiếu DSC trong sách (Damodaran; Fennema).
 3. Bảng enzym: cần thông số từ tài liệu nhà sản xuất hoặc FAO/JECFA specs; **GRAS/EFSA food enzymes chưa tra**.

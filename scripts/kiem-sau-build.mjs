@@ -58,6 +58,14 @@ const CAM_BAI = [
 	['mục "Bước tiếp theo" của người soạn', /Bước tiếp theo/],
 	['"các luồng" / "luồng nhũ tương…" (tên luồng nội bộ)', /\bcác luồng\b|\bluồng (?:nhũ|chất|khác|này)/],
 	['lời người soạn nói với người đọc ("bạn gửi/cho biết…")', /bạn (?:gửi|cho biết|xác nhận) /],
+	['ghi chú soạn thảo cho web ("với web", "quy tắc làm web", "web nên", "hiển thị trên web", "gợi ý hiển thị", "chỉ nên đăng")', /[Vv]ới web\b|[Qq]uy tắc làm web|\bweb nên\b|hiển thị trên web|[Gg]ợi ý hiển thị|(?:chỉ|chưa) nên đăng/],
+	['lời kể quy trình soạn ("theo trí nhớ", "kết quả tìm kiếm", "trong phiên", "qua công cụ", "container")', /[Tt]heo trí nhớ|[Kk]ết quả tìm kiếm|trong phiên|qua công cụ|công cụ web|\bcontainer\b/],
+	['tên tệp gõ dở ("04-...")', /\d{2}-\.\.\./],
+	['gọi bài theo số tệp ("bài 03"); phải gọi bằng tên bài', /\b[Bb]ài \d{2}\b/],
+	['"hợp nhất" chỉ giọt hoặc hạt béo (tên chuẩn là "hợp giọt"); "bản hợp nhất" của văn bản pháp luật thì được giữ', /(?<!bản |văn bản |Bản |và |gọi là )hợp nhất(?! (?:Thông|TT|VBHN|văn))/],
+	['"tải bề mặt" (tên chuẩn là "độ phủ bề mặt Γ")', /tải bề mặt/],
+	['tham chiếu tệp nội bộ ("xem file 99", "Xem 03-…", tên tệp .md)', /\b[Xx]em file \d+|\b[Xx]em `?\d{2}-|\b\d{2}-[a-zA-Z-]+\.md\b/],
+	['ghi chú hạn mức công cụ ("Consensus giới hạn", "không mở được từ container")', /Consensus giới hạn|không mở được từ container/],
 ];
 // Khu đã chuẩn hóa đợt 2026-11-08: khu nào có noi-dung/<khu>/tu-kiem-tra.md thì áp cùng bộ kiểm với khu Nhũ tương
 const KHU_CHUAN = Object.keys(KHU).filter((k) => k !== 'nhu-tuong' && fs.existsSync(path.join(GOC, 'noi-dung', k, 'tu-kiem-tra.md')));

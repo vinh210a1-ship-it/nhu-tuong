@@ -114,6 +114,6 @@ Hệ số tăng tốc giữa hai nhiệt độ: `AF = exp[(Ea/R)(1/T1 − 1/T2)]
 
 ## 6. Chắc chắn / giả thuyết / bước tiếp theo
 
-- **Chắc:** bảng điều kiện và thời lượng ICH/WHO/ASEAN (đọc trang gốc, qua công cụ trích); quy tắc ngoại suy Q1E; Q1B; ý tưởng ASAP.
+- **Chắc:** bảng điều kiện và thời lượng ICH/WHO/ASEAN (đọc trang gốc); quy tắc ngoại suy Q1E; Q1B; ý tưởng ASAP.
 - **Giả thuyết:** điều kiện 30/75 "bắt buộc" ở Việt Nam; phân bố Ea, B mặc định.
 - **Bước tiếp theo:** (1) xác minh văn bản Việt Nam về điều kiện thử và hạn dùng; (2) bổ sung ICH Q1D (bracketing/matrixing), Q5C (sinh phẩm) nếu cần; (3) đối chiếu bản PDF gốc cho các con số.
