@@ -21,6 +21,11 @@ export const NHAN = {
 	apSuat: { ma: 'G', chu: 'd32 ∝ P^−0,5 (độ dốc thực nghiệm thường −0,3 đến −0,6, tùy hệ và van)', bai: 'nhu-tuong/hinh-thanh' },
 	nhiet: { ma: 'N', chu: 'Mỗi 100 bar làm mẫu nóng thêm ≈ 2,4 °C (cân bằng năng lượng ΔP/ρcp)', bai: 'nhu-tuong/hinh-thanh' },
 	canKiet: { ma: 'N', chu: 'Xanthan ít: keo tụ do cạn kiệt, kem hóa nhanh hơn. Xanthan đủ: mạng yếu giữ giọt', bai: 'chat-on-dinh/co-che-nen-tang' },
+	nangLuongSA: { ma: 'N', chu: 'Mật độ năng lượng siêu âm danh định E = P·t/V (cách tính ở Belgheisi 2021, bảng 1)', bai: 'nhu-tuong/hinh-thanh' },
+	hieuSuatSA: { ma: 'T', chu: 'Chỉ một phần năng lượng danh định làm vỡ giọt: sách ghi hiệu suất siêu âm đầu dò là "thấp" (McClements 2016, bảng 6.1, tr.250); hệ số 0,1 là số minh họa', bai: 'nhu-tuong/hinh-thanh' },
+	quaXuLy: { ma: 'N', chu: 'Ở mức năng lượng cao nhất họ thử (3.240 J/cm³), giọt to lại và phân bố rộng ra vì quá xử lý (Belgheisi 2021, nhũ tương lycopene); mô phỏng giữ cỡ giọt không nhỏ thêm', bai: 'nhu-tuong/hinh-thanh' },
+	microfluidizer: { ma: 'N', chu: 'Microfluidizer cho giọt nhỏ nhất dưới 0,1 µm với hiệu suất năng lượng cao (McClements 2016, bảng 6.1, tr.250)', bai: 'nhu-tuong/hinh-thanh' },
+	phanBoMF: { ma: 'T', chu: 'Độ rộng phân bố của microfluidizer (σ = 0,35, hẹp hơn σ = 0,45 của siêu âm và 0,75 của mẻ chưa qua máy) là số minh họa; d₉₀ tính từ σ này', bai: 'nhu-tuong/hinh-thanh' },
 	hlb: { ma: 'K', chu: 'HLB cao (như Tween 80) hợp dầu trong nước, HLB thấp (như Span 80) hợp nước trong dầu (quy tắc Bancroft)', bai: 'chat-nhu-hoa/nen-tang-vat-ly-hoa-be-mat' },
 	bienTinh: { ma: 'K', chu: 'Protein whey biến tính khi nóng, lộ vùng kỵ nước, làm các giọt dính thành cụm', bai: 'nhu-tuong/mat-on-dinh' },
 	khongNo: { ma: 'N', chu: 'Độ không no quy đổi U = %C18:2 + 0,08·%C18:1 + 2,08·%C18:3; tốc độ oxy hóa (100/thời gian cảm ứng) tăng theo U (Kochhar 2009)', bai: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung' },
@@ -92,6 +97,16 @@ export function dTheoApSuat(bar, soLan, etaDau, tocDo = 1) {
 	const D100 = 2.5; // µm ở 100 bar, 1 lần, dầu 50 mPa·s [T]
 	return D100 * (bar / 100) ** -0.5 * soLan ** -0.25 * (etaDau / 50) ** 0.15 * tocDo;
 }
+
+/**
+ * Máy siêu âm đầu dò (gói P3). Mật độ năng lượng danh định E = P·t/V (J/mL, định nghĩa dùng ở Belgheisi 2021, bảng 1).
+ * Hiệu suất năng lượng của siêu âm đầu dò là "thấp" (McClements 2016, bảng 6.1, tr.250), nên chỉ một phần E làm vỡ giọt:
+ * ETA = 0,1 là số minh họa [T]. Quy E hiệu dụng về "bar tương đương" của máy đồng hóa (1 bar = 10⁵ J/m³ = 0,1 J/mL, E_V ≈ ΔP) để dùng lại
+ * đúng đường d–năng lượng của dTheoApSuat, không thêm số mũ mới. Từ E danh định 3.240 J/mL trở lên giọt không nhỏ thêm (quá xử lý, Belgheisi 2021) [T].
+ */
+export const SIEU_AM = { ETA: 0.1, E_QUA_XU_LY: 3240, SAN_D: 0.1, SAN_D_MF: 0.05, SIGMA_MF: 0.35, SIGMA: 0.45 };
+export const J_ML_MOI_BAR = 0.1;
+export const nangLuongDanhDinh = (congSuatW, phut, theTichML) => (congSuatW * phut * 60) / theTichML;
 
 /** d32 nhỏ nhất mà lượng chất nhũ hóa cho phép: d = 6φΓ/c (đảo công thức chatNhuHoaToiThieu). */
 export function dTheoChatNhuHoa(phi, gammaMgM2, cGL) {
@@ -200,9 +215,37 @@ export function moPhongMe(me) {
 	const dPre = dTienNhu(khuay.rpm, khuay.phut);
 
 	// 2. Đồng hóa
-	const dh = me.dongHoa ?? { bar: 0, soLan: 0, lamLanh: false };
+	// Máy làm mịn: 'dongHoa' (mặc định, giữ nguyên mẻ và mẫu cũ), 'microfluidizer' hoặc 'sieuAm'. Ba máy dùng chung đường d–năng lượng.
+	const lamMin = me.lamMin ?? 'dongHoa';
+	const khong = { bar: 0, soLan: 0, lamLanh: false };
+	const V = me.theTichML ?? 100;
+	let dh = me.dongHoa ?? khong;
+	let nangLuong = null; // J/mL
+	let quaXuLy = false;
+	let barNhiet; // áp suất tính nhiệt: siêu âm ngâm bể đá nên không cộng nhiệt [G]
+	if (lamMin === 'microfluidizer') dh = me.microfluidizer ?? khong;
+	if (lamMin === 'sieuAm') {
+		const su = me.sieuAm ?? { W: 0, phut: 0 };
+		const eDD = su.W > 0 && su.phut > 0 ? nangLuongDanhDinh(su.W, su.phut, V) : 0;
+		quaXuLy = eDD >= SIEU_AM.E_QUA_XU_LY;
+		const eDung = SIEU_AM.ETA * Math.min(eDD, SIEU_AM.E_QUA_XU_LY);
+		nangLuong = { danhDinh: eDD, hieuDung: SIEU_AM.ETA * eDD, barTuongDuong: eDung / J_ML_MOI_BAR };
+		dh = { bar: eDung / J_ML_MOI_BAR, soLan: 1, lamLanh: true };
+		barNhiet = 0;
+	} else {
+		barNhiet = dh.bar;
+		const e = dh.bar >= 20 && dh.soLan >= 1 ? J_ML_MOI_BAR * dh.bar * dh.soLan : 0;
+		nangLuong = { danhDinh: e, hieuDung: e, barTuongDuong: dh.bar };
+	}
 	const coDongHoa = dh.bar >= 20 && dh.soLan >= 1;
 	let dE = dTheoApSuat(dh.bar, dh.soLan, dau.eta, nh ? nh.tocDo : 1);
+	if (lamMin === 'sieuAm') dE = Math.max(SIEU_AM.SAN_D, dE);
+	if (lamMin === 'microfluidizer') dE = Math.max(SIEU_AM.SAN_D_MF, dE);
+	if (quaXuLy)
+		canhBao.push({
+			ma: 'qua-xu-ly',
+			chu: `Một nghiên cứu thấy ở mức năng lượng cao nhất họ thử (${SIEU_AM.E_QUA_XU_LY.toLocaleString('vi-VN')} J/cm³), giọt to lại và phân bố rộng ra vì quá xử lý (Belgheisi 2021, nhũ tương lycopene). Mô phỏng giữ cỡ giọt không nhỏ thêm.`,
+		});
 	if (coDongHoa && dPre > 100) {
 		dE *= 1.4; // không tiền nhũ: lần qua máy đầu tiên làm việc của máy khuấy [T]
 		canhBao.push({ ma: 'khong-tien-nhu', chu: 'Bạn cho thẳng dầu và nước vào máy đồng hóa. Lần qua máy đầu chỉ kịp xé mảng dầu lớn, nên giọt to hơn.' });
@@ -210,7 +253,7 @@ export function moPhongMe(me) {
 	const dCo = Math.min(dPre, dE);
 
 	// 3. Giới hạn chất nhũ hóa
-	const nhietRa = nhietDoRa(me.nhietVao ?? 25, coDongHoa ? dh.bar : 0, coDongHoa ? dh.soLan : 0, dh.lamLanh);
+	const nhietRa = nhietDoRa(me.nhietVao ?? 25, coDongHoa ? barNhiet : 0, coDongHoa ? dh.soLan : 0, dh.lamLanh);
 	let cGL = nh ? me.phanTramNhuHoa * 10 * nh.hieuQua : 0; // % khối lượng ≈ g/100 g ≈ 10 g/L
 	const dGamma = nh ? dTheoChatNhuHoa(phi, nh.gamma, cGL) : Infinity;
 	// Gộp mềm hai giới hạn: giọt bằng cái lớn hơn trong hai (chế độ năng lượng / chế độ thiếu chất nhũ hóa)
@@ -240,7 +283,7 @@ export function moPhongMe(me) {
 	const saiLoai = nh?.loai === 'WO';
 	if (saiLoai) canhBao.push({ ma: 'sai-hlb', chu: `${nh.ten} có HLB thấp, ưa dầu. Nó ổn định nước trong dầu, không phải dầu trong nước: giọt sẽ hợp giọt dần và nổi váng dầu.` });
 
-	const sigma = coDongHoa ? 0.45 : 0.75; // độ rộng phân bố [T]
+	const sigma = coDongHoa ? (lamMin === 'microfluidizer' ? SIEU_AM.SIGMA_MF : SIEU_AM.SIGMA) : 0.75; // độ rộng phân bố [T]; microfluidizer hẹp hơn đồng hóa van tiêu chuẩn
 	const pb = dacTrungPhanBo(d32, sigma);
 
 	// 6. Pha liên tục và xanthan
@@ -251,6 +294,8 @@ export function moPhongMe(me) {
 
 	const ketQua = {
 		phi, d32, ...pb, sigma, dPre, dE, dGamma, nhietRa, etaC, cheDo, bienTinh, saiLoai, thieuNhuHoa, nhuHoaToiThieu,
+		lamMin, nangLuong, quaXuLy, tongGam: me.tongGam ?? null, conLaiGam: me.conLaiGam ?? null,
+		nangLuongTongJ: nangLuong.hieuDung * V, // J, tính trên cả mẻ
 		canhBao, rhoDau: dau.rho,
 		chiPhi: chiPhi(me, dau, nh),
 	};
@@ -275,7 +320,11 @@ function chiPhi(me, dau, nh) {
 		((me.phanTramXanthan ?? 0) / 100) * 400 +
 		(me.tocopherol ? 0.6 : 0) +
 		(me.edta ? 0.1 : 0);
-	const dh = me.dongHoa?.bar >= 20 ? (me.dongHoa.bar / 100) * me.dongHoa.soLan * 0.6 : 0;
+	const lm = me.lamMin ?? 'dongHoa';
+	const may = lm === 'microfluidizer' ? me.microfluidizer : me.dongHoa;
+	// siêu âm: tính điện theo bar tương đương của E hiệu dụng, cùng hệ số 0,6 với máy đồng hóa (số minh họa)
+	const eDD = lm === 'sieuAm' && me.sieuAm?.W > 0 ? nangLuongDanhDinh(me.sieuAm.W, me.sieuAm.phut, me.theTichML ?? 100) : 0;
+	const dh = lm === 'sieuAm' ? ((SIEU_AM.ETA * Math.min(eDD, SIEU_AM.E_QUA_XU_LY)) / J_ML_MOI_BAR / 100) * 0.6 : may?.bar >= 20 ? (may.bar / 100) * may.soLan * 0.6 : 0;
 	const khuay = me.khuay?.rpm > 0 ? 0.3 : 0;
 	return nl + dh + khuay;
 }
@@ -352,6 +401,9 @@ export function ongNghiem(kq, ngay, nhietDo = 25) {
 /* Nhiệm vụ                                                            */
 /* ------------------------------------------------------------------ */
 
+/** Ngưỡng năng lượng (J) của hai sao cuối ở nhiệm vụ it-nang-luong: luật chơi [T], đã dò lưới là đạt được. */
+export const NANG_LUONG_SAO = [150000, 120000];
+
 export const NHIEM_VU = [
 	{
 		id: 'sua-thuc-vat',
@@ -406,11 +458,69 @@ export const NHIEM_VU = [
 			{ chu: 'Chi phí không quá 30 nghìn đồng/kg', dat: (kq) => kq.chiPhi <= 30 },
 		],
 	},
+	// ---- Gói P3: máy làm mịn. Ngưỡng ở ba nhiệm vụ dưới đây là luật chơi [T]; scripts/kiem-phong-lab.mjs dò lưới để chắc có lời giải 3 sao.
+	{
+		id: 'ba-may',
+		ten: 'Ba máy, một công thức',
+		de: 'Làm cùng một công thức (10% dầu hướng dương, Tween 80) bằng cả ba máy làm mịn, mỗi mẻ 100 g, đo từng mẻ bằng máy nhiễu xạ laser. Ghi ba mẻ vào Sổ tay rồi so d₃₂, d₉₀ và năng lượng của ba máy.',
+		coDinh: { dau: 'huong-duong', phanTramDau: 10, nhuHoa: 'tween80' },
+		moMay: true, // bày cả ba máy làm mịn
+		ngay: 7,
+		nganSach: 40,
+		sao: [
+			{ chu: 'Sổ tay có đủ ba mẻ của ba máy làm mịn, cùng công thức (phần trăm Tween 80 lệch nhau không quá 0,5 điểm)', dat: (kq, o, bq, st) => baMayDu(st) && baMayCungCongThuc(st) },
+			{ chu: 'Cả ba mẻ đều 100 g', dat: (kq, o, bq, st) => baMayMoi(st).length === 3 && baMayMoi(st).every((e) => Math.abs(e.me - 100) <= 0.5) },
+			{ chu: 'Cả ba mẻ đã đo bằng máy nhiễu xạ laser', dat: (kq, o, bq, st) => baMayMoi(st).length === 3 && baMayMoi(st).every((e) => e.laser) },
+		],
+	},
+	{
+		id: 'me-lon',
+		ten: 'Mẻ lớn cho khách',
+		de: 'Khách cần 800 g nhũ tương 10% dầu hướng dương, giọt d₃₂ không quá 0,6 µm. Chọn máy làm mịn hợp với cỡ mẻ.',
+		coDinh: { dau: 'huong-duong', phanTramDau: 10 },
+		moMay: true,
+		ngay: 7,
+		nganSach: 40,
+		sao: [
+			{ chu: 'Mẻ từ 800 g trở lên', dat: (kq) => (kq.tongGam ?? 0) >= 800 - 1e-9 },
+			{ chu: 'd₃₂ không quá 0,6 µm', dat: (kq) => kq.d32 <= 0.6 },
+			{ chu: 'Sau khi qua máy còn ít nhất 780 g', dat: (kq) => (kq.conLaiGam ?? 0) >= 780 - 1e-9 },
+		],
+	},
+	{
+		id: 'it-nang-luong',
+		ten: 'Mẻ lớn, ít năng lượng nhất',
+		de: 'Vẫn là mẻ 800 g, d₃₂ không quá 0,6 µm và còn ít nhất 780 g, nhưng dùng ít năng lượng nhất. Mở sau khi bạn được 3 sao ở nhiệm vụ "Mẻ lớn cho khách".',
+		coDinh: { dau: 'huong-duong', phanTramDau: 10 },
+		moMay: true,
+		moKhoa: { can: 'me-lon', sao: 3 },
+		ngay: 7,
+		nganSach: 40,
+		sao: [
+			{ chu: 'Đủ ba điều kiện của "Mẻ lớn cho khách" (800 g, d₃₂ ≤ 0,6 µm, còn ≥ 780 g)', dat: (kq) => (kq.tongGam ?? 0) >= 800 - 1e-9 && kq.d32 <= 0.6 && (kq.conLaiGam ?? 0) >= 780 - 1e-9 },
+			{ chu: `Tổng năng lượng hiệu dụng không quá ${NANG_LUONG_SAO[0] / 1000} kJ cho cả mẻ`, dat: (kq) => kq.d32 <= 0.6 && (kq.tongGam ?? 0) >= 800 - 1e-9 && kq.nangLuongTongJ <= NANG_LUONG_SAO[0] },
+			{ chu: `Tổng năng lượng hiệu dụng không quá ${NANG_LUONG_SAO[1] / 1000} kJ cho cả mẻ`, dat: (kq) => kq.d32 <= 0.6 && (kq.tongGam ?? 0) >= 800 - 1e-9 && kq.nangLuongTongJ <= NANG_LUONG_SAO[1] },
+		],
+	},
 ];
 
-/** Chấm sao một mẻ cho một nhiệm vụ */
-export function chamSao(nhiemVu, kq, baoQuan = { sang: false }) {
+/** Ba mẻ mới nhất của nhiệm vụ ba-may, mỗi máy làm mịn một mẻ (mẻ mới hơn thay mẻ cũ cùng máy). */
+export function baMayMoi(soTay = []) {
+	const theo = {};
+	for (const e of soTay) if (e.nvId === 'ba-may' && e.lamMin && !theo[e.lamMin]) theo[e.lamMin] = e; // soTay: mới nhất đứng đầu
+	return ['dongHoa', 'microfluidizer', 'sieuAm'].filter((m) => theo[m]).map((m) => theo[m]);
+}
+export const baMayDu = (soTay) => baMayMoi(soTay).length === 3;
+export const baMayCungCongThuc = (soTay) => {
+	const ds = baMayMoi(soTay);
+	if (ds.length < 3) return false;
+	const p = ds.map((e) => e.pNhuHoa);
+	return Math.max(...p) - Math.min(...p) <= 0.5 + 1e-9;
+};
+
+/** Chấm sao một mẻ cho một nhiệm vụ. `soTay`: các mục Sổ tay (mới nhất đứng đầu), chỉ nhiệm vụ nhiều mẻ mới dùng. */
+export function chamSao(nhiemVu, kq, baoQuan = { sang: false }, soTay = []) {
 	const o = kq.ongNghiem(nhiemVu.ngay, nhiemVu.baoQuan?.nhietDo ?? 25);
-	const tieuChi = nhiemVu.sao.map((s) => ({ chu: s.chu, dat: !!s.dat(kq, o, baoQuan) }));
+	const tieuChi = nhiemVu.sao.map((s) => ({ chu: s.chu, dat: !!s.dat(kq, o, baoQuan, soTay) }));
 	return { tieuChi, sao: tieuChi.filter((t) => t.dat).length, ong: o };
 }

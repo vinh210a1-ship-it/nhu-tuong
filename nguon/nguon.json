@@ -529,6 +529,20 @@
   "khoa": "becker2026"
  },
  {
+  "trich_dan": "Belgheisi S, Motamedzadegan A, Milani JM, Rashidi L, Rafe A (2021). Impact of ultrasound processing parameters on physical characteristics of lycopene emulsion. J Food Sci Technol 58(2):484–493.",
+  "ho": "belgheisi",
+  "nam": 2021,
+  "doi": "10.1007/s13197-020-04557-5",
+  "pmid": "33568842",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7847880/",
+  "muc_doc": "toan-van",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [],
+  "khoa": "belgheisi2021"
+ },
+ {
   "trich_dan": "Benichou A. et al. (2002). Protein-polysaccharide interactions for stabilization of food emulsions. *J. Dispersion Sci. Technol.*",
   "ho": "benichou",
   "nam": 2002,
@@ -3189,6 +3203,20 @@
   "khoa": "hazarika2016"
  },
  {
+  "trich_dan": "Hielscher Ultrasonics. UP200St, Powerful Ultrasonic Lab Homogenizer (200 W; 26 kHz; mẫu 2–1.000 mL; biên độ 20–100%); truy cập 2026-11-09.",
+  "ho": "hielscher",
+  "nam": 2026,
+  "doi": null,
+  "pmid": null,
+  "url": "https://www.hielscher.com/up200st-powerful-ultrasonic-lab-homogenizer.htm",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [],
+  "khoa": "hielscher-up200st"
+ },
+ {
   "trich_dan": "Hinderink EBA, Sagis L, Schroën K, Berton-Carabin CC (2021). Sequential adsorption and interfacial displacement in emulsions stabilized with plant–dairy protein blends. *J Colloid Interface Sci* 583:704–713.",
   "ho": "hinderink",
   "nam": 2021,
@@ -5273,6 +5301,20 @@
    "ban-lab-moi:mezzenga2004"
   ],
   "khoa": "mezzenga2004"
+ },
+ {
+  "trich_dan": "Microfluidics. LM20 Microfluidizer Processor, datasheet (bản Analytik, 2020; áp tới 30.000 psi, mẫu tối thiểu 14 mL, lưu lượng 60–100 mL/phút).",
+  "ho": "microfluidics",
+  "nam": 2020,
+  "doi": null,
+  "pmid": null,
+  "url": "https://analytik.co.uk/wp-content/uploads/2020/01/analytik_-microfluidics-lm20-datasheet.pdf",
+  "muc_doc": "mot-phan",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [],
+  "khoa": "microfluidics-lm20"
  },
  {
   "trich_dan": "Microtrac MRB (hãng; một đơn vị của Verder) (2026). Turbiscan Range: shelf-life and dispersibility analyzers (tài liệu giới thiệu thiết bị của hãng, 24 trang).",
