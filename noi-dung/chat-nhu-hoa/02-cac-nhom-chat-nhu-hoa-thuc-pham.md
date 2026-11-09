@@ -11,7 +11,7 @@ nguon_goc: tai-lieu-chat-hoat-dong-be-mat/02-cac-nhom-chat-nhu-hoa-thuc-pham.md
 # 02. Các nhóm chất nhũ hóa thực phẩm: cấu trúc → cơ chế → ứng dụng → an toàn
 
 > Nhãn bằng chứng: [N] có nguồn đã đọc trong phiên; [K] kiến thức giáo khoa chưa đối chiếu; [G] suy luận. Số nguồn ở `06-nguon-tai-lieu.md`.
-> Mức an toàn/ADI chi tiết ở `04-ma-INS-quy-dinh-an-toan.md`; file này chỉ nhắc ngắn.
+> Mức an toàn/ADI chi tiết ở bài [Mã INS/E, quy định và an toàn](../ma-ins-quy-dinh-an-toan/); bài này chỉ nhắc ngắn.
 
 ---
 
@@ -65,15 +65,15 @@ EFSA 2017: không cần ADI bằng số; không lo ngại ở mức phơi nhiễ
 Este glycerol với 1–2 axit béo (mono ưa nước hơn). Thương phẩm gồm "MDG" 40–60% mono, "chưng cất phân tử" (DMG) ≥ 90% mono. [K] Một nghiên cứu bánh mì đã dùng DMG90 và DMG45/75. [N: @rodriguezsandoval2026; @garzon2018]
 
 ### Cơ chế và ứng dụng
-1. **Trong kem lạnh/ kem tươi đánh bông:** MDG chen vào mặt phân cách, đẩy protein, thúc đẩy hợp nhất từng phần; MDG còn thúc đẩy kết tinh mỡ. [N: @goff1997; @wang2021a; @cheng2020]
+1. **Trong kem lạnh/ kem tươi đánh bông:** MDG chen vào mặt phân cách, đẩy protein, thúc đẩy hợp giọt một phần; MDG còn thúc đẩy kết tinh mỡ. [N: @goff1997; @wang2021a; @cheng2020]
 2. **Trong bánh mì:** làm mềm ruột và trì hoãn cứng khi bảo quản; kết hợp tốt với SSL và enzyme (DMG90–SSL–maltogenic α-amylase cho độ cứng thấp hơn, độ ổn định bột tốt hơn). [N: @rodriguezsandoval2026; @gomez2004]
    - Gómez 2004: monoglyceride và lecithin giàu lysophospholipid là lựa chọn tốt nhất để **trì hoãn cứng khi bảo quản**; SSL, este sucrose, lecithin cho hiệu ứng làm mềm ruột mạnh nhất ở thời gian ủ dài. [N]
-   - Cơ chế nền (tạo phức với amylose, "α-gel") [K]: chưa kiểm trong phiên. Một nghiên cứu bánh mì không gluten ghi nhận chất nhũ hóa **không làm thay đổi** sự thoái hóa tinh bột trong 5 ngày dù kéo dài hạn dùng. [N: @nunes2009] → web nên viết "cơ chế còn tranh luận, tùy hệ".
+   - Cơ chế nền (tạo phức với amylose, "α-gel") [K]: chưa đối chiếu nguồn. Một nghiên cứu bánh mì không gluten ghi nhận chất nhũ hóa **không làm thay đổi** sự thoái hóa tinh bột trong 5 ngày dù kéo dài hạn dùng. [N: @nunes2009] Vì vậy cơ chế còn tranh luận, tùy hệ.
 3. **Mỡ thực vật:** làm tinh thể mỡ nhỏ hơn, hiệu quả ở bơ thực vật [K].
 
 ### An toàn
 - EFSA 2017: không cần ADI bằng số; không lo ngại ở mức phơi nhiễm đã báo cáo; E471 chỉ chiếm 0,8–3,5% lượng chất béo khuyến nghị theo mức trung bình. [N: @efsa2017b]
-- Nghiên cứu quan sát NutriNet-Santé 2024: mức ăn E471 cao có HR ung thư tổng thể 1,15 (1,04–1,27), ung thư vú 1,24 (1,03–1,51). Không chứng minh nhân quả. [N: @nutrinetsante2024b] Xem `04-...`.
+- Nghiên cứu quan sát NutriNet-Santé 2024: mức ăn E471 cao có HR ung thư tổng thể 1,15 (1,04–1,27), ung thư vú 1,24 (1,03–1,51). Không chứng minh nhân quả. [N: @nutrinetsante2024b] Chi tiết ở bài [Mã INS/E, quy định và an toàn](../ma-ins-quy-dinh-an-toan/).
 
 ---
 
@@ -103,8 +103,8 @@ Sorbitan este hóa với axit béo, ngưng tụ khoảng 20 mol ethylene oxide (
 
 ### Cơ chế
 - HLB cao (≈15–16,7 [K]), hấp phụ rất nhanh, hạ γ mạnh, ổn định lập thể bằng chuỗi PEG–sorbitan.
-- Trong **kem lạnh**: PS80 giảm protein hấp phụ trên hạt béo, nên hạt dễ hợp nhất từng phần khi đánh/ đông lạnh, tạo mạng hạt béo giúp kem "khô", chịu chảy. Goff chỉ ra PS80 là tác nhân gây mất ổn định mạnh nhất, tỉ lệ thuận với hạ γ liên diện, **không** tỉ lệ thuận HLB. [N: @goff1987, @goff1989]
-- Trong thực nghiệm kem thực vật (đậu nành, đậu Hà Lan): hợp nhất từng phần tăng khi tăng PS80; MDG gây chảy rỉ (drip-through) cao hơn PS80. [N: @hartel2025]
+- Trong **kem lạnh**: PS80 giảm protein hấp phụ trên hạt béo, nên hạt dễ hợp giọt một phần khi đánh/ đông lạnh, tạo mạng hạt béo giúp kem "khô", chịu chảy. Goff chỉ ra PS80 là tác nhân gây mất ổn định mạnh nhất, tỉ lệ thuận với hạ γ liên diện, **không** tỉ lệ thuận HLB. [N: @goff1987, @goff1989]
+- Trong thực nghiệm kem thực vật (đậu nành, đậu Hà Lan): hợp giọt một phần tăng khi tăng PS80; MDG gây chảy rỉ (drip-through) cao hơn PS80. [N: @hartel2025]
 - Trong hệ protein: Tween 20/60/80 đẩy protein theo cơ chế "orogenic" (file 03). [N]
 
 ### An toàn
@@ -128,12 +128,12 @@ Sucrose este hóa với 1–8 nhóm axit béo; mức este hóa và độ dài m�
 - Dải HLB phủ 2–16+ (đặc biệt phối với mono-diglyceride, phủ HLB 4–16). [N: @gupta1983]
 - Mono-este chuỗi dài 6-O-acyl: HLB 10,3–15,7, giọt 380–563 nm. [N: @zhu2021]
 - Este sucrose HLB 5–7 phù hợp cho O/W trong hệ có thêm axit béo; thêm axit béo bão hòa mạch thẳng ≥ C14 chặn kem hóa trên 30 ngày. [N: @watanabe2018]
-- Kem đánh bông: S170 (HLB 1, mono-este < 1%, 70% axit stearic) tạo tinh thể mỡ nhỏ và màng liên diện mạnh → mạng hợp nhất từng phần đồng đều, độ chắc và ổn định cao. [N: @zeng2023]
-- Kem lạnh: SE làm giảm tải protein, khiến hạt mỡ dễ hợp nhất từng phần; GMO lại tác động qua tinh thể mỡ chứ không đổi tải protein. [N: @cheng2020]
+- Kem đánh bông: S170 (HLB 1, mono-este < 1%, 70% axit stearic) tạo tinh thể mỡ nhỏ và màng liên diện mạnh → mạng hợp giọt một phần đồng đều, độ chắc và ổn định cao. [N: @zeng2023]
+- Kem lạnh: SE làm giảm độ phủ protein, khiến hạt mỡ dễ hợp giọt một phần; GMO lại tác động qua tinh thể mỡ chứ không đổi độ phủ protein. [N: @cheng2020]
 - Review cập nhật: Cholakova 2024 (Curr Opin Colloid Interface Sci) — hành vi pha, nhũ tương, bọt, oleogel. [N: abstract]
 
 ### An toàn
-Theo trí nhớ, EFSA đánh giá lại E473 năm 2010 với ADI 40 mg/kg bw/ngày và có đánh giá bổ sung cho trẻ dưới 16 tuần, nhưng **chưa đối chiếu nguồn**. [K: cần kiểm] Kết quả tìm kiếm có "Refined exposure assessment of sucrose esters of fatty acids (E 473)" và "Re-evaluation ... in foods for infants below 16 weeks of age" (xem `06-...`).
+Theo trí nhớ, EFSA đánh giá lại E473 năm 2010 với ADI 40 mg/kg bw/ngày và có đánh giá bổ sung cho trẻ dưới 16 tuần, nhưng **chưa đối chiếu nguồn**. [K: cần kiểm] Kết quả tìm kiếm có "Refined exposure assessment of sucrose esters of fatty acids (E 473)" và "Re-evaluation ... in foods for infants below 16 weeks of age".
 
 ---
 
@@ -144,10 +144,10 @@ Polyglycerol este hóa với axit polyricinoleic (từ dầu thầu dầu). Đ�
 
 ### Cơ chế
 - Tương tác van der Waals đuôi–dầu, liên kết hydro đầu–nước; muối NaCl trong pha nước nội tăng ổn định. [N: @raviadaran2019]
-- Màng liên diện có mô-đun giãn nở cao hơn, nhờ chuỗi phân nhánh và dài → chống hợp nhất. PGPR cân bằng nhanh. [N: @jin2021]
+- Màng liên diện có mô-đun giãn nở cao hơn, nhờ chuỗi phân nhánh và dài → chống hợp giọt. PGPR cân bằng nhanh. [N: @jin2021]
 - PGPR chưa hấp phụ vẫn góp phần ổn định giọt nước bên trong ở nhũ tương kép W/O/W (chống trương phồng trong dung dịch nhược trương), không chỉ do độ nhớt pha dầu. [N: @gregersen2025]
 - Nồng độ cao quá (4% trong một hệ W/O/W Pickering) làm giảm ổn định do cạnh tranh hấp phụ. [N: @nie2025]
-- Thực tế: tăng PGPR 2% → 6% ngăn hợp nhất giọt; đến 10% độ nhớt tăng ổn định thêm. [N: @niu2024]
+- Thực tế: tăng PGPR 2% → 6% ngăn hợp giọt; đến 10% độ nhớt tăng ổn định thêm. [N: @niu2024]
 - Review Zembyla 2020: PGPR là chất nhũ hóa W/O "kinh điển"; hướng nghiên cứu hiện nay chuyển sang hạt Pickering (zein, cellulose, lignin, tinh bột, tinh thể polyphenol). [N]
 - Kết hợp DAG (diacylglycerol) + PGPR: DAG kết tinh liên diện, kết hợp Pickering + mạng, tăng ổn định đông–rã. [N: @yang2020]
 
@@ -165,7 +165,7 @@ EFSA: ADI 25 mg/kg bw/ngày (từ NOAEL 2.500 mg/kg bw/ngày, một liều duy n
 Phân tử lưỡng tính: khung triterpenoid/ steroid (kỵ nước) + chuỗi đường (ưa nước). Thương mại: Q-Naturale (Ingredion). Tạo mixen. [N: @gumus2017]
 
 ### Cơ chế khác biệt so với Tween
-- Ở cùng nồng độ, saponin cho giọt nhỏ hơn protein/polysaccharide vì tải bề mặt thấp (Gumus). [N]
+- Ở cùng nồng độ, saponin cho giọt nhỏ hơn protein/polysaccharide vì độ phủ bề mặt thấp (Gumus). [N]
 - Saponin quillaja và berry hình thành **lớp vỏ rắn** trên mặt dầu hướng dương–nước; độ đàn hồi giãn nở các saponin khác từ 2 đến 500 mN/m; độ đàn hồi liên diện tác động lớn tới độ đàn hồi cắt của nhũ tương (φ 75–85%), vừa phải tới giới hạn chảy, không ảnh hưởng ứng suất nhớt. [N: @tsibranska2019]
 - Quillaja tự lắp ghép tạo màng mạng sợi ở mặt phân cách, cho phép làm bột dầu tinh dầu cam 93% và oleogel 98,2% dầu từ khuôn nhũ tương. [N: @chen2019a]
 - Chống kết tụ trong dạ dày (khác caseinate) → dầu tiêu hóa nhanh hơn. [N: @gumus2017]

@@ -64,7 +64,7 @@ export const NHU_HOA = {
 	tween80: { ten: 'Polysorbate 80 (Tween 80, E433)', gamma: 2.5, gammaMinhHoa: true, hieuQua: 1.0, tocDo: 0.85, loai: 'OW', nhayNhiet: null, gia: 200,
 		ghiChu: 'HLB cao: ưa nước, hợp dầu trong nước. Phân tử nhỏ hấp phụ nhanh nên giọt vừa vỡ đã được phủ kịp.' },
 	span80: { ten: 'Sorbitan monooleate (Span 80, E494)', gamma: 2.5, gammaMinhHoa: true, hieuQua: 1.0, tocDo: 0.85, loai: 'WO', nhayNhiet: null, gia: 180,
-		ghiChu: 'HLB thấp: ưa dầu, hợp nước trong dầu. Dùng cho dầu trong nước thì giọt hợp nhất, nổi váng dầu.' },
+		ghiChu: 'HLB thấp: ưa dầu, hợp nước trong dầu. Dùng cho dầu trong nước thì các giọt hợp giọt với nhau, nổi váng dầu.' },
 };
 
 /* ------------------------------------------------------------------ */
@@ -221,7 +221,7 @@ export function moPhongMe(me) {
 	} else if (thieuNhuHoa) {
 		canhBao.push({
 			ma: 'thieu-nhu-hoa',
-			chu: `Chất nhũ hóa không đủ phủ bề mặt giọt. Máy có thể xé tới ${so(dCo)} µm nhưng chỉ đủ chất để giữ giọt ${so(dGamma)} µm, phần dư hợp nhất lại.`,
+			chu: `Chất nhũ hóa không đủ phủ bề mặt giọt. Máy có thể xé tới ${so(dCo)} µm nhưng chỉ đủ chất để giữ giọt ${so(dGamma)} µm, phần dư hợp giọt lại.`,
 		});
 	}
 	const nhuHoaToiThieu = nh ? chatNhuHoaToiThieu(phi, Math.min(d32, dCo), nh.gamma).cGL / 10 / nh.hieuQua : null;
@@ -236,9 +236,9 @@ export function moPhongMe(me) {
 		});
 	}
 
-	// 5. Sai loại chất nhũ hóa → hợp nhất khi bảo quản
+	// 5. Sai loại chất nhũ hóa → hợp giọt khi bảo quản
 	const saiLoai = nh?.loai === 'WO';
-	if (saiLoai) canhBao.push({ ma: 'sai-hlb', chu: `${nh.ten} có HLB thấp, ưa dầu. Nó ổn định nước trong dầu, không phải dầu trong nước: giọt sẽ hợp nhất dần và nổi váng dầu.` });
+	if (saiLoai) canhBao.push({ ma: 'sai-hlb', chu: `${nh.ten} có HLB thấp, ưa dầu. Nó ổn định nước trong dầu, không phải dầu trong nước: giọt sẽ hợp giọt dần và nổi váng dầu.` });
 
 	const sigma = coDongHoa ? 0.45 : 0.75; // độ rộng phân bố [T]
 	const pb = dacTrungPhanBo(d32, sigma);

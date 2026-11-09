@@ -39,7 +39,7 @@ nguon_goc: tai-lieu-chat-hoat-dong-be-mat/04-ma-INS-quy-dinh-an-toan.md
 | 472d | este axit tartaric (TATEM) | nhũ hóa | EFSA 2020 [N] |
 | 472e | este axit diacetyl-tartaric (DATEM) | nhũ hóa, cải tạo bột | EFSA 2020 [N] |
 | 472f | este hỗn hợp axit acetic + tartaric (MATEM) | nhũ hóa | EFSA 2020 [N] |
-| 473 | Este sucrose của axit béo | nhũ hóa | tên có trong kết quả tìm kiếm EFSA, chi tiết [K] |
+| 473 | Este sucrose của axit béo | nhũ hóa | tên có trong các tài liệu EFSA, chi tiết [K] |
 | 474 | Sucroglyceride | nhũ hóa | [K] |
 | 475 | Este polyglycerol của axit béo | nhũ hóa | [K] |
 | 476 | PGPR | nhũ hóa W/O | EFSA (pub 4743) [N] |
@@ -92,8 +92,8 @@ Ghi chú nhãn Việt Nam: tên gọi trong Phụ lục 1 gồm tên Việt + t�
 - Thông tư 24/2019 bãi bỏ Thông tư 27/2012/TT-BYT, 08/2015/TT-BYT và Phần III Quyết định 3742/2001/QĐ-BYT. [N]
 - Nguyên tắc GMP (Điều 8): dùng lượng tối thiểu cần cho hiệu quả kỹ thuật. Điều 9(3): không cho phụ gia mang theo trong thực phẩm công thức trẻ nhỏ và thực phẩm bổ sung trừ khi phụ lục cho phép. [N]
 - Trang văn bản đã đọc **bị cắt ngang** (nội dung phụ lục bị ẩn sau đăng nhập), nên bài này **không** liệt kê INS nào được phép cho nhóm thực phẩm nào, ML là bao nhiêu; phần đó tra ở [tab Mức tối đa (TT24)](../../tra-cuu/#tt24). Tình trạng hiệu lực: cần xác nhận trên cơ sở dữ liệu pháp luật chính thức. [N]
-- Tài liệu tham khảo bổ sung có trong kết quả tìm kiếm: bản PDF trên Công báo (congbaocdn.chinhphu.vn), bản VBPL (vbpl.vn), bản chemlinked (Global Food Compliance). Chưa mở.
-- QCVN 4-22 (chất nhũ hóa) xuất hiện trong kết quả tìm kiếm (file của Eurofins). **Chưa mở**; cần kiểm xem còn hiệu lực hay đã thay thế.
+- Tài liệu tham khảo bổ sung: bản PDF trên Công báo (congbaocdn.chinhphu.vn), bản VBPL (vbpl.vn), bản chemlinked (Global Food Compliance). Chưa mở.
+- QCVN 4-22 (chất nhũ hóa) được một tài liệu của Eurofins nhắc đến. **Chưa mở**; cần kiểm xem còn hiệu lực hay đã thay thế.
 
 ### Cách bổ sung cho web
 1. Tải PDF Công báo của Thông tư 24/2019 và văn bản hợp nhất 08/VBHN-BYT.

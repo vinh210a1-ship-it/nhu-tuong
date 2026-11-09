@@ -22,9 +22,9 @@ Chọn chất nhũ hóa theo **loại hệ** trước, theo **HLB** sau, rồi m
 | Hệ | Câu hỏi quyết định | Chất thường dùng | Bằng chứng trong phiên |
 |---|---|---|---|
 | O/W lỏng (đồ uống, sữa, nước sốt) | pH, muối, nhiệt, có protein? | Tween, lecithin, saponin, este sucrose HLB cao, protein | [N] Gumus; Zhang 2020 |
-| O/W đông lạnh, đánh bông (kem) | cần hợp nhất từng phần? | MDG + PS80, este sucrose | [N] Goff; Cheng 2020; Wang 2021 |
+| O/W đông lạnh, đánh bông (kem) | cần hợp giọt một phần? | MDG + PS80, este sucrose | [N] Goff; Cheng 2020; Wang 2021 |
 | Bột nhào, bánh mì | gia cố gluten, làm mềm ruột, trì hoãn cứng | SSL, DATEM, MDG, lecithin | [N] Gómez 2004; Gárzon 2018 |
-| W/O (bơ thực vật, phết) | độ ổn định hợp nhất, tinh thể mỡ | PGPR, MDG, lecithin, Span | [N] Zembyla 2020; Jin 2021 |
+| W/O (bơ thực vật, phết) | độ ổn định hợp giọt, tinh thể mỡ | PGPR, MDG, lecithin, Span | [N] Zembyla 2020; Jin 2021 |
 | Nhũ tương kép W/O/W | hai lớp chất nhũ hóa khác nhau | PGPR (trong) + protein/gum arabic (ngoài) | [N] Niu 2023; Gregersen 2025 |
 | Nhũ tương nano, mùi | giọt < 200 nm, nhiệt, pH | saponin quillaja, lecithin (microfluidizer), polysorbate | [N] Gumus; Tsibranska 2019 |
 
@@ -39,9 +39,9 @@ Chọn chất nhũ hóa theo **loại hệ** trước, theo **HLB** sau, rồi m
 
 ## 5.2 Kem, kem tươi đánh bông
 
-Xem `03-...`, mục 3.6. Điểm chính:
-- Cần *đẩy* protein để hợp nhất từng phần nhưng đủ ổn định khi ủ; PS80 nhạy với tỉ lệ khối lượng PS80/ chất béo. [N: @gelin1996]
-- MDG vs PS80 vs este sucrose có cơ chế khác nhau (tinh thể mỡ vs giảm tải protein). [N: @cheng2020]
+Xem bài [Protein làm chất nhũ hóa và cạnh tranh hấp phụ](../protein-nhu-hoa-va-canh-tranh-hap-phu/), mục 3.6. Điểm chính:
+- Cần *đẩy* protein để hợp giọt một phần nhưng đủ ổn định khi ủ; PS80 nhạy với tỉ lệ khối lượng PS80/ chất béo. [N: @gelin1996]
+- MDG vs PS80 vs este sucrose có cơ chế khác nhau (tinh thể mỡ vs giảm độ phủ protein). [N: @cheng2020]
 - Đo: kích thước hạt mỡ (đo sau ủ), mức mất ổn định mỡ, drip-through, overrun. [N: @warren2018]
 
 ## 5.3 Bánh mì và sản phẩm nướng
@@ -55,7 +55,7 @@ Xem `03-...`, mục 3.6. Điểm chính:
 ## 5.4 W/O, bơ thực vật, phết
 
 - PGPR là chất W/O kinh điển; hướng mới: hạt Pickering. [N: @zembyla2020]
-- PGPR 2–6% ngăn hợp nhất; 10% tăng độ nhớt. [N: @niu2024]
+- PGPR 2–6% ngăn hợp giọt; 10% tăng độ nhớt. [N: @niu2024]
 - Pha nước chứa NaCl giúp ổn định (điện/ lập thể). [N: @raviadaran2019]
 - DAG + PGPR → kết tinh liên diện của chất béo, ổn định đông–rã. [N: @yang2020]
 
@@ -68,7 +68,7 @@ Xem `03-...`, mục 3.6. Điểm chính:
 
 - Đạm Hà Lan + phospholipid: chọn tỉ lệ vì vicilin bị đẩy trước. [N: @shen2023]
 - Dầu giàu PUFA: tránh đẩy protein bằng Tween nếu muốn bảo vệ lipid; hoặc dùng chất chống oxy hóa. [N: @yi2019] [G]
-- Kem thực vật: tỉ lệ PS80 tăng hợp nhất từng phần, MDG tăng drip-through. [N: @hartel2025]
+- Kem thực vật: tỉ lệ PS80 tăng hợp giọt một phần, MDG tăng drip-through. [N: @hartel2025]
 
 ---
 
@@ -82,7 +82,7 @@ Xem `03-...`, mục 3.6. Điểm chính:
 - Với các loại chất khác (lecithin, saponin, protein), HLB không áp dụng hay không đáng tin; chuyển sang thử trực tiếp.
 
 ### Bước 2. Đo liên diện
-- γ(t), mô-đun giãn nở, thế zeta; nếu có protein: đo tải bề mặt Γ (kem rửa, ly tâm). [N: @gumus2017; @hinderink2021]
+- γ(t), mô-đun giãn nở, thế zeta; nếu có protein: đo độ phủ bề mặt Γ (kem rửa, ly tâm). [N: @gumus2017; @hinderink2021]
 
 ### Bước 3. Thử trong hệ thật
 - Đồng hóa theo điều kiện gần sản xuất; đo d₃₂, creaming, độ nhớt; thử 3 điều kiện stress (pH, muối, nhiệt) (như Gumus, Raffinose esters). [N]

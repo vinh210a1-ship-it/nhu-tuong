@@ -281,5 +281,12 @@ for (const nv of NHIEM_VU) {
 	}
 }
 
+// Thuật ngữ: trong chữ của phòng lab, hiện tượng giọt nhập lại với nhau gọi là "hợp giọt" (không dùng "hợp nhất")
+{
+	const tep = fs.readdirSync(new URL('../public/phong-lab/', import.meta.url)).filter((f) => f.endsWith('.js'));
+	const sai = tep.filter((f) => /hợp nhất|tải bề mặt/.test(fs.readFileSync(new URL(`../public/phong-lab/${f}`, import.meta.url), 'utf8')));
+	dung(`Chữ phòng lab dùng "hợp giọt", "độ phủ bề mặt" (không "hợp nhất", "tải bề mặt")${sai.length ? ': còn ở ' + sai.join(', ') : ''}`, sai.length === 0);
+}
+
 console.log(loi ? `\n${loi} phép kiểm SAI` : '\nTất cả phép kiểm phòng lab ĐẠT');
 process.exit(loi ? 1 : 0);

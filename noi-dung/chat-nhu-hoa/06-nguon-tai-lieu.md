@@ -138,5 +138,5 @@ nguon_goc: tai-lieu-chat-hoat-dong-be-mat/06-nguon-tai-lieu.md
 ## F. Ghi chú về công cụ và độ tin cậy
 
 - Công cụ trích xuất (WebFetch) tóm tắt bằng mô hình nhỏ; số trích ở đây đều là "theo tóm tắt công cụ". Với số then chốt (ADI, ML, HR, π_c) **cần mở bản gốc** trước khi đăng.
-- Có một con số đáng ngờ trong luận án Gumus (tải bề mặt saponin 0,001 mg/m²) đã được đánh dấu để kiểm.
+- Có một con số đáng ngờ trong luận án Gumus (độ phủ bề mặt saponin 0,001 mg/m²) đã được đánh dấu để kiểm.
 - Với Consensus, tôi chỉ có tóm tắt và trang chi tiết của Consensus, chưa DOI. Khi đưa vào web, lấy DOI từ trang tạp chí.

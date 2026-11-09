@@ -14,7 +14,7 @@ Tệp này không thành trang riêng: "máy in" (`scripts/chuan-bi-noi-dung.mjs
 
 ### Câu 1
 Hỏi: Chất nhũ hóa làm những việc gì, theo thứ tự thời gian, trong và sau khi đồng hóa?
-Đáp: Ba việc: (i) hấp phụ nhanh lên mặt phân cách trong lúc đồng hóa, (ii) hạ sức căng bề mặt γ để giọt dễ vỡ nhỏ, (iii) tạo lớp áo đẩy nhau (tĩnh điện hoặc lập thể) hay lớp màng nhớt–đàn hồi để giọt không hợp nhất về sau.
+Đáp: Ba việc: (i) hấp phụ nhanh lên mặt phân cách trong lúc đồng hóa, (ii) hạ sức căng bề mặt γ để giọt dễ vỡ nhỏ, (iii) tạo lớp áo đẩy nhau (tĩnh điện hoặc lập thể) hay lớp màng nhớt–đàn hồi để giọt không hợp giọt về sau.
 Căn cứ: N | Kết luận trước
 
 ### Câu 2
@@ -82,7 +82,7 @@ Căn cứ: N | Kết luận trước
 
 ### Câu 1
 Hỏi: Với nhũ tương W/O như bơ thực vật, câu hỏi quyết định là gì và thường dùng những chất nào?
-Đáp: Câu hỏi quyết định là độ ổn định chống hợp nhất và tinh thể mỡ. Chất thường dùng: PGPR, MDG, lecithin, Span.
+Đáp: Câu hỏi quyết định là độ ổn định chống hợp giọt và tinh thể mỡ. Chất thường dùng: PGPR, MDG, lecithin, Span.
 Căn cứ: N | Kết luận trước
 
 ### Câu 2
