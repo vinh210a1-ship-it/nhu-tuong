@@ -349,7 +349,7 @@ for (const nv of NHIEM_VU) {
 	dung('P1: mẫu lưu trước gói này (không có me) lấy ra cho cùng d32 như trước', chuanCoc(cu).me === 100 && chuanCoc(cu).nuocTuBu === true && moCu.d32 === moMoi.d32 && moCu.nhietRa === moMoi.nhietRa);
 	// P2
 	const T = THIET_BI;
-	dung('P2: số trong THIET_BI khớp bản thiết kế', T.khuay.theTichML[0] === 1 && T.khuay.theTichML[1] === 2000 && T.khuay.nhotToiDaMPas === 5000 && T.dongHoa.theTichToiThieuML === 30 && T.dongHoa.theTichNamLaiML === 15 && T.dongHoa.apToiDaBar === 2000
+	dung('P2: số trong THIET_BI khớp bản thiết kế', T.khuay.theTichML[0] === 1 && T.khuay.theTichML[1] === 2000 && T.khuay.nhotToiDaMPas === 5000 && T.dongHoa.theTichToiThieuML === 30 && T.dongHoa.theTichNamLaiML === 15
 		&& T.nhieuXaLaser.daiMay[0] === 0.01 && T.nhieuXaLaser.daiMay[1] === 3500 && T.nhieuXaLaser.daiTinCay[0] === 0.1 && T.nhieuXaLaser.daiTinCay[1] === 1000
 		&& T.dls.daiMay[0] === 0.0003 && T.dls.daiMay[1] === 10 && T.dls.daiTinCay[0] === 0.003 && T.dls.daiTinCay[1] === 5);
 	{

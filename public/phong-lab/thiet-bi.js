@@ -16,8 +16,7 @@ export const THIET_BI = {
 		ten: 'Máy đồng hóa áp cao để bàn',
 		vd: 'GEA PandaPLUS 2000',
 		theTichToiThieuML: 30,
-		theTichNamLaiML: 15,
-		apToiDaBar: 2000,
+		theTichNamLaiML: 15, // hãng ghi "internal volume 15 ml" [N]; việc 15 mL nằm lại sau mỗi lượt là suy luận [G]
 		khoaNguon: 'gea-pandaplus2000-2025',
 		ghiChu: 'Hãng ghi: thể tích tối thiểu có thể thay đổi theo sản phẩm.',
 		nhan: 'N',

@@ -28,7 +28,7 @@ export const MAY_MAC_DINH = () => ({ khuay: { rpm: 10000, phut: 2 }, dongHoa: { 
 export const DAI_MAY = { rpm: [2000, 20000], phut: [0.5, 10], bar: [50, 1500], soLan: [1, 5] };
 
 export const LY = {
-	me: 'Phòng lab này mô phỏng quy mô bàn thí nghiệm. Dưới 20 g không còn máy nào trong phòng chạy được; trên 2 kg vượt sức chứa của máy khuấy cắt cao để bàn (2 L).',
+	me: 'Phòng lab này mô phỏng quy mô bàn thí nghiệm. Dưới 20 g không còn máy nào trong phòng chạy được; khoảng 2 kg trở lên vượt sức chứa của máy khuấy cắt cao để bàn (2 L).',
 	dauMax: 'Trên 40% dầu, nhũ tương đặc dần và mô hình độ nhớt của bàn này chưa kiểm. Muốn làm sốt đặc, dùng chế độ Mayonnaise.',
 	dauMin: 'Bàn này giữ dầu từ 1% đến 40% của mẻ; dưới 1% thì mẻ gần như chỉ là nước.',
 	nhuHoa: 'Chất nhũ hóa trong bàn này đi từ 0,05% đến 3% của mẻ.',

@@ -497,7 +497,7 @@ function htmlMay() {
 	return (
 		`<ul class="pl-ds-may">` +
 		dong(k.chay, 'Máy khuấy cắt cao', `(${T.khuay.theTichML[0]} mL–${T.khuay.theTichML[1] / 1000} L, ≤ ${T.khuay.nhotToiDaMPas.toLocaleString('vi-VN')} mPa·s) ${nhanHTML({ ma: 'N' })}`, k.ly) +
-		dong(d.chay, 'Máy đồng hóa áp cao', `(tối thiểu ${T.dongHoa.theTichToiThieuML} mL; ${T.dongHoa.theTichNamLaiML} mL nằm lại máy) ${nhanHTML({ ma: 'N' })}`, d.ly) +
+		dong(d.chay, 'Máy đồng hóa áp cao', `(tối thiểu ${T.dongHoa.theTichToiThieuML} mL ${nhanHTML({ ma: 'N' })}; thể tích trong máy ${T.dongHoa.theTichNamLaiML} mL ${nhanHTML({ ma: 'N' })}, coi như nằm lại sau mỗi lượt ${nhanHTML({ ma: 'G' })})`, d.ly) +
 		`</ul><p class="pl-meo">Thông số theo ${T.khuay.vd} và ${T.dongHoa.vd}. ${T.dongHoa.ghiChu}</p>`
 	);
 }
