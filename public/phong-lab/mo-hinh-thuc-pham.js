@@ -230,7 +230,8 @@ export function moPhongBaoQuan(me) {
 	const muoi = me.muoi ?? 0;
 	const duong = me.duong ?? 0;
 	const nuoc = Math.max(1, 100 - muoi - duong);
-	const aw = awUocTinh({ muoi, duong });
+	const awTuMau = typeof me.awDo === 'number' && me.awDo > 0 && me.awDo <= 1; // aw lấy từ mẫu mang sang, thay cho ước tính từ muối và đường
+	const aw = awTuMau ? me.awDo : awUocTinh({ muoi, duong });
 	const wps = muoiPhaNuoc(muoi, nuoc);
 	const pH = me.pH ?? 6.5;
 	const T = me.nhietDo ?? 25;
@@ -252,7 +253,7 @@ export function moPhongBaoQuan(me) {
 	if (aw < AW_MEN) menChan.push('aw');
 	if (uc.tong >= 1) menChan.push('chất bảo quản');
 	const men = { moc: menChan.length === 0, chan: menChan, ucChe: uc };
-	return { aw, wps, pH, nhietDo: T, kin, nuoc, ketQua, men, soMoc: ketQua.filter((r) => r.moc).length };
+	return { aw, awTuMau, wps, pH, nhietDo: T, kin, nuoc, ketQua, men, soMoc: ketQua.filter((r) => r.moc).length };
 }
 
 export const NHIEM_VU_BQ = [

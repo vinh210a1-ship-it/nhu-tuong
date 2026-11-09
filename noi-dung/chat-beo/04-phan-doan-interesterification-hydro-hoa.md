@@ -29,7 +29,7 @@ Chất béo thiên nhiên là hỗn hợp TAG có điểm nóng chảy khác nha
 | **Dung môi** (acetone, hexane) | Hòa tan béo trong dung môi, kết tinh ở nhiệt thấp, lọc | Chọn lọc cao (CBE, SOS-rich) | Thu hồi dung môi, an toàn, chi phí |
 | **Detergent (Lanza)** | Dung dịch chất hoạt động bề mặt + muối giúp tách tinh thể khỏi olein | Tách nhanh | Rửa sạch, ít dùng hiện nay |
 
-### 2.3 Ví dụ có số liệu: tạo CBE từ cọ stearin và shea (R20)
+### 2.3 Ví dụ có số liệu: tạo CBE từ cọ stearin và shea (Hwang và cs. 2021)
 - Mục tiêu: tạo chất béo giàu **POP** từ palm stearin bằng **phân đoạn hexane hai bước** và chất béo giàu **SOS** từ shea đã khử gôm; DAG làm hỏng tempering nên phải thấp.
 - Kết quả: chất béo giàu POP có DAG **1,6%**, so với **4,6%** của quy trình hai bước dùng acetone đã báo cáo trước đó.
 - CBE phối POP-rich : SOS-rich = 40 : 60 chứa **63,7%** SUS đối xứng tổng (22,0% POP, 8,6% POS, 33,1% SOS) và 1,3% DAG (ca cao: 1,1%).
@@ -37,13 +37,13 @@ Chất béo thiên nhiên là hỗn hợp TAG có điểm nóng chảy khác nha
 - Giới hạn: kết luận dựa vào SFC; tempering và độ bền bloom chưa được tóm tắt nêu. [G: cần thử bloom]
 
 ### 2.4 Palm fractions
-R19 cho thấy các phân đoạn cọ là chất béo nền cho shortening và chiên, nhưng cũng nêu quan ngại sức khỏe công chúng. Tóm tắt này có câu so sánh độ bền với dầu ô liu và dầu dừa mà tôi thấy **không hợp lý về hóa học** (dừa bão hòa cao hơn cọ); **không dùng câu đó** khi chưa đọc toàn văn. [N: @sulaiman2022; G: nghi ngờ nội dung]
+Sulaiman và cs. 2022 cho thấy các phân đoạn cọ là chất béo nền cho shortening và chiên, nhưng cũng nêu quan ngại sức khỏe công chúng. Tóm tắt này có câu so sánh độ bền với dầu ô liu và dầu dừa mà **không hợp lý về hóa học** (dừa bão hòa cao hơn cọ); **không dùng câu đó** khi chưa đọc toàn văn. [N: @sulaiman2022; G: nghi ngờ nội dung]
 
 ## 3. Interesterification (IE)
 
 ### 3.1 Bản chất [K]
 IE là phản ứng **trao đổi acyl** giữa các TAG (hoặc giữa TAG và acid/ester). Không thêm/bớt acid béo tổng thể; thay đổi **phân bố vị trí** nên thay đổi điểm nóng chảy, SFC, kết tinh. Dạng chính: chuyển ester nội phân tử (interesterification), acidolysis (TAG + acid béo), alcoholysis, glycerolysis. [K]
-Bài tổng quan R13 mô tả hydro hóa, IE hóa học và IE enzyme: xúc tác, cơ chế, động học, tác động đến sức khỏe. [N: @kadhum2017]
+Bài tổng quan Kadhum và cs. 2017 mô tả hydro hóa, IE hóa học và IE enzyme: xúc tác, cơ chế, động học, tác động đến sức khỏe. [N: @kadhum2017]
 
 ### 3.2 IE hóa học (random)
 - Xúc tác kiềm (ví dụ natri methoxide) ở khoảng 80–100 °C, nguyên liệu phải khô và ít acid tự do/peroxide. Sản phẩm là **phân bố ngẫu nhiên** acid béo trên 3 vị trí (cân bằng thống kê). [K]
@@ -53,7 +53,7 @@ Bài tổng quan R13 mô tả hydro hóa, IE hóa học và IE enzyme: xúc tác
 ### 3.3 IE enzyme
 - Dùng **lipase** làm xúc tác; điều kiện êm dịu, ít sản phẩm phụ; enzyme cố định có thể **tái sử dụng**; yêu cầu thấp hơn về acid value của nguyên liệu so với IE hóa học. [N: @zhang2021]
 - Bản chất chọn lọc vị trí: lipase **sn-1,3 đặc hiệu** giữ nguyên vị trí sn-2 (ví dụ OPO cho thực phẩm trẻ em); lipase không đặc hiệu cho kết quả ngẫu nhiên. [K] (ví dụ thương mại: Thermomyces lanuginosus, Rhizomucor miehei, Candida antarctica B). [K]
-- **Acyl migration** (chuyển acyl nội phân tử, từ sn-2 ra sn-1/3) xảy ra trong quá trình và làm phức tạp việc đánh giá; R16 đề xuất mô hình đánh giá dựa trên phân bố acid béo trên khung glycerol để theo dõi mức IE và migration. [N: @zhang2021]
+- **Acyl migration** (chuyển acyl nội phân tử, từ sn-2 ra sn-1/3) xảy ra trong quá trình và làm phức tạp việc đánh giá; Zhang và cs. 2021 đề xuất mô hình đánh giá dựa trên phân bố acid béo trên khung glycerol để theo dõi mức IE và migration. [N: @zhang2021]
 - Chỉ tiêu đánh giá quy ước: **slip melting point, SFC, TAG theo equivalent carbon number, thành phần acid béo ở sn-2**. [N: @zhang2021]
 - Sản phẩm: margarine zero-trans, chất béo dẻo, bánh kẹo, dầu trị liệu, thực phẩm trẻ nhỏ, chất thay thế/tương đương bơ ca cao. [N: @singh2022]
 - Nhược điểm: **chi phí cao**. [N: @zbikowska2023]
@@ -73,8 +73,8 @@ Thay đổi sn-2 bằng IE có thể tác động đến lipaemia sau ăn và ti
 - Ví dụ: oleic cis nóng chảy ~13–16 °C, elaidic trans ~44–45 °C → đó là lý do trans làm chất béo cứng hơn mà không cần hydro hóa hoàn toàn. (Số liệu nóng chảy ở chương 01 [K].)
 
 ### 4.2 Vì sao đang bị thay thế
-- R17: trong hydro hóa bán phần hình thành các **đồng phân trans (TFA) nguy hại sức khỏe**; hydro hóa vẫn "ngon" về công nghệ nhưng bị chỉ trích về dinh dưỡng. [N: @zbikowska2023]
-- R39: TFA được xem là biomarker chính của các bệnh không lây như tim mạch, béo phì, đái tháo đường, trong bối cảnh mỡ bánh nướng giàu bão hòa và trans. [N: @dhiman2024] (Đây là phát biểu trong phần giới thiệu của tổng quan; nếu cần số liệu dịch tễ, phải đọc các nghiên cứu gốc.)
+- Zbikowska và cs. 2023: trong hydro hóa bán phần hình thành các **đồng phân trans (TFA) nguy hại sức khỏe**; hydro hóa vẫn "ngon" về công nghệ nhưng bị chỉ trích về dinh dưỡng. [N: @zbikowska2023]
+- Dhiman và cs. 2024: TFA được xem là biomarker chính của các bệnh không lây như tim mạch, béo phì, đái tháo đường, trong bối cảnh mỡ bánh nướng giàu bão hòa và trans. [N: @dhiman2024] (Đây là phát biểu trong phần giới thiệu của tổng quan; nếu cần số liệu dịch tễ, phải đọc các nghiên cứu gốc.)
 - **Quy định:** WHO REPLACE (2018), FDA Mỹ coi dầu hydro hóa một phần không còn là GRAS (2015, hiệu lực từ 2018–2020). [K] **Quy định tại Việt Nam chưa tra trong phiên này** — cần kiểm tra văn bản pháp luật hiện hành.
 
 ### 4.3 Thay thế và công nghệ mới
@@ -99,10 +99,8 @@ Thay đổi sn-2 bằng IE có thể tác động đến lipaemia sau ăn và ti
 
 Bảng trên là **đề xuất khởi đầu** [G], không phải đơn thuốc.
 
-## 6. Điều đã chắc / còn giả thuyết / bước tiếp theo
+## 6. Điều đã chắc và điều còn là giả thuyết
 
-- **Đã chắc (có nguồn):** vai trò từng công nghệ; số liệu DAG và CBE trong R20; IE enzyme có acyl migration và chi phí cao; TFA là động lực thay hydro hóa.
+- **Đã chắc (có nguồn):** vai trò từng công nghệ; số liệu DAG và CBE trong Hwang và cs. 2021; IE enzyme có acyl migration và chi phí cao; TFA là động lực thay hydro hóa.
 - **Chưa kiểm sách:** điều kiện công nghiệp (nhiệt độ, chất xúc tác), nhãn "định hướng", tên lipase thương mại, quy định pháp lý.
 - **Giả thuyết:** bảng chọn kỹ thuật theo mục tiêu.
-- **Đề xuất:** viết trang "Chọn công nghệ biến tính" dạng sơ đồ quyết định, mỗi nhánh dẫn tới trang kiến thức.
-- **Bước tiếp theo:** (1) bạn cho biết sản phẩm ưu tiên (margarine, shortening, CBE hay dầu chức năng) để tôi đào sâu một nhánh; (2) tìm văn bản Việt Nam về trans fat và ghi nhãn.

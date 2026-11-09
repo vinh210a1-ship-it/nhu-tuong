@@ -45,7 +45,7 @@ nguon_goc: tai-lieu-chat-on-dinh/05-gum-arabic-gelatin-tinh-bot-cellulose.md
 
 ## 2. Gelatin
 
-(Lưu ý: tôi **chưa đọc** đánh giá an toàn gelatin; theo kiến thức nền gelatin ở EU được coi là thực phẩm chứ không phải phụ gia, cần xác minh bằng nguồn trước khi đưa lên web.)
+(Lưu ý: **chưa đọc** đánh giá an toàn gelatin; theo kiến thức nền gelatin ở EU được coi là thực phẩm chứ không phải phụ gia, cần xác minh bằng nguồn trước khi dùng.)
 
 - **Bloom** là chỉ số chuẩn công nghiệp, Bloom cao liên hệ với gelatin có khối lượng phân tử cao. [N: @zambuto2024, mô tả]
 - **Xoắn ba (triple helix)**: hàm lượng xoắn ba (suy từ enthalpy biến tính ~41 °C bằng DSC, xác nhận bằng XRD) **tăng theo Bloom**; tăng xoắn ba thì giảm trương nở và cải thiện cơ tính màng. [N: @bigi2004]
@@ -69,7 +69,7 @@ nguon_goc: tai-lieu-chat-on-dinh/05-gum-arabic-gelatin-tinh-bot-cellulose.md
 - Gel tinh bột lúa mì–khoai tây: HPDSP (hydroxypropyl distarch phosphate) ức chế thoái hóa mạnh nhất trong số các phụ gia thử; guar cải thiện đông–rã đông xuyên suốt. [N: @mo2026]
 - HDP nền dysphagia: thêm konjac gum hoặc xanthan tăng nhớt, mô-đun; KG dẻo giảm mất nhớt do cắt, xanthan cứng tăng đàn hồi và shear-thinning; mức IDDSI 3–4; chống mất nhớt với amylase nước bọt nhân tạo. [N: @fan2026]
 - Biến tính kép ngô làm chất gel thay gelatin trong kẹo dẻo: trình tự biến tính ảnh hưởng độ kết tinh và cấu trúc. [N: @kibar2023]
-- **Tinh bột octenyl succinate** (E1450) có vai trò hoạt động bề mặt (nhũ hóa) – chưa thu thập nguồn riêng về cơ chế này trong đợt này (liên quan luồng nhũ tương).
+- **Tinh bột octenyl succinate** (E1450) có vai trò hoạt động bề mặt (nhũ hóa) – chưa thu thập nguồn riêng về cơ chế này (liên quan khu [Nhũ tương](../../nhu-tuong/)).
 
 ### 3.3 An toàn [N: @efsai modified starches, 12 chất]
 - JECFA và SCF cùng cho ADI "not specified"; tinh bột biến tính **không hấp thu nguyên vẹn mà bị thủy phân đáng kể bởi enzyme ruột rồi lên men**; chuột ăn đến 31.000 mg/kg bw/ngày không có tác dụng liên quan; người dung nạp liều đơn đến 25.000 mg/người (ví dụ E1450). Kết luận: không lo ngại ở mức dùng và không cần ADI số. Phơi nhiễm P95 gộp E1404–E1451 (brand-loyal, dân số chung) đến 3.053 mg/kg bw/ngày; E1452 (người dùng thực phẩm chức năng) đến 22,1 mg/kg bw/ngày.
@@ -91,7 +91,7 @@ nguon_goc: tai-lieu-chat-on-dinh/05-gum-arabic-gelatin-tinh-bot-cellulose.md
 - **Chưa lấy được** đánh giá EFSA về cellulose (E460–E469); cần bổ sung.
 
 ## 5. Việc còn thiếu
-- Tinh bột biến tính với vai trò **nhũ hóa** (E1450) cần nguồn riêng; liên hệ luồng nhũ tương.
+- Tinh bột biến tính với vai trò **nhũ hóa** (E1450) cần nguồn riêng; liên hệ khu [Nhũ tương](../../nhu-tuong/).
 - Gelatin: đánh giá an toàn/quy định, độ bền gel theo Bloom và nồng độ (bảng).
 - MCC/CMC: liều điển hình trong sữa cacao/đồ uống đạm thực vật chưa có nguồn mở đáng tin trong đợt này.
 - Gum arabic: chưa lấy nguồn về ảnh hưởng nhiệt độ/pH lên AGP (vấn đề chuyển hóa nhiệt trong tiệt trùng).

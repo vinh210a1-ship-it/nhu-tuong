@@ -92,6 +92,12 @@ const TRAM = [
 export function khoiDongBanMayo(goc) {
 	return taoBan(goc, {
 		khoaSao: 'pl:sao-mayo',
+		tt: (st) => {
+			const kq = tinh(st);
+			const ds = [{ k: 'dauPct', ten: 'Dầu', v: st.me.dauPct, dv: '% khối lượng', nhan: 'N' }];
+			if (kq.duLieu && st.daDo) ds.push({ k: 'tau0', ten: 'τ₀ theo bảng đo Li 2012', v: kq.duLieu.tau0, dv: 'Pa', nhan: 'N' });
+			return ds;
+		},
 		nhiemVu: NHIEM_VU_MAYO,
 		nha: 'pha',
 		tram: TRAM,

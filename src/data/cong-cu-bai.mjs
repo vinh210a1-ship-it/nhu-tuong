@@ -7,12 +7,13 @@
 //   loai 'may-tinh' : id = mã máy trên trang Máy tính (data-may-tinh), liên kết tới /may-tinh/#mt-<id>
 //   loai 'lab'      : id = mã nhiệm vụ trong NHIEM_VU (public/phong-lab/mo-hinh.js) hoặc 'tu-do' (phòng lab tự do),
 //                     liên kết tới /phong-lab/#nv-<id>; không có id thì mở /phong-lab/
-//   loai 'ban'      : id = 'kep' | 'pickering' | 'mayo'; liên kết tới /phong-lab/#ban-<id>
+//   loai 'ban'      : id = 'kep' | 'pickering' | 'mayo' | 'nau-hoa'; liên kết tới /phong-lab/#ban-<id>
 //   loai 'so-tay'   : /phong-lab/#so-tay (Sổ tay thí nghiệm)
 //   loai 'tra-cuu'  : id = 'ins' | 'tt24'; liên kết tới /tra-cuu/#<id>
+//   loai 'ta-duoc'  : /tra-cuu-ta-duoc/ (tra cứu tá dược FDA IID)
 //   loai 'chan-doan': /chan-doan/
 
-export const NHAN_LOAI = { 'may-tinh': 'Máy tính', lab: 'Phòng lab', ban: 'Phòng lab', 'so-tay': 'Phòng lab', 'tra-cuu': 'Tra cứu', 'chan-doan': 'Chẩn đoán' };
+export const NHAN_LOAI = { 'may-tinh': 'Máy tính', lab: 'Phòng lab', ban: 'Phòng lab', 'so-tay': 'Phòng lab', 'tra-cuu': 'Tra cứu', 'ta-duoc': 'Tra cứu', 'chan-doan': 'Chẩn đoán' };
 
 export const CONG_CU_BAI = {
 	'nen-tang': [
@@ -36,8 +37,8 @@ export const CONG_CU_BAI = {
 	],
 	'he-dac-biet': [
 		{ loai: 'may-tinh', id: 'pickering', ten: 'Năng lượng giải hấp hạt Pickering', vi: 'Đổi góc tiếp xúc và kích thước hạt để thấy hạt rắn bám giọt chặt hơn chất nhũ hóa phân tử thế nào.' },
-		{ loai: 'ban', id: 'kep', ten: 'Bàn nhũ tương kép', vi: 'Chọn PGPR và tỉ lệ giọt trong rồi xem công thức rơi vào miền nào trên bản đồ ổn định.' },
-		{ loai: 'ban', id: 'pickering', ten: 'Bàn Pickering', vi: 'So các loại hạt và tập đọc số góc tiếp xúc kèm cách đo.' },
+		{ loai: 'ban', id: 'kep', ten: 'Bàn nhũ tương, chế độ W/O/W', vi: 'Chọn PGPR và tỉ lệ giọt trong rồi xem công thức rơi vào miền nào trên bản đồ ổn định.' },
+		{ loai: 'ban', id: 'pickering', ten: 'Bàn nhũ tương, chế độ Pickering', vi: 'So các loại hạt và tập đọc số góc tiếp xúc kèm cách đo.' },
 	],
 	'do-luong': [
 		{ loai: 'may-tinh', id: 'stokes', ten: 'Vận tốc kem hóa (Stokes)', vi: 'Từ kích thước giọt đo được, ước tính tốc độ kem hóa để biết số đo có báo trước sự tách lớp không.' },
@@ -47,7 +48,7 @@ export const CONG_CU_BAI = {
 	'san-pham': [
 		{ loai: 'tra-cuu', id: 'tt24', ten: 'Tra cứu mã INS và mức tối đa (TT24/2019)', vi: 'Kiểm phụ gia bạn định dùng trong sản phẩm có được phép và ở mức nào.' },
 		{ loai: 'lab', ten: 'Bàn nhũ tương: bốn nhiệm vụ sản phẩm', vi: 'Sữa hạt, đồ uống whey, sốt salad, sữa omega-3: mỗi nhiệm vụ là một sản phẩm với ràng buộc riêng.' },
-		{ loai: 'ban', id: 'mayo', ten: 'Bàn mayonnaise', vi: 'Thử đổ dầu nhanh và chậm, rồi so mẻ của bạn với bảng đo theo hàm lượng dầu.' },
+		{ loai: 'ban', id: 'mayo', ten: 'Bàn nhũ tương, chế độ mayonnaise', vi: 'Thử đổ dầu nhanh và chậm, rồi so mẻ của bạn với bảng đo theo hàm lượng dầu.' },
 	],
 	'su-co-thiet-ke': [
 		{ loai: 'chan-doan', ten: 'Cây chẩn đoán sự cố', vi: 'Chọn triệu chứng của mẫu hỏng và đi theo cây quyết định để biết nên kiểm gì trước.' },
@@ -62,13 +63,14 @@ export function hrefCongCu(d) {
 	if (d.loai === 'ban') return `../../phong-lab/#ban-${d.id}`;
 	if (d.loai === 'so-tay') return '../../phong-lab/#so-tay';
 	if (d.loai === 'tra-cuu') return `../../tra-cuu/#${d.id}`;
+	if (d.loai === 'ta-duoc') return '../../tra-cuu-ta-duoc/';
 	if (d.loai === 'chan-doan') return '../../chan-doan/';
 	throw new Error(`cong-cu-bai: loại lạ "${d.loai}"`);
 }
 
 /** Dựng HTML hộp "Thử ngay" (một khối HTML liền, không dòng trống, để Markdown không cắt đôi). */
-export function htmlThuNgay(slug) {
-	const ds = CONG_CU_BAI[slug];
+export function htmlThuNgay(slug, khu = 'nhu-tuong') {
+	const ds = khu === 'nhu-tuong' ? CONG_CU_BAI[slug] : CONG_CU_KHU[khu]?.[slug];
 	if (!ds) return '';
 	if (ds.length > 3) throw new Error(`cong-cu-bai: bài "${slug}" có ${ds.length} dòng, tối đa 3`);
 	const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -76,7 +78,7 @@ export function htmlThuNgay(slug) {
 		if (!d.vi || !d.ten) throw new Error(`cong-cu-bai: bài "${slug}" có dòng thiếu tên hoặc câu "vì sao nên thử"`);
 		return `<li><span class="tn-loai">${NHAN_LOAI[d.loai]}</span><a class="tn-ten" href="${hrefCongCu(d)}">${esc(d.ten)}</a><span class="tn-vi">${esc(d.vi)}</span></li>`;
 	});
-	return `<div class="thu-ngay not-content" data-thu-ngay="${slug}"><b class="tn-tieu-de">Thử ngay</b><ul class="tn-ds">${li.join('')}</ul></div>`;
+	return `<div class="thu-ngay not-content" data-thu-ngay="${khu === 'nhu-tuong' ? slug : `${khu}/${slug}`}"><b class="tn-tieu-de">Thử ngay</b><ul class="tn-ds">${li.join('')}</ul></div>`;
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -128,4 +130,51 @@ export function htmlCanBietTruoc(slug) {
 		throw new Error(`cong-cu-bai: "Cần biết trước" trỏ tới bài lạ "${s}"`);
 	};
 	return `<p class="can-biet-truoc"><b>Cần biết trước:</b> ${ds.map((s) => `<a href="../${s}/">${ten(s)}</a>`).join(' · ')}</p>`;
+}
+
+// ---------------------------------------------------------------------------------------------
+// Đợt mở rộng (2026-11-08): hộp "Thử ngay" và "Cần biết trước" cho 5 khu còn lại.
+// Khóa = slug bài trong khu. Quy tắc giống khu Nhũ tương: mỗi bài tối đa 3 dòng, mỗi dòng có câu "vì sao nên thử",
+// mô tả chỉ nói công cụ làm gì, không đưa số liệu khoa học. Dữ liệu từng khu nằm ở src/data/cong-cu-khu/<khu>.mjs.
+// ---------------------------------------------------------------------------------------------
+import { KHU } from './khu.mjs';
+import { CONG_CU_CHAT_BEO, CAN_BIET_CHAT_BEO } from './cong-cu-khu/chat-beo.mjs';
+import { CONG_CU_CHAT_NHU_HOA, CAN_BIET_CHAT_NHU_HOA } from './cong-cu-khu/chat-nhu-hoa.mjs';
+import { CONG_CU_CHAT_ON_DINH, CAN_BIET_CHAT_ON_DINH } from './cong-cu-khu/chat-on-dinh.mjs';
+import { CONG_CU_THUC_PHAM, CAN_BIET_THUC_PHAM } from './cong-cu-khu/thuc-pham.mjs';
+import { CONG_CU_DUOC_PHAM, CAN_BIET_DUOC_PHAM } from './cong-cu-khu/duoc-pham.mjs';
+
+export const CONG_CU_KHU = {
+	'chat-beo': CONG_CU_CHAT_BEO,
+	'chat-nhu-hoa': CONG_CU_CHAT_NHU_HOA,
+	'chat-on-dinh': CONG_CU_CHAT_ON_DINH,
+	'thuc-pham': CONG_CU_THUC_PHAM,
+	'duoc-pham': CONG_CU_DUOC_PHAM,
+};
+const CAN_BIET_KHU = {
+	'chat-beo': CAN_BIET_CHAT_BEO,
+	'chat-nhu-hoa': CAN_BIET_CHAT_NHU_HOA,
+	'chat-on-dinh': CAN_BIET_CHAT_ON_DINH,
+	'thuc-pham': CAN_BIET_THUC_PHAM,
+	'duoc-pham': CAN_BIET_DUOC_PHAM,
+};
+
+/** Danh sách "Cần biết trước" của bài ngoài khu Nhũ tương. Mục ghi 'slug' = cùng khu, 'khu/slug' = khu khác. Mặc định: bài ngay trước trong khu; ghi [] nếu bài độc lập. */
+export function canBietTruocKhu(khu, slug) {
+	const bai = KHU[khu].bai;
+	const i = bai.findIndex((b) => b.slug === slug);
+	if (i < 0) throw new Error(`cong-cu-bai: bài "${khu}/${slug}" không có trong KHU`);
+	return CAN_BIET_KHU[khu]?.[slug] ?? (i === 0 ? [] : [bai[i - 1].slug]);
+}
+
+export function htmlCanBietTruocKhu(khu, slug) {
+	const ds = canBietTruocKhu(khu, slug);
+	if (!ds.length) return '';
+	const lk = ds.map((m) => {
+		const [k, s] = m.includes('/') ? m.split('/') : [khu, m];
+		const b = KHU[k]?.bai.find((x) => x.slug === s);
+		if (!b) throw new Error(`cong-cu-bai: "Cần biết trước" của ${khu}/${slug} trỏ tới bài lạ "${m}"`);
+		return k === khu ? `<a href="../${s}/">${b.ten}</a>` : `<a href="../../${k}/${s}/">${KHU[k].ten} · ${b.ten}</a>`;
+	});
+	return `<p class="can-biet-truoc"><b>Cần biết trước:</b> ${lk.join(' · ')}</p>`;
 }

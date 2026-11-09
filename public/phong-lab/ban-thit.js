@@ -127,6 +127,14 @@ const TRAM_THIT = [
 export function khoiDongBanThit(goc) {
 	return taoBan(goc, {
 		khoaSao: 'pl:sao-thit',
+		tt: (st) => {
+			const kq = tinh(st);
+			const ds = [];
+			if (st.me.muoi > 0) ds.push({ k: 'muoi', ten: 'Muối ướp', v: st.me.muoi, dv: '% khối lượng thịt', nhan: 'T' });
+			ds.push({ k: 'pH', ten: st.daUop ? 'pH sau ướp (tính)' : 'pH thịt (chưa ướp)', v: Math.round(kq.pH * 100) / 100, dv: '', nhan: 'T' });
+			if (st.daNau) ds.push({ k: 'nangSuat', ten: 'Năng suất sau nấu (tính)', v: Math.round(kq.nangSuat * 10) / 10, dv: '%', nhan: 'T' });
+			return ds;
+		},
 		nhiemVu: NHIEM_VU_THIT,
 		nha: 'khay',
 		tram: TRAM_THIT,

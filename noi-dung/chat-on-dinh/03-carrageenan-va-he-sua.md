@@ -88,5 +88,5 @@ Nguồn đọc trực tiếp (PMC): *Re-evaluation of carrageenan (E 407) and pr
 ## 5. Việc còn thiếu
 
 - Chưa có bảng liều κ/ι/λ theo loại sản phẩm sữa (sữa cacao, panna cotta, kem, sữa chua uống). Các con số liều ở trên là liều trong nghiên cứu.
-- Chưa đọc toàn văn Langendorff 2000 và Spagnuolo 2005 (chỉ tóm tắt); nên trích dẫn có số trang khi lên web.
-- Muối kali/canxi và pH tối ưu cho κ vs ι chưa có nguồn riêng; ghi là [G: suy luận] nếu đưa lên web.
+- Chưa đọc toàn văn Langendorff 2000 và Spagnuolo 2005 (chỉ tóm tắt); nên trích dẫn có số trang khi dùng.
+- Muối kali/canxi và pH tối ưu cho κ vs ι chưa có nguồn riêng; ghi là [G: suy luận] nếu dùng.

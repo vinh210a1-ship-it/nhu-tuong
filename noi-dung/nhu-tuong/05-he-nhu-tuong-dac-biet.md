@@ -133,7 +133,7 @@ Tổng quan: W/O HIPE giúp **giảm béo** và phân phối hoạt chất, như
 ## 5. HIPE O/W, nhũ tương gel (emulsion gel), emulgel
 - HIPE O/W: φ cao tạo mạng giọt đàn hồi, ứng dụng thay mỡ/mayonnaise. Ví dụ nghiên cứu: HIPE O/W bằng phân đoạn lòng đỏ trứng + hydroxypropyl distarch phosphate — PubMed 39662540. **[N: PM; cần đọc thêm]**
 - Emulsion gel: mạng gel pha liên tục hoặc giọt hoạt tính như chất độn (protein/gelatin). Ví dụ: gel nhũ gelatin cá biến tính bởi γ-PGA, đặc trưng lưu biến và vi cấu trúc. **[N: PubMed 38571750]**
-- Ứng dụng làm chất thay mỡ trong thực phẩm: tổng quan gels thay mỡ trong bánh nướng (PubMed 33412906) và xu hướng sửa đổi chất béo (PubMed 37367124). **[N: PM; chi tiết do luồng chất béo kiểm]**
+- Ứng dụng làm chất thay mỡ trong thực phẩm: tổng quan gels thay mỡ trong bánh nướng (PubMed 33412906) và xu hướng sửa đổi chất béo (PubMed 37367124). **[N: PM; chi tiết xem khu Chất béo]**
 
 ---
 

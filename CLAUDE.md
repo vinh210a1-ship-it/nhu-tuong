@@ -27,9 +27,14 @@ Không xóa hay sửa mục cũ. Mọi thay đổi code đi qua PR trên GitHub,
 | "Máy in" biến bài gốc thành trang | `scripts/chuan-bi-noi-dung.mjs` (`KHU_BAT`, `MAY_TINH`, ẩn ghi chú nội bộ) |
 | Nguồn tham khảo | `nguon/nguon.csv`, gộp vào `nguon.json` bằng `scripts/gop-nguon.py` |
 | Máy tính (13 máy) | Công thức ở `public/cong-thuc.js`, giao diện ở `public/may-tinh.js`. Muốn chèn máy vào bài thì thêm một dòng vào mảng `MAY_TINH` (khu, slug, tiêu đề làm mốc, id máy); nếu không tìm thấy tiêu đề mốc thì build báo lỗi. |
-| Phòng lab ảo | `public/phong-lab/`: `mo-hinh.js` (bàn nhũ tương: dầu, chất nhũ hóa, nhiệm vụ, chấm sao), `ban-chung.js` (khung `taoBan(cfg)` cho bàn mới), `ban-thit.js`, `ban-bao-quan.js`, `mo-hinh-thuc-pham.js`. Danh sách bàn và đọc `#ban-…` nằm ở đầu `phong-lab.js`. |
+| Phòng lab ảo | `public/phong-lab/`: `mo-hinh.js` (bàn nhũ tương: dầu, chất nhũ hóa, nhiệm vụ, chấm sao), `ban-chung.js` (khung `taoBan(cfg)` cho bàn mới), `ban-thit.js`, `ban-bao-quan.js`, `ban-nau-hoa.js` + `mo-hinh-nau-hoa.js` + `so-lieu-nau-hoa.js`, `mo-hinh-thuc-pham.js`. Danh sách bàn, chế độ của bàn nhũ tương (cơ bản/mayo/pickering/kep) và đọc `#ban-…` nằm ở hàm `dungVo` đầu `phong-lab.js`; mã chế độ cũ giữ nguyên để địa chỉ, khóa sao và mẫu đã lưu vẫn dùng được. |
+| Tủ lưu mẫu (mẫu dùng chung giữa các bàn) | `public/phong-lab/tu-luu-mau.js` (kho, localStorage `pl:tu-mau`, mẫu chỉ xóa khi người dùng bấm Xóa). Bàn dựng bằng `taoBan` tự có nút Lưu mẫu; muốn bàn mang được thuộc tính sang bàn khác thì khai `tt(st)` (thuộc tính chung, kèm nhãn), muốn bàn nhận mẫu từ bàn X thì khai `nhanTu.X(tt, st)`; không khai thì báo "chưa đọc được", không đoán. `nhanChung(tt, st, mau)` là lối đọc cho mọi bàn gốc chưa có mục riêng; hiện chỉ bàn bảo quản khai (đọc `pH`, `aw`, `muoi`). Ô "Số đo của bạn" trong tủ (`datSoDo`) ghi các khóa đó vào mẫu với nhãn G, cờ `nhap`. |
 | Tra cứu (INS, từ điển, TT24, tá dược) | `scripts/tra-cuu.mjs`, `public/tra-cuu.js`, `public/tt24.js`, `public/ta-duoc.js`, `noi-dung/tra-cuu/tu-dien-anh-viet.md` |
 | Trang viết tay | `src/content/docs/*.md(x)` (trang chủ, quy ước, máy tính, phòng lab, chẩn đoán, tá dược), `trang/` (lộ trình từng khu) |
+| Hộp học của 5 khu ngoài Nhũ tương (Cần biết trước, Thử ngay) | `src/data/cong-cu-khu/<khu>.mjs` (nối bài với máy tính, bàn lab, trang tra cứu), đăng ký trong `src/data/cong-cu-bai.mjs` |
+| Tự kiểm tra của từng khu | `noi-dung/<khu>/tu-kiem-tra.md` (`## slug` / `### Câu n` / `Hỏi:` `Đáp:` `Căn cứ: N\|T \| <tiêu đề>`; bài chỉ có bảng quy định thì ghi `Miễn: <lý do>`). Máy in dừng build nếu tiêu đề không duy nhất hoặc không có nhãn khớp. |
+| Kiểm định kỳ (link ngoài, khóa nguồn, hạn kiểm bảng pháp lý) | `scripts/kiem-dinh-ky.mjs`, `nguon/han-kiem-lai.json` (chỉ điền `kiem_lan_cuoi` khi thật sự đã đối chiếu), lịch ở `.github/workflows/kiem-dinh-ky.yml` (chỉ báo cáo) |
+| Nút báo lỗi, bản in | `public/bao-loi.js`, khối `@media print` cuối `src/styles/giao-dien.css` |
 | Nhãn → huy hiệu | `src/plugins/remark-nhan.mjs`, CSS ở `src/styles/nhan.css` |
 | Công cụ trích dữ liệu (Python) | `cong-cu/` (tt24, fda-iid, chuan_hoa.py) |
 

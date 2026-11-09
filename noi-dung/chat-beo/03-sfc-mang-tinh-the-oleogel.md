@@ -20,7 +20,7 @@ nguon_goc: tai-lieu-chat-beo/03-sfc-mang-tinh-the-oleogel.md
 ## 2. Bản chất: pha rắn, pha lỏng và giao diện
 
 ### 2.1 Mạng tinh thể bậc thang
-Theo tổng quan Acevedo & Marangoni (R5): bước đầu tiên là tạo **nano-platelet tinh thể (CNP)**; chúng kết tụ thành cụm đa tinh thể cỡ micromet và tạo mạng 3 chiều. Ramel và cs. (R6) mô tả ảnh hưởng của yếu tố bên trong/ngoài lên CNP và quan hệ giữa nanostructure với khả năng giữ dầu và lưu biến. [N: @acevedo2015, @ramel2016]
+Theo tổng quan Acevedo & Marangoni (Acevedo và cs. 2015): bước đầu tiên là tạo **nano-platelet tinh thể (CNP)**; chúng kết tụ thành cụm đa tinh thể cỡ micromet và tạo mạng 3 chiều. Ramel và cs. (Ramel và cs. 2016) mô tả ảnh hưởng của yếu tố bên trong/ngoài lên CNP và quan hệ giữa nanostructure với khả năng giữ dầu và lưu biến. [N: @acevedo2015, @ramel2016]
 
 ### 2.2 Tại sao dầu lỏng không chảy ra?
 - Dầu bị giữ trong các lỗ nhỏ của mạng bởi **mao quản**; một phần có thể bị **hấp phụ** lên bề mặt tinh thể — cơ chế hấp phụ này vẫn được mô tả là "tin rằng" cần chứng minh. [N: @macdougall2012]
@@ -32,13 +32,13 @@ Với mạng kiểu gel keo yếu, mô-đun lưu G′ và ứng suất chảy th
 
 ## 3. Hồ sơ nhiệt và cắt trượt quyết định cấu trúc
 
-Thí nghiệm trên hỗn hợp **dầu đậu nành hydro hóa hoàn toàn (FHSO) trong dầu đậu nành (SO)**, kết tinh tĩnh và cắt laminar 30 và 240 s⁻¹ ở nhiệt độ thành thiết bị −10, 0, 20 °C (R7): [N: @acevedo2012]
+Thí nghiệm trên hỗn hợp **dầu đậu nành hydro hóa hoàn toàn (FHSO) trong dầu đậu nành (SO)**, kết tinh tĩnh và cắt laminar 30 và 240 s⁻¹ ở nhiệt độ thành thiết bị −10, 0, 20 °C (Acevedo và cs. 2012): [N: @acevedo2012]
 - Cắt làm thay đổi mạnh cấu trúc nano và meso. Ở cắt thấp, kích thước tinh thể tăng theo nhiệt độ thành; ở 240 s⁻¹, nhiệt độ chỉ ảnh hưởng ở thang nano.
 - Cắt thúc đẩy **hạt meso cầu "solid-lipid meso-particles"**; cắt mạnh cho **mạng yếu**, khả năng giữ dầu thấp, nano-platelet phát triển không đối xứng.
 - Tỷ lệ cạnh nano-platelet ~2 ở mẫu tĩnh và tăng đáng kể ở mẫu bị cắt.
 - Mô-đun đàn hồi và ứng suất chảy giảm, rõ hơn khi tổ hợp cắt–nhiệt cao.
 
-Rheo-NMR (R10), hai chất béo PHSO (dầu hướng dương hydro hóa một phần) và sPMF (palm mid fraction mềm): [N: @rebry2021]
+Rheo-NMR (Rebry và cs. 2021), hai chất béo PHSO (dầu hướng dương hydro hóa một phần) và sPMF (palm mid fraction mềm): [N: @rebry2021]
 - PHSO kết tinh nhanh hơn sPMF; sPMF có vẻ kết tinh **hai bước** — đầu tiên cấu trúc yếu khi ít pha rắn, sau đó mạng mạnh hơn.
 - Ở tốc độ cắt 1 và 5 s⁻¹, lượng pha rắn cần để đạt độ nhớt 10 Pa·s **tăng theo tốc độ cắt**; ở cùng % rắn, mạng bền yếu hơn khi cắt cao hơn.
 - Rheo-NMR dùng được cả kết tinh đẳng nhiệt lẫn không đẳng nhiệt.
@@ -50,8 +50,8 @@ Rheo-NMR (R10), hai chất béo PHSO (dầu hướng dương hydro hóa một ph
 ### 4.1 Phương pháp [K]
 - **NMR xung tần thấp (pulsed NMR)** phân biệt proton của pha rắn (tín hiệu suy giảm cực nhanh) và pha lỏng (suy giảm chậm). SFC trực tiếp (chuẩn AOCS Cd 16b-93; ISO 8292-1) so tín hiệu rắn và lỏng; phương pháp gián tiếp (AOCS Cd 16-81; ISO 8292-2) hiệu chuẩn tín hiệu lỏng. **Cần kiểm số hiệu chuẩn trước khi trích dẫn.**
 - Quy trình nhiệt (tempering mẫu) ảnh hưởng mạnh tới kết quả vì chất béo đa hình.
-- Có thể suy ra SFC từ nhiễu xạ góc rộng cho hệ thật bằng các phương pháp "không mô hình"; R2 tóm tắt hướng này. [N: @seilert2025]
-- Với **bơ ca cao**, R9 liệt kê NMR là công cụ cho cả động học kết tinh lẫn độ kết tinh. [N: @chi2025]
+- Có thể suy ra SFC từ nhiễu xạ góc rộng cho hệ thật bằng các phương pháp "không mô hình"; Seilert và cs. 2025 tóm tắt hướng này. [N: @seilert2025]
+- Với **bơ ca cao**, Chi và cs. 2025 liệt kê NMR là công cụ cho cả động học kết tinh lẫn độ kết tinh. [N: @chi2025]
 
 ### 4.2 Đọc đường cong SFC–T [K]
 | Nhiệt độ | Ý nghĩa |
@@ -76,15 +76,13 @@ Oleogel là hệ keo bán rắn: dầu lỏng được cố định bởi mạng
 - **Oleogelator phân tử cao (protein, polysaccharide):** thường cần khử nước từ hệ nhũ tương hoặc trao đổi dung môi để chuyển pha. [N: @zbikowska2023]
 - Ba nhóm biến ảnh hưởng đến gel: (i) oleogelator (thành phần hóa học, cấu trúc phân tử), (ii) pha dầu (thành phần TAG, thành phần phụ), (iii) cơ chế gel hóa. [N: @li2022b]
 - Hạn chế chung: kết cấu mềm hơn và kém dẻo hơn mỡ truyền thống. [N: @li2022b]
-- Bài tổng quan R17 xếp oleogel là "fats of the future" nhưng chi phí enzymatic interesterification cao; hãy hiểu đó là **ý kiến tác giả**, không phải kết luận thực nghiệm. [N: @zbikowska2023; G: đánh giá chủ quan]
+- Bài tổng quan Zbikowska và cs. 2023 xếp oleogel là "fats of the future" nhưng chi phí enzymatic interesterification cao; hãy hiểu đó là **ý kiến tác giả**, không phải kết luận thực nghiệm. [N: @zbikowska2023; G: đánh giá chủ quan]
 
 ### 5.3 Ứng dụng thực phẩm (chưa đọc chi tiết)
 Các tổng quan nêu kem phết, bánh kẹo, thịt chế biến [N: @li2022b]. Hiệu năng trong từng ứng dụng cần đọc nguồn gốc; không viết thành khẳng định trên web.
 
-## 6. Điều đã chắc / còn giả thuyết / bước tiếp theo
+## 6. Điều đã chắc và điều còn là giả thuyết
 
 - **Đã chắc:** cấu trúc bậc thang CNP → cụm → mạng; vai trò của cắt trượt; SFC không đủ; oleogel còn hạn chế về độ dẻo; mô phỏng gợi ý vai trò cấu trúc dầu lỏng.
 - **Chưa kiểm sách:** hệ số mũ SFC–độ cứng, chuẩn AOCS/ISO cho SFC, tham số SFC mục tiêu.
 - **Giả thuyết:** tổng quát hóa kết quả mô hình FHSO/SO và PHSO/sPMF sang chất béo thương phẩm; hấp phụ dầu lên bề mặt CNP như cơ chế chính.
-- **Đề xuất:** thêm vào web một "đường cong SFC tương tác" cho 3 ví dụ (bơ ca cao, shortening cọ, chất béo sữa) lấy từ số đo thật của phòng lab bạn thay vì số từ sách.
-- **Bước tiếp theo:** (1) bạn gửi 1–2 file số liệu SFC/DSC thực tế để tôi dựng đồ thị mẫu; (2) tôi đọc tiếp toàn văn R5 và R26 nếu mở được để bổ sung số định lượng.

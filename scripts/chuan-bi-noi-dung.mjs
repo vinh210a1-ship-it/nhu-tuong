@@ -10,7 +10,7 @@ import { tenNgan, htmlNhan, tachNhan, SO_DON_VI } from '../src/plugins/remark-nh
 import { KHU } from '../src/data/khu.mjs';
 import { dungTraCuu } from './tra-cuu.mjs';
 import { docTep } from './doc-tep.mjs';
-import { htmlThuNgay, htmlMucDo, htmlCanBietTruoc, CONG_CU_BAI } from '../src/data/cong-cu-bai.mjs';
+import { htmlThuNgay, htmlMucDo, htmlCanBietTruoc, htmlCanBietTruocKhu, CONG_CU_BAI } from '../src/data/cong-cu-bai.mjs';
 import { docTuKiemTra, kiemTuKiemTra, htmlTuKiemTra } from './tu-kiem-tra.mjs';
 
 const GOC = process.cwd();
@@ -21,6 +21,10 @@ const TEN_KHU = { 'nhu-tuong': 'Nhũ tương', 'chat-beo': 'Chất béo', 'chat-
 // Khóa lưu "đã đọc" trong máy người xem: bài nhũ tương giữ slug trần (tương thích dữ liệu cũ), khu khác thêm tên khu
 // câu hỏi tự kiểm tra của 8 bài nhũ tương (noi-dung/nhu-tuong/tu-kiem-tra.md); mỗi đáp án phải có căn cứ N hoặc T trong bài
 const TU_KIEM_TRA = docTuKiemTra(path.join(GOC, 'noi-dung/nhu-tuong/tu-kiem-tra.md'));
+// các khu khác: mỗi khu có thể có tệp noi-dung/<khu>/tu-kiem-tra.md; khu nào có tệp thì MỌI bài của khu đó phải có 2–3 câu
+const TU_KIEM_TRA_KHU = Object.fromEntries(
+	KHU_BAT.filter((k) => k !== 'nhu-tuong' && fs.existsSync(path.join(GOC, 'noi-dung', k, 'tu-kiem-tra.md'))).map((k) => [k, docTuKiemTra(path.join(GOC, 'noi-dung', k, 'tu-kiem-tra.md'))]),
+);
 const khoaDaDoc = (khu, slug) => (khu === 'nhu-tuong' ? slug : `${khu}/${slug}`);
 
 // Máy tính chèn vào bài: [khu, slug, dòng mốc (máy tính đặt NGAY TRƯỚC dòng này), loại]
@@ -61,6 +65,13 @@ const KHOA_TRAN = /`(@[a-z][a-z0-9-]*(?:;\s*@[a-z][a-z0-9-]*)*)`/g;
 const BAO_AN = '<span class="an-so-lieu">Số liệu sách nền ở đây đang chờ đối chiếu số trang nên tạm ẩn. <span class="nhan nhan-K" title="Sách nền, chờ đối chiếu trang">K</span></span>';
 function chuanHoaDinhDang(body) {
 	body = body
+		// ghi chú của người soạn gửi người giao việc: mục "Bước tiếp theo", dòng "Đề xuất:" (không phải nội dung cho người đọc)
+		.replace(/^[ \t]*(?:[-*]\s+)?\*\*(?:Bước tiếp theo|Đề xuất)[^\n]*\n?/gm, '')
+		// tiêu đề "Chắc chắn / giả thuyết / bước tiếp theo" -> bỏ phần "bước tiếp theo" vì mục đó đã bị bỏ
+		.replace(/^(#{2,4} (?:\d+\. )?)(?:Điều chắc|Điều đã chắc|Chắc chắn)[^\n]*bước tiếp theo[^\n]*$/gm, '$1Điều đã chắc và điều còn là giả thuyết')
+		// "phiên" = phiên làm việc của người soạn: người đọc không biết phiên nào
+		.replace(/ ?\(đọc trong phiên\)/g, '')
+		.replace(/ (?:trong|từ) phiên(?: này)?(?! bản)/g, '')
 		.replace(/^(?:Quy ước nhãn|Nhãn): `\[N.*\n+/gm, '') // dòng giải thích quy ước (đã có ở trang "Cách đọc nhãn")
 		.replace(NHAN_TRONG_CODE, '$1')
 		.replace(KHOA_TRAN, '[N: $1]')
@@ -68,7 +79,7 @@ function chuanHoaDinhDang(body) {
 		// "## 4. Mô hình lab đề xuất (`[T]` ...)" -> tiêu đề cho người đọc, nhãn T đặt dưới tiêu đề
 		.replace(/^(#{2,4} (?:\d+\. )?)Mô hình lab đề xuất.*$/gm, '$1Mô hình định lượng minh họa [T]');
 	// bỏ cả mục có tiêu đề ghi "(không đưa lên web)" tới tiêu đề cùng cấp kế tiếp
-	body = body.replace(/^(#{2,4}) [^\n]*\(không đưa lên web\)[^\n]*\n[\s\S]*?(?=^#{2,4} |(?![\s\S]))/gm, (m, h) => '');
+	body = body.replace(/^(#{2,4}) [^\n]*(?:\(không đưa lên web\)|Cách bổ sung cho web|Đề xuất khung trình bày trên web)[^\n]*\n[\s\S]*?(?=^#{2,4} |(?![\s\S]))/gm, (m, h) => '');
 	// trong một dòng có cả nhãn N/T lẫn K: đoạn câu nào kết thúc bằng [K] mà có số kèm đơn vị thì ẩn riêng đoạn đó
 	return body
 		.split('\n')
@@ -188,6 +199,7 @@ for (const khu of KHU_BAT) {
 			'',
 			`<p class="nguon-goc-bai">${khu === 'nhu-tuong' && fm.loai === 'bai' ? htmlMucDo(fm.level) + ' · ' : ''}Cập nhật ${fm.updated} · <a href="../../quy-uoc/">Cách đọc nhãn và giới hạn nội dung →</a></p>`,
 			...(khu === 'nhu-tuong' && fm.loai === 'bai' && htmlCanBietTruoc(fm.slug) ? [htmlCanBietTruoc(fm.slug)] : []),
+			...(khu in TU_KIEM_TRA_KHU && fm.loai === 'bai' && htmlCanBietTruocKhu(khu, fm.slug) ? [htmlCanBietTruocKhu(khu, fm.slug)] : []),
 			'',
 		].join('\n');
 		// hộp "Tự kiểm tra": 2 đến 3 câu, đáp án gập; kiểm căn cứ N/T ngay lúc dựng (sai thì dừng build)
@@ -197,6 +209,17 @@ for (const khu of KHU_BAT) {
 
 ${htmlTuKiemTra(fm.slug, TU_KIEM_TRA[fm.slug])}
 `;
+		}
+		if (fm.loai === 'bai' && khu in TU_KIEM_TRA_KHU) {
+			kiemTuKiemTra(`${khu}/${fm.slug}`, TU_KIEM_TRA_KHU[khu][fm.slug], body);
+			body += `
+
+${htmlTuKiemTra(`${khu}/${fm.slug}`, TU_KIEM_TRA_KHU[khu][fm.slug])}
+`;
+		}
+		if (fm.loai === 'bai' && khu in TU_KIEM_TRA_KHU) {
+			const thuNgay = htmlThuNgay(fm.slug, khu);
+			if (thuNgay) body += `\n\n${thuNgay}\n`;
 		}
 		// hộp "Thử ngay" (nối bài với máy tính, Phòng lab, tra cứu; dữ liệu ở src/data/cong-cu-bai.mjs), đặt trước hộp "đã đọc"
 		if (fm.loai === 'bai' && khu === 'nhu-tuong') {

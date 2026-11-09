@@ -68,14 +68,14 @@ Chú ý khi dạy: đây là **giới hạn do thiếu chất nhũ hóa** (emuls
 ### Tải bề mặt Γ: thứ tự độ lớn
 - Thứ tự theo Gumus: saponin nhỏ < protein cầu (whey) < protein mềm dẻo (caseinate) < polysaccharide (gum arabic). [N]
 - Whey ≈ 1 mg/m², gum arabic ≈ 25 mg/m² (số theo luận án). [N]
-- Con số saponin (0,001 mg/m²) mà công cụ trích ra từ bản đọc **có vẻ bất thường**; **cần mở bản gốc để xác nhận trước khi dùng** vì tôi nghi bị mất dấu thập phân hoặc đổi đơn vị. `[cảnh báo]`
+- Con số saponin (0,001 mg/m²) mà công cụ trích ra từ bản đọc **có vẻ bất thường**; **cần mở bản gốc để xác nhận trước khi dùng** vì có thể đã mất dấu thập phân hoặc bị đổi đơn vị khi trích. `[cảnh báo]`
 - Số liệu thực nghiệm khác: tải bề mặt protein trong nhũ tương dầu hướng dương 10 wt%: WPI ≈ 1,4 mg/m², pea PPI ≈ 2,5 mg/m². [N: @hinderink2021]
 
 ---
 
 ## 1.3 CMC, điểm Krafft, điểm đục (cloud point)
 
-| Khái niệm | Ý nghĩa | Gợi ý dùng trong web | Nhãn |
+| Khái niệm | Ý nghĩa | Gợi ý dùng | Nhãn |
 |---|---|---|---|
 | CMC | Nồng độ từ đó hình thành mixen; bão hòa bề mặt | Tính "lượng tối thiểu" và vì sao thêm quá không làm giảm γ thêm | [K] |
 | Điểm Krafft | Dưới nhiệt độ này chất hoạt động bề mặt ion (SDS, SSL...) kết tinh, không thành mixen | Giải thích SSL/ DATEM cần "đánh nóng" hoặc phân tán ở nhiệt độ nhất định | [K] |

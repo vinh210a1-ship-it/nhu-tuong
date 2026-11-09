@@ -4,6 +4,8 @@
 import fs from 'node:fs';
 import { chatNhuHoaToiThieu, stokes } from '../public/cong-thuc.js';
 import { KEP, CHUNG, HAT, PP_DO, MAYO, moiKhoaNguon } from '../public/phong-lab/so-lieu-ban-moi.js';
+import { moPhongNau, NHIEM_VU_NAU, chamSaoNau, kNoiSuy, hangDuong, eaSuyRa } from '../public/phong-lab/mo-hinh-nau-hoa.js';
+import { NAU } from '../public/phong-lab/so-lieu-nau-hoa.js';
 import { mienKep, moPhongKep, pgprHapPhu, chenhThamThau, phiHieuDung, phiTheTich, roMinhHoa, chamSaoKep, NHIEM_VU_KEP, moPhongPickering, hatTheoId, soSanhTheta, laThetaDauNuoc, chamSaoPickering, NHIEM_VU_PICKERING, gNen, phiMayo, moPhongMayo, chamSaoMayo, NHIEM_VU_MAYO } from '../public/phong-lab/mo-hinh-ban-moi.js';
 import {
 	dTheoChatNhuHoa, dTheoApSuat, nhietDoRa, dacTrungPhanBo, phanSoTheTich, doNhotXanthan,
@@ -242,6 +244,40 @@ for (const nv of NHIEM_VU) {
 		const a = M({ quaNghien: true }), b = M({ tocDo: 'nhanh' }), c = M({ dauPct: 75 }), d = M({ dauPct: 85, quaNghien: true });
 		dung(`Nhiệm vụ "${NHIEM_VU_MAYO[0].ten}": lời giải ${chamSaoMayo(NHIEM_VU_MAYO[0], a).sao}/3, đổ nhanh ${chamSaoMayo(NHIEM_VU_MAYO[0], b).sao}/3`, chamSaoMayo(NHIEM_VU_MAYO[0], a).sao === 3 && chamSaoMayo(NHIEM_VU_MAYO[0], b).sao < 3);
 		dung(`Nhiệm vụ "${NHIEM_VU_MAYO[1].ten}": dầu 80% ${chamSaoMayo(NHIEM_VU_MAYO[1], a).sao}/3, dầu 75% ${chamSaoMayo(NHIEM_VU_MAYO[1], c).sao}/3, dầu 85% ${chamSaoMayo(NHIEM_VU_MAYO[1], d).sao}/3`, chamSaoMayo(NHIEM_VU_MAYO[1], a).sao === 3 && chamSaoMayo(NHIEM_VU_MAYO[1], c).sao < 3 && chamSaoMayo(NHIEM_VU_MAYO[1], d).sao < 3);
+	}
+
+	// Mẫu mang sang bàn bảo quản: aw lấy từ mẫu thay cho ước tính, không đổi hành vi cũ
+	{
+		const cu = moPhongBaoQuan({ muoi: 5, duong: 0, pH: 6.5, nhietDo: 25 });
+		const moi = moPhongBaoQuan({ muoi: 5, duong: 0, pH: 6.5, nhietDo: 25, awDo: 0.5 });
+		dung('Bảo quản: không có awDo thì aw vẫn là ước tính từ muối và đường', cu.awTuMau === false && Math.abs(cu.aw - 0.9) < 0.1 && cu.aw < 1);
+		dung('Bảo quản: có awDo thì dùng đúng aw của mẫu và đánh dấu', moi.awTuMau === true && moi.aw === 0.5);
+		dung('Bảo quản: aw 0,5 chặn mọi mầm bệnh trong bảng FDA (aw thấp nhất của họ đều cao hơn 0,5)', moi.soMoc === 0);
+		dung('Bảo quản: awDo ngoài (0, 1] bị bỏ qua', moPhongBaoQuan({ muoi: 5, awDo: 1.5 }).awTuMau === false && moPhongBaoQuan({ muoi: 5, awDo: 0 }).awTuMau === false);
+	}
+
+	// Nâu hóa
+	dung('k bánh quy: hai đầu khoảng giữ nguyên số (165 và 195 °C)', Math.abs(kNoiSuy(NAU.banhQuy.kBI, 165) - 0.019) < 1e-9 && Math.abs(kNoiSuy(NAU.banhQuy.kBI, 195) - 0.063) < 1e-9 && Math.abs(kNoiSuy(NAU.banhQuy.kAcryl, 195) - 0.077) < 1e-9);
+	dung('k bánh quy: ngoài 165–195 °C không ngoại suy (null)', kNoiSuy(NAU.banhQuy.kBI, 160) === null && kNoiSuy(NAU.banhQuy.kBI, 200) === null);
+	dung('k tăng theo nhiệt độ', kNoiSuy(NAU.banhQuy.kBI, 170) < kNoiSuy(NAU.banhQuy.kBI, 190));
+	dung(`Ea suy từ hai đầu k (${eaSuyRa(NAU.banhQuy.kBI).toFixed(0)} kJ/mol) lớn hơn Ea trong tóm tắt (tối đa ${NAU.banhQuy.EaBI[1]}): đúng như bàn đã ghi chú`, eaSuyRa(NAU.banhQuy.kBI) > NAU.banhQuy.EaBI[1]);
+	dung('Thứ tự đường: xylose nhanh nhất, sucrose chậm nhất', hangDuong('xylose') === 0 && hangDuong('sucrose') === 5);
+	{
+		const N = (o) => moPhongNau({ loai: 'banh-quy', duong: 'glucose', aw: 0.5, T: 180, phut: 10, ...o });
+		dung('Bánh quy 200 °C: ngoài vùng có dữ liệu, không có số', N({ T: 200 }).ngoaiVung && N({ T: 200 }).BI === null);
+		dung('Nướng lâu hơn thì độ tiến tăng, không vượt 1', N({ phut: 20 }).BI > N({ phut: 5 }).BI && N({ phut: 30 }).BI < 1);
+		const C = (o) => moPhongNau({ loai: 'chip', giong: 'Atlantic', ...o });
+		dung('Chip: hạ nhiệt cho đúng số theo giống (84 / 67 / 78)', C({ haNhiet: true }).giam === 84 && C({ haNhiet: true, giong: 'Snowden' }).giam === 67 && C({ haNhiet: true, giong: 'Vigor' }).giam === 78);
+		dung('Chip: asparaginase cho đúng số 45,6 và 85', C({ enzyme: 'khoai-tay' }).giam === 45.6 && C({ enzyme: 'khoai-lang' }).giam === 85);
+		dung('Chip: hạ nhiệt cộng enzyme là ngoài vùng có dữ liệu, không cộng không nhân', C({ haNhiet: true, enzyme: 'khoai-lang' }).giam === null && C({ haNhiet: true, enzyme: 'khoai-lang' }).ngoaiVung);
+		dung('Chip: không can thiệp thì không có số giảm', C({}).giam === null && !C({}).ngoaiVung);
+		const st = { daDo: true };
+		const sao = (i, kq) => chamSaoNau(NHIEM_VU_NAU[i], kq, st).sao;
+		dung(`Nhiệm vụ "${NHIEM_VU_NAU[0].ten}": Atlantic ${sao(0, C({ haNhiet: true }))}/3, Snowden ${sao(0, C({ haNhiet: true, giong: 'Snowden' }))}/3`, sao(0, C({ haNhiet: true })) === 3 && sao(0, C({ haNhiet: true, giong: 'Snowden' })) < 3);
+		dung(`Nhiệm vụ "${NHIEM_VU_NAU[1].ten}": khoai lang ${sao(1, C({ enzyme: 'khoai-lang' }))}/3, khoai tây 1 IU ${sao(1, C({ enzyme: 'khoai-tay' }))}/3`, sao(1, C({ enzyme: 'khoai-lang' })) === 3 && sao(1, C({ enzyme: 'khoai-tay' })) < 3);
+		const tot = N({ T: 165, duong: 'sucrose', aw: 0.5 }), xau = N({ T: 165, duong: 'sucrose', aw: 0.8 }), nong = N({ T: 180, duong: 'sucrose', aw: 0.5 });
+		dung(`Nhiệm vụ "${NHIEM_VU_NAU[2].ten}": lời giải ${sao(2, tot)}/4, aw trong dải ${sao(2, xau)}/4, 180 °C ${sao(2, nong)}/4`, sao(2, tot) === 4 && sao(2, xau) < 4 && sao(2, nong) < 4);
+		dung('Kết quả nâu hóa không có trường hạn dùng hay an toàn', !Object.keys(N({})).some((k) => /^han$|^han[A-Z_]|shelf|antoan|anToan/.test(k)));
 	}
 }
 

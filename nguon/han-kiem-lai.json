@@ -1,0 +1,19 @@
+{
+ "ghi_chu": "Bảng dữ liệu pháp lý/quy định phải được kiểm lại với bản mới nhất. Chỉ điền kiem_lan_cuoi (YYYY-MM-DD) khi thực sự đã đối chiếu; null nghĩa là chưa có ngày kiểm được ghi nhận.",
+ "muc": [
+  {
+   "ten": "Mức tối đa phụ gia (TT 24/2019/TT-BYT, bản hợp nhất 09/VBHN-BYT 2024)",
+   "tep": "public/du-lieu/tt24.json",
+   "can_doi_chieu": "Văn bản hợp nhất mới nhất và Codex GSFA (phụ lục PL2A/PL3 theo GSFA có thể đã cũ)",
+   "chu_ky_ngay": 180,
+   "kiem_lan_cuoi": null
+  },
+  {
+   "ten": "Tá dược trong thuốc (FDA Inactive Ingredient Database, bản 10/2026)",
+   "tep": "public/du-lieu/fda-iid.json",
+   "can_doi_chieu": "Bản IID mới nhất trên trang FDA",
+   "chu_ky_ngay": 120,
+   "kiem_lan_cuoi": null
+  }
+ ]
+}

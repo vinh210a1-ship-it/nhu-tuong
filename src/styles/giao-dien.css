@@ -103,3 +103,27 @@
 	--khu-thuc-pham: #c2410c;
 	--khu-duoc-pham: #2563eb;
 }
+
+/* Nút báo lỗi cuối bài */
+.bao-loi { margin-top: 2.5rem; padding: 0.75rem 1rem; border: 1px dashed var(--sl-color-gray-4); border-radius: 0.5rem; font-size: 0.9rem; color: var(--sl-color-gray-2); }
+.bao-loi a { font-weight: 600; }
+.bao-loi small { color: var(--sl-color-gray-3); }
+
+/* Bản in sạch: bỏ thanh bên, thanh trên, điều hướng, nút tương tác; giữ nội dung và huy hiệu nhãn */
+@media print {
+	header.header, .sidebar-pane, .right-sidebar, .pagination-links, footer, .bao-loi, starlight-theme-select, .mobile-preview { display: none !important; }
+	.main-pane, .main-frame, .content-panel { margin: 0 !important; padding: 0 !important; width: 100% !important; max-width: none !important; }
+	.sl-container { max-width: none !important; }
+	body, :root { background: #fff !important; color: #000 !important; }
+	.sl-markdown-content a { color: inherit; text-decoration: underline; }
+	.sl-markdown-content a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; word-break: break-all; }
+	h1, h2, h3, h4 { break-after: avoid; }
+	table, figure, pre, .may-tinh, .hop-hoc { break-inside: avoid; }
+	details:not([open]) > :not(summary) { display: block; }
+}
+
+/* Chú giải thuật ngữ (public/chu-giai.js) */
+.chu-giai { position: relative; border-bottom: 1px dotted var(--sl-color-accent); cursor: help; }
+.chu-giai:hover::after, .chu-giai:focus::after { content: attr(data-mo); position: absolute; z-index: 20; inset-inline-start: 0; top: 100%; margin-top: 0.3rem; width: max-content; max-width: min(22rem, 80vw); padding: 0.5rem 0.7rem; background: var(--sl-color-bg-nav); color: var(--sl-color-text); border: 1px solid var(--sl-color-gray-4); border-radius: 0.4rem; font-size: 0.8rem; line-height: 1.45; font-weight: 400; box-shadow: 0 4px 14px rgb(0 0 0 / 0.25); white-space: normal; }
+.chu-giai:focus { outline: 2px solid var(--sl-color-accent); outline-offset: 2px; }
+@media print { .chu-giai { border-bottom: 0; } .chu-giai::after { content: none !important; } }

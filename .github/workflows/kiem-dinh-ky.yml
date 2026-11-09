@@ -1,0 +1,27 @@
+# Kiểm định kỳ hằng tháng: khóa nguồn, liên kết ngoài, hạn kiểm lại bảng pháp lý.
+# CHỈ BÁO CÁO (xem tab Actions, mục Summary). Không tự sửa, không đăng web.
+name: Kiểm định kỳ
+
+on:
+  schedule:
+    - cron: '0 2 5 * *' # ngày 5 hằng tháng, 02:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  kiem:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Chạy kiểm định kỳ
+        run: |
+          set +e
+          node scripts/kiem-dinh-ky.mjs | tee bao-cao.txt
+          ma=${PIPESTATUS[0]}
+          { echo '## Báo cáo kiểm định kỳ'; echo '```'; cat bao-cao.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          exit $ma

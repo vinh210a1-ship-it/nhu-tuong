@@ -11,7 +11,7 @@ nguon_goc: tai-lieu-chat-hoat-dong-be-mat/04-ma-INS-quy-dinh-an-toan.md
 # 04. Mã INS/E, quy định (EU, Việt Nam) và an toàn của chất nhũ hóa
 
 > Nhãn: [N] có nguồn đã đọc trong phiên; [K] kiến thức nền, **chưa đối chiếu**; [G] suy luận.
-> **Quy định thay đổi theo thời gian.** Mọi số liệu giới hạn (ML), ADI trong file này phải được kiểm lại với văn bản hiện hành trước khi đăng web. Tôi ghi "đọc ngày 2026-11-01" ở những chỗ đã đọc.
+> **Quy định thay đổi theo thời gian.** Mọi số liệu giới hạn (ML), ADI trong file này phải được kiểm lại với văn bản hiện hành trước khi dùng. Chỗ nào đã đọc có ghi ngày đọc (2026-11-01).
 
 ---
 
@@ -91,7 +91,7 @@ Ghi chú nhãn Việt Nam: tên gọi trong Phụ lục 1 gồm tên Việt + t�
 
 - Thông tư 24/2019 bãi bỏ Thông tư 27/2012/TT-BYT, 08/2015/TT-BYT và Phần III Quyết định 3742/2001/QĐ-BYT. [N]
 - Nguyên tắc GMP (Điều 8): dùng lượng tối thiểu cần cho hiệu quả kỹ thuật. Điều 9(3): không cho phụ gia mang theo trong thực phẩm công thức trẻ nhỏ và thực phẩm bổ sung trừ khi phụ lục cho phép. [N]
-- Trang tôi đọc **cắt ngang** (nội dung phụ lục bị ẩn sau đăng nhập); **chưa thể** liệt kê INS nào được phép cho nhóm thực phẩm nào, ML là bao nhiêu. Tình trạng hiệu lực: cần xác nhận trên cơ sở dữ liệu pháp luật chính thức. [N]
+- Trang văn bản đã đọc **bị cắt ngang** (nội dung phụ lục bị ẩn sau đăng nhập), nên bài này **không** liệt kê INS nào được phép cho nhóm thực phẩm nào, ML là bao nhiêu; phần đó tra ở [tab Mức tối đa (TT24)](../../tra-cuu/#tt24). Tình trạng hiệu lực: cần xác nhận trên cơ sở dữ liệu pháp luật chính thức. [N]
 - Tài liệu tham khảo bổ sung có trong kết quả tìm kiếm: bản PDF trên Công báo (congbaocdn.chinhphu.vn), bản VBPL (vbpl.vn), bản chemlinked (Global Food Compliance). Chưa mở.
 - QCVN 4-22 (chất nhũ hóa) xuất hiện trong kết quả tìm kiếm (file của Eurofins). **Chưa mở**; cần kiểm xem còn hiệu lực hay đã thay thế.
 
@@ -118,8 +118,8 @@ Ghi chú nhãn Việt Nam: tên gọi trong Phụ lục 1 gồm tên Việt + t�
 **Lưu ý khi viết:**
 1. Thiết kế quan sát, nhóm "chất nhũ hóa" trong các bài này gồm cả chất làm đặc/ ổn định (carrageenan, cellulose) không phải nhũ hóa theo nghĩa hóa keo. [G]
 2. Nhiều yếu tố gây nhiễu (khẩu phần siêu chế biến). Không chứng minh nhân quả. [G]
-3. EFSA đánh giá E471, E322 **trước** khi các nghiên cứu này ra đời (2017). Tôi chưa thấy EFSA cập nhật theo nhóm bài này trong phiên. [G]
-4. Tóm tắt mà tôi nhận được **bị cắt cụt** ở một số chỗ (ví dụ tuyến tiền liệt). Dùng số trong bài gốc khi đăng.
+3. EFSA đánh giá E471, E322 **trước** khi các nghiên cứu này ra đời (2017). Chưa thấy EFSA cập nhật theo nhóm bài này. [G]
+4. Các tóm tắt đã đọc **bị cắt cụt** ở một số chỗ (ví dụ tuyến tiền liệt). Dùng số trong bài gốc khi trích.
 
 ### (c) Đề xuất khung trình bày trên web
 - Bảng ba cột: "Đánh giá EFSA/JECFA" – "Thí nghiệm tiền lâm sàng" – "Quan sát dịch tễ", mỗi ô có mức bằng chứng và liên kết.

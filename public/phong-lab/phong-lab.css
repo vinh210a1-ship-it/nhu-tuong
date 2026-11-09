@@ -545,3 +545,56 @@
 .mayo-diem { fill: #e8963c; stroke: #fff; stroke-width: 1; }
 .mayo-diem.dang { fill: #d65a7a; stroke-width: 2; }
 @media (max-width: 40rem) { .pl-chon-ban { grid-template-columns: repeat(2, 1fr); } }
+
+/* Sổ tay: xuất / nhập file */
+.pl-so-tay-nut { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-top: 0.6rem; }
+.pl-so-tay-nut .pl-link:disabled { opacity: 0.5; cursor: not-allowed; }
+.pl-nhap-nhan { cursor: pointer; }
+.pl-so-tay-tb { font-size: 0.8rem; color: var(--hh-ho-phach); }
+
+/* Bàn nâu hóa */
+.nau-bi, .nau-acr { fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.nau-bi { stroke: #b4661f; }
+.nau-acr { stroke: #5b3fa0; stroke-dasharray: 5 3; }
+.nau-chu-bi { color: #b4661f; }
+.nau-chu-acr { color: #5b3fa0; }
+.nau-dai-aw { fill: rgb(214 140 40 / 0.35); stroke: #b4661f; stroke-width: 1; }
+.nau-thu-tu { display: flex; flex-wrap: wrap; gap: 0.35rem; list-style: none; padding: 0; margin: 0.6rem 0 0.2rem; counter-reset: nau; }
+.nau-thu-tu li { counter-increment: nau; padding: 0.15rem 0.55rem; border: 1px solid var(--hh-vien, #bbb); border-radius: 999px; font-size: 0.8rem; }
+.nau-thu-tu li::before { content: counter(nau) '. '; opacity: 0.6; }
+.nau-thu-tu li.dang { background: var(--sl-color-accent, #0a7); color: #fff; border-color: transparent; }
+
+/* Tủ lưu mẫu */
+.pl-luu-mau { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-top: 0.6rem; }
+.pl-luu-mau-tb, .pl-tu-mau-tb { font-size: 0.85rem; color: var(--hh-ho-phach, #8a5a00); }
+.pl-tu-mau { margin-top: 2.5rem; }
+.pl-ds-mau { list-style: none; padding: 0; margin: 0.8rem 0 0; display: grid; gap: 0.8rem; grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); }
+.pl-mau { border: 1px solid var(--hh-vien, #bbb); border-radius: 0.6rem; padding: 0.75rem 0.9rem; }
+.pl-mau-dau { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.6rem; }
+.pl-mau-ten { flex: 1 1 8rem; font: inherit; font-weight: 600; padding: 0.15rem 0.35rem; border: 1px solid transparent; border-radius: 0.3rem; background: transparent; color: inherit; }
+.pl-mau-ten:hover, .pl-mau-ten:focus { border-color: var(--hh-vien, #bbb); background: var(--sl-color-bg, #fff); }
+.pl-mau-ban { font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 999px; background: var(--sl-color-accent-low, #def); }
+.pl-mau-tom { margin: 0.35rem 0; font-size: 0.9rem; }
+.pl-mau-tt { list-style: none; padding: 0; margin: 0 0 0.5rem; font-size: 0.82rem; }
+.pl-mau-tt li { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.pl-mau-tt li span:first-child { color: var(--sl-color-gray-3, #666); }
+.pl-mau-nut { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+.pl-xoa.sap-xoa { color: #b3261e; font-weight: 700; }
+
+/* Chế độ của bàn nhũ tương */
+.pl-che-do { display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; align-items: center; margin: 0 0 1rem; padding: 0.6rem 0.9rem; border: 1px dashed var(--sl-color-gray-5); border-radius: 0.8rem; }
+.pl-che-do[hidden] { display: none; }
+.pl-che-do-nhom { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.pl-che-do-nhom > span { font-size: 0.78rem; color: var(--sl-color-gray-2); margin-inline-end: 0.2rem; }
+.pl-che-do-nut { font: inherit; font-size: 0.9rem; padding: 0.3rem 0.8rem; border-radius: 999px; border: 1.5px solid var(--sl-color-gray-5); background: var(--sl-color-bg-nav, var(--sl-color-gray-6)); color: var(--sl-color-white); cursor: pointer; }
+.pl-che-do-nut:hover { border-color: var(--hh-ho-phach, #f0b14a); }
+.pl-che-do-nut[aria-pressed='true'] { border-color: var(--hh-ho-phach, #f0b14a); box-shadow: 0 0 0 3px color-mix(in srgb, var(--hh-ho-phach, #f0b14a) 25%, transparent); font-weight: 600; }
+.pl-che-do-de { flex-basis: 100%; margin: 0; font-size: 0.82rem; color: var(--sl-color-gray-2); }
+@media (min-width: 60rem) { .pl-chon-ban { grid-template-columns: repeat(4, 1fr); } }
+
+/* Số đo của bạn trong tủ lưu mẫu */
+.pl-so-do { margin: 0 0 0.5rem; font-size: 0.85rem; }
+.pl-so-do summary { cursor: pointer; color: var(--sl-color-accent, #0f6b5c); }
+.pl-so-do-o { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.3rem; }
+.pl-so-do-o label { display: inline-flex; align-items: center; gap: 0.3rem; }
+.pl-so-do-o input { width: 4.5rem; }
