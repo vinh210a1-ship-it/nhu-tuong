@@ -189,6 +189,44 @@ for (const khu of KHU_CHUAN) {
 		if (soKetBong > 0) loiThuNgay.push(`${ma}: còn ${soKetBong} chỗ "kết bông" ngoài cụm "còn gọi: kết bông" (tên chuẩn là "keo tụ")`);
 	});
 }
+// ---- L7 (gói L7c): mỗi cặp "Liên quan ở khu khác" phải có đủ hai chiều trong dist/ (chặn); bài không có liên kết trong thân bài tới bài khác (chỉ báo)
+let soLkKhuKhac = 0;
+const bai0LienKet = [];
+{
+	for (const [ma, ds] of Object.entries(LIEN_QUAN)) {
+		for (const d of ds) {
+			const hDich = noiDung[path.join(DIST, ...d.bai.split('/'), 'index.html')];
+			if (!hDich) continue; // thiếu trang đã được báo ở trên
+			const hop = /<div class="lien-quan[^"]*"[^>]*>([\s\S]*?)<\/ul><\/div>/.exec(hDich)?.[1] ?? '';
+			if (!hop.includes(`href="../../${ma}/"`)) loiThuNgay.push(`${ma} trỏ sang ${d.bai} nhưng ${d.bai} không trỏ ngược lại (mỗi cặp phải đủ hai chiều)`);
+			else soLkKhuKhac++;
+		}
+	}
+	const slugCong = new Set(Object.entries(KHU).flatMap(([k, v]) => v.bai.map((b) => `${k}/${b.slug}`)));
+	for (const ma of slugCong) {
+		const h = noiDung[path.join(DIST, ma, 'index.html')];
+		if (!h) continue;
+		const bat = h.indexOf('class="sl-markdown-content"');
+		if (bat < 0) continue;
+		let than = h.slice(bat);
+		const cat = than.search(/<div class="(?:tu-kiem-tra|thu-ngay|lien-quan|ket-bai)\b/);
+		if (cat > 0) than = than.slice(0, cat);
+		than = than.replace(/<p class="(?:nguon-goc-bai|can-biet-truoc)">[\s\S]*?<\/p>/g, '');
+		let dem = 0;
+		for (const m of than.matchAll(/<a [^>]*href="([^"#][^"]*)"/g)) {
+			let u;
+			try {
+				u = new URL(m[1], 'http://x' + BASE + '/' + ma + '/'); // gốc có BASE để liên kết tương đối và tuyệt đối cùng qua một phép cắt BASE (khu "nhu-tuong" trùng tên với BASE)
+			} catch {
+				continue;
+			}
+			const dich = u.pathname.replace(new RegExp('^' + BASE), '').replace(/^\/|\/$/g, '');
+			if (dich !== ma && slugCong.has(dich)) dem++;
+		}
+		if (!dem) bai0LienKet.push(ma);
+	}
+	if (bai0LienKet.length) canhBao[`bài không có liên kết nào trong thân bài tới bài khác (${bai0LienKet.length}/${slugCong.size}; mục tiêu sau gói L7c: dưới 15, tức thêm liên kết cho ít nhất 3 bài)`] = bai0LienKet.map((x) => '/' + x + '/');
+}
 // ---- T5: lý lịch bài (dòng ngày, hộp trích dẫn, thẻ meta), chân trang giấy phép, trang Nhật ký thay đổi
 {
 	const baiCongKhai = Object.entries(KHU).flatMap(([k, v]) => v.bai.map((b) => `${k}/${b.slug}`));
@@ -316,4 +354,4 @@ if (loiCam.length || nhomHong.length || loiThuNgay.length || loiRnd.length) {
 	console.log('\nkiem-sau-build: KHÔNG ĐẠT');
 	process.exit(1);
 }
-console.log(`kiem-sau-build: đạt (0 chuỗi cấm, 0 liên kết nội bộ hỏng, 8/8 bài có hộp "Thử ngay", ${Object.keys(LIEN_QUAN).length} bài có hộp "Liên quan ở khu khác" (${Object.values(LIEN_QUAN).reduce((t, d) => t + d.length, 0)} liên kết, 13 cặp hai chiều), mọi #nv-… khớp nhiệm vụ, trang Số liệu R&D đủ 30 + 7 + 16 dòng, 8/8 bài có Tự kiểm tra, mức độ và Cần biết trước; khu đã chuẩn hóa: ${KHU_CHUAN.join(', ') || 'chưa có'})`);
+console.log(`kiem-sau-build: đạt (0 chuỗi cấm, 0 liên kết nội bộ hỏng, 8/8 bài có hộp "Thử ngay", ${Object.keys(LIEN_QUAN).length} bài có hộp "Liên quan ở khu khác" (${Object.values(LIEN_QUAN).reduce((t, d) => t + d.length, 0)} liên kết, ${soLkKhuKhac} đã kiểm có đủ hai chiều trong dist/; ${bai0LienKet.length} bài chưa có liên kết thân bài tới bài khác, chỉ báo), mọi #nv-… khớp nhiệm vụ, trang Số liệu R&D đủ 30 + 7 + 16 dòng, 8/8 bài có Tự kiểm tra, mức độ và Cần biết trước; khu đã chuẩn hóa: ${KHU_CHUAN.join(', ') || 'chưa có'})`);
