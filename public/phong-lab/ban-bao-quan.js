@@ -1,5 +1,6 @@
 // BÀN BẢO QUẢN: pha lọ sản phẩm (muối, đường, axit, chất bảo quản), đo aw và pH, ủ ở nhiệt độ chọn,
 // rồi xem 10 mầm bệnh trong bảng FDA và nấm men có mọc trên đĩa thạch không.
+import { tenBan } from './tu-luu-mau.js';
 import { taoBan, h, so, soCD, nhanHTML, thanhTruot, dauBang, tram, tuTreo, nenPhong } from './ban-chung.js';
 import { moPhongBaoQuan, MAM_BENH, NHAN_TP, NHIEM_VU_BQ, chamSaoBQ, AW_MEN } from './mo-hinh-thuc-pham.js';
 
@@ -129,6 +130,24 @@ export function khoiDongBanBaoQuan(goc) {
 			ds.push({ k: 'pH', ten: 'pH', v: Math.round(kq.pH * 100) / 100, dv: '', nhan: 'T' });
 			ds.push({ k: 'aw', ten: kq.awTuMau ? 'aw (lấy từ mẫu trước)' : 'aw (ước tính)', v: Math.round(kq.aw * 1000) / 1000, dv: '', nhan: 'T' });
 			return ds;
+		},
+		/* Bàn bảo quản đánh giá "hàng rào" cho bất kỳ sản phẩm nào, nên đọc được mọi mẫu có số đo chung (pH, aw, muối),
+		   dù mẫu đến từ bàn nhũ tương, mayonnaise, Pickering hay nhũ tương kép. Số do người dùng ghi vào mẫu mang nhãn G. */
+		nhanChung(tt, st, mau) {
+			const lay = (k) => { const v = tt.find((x) => x.k === k)?.v; return typeof v === 'number' && Number.isFinite(v) ? v : null; };
+			const pH = lay('pH'), aw = lay('aw'), muoi = lay('muoi');
+			if (pH === null && aw === null && muoi === null)
+				return { ok: false, ly: `mẫu từ ${tenBan(mau.ban)} chưa có số đo nào bàn này dùng được. Mở tủ lưu mẫu, ghi pH, aw hoặc muối vào ô “Số đo của bạn” (số thật bạn đo bằng máy ngoài đời), rồi mang sang lại.` };
+			const me = MAC_DINH();
+			const da = [], chua = [];
+			if (muoi !== null) { me.muoi = Math.min(25, Math.max(0, muoi)); da.push(`muối ${soCD(me.muoi)} g/100 g`); }
+			if (pH !== null) { me.pHMau = Math.min(7, Math.max(3, pH)); da.push(`pH ${soCD(me.pHMau, 2)}${me.pHMau !== pH ? ` (bàn chỉ nhận pH 3 đến 7; số gốc ${soCD(pH, 2)})` : ''}`); }
+			if (aw !== null && aw > 0 && aw <= 1) { me.awDo = aw; da.push(`aw ${soCD(aw, 2)}`); }
+			else if (aw !== null) chua.push('aw ngoài khoảng 0 đến 1');
+			if (pH === null) chua.push('pH (bàn dùng 6,5 mặc định)');
+			if (aw === null) chua.push('aw (bàn tự ước tính từ muối và đường)');
+			Object.assign(st, { me, daDo: { aw: false, pH: false }, daU: false });
+			return { ok: true, ghiChu: [`Đã đọc: ${da.join(', ')}.`, chua.length ? `Chưa có: ${chua.join('; ')}.` : '', 'Chưa đọc được: đường, chất bảo quản, nhiệt độ trữ; hãy đặt tiếp ở bàn này.'].filter(Boolean) };
 		},
 		nhanTu: {
 			thit(tt, st) {

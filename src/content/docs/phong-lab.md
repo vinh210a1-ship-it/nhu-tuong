@@ -26,7 +26,7 @@ Phòng lab có **bốn bàn thí nghiệm**. Chọn bàn, chọn nhiệm vụ, r
 Mỗi bàn có nút **Lưu mẫu vào tủ**. Mẫu nằm trong **Tủ lưu mẫu** ở cuối trang, dùng chung cho mọi bàn, lưu trong trình duyệt này và **chỉ mất khi bạn bấm Xóa** (hai bước, để tránh lỡ tay) hoặc khi xóa dữ liệu trình duyệt.
 
 - **Lấy ra ở bàn gốc:** khôi phục đúng trạng thái lúc lưu.
-- **Mang sang bàn khác:** bàn nhận chỉ đọc những thuộc tính nó tính được, kèm nhãn N/T/G, và nói rõ phần chưa đọc được; không đoán số. Giữa các chế độ nhũ tương chưa có lối mang mẫu vì mỗi chế độ đo đại lượng khác nhau. Hiện có hai lối: **bàn thịt → bàn bảo quản** (đọc muối và pH) và **bàn nâu hóa (bánh quy) → bàn bảo quản** (đọc aw bạn đã đặt; pH, muối, đường chưa biết nên bàn dùng mặc định và nói rõ). Các cặp bàn khác báo chưa có phép chuyển đã kiểm.
+- **Mang sang bàn khác:** bàn nhận chỉ đọc những thuộc tính nó tính được, kèm nhãn N/T/G, và nói rõ phần chưa đọc được; không đoán số. Giữa các chế độ nhũ tương chưa có lối mang mẫu vì mỗi chế độ đo đại lượng khác nhau. Có ba lối: **bàn thịt → bàn bảo quản** (đọc muối và pH), **bàn nâu hóa (bánh quy) → bàn bảo quản** (đọc aw bạn đã đặt; pH, muối, đường chưa biết nên bàn dùng mặc định và nói rõ), và **bất kỳ bàn nào → bàn bảo quản** qua ô **Số đo của bạn** trong tủ: bạn ghi pH, aw hoặc muối đo được ngoài đời vào mẫu (nhãn G), bàn bảo quản đọc các số đó để xét hàng rào vi sinh, giống như đem một sản phẩm bất kỳ đi kiểm hạn dùng. Các cặp bàn khác báo chưa có phép chuyển đã kiểm.
 
 Kết quả không phải do may rủi: mỗi hiện tượng đều tính bằng cơ chế và số đo có nguồn (Stokes, bảng giới hạn mọc của FDA, các nghiên cứu về phosphat trong thịt…). Mỗi lời giải thích có nhãn tin cậy như phần còn lại của web; số nào là minh họa đều được ghi rõ.
 

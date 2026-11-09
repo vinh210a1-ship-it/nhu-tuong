@@ -591,3 +591,10 @@
 .pl-che-do-nut[aria-pressed='true'] { border-color: var(--hh-ho-phach, #f0b14a); box-shadow: 0 0 0 3px color-mix(in srgb, var(--hh-ho-phach, #f0b14a) 25%, transparent); font-weight: 600; }
 .pl-che-do-de { flex-basis: 100%; margin: 0; font-size: 0.82rem; color: var(--sl-color-gray-2); }
 @media (min-width: 60rem) { .pl-chon-ban { grid-template-columns: repeat(4, 1fr); } }
+
+/* Số đo của bạn trong tủ lưu mẫu */
+.pl-so-do { margin: 0 0 0.5rem; font-size: 0.85rem; }
+.pl-so-do summary { cursor: pointer; color: var(--sl-color-accent, #0f6b5c); }
+.pl-so-do-o { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.3rem; }
+.pl-so-do-o label { display: inline-flex; align-items: center; gap: 0.3rem; }
+.pl-so-do-o input { width: 4.5rem; }

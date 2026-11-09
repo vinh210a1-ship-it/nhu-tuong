@@ -60,6 +60,29 @@ export function doiTenMau(id, ten) {
 	if (ok) phat();
 	return ok;
 }
+/* Số đo chung: người dùng ghi số họ đo được (như đọc từ máy pH, máy aw ngoài đời) vào mẫu. Mang nhãn G và cờ nhap.
+   Đặt đầu danh sách để bàn nhận (dùng find) lấy số bạn nhập trước số bàn gốc tự tính. Xóa ô thì bỏ số đã nhập, số gốc còn nguyên. */
+export const SO_DO = [
+	{ k: 'pH', ten: 'pH', min: 0, max: 14, dv: '' },
+	{ k: 'aw', ten: 'aw', min: 0.01, max: 1, dv: '' },
+	{ k: 'muoi', ten: 'Muối', min: 0, max: 30, dv: 'g/100 g' },
+];
+export function datSoDo(id, k, chu) {
+	const def = SO_DO.find((s) => s.k === k);
+	const ds = docMau();
+	const m = ds.find((x) => x.id === id);
+	if (!m || !def) return { ok: false, ly: 'không tìm thấy mẫu.' };
+	const s = String(chu ?? '').trim().replace(',', '.');
+	m.tt = (m.tt ?? []).filter((t) => !(t.k === k && t.nhap));
+	if (s !== '') {
+		const v = Number(s);
+		if (!Number.isFinite(v) || v < def.min || v > def.max) return { ok: false, ly: `${def.ten} phải nằm trong khoảng ${def.min} đến ${def.max}.` };
+		m.tt.unshift({ k, ten: `${def.ten} (bạn nhập)`, v, dv: def.dv, nhan: 'G', nhap: true });
+	}
+	if (!ghi(ds)) return { ok: false, ly: 'bộ nhớ trình duyệt đầy hoặc bị chặn.' };
+	phat();
+	return { ok: true };
+}
 export const dangKyBan = (id, ten, nhan) => {
 	dangKy.set(id, { ten, nhan });
 	BAN_HOP_LE.add(id);
@@ -71,7 +94,7 @@ const NHAN_CHU = { N: 'Có nguồn', T: 'Tính minh họa', K: 'Sách nền, ch�
 
 /** Dựng bảng Tủ lưu mẫu vào phần tử vung. banDangMo() trả về mã bàn đang mở. */
 export function ganTuMau(vung, { banDangMo, tenBanDe }) {
-	const trangThai = { xacNhanXoa: null, tb: '' };
+	const trangThai = { xacNhanXoa: null, tb: '', moSoDo: null };
 	let hetGio = null;
 	function ve() {
 		const ds = docMau();
@@ -90,8 +113,16 @@ ${ds.length ? `<ul class="pl-ds-mau">${ds.map((m) => hang(m, dang, tenDang)).joi
 <div class="pl-mau-dau"><input class="pl-mau-ten" value="${h(m.ten)}" maxlength="60" aria-label="Tên mẫu" data-doi-ten="${h(m.id)}"><span class="pl-mau-ban">${h(tenBanDe(m.ban))}</span><small>${h(new Date(m.luc).toLocaleString('vi-VN'))}</small></div>
 <p class="pl-mau-tom">${h(m.tom)}</p>
 ${tt ? `<ul class="pl-mau-tt">${tt}</ul>` : '<p class="pl-meo">Mẫu này chưa có thuộc tính chung để mang sang bàn khác; chỉ mở lại được ở bàn gốc.</p>'}
+${soDo(m)}
 <div class="pl-mau-nut"><button type="button" class="pl-nut" data-lay="${h(m.id)}">${cungBan ? 'Lấy ra ở bàn này' : `Mang sang bàn đang mở (${h(tenDang)})`}</button>
 <button type="button" class="pl-link pl-xoa${xoa ? ' sap-xoa' : ''}" data-xoa="${h(m.id)}">${xoa ? 'Bấm lần nữa để xóa hẳn' : 'Xóa'}</button></div></li>`;
+	}
+	function soDo(m) {
+		const o = SO_DO.map((s) => {
+			const cu = (m.tt ?? []).find((t) => t.k === s.k && t.nhap)?.v;
+			return `<label>${h(s.ten)}${s.dv ? ` (${h(s.dv)})` : ''} <input type="text" inputmode="decimal" size="5" value="${cu ?? ''}" data-so-do="${s.k}" data-mau-so="${h(m.id)}" aria-label="${h(s.ten)} bạn đo cho mẫu ${h(m.ten)}"></label>`;
+		}).join('');
+		return `<details class="pl-so-do"${trangThai.moSoDo === m.id ? ' open' : ''}><summary>Số đo của bạn (pH, aw, muối)</summary><p class="pl-meo">Ghi số bạn đo được bằng máy ngoài đời. Bàn bảo quản đọc được các số này từ mọi bàn khác. Số bạn nhập mang nhãn G (do bạn cung cấp), phòng lab không tự đoán.</p><div class="pl-so-do-o">${o}</div></details>`;
 	}
 	function noi(t) {
 		trangThai.tb = t;
@@ -129,6 +160,17 @@ ${tt ? `<ul class="pl-mau-tt">${tt}</ul>` : '<p class="pl-meo">Mẫu này chưa 
 		}
 	});
 	vung.addEventListener('change', (ev) => {
+		const sd = ev.target.closest('[data-so-do]');
+		if (sd) {
+			trangThai.moSoDo = sd.dataset.mauSo; // đặt trước để lần vẽ lại do lưu vẫn giữ ô đang mở
+			const kq = datSoDo(sd.dataset.mauSo, sd.dataset.soDo, sd.value);
+			if (!kq.ok) {
+				noi(`Chưa ghi được: ${kq.ly}`);
+				return;
+			}
+			trangThai.tb = 'Đã ghi số đo vào mẫu.';
+			return;
+		}
 		const it = ev.target.closest('[data-doi-ten]');
 		if (it) doiTenMau(it.dataset.doiTen, it.value);
 	});

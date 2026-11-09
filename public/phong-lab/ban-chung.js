@@ -68,6 +68,7 @@ const GIOT_SVG = `<svg viewBox="0 0 40 46" aria-hidden="true"><path d="M20 2 C20
  *   doi(st,k,v,api), lam{ten:(st,api,nut)}, capNhatCanh(st,svg), chao, huongDan, tenVat,
  *   tt(st) → [{k, ten, v, dv, nhan}] thuộc tính chung để mang sang bàn khác (tùy chọn),
  *   nhanTu{maBanGoc: (tt, st) → {ok, ly?, ghiChu?[]}} cách đọc mẫu từ bàn khác (tùy chọn; không có thì báo chưa đọc được)
+ *   nhanChung(tt, st, mau) → {ok, ly?, ghiChu?[]} cách đọc mẫu từ BẤT KỲ bàn nào qua số đo chung (pH, aw, muối) khi bàn gốc không có mục riêng trong nhanTu
  * }
  */
 export function taoBan(goc, cfg) {
@@ -206,7 +207,7 @@ export function taoBan(goc, cfg) {
 			api.noi(`Đã lấy <b>${h(mau.ten)}</b> ra khỏi tủ.`, 'vui');
 			return { ok: true, ghiChu: ['Trạng thái được khôi phục đúng như lúc lưu.'] };
 		}
-		const doc = cfg.nhanTu?.[mau.ban];
+		const doc = cfg.nhanTu?.[mau.ban] ?? cfg.nhanChung;
 		if (!doc) return { ok: false, ly: `bàn này chưa có cách đọc mẫu từ ${tenBan(mau.ban)} (hai bàn đo những đại lượng khác nhau và chưa có phép chuyển đã kiểm).` };
 		const kq = doc(mau.tt ?? [], st, mau);
 		if (!kq.ok) return kq;
