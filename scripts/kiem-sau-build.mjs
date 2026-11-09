@@ -9,6 +9,7 @@ import path from 'node:path';
 import { KHU } from '../src/data/khu.mjs';
 import { docTuKiemTra } from './tu-kiem-tra.mjs';
 import { CONG_CU_BAI, CONG_CU_KHU, canBietTruocKhu } from '../src/data/cong-cu-bai.mjs';
+import { LIEN_QUAN } from '../src/data/lien-quan-khu.mjs';
 import { NHIEM_VU } from '../public/phong-lab/mo-hinh.js';
 
 const GOC = process.cwd();
@@ -125,6 +126,26 @@ for (const b of KHU['nhu-tuong'].bai) {
 	if (soKetBong > 0) loiThuNgay.push(`${b.slug}: còn ${soKetBong} chỗ "kết bông" ngoài cụm "còn gọi: kết bông" (tên chuẩn là "keo tụ")`);
 }
 for (const k of Object.keys(CONG_CU_BAI)) if (!KHU['nhu-tuong'].bai.some((b) => b.slug === k)) loiThuNgay.push(`cong-cu-bai.mjs: bài "${k}" không có trong khu Nhũ tương`);
+// ---- 1b''. hộp "Liên quan ở khu khác" (gói L4): bài nào có dữ liệu thì có hộp 1–3 dòng, dòng nào cũng có câu mô tả và trỏ sang KHU KHÁC, hộp nằm trước "Đọc xong bài này?"
+for (const [ma, ds] of Object.entries(LIEN_QUAN)) {
+	const [k, sl] = ma.split('/');
+	const h = noiDung[path.join(DIST, k, sl, 'index.html')];
+	if (!h) {
+		loiThuNgay.push(`${ma}: không thấy trang bài cho hộp "Liên quan ở khu khác"`);
+		continue;
+	}
+	const hop = /<div class="lien-quan[^"]*"[^>]*>([\s\S]*?)<\/ul><\/div>/.exec(h);
+	if (!hop) {
+		loiThuNgay.push(`${ma}: có dữ liệu "Liên quan ở khu khác" nhưng trang không có hộp`);
+		continue;
+	}
+	const soDong = (hop[1].match(/<li>/g) || []).length;
+	const soVi = (hop[1].match(/class="tn-vi">[^<]{10,}</g) || []).length;
+	if (soDong !== ds.length || soDong < 1 || soDong > 3) loiThuNgay.push(`${ma}: hộp "Liên quan ở khu khác" có ${soDong} dòng (dữ liệu ${ds.length}, cần 1 đến 3)`);
+	if (soVi !== soDong) loiThuNgay.push(`${ma}: ${soDong - soVi} dòng "Liên quan ở khu khác" thiếu câu mô tả`);
+	if (!/class="lien-quan[\s\S]*?class="ket-bai/.test(h)) loiThuNgay.push(`${ma}: hộp "Liên quan ở khu khác" phải nằm trước hộp "Đọc xong bài này?"`);
+	for (const m of hop[1].matchAll(/href="\.\.\/\.\.\/([^/]+)\//g)) if (m[1] === k) loiThuNgay.push(`${ma}: hộp "Liên quan ở khu khác" trỏ về cùng khu`);
+}
 // ---- 1b'. các khu đã chuẩn hóa: mỗi bài có "Tự kiểm tra" (2–3 câu, căn cứ N/T), "Cần biết trước" (trừ bài đầu); "Thử ngay" nếu có dữ liệu
 for (const [k, ds] of Object.entries(CONG_CU_KHU))
 	for (const sl of Object.keys(ds)) if (!KHU[k]?.bai.some((b) => b.slug === sl)) loiThuNgay.push(`cong-cu-khu/${k}: bài "${sl}" không có trong khu`);
@@ -134,7 +155,7 @@ for (const khu of KHU_CHUAN) {
 		const ma = `${khu}/${b.slug}`;
 		const h = noiDung[path.join(DIST, khu, b.slug, 'index.html')];
 		if (!h) return void loiThuNgay.push(`${ma}: không thấy trang bài`);
-		const tkt = /<div class="tu-kiem-tra[^"]*"[^>]*>([\s\S]*?)<\/div>(?=\s*(?:<div class="thu-ngay|<div class="ket-bai))/.exec(h);
+		const tkt = /<div class="tu-kiem-tra[^"]*"[^>]*>([\s\S]*?)<\/div>(?=\s*(?:<div class="thu-ngay|<div class="lien-quan|<div class="ket-bai))/.exec(h);
 		if (tkk[b.slug]?.mien) {
 			if (tkt) loiThuNgay.push(`${ma}: được miễn Tự kiểm tra nhưng trang vẫn có hộp`);
 		} else if (!tkt) loiThuNgay.push(`${ma}: thiếu hộp "Tự kiểm tra"`);
@@ -256,4 +277,4 @@ if (loiCam.length || nhomHong.length || loiThuNgay.length || loiRnd.length) {
 	console.log('\nkiem-sau-build: KHÔNG ĐẠT');
 	process.exit(1);
 }
-console.log(`kiem-sau-build: đạt (0 chuỗi cấm, 0 liên kết nội bộ hỏng, 8/8 bài có hộp "Thử ngay", mọi #nv-… khớp nhiệm vụ, trang Số liệu R&D đủ 30 + 7 + 16 dòng, 8/8 bài có Tự kiểm tra, mức độ và Cần biết trước; khu đã chuẩn hóa: ${KHU_CHUAN.join(', ') || 'chưa có'})`);
+console.log(`kiem-sau-build: đạt (0 chuỗi cấm, 0 liên kết nội bộ hỏng, 8/8 bài có hộp "Thử ngay", ${Object.keys(LIEN_QUAN).length} bài có hộp "Liên quan ở khu khác", mọi #nv-… khớp nhiệm vụ, trang Số liệu R&D đủ 30 + 7 + 16 dòng, 8/8 bài có Tự kiểm tra, mức độ và Cần biết trước; khu đã chuẩn hóa: ${KHU_CHUAN.join(', ') || 'chưa có'})`);

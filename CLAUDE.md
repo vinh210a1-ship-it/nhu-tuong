@@ -32,6 +32,7 @@ Không xóa hay sửa mục cũ. Mọi thay đổi code đi qua PR trên GitHub,
 | Tra cứu (INS, từ điển, TT24, tá dược) | `scripts/tra-cuu.mjs`, `public/tra-cuu.js`, `public/tt24.js`, `public/ta-duoc.js`, `noi-dung/tra-cuu/tu-dien-anh-viet.md` |
 | Trang viết tay | `src/content/docs/*.md(x)` (trang chủ, quy ước, máy tính, phòng lab, chẩn đoán, tá dược), `trang/` (lộ trình từng khu) |
 | Hộp học của 5 khu ngoài Nhũ tương (Cần biết trước, Thử ngay) | `src/data/cong-cu-khu/<khu>.mjs` (nối bài với máy tính, bàn lab, trang tra cứu), đăng ký trong `src/data/cong-cu-bai.mjs` |
+| Hộp "Liên quan ở khu khác" (nối bài với bài cùng chủ đề ở khu khác) | `src/data/lien-quan-khu.mjs`: khóa `khu/slug`, mỗi bài tối đa 3 dòng, đích phải ở khu khác; sai thì build dừng. Nối hai chiều nên mỗi cặp có hai dòng. Câu mô tả chỉ nói phạm vi bài kia, không đưa số liệu. |
 | Tự kiểm tra của từng khu | `noi-dung/<khu>/tu-kiem-tra.md` (`## slug` / `### Câu n` / `Hỏi:` `Đáp:` `Căn cứ: N\|T \| <tiêu đề>`; bài chỉ có bảng quy định thì ghi `Miễn: <lý do>`). Máy in dừng build nếu tiêu đề không duy nhất hoặc không có nhãn khớp. |
 | Kiểm định kỳ (link ngoài, khóa nguồn, hạn kiểm bảng pháp lý) | `scripts/kiem-dinh-ky.mjs`, `nguon/han-kiem-lai.json` (chỉ điền `kiem_lan_cuoi` khi thật sự đã đối chiếu), lịch ở `.github/workflows/kiem-dinh-ky.yml` (chỉ báo cáo) |
 | Nút báo lỗi, bản in | `public/bao-loi.js`, khối `@media print` cuối `src/styles/giao-dien.css` |
