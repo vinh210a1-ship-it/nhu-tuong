@@ -21,6 +21,15 @@ Phòng lab có **bốn bàn thí nghiệm**. Chọn bàn, chọn nhiệm vụ, r
 - **Bàn bảo quản**: pha lọ sản phẩm với muối, đường, axit, chất bảo quản → đo aw và pH → ủ trên đĩa thạch xem vi khuẩn nào mọc.
 - **Bàn nâu hóa** (học nguyên lý): bánh quy hoặc chip chiên; đường, aw, nhiệt độ, hạ nhiệt chiên, asparaginase. Số có nguồn giữ đúng điều kiện đã công bố; đường cong bánh quy là nội suy nhãn T trong 165–195 °C; ngoài vùng thì báo không có dữ liệu.
 
+## Cân mẻ như ở lab thật và máy đo cỡ hạt
+
+Ở bàn nhũ tương, cốc nay nhận **số gam** thay vì chỉ phần trăm. Chọn khối lượng mẻ từ 20 đến 2.000 g, rồi nhập dầu, chất nhũ hóa, xanthan theo một trong ba cách: **gam**, **phần trăm của cả mẻ**, hoặc **tỉ lệ**. Nước tự bù cho đủ mẻ, hoặc bạn tắt chế độ đó để tự cân nước. Mô hình vẫn tính theo phần trăm [G], nên đổi khối lượng mẻ không làm đổi cỡ giọt; khối lượng mẻ chỉ quyết định máy nào chạy được.
+
+- **Máy chạy được hay không:** máy khuấy cắt cao (rotor–stator) nhận mẫu 1 mL–2 L và độ nhớt pha nước tới 5.000 mPa·s; máy đồng hóa áp cao để bàn cần tối thiểu 30 mL và giữ lại khoảng 15 mL trong máy sau một lượt chạy. Thông số lấy từ tài liệu hãng, mỗi nguồn nằm ở trang Nguồn. Mẻ không hợp thì máy báo lý do và không chạy.
+- **Máy đo cỡ hạt:** chọn **nhiễu xạ laser** (đọc d₃₂, d₄₃, Dv10/50/90 và span) hoặc **DLS**. Mỗi máy có dải đo của hãng và dải tin cậy theo tổng quan; giọt nằm ngoài dải thì máy báo, không in số. DLS thật báo Z-average (trung bình điều hòa theo cường độ tán xạ), không phải d₃₂, nên máy DLS của phòng lab này chưa in số cỡ hạt mà chỉ giải thích vì sao. Đo chỉ đọc mẫu, không làm đổi mẫu.
+- **Đoán trước khi chạy:** thẻ đoán cho bạn dự đoán giọt to hơn, nhỏ hơn hay như cũ so với lần trước, rồi mới đối chiếu với kết quả.
+- **Chia sẻ mẻ:** địa chỉ dạng `#ban-nhu-tuong?me=…` mang theo mẻ bạn vừa cân, nên gửi cho người khác là mở ra đúng mẻ đó.
+
 ## Tủ lưu mẫu
 
 Mỗi bàn có nút **Lưu mẫu vào tủ**. Mẫu nằm trong **Tủ lưu mẫu** ở cuối trang, dùng chung cho mọi bàn, lưu trong trình duyệt này và **chỉ mất khi bạn bấm Xóa** (hai bước, để tránh lỡ tay) hoặc khi xóa dữ liệu trình duyệt.

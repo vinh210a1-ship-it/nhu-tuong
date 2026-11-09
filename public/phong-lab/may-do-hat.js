@@ -7,7 +7,12 @@ import { dacTrungPhanBo } from './mo-hinh.js';
 const f = (x) => x.toLocaleString('vi-VN', { maximumSignificantDigits: 3 });
 /** 0,0003 → "0,3 nm"; 0,01 → "0,01 µm"; 3500 → "3.500 µm". */
 export const chuKichThuoc = (um) => (um < 0.01 ? `${f(um * 1000)} nm` : `${f(um)} µm`);
-export const chuDai = ([a, b]) => `${chuKichThuoc(a)} đến ${chuKichThuoc(b)}`;
+export const chuDai = ([a, b]) => {
+	const sa = chuKichThuoc(a);
+	const sb = chuKichThuoc(b);
+	const dv = (s) => s.slice(s.lastIndexOf(' ') + 1);
+	return `${dv(sa) === dv(sb) ? sa.slice(0, sa.lastIndexOf(' ')) : sa}–${sb}`; // 0,01–3.500 µm; 0,3 nm–10 µm
+};
 
 /** Trung bình mô men của phân bố log-chuẩn: D[p,q] = d32·exp((p+q−5)σ²/2). Dùng để kiểm dacTrungPhanBo, không hiện D[6,5]. */
 export const momen = (d32, sigma, p, q) => d32 * Math.exp(((p + q - 5) * sigma * sigma) / 2);

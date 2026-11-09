@@ -210,8 +210,9 @@ export function datTuBu(coc, bat) {
 	const c = chuanCoc(coc);
 	if (bat === c.nuocTuBu) return c;
 	if (bat) {
+		const tong = tongMe(c); // tính trước khi đổi cờ: tongMe phụ thuộc nuocTuBu
 		c.nuocTuBu = true;
-		c.me = Math.min(ME.max, Math.max(ME.min, Math.round(tongMe(c) * 1000) / 1000));
+		c.me = Math.min(ME.max, Math.max(ME.min, Math.round(tong * 1000) / 1000));
 		c.gNuoc = null;
 	} else {
 		c.gNuoc = lam6(Math.max(0, gNuocThuc(c)));

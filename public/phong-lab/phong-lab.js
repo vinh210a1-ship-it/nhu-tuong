@@ -74,7 +74,7 @@ ${VUNG.map((id) => `<div class="pl-ban" data-ban-vung="${id}"${id === 'nhu-tuong
 	};
 	vo.querySelectorAll('[data-tab-ban]').forEach((n) => n.addEventListener('click', () => chon(n.dataset.tabBan === 'nhu-tuong' ? cheDoCuoi : n.dataset.tabBan, false)));
 	vo.querySelectorAll('[data-che-do]').forEach((n) => n.addEventListener('click', () => chon(n.dataset.cheDo, false)));
-	const tuHash = location.hash.match(/^#ban-(thit|bao-quan|kep|pickering|mayo|nau-hoa)$/)?.[1];
+	const tuHash = tachHash(location.hash).duong.match(/^#ban-(thit|bao-quan|kep|pickering|mayo|nau-hoa)$/)?.[1];
 	setTimeout(() => chon(tuHash ?? 'nhu-tuong', !!tuHash), 0);
 	return vo.querySelector('[data-ban-vung="nhu-tuong"]');
 }
@@ -440,13 +440,23 @@ const donViO = (k) => {
 	return 'g';
 };
 
+/** Dải thanh trượt gram: bội số của bước, nằm trong giới hạn phần trăm (để giá trị kéo ra tròn số, không lệch 0,5 g). */
+function daiThanh(c, k) {
+	const gh = gioiHan(c, k);
+	const step = buocDep(tongMe(c) / BUOC_GRAM[k]);
+	const n = (x) => Number(x.toPrecision(10));
+	let min = n(Math.ceil(gh.min / step - 1e-9) * step);
+	let max = n(Math.floor(gh.max / step + 1e-9) * step);
+	if (max < min) (min = gh.min), (max = gh.max);
+	return { min, max, step };
+}
 function oGram(k, nhan, khoa = false) {
 	const c = S.coc;
-	const gh = gioiHan(c, k);
 	const x = c.cachNhap;
+	const { min, max, step } = daiThanh(c, k);
 	return `<div class="pl-o pl-o-gram${khoa ? ' khoa' : ''}">
 <label class="pl-o-nhan" for="pl-n-${k}">${nhan}${khoa ? ' <small>🔒 đề bài cố định</small>' : ''}</label>
-<span class="pl-o-dong"><input type="range" data-o="${k}" min="${gh.min}" max="${gh.max}" step="${buocDep(tongMe(c) / BUOC_GRAM[k])}" value="${c[k]}" ${khoa ? 'disabled' : ''} aria-label="${h(nhan)} (thanh trượt, tính bằng gram)"/>
+<span class="pl-o-dong"><input type="range" data-o="${k}" min="${min}" max="${max}" step="${step}" value="${c[k]}" ${khoa ? 'disabled' : ''} aria-label="${h(nhan)} (thanh trượt, tính bằng gram)"/>
 <span class="pl-o-so">${x === 'ty-le' && k === 'gDau' ? '1 :' : ''}<input id="pl-n-${k}" class="pl-so-nhap" type="number" inputmode="decimal" step="any" min="0" data-n="${k}" value="${soO(hienThiO(c, k))}" ${khoa ? 'disabled' : ''}/> ${donViO(k)}</span></span>
 ${x !== 'gam' ? `<small class="pl-o-g" data-g="${k}">≈ ${soG(c[k])} g</small>` : ''}</div>`;
 }
@@ -470,7 +480,7 @@ function htmlQuyDoi() {
 		`${q.tyLeDauNuoc != null ? `Dầu : nước = 1 : <b>${so(q.tyLeDauNuoc, 2)}</b>` : ''}${q.tyLeNhuHoaDau != null ? ` · Chất nhũ hóa : dầu = 1 : <b>${so(q.tyLeNhuHoaDau, 2)}</b>` : ''}`,
 		`Thể tích mẻ ≈ <b>${soCD(q.theTichML, 0)} mL</b> ${nhanHTML({ ma: 'T' })} <small>(coi chất nhũ hóa và xanthan nặng 1 g/mL; sai số dưới 1% vì lượng nhỏ)</small>`,
 	];
-	if (S.kq?.nhuHoaToiThieu) dong.push(`Chất nhũ hóa tối thiểu để phủ giọt cỡ hiện tại ≈ <b>${soG((S.kq.nhuHoaToiThieu * q.tong) / 100)} g</b> ${nhanHTML(NHAN.gamma)}`);
+	if (S.kq?.nhuHoaToiThieu && (S.xong.khuay || S.xong.dongHoa)) dong.push(`Chất nhũ hóa tối thiểu để phủ giọt cỡ hiện tại ≈ <b>${soG((S.kq.nhuHoaToiThieu * q.tong) / 100)} g</b> ${nhanHTML(NHAN.gamma)}`);
 	return `<ul class="pl-qd">${dong.filter(Boolean).map((d) => `<li>${d}</li>`).join('')}</ul>${q.loi.map((l) => `<p class="pl-canh-bao">${h(l)}</p>`).join('')}`;
 }
 const kiemMayHienTai = (id) => {
@@ -560,10 +570,10 @@ function capNhatSoCan() {
 	for (const k of ['gDau', 'gNhuHoa', 'gXanthan']) {
 		const r = b.querySelector(`[data-o="${k}"]`);
 		if (!r) continue;
-		const gh = gioiHan(c, k);
-		r.min = String(gh.min);
-		r.max = String(gh.max);
-		r.step = String(buocDep(tongMe(c) / BUOC_GRAM[k]));
+		const d = daiThanh(c, k);
+		r.min = String(d.min);
+		r.max = String(d.max);
+		r.step = String(d.step);
 		r.value = String(c[k]);
 		const n = b.querySelector(`[data-n="${k}"]`);
 		if (n && n !== dangGo) n.value = soO(hienThiO(c, k));
@@ -859,14 +869,19 @@ function duaCocToi(tram) {
 const LAM = {
 	toiCan: () => duaCocToi('can'),
 	nuoc: () => themNuoc(),
-	khuay: () =>
+	khuay: () => {
+		const kM = kiemMayHienTai('khuay');
+		if (!kM.chay) return noi(h(kM.ly), 'lo');
 		chay('khuay', 1500, () => {
 			S.xong = { ...S.xong, khuay: true, dongHoa: false, do: false, tua: false };
 			tinh();
 			veLai();
 			noi(`Vù vù! Tiền nhũ xong, giọt cỡ <b>${so(S.kq.dPre)} µm</b>. Vẫn to lắm, kéo cốc sang <b>máy đồng hóa</b> nhé.`);
-		}),
+		});
+	},
 	dongHoa: () => {
+		const kM = kiemMayHienTai('dongHoa');
+		if (!kM.chay) return noi(h(kM.ly), 'lo');
 		const kim = goc.querySelector('.pl-kim');
 		if (kim) kim.style.transform = `rotate(${-120 + (240 * S.may.dongHoa.bar) / 1500}deg)`;
 		chay('dongHoa', 1100 + 500 * S.may.dongHoa.soLan, () => {
@@ -876,7 +891,7 @@ const LAM = {
 			const kq = S.kq;
 			if (kq.bienTinh) noi(`Nóng quá! Mẫu ra <b>${soCD(kq.nhietRa)} °C</b>, protein bị biến tính rồi. Lần sau thử làm lạnh giữa các lần qua máy.`, 'lo');
 			else if (kq.thieuNhuHoa) noi('Máy chạy ngon, nhưng hình như chất nhũ hóa không đủ phủ hết các giọt mới…', 'lo');
-			else noi(`Xong! Mẫu ra ${soCD(kq.nhietRa)} °C. Kéo cốc sang <b>máy đo hạt</b> xem giọt nhỏ cỡ nào.`, 'vui');
+			else noi(`Xong! Mẫu ra ${soCD(kq.nhietRa)} °C, còn lại ≈ ${soCD(khoiLuongConLai(), 0)} g. Kéo cốc sang <b>máy đo hạt</b> xem giọt nhỏ cỡ nào.`, 'vui');
 		});
 	},
 	nop: () => {
@@ -901,6 +916,8 @@ const LAM = {
 			ct: `${soCD(m.phanTramDau)}% ${DAU[m.dau].ten.replace('Dầu ', '')} · ${m.nhuHoa ? soCD(m.phanTramNhuHoa, 2) + '% ' + NHU_HOA[m.nhuHoa].ten.split(' (')[0] : 'không nhũ hóa'}${m.phanTramXanthan ? ' · xanthan ' + soCD(m.phanTramXanthan, 2) + '%' : ''}${m.tocopherol ? ' · tocopherol' : ''}${m.edta ? ' · EDTA' : ''}`,
 			qt: `${m.khuay.rpm ? (m.khuay.rpm / 1000).toLocaleString('vi-VN') + 'k vòng ' + soCD(m.khuay.phut) + "'" : 'không khuấy'} · ${m.dongHoa.bar ? m.dongHoa.bar + ' bar × ' + m.dongHoa.soLan + (m.dongHoa.lamLanh ? ' (làm lạnh)' : '') : 'không đồng hóa'}`,
 			d43: kq.d43,
+			me: Math.round(tongMe(S.coc) * 100) / 100,
+			conLai: S.xong.dongHoa ? Math.round(khoiLuongConLai() * 10) / 10 : null,
 			ngay: ngayGhi,
 			ci: o.CI,
 			pv,
@@ -928,6 +945,25 @@ const LAM = {
 		veLai();
 		moTram('can');
 		noi('Mẻ mới! Cốc vẫn giữ công thức cũ, bạn chỉnh lại hoặc chạy lại các máy nhé.');
+	},
+	chepLink: async () => {
+		const chuoi = taoThamSo({ coc: S.coc, may: S.may });
+		const neo = S.nv ? `#nv-${S.nv.id}` : '#ban-nhu-tuong';
+		const url = `${location.origin}${location.pathname}${neo}${chuoi ? '?' + chuoi : ''}`;
+		const dat = (chu) => {
+			const tb = goc.querySelector('.pl-chia-tb');
+			if (tb) tb.textContent = chu;
+		};
+		try {
+			await navigator.clipboard.writeText(url);
+			S.chiaSe = '';
+			goc.querySelector('.pl-chia-o')?.remove();
+			dat('Đã chép đường dẫn.');
+		} catch {
+			S.chiaSe = url;
+			veBang();
+			dat('Trình duyệt chặn chép tự động: bấm vào ô rồi chép (Ctrl+C).');
+		}
 	},
 	cuonSoTay: () => goc.querySelector('.pl-so-tay-wrap').scrollIntoView({ behavior: 'smooth' }),
 };
@@ -1171,10 +1207,10 @@ function veSoTay() {
 	const w = goc.querySelector('.pl-so-tay-wrap');
 	w.innerHTML = `<h2 class="pl-h">📓 Sổ tay thí nghiệm</h2>` +
 		(st.length
-			? `<div class="pl-bang-cuon"><table class="pl-so-tay"><thead><tr><th>Nhiệm vụ</th><th>Công thức</th><th>Quy trình</th><th>d₄₃</th><th>CI</th><th>Peroxide</th><th>Sao</th></tr></thead><tbody>${st
+			? `<div class="pl-bang-cuon"><table class="pl-so-tay"><thead><tr><th>Nhiệm vụ</th><th>Công thức</th><th>Quy trình</th><th>Mẻ (g)</th><th>Còn lại (g)</th><th>d₄₃</th><th>CI</th><th>Peroxide</th><th>Sao</th></tr></thead><tbody>${st
 					.map(
 						(r) =>
-							`<tr><td>${h(r.nv)}</td><td>${h(r.ct)}</td><td>${h(r.qt)}</td><td>${so(r.d43)} µm</td><td>${soCD(r.ci)}% <small>sau ${r.ngay} ngày${r.nhiet != null ? ', ' + r.nhiet + ' °C' : ''}</small></td><td>${r.pv != null ? soCD(r.pv) : '–'}</td><td>${r.sao === null ? '–' : '★'.repeat(r.sao) + '☆'.repeat(3 - r.sao)}</td></tr>`,
+							`<tr><td>${h(r.nv)}</td><td>${h(r.ct)}</td><td>${h(r.qt)}</td><td>${r.me != null ? soCD(r.me, 1) : '100'}</td><td>${r.conLai != null ? soCD(r.conLai, 0) : '—'}</td><td>${so(r.d43)} µm</td><td>${soCD(r.ci)}% <small>sau ${r.ngay} ngày${r.nhiet != null ? ', ' + r.nhiet + ' °C' : ''}</small></td><td>${r.pv != null ? soCD(r.pv) : '–'}</td><td>${r.sao === null ? '–' : '★'.repeat(r.sao) + '☆'.repeat(3 - r.sao)}</td></tr>`,
 					)
 					.join('')}</tbody></table></div>`
 			: `<p class="pl-meo">Chưa có mẻ nào. Mỗi lần bạn nộp mẻ ở tủ tua nhanh, kết quả sẽ được ghi vào đây (lưu trên máy này) để so sánh.</p>`) +
@@ -1564,9 +1600,15 @@ async function ganTuMauBanGoc() {
 		tinh();
 		const m = meThuc();
 		const kq = S.kq;
-		const tt = [{ k: 'dauPct', ten: 'Dầu', v: m.phanTramDau, dv: '% khối lượng', nhan: 'T' }];
+		// dầu và khối lượng mẻ là số người chơi tự cân, không phải số minh họa nên không gắn nhãn tin cậy
+		const tt = [{ k: 'dauPct', ten: 'Dầu', v: Math.round(m.phanTramDau * 1000) / 1000, dv: '% khối lượng' }, { k: 'me', ten: 'Khối lượng mẻ', v: Math.round(tongMe(S.coc) * 100) / 100, dv: 'g' }];
+		if (S.xong.dongHoa) tt.push({ k: 'khoiLuong', ten: 'Khối lượng mẫu sau máy đồng hóa', v: Math.round(khoiLuongConLai() * 10) / 10, dv: 'g', nhan: 'T' });
 		if (m.nhuHoa) tt.push({ k: 'nhuHoa', ten: NHU_HOA[m.nhuHoa].ten.split(' (')[0], v: m.phanTramNhuHoa, dv: '%', nhan: 'T' });
-		if (S.xong.khuay || S.xong.dongHoa) tt.push({ k: 'd43', ten: 'd₄₃ (mô phỏng)', v: Math.round(kq.d43 * 100) / 100, dv: 'µm', nhan: 'T' });
+		if (S.xong.khuay || S.xong.dongHoa) {
+			tt.push({ k: 'd43', ten: 'd₄₃ (mô phỏng)', v: Math.round(kq.d43 * 100) / 100, dv: 'µm', nhan: 'T' });
+			tt.push({ k: 'd32', ten: 'd₃₂ (mô phỏng)', v: Math.round(kq.d32 * 1000) / 1000, dv: 'µm', nhan: 'T' });
+			tt.push({ k: 'sigma', ten: 'Độ rộng phân bố σ (mô phỏng)', v: kq.sigma, dv: '', nhan: 'T' });
+		}
 		const tom = `${soCD(m.phanTramDau, 0)}% ${DAU[m.dau].ten.replace('Dầu ', '')}${m.nhuHoa ? ' · ' + NHU_HOA[m.nhuHoa].ten.split(' (')[0] : ' · không nhũ hóa'}${S.xong.khuay ? ' · đã khuấy' : ''}${S.xong.dongHoa ? ' · đã đồng hóa' : ''}`;
 		const r = luuMau({ ban: 'nhu-tuong', tom, goc: chup(), tt });
 		noiLuu(r.ok ? `Đã lưu “${r.mau.ten}” vào tủ lưu mẫu.` : r.ly);
@@ -1577,7 +1619,7 @@ async function ganTuMauBanGoc() {
 		if (mau.ban !== 'nhu-tuong') return { ok: false, ly: `bàn này chưa có cách đọc mẫu từ ${tenBan(mau.ban)} (hai bàn đo những đại lượng khác nhau và chưa có phép chuyển đã kiểm).` };
 		const g = mau.goc ?? {};
 		if (!g.coc || !g.may || !g.xong || !g.bq) return { ok: false, ly: 'mẫu thiếu dữ liệu để khôi phục.' };
-		Object.assign(S, structuredClone({ coc: g.coc, may: g.may, xong: g.xong, ngay: Number(g.ngay) || 0, bq: g.bq }), { viTri: 'can', tram: 'can', dangChay: false });
+		Object.assign(S, structuredClone({ coc: chuanCoc(g.coc), may: g.may, xong: g.xong, ngay: Number(g.ngay) || 0, bq: g.bq }), { viTri: 'can', tram: 'can', dangChay: false });
 		veLai();
 		noi(`Đã lấy <b>${h(mau.ten)}</b> ra khỏi tủ.`, 'vui');
 		return { ok: true, ghiChu: ['Trạng thái được khôi phục đúng như lúc lưu.'] };
@@ -1589,16 +1631,43 @@ async function ganTuMauBanGoc() {
    /phong-lab/#nv-<mã nhiệm vụ>  mở bàn nhũ tương và chọn sẵn nhiệm vụ ("tu-do" = phòng lab tự do)
    /phong-lab/#so-tay            cuộn tới Sổ tay thí nghiệm
    (#ban-… do dungVo xử lý; #ban-kep, #ban-pickering, #ban-mayo mở đúng chế độ của bàn nhũ tương). Mã nhiệm vụ lạ thì bỏ qua, trang vẫn mở bình thường. */
+/** Nạp công thức từ đường dẫn chia sẻ vào cốc và máy (không tự chạy máy). Khóa lạ, giá trị hỏng thì bỏ qua. */
+function napTuDuongDan(chuoi, nv) {
+	let r;
+	try {
+		r = docThamSo(chuoi, nv?.coDinh ?? {});
+	} catch {
+		return;
+	}
+	if (!r.coGiaTri) return;
+	S.coc = r.coc;
+	S.may = r.may;
+	S.xong = XONG_RONG();
+	S.viTri = 'can';
+	S.tram = 'can';
+	S.ngay = 0;
+	S.lyKep = '';
+	veLai();
+	moTram('can');
+	noi('Đã nạp công thức từ đường dẫn.' + (r.bo.length ? ` (Bỏ qua giá trị hỏng: ${h(r.bo.join(', '))}.)` : ''), 'vui');
+}
 function theoHash() {
 	if (!goc) return;
-	const nv = location.hash.match(/^#nv-([a-z0-9-]+)$/);
+	const { duong, chuoi } = tachHash(location.hash);
+	const nv = duong.match(/^#nv-([a-z0-9-]+)$/);
 	if (nv) {
 		const nhiemVu = nv[1] === 'tu-do' ? null : NHIEM_VU.find((n) => n.id === nv[1]);
 		if (nv[1] !== 'tu-do' && !nhiemVu) return;
 		document.querySelector('[data-che-do="nhu-tuong"]')?.click();
 		chonNhiemVu(nhiemVu);
+		napTuDuongDan(chuoi, nhiemVu);
 		document.getElementById('phong-lab')?.scrollIntoView({ behavior: GIAM_CHUYEN_DONG ? 'auto' : 'smooth', block: 'start' });
-	} else if (location.hash === '#so-tay') {
+	} else if (duong === '#ban-nhu-tuong' && chuoi) {
+		document.querySelector('[data-che-do="nhu-tuong"]')?.click();
+		chonNhiemVu(null);
+		napTuDuongDan(chuoi, null);
+		document.getElementById('phong-lab')?.scrollIntoView({ behavior: GIAM_CHUYEN_DONG ? 'auto' : 'smooth', block: 'start' });
+	} else if (duong === '#so-tay') {
 		document.querySelector('[data-che-do="nhu-tuong"]')?.click();
 		// chờ một nhịp để bố cục (chọn bàn, vẽ Sổ tay) ổn định rồi mới cuộn
 		setTimeout(() => goc.querySelector('.pl-so-tay-wrap')?.scrollIntoView({ behavior: GIAM_CHUYEN_DONG ? 'auto' : 'smooth', block: 'start' }), 350);

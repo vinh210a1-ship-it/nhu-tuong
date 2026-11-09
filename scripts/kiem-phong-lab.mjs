@@ -16,6 +16,10 @@ import {
 	awUocTinh, MAM_BENH, moPhongBaoQuan, chiSoUcChe, NHIEM_VU_BQ, chamSaoBQ,
 } from '../public/phong-lab/mo-hinh-thuc-pham.js';
 
+import { ME, PT, COC_RONG, MAY_MAC_DINH, chuanCoc, quyDoiMe, kepMe, doiKhoiLuongMe, datO, datTuBu, khoiLuongSauDongHoa, taoThamSo, docThamSo, tachHash, hienThiO } from '../public/phong-lab/cong-thuc-me.js';
+import { THIET_BI, kiemMay, khoaNguonThietBi } from '../public/phong-lab/thiet-bi.js';
+import { doHat, momen, chuDai } from '../public/phong-lab/may-do-hat.js';
+
 let loi = 0;
 function dung(ten, dk) {
 	if (!dk) loi++;
@@ -279,6 +283,100 @@ for (const nv of NHIEM_VU) {
 		dung(`Nhiệm vụ "${NHIEM_VU_NAU[2].ten}": lời giải ${sao(2, tot)}/4, aw trong dải ${sao(2, xau)}/4, 180 °C ${sao(2, nong)}/4`, sao(2, tot) === 4 && sao(2, xau) < 4 && sao(2, nong) < 4);
 		dung('Kết quả nâu hóa không có trường hạn dùng hay an toàn', !Object.keys(N({})).some((k) => /^han$|^han[A-Z_]|shelf|antoan|anToan/.test(k)));
 	}
+}
+
+
+// 8. Cốc có khối lượng mẻ tự chọn (P1) và máy đo cỡ hạt dùng chung (P2)
+{
+	const rhoHD = DAU['huong-duong'].rho;
+	const coc = (o) => ({ ...COC_RONG(), nuoc: true, dau: 'huong-duong', gDau: 20, nhuHoa: 'tween80', gNhuHoa: 1, ...o });
+	const q = quyDoiMe(coc({}));
+	dung('P1: me = 100, tự bù, 20 g dầu → 20% khối lượng và φ = phanSoTheTich(20, ρ)', q.phanTramDau === 20 && q.phanTramNhuHoa === 1 && q.phi === phanSoTheTich(20, rhoHD) && q.tong === 100 && gan(q.gNuocThuc, 79, 1e-12));
+	// bất biến theo mẻ: mô hình nhận phần trăm, nên d32, nhiệt, kem hóa ngày 7 không đổi khi nhân cả mẻ lên 10 lần
+	const chay = (me) => {
+		const c = doiKhoiLuongMe(coc({}), me).coc;
+		const r = quyDoiMe(c);
+		return moPhongMe({ dau: 'huong-duong', phanTramDau: r.phanTramDau, nhuHoa: 'tween80', phanTramNhuHoa: r.phanTramNhuHoa, phanTramXanthan: r.phanTramXanthan, khuay: { rpm: 10000, phut: 2 }, dongHoa: { bar: 300, soLan: 1, lamLanh: false }, nhietVao: 25 });
+	};
+	const a1 = chay(100), a2 = chay(1000);
+	dung('P1: cùng phần trăm ở mẻ 100 g và 1.000 g cho cùng d32, nhiệt ra, lớp kem ngày 7 (sai số 1e-9)', Math.abs(a1.d32 - a2.d32) < 1e-9 && Math.abs(a1.nhietRa - a2.nhietRa) < 1e-9 && Math.abs(a1.ongNghiem(7).kem - a2.ongNghiem(7).kem) < 1e-9);
+	dung('P1: đổi mẻ giữ nguyên phần trăm (nhân gram theo tỷ lệ)', (() => { const r = doiKhoiLuongMe(coc({}), 250); return r.coc.gDau === 50 && r.coc.gNhuHoa === 2.5 && quyDoiMe(r.coc).phanTramDau === 20; })());
+	const tay = datTuBu(coc({ me: 250, gDau: 50, gNhuHoa: 2.5, gXanthan: 0.5 }), false);
+	tay.gNuoc = 150;
+	const qt = quyDoiMe(tay);
+	dung('P1: tắt tự bù, 150 g nước + 50 g dầu → tổng = 200 + phần khác, phanTramDau = 50/tổng·100', gan(qt.tong, 150 + 50 + 2.5 + 0.5, 1e-12) && gan(qt.phanTramDau, (50 / qt.tong) * 100, 1e-12));
+	dung('P1: bật lại tự bù thì me = tổng đang có', datTuBu(tay, true).me === Math.round(203 * 1000) / 1000);
+	dung('P1: tỷ lệ dầu : nước và chất nhũ hóa : dầu đúng định nghĩa', gan(q.tyLeDauNuoc, 79 / 20, 1e-12) && gan(q.tyLeNhuHoaDau, 20, 1e-12));
+	dung('P1: thể tích mẻ = dầu/ρ + nước + phần còn lại (g ≈ mL)', gan(q.theTichML, (20 * 1000) / rhoHD + 79 + 1, 1e-12));
+	// giới hạn
+	const k1 = kepMe({ ...coc({}), me: 5000 });
+	const k2 = kepMe({ ...coc({}), gDau: 60 });
+	const k3 = kepMe({ ...coc({}), gDau: 0.2 });
+	dung('P1: mẻ ngoài 20–2.000 g bị kẹp và có lý do', k1.coc.me === ME.max && k1.ly.length > 0 && kepMe({ ...coc({}), me: 3 }).coc.me === ME.min);
+	dung('P1: dầu trên 40% bị kẹp về 40% kèm lý do Mayonnaise; dưới 1% kẹp lên 1%', k2.coc.gDau === 40 && /Mayonnaise/.test(k2.ly[0]) && k3.coc.gDau === 1);
+	dung('P1: gõ vào ô số ngoài dải thì kẹp, gõ chữ thì giữ giá trị cũ', datO(coc({}), 'gDau', 75).coc.gDau === 40 && datO(coc({}), 'gDau', NaN).coc.gDau === 20);
+	dung('P1: cách nhập % và tỷ lệ đổi qua lại về cùng gram', (() => {
+		const pt = datO({ ...coc({ me: 250, gDau: 50 }), cachNhap: 'phan-tram' }, 'gDau', 10).coc;
+		const tl = datO({ ...coc({ me: 250, gDau: 50 }), cachNhap: 'ty-le' }, 'gDau', 4).coc;
+		return gan(pt.gDau, 25, 1e-9) && gan(tl.gDau, (250 - 1) / 5, 1e-9) && gan(hienThiO({ ...tl, cachNhap: 'ty-le' }, 'gDau'), 4, 1e-6);
+	})());
+	// máy chạy được
+	const dh25 = kiemMay('dongHoa', { theTichML: 25 }), dh30 = kiemMay('dongHoa', { theTichML: 30 });
+	dung('P1: máy đồng hóa không chạy ở 25 mL (có lý do), chạy ở 30 mL, 15 mL nằm lại máy', !dh25.chay && !!dh25.ly && dh30.chay && dh30.haoML === 15);
+	dung('P1: máy khuấy không chạy ở 2.500 mL, 0,5 mL hoặc độ nhớt 6.000 mPa·s; chạy ở 1 mL và 2.000 mL', !kiemMay('khuay', { theTichML: 2500 }).chay && !kiemMay('khuay', { theTichML: 0.5 }).chay && !kiemMay('khuay', { theTichML: 100, nhotMPas: 6000 }).chay && kiemMay('khuay', { theTichML: 1 }).chay && kiemMay('khuay', { theTichML: 2000 }).chay);
+	dung('P1: mẻ 100 g (≈ 102 mL) chạy được cả hai máy; mẻ 25 g bị chặn ở máy đồng hóa', (() => { const v = (me) => quyDoiMe(doiKhoiLuongMe(coc({}), me).coc).theTichML; return kiemMay('khuay', { theTichML: v(100) }).chay && kiemMay('dongHoa', { theTichML: v(100) }).chay && !kiemMay('dongHoa', { theTichML: v(25) }).chay; })());
+	dung('P1: mẫu 250 g (≈ 254 mL) qua máy đồng hóa còn ≈ 235 g', gan(khoiLuongSauDongHoa(250, 254, 15), 235, 0.005));
+	// đường dẫn
+	const DUONG = 'me=250&dau=huong-duong&gDau=50&nhuHoa=tween80&gNhuHoa=2.5&gXanthan=0.5&nuoc=tu-bu&toco=1&edta=0&rpm=10000&phut=2&bar=300&lan=2&lamLanh=1';
+	const d = docThamSo(DUONG);
+	dung('P1: đọc đường dẫn chia sẻ ra đúng cốc và máy', d.coc.me === 250 && d.coc.dau === 'huong-duong' && d.coc.gDau === 50 && d.coc.nhuHoa === 'tween80' && d.coc.gNhuHoa === 2.5 && d.coc.gXanthan === 0.5 && d.coc.nuoc && d.coc.nuocTuBu && d.coc.tocopherol && !d.coc.edta && d.may.khuay.rpm === 10000 && d.may.dongHoa.soLan === 2 && d.may.dongHoa.lamLanh === true && d.may.dongHoa.bar === 300);
+	const lo = tachHash('#ban-nhu-tuong?me=250&x=1');
+	dung('P1: địa chỉ cũ vẫn tách đúng (không có ?)', ['#ban-mayo', '#ban-thit', '#ban-bao-quan', '#ban-kep', '#ban-pickering', '#ban-nau-hoa', '#nv-tu-do', '#nv-sua-thuc-vat', '#so-tay', ''].every((x) => tachHash(x).duong === x && tachHash(x).chuoi === '') && lo.duong === '#ban-nhu-tuong' && lo.chuoi === 'me=250&x=1' && tachHash('#nv-sua-thuc-vat?me=250').duong === '#nv-sua-thuc-vat');
+	let hong;
+	try { hong = docThamSo('me=abc&gDau=-5&la=1&dau=khong-co&bar=ab&nuoc=-3'); } catch { hong = null; }
+	dung('P1: chuỗi hỏng không ném lỗi: mẻ về mặc định, gDau kẹp về 1%, khóa lạ bị bỏ', !!hong && hong.coc.me === 100 && hong.coc.gDau === 1 && hong.coc.dau === null && hong.may.dongHoa.bar === 300);
+	const S1 = { coc: coc({ me: 400, gDau: 80, gXanthan: 0.8, tocopherol: true, edta: true }), may: { khuay: { rpm: 15000, phut: 3.5 }, dongHoa: { bar: 750, soLan: 3, lamLanh: true } } };
+	const r1 = docThamSo(taoThamSo(S1));
+	dung('P1: chép rồi đọc lại đường dẫn (khứ hồi) ra cùng trạng thái', JSON.stringify([r1.coc.me, r1.coc.dau, r1.coc.gDau, r1.coc.nhuHoa, r1.coc.gNhuHoa, r1.coc.gXanthan, r1.coc.nuoc, r1.coc.tocopherol, r1.coc.edta, r1.may]) === JSON.stringify([400, 'huong-duong', 80, 'tween80', 1, 0.8, true, true, true, S1.may]));
+	dung('P1: đường dẫn chỉ ghi khóa khác mặc định', taoThamSo({ coc: COC_RONG(), may: MAY_MAC_DINH() }) === '');
+	const cd = docThamSo('me=500&dau=cai&gDau=300', { dau: 'huong-duong', phanTramDau: 10 });
+	dung('P1: đề bài cố định thắng khóa trong đường dẫn', cd.coc.dau === 'huong-duong' && gan(quyDoiMe(cd.coc).phanTramDau, 10, 1e-9));
+	// mẫu cũ (không có me, không có nuocTuBu) cho đúng kết quả như trước
+	const cu = { nuoc: true, dau: 'huong-duong', gDau: 20, nhuHoa: 'tween80', gNhuHoa: 1, gXanthan: 0.2, tocopherol: false, edta: false };
+	const qc = quyDoiMe(chuanCoc(cu));
+	const moCu = moPhongMe({ dau: 'huong-duong', phanTramDau: 20, nhuHoa: 'tween80', phanTramNhuHoa: 1, phanTramXanthan: 0.2, khuay: { rpm: 10000, phut: 2 }, dongHoa: { bar: 300, soLan: 1, lamLanh: false }, nhietVao: 25 });
+	const moMoi = moPhongMe({ dau: 'huong-duong', phanTramDau: qc.phanTramDau, nhuHoa: 'tween80', phanTramNhuHoa: qc.phanTramNhuHoa, phanTramXanthan: qc.phanTramXanthan, khuay: { rpm: 10000, phut: 2 }, dongHoa: { bar: 300, soLan: 1, lamLanh: false }, nhietVao: 25 });
+	dung('P1: mẫu lưu trước gói này (không có me) lấy ra cho cùng d32 như trước', chuanCoc(cu).me === 100 && chuanCoc(cu).nuocTuBu === true && moCu.d32 === moMoi.d32 && moCu.nhietRa === moMoi.nhietRa);
+	// P2
+	const T = THIET_BI;
+	dung('P2: số trong THIET_BI khớp bản thiết kế', T.khuay.theTichML[0] === 1 && T.khuay.theTichML[1] === 2000 && T.khuay.nhotToiDaMPas === 5000 && T.dongHoa.theTichToiThieuML === 30 && T.dongHoa.theTichNamLaiML === 15 && T.dongHoa.apToiDaBar === 2000
+		&& T.nhieuXaLaser.daiMay[0] === 0.01 && T.nhieuXaLaser.daiMay[1] === 3500 && T.nhieuXaLaser.daiTinCay[0] === 0.1 && T.nhieuXaLaser.daiTinCay[1] === 1000
+		&& T.dls.daiMay[0] === 0.0003 && T.dls.daiMay[1] === 10 && T.dls.daiTinCay[0] === 0.003 && T.dls.daiTinCay[1] === 5);
+	{
+		const ngJ = JSON.parse(fs.readFileSync(new URL('../nguon/nguon.json', import.meta.url), 'utf8'));
+		const co = new Set(ngJ.map((e) => e.khoa));
+		const thieu = khoaNguonThietBi().filter((k) => !co.has(k));
+		dung(`P2: mọi khóa nguồn của bảng máy có trong nguon.json (${khoaNguonThietBi().length} khóa)`, thieu.length === 0);
+	}
+	const l1 = doHat({ d32: 1, sigma: 0.45 }, 'nhieuXaLaser');
+	const l2 = doHat({ d32: 0.05, sigma: 0.3 }, 'nhieuXaLaser');
+	const l3 = doHat({ d32: 40, sigma: 0.75 }, 'dls');
+	const l4 = doHat({ d32: 3, sigma: 0.45 }, 'dls');
+	dung('P2: d32 1 µm bằng laser → đo được, không cảnh báo', l1.doDuoc && l1.canhBao.length === 0);
+	dung('P2: d32 0,05 µm bằng laser → đo được nhưng có cảnh báo xám (dưới 0,1 µm tin cậy)', l2.doDuoc && l2.canhBao.length === 1 && l2.canhBao[0].muc === 'xam');
+	dung('P2: d32 40 µm bằng DLS → không đo được (cả dải trên 10 µm)', !l3.doDuoc && l3.canhBao[0].muc === 'vang');
+	const pb4 = dacTrungPhanBo(3, 0.45);
+	const muc4 = pb4.dv90 > 10 ? 'vang' : pb4.dv90 > 5 ? 'xam' : null;
+	dung('P2: d32 3 µm bằng DLS → đo được, cảnh báo theo d_v90 (tính ra), và DLS không in số cỡ hạt', l4.doDuoc && l4.canhBao.some((w) => w.muc === muc4) && Object.keys(l4.so).length === 0 && l4.ghiChu.some((g) => /Z-average/.test(g)));
+	dung('P2: D[p,q] = d32·exp((p+q−5)σ²/2) khớp dacTrungPhanBo cho d32 và d43 (1e-12)', (() => { const pb = dacTrungPhanBo(1.7, 0.6); return Math.abs(momen(1.7, 0.6, 3, 2) - pb.d32) < 1e-12 && Math.abs(momen(1.7, 0.6, 4, 3) - pb.d43) < 1e-12; })());
+	dung('P2: laser báo d32, d43, d_v10, d_v50, d_v90 và span = (d90−d10)/d50', (() => { const pb = dacTrungPhanBo(1, 0.45); return gan(l1.so.span, (pb.dv90 - pb.dv10) / pb.dv50, 1e-12) && l1.so.d32 === 1; })());
+	const m80 = moPhongMayo({ dauPct: 80 }), m78 = moPhongMayo({ dauPct: 78 });
+	const ml = doHat({ dTheTich: m80.duLieu.d_tt, nhan: 'N', nguon: 'li2012mayo' }, 'nhieuXaLaser');
+	const md = doHat({ dTheTich: m80.duLieu.d_tt, nhan: 'N', nguon: 'li2012mayo' }, 'dls');
+	dung('P2: mayonnaise 80% dầu → đường kính TB theo thể tích 3,04 µm nhãn N; laser đo được, DLS không quy đổi sang Z-average', m80.duLieu.d_tt === 3.04 && MAYO.li2012.nhan === 'N' && ml.doDuoc && ml.so.dTheTich === 3.04 && ml.so.d32 === undefined && md.doDuoc && Object.keys(md.so).length === 0 && md.canhBao.some((w) => /Z-average/.test(w.chu)));
+	dung('P2: mayonnaise 78% dầu → ngoài vùng có dữ liệu, không có số để đo', m78.duLieu === null && m78.ngoaiVung);
+	dung('P2: bàn chưa tính cỡ giọt thì máy đo không đoán số', !doHat({}, 'nhieuXaLaser').doDuoc && /chưa tính cỡ giọt/.test(doHat({}, 'dls').canhBao[0].chu));
+	dung('P2: chữ dải đo đúng dạng "0,01–3.500 µm" và "0,3 nm–10 µm"', chuDai(T.nhieuXaLaser.daiMay) === '0,01–3.500 µm' && chuDai(T.dls.daiMay) === '0,3 nm–10 µm');
 }
 
 // Thuật ngữ: trong chữ của phòng lab, hiện tượng giọt nhập lại với nhau gọi là "hợp giọt" (không dùng "hợp nhất")
