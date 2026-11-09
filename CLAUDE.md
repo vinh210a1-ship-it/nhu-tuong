@@ -35,6 +35,7 @@ Không xóa hay sửa mục cũ. Mọi thay đổi code đi qua PR trên GitHub,
 | Hộp "Liên quan ở khu khác" (nối bài với bài cùng chủ đề ở khu khác) | `src/data/lien-quan-khu.mjs`: khóa `khu/slug`, mỗi bài tối đa 3 dòng, đích phải ở khu khác; sai thì build dừng. Nối hai chiều nên mỗi cặp có hai dòng. Câu mô tả chỉ nói phạm vi bài kia, không đưa số liệu. |
 | Tự kiểm tra của từng khu | `noi-dung/<khu>/tu-kiem-tra.md` (`## slug` / `### Câu n` / `Hỏi:` `Đáp:` `Căn cứ: N\|T \| <tiêu đề>`; bài chỉ có bảng quy định thì ghi `Miễn: <lý do>`). Máy in dừng build nếu tiêu đề không duy nhất hoặc không có nhãn khớp. |
 | Kiểm định kỳ (link ngoài, khóa nguồn, hạn kiểm bảng pháp lý) | `scripts/kiem-dinh-ky.mjs`, `nguon/han-kiem-lai.json` (chỉ điền `kiem_lan_cuoi` khi thật sự đã đối chiếu), lịch ở `.github/workflows/kiem-dinh-ky.yml` (chỉ báo cáo) |
+| Màu chữ đủ tương phản (WCAG AA), vùng cuộn bằng bàn phím | Token `--khu-*-chu`, `--hh-thuong-hieu-chu`, `--hh-ho-phach-chu` ở `src/styles/giao-dien.css` (màu khu gốc chỉ cho viền, nền; chữ nhỏ dùng token `-chu`); nút `.kb-nut` pha 25% đen; `vungCuonBanPhim` trong `public/tuong-tac.js` gắn `tabindex` cho công thức và bảng tràn khung. Đổi màu thì chạy `npm run kiem-truy-cap`. |
 | Giấy phép, lý lịch bài, trích dẫn, nhật ký thay đổi | `LICENSE` (MIT, mã), `LICENSE-NOI-DUNG.md` (CC BY 4.0, chữ và hình), chân trang `src/components/Footer.astro`, trang `src/content/docs/giay-phep.md`. "Máy in" (`ngayDangDau`, `htmlTrichDan`, `dauMetaTrichDan`, khối "trang Nhật ký thay đổi") sinh dòng ngày "Đăng lần đầu" (từ git, chỉ tin khi lịch sử đầy đủ), hộp "Cách trích dẫn trang này" (`public/trich-dan.js` điền ngày truy cập), thẻ meta Google Scholar và `/nhat-ky-thay-doi/`. Workflow đăng web phải giữ `fetch-depth: 0`, nếu không ngày đăng và nhật ký bị bỏ trống. |
 | Nút báo lỗi, bản in | `public/bao-loi.js`, khối `@media print` cuối `src/styles/giao-dien.css` |
 | Nhãn → huy hiệu | `src/plugins/remark-nhan.mjs`, CSS ở `src/styles/nhan.css` |
@@ -46,6 +47,7 @@ npm ci
 npm run kiem    # phép kiểm máy tính và phòng lab; sai một phép là CI không đăng web
 npm run build   # chạy chuan-bi rồi astro build ra dist/
 npm run dev     # xem thử tại http://localhost:4321/nhu-tuong/
+npm run kiem-truy-cap   # sau khi build: axe-core quét 14 trang (sáng/tối, 1280/390 px); cần `npm install --no-save playwright` và trình duyệt; thêm `-- --chat` để có lỗi thì thoát mã 1
 ```
 Đăng web: `.github/workflows/dang-web.yml`. Với PR thì chỉ kiểm và build thử; khi gộp vào main thì build và đăng.
 

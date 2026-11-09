@@ -109,6 +109,10 @@ h1, h2, h3 { letter-spacing: -0.012em; }
 	overflow-y: hidden;
 	vertical-align: bottom;
 }
+/* Lấn ra 1–8 px (phần nghiêng của chữ công thức): cho hiện, không tạo vùng cuộn; public/tuong-tac.js gắn lớp này */
+.sl-markdown-content :is(p, li, td, th) > .katex.katex-nhe {
+	overflow: visible;
+}
 .sl-markdown-content code:not(pre code) { border-radius: 0.3rem; }
 
 /* ---------- Máy tính: như mặt máy đo ---------- */

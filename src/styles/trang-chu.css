@@ -163,9 +163,9 @@ a.tc-the-nhanh:hover { transform: translateY(-2px); border-color: var(--hh-thuon
 .tcn-chu { display: grid; gap: 0.1rem; min-width: 0; flex: 1; }
 .tcn-chu b { font-size: 1rem; }
 .tcn-chu small { color: var(--sl-color-gray-3); font-size: 0.82rem; line-height: 1.4; }
-.tcn-tren { text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; font-size: 0.68rem !important; color: #b27315 !important; }
+.tcn-tren { text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; font-size: 0.68rem !important; color: var(--hh-ho-phach-chu) !important; }
 .tcn-mui { font-size: 1.6rem; color: var(--hh-thuong-hieu); font-weight: 700; }
-.tcn-xem { flex: none; align-self: flex-end; font-size: 0.78rem; font-weight: 600; color: var(--hh-thuong-hieu); }
+.tcn-xem { flex: none; align-self: flex-end; font-size: 0.78rem; font-weight: 600; color: var(--hh-thuong-hieu-chu); }
 
 .tc-muc {
 	display: flex;
@@ -176,7 +176,7 @@ a.tc-the-nhanh:hover { transform: translateY(-2px); border-color: var(--hh-thuon
 	font-weight: 800;
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
-	color: var(--hh-thuong-hieu);
+	color: var(--hh-thuong-hieu-chu);
 }
 .tc-muc::after { content: ''; flex: 1; height: 1px; background: var(--hh-vien); }
 .tc-muc small { order: 2; font-size: 0.78rem; letter-spacing: 0.02em; text-transform: none; color: var(--sl-color-gray-3); font-weight: 600; }
@@ -439,14 +439,15 @@ a.tc-khu-the:hover { transform: translateY(-3px); border-color: var(--mau); }
 	padding: 0.65rem 1.2rem;
 	border: 0;
 	border-radius: 999px;
-	background: var(--mau-chang, var(--hh-thuong-hieu));
+	/* chữ trắng trên màu chặng/khu gốc chỉ đạt 3,0–4,2:1; pha 25% đen để mọi màu khu và chặng đạt ≥ 4,9:1 (chỉ cho nút này) */
+	background: color-mix(in srgb, var(--mau-chang, var(--hh-thuong-hieu)) 75%, #000);
 	color: #fff;
 	font: inherit;
 	font-weight: 700;
 	cursor: pointer;
 }
 .ket-bai.xong { border-style: solid; border-color: var(--chang-4); background: color-mix(in srgb, var(--chang-4) 8%, var(--hh-be-mat)); }
-.ket-bai.xong .kb-nut { background: var(--chang-4); }
+.ket-bai.xong .kb-nut { background: color-mix(in srgb, var(--chang-4) 75%, #000); }
 
 /* ================= Cuối bài: hộp "Thử ngay" (máy tính, Phòng lab, tra cứu liên quan) ================= */
 .thu-ngay {
