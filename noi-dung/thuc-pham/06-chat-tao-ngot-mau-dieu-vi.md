@@ -56,4 +56,4 @@ Xem file 02 (BHA, BHT, ascorbic acid) và tài liệu chất béo (tocopherol, r
 
 1. ADI saccharin, cyclamat, neotam, advantam, erythritol, sorbitol, xylitol, isomalt; các chất màu: **chưa tra**.
 2. Sổ tay độ ngọt (Mora/DuBois; Fennema ch. sweeteners) để đối chiếu `[K]`.
-3. Quy định Việt Nam: TT 24/2019/TT-BYT; Codex GSFA (không mở được từ container).
+3. Quy định Việt Nam: TT 24/2019/TT-BYT; Codex GSFA (chưa tra được).

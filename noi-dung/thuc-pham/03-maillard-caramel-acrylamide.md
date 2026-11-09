@@ -59,8 +59,6 @@ f_duong= {xylose:1.5, glucose:1.0, fructose:0.8 (pH<6 → >glucose), lactose:0.6
 BI(t)  = BI_max*(1 - exp(-k t))                                       # bậc 1, [N: @isleroglu2012]
 AA(t)  = AA_max*(1 - exp(-k_AA t)) * (Asn/Asn0)*(đường khử/đường khử0)^0.5  # dạng hàm [G]; ý chính [N: @liyanage2020]
 ```
-Gợi ý hiển thị: bánh quy trong "lò" (165–195 °C), thanh trượt thời gian; màu chuyển từ vàng nhạt → nâu; đồng hồ acrylamide; nút "thêm asparaginase 45 °C 30 phút" giảm Asn.
-
 ## 6. Việc còn thiếu
 
 1. Giá trị Ea/k cho nướng bánh mì, rang cà phê, thịt nướng; HAA, furan: chưa tra.

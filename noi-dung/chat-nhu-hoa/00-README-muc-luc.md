@@ -34,7 +34,7 @@ nguon_goc: tai-lieu-chat-hoat-dong-be-mat/00-README-muc-luc.md
 
 ## Ba điểm bạn nên biết ngay
 
-1. **Cái chắc:** ADI/ kết luận EFSA cho lecithin, MDG, E472a–f, SSL/CSL, polysorbate, PGPR, E477, quillaia; cơ chế orogenic displacement; vai trò của kích thước, tải bề mặt, màng liên diện; vai trò của PS80/MDG/este sucrose trong kem.
+1. **Cái chắc:** ADI/ kết luận EFSA cho lecithin, MDG, E472a–f, SSL/CSL, polysorbate, PGPR, E477, quillaia; cơ chế orogenic displacement; vai trò của kích thước, độ phủ bề mặt, màng liên diện; vai trò của PS80/MDG/este sucrose trong kem.
 2. **Cái chưa làm được:** phụ lục INS và mức tối đa (ML) của Thông tư 24/2019 (trang đọc được bị cắt); HLB đã kiểm theo nhà sản xuất; ADI của E473 và E491–495.
 3. **Cái cần cẩn trọng khi viết:** (a) HLB và CPP có giới hạn, và có nguồn chỉ ra điều đó; (b) "Tween đẩy protein" không phải quy luật chung, có bằng chứng ngược (đồng hấp phụ, hiệp đồng); (c) các nghiên cứu NutriNet-Santé là quan sát, nhóm "chất nhũ hóa" của họ gồm cả chất làm đặc.
 

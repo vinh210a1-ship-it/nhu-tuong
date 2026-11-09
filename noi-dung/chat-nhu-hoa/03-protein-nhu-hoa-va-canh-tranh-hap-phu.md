@@ -19,7 +19,7 @@ nguon_goc: tai-lieu-chat-hoat-dong-be-mat/03-protein-nhu-hoa-va-canh-tranh-hap-p
 1. **Protein và chất hoạt động bề mặt phân tử nhỏ (CHĐBM) cùng muốn chiếm mặt phân cách.** Khi cùng có mặt, kết quả có thể là *cạnh tranh* (CHĐBM đẩy protein), *hiệp đồng* (cùng hấp phụ, tạo màng hỗn hợp), hoặc *đồng hấp phụ* (CHĐBM xen vào mà không đẩy). Cả ba đều có bằng chứng; **không có quy tắc chung "CHĐBM luôn thắng"**. [N: @dickinson2008; @zhang2020; @webber2023]
 2. Cơ chế đẩy protein ở mặt phân cách chuẩn nhất là **"orogenic displacement"** (Mackie, Gunning, Wilde, Morris, 1999–2000): CHĐBM xen vào chỗ khuyết trong mạng protein, mầm rồi lớn thành miền, nén mạng protein, đến áp suất bề mặt tới hạn thì mạng vỡ và protein rời đi. [N: @mackie1999, @mackie2000; @gunning2004b]
 3. **Nhân tố quyết định không phải γ thấp hơn** mà là **tính cơ học của màng protein** (độ đàn hồi, độ dày, mức gel hóa) và **áp suất bề mặt mà CHĐBM đạt được**. Với protein–protein cũng vậy: đẩy được do tương tác protein–protein và độ đàn hồi, không phải do hạ γ. [N: Gunning 2004; @hinderink2021]
-4. Trong **công nghệ**, đẩy protein có thể *cố ý* (kem lạnh, kem đánh bông, cần hợp nhất từng phần) hoặc *phải tránh* (sữa đạm, nhũ tương thể thao, nhũ tương đạm thực vật). [N: @goff1997]
+4. Trong **công nghệ**, đẩy protein có thể *cố ý* (kem lạnh, kem đánh bông, cần hợp giọt một phần) hoặc *phải tránh* (sữa đạm, nhũ tương thể thao, nhũ tương đạm thực vật). [N: @goff1997]
 
 ---
 
@@ -35,7 +35,7 @@ nguon_goc: tai-lieu-chat-hoat-dong-be-mat/03-protein-nhu-hoa-va-canh-tranh-hap-p
 ### Số liệu đã xác minh
 | Hệ | Thông số | Giá trị | Nguồn |
 |---|---|---|---|
-| Nhũ tương dầu hướng dương 10 wt% | tải bề mặt PPI / WPI | 2,5 / 1,4 mg/m² | Hinderink 2021 [N] |
+| Nhũ tương dầu hướng dương 10 wt% | độ phủ bề mặt PPI / WPI | 2,5 / 1,4 mg/m² | Hinderink 2021 [N] |
 | WPI sau khi thêm PPI | β-lg tăng 0,74 → 1,10 mg/m² trong 3 ngày | whey đẩy/ chen với pea | Hinderink 2021 [N] |
 | WPI vs PPI | mô-đun đàn hồi giãn nở E_d ~ 30 vs 24 mN/m (WPI cao hơn) | thêm PPI hạ E_d của WPI → ~16 | Hinderink 2021 [N] |
 | HSA ở mặt không khí–nước | áp suất bề mặt tới hạn π_c | ~21,5 mN/m (1 mg/mL), ~36 mN/m (20 mg/mL) | Rabe 2020 [N] |
@@ -79,7 +79,7 @@ Cho Tween 20 vào màng β-casein hoặc β-lg ở mặt không khí–nước h
 
 | Kiểu | Ví dụ | Cơ chế dự đoán | Nguồn |
 |---|---|---|---|
-| **Cạnh tranh / đẩy** | caseinate + Tween 20 (nhũ tương dầu óc chó): γ, tải protein, điện thế bề mặt, d giảm khi tăng Tween | CHĐBM thế chỗ protein | Yi 2019 [N] |
+| **Cạnh tranh / đẩy** | caseinate + Tween 20 (nhũ tương dầu óc chó): γ, độ phủ protein, điện thế bề mặt, d giảm khi tăng Tween | CHĐBM thế chỗ protein | Yi 2019 [N] |
 | | gelatin + Tween 80 hoặc SDS (dầu cá) | cạnh tranh | Zhang 2020 [N] |
 | | đạm đậu Hà Lan + phospholipid: vicilin 7S bị đẩy ưu tiên; legumin 11S ái lực cao, kháng đẩy | đẩy chọn lọc theo tiểu đơn vị | Shen 2023 [N] |
 | | SPI-EGCG + saponin trà | CHĐBM đẩy protein | Yan 2022 [N] |
@@ -102,7 +102,7 @@ Cho Tween 20 vào màng β-casein hoặc β-lg ở mặt không khí–nước h
 
 ## 3.5 Làm màng protein "khó bị đẩy"
 
-1. **Liên hợp protein–polysaccharide (Maillard):** liên hợp whey–pectin khoai tây chiết kiềm giữ tải protein > 0,8 mg/m² và chặn hợp nhất đến 38,7 mM Tween 20; chiết axit kém hơn. Cấu trúc nhánh galactan tự lắp ghép tạo mạng. [N: @murayama2021]
+1. **Liên hợp protein–polysaccharide (Maillard):** liên hợp whey–pectin khoai tây chiết kiềm giữ độ phủ protein > 0,8 mg/m² và chặn hợp giọt đến 38,7 mM Tween 20; chiết axit kém hơn. Cấu trúc nhánh galactan tự lắp ghép tạo mạng. [N: @murayama2021]
 2. **Chọn protein:** whey hơn caseinate? Không có kết luận chung từ phiên này. WPI kháng đẩy hơn β-lg tinh khiết (Woodward 2004); myofibrillar protein thịt lợn cạnh tranh hấp phụ mạnh hơn sarcoplasmic (Li 2021). [N]
 3. **Xử lý nhiệt trước, thay đổi pH, gel hóa bề mặt** [G; K]: tăng độ đàn hồi liên diện, làm màng "cứng hơn", nhưng thử nghiệm đẩy trực tiếp chưa có nguồn đọc trong phiên.
 4. **Đồng hấp phụ chất làm ổn định lớp 2** (chitosan trên lecithin...). [N: @gumus2017]
@@ -112,7 +112,7 @@ Cho Tween 20 vào màng β-casein hoặc β-lg ở mặt không khí–nước h
 ## 3.6 Ứng dụng có chủ ý: kem lạnh và kem tươi đánh bông
 
 ### Nguyên lý (Goff)
-- Cần ba điều kiện cho hợp nhất từng phần: **hạt béo kết tinh một phần**, **lớp hấp phụ yếu**, và **không khí/ khuấy**. Hỗn hợp casein–whey bình thường quá bền; thêm MDG, DG, polysorbate để đẩy protein, giảm tải bề mặt. [N: @goff1997]
+- Cần ba điều kiện cho hợp giọt một phần: **hạt béo kết tinh một phần**, **lớp hấp phụ yếu**, và **không khí/ khuấy**. Hỗn hợp casein–whey bình thường quá bền; thêm MDG, DG, polysorbate để đẩy protein, giảm độ phủ bề mặt. [N: @goff1997]
 - PS80 làm giảm số casein micelle gắn trên hạt béo (TEM và Kjeldahl) và hạ γ giữa mỡ và huyết thanh, nên hạt dễ vỡ hơn khi đánh/ đông. [N: @goff1987]
 - Sức mạnh gây mất ổn định mỡ **không chỉ HLB**, mà theo sức căng liên diện huyết thanh–mỡ. [N: @goff1989]
 
@@ -122,9 +122,9 @@ Cho Tween 20 vào màng β-casein hoặc β-lg ở mặt không khí–nước h
 | PS80 | mất ổn định mỡ mạnh nhất; tăng khi nồng độ tăng; tương tác với tỉ lệ khối lượng PS80/ bơ; gây mất ổn định trong giai đoạn ủ với SMP, SMR | Goff 1989; Gelin 1996; Warren 2018 [N] |
 | MDG | kết tinh mỡ, không nhất thiết đẩy protein mạnh bằng PS80; ở kem protein cao (6% MPC, SC, WPI) MDG 0,15% giảm cỡ tinh thể đá và bọt khí, tăng mất ổn định mỡ với MPC và WPI | VanWees 2026; Wang 2021 [N] |
 | Este sucrose | giảm bao phủ protein → giọt dễ bị tinh thể mỡ xuyên qua màng | Cheng 2020 [N] |
-| GMO | tăng hợp nhất từng phần chủ yếu qua tinh thể mỡ (lớn hơn, nhô ra), **không** đổi tải protein | Cheng 2020 [N] |
-| Protein đậu nành thủy phân | tiểu đơn vị β không bị MDG đẩy → ít hợp nhất từng phần, tan chảy nhanh; thủy phân bằng papain gần với SMP | Chen 2019 [N] |
-| Kem thực vật (đậu nành, Hà Lan) | hợp nhất từng phần ↑ theo PS80; MDG → drip-through cao hơn | Hartel 2025 [N] |
+| GMO | tăng hợp giọt một phần chủ yếu qua tinh thể mỡ (lớn hơn, nhô ra), **không** đổi độ phủ protein | Cheng 2020 [N] |
+| Protein đậu nành thủy phân | tiểu đơn vị β không bị MDG đẩy → ít hợp giọt một phần, tan chảy nhanh; thủy phân bằng papain gần với SMP | Chen 2019 [N] |
+| Kem thực vật (đậu nành, Hà Lan) | hợp giọt một phần ↑ theo PS80; MDG → drip-through cao hơn | Hartel 2025 [N] |
 
 → Trong kem, **tốc độ chảy rỉ (drip-through) tương quan với mức mất ổn định mỡ, không phụ thuộc nguồn protein**. [N: @vanwees2026] Overrun thấp + mất ổn định mỡ thấp → drip-through cao nhất. [N: @warren2018]
 
@@ -134,7 +134,7 @@ Cho Tween 20 vào màng β-casein hoặc β-lg ở mặt không khí–nước h
 
 1. **Thanh trượt "nồng độ Tween"** hiển thị π tăng, miền CHĐBM lớn, mạng protein nén, vỡ ở π_c (số liệu π_c từ Rabe 2020 có thể làm ví dụ, ghi rõ hệ HSA–không khí).
 2. **Bảng tra hành vi**: protein × CHĐBM → (cạnh tranh/ hiệp đồng/ đồng hấp phụ) với trích dẫn từng ô.
-3. **Phép thử cho người dùng:** ly tâm rửa kem → đo protein trong cặn (tải bề mặt Γ), so với đối chứng; theo dõi d₃₂ khi thêm CHĐBM.
+3. **Phép thử cho người dùng:** ly tâm rửa kem → đo protein trong cặn (độ phủ bề mặt Γ), so với đối chứng; theo dõi d₃₂ khi thêm CHĐBM.
 
 ---
 

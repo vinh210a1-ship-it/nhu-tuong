@@ -845,7 +845,7 @@ function duaCocToi(tram) {
 		tinh();
 		const o = S.kq.ongNghiem(S.ngay, S.bq.nhietDo);
 		if (!S.xong.do) {
-		} else if (o.vangDau > 1) noi('Có <b>váng dầu</b> nổi trên cùng: giọt đã hợp nhất lại. Xem phần "Vì sao?" khi nộp mẻ.', 'lo');
+		} else if (o.vangDau > 1) noi('Có <b>váng dầu</b> nổi trên cùng: giọt đã hợp giọt lại. Xem phần "Vì sao?" khi nộp mẻ.', 'lo');
 		else if (o.CI > 10) noi(`Sau ${S.ngay} ngày, lớp nước trong ở đáy cao ${soCD(o.serum)} mm. Tách lớp rồi!`, 'lo');
 		else noi(`Sau ${S.ngay} ngày ống nghiệm vẫn khá đều. Kéo thanh thời gian để xem tiếp, hoặc chuyển sang tab Oxy hóa.`, 'vui');
 	} else if (tram === 'khuay' && !S.xong.khuay) noi('Đặt thông số rồi bấm <b>Chạy máy khuấy</b>.');

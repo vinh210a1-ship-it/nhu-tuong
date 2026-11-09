@@ -96,7 +96,7 @@ Ví dụ định lượng từ Macridachis-González và cs. 2020:
 | Dầu bông, cải đã hydro hóa | β′ | Thường dùng làm shortening |
 | Mỡ lợn | β (do palmitic ở sn-2) | Tinh thể lớn, dễ sạn; interesterification cải thiện |
 
-Mục này hoàn toàn [K]; chỉ nên đăng sau khi đối chiếu một tài liệu gốc.
+Mục này hoàn toàn dựa trên sách nền [K], chưa đối chiếu tài liệu gốc.
 
 ## 8. Fat bloom [K]
 - **Bloom béo (fat bloom):** lớp trắng/xám trên bề mặt sô-cô-la do (a) chuyển pha V → VI hoặc tinh thể lớn trồi lên bề mặt, (b) di cư dầu/béo từ nhân (hạt dẻ, praline) vào sô-cô-la rồi kết tinh lại, (c) tempering sai hoặc dao động nhiệt khi bảo quản.
