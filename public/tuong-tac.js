@@ -283,7 +283,39 @@ function khaiNiem() {
 	}
 }
 
+// 4. Vùng cuộn ngang (công thức dài, bảng rộng) phải với tới được bằng bàn phím (WCAG 2.1.1; axe: scrollable-region-focusable).
+//    Chỉ gắn cho vùng THỰC SỰ tràn khung; đo lại khi đổi cỡ cửa sổ hoặc khi phông chữ công thức tải xong.
+const VUNG_CUON = '.sl-markdown-content :is(.katex-display, .katex, table)';
+function vungCuonBanPhim() {
+	const gan = () => {
+		document.querySelectorAll(VUNG_CUON).forEach((e) => {
+			if (e.classList.contains('katex') && e.closest('.katex-display') && !e.classList.contains('katex-display')) return; // công thức nằm trong khối: khối đã lo
+			const bang = e.tagName === 'TABLE';
+			if (e.scrollWidth > e.clientWidth + 1) {
+				if (!e.hasAttribute('tabindex')) e.setAttribute('tabindex', '0');
+				e.setAttribute('aria-label', bang ? 'Bảng, cuộn ngang để xem hết' : 'Công thức, cuộn ngang để xem hết');
+				if (!bang) e.setAttribute('role', 'region'); // bảng giữ vai trò bảng để trình đọc màn hình vẫn đọc theo hàng, cột
+				e.dataset.cuonBanPhim = '1';
+			} else if (e.dataset.cuonBanPhim) {
+				e.removeAttribute('tabindex');
+				e.removeAttribute('aria-label');
+				if (!bang) e.removeAttribute('role');
+				delete e.dataset.cuonBanPhim;
+			}
+		});
+	};
+	gan();
+	document.fonts?.ready.then(gan);
+	window.addEventListener('load', gan);
+	let hen;
+	window.addEventListener('resize', () => {
+		clearTimeout(hen);
+		hen = setTimeout(gan, 200);
+	});
+}
+
 function chay() {
+	vungCuonBanPhim();
 	const ong = document.querySelector('[data-ong-nghiem]');
 	if (ong) ongNghiem(ong);
 	ghiBaiDangDoc();

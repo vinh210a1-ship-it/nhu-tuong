@@ -22,6 +22,14 @@ const TRANG = [
 	['bài (mất ổn định)', `${BASE}/nhu-tuong/mat-on-dinh/`],
 	['tra cứu', `${BASE}/tra-cuu/`],
 	['bài (chất nhũ hóa)', `${BASE}/chat-nhu-hoa/nen-tang-vat-ly-hoa-be-mat/`],
+	['bài (thực phẩm)', `${BASE}/thuc-pham/bao-quan-hoat-do-nuoc-va-han-su-dung/`],
+	['bài (dược phẩm)', `${BASE}/duoc-pham/hoa-tan-sinh-kha-dung-bcs/`],
+	['máy tính', `${BASE}/may-tinh/`],
+	['phòng lab', `${BASE}/phong-lab/`],
+	['chẩn đoán', `${BASE}/chan-doan/`],
+	['tá dược', `${BASE}/tra-cuu-ta-duoc/`],
+	['số liệu R&D', `${BASE}/so-lieu-rnd/`],
+	['nguồn', `${BASE}/nguon/`],
 ];
 // quy tắc axe cần pass; "best-practice" không tính (chỉ WCAG A/AA)
 const THE_AXE = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];

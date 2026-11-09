@@ -34,6 +34,16 @@ jobs:
         run: npm run build
       - name: Kiểm sau build (chuỗi cấm, liên kết nội bộ)
         run: npm run kiem-sau-build
+      # Kiểm truy cập WCAG AA bằng axe-core: GIAI ĐOẠN BÁO CÁO. Có lỗi vẫn không chặn PR (continue-on-error); kết quả nằm ở Summary của lần chạy.
+      # Sau vài PR chạy ổn thì đổi thành `node scripts/kiem-truy-cap.mjs --chat` để chặn lỗi mới.
+      - name: Kiểm truy cập (axe-core, chỉ báo cáo)
+        if: github.event_name == 'pull_request'
+        continue-on-error: true
+        run: |
+          npm install --no-save playwright@1.54.2
+          npx playwright install --with-deps chromium
+          node scripts/kiem-truy-cap.mjs | tee truy-cap.txt
+          { echo '## Kiểm truy cập (báo cáo)'; echo '```'; cat truy-cap.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main'
         with:

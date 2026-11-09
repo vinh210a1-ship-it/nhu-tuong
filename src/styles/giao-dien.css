@@ -103,6 +103,26 @@
 	--khu-thuc-pham: #c2410c;
 	--khu-duoc-pham: #2563eb;
 }
+/* Màu CHỮ theo khu (gói T8). Màu khu ở trên giữ cho viền và nền; chữ nhỏ cần tương phản ≥ 4,5:1 với nền thẻ (đo bằng axe-core).
+   Mặc định là nền tối, nền sáng ghi đè ở dưới. Mỗi màu được chọn để đạt ≥ 4,6:1 trên cả nền thẻ lẫn nền thẻ phụ (#15242a, #1a2c33 / #ffffff, #f6f9f8). */
+:root {
+	--khu-chat-beo-chu: #cf861d;
+	--khu-chat-nhu-hoa-chu: #a17bf8;
+	--khu-chat-on-dinh-chu: #4ca366;
+	--khu-thuc-pham-chu: #d47a55;
+	--khu-duoc-pham-chu: #628ff1;
+	--hh-thuong-hieu-chu: #4c9ea6; /* chữ thương hiệu trên nền tối; nền sáng dùng màu chính #0d7480 */
+	--hh-ho-phach-chu: #bd8736;    /* chữ hổ phách nhỏ */
+}
+:root[data-theme='light'] {
+	--khu-chat-beo-chu: #996315;
+	--khu-chat-nhu-hoa-chu: #7d53dd;
+	--khu-chat-on-dinh-chu: #2f7d46;
+	--khu-thuc-pham-chu: #c2410c;
+	--khu-duoc-pham-chu: #2563eb;
+	--hh-thuong-hieu-chu: #0d7480;
+	--hh-ho-phach-chu: #996312;
+}
 
 /* Nút báo lỗi cuối bài */
 .bao-loi { margin-top: 2.5rem; padding: 0.75rem 1rem; border: 1px dashed var(--sl-color-gray-4); border-radius: 0.5rem; font-size: 0.9rem; color: var(--sl-color-gray-2); }
