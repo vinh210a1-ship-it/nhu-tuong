@@ -45,7 +45,7 @@ nguon_goc: tai-lieu-nhu-tuong/04-chat-on-dinh-va-lop-giao-dien.md
 
 ### 2.2 Gum và chất làm đặc
 - Mục đích: tăng η_c, tạo ngưỡng chảy (yield stress). **Nhưng** chú ý khoảng nồng độ để tránh cạn kiệt (file 03, mục 2). Gum cũng có thể hấp phụ lên giọt (xanthan trên protein) và tạo màng đa lớp.
-- Chi tiết loại gum, độ nhớt, thông số: xem khu [Chất ổn định](../../chat-on-dinh/).
+- Chi tiết loại gum, độ nhớt, thông số: xem [Chất ổn định · Cơ chế nền tảng](../../chat-on-dinh/co-che-nen-tang/).
 
 ### 2.3 Protein và phức protein–polysaccharide
 - Protein tạo màng nhớt–đàn hồi chống hợp giọt (coalescence), nhưng nhạy pH/ion/nhiệt.

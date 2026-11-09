@@ -2,76 +2,60 @@
 // "Máy in" (scripts/chuan-bi-noi-dung.mjs) đặt hộp sau "Thử ngay" và trước hộp "Đọc xong bài này?".
 // Quy tắc (hàm htmlLienQuan và scripts/kiem-sau-build.mjs đều kiểm): mỗi bài tối đa 3 dòng; bài đích phải ở KHU KHÁC và có trong src/data/khu.mjs;
 // mỗi dòng có một câu nói bài kia bàn gì ở góc của nó. Câu mô tả chỉ nói phạm vi bài, không đưa số liệu khoa học.
-// Khóa và đích đều viết 'khu/slug'. Các cặp được nối hai chiều, nên mỗi cặp có hai dòng (một ở mỗi bài).
+// 13 cặp do bộ phận Thiết kế chốt (THIET-KE-GD1-L1-L7). Mỗi cặp { a, b, viA, viB } cho hai dòng: viA hiện ở bài a (vì sao nên đọc b), viB hiện ở bài b. a, b viết 'khu/slug'.
 import { KHU } from './khu.mjs';
 
-export const LIEN_QUAN = {
-	// 1. Oxy hóa lipid
-	'nhu-tuong/mat-on-dinh': [
-		{ bai: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung', vi: 'Bài này chỉ tóm tắt oxy hóa lipid trong nhũ tương (mục 7.1); khu Chất béo bàn đủ cơ chế, chất chống oxy hóa, phép đo và hạn dùng.' },
-		{ bai: 'chat-beo/chat-beo-dac-thu-va-chat-beo-trong-nhu-tuong', vi: 'Hợp giọt một phần nhìn từ phía tinh thể béo trong giọt.' },
-	],
-	'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung': [
-		{ bai: 'nhu-tuong/mat-on-dinh', vi: 'Oxy hóa chỉ là một trong các con đường mất ổn định; bài này đặt nó cạnh kem hóa, keo tụ, hợp giọt và nói chúng nối tiếp nhau thế nào.' },
-		{ bai: 'thuc-pham/bao-quan-hoat-do-nuoc-va-han-su-dung', vi: 'Hạn dùng nhìn từ phía vi sinh vật: hoạt độ nước, pH và hàng rào kép.' },
-		{ bai: 'duoc-pham/on-dinh-han-dung-ich', vi: 'Arrhenius và các điều kiện thử ICH khi tính hạn dùng của thuốc.' },
-	],
-	// 2. Hợp giọt một phần, kem lạnh, bơ
-	'nhu-tuong/san-pham': [
-		{ bai: 'chat-beo/chat-beo-dac-thu-va-chat-beo-trong-nhu-tuong', vi: 'Bơ ca cao, béo sữa, MCT và tinh thể béo trong giọt: phần chất béo đứng sau kem, kem lạnh và bơ.' },
-		{ bai: 'chat-nhu-hoa/protein-nhu-hoa-va-canh-tranh-hap-phu', vi: 'Protein bị chất nhũ hóa phân tử nhỏ đẩy khỏi bề mặt giọt, kèm cách dùng có chủ ý trong kem lạnh và kem tươi đánh bông.' },
-	],
-	'chat-beo/chat-beo-dac-thu-va-chat-beo-trong-nhu-tuong': [
-		{ bai: 'nhu-tuong/mat-on-dinh', vi: 'Hợp giọt một phần đặt cạnh kem hóa, keo tụ, hợp giọt và Ostwald ripening để biết khi nào dùng chẩn đoán nào.' },
-		{ bai: 'nhu-tuong/san-pham', vi: 'Các sản phẩm cụ thể (sữa, kem, bơ, margarine) và chất béo nào hợp với từng loại.' },
-		{ bai: 'chat-nhu-hoa/protein-nhu-hoa-va-canh-tranh-hap-phu', vi: 'Màng protein và chất nhũ hóa phân tử nhỏ trên bề mặt giọt béo quyết định giọt có dễ dính nhau không.' },
-	],
-	'chat-nhu-hoa/protein-nhu-hoa-va-canh-tranh-hap-phu': [
-		{ bai: 'chat-beo/chat-beo-dac-thu-va-chat-beo-trong-nhu-tuong', vi: 'Phía tinh thể béo của câu chuyện kem lạnh: kết tinh trong giọt và hợp giọt một phần.' },
-		{ bai: 'thuc-pham/protein-bien-tinh-gel-hoa-va-enzym', vi: 'Cùng protein nhưng nhìn từ phía biến tính nhiệt, tạo gel và enzym.' },
-	],
-	// 3. Arrhenius và hạn dùng
-	'thuc-pham/bao-quan-hoat-do-nuoc-va-han-su-dung': [
-		{ bai: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung', vi: 'Hạn dùng khi hư hỏng là do oxy hóa lipid, không phải vi sinh; có cả bẫy khi ngoại suy bằng Arrhenius.' },
-		{ bai: 'duoc-pham/on-dinh-han-dung-ich', vi: 'Cách ngành dược dùng Arrhenius, Q10 và ASAP cùng các điều kiện thử ICH.' },
-	],
-	'duoc-pham/on-dinh-han-dung-ich': [
-		{ bai: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung', vi: 'Cùng phương trình Arrhenius áp vào oxy hóa dầu, kèm các bẫy cần tránh.' },
-		{ bai: 'thuc-pham/bao-quan-hoat-do-nuoc-va-han-su-dung', vi: 'Hạn dùng thực phẩm nhìn qua aw, pH và hàng rào vi sinh.' },
-	],
-	// 4. Tinh bột
-	'chat-on-dinh/gum-arabic-gelatin-tinh-bot-cellulose': [
-		{ bai: 'thuc-pham/tinh-bot-ho-hoa-thoai-hoa', vi: 'Tinh bột tự nhiên hồ hóa và thoái hóa thế nào, đường và muối làm đổi gì.' },
-		{ bai: 'thuc-pham/protein-bien-tinh-gel-hoa-va-enzym', vi: 'Protein tạo gel theo hai bước nào; bên này là phần gelatin ở góc chất ổn định.' },
-	],
-	'thuc-pham/tinh-bot-ho-hoa-thoai-hoa': [
-		{ bai: 'chat-on-dinh/gum-arabic-gelatin-tinh-bot-cellulose', vi: 'Tinh bột biến tính (E1404–E1452) được dùng làm chất ổn định, nhóm nào và để làm gì.' },
-	],
-	// 5. Protein, gel
-	'thuc-pham/protein-bien-tinh-gel-hoa-va-enzym': [
-		{ bai: 'chat-nhu-hoa/protein-nhu-hoa-va-canh-tranh-hap-phu', vi: 'Protein làm chất nhũ hóa trên bề mặt giọt và khi nào bị chất nhũ hóa nhỏ đẩy đi.' },
-		{ bai: 'chat-on-dinh/gum-arabic-gelatin-tinh-bot-cellulose', vi: 'Gelatin ở góc chất ổn định, cạnh gum arabic, tinh bột biến tính và cellulose.' },
-	],
-	// 6. Nanoemulsion
-	'nhu-tuong/he-dac-biet': [
-		{ bai: 'duoc-pham/he-phan-tan-nano', vi: 'Nanoemulsion, SEDDS, liposome, LNP nhìn từ phía bào chế thuốc, kể cả thông số đồng hóa áp lực cao và rotor–stator.' },
-	],
-	'duoc-pham/he-phan-tan-nano': [
-		{ bai: 'nhu-tuong/he-dac-biet', vi: 'Nanoemulsion, Pickering, nhũ tương kép và HIPE cho thực phẩm: cơ chế và cách đo.' },
-	],
-	// 7. Chặng 4: trỏ thẳng bài thay vì trang khu
-	'nhu-tuong/chat-on-dinh': [
-		{ bai: 'chat-on-dinh/co-che-nen-tang', vi: 'Hydrocolloid ổn định hệ bằng những cách nào: depletion flocculation, ứng suất chảy, tương tác với protein.' },
-		{ bai: 'chat-nhu-hoa/cac-nhom-chat-nhu-hoa-thuc-pham', vi: 'Lecithin, MDG, polysorbate, Span, PGPR…: cấu trúc và cơ chế từng nhóm chất nhũ hóa.' },
-	],
-	// 8. Maillard
-	'thuc-pham/maillard-caramel-acrylamide': [
-		{ bai: 'duoc-pham/ta-duoc-chuc-nang-va-tuong-ky', vi: 'Maillard cũng là một tương kỵ thật trong bào chế: lactose với hoạt chất có nhóm amin.' },
-	],
-	'duoc-pham/ta-duoc-chuc-nang-va-tuong-ky': [
-		{ bai: 'thuc-pham/maillard-caramel-acrylamide', vi: 'Cơ chế Maillard đầy đủ: nhiệt độ, pH, aw và các đòn bẩy giảm acrylamide.' },
-	],
-};
+export const LIEN_QUAN_CAP = [
+	{ a: 'nhu-tuong/mat-on-dinh', b: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung',
+		viA: 'Đi sâu cơ chế gốc tự do, chất chống oxy hóa và cách ước lượng hạn dùng của dầu.',
+		viB: 'Xem vì sao trong nhũ tương, bề mặt giọt và chất nhũ hóa ảnh hưởng đến tốc độ ôi.' }, // 1
+	{ a: 'nhu-tuong/san-pham', b: 'chat-beo/chat-beo-dac-thu-va-chat-beo-trong-nhu-tuong',
+		viA: 'Tinh thể mỡ trong giọt làm hợp giọt một phần thế nào, nền của kem lạnh và bơ.',
+		viB: 'Xem hợp giọt một phần được dùng có chủ ý trong kem lạnh, kem đánh bông và bơ ra sao.' }, // 2
+	{ a: 'nhu-tuong/san-pham', b: 'chat-nhu-hoa/protein-nhu-hoa-va-canh-tranh-hap-phu',
+		viA: 'Vì sao kem lạnh cần chất nhũ hóa phân tử nhỏ đẩy bớt protein khỏi bề mặt hạt béo.',
+		viB: 'Xem các sản phẩm cụ thể nơi cạnh tranh hấp phụ quyết định cấu trúc.' }, // 3
+	{ a: 'chat-beo/chat-beo-dac-thu-va-chat-beo-trong-nhu-tuong', b: 'chat-nhu-hoa/protein-nhu-hoa-va-canh-tranh-hap-phu',
+		viA: 'Phía bề mặt của hợp giọt một phần: chất nhũ hóa nào thay protein và vì sao.',
+		viB: 'Phía tinh thể của hợp giọt một phần: loại béo và độ rắn ảnh hưởng đến mạng hạt béo ra sao.' }, // 4
+	{ a: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung', b: 'thuc-pham/bao-quan-hoat-do-nuoc-va-han-su-dung',
+		viA: 'Cùng phép ngoại suy Arrhenius, áp cho hư hỏng do vi sinh và hoạt độ nước.',
+		viB: 'Cùng phép ngoại suy Arrhenius, áp cho oxy hóa dầu, kèm các bẫy khi ngoại suy.' }, // 5
+	{ a: 'chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung', b: 'duoc-pham/on-dinh-han-dung-ich',
+		viA: 'Cách ngành dược thử ổn định theo ICH và ASAP, nơi dữ liệu thử nhanh được dùng để định hạn dùng.',
+		viB: 'Ngoại suy hạn dùng cho dầu và nhũ tương thực phẩm, chọn động học bậc 0 hoặc bậc 1 theo dữ liệu.' }, // 6
+	{ a: 'thuc-pham/bao-quan-hoat-do-nuoc-va-han-su-dung', b: 'duoc-pham/on-dinh-han-dung-ich',
+		viA: 'Điều kiện thử và vùng khí hậu IVb mà dược dùng để định hạn dùng.',
+		viB: 'Hàng rào aw, pH, nhiệt độ mà thực phẩm dùng để chặn vi sinh.' }, // 7
+	{ a: 'chat-on-dinh/gum-arabic-gelatin-tinh-bot-cellulose', b: 'thuc-pham/tinh-bot-ho-hoa-thoai-hoa',
+		viA: 'Hồ hóa và thoái hóa: vì sao tinh bột làm đặc tốt lúc đầu rồi đổi theo thời gian.',
+		viB: 'Tinh bột biến tính dùng làm chất ổn định, đặt cạnh gum, gelatin và cellulose.' }, // 8
+	{ a: 'thuc-pham/protein-bien-tinh-gel-hoa-va-enzym', b: 'chat-nhu-hoa/protein-nhu-hoa-va-canh-tranh-hap-phu',
+		viA: 'Cùng protein nhưng ở bề mặt giọt: hấp phụ, mở cuộn và bị đẩy khỏi bề mặt.',
+		viB: 'Cùng protein nhưng trong khối: biến tính và tạo gel theo hai bước.' }, // 9
+	{ a: 'thuc-pham/protein-bien-tinh-gel-hoa-va-enzym', b: 'chat-on-dinh/gum-arabic-gelatin-tinh-bot-cellulose',
+		viA: 'Gelatin: gel protein tạo bằng làm lạnh, khác gel tạo bằng gia nhiệt.',
+		viB: 'Cơ chế chung của gel protein tạo bằng nhiệt, muối và enzym.' }, // 10
+	{ a: 'nhu-tuong/he-dac-biet', b: 'duoc-pham/he-phan-tan-nano',
+		viA: 'Nanoemulsion, SEDDS, liposome và LNP nhìn từ phía bào chế thuốc, kèm thông số đồng hóa áp lực cao và rotor–stator.',
+		viB: 'Nền vật lý của nanoemulsion và Ostwald ripening, phía thực phẩm.' }, // 11
+	{ a: 'nhu-tuong/chat-on-dinh', b: 'chat-on-dinh/co-che-nen-tang',
+		viA: 'Các cơ chế hydrocolloid giữ hệ ổn định: độ nhớt, ứng suất chảy, keo tụ do cạn kiệt.',
+		viB: 'Bản đồ cơ chế hỏng nào chặn bằng công cụ nào, trong đó hydrocolloid là một công cụ.' }, // 12
+	{ a: 'thuc-pham/maillard-caramel-acrylamide', b: 'duoc-pham/ta-duoc-chuc-nang-va-tuong-ky',
+		viA: 'Maillard cũng xảy ra trong viên thuốc: tương kỵ giữa lactose và dược chất có nhóm amin.',
+		viB: 'Cơ chế đầy đủ của Maillard và các yếu tố nhiệt độ, pH, aw.' }, // 13
+];
+
+/** Bản tra theo bài: 'khu/slug' → [{ bai, vi }], suy ra từ các cặp nên luôn có đủ hai chiều. */
+export const LIEN_QUAN = (() => {
+	const m = {};
+	for (const c of LIEN_QUAN_CAP) {
+		(m[c.a] ??= []).push({ bai: c.b, vi: c.viA });
+		(m[c.b] ??= []).push({ bai: c.a, vi: c.viB });
+	}
+	return m;
+})();
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -84,6 +68,13 @@ const tim = (ma) => {
 
 /** Kiểm dữ liệu: khóa và đích có thật, đích ở khu khác, tối đa 3 dòng, mỗi dòng có câu mô tả. Sai thì ném lỗi (build dừng). */
 export function kiemLienQuan() {
+	const thay = new Set();
+	for (const c of LIEN_QUAN_CAP) {
+		const k = [c.a, c.b].sort().join(' | ');
+		if (thay.has(k)) throw new Error(`lien-quan-khu: cặp lặp ${k}`);
+		thay.add(k);
+		if (!c.viA || !c.viB) throw new Error(`lien-quan-khu: cặp ${k} thiếu viA hoặc viB (cần đủ hai chiều)`);
+	}
 	for (const [ma, ds] of Object.entries(LIEN_QUAN)) {
 		const goc = tim(ma);
 		if (!goc) throw new Error(`lien-quan-khu: bài "${ma}" không có trong KHU`);
