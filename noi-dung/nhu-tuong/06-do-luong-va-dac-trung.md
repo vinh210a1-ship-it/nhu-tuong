@@ -23,6 +23,8 @@ Nguồn khung: McClements, tổng quan về kỹ thuật và quy trình đặc t
 ## 1. Kích thước giọt và phân bố
 
 ### 1.1 Bảng kỹ thuật (dải đo theo R18; đặc điểm bổ sung [K])
+<!-- hinh: do-hat-laser-dls -->
+
 | Kỹ thuật | Dải đo (theo R18) | Ghi chú / cạm bẫy |
 |---|---|---|
 | Tán xạ ánh sáng động (DLS) | ~3 nm–5 µm | Độ tin cậy giảm với mẫu đa phân tán; cần pha loãng mạnh để tránh tán xạ nhiều lần; nhạy với bụi và giọt lớn |
@@ -64,6 +66,8 @@ Nguồn khung: McClements, tổng quan về kỹ thuật và quy trình đặc t
 ## 4. Đặc trưng ổn định theo thời gian
 
 ### 4.1 Kem hóa/lắng
+<!-- hinh: turbiscan-quet-ong -->
+
 - **Quan sát thẳng + chỉ số kem hóa (CI):** CI(%) = (chiều cao lớp kem hoặc lớp trong / chiều cao toàn mẫu) × 100; theo dõi theo ngày. Dễ nhưng chỉ phát hiện muộn. **[K]**
 - **Quét quang học đa tán xạ (Turbiscan):** theo dõi đồng thời kem hóa, lắng (sedimentation) và thay đổi kích thước bằng ánh sáng cận hồng ngoại (880 nm ở dòng Turbiscan hiện nay **[N: @microtrac-turbiscan]**, 850 nm ở đời Turbiscan Classic cũ **[N: @dafratec-turbiscan-classic]**) trong chai nguyên vẹn; nhạy hơn mắt thường nhiều ngày. **[N: @kupikowskastobba2024]**
 - **Ly tâm tăng tốc:** ly tâm ở nhiều gia tốc, đo tốc độ phân lớp; phù hợp sàng lọc nhưng nén giọt và có thể gây hợp giọt không có trong bảo quản thực. **[K; @mcclements2007 thảo luận quy trình thử độ ổn định]**

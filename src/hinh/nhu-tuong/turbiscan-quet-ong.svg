@@ -1,0 +1,26 @@
+<svg class="hinh" viewBox="0 0 360 318" width="360" role="img" aria-labelledby="t d">
+<title id="t">Turbiscan quét dọc ống mẫu và thấy kem hóa là thay đổi tán xạ ngược ở đỉnh và đáy</title>
+<desc id="d">Bên trái là ống mẫu đứng với lớp kem ở đỉnh, phần giữa đục và phần đáy trong hơn; một đầu đọc phát ánh sáng cận hồng ngoại quét dọc ống. Bên phải là đồ thị tán xạ ngược theo vị trí dọc ống: đường nét đứt lúc đầu thẳng đứng; sau một thời gian đường liền nhô ra ở đỉnh (tăng) và lùi vào ở đáy (giảm).</desc>
+<text class="h-chu" x="10" y="18" font-weight="600">Turbiscan: quét dọc ống mẫu</text>
+<rect class="h-khung" x="46" y="36" width="56" height="200" rx="10"/>
+<path class="h-dau-nen" d="M47 46Q47 37 56 37H92Q101 37 101 46V76H47Z"/>
+<rect class="h-nuoc" x="47" y="76" width="54" height="124"/>
+<path style="fill:none;stroke:var(--sl-color-accent);stroke-width:2" d="M12 136L40 136"/>
+<path style="fill:none;stroke:var(--sl-color-accent);stroke-width:2" d="M34 132L40 136L34 140"/>
+<path style="fill:none;stroke:var(--sl-color-gray-3);stroke-width:1.2" d="M12 100V172"/>
+<path style="fill:none;stroke:var(--sl-color-gray-3);stroke-width:1.2" d="M8 106L12 100L16 106M8 166L12 172L16 166"/>
+<text class="h-chu" x="10" y="262">Đèn cận hồng ngoại</text>
+<text class="h-chu-mo" x="10" y="282">(880 nm) quét dọc ống</text>
+<path style="fill:none;stroke:var(--sl-color-gray-3);stroke-width:1.2" d="M166 36L166 236"/>
+<path style="fill:none;stroke:var(--sl-color-gray-3);stroke-width:1.2" d="M166 236L350 236"/>
+<text class="h-chu-mo" x="150" y="136" text-anchor="middle" transform="rotate(-90 150 136)">vị trí dọc ống</text>
+<text class="h-chu-mo" x="258" y="258" text-anchor="middle">tán xạ ngược</text>
+<path style="fill:none;stroke:var(--sl-color-gray-3);stroke-width:1.8;stroke-dasharray:5 4" d="M250 36V236"/>
+<path style="fill:none;stroke:var(--sl-color-accent);stroke-width:2.4;stroke-linejoin:round" d="M312.0 36 L294.4 42 L281.8 48 L272.8 54 L266.3 60 L261.7 66 L258.4 72 L256.0 78 L254.3 84 L253.1 90 L252.2 96 L251.6 102 L251.1 108 L250.8 114 L250.6 120 L250.4 126 L250.3 132 L250.2 138 L250.1 144 L250.0 150 L249.9 156 L249.8 162 L249.6 168 L249.4 174 L249.0 180 L248.4 186 L247.6 192 L246.3 198 L244.3 204 L241.3 210 L236.6 216 L229.4 222 L218.4 228 L201.5 234"/>
+<text class="h-chu" x="262" y="100">đỉnh: tăng</text>
+<text class="h-chu" x="262" y="196">đáy: giảm</text>
+<path style="fill:none;stroke:var(--sl-color-gray-3);stroke-width:1.8;stroke-dasharray:5 4" d="M186 288L206 288"/>
+<text class="h-chu-mo" x="212" y="293">lúc đầu</text>
+<path style="fill:none;stroke:var(--sl-color-accent);stroke-width:2.4;stroke-linejoin:round" d="M186 308L206 308"/>
+<text class="h-chu-mo" x="212" y="313">sau một thời gian</text>
+</svg>

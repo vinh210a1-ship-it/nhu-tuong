@@ -22,6 +22,8 @@ nguon_goc: tai-lieu-nhu-tuong/04-chat-on-dinh-va-lop-giao-dien.md
 
 ## 1. Bảng: cơ chế ⇒ công cụ ⇒ cái giá phải trả
 
+<!-- hinh: co-che-va-cong-cu -->
+
 | Cơ chế cần chặn | Công cụ chính | Hoạt động thế nào | Cái giá / rủi ro |
 |---|---|---|---|
 | Kem hóa | Giảm kích thước giọt; tăng nhớt/ngưỡng chảy; làm nặng; gel hóa | Giảm v ∝ d²/η | Gum dư ⇒ cạn kiệt; độ nhớt cảm quan; chất làm nặng là phụ gia riêng |
