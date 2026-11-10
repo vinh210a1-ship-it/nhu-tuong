@@ -1,0 +1,1 @@
+Hai loại nhũ tương đơn giản nhất: giọt dầu phân tán trong nước (O/W) và giọt nước phân tán trong dầu (W/O). Tên gọi chỉ cho biết chất nào làm giọt và chất nào làm nền. Hình chỉ vẽ cách sắp xếp, không vẽ đúng tỷ lệ, kích thước hay số lượng giọt, và không cho biết loại nào bền hơn. **[K]**
