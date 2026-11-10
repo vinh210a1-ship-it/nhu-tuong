@@ -28,6 +28,8 @@ export const doc = (v) => parseFloat(String(v).replace(',', '.'));
 export const nhanN = (khoa, ten) =>
 	`<span class="nhan-cum"><span class="nhan nhan-N" title="Có nguồn">N</span><span class="nhan-phan"><a class="nhan-nguon" href="${BASE}nguon/#${khoa}">${thoat(ten)}</a></span></span>`;
 
+/** Huy hiệu K (sách nền, chờ đối chiếu trang) cho chú thích có ranh giới lấy từ ghi chú [K] của máy. */
+export const nhanK = () => '<span class="nhan-cum"><span class="nhan nhan-K" title="Sách nền, chờ đối chiếu trang">K</span></span>';
 const lam = (v) => Math.round(v * 10) / 10;
 const MU = '⁰¹²³⁴⁵⁶⁷⁸⁹';
 /** Nhãn vạch: số thường; trục log từ 1000 trở lên ghi 10³, 10⁴… cho gọn. */
