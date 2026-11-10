@@ -14,4 +14,11 @@ export default function (mod, ok) {
 	gan(b / a, 4, 'gấp đôi d phải gấp 4 quãng', 1e-9);
 	// bằng tỷ trọng thì v = 0, không vẽ được trên trục log
 	ok(mod.ve({ ...mod.macDinh, rd: 1000 }) === null, 'Δρ = 0 phải trả null');
+	// máy báo lỗi khi một ô không dương (kể cả số ngày) thì đồ thị cũng không vẽ
+	ok(mod.ve({ ...mod.macDinh, ngay: 0 }) === null, 'số ngày không dương phải trả null như máy');
+	// vạch trục y rất nhỏ ghi dạng lũy thừa để không đè lên tên trục; nhãn điểm có mặt đúng một lần
+	const r0 = mod.ve({ ...mod.macDinh });
+	ok(!/>0,000\d*</.test(r0.svg) && r0.svg.includes('>10⁻⁴<'), 'vạch dưới 0,001 phải ghi dạng 10⁻⁴, 10⁻⁵');
+	ok((r0.svg.match(/>Của bạn</g) || []).length === 1, 'nhãn "Của bạn" phải có đúng một lần');
+	ok(r0.chuThich.includes('giọt cầu cứng, đơn lẻ'), 'chú thích phải nêu giới hạn Stokes');
 }
