@@ -42,6 +42,8 @@ export default defineConfig({
 				'./src/styles/chung.css',
 				'./src/styles/trang-chu.css',
 				'./src/styles/cong-cu.css',
+				'./src/styles/hinh.css',
+				'./src/styles/do-thi.css',
 			],
 			logo: { src: './src/assets/logo.svg' },
 			components: {
@@ -52,6 +54,7 @@ export default defineConfig({
 			head: [
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/may-tinh.js` } },
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/tuong-tac.js` } },
+				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/do-thi.js` } },
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/chan-doan.js` } },
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/tra-cuu.js` } },
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/tt24.js` } },

@@ -72,6 +72,26 @@ function ngayDangDau(tepTuongDoi) {
 		return null;
 	}
 }
+// ---------------- hình cơ chế (T1): src/hinh/<khu>/<tên>.svg + <tên>.md (chú thích, viết Markdown, nhãn [N]/[T]/[K]/[G] như trong bài)
+// Trong bài gốc, dòng riêng `<!-- hinh: tên -->` được thay bằng khối <figure>. Hình tìm trong src/hinh/<khu của bài>/.
+// Khối HTML không được có dòng trống bên trong <svg> (Markdown sẽ cắt khối); id trong hình được thêm tiền tố h-<tên>- để hai hình trên một trang không trùng id.
+function htmlHinh(khu, ten) {
+	const tep = path.join(GOC, 'src/hinh', khu, `${ten}.svg`);
+	const tepCt = path.join(GOC, 'src/hinh', khu, `${ten}.md`);
+	if (!fs.existsSync(tep) || !fs.existsSync(tepCt)) throw new Error(`Hình "${ten}" (dòng <!-- hinh: ${ten} --> trong khu ${khu}) thiếu src/hinh/${khu}/${ten}.svg hoặc ${ten}.md`);
+	const tt = `h-${ten}-`;
+	const svg = fs
+		.readFileSync(tep, 'utf8')
+		.replace(/\r/g, '')
+		.trim()
+		.replace(/\bid="([^"]+)"/g, `id="${tt}$1"`)
+		.replace(/aria-labelledby="([^"]+)"/g, (m, v) => `aria-labelledby="${v.split(/\s+/).map((x) => tt + x).join(' ')}"`)
+		.replace(/url\(#([^)]+)\)/g, `url(#${tt}$1)`)
+		.replace(/href="#([^"]+)"/g, `href="#${tt}$1"`);
+	const chuThich = fs.readFileSync(tepCt, 'utf8').replace(/\r/g, '').trim();
+	return `<figure class="hinh-co-che not-content">\n<div class="hinh-svg">\n${svg}\n</div>\n\n<figcaption>\n\n${chuThich}\n\n</figcaption>\n\n</figure>`;
+}
+
 const escHtml = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const SITE = 'https://vinh210a1-ship-it.github.io/nhu-tuong';
 const TEN_WEB = 'Web kiến thức nhũ tương thực phẩm';
@@ -233,6 +253,7 @@ for (const khu of KHU_BAT) {
 				JSON.stringify(tn.map((c) => ({ vi: c[0], en: c[1], mo: c[2], bai: slugTheoSo[xem(c)] || null })), null, 1),
 			);
 		}
+		body = body.replace(/^<!--\s*hinh:\s*([a-z0-9-]+)\s*-->[ \t]*$/gm, (m, ten) => htmlHinh(khu, ten));
 		for (const [k, slug, moc, loai] of MAY_TINH) {
 			if (k !== khu || slug !== fm.slug) continue;
 			if (!body.includes(moc)) throw new Error(`Không tìm thấy mốc chèn máy tính "${moc}" trong ${f}`);
@@ -296,6 +317,14 @@ ${htmlTuKiemTra(`${khu}/${fm.slug}`, TU_KIEM_TRA_KHU[khu][fm.slug])}
 	}
 }
 
+// ---------------- danh sách đồ thị của máy tính (T2): public/do-thi/<id>.js -> public/do-thi/index.json (sinh tự động, đã gitignore)
+{
+	const thuMuc = path.join(GOC, 'public/do-thi');
+	const ds = fs.existsSync(thuMuc) ? fs.readdirSync(thuMuc).filter((f) => f.endsWith('.js')).map((f) => f.slice(0, -3)).sort() : [];
+	fs.mkdirSync(thuMuc, { recursive: true });
+	fs.writeFileSync(path.join(thuMuc, 'index.json'), JSON.stringify(ds));
+}
+
 // ---------------- trang Nhật ký thay đổi (T5): 100 dòng mới nhất từ git log, chỉ tính commit chạm bài công khai
 {
 	// tệp nguồn công khai -> tên bài (tên bài lấy từ front matter hiện tại; tệp đã xóa hoặc không công khai thì bỏ)
@@ -315,7 +344,7 @@ ${htmlTuKiemTra(`${khu}/${fm.slug}`, TU_KIEM_TRA_KHU[khu][fm.slug])}
 				const ten = [...new Set(tep.map((t) => tenBaiTheoTep[t.trim()]).filter(Boolean))];
 				if (!ten.length) continue;
 				const hien = ten.length > 3 ? `${ten.slice(0, 3).join(', ')} và ${ten.length - 3} bài khác` : ten.join(', ');
-				dong.push(`- **${ngay}** · ${hien} · ${tt.join('\t').replace(/\s*\(#\d+\)\s*$/, '').replace(/\s*\((?:gói\s+)?[A-Z]\d[^)]*\)\s*$/, '').replace(/([*_`\[\]<>])/g, '\\$1')}`);
+				dong.push(`- **${ngay}** · ${hien} · ${tt.join('\t').replace(/\s*\(#\d+\)\s*$/, '').replace(/\s*\((?:gói\s+)?[A-Z]\d[^)]*\)\s*$/, '').replace(/\s*\((?:gói\s+)?[GLTHB]\d[\w–-]*(?:\s*[+,]\s*[GLTHB]?\d[\w–-]*)*\)/g, '').replace(/([*_`\[\]<>])/g, '\\$1')}`);
 				if (dong.length >= 100) break;
 			}
 		} catch {
