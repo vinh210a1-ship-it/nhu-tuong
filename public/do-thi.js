@@ -32,6 +32,8 @@ export const nhanN = (khoa, ten) =>
 
 /** Huy hiệu K (sách nền, chờ đối chiếu trang) cho chú thích có ranh giới lấy từ ghi chú [K] của máy. */
 export const nhanK = () => '<span class="nhan-cum"><span class="nhan nhan-K" title="Sách nền, chờ đối chiếu trang">K</span></span>';
+/** Huy hiệu G (suy luận hoặc giả thuyết). */
+export const nhanG = () => '<span class="nhan-cum"><span class="nhan nhan-G" title="Suy luận hoặc giả thuyết">G</span></span>';
 const lam = (v) => Math.round(v * 10) / 10;
 const MU = '⁰¹²³⁴⁵⁶⁷⁸⁹';
 /** Nhãn vạch: số thường; trục log từ 1000 trở lên ghi 10³, 10⁴… cho gọn. */
@@ -52,7 +54,7 @@ function vachTuyenTinh(min, max) {
  * Tạo khung đồ thị. x, y = { min, max, log?: boolean, nhan: 'Tên trục (đơn vị)' }.
  * Trả về các hàm: vung, duong, diem, moc, xuat. Gọi theo thứ tự bất kỳ; thứ tự vẽ cố định (vùng, lưới, đường, mốc, điểm).
  */
-export function bieuDo({ x, y, rong = 380, cao = 250 }) {
+export function bieuDo({ x, y, rong = 350, cao = 250 }) {
 	const L = 66, R = 14, T = 14, B = 52;
 	const w = rong - L - R, h = cao - T - B;
 	const f = (t, v) => (t.log ? Math.log10(v) : v);
@@ -60,6 +62,7 @@ export function bieuDo({ x, y, rong = 380, cao = 250 }) {
 	const py = (v) => T + h - ((f(y, v) - f(y, y.min)) / (f(y, y.max) - f(y, y.min))) * h;
 	const trong = (xv, yv) => xv >= x.min && xv <= x.max && yv >= y.min && yv <= y.max && isFinite(xv) && isFinite(yv);
 	const vach = (t) => {
+		if (t.vach) return t.vach; // vạch chia tự chọn, ví dụ [0, 30, 60, 90, 120, 150, 180]
 		if (!t.log) return vachTuyenTinh(t.min, t.max);
 		const ds = [];
 		for (let k = Math.ceil(Math.log10(t.min) - 1e-9); k <= Math.floor(Math.log10(t.max) + 1e-9); k++) ds.push(Math.pow(10, k));
@@ -73,7 +76,13 @@ export function bieuDo({ x, y, rong = 380, cao = 250 }) {
 			const a = px(Math.max(x0, x.min)), c = px(Math.min(x1, x.max));
 			if (!(c > a)) return b;
 			vungs.push(`<rect class="dt-ngoai" x="${lam(a)}" y="${T}" width="${lam(c - a)}" height="${h}"/>`);
-			if (nhan) vungs.push(`<text class="dt-chu dt-chu-nho" x="${lam((a + c) / 2)}" y="${T + 16}" text-anchor="middle">${thoat(nhan)}</text>`);
+			if (nhan) {
+				// vùng hẹp hơn chữ: bám mép trái (hoặc mép phải nếu vùng nằm sát bên phải) thay vì căn giữa, để chữ không tràn ra nhãn trục
+				const roi = nhan.length * 7.6 > c - a;
+				const sat = roi && a > L + w / 2;
+				const xv = roi ? (sat ? c - 4 : a + 4) : (a + c) / 2;
+				vungs.push(`<text class="dt-chu dt-chu-nho" x="${lam(xv)}" y="${T + 16}" text-anchor="${roi ? (sat ? 'end' : 'start') : 'middle'}">${thoat(nhan)}</text>`);
+			}
 			return b;
 		},
 		/** Vẽ đường y = g(x) (hàm) hoặc đi qua mảng [[x, y], ...]; đoạn ra ngoài trục thì bỏ, không kẻ nối. */
@@ -100,6 +109,12 @@ export function bieuDo({ x, y, rong = 380, cao = 250 }) {
 			const cx = lam(px(xv)), cy = lam(py(yv));
 			mocs.push(`<path class="dt-moc" d="M${cx} ${cy - 6}L${cx + 6} ${cy}L${cx} ${cy + 6}L${cx - 6} ${cy}Z"/>`);
 			if (nhan) mocs.push(`<text class="dt-chu" x="${cx + (cx > rong * 0.6 ? -9 : 9)}" y="${cy - 8}" text-anchor="${cx > rong * 0.6 ? 'end' : 'start'}">${thoat(nhan)}</text>`);
+			return true;
+		},
+		/** Chấm số đo của người dùng (không phải điểm "của bạn", không phải mốc [N]): chấm nhỏ có viền. Trả false nếu nằm ngoài trục. */
+		cham(xv, yv) {
+			if (!trong(xv, yv)) return false;
+			mocs.push(`<circle class="dt-cham" cx="${lam(px(xv))}" cy="${lam(py(yv))}" r="4"/>`);
 			return true;
 		},
 		/** Điểm "của bạn": chấm to, hai vạch dóng về trục, nhãn. Trả false nếu nằm ngoài trục. */

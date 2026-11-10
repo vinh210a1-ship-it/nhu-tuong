@@ -8,6 +8,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { kiemSvg } from './kiem-svg.mjs';
+// Khung đồ thị ở điện thoại 375 px rộng 305 px (đo thật, trừ lề và đệm của thẻ), hẹp hơn 343 của hình cơ chế.
+const KHUNG_DO_THI = 305;
 
 const GOC = process.cwd();
 const thuMuc = path.join(GOC, 'public/do-thi');
@@ -34,7 +36,7 @@ for (const id of ds) {
 	const r = mod.ve({ ...mod.macDinh });
 	t(r && typeof r.svg === 'string', 've(macDinh) phải trả { svg, bang, chuThich, diem }');
 	if (!r) continue;
-	for (const e of kiemSvg(r.svg, `do-thi/${id} (svg)`)) t(false, e.replace(/^do-thi\/\S+ \(svg\): /, ''));
+	for (const e of kiemSvg(r.svg, `do-thi/${id} (svg)`, KHUNG_DO_THI)) t(false, e.replace(/^do-thi\/\S+ \(svg\): /, ''));
 	// chữ hỏng lọt ra người đọc (mẫu chuỗi viết nhầm trong nháy đơn, biến chưa gán, số không hữu hạn)
 	const chuHienRa = [r.svg, r.chuThich ?? '', ...(r.bang?.cot ?? []), ...(r.bang?.hang ?? []).flat()].join('\n');
 	for (const xau of ['${', 'undefined', '[object', 'NaN', 'Infinity']) t(!chuHienRa.includes(xau), `kết quả ve(macDinh) chứa chuỗi hỏng "${xau}" (svg, chuThich hoặc bảng)`);
