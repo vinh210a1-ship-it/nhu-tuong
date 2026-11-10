@@ -344,7 +344,7 @@ ${htmlTuKiemTra(`${khu}/${fm.slug}`, TU_KIEM_TRA_KHU[khu][fm.slug])}
 				const ten = [...new Set(tep.map((t) => tenBaiTheoTep[t.trim()]).filter(Boolean))];
 				if (!ten.length) continue;
 				const hien = ten.length > 3 ? `${ten.slice(0, 3).join(', ')} và ${ten.length - 3} bài khác` : ten.join(', ');
-				dong.push(`- **${ngay}** · ${hien} · ${tt.join('\t').replace(/\s*\(#\d+\)\s*$/, '').replace(/\s*\((?:gói\s+)?[A-Z]\d[^)]*\)/g, '').replace(/([*_`\[\]<>])/g, '\\$1')}`);
+				dong.push(`- **${ngay}** · ${hien} · ${tt.join('\t').replace(/\s*\(#\d+\)\s*$/, '').replace(/\s*\((?:gói\s+)?[A-Z]\d[^)]*\)\s*$/, '').replace(/\s*\((?:gói\s+)?[GLTHB]\d[\w–-]*(?:\s*[+,]\s*[GLTHB]?\d[\w–-]*)*\)/g, '').replace(/([*_`\[\]<>])/g, '\\$1')}`);
 				if (dong.length >= 100) break;
 			}
 		} catch {

@@ -35,6 +35,9 @@ for (const id of ds) {
 	t(r && typeof r.svg === 'string', 've(macDinh) phải trả { svg, bang, chuThich, diem }');
 	if (!r) continue;
 	for (const e of kiemSvg(r.svg, `do-thi/${id} (svg)`)) t(false, e.replace(/^do-thi\/\S+ \(svg\): /, ''));
+	// chữ hỏng lọt ra người đọc (mẫu chuỗi viết nhầm trong nháy đơn, biến chưa gán, số không hữu hạn)
+	const chuHienRa = [r.svg, r.chuThich ?? '', ...(r.bang?.cot ?? []), ...(r.bang?.hang ?? []).flat()].join('\n');
+	for (const xau of ['${', 'undefined', '[object', 'NaN', 'Infinity']) t(!chuHienRa.includes(xau), `kết quả ve(macDinh) chứa chuỗi hỏng "${xau}" (svg, chuThich hoặc bảng)`);
 	t(r.svg.includes('class="dt-diem"'), 'đồ thị không vẽ điểm "của bạn" với đầu vào mặc định');
 	t(r.bang && r.bang.cot?.length > 0 && r.bang.hang?.length > 0 && r.bang.hang.every((h) => h.length === r.bang.cot.length), 'bảng số liệu thiếu hoặc số cột không khớp');
 	t(r.diem && isFinite(r.diem.x) && isFinite(r.diem.y), 'thiếu diem {x, y}');

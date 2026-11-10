@@ -14,6 +14,8 @@
 //   export const doanTruoc = { cauHoi, lua: [a, b, c], dung: 0 | 1 | 2, giaiThich };
 //        // MỘT câu hỏi định tính (không đòi con số) hiện trước đồ thị; chọn xong hoặc bấm "Bỏ qua" thì đồ thị mới hiện.
 //
+// Khoảng trục nên cố định theo vùng có dữ liệu của máy (ví dụ theo macDinh), không co giãn theo đường vừa vẽ: nếu không, đổi một ô nhập thì đường và điểm
+// dịch cùng nhau và người dùng không thấy tác động. Đổi tên trục theo chiều (nổi/lắng...) khi dấu của kết quả đổi.
 // Luật (xem bản thiết kế GĐ2): đồ thị vẽ đúng công thức của chính máy, quét một biến quanh giá trị người dùng nhập,
 // điểm của người dùng được làm nổi; mốc [N] chỉ lấy từ con số đã là [N] trên web; vùng không có dữ liệu thì tô xám
 // và ghi "ngoài vùng có dữ liệu", không ngoại suy; màu chỉ dùng lớp dt-* (giữ nguyên ở nền sáng và nền tối).
@@ -28,6 +30,8 @@ export const doc = (v) => parseFloat(String(v).replace(',', '.'));
 export const nhanN = (khoa, ten) =>
 	`<span class="nhan-cum"><span class="nhan nhan-N" title="Có nguồn">N</span><span class="nhan-phan"><a class="nhan-nguon" href="${BASE}nguon/#${khoa}">${thoat(ten)}</a></span></span>`;
 
+/** Huy hiệu K (sách nền, chờ đối chiếu trang) cho chú thích có ranh giới lấy từ ghi chú [K] của máy. */
+export const nhanK = () => '<span class="nhan-cum"><span class="nhan nhan-K" title="Sách nền, chờ đối chiếu trang">K</span></span>';
 const lam = (v) => Math.round(v * 10) / 10;
 const MU = '⁰¹²³⁴⁵⁶⁷⁸⁹';
 /** Nhãn vạch: số thường; trục log từ 1000 trở lên ghi 10³, 10⁴… cho gọn. */
