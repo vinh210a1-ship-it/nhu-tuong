@@ -1,0 +1,57 @@
+<svg class="hinh" viewBox="0 0 360 546" width="360" role="img" aria-labelledby="t d">
+<title id="t">Tám cơ chế mất ổn định của giọt nhũ tương và công cụ chính chặn từng cơ chế</title>
+<desc id="d">Một giọt ở đầu sơ đồ, nối bằng một trục dọc tới tám ô xếp chồng. Mỗi ô ghi một cơ chế cần chặn và công cụ chính. Hai ô keo tụ có hình nhỏ: hai giọt có lớp điện tích bao quanh đẩy nhau, và hai giọt có chuỗi polymer bị nén ở giữa.</desc>
+<circle class="h-giot-dau" cx="20" cy="34" r="14"/>
+<text class="h-chu" x="44" y="40" font-weight="600">Cơ chế phải chặn và công cụ chính</text>
+<path class="h-mui-ten" d="M20 48V509"/>
+<path class="h-mui-ten" d="M20 103H34"/>
+<rect class="h-khung" x="34" y="78" width="322" height="50" rx="6"/>
+<text class="h-chu" x="44" y="99" font-weight="600">Kem hóa</text>
+<text class="h-chu-mo" x="348" y="99" text-anchor="end">creaming</text>
+<text class="h-chu-mo" x="44" y="119">Giọt nhỏ, nhớt hoặc gel, chất làm nặng</text>
+<path class="h-mui-ten" d="M20 161H34"/>
+<rect class="h-khung" x="34" y="136" width="322" height="50" rx="6"/>
+<text class="h-chu" x="44" y="157" font-weight="600">Keo tụ tĩnh điện (độ dài Debye)</text>
+<text class="h-chu-mo" x="44" y="177">Điện tích xa pI, lực ion thấp</text>
+<circle class="h-giot-dau" cx="316" cy="167" r="6"/>
+<circle style="fill:none;stroke:var(--sl-color-accent);stroke-width:1.2;stroke-dasharray:3 2" cx="316" cy="167" r="11"/>
+<circle class="h-giot-dau" cx="342" cy="167" r="6"/>
+<circle style="fill:none;stroke:var(--sl-color-accent);stroke-width:1.2;stroke-dasharray:3 2" cx="342" cy="167" r="11"/>
+<path class="h-mui-ten" d="M20 219H34"/>
+<rect class="h-khung" x="34" y="194" width="322" height="50" rx="6"/>
+<text class="h-chu" x="44" y="215" font-weight="600">Keo tụ lập thể (chuỗi bị nén)</text>
+<text class="h-chu-mo" x="44" y="235">Polymer, protein, gum dày</text>
+<circle class="h-giot-dau" cx="314" cy="225" r="6"/>
+<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:1.6;stroke-linecap:round" d="M320 221q3 -3 5 0t4 0"/>
+<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:1.6;stroke-linecap:round" d="M320 225q3 -3 5 0t4 0"/>
+<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:1.6;stroke-linecap:round" d="M320 229q3 -3 5 0t4 0"/>
+<circle class="h-giot-dau" cx="344" cy="225" r="6"/>
+<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:1.6;stroke-linecap:round" d="M338 221q-3 -3 -5 0t-4 0"/>
+<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:1.6;stroke-linecap:round" d="M338 225q-3 -3 -5 0t-4 0"/>
+<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:1.6;stroke-linecap:round" d="M338 229q-3 -3 -5 0t-4 0"/>
+<path class="h-mui-ten" d="M20 277H34"/>
+<rect class="h-khung" x="34" y="252" width="322" height="50" rx="6"/>
+<text class="h-chu" x="44" y="273" font-weight="600">Hợp giọt</text>
+<text class="h-chu-mo" x="348" y="273" text-anchor="end">coalescence</text>
+<text class="h-chu-mo" x="44" y="293">Màng nhớt–đàn hồi, hạt Pickering</text>
+<path class="h-mui-ten" d="M20 335H34"/>
+<rect class="h-khung" x="34" y="310" width="322" height="50" rx="6"/>
+<text class="h-chu" x="44" y="331" font-weight="600">Hợp giọt một phần</text>
+<text class="h-chu-mo" x="348" y="331" text-anchor="end">partial coalescence</text>
+<text class="h-chu-mo" x="44" y="351">Dầu lỏng, kiểm soát kết tinh</text>
+<path class="h-mui-ten" d="M20 393H34"/>
+<rect class="h-khung" x="34" y="368" width="322" height="50" rx="6"/>
+<text class="h-chu" x="44" y="389" font-weight="600">Chín Ostwald</text>
+<text class="h-chu-mo" x="348" y="389" text-anchor="end">Ostwald ripening</text>
+<text class="h-chu-mo" x="44" y="409">Dầu không tan trong nước, màng dày</text>
+<path class="h-mui-ten" d="M20 451H34"/>
+<rect class="h-khung" x="34" y="426" width="322" height="50" rx="6"/>
+<text class="h-chu" x="44" y="447" font-weight="600">Đảo pha</text>
+<text class="h-chu-mo" x="348" y="447" text-anchor="end">phase inversion</text>
+<text class="h-chu-mo" x="44" y="467">Đúng HLB, kiểm soát φ, nhiệt, ion</text>
+<path class="h-mui-ten" d="M20 509H34"/>
+<rect class="h-khung" x="34" y="484" width="322" height="50" rx="6"/>
+<text class="h-chu" x="44" y="505" font-weight="600">Oxy hóa</text>
+<text class="h-chu-mo" x="348" y="505" text-anchor="end">oxidation</text>
+<text class="h-chu-mo" x="44" y="525">Chelate, chống oxy hóa, loại ôxy</text>
+</svg>

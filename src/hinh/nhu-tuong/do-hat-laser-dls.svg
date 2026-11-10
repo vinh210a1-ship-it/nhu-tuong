@@ -1,0 +1,46 @@
+<svg class="hinh" viewBox="0 0 360 552" width="360" role="img" aria-labelledby="t d">
+<title id="t">Hai cách đo cỡ hạt bằng ánh sáng: nhiễu xạ laser và tán xạ ánh sáng động</title>
+<desc id="d">Nửa trên, nhiễu xạ laser: chùm laser gặp một hạt rồi tán xạ về phía đầu dò vòng; hạt nhỏ tán xạ ở góc lớn, hạt to tán xạ ở góc nhỏ. Nửa dưới, tán xạ ánh sáng động: hạt chuyển động Brown; hạt nhỏ đi nhiều và nhanh nên đường cong tự tương quan tắt nhanh, hạt to đi ít và chậm nên tắt chậm.</desc>
+<text class="h-chu" x="10" y="18" font-weight="600">Nhiễu xạ laser (laser diffraction)</text>
+<text class="h-chu-mo" x="10" y="42">Hạt nhỏ: tán xạ ở góc lớn</text>
+<rect class="h-khung" x="10" y="50" width="340" height="90" rx="8"/>
+<path style="fill:none;stroke:var(--sl-color-accent);stroke-width:2" d="M20 95L83 95"/>
+<path style="fill:none;stroke:var(--sl-color-accent);stroke-width:2" d="M77 91L83 95L77 99"/>
+<circle style="fill:var(--hh-dau);stroke:var(--hh-vien-giot);stroke-width:1.5" cx="90" cy="95" r="5"/>
+<path style="fill:none;stroke:var(--hh-ho-phach);stroke-width:1.6" d="M95 94L256 61"/>
+<path style="fill:none;stroke:var(--hh-ho-phach);stroke-width:1.6" d="M95 96L256 129"/>
+<path style="fill:none;stroke:var(--sl-color-gray-2);stroke-width:3" d="M262 56L262 134"/>
+<text class="h-chu-mo" x="270" y="91">Đầu dò</text>
+<text class="h-chu-mo" x="270" y="109">vòng</text>
+<text class="h-chu-mo" x="10" y="164">Hạt to: tán xạ ở góc nhỏ</text>
+<rect class="h-khung" x="10" y="172" width="340" height="90" rx="8"/>
+<path style="fill:none;stroke:var(--sl-color-accent);stroke-width:2" d="M20 217L75 217"/>
+<path style="fill:none;stroke:var(--sl-color-accent);stroke-width:2" d="M69 213L75 217L69 221"/>
+<circle style="fill:var(--hh-dau);stroke:var(--hh-vien-giot);stroke-width:1.5" cx="90" cy="217" r="13"/>
+<path style="fill:none;stroke:var(--hh-ho-phach);stroke-width:1.6" d="M103 214L256 208"/>
+<path style="fill:none;stroke:var(--hh-ho-phach);stroke-width:1.6" d="M103 220L256 226"/>
+<path style="fill:none;stroke:var(--sl-color-gray-2);stroke-width:3" d="M262 178L262 256"/>
+<text class="h-chu-mo" x="270" y="213">Đầu dò</text>
+<text class="h-chu-mo" x="270" y="231">vòng</text>
+<text class="h-chu" x="10" y="288" font-weight="600">Tán xạ ánh sáng động (DLS)</text>
+<text class="h-chu-mo" x="10" y="312">Hạt nhỏ: dao động nhiều và nhanh</text>
+<rect class="h-khung" x="10" y="320" width="340" height="100" rx="8"/>
+<polyline style="fill:none;stroke:var(--sl-color-gray-3);stroke-width:1.5;stroke-linejoin:round" points="24,380 40,344 54,386 74,354 86,392 106,350 118,388 140,356"/>
+<circle style="fill:var(--hh-dau);stroke:var(--hh-vien-giot);stroke-width:1.5" cx="140" cy="356" r="5"/>
+<path style="fill:none;stroke:var(--sl-color-gray-3);stroke-width:1.2" d="M206 346L206 392"/>
+<path style="fill:none;stroke:var(--sl-color-gray-3);stroke-width:1.2" d="M206 392L340 392"/>
+<path style="fill:none;stroke:var(--sl-color-accent);stroke-width:2.4;stroke-linejoin:round" d="M206 346.0 L211 358.3 L216 367.4 L221 374.0 L226 378.8 L231 382.4 L236 384.9 L241 386.8 L246 388.2 L251 389.2 L256 390.0 L261 390.5 L266 390.9 L271 391.2 L276 391.4 L281 391.6 L286 391.7 L291 391.8 L296 391.8 L301 391.9 L306 391.9 L311 391.9 L316 392.0 L321 392.0 L326 392.0 L331 392.0 L336 392.0"/>
+<text class="h-chu-mo" x="212" y="338">tự tương quan</text>
+<text class="h-chu-mo" x="272" y="410" text-anchor="middle">thời gian trễ</text>
+<text class="h-chu" x="340" y="370" text-anchor="end">tắt nhanh</text>
+<text class="h-chu-mo" x="10" y="434">Hạt to: dao động ít và chậm</text>
+<rect class="h-khung" x="10" y="442" width="340" height="100" rx="8"/>
+<polyline style="fill:none;stroke:var(--sl-color-gray-3);stroke-width:1.5;stroke-linejoin:round" points="34,500 46,486 56,502 68,490 80,500"/>
+<circle style="fill:var(--hh-dau);stroke:var(--hh-vien-giot);stroke-width:1.5" cx="80" cy="500" r="13"/>
+<path style="fill:none;stroke:var(--sl-color-gray-3);stroke-width:1.2" d="M206 468L206 514"/>
+<path style="fill:none;stroke:var(--sl-color-gray-3);stroke-width:1.2" d="M206 514L340 514"/>
+<path style="fill:none;stroke:var(--sl-color-accent);stroke-width:2.4;stroke-linejoin:round" d="M206 468.0 L211 471.2 L216 474.1 L221 476.9 L226 479.4 L231 481.8 L236 484.0 L241 486.1 L246 488.0 L251 489.8 L256 491.5 L261 493.0 L266 494.5 L271 495.8 L276 497.1 L281 498.2 L286 499.3 L291 500.3 L296 501.3 L301 502.2 L306 503.0 L311 503.7 L316 504.4 L321 505.1 L326 505.7 L331 506.3 L336 506.8"/>
+<text class="h-chu-mo" x="212" y="460">tự tương quan</text>
+<text class="h-chu-mo" x="272" y="532" text-anchor="middle">thời gian trễ</text>
+<text class="h-chu" x="340" y="492" text-anchor="end">tắt chậm</text>
+</svg>

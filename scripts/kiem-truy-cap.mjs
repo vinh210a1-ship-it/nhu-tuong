@@ -21,6 +21,8 @@ const TRANG = [
 	['trang chủ', `${BASE}/`],
 	['bài (mất ổn định)', `${BASE}/nhu-tuong/mat-on-dinh/`],
 	['bài (nền tảng, có hình cơ chế)', `${BASE}/nhu-tuong/nen-tang/`],
+	['bài (chất ổn định, có hình cơ chế)', `${BASE}/nhu-tuong/chat-on-dinh/`],
+	['bài (đo lường, có hình cơ chế)', `${BASE}/nhu-tuong/do-luong/`],
 	['tra cứu', `${BASE}/tra-cuu/`],
 	['bài (chất nhũ hóa)', `${BASE}/chat-nhu-hoa/nen-tang-vat-ly-hoa-be-mat/`],
 	['bài (thực phẩm)', `${BASE}/thuc-pham/bao-quan-hoat-do-nuoc-va-han-su-dung/`],
