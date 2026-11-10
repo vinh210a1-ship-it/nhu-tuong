@@ -15,8 +15,9 @@ const MAN_HINH_HEP = 343; // rộng nội dung ở điện thoại 375 px (trừ
 /**
  * @param {string} svg chuỗi SVG đầy đủ
  * @param {string} ten tên để báo lỗi
+ * @param {number} [rongManHinh] bề rộng thật của khung chứa ở điện thoại 375 px (hình cơ chế 343; khung đồ thị 305)
  */
-export function kiemSvg(svg, ten) {
+export function kiemSvg(svg, ten, rongManHinh = MAN_HINH_HEP) {
 	const loi = [];
 	const sai = (m) => loi.push(`${ten}: ${m}`);
 	if (!/^<svg[\s>]/.test(svg.trim()) || !/<\/svg>\s*$/.test(svg)) return [`${ten}: phải bắt đầu bằng <svg và kết thúc bằng </svg>`];
@@ -28,12 +29,12 @@ export function kiemSvg(svg, ten) {
 	if (!vb) sai('thiếu viewBox="0 0 rộng cao"');
 	if (!rongAttr) sai('thiếu width="…" trên thẻ svg (bề rộng ưa thích khi màn rộng; tối đa 480)');
 	else if (Number(rongAttr[1]) > 480) sai(`width ${rongAttr[1]} quá lớn (tối đa 480)`);
-	// cỡ chữ hiệu dụng ở điện thoại: cỡ chữ (đơn vị viewBox) × 343 / rộng viewBox ≥ 12 px
+	// cỡ chữ hiệu dụng ở điện thoại: cỡ chữ (đơn vị viewBox) × bề rộng khung ở 375 px / rộng viewBox ≥ 12 px
 	if (vb) {
 		const ds = [...svg.matchAll(/font-size\s*[:=]\s*"?(\d+(?:\.\d+)?)/g)].map((m) => Number(m[1]));
 		const nho = ds.length ? Math.min(14, ...ds) : 14; // chữ không khai cỡ lấy 14 theo hinh.css / do-thi.css
-		const hieuDung = (nho * MAN_HINH_HEP) / Number(vb[1]);
-		if (hieuDung < 12) sai(`chữ nhỏ nhất chỉ còn ${hieuDung.toFixed(1)} px ở màn 375 px (cần ≥ 12): giảm bề rộng viewBox (${vb[1]}) hoặc tăng cỡ chữ (${nho})`);
+		const hieuDung = (nho * rongManHinh) / Number(vb[1]);
+		if (hieuDung < 12) sai(`chữ nhỏ nhất chỉ còn ${hieuDung.toFixed(1)} px ở màn 375 px, khung rộng ${rongManHinh} px (cần ≥ 12): giảm bề rộng viewBox (${vb[1]}) hoặc tăng cỡ chữ (${nho})`);
 	}
 	// màu: chỉ none / currentColor / inherit / var(--có-sẵn) / url(#…); không mã màu cứng
 	const bien = bienCoSan();

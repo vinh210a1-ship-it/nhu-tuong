@@ -54,7 +54,7 @@ function vachTuyenTinh(min, max) {
  * Tạo khung đồ thị. x, y = { min, max, log?: boolean, nhan: 'Tên trục (đơn vị)' }.
  * Trả về các hàm: vung, duong, diem, moc, xuat. Gọi theo thứ tự bất kỳ; thứ tự vẽ cố định (vùng, lưới, đường, mốc, điểm).
  */
-export function bieuDo({ x, y, rong = 380, cao = 250 }) {
+export function bieuDo({ x, y, rong = 350, cao = 250 }) {
 	const L = 66, R = 14, T = 14, B = 52;
 	const w = rong - L - R, h = cao - T - B;
 	const f = (t, v) => (t.log ? Math.log10(v) : v);
