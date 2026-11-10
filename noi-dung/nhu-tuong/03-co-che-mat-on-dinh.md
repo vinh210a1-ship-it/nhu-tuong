@@ -22,6 +22,8 @@ Các bài tổng quan đã kiểm cho phần này: tổng quan cơ chế mất �
 
 ## 0. Bản đồ các con đường
 
+<!-- hinh: sau-con-duong -->
+
 | # | Hiện tượng | Giọt có đổi kích thước? | Thuận nghịch? | Mắt xích điển hình |
 |---|---|---|---|---|
 | 1 | Kem hóa / lắng (gravitational separation) | Không | Thuận nghịch khi lắc (nếu giọt vẫn riêng) | Chênh lệch tỷ trọng + giọt lớn + nhớt thấp |

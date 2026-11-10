@@ -20,6 +20,8 @@ nguon_goc: tai-lieu-nhu-tuong/02-hinh-thanh-nhu-tuong.md
 
 ## 1. Ba quá trình xảy ra gần như đồng thời (khung Walstra) [K: @walstra1993, @walstra2003; N: @mcclements2016 tr.249–251, tr.273–274]
 
+<!-- hinh: ba-qua-trinh -->
+
 ```
 Thô (pre-emulsion)  ──(1) vỡ giọt──▶  giọt nhỏ, bề mặt trần
                                         │
