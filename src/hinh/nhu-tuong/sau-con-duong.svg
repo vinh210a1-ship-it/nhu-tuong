@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 636" width="360" height="636" role="img" aria-labelledby="hinh-sau-con-duong-t hinh-sau-con-duong-d">
+<title id="hinh-sau-con-duong-t">Sáu con đường vật lý làm nhũ tương mất ổn định</title>
+<desc id="hinh-sau-con-duong-d">Ở giữa là nhũ tương ban đầu: giọt dầu rải đều trong nước. Sáu mũi tên tỏa ra sáu ô. Ô 1, kem hóa hoặc lắng: giọt dồn lên trên (hoặc chìm xuống), cỡ giọt không đổi. Ô 2, keo tụ: giọt dính thành cụm nhưng màng từng giọt còn nguyên. Ô 3, hợp giọt: màng vỡ, hai giọt thành một giọt lớn hơn. Ô 4, hợp giọt một phần: tinh thể mỡ đâm qua màng, các giọt dính thành cụm mà vẫn giữ hình. Ô 5, Ostwald ripening: giọt nhỏ tan dần, dầu đi qua nước sang giọt lớn. Ô 6, đảo pha: O/W thành W/O hoặc ngược lại. Mũi tên hai đầu ở ô 1 và ô 2 nghĩa là có thể thuận nghịch; mũi tên một đầu ở ô 3 đến ô 6 nghĩa là không thuận nghịch.</desc>
+<!-- nền các ô: nước (xanh) hoặc dầu (hổ phách) -->
+<g style="fill:var(--hh-be-mat)">
+<rect x="4" y="78" width="170" height="96" rx="10"/>
+<rect x="186" y="78" width="170" height="96" rx="10"/>
+<rect x="4" y="202" width="100" height="96" rx="10"/>
+<rect x="256" y="202" width="100" height="96" rx="10"/>
+<rect x="4" y="392" width="170" height="96" rx="10"/>
+<rect x="186" y="392" width="170" height="96" rx="10"/>
+<circle cx="180" cy="250" r="40"/>
+</g>
+<g style="fill:var(--hh-nuoc);fill-opacity:.28">
+<rect x="4" y="78" width="170" height="96" rx="10"/>
+<rect x="186" y="78" width="170" height="96" rx="10"/>
+<rect x="256" y="202" width="100" height="96" rx="10"/>
+<rect x="186" y="392" width="170" height="96" rx="10"/>
+<rect x="4" y="392" width="170" height="96" rx="10"/>
+<circle cx="180" cy="250" r="40"/>
+</g>
+<g style="fill:var(--hh-dau);fill-opacity:.45">
+<rect x="4" y="202" width="100" height="96" rx="10"/>
+</g>
+<g style="fill:none;stroke:var(--hh-nuoc);stroke-width:1.2">
+<rect x="4" y="78" width="170" height="96" rx="10"/>
+<rect x="186" y="78" width="170" height="96" rx="10"/>
+<rect x="256" y="202" width="100" height="96" rx="10"/>
+<rect x="186" y="392" width="170" height="96" rx="10"/>
+<rect x="4" y="392" width="170" height="96" rx="10"/>
+<circle cx="180" cy="250" r="40"/>
+</g>
+<g style="fill:none;stroke:var(--hh-vien-giot);stroke-width:1.2">
+<rect x="4" y="202" width="100" height="96" rx="10"/>
+</g>
+<!-- bóng nét đứt: vị trí và cỡ giọt TRƯỚC khi đổi (ô 3 và ô 5) -->
+<g style="fill:none;stroke:var(--sl-color-gray-2);stroke-width:1.2;stroke-dasharray:3 2.5">
+<circle cx="308" cy="270" r="7.5"/>
+<circle cx="324" cy="270" r="7.5"/>
+<circle cx="28" cy="412" r="7.5"/>
+<circle cx="22" cy="440" r="7.5"/>
+<circle cx="28" cy="468" r="7.5"/>
+<circle cx="128" cy="440" r="12"/>
+</g>
+<!-- giọt dầu -->
+<g style="fill:var(--hh-dau);stroke:var(--hh-vien-giot);stroke-width:1.2">
+<!-- giữa -->
+<circle cx="180" cy="250" r="7.5"/>
+<circle cx="204" cy="246" r="7.5"/>
+<circle cx="194" cy="270" r="7.5"/>
+<circle cx="170" cy="273" r="7.5"/>
+<circle cx="155" cy="254" r="7.5"/>
+<circle cx="166" cy="230" r="7.5"/>
+<circle cx="190" cy="227" r="7.5"/>
+<!-- 1 kem hóa -->
+<circle cx="18" cy="89" r="7.5"/>
+<circle cx="41" cy="89" r="7.5"/>
+<circle cx="65" cy="89" r="7.5"/>
+<circle cx="89" cy="89" r="7.5"/>
+<circle cx="113" cy="89" r="7.5"/>
+<circle cx="137" cy="89" r="7.5"/>
+<circle cx="160" cy="89" r="7.5"/>
+<!-- 2 keo tụ -->
+<circle cx="232" cy="118" r="7.5"/>
+<circle cx="247.4" cy="118" r="7.5"/>
+<circle cx="239.7" cy="131.3" r="7.5"/>
+<circle cx="239.7" cy="104.7" r="7.5"/>
+<circle cx="298" cy="128" r="7.5"/>
+<circle cx="313.4" cy="128" r="7.5"/>
+<circle cx="321.1" cy="141.3" r="7.5"/>
+<!-- 3 hợp giọt -->
+<circle cx="286" cy="235" r="11.9"/>
+<circle cx="332" cy="226" r="7.5"/>
+<circle cx="316" cy="270" r="9.4"/>
+<!-- 5 Ostwald -->
+<circle cx="28" cy="412" r="3.5"/>
+<circle cx="22" cy="440" r="3.5"/>
+<circle cx="28" cy="468" r="3.5"/>
+<circle cx="128" cy="440" r="14.2"/>
+<!-- 4 hợp giọt một phần: viền -->
+<circle cx="226" cy="444" r="13"/>
+<circle cx="248" cy="436" r="13"/>
+<circle cx="271" cy="446" r="13"/>
+<circle cx="322" cy="440" r="13"/>
+</g>
+<!-- 4: tô lại phần ruột để xóa viền ở chỗ hai giọt dính nhau (cổ nối) -->
+<g style="fill:var(--hh-dau)">
+<circle cx="226" cy="444" r="12.4"/>
+<circle cx="248" cy="436" r="12.4"/>
+<circle cx="271" cy="446" r="12.4"/>
+</g>
+<!-- 3: giọt đã hợp nằm đè lên bóng hai giọt cũ; vẽ lại bóng lên trên để vẫn thấy -->
+<g style="fill:none;stroke:var(--sl-color-gray-2);stroke-width:1.2;stroke-dasharray:3 2.5">
+<circle cx="308" cy="270" r="7.5"/>
+<circle cx="324" cy="270" r="7.5"/>
+</g>
+<!-- 5: cỡ cũ của giọt lớn, vẽ trên giọt nên dùng màu chữ cho rõ -->
+<g style="fill:none;stroke:var(--sl-color-white);stroke-width:1.1;stroke-dasharray:3 2.5">
+<circle cx="128" cy="440" r="12"/>
+</g>
+<!-- 6 đảo pha: giọt nước trong dầu -->
+<g style="fill:var(--hh-be-mat)">
+<circle cx="26" cy="224" r="7.5"/>
+<circle cx="64" cy="220" r="7.5"/>
+<circle cx="84" cy="248" r="7.5"/>
+<circle cx="40" cy="258" r="7.5"/>
+<circle cx="70" cy="278" r="7.5"/>
+<circle cx="22" cy="282" r="7.5"/>
+</g>
+<g style="fill:var(--hh-nuoc);fill-opacity:.45;stroke:var(--hh-nuoc-o);stroke-width:1.2">
+<circle cx="26" cy="224" r="7.5"/>
+<circle cx="64" cy="220" r="7.5"/>
+<circle cx="84" cy="248" r="7.5"/>
+<circle cx="40" cy="258" r="7.5"/>
+<circle cx="70" cy="278" r="7.5"/>
+<circle cx="22" cy="282" r="7.5"/>
+</g>
+<!-- 4: tinh thể mỡ (đoạn thẳng); hai tinh thể bắc qua cổ nối, một tinh thể của giọt riêng nhô ra ngoài -->
+<g style="fill:none;stroke:var(--sl-color-white);stroke-width:1.6;stroke-linecap:round">
+<line x1="218.1" y1="434.8" x2="221.9" y2="445.2"/>
+<line x1="223.3" y1="452.7" x2="232.7" y2="449.3"/>
+<line x1="216" y1="447.3" x2="222" y2="450.8"/>
+<line x1="230.9" y1="442.2" x2="243.1" y2="437.8"/>
+<line x1="244.2" y1="426.8" x2="251.8" y2="433.2"/>
+<line x1="249.8" y1="443.9" x2="254.3" y2="436.1"/>
+<line x1="241" y1="441.5" x2="247" y2="442.5"/>
+<line x1="254.1" y1="438.3" x2="265.9" y2="443.7"/>
+<line x1="270.5" y1="446.2" x2="277.5" y2="437.8"/>
+<line x1="267.2" y1="450.7" x2="276.8" y2="453.3"/>
+<line x1="277.4" y1="444.6" x2="278.6" y2="451.4"/>
+<line x1="315.3" y1="431.2" x2="320.8" y2="440.8"/>
+<line x1="321.7" y1="446.5" x2="330.3" y2="441.5"/>
+<line x1="316.1" y1="447.3" x2="323.9" y2="448.7"/>
+<line x1="305.6" y1="441.2" x2="316.4" y2="442.8"/>
+</g>
+<!-- 5: dầu khuếch tán qua nước từ giọt nhỏ sang giọt lớn -->
+<g style="fill:var(--sl-color-gray-3);stroke:var(--sl-color-gray-3);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none">
+<line x1="39.1" y1="415.1" x2="105.7" y2="433.7"/><polygon points="109.5,434.8 104,436.1 105.4,430.8"/>
+<line x1="33.5" y1="440" x2="104.8" y2="440"/><polygon points="108.8,440 103.8,442.8 103.8,437.3"/>
+<line x1="39.1" y1="464.9" x2="105.7" y2="446.3"/><polygon points="109.5,445.2 105.4,449.2 104,443.9"/>
+</g>
+<!-- 1: giọt nổi lên -->
+<g style="fill:var(--sl-color-gray-3);stroke:var(--sl-color-gray-3);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round">
+<line x1="54" y1="162" x2="54" y2="122"/><polygon points="54,118 56.8,123 51.3,123"/>
+<line x1="124" y1="162" x2="124" y2="122"/><polygon points="124,118 126.8,123 121.3,123"/>
+</g>
+<!-- mũi tên từ nhũ tương ban đầu ra sáu ô: hai đầu = thuận nghịch (1, 2); một đầu = không thuận nghịch (3–6) -->
+<g style="fill:var(--sl-color-gray-3);stroke:var(--sl-color-gray-3);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round">
+<line x1="149.7" y1="215.8" x2="133.3" y2="185.2"/><polygon points="131,181 136.8,184.7 130.9,187.8"/><polygon points="152,220 146.2,216.3 152.1,213.2"/>
+<line x1="210.3" y1="215.8" x2="226.7" y2="185.2"/><polygon points="229,181 229.1,187.8 223.2,184.7"/><polygon points="208,220 207.9,213.2 213.8,216.3"/>
+<line x1="225" y1="250" x2="246.2" y2="250"/><polygon points="251,250 245,253.3 245,246.7"/>
+<line x1="135" y1="250" x2="113.8" y2="250"/><polygon points="109,250 115,246.7 115,253.3"/>
+<line x1="202" y1="338" x2="230.4" y2="382"/><polygon points="233,386 227,382.8 232.5,379.2"/>
+<line x1="158" y1="338" x2="129.6" y2="382"/><polygon points="127,386 127.5,379.2 133,382.8"/>
+</g>
+<!-- nhãn: số trùng số dòng trong bảng và số mục của bài -->
+<g style="fill:var(--sl-color-white);font-size:14px">
+<text x="4" y="18" font-weight="700">1. Kem hóa / lắng</text>
+<text x="356" y="18" text-anchor="end" font-weight="700">2. Keo tụ</text>
+<text x="4" y="316" font-weight="700">6. Đảo pha</text>
+<text x="356" y="316" text-anchor="end" font-weight="700">3. Hợp giọt</text>
+<text x="4" y="506" font-weight="700">5. Ostwald ripening</text>
+<text x="356" y="506" text-anchor="end" font-weight="700">4. Hợp giọt một phần</text>
+<text x="180" y="308" text-anchor="middle" font-weight="700">Nhũ tương</text>
+<text x="180" y="325" text-anchor="middle" font-weight="700">ban đầu</text>
+</g>
+<g style="fill:var(--sl-color-gray-2);font-size:14px">
+<text x="4" y="35" font-style="italic">(creaming)</text>
+<text x="4" y="52">giọt nổi hoặc chìm,</text>
+<text x="4" y="69">cỡ giọt không đổi</text>
+<text x="356" y="35" text-anchor="end" font-style="italic">(flocculation)</text>
+<text x="356" y="52" text-anchor="end">giọt dính thành cụm,</text>
+<text x="356" y="69" text-anchor="end">màng còn nguyên</text>
+<text x="4" y="333" font-style="italic">(phase inversion)</text>
+<text x="4" y="350">O/W thành W/O</text>
+<text x="4" y="367">hoặc ngược lại</text>
+<text x="356" y="333" text-anchor="end" font-style="italic">(coalescence)</text>
+<text x="356" y="350" text-anchor="end">màng vỡ, hai giọt</text>
+<text x="356" y="367" text-anchor="end">thành một</text>
+<text x="4" y="523">giọt nhỏ tan dần, dầu đi</text>
+<text x="4" y="540">qua nước sang giọt lớn</text>
+<text x="356" y="523" text-anchor="end" font-style="italic">(partial coalescence)</text>
+<text x="356" y="540" text-anchor="end">tinh thể mỡ đâm qua</text>
+<text x="356" y="557" text-anchor="end">màng, cụm giữ hình</text>
+</g>
+<!-- chú giải -->
+<g style="fill:var(--hh-dau);stroke:var(--hh-vien-giot);stroke-width:1.2">
+<circle cx="11" cy="580" r="6"/>
+</g>
+<g style="fill:var(--hh-be-mat)">
+<rect x="64" y="574" width="12" height="12" rx="3"/>
+</g>
+<g style="fill:var(--hh-nuoc);fill-opacity:.28">
+<rect x="64" y="574" width="12" height="12" rx="3"/>
+</g>
+<g style="fill:none;stroke:var(--hh-nuoc);stroke-width:1.2">
+<rect x="64" y="574" width="12" height="12" rx="3"/>
+</g>
+<g style="fill:none;stroke:var(--sl-color-gray-2);stroke-width:1.2;stroke-dasharray:3 2.5">
+<circle cx="137" cy="580" r="6"/>
+</g>
+<g style="fill:none;stroke:var(--sl-color-white);stroke-width:1.6;stroke-linecap:round">
+<line x1="254" y1="584" x2="268" y2="576"/>
+</g>
+<g style="fill:var(--sl-color-gray-3);stroke:var(--sl-color-gray-3);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round">
+<line x1="8.8" y1="600" x2="25.2" y2="600"/><polygon points="30,600 24,603.3 24,596.7"/><polygon points="4,600 10,596.7 10,603.3"/>
+<line x1="4" y1="620" x2="25.2" y2="620"/><polygon points="30,620 24,623.3 24,616.7"/>
+</g>
+<g style="fill:var(--sl-color-gray-2);font-size:14px">
+<text x="22" y="585">dầu</text>
+<text x="82" y="585">nước</text>
+<text x="149" y="585">cỡ giọt cũ</text>
+<text x="274" y="585">tinh thể mỡ</text>
+<text x="36" y="605">có thể thuận nghịch (ô 1, 2)</text>
+<text x="36" y="625">không thuận nghịch (ô 3 đến 6)</text>
+</g>
+</svg>
