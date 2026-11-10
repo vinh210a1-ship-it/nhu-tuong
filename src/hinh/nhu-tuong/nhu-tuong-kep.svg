@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 336" width="360" height="336" role="img" aria-labelledby="hinh-nhu-tuong-kep-t hinh-nhu-tuong-kep-d">
+<title id="hinh-nhu-tuong-kep-t">Cấu trúc một giọt nhũ tương kép W/O/W</title>
+<desc id="hinh-nhu-tuong-kep-d">Một giọt dầu lớn (O) nằm trong pha nước bên ngoài (W₂). Bên trong giọt dầu có nhiều giọt nước nhỏ (W₁). Mặt trong, giữa W₁ và dầu, do chất nhũ hóa ưa dầu giữ, ví dụ PGPR. Mặt ngoài, giữa dầu và W₂, do chất nhũ hóa ưa nước giữ, ví dụ protein hoặc Tween.</desc>
+<!-- W₂: pha nước bên ngoài -->
+<g style="fill:var(--hh-be-mat)">
+<rect x="4" y="4" width="352" height="216" rx="10"/>
+</g>
+<g style="fill:var(--hh-nuoc);fill-opacity:.28">
+<rect x="4" y="4" width="352" height="216" rx="10"/>
+</g>
+<g style="fill:none;stroke:var(--hh-nuoc);stroke-width:1.2">
+<rect x="4" y="4" width="352" height="216" rx="10"/>
+</g>
+<!-- O: giọt dầu -->
+<g style="fill:var(--hh-dau);stroke:var(--hh-vien-giot);stroke-width:1.2">
+<circle cx="180" cy="112" r="98"/>
+</g>
+<!-- W₁: các giọt nước nhỏ nằm trong giọt dầu -->
+<g style="fill:var(--hh-be-mat)">
+<circle cx="146" cy="74" r="24"/>
+<circle cx="206" cy="62" r="16"/>
+<circle cx="232" cy="114" r="22"/>
+<circle cx="184" cy="156" r="26"/>
+<circle cx="126" cy="134" r="16"/>
+<circle cx="188" cy="104" r="12"/>
+</g>
+<g style="fill:var(--hh-nuoc);fill-opacity:.45;stroke:var(--hh-nuoc-o);stroke-width:1.2">
+<circle cx="146" cy="74" r="24"/>
+<circle cx="206" cy="62" r="16"/>
+<circle cx="232" cy="114" r="22"/>
+<circle cx="184" cy="156" r="26"/>
+<circle cx="126" cy="134" r="16"/>
+<circle cx="188" cy="104" r="12"/>
+</g>
+<!-- mặt ngoài O/W₂: chất nhũ hóa ưa nước (chấm tròn) -->
+<g style="fill:var(--sl-color-accent);stroke:var(--hh-be-mat);stroke-width:.6">
+<circle cx="278.5" cy="112" r="2.6"/>
+<circle cx="278" cy="121.5" r="2.6"/>
+<circle cx="276.7" cy="130.9" r="2.6"/>
+<circle cx="274.4" cy="140.2" r="2.6"/>
+<circle cx="271.2" cy="149.1" r="2.6"/>
+<circle cx="267.2" cy="157.8" r="2.6"/>
+<circle cx="262.4" cy="166" r="2.6"/>
+<circle cx="256.8" cy="173.7" r="2.6"/>
+<circle cx="250.5" cy="180.8" r="2.6"/>
+<circle cx="243.5" cy="187.3" r="2.6"/>
+<circle cx="236" cy="193.1" r="2.6"/>
+<circle cx="227.9" cy="198.1" r="2.6"/>
+<circle cx="219.3" cy="202.3" r="2.6"/>
+<circle cx="210.4" cy="205.7" r="2.6"/>
+<circle cx="201.3" cy="208.2" r="2.6"/>
+<circle cx="191.9" cy="209.8" r="2.6"/>
+<circle cx="182.4" cy="210.5" r="2.6"/>
+<circle cx="172.9" cy="210.2" r="2.6"/>
+<circle cx="163.4" cy="209.1" r="2.6"/>
+<circle cx="154.1" cy="207" r="2.6"/>
+<circle cx="145.1" cy="204.1" r="2.6"/>
+<circle cx="136.3" cy="200.3" r="2.6"/>
+<circle cx="128" cy="195.7" r="2.6"/>
+<circle cx="120.2" cy="190.3" r="2.6"/>
+<circle cx="112.9" cy="184.1" r="2.6"/>
+<circle cx="106.3" cy="177.3" r="2.6"/>
+<circle cx="100.3" cy="169.9" r="2.6"/>
+<circle cx="95.1" cy="161.9" r="2.6"/>
+<circle cx="90.7" cy="153.5" r="2.6"/>
+<circle cx="87.1" cy="144.7" r="2.6"/>
+<circle cx="84.4" cy="135.6" r="2.6"/>
+<circle cx="82.5" cy="126.2" r="2.6"/>
+<circle cx="81.6" cy="116.8" r="2.6"/>
+<circle cx="81.6" cy="107.2" r="2.6"/>
+<circle cx="82.5" cy="97.8" r="2.6"/>
+<circle cx="84.4" cy="88.4" r="2.6"/>
+<circle cx="87.1" cy="79.3" r="2.6"/>
+<circle cx="90.7" cy="70.5" r="2.6"/>
+<circle cx="95.1" cy="62.1" r="2.6"/>
+<circle cx="100.3" cy="54.1" r="2.6"/>
+<circle cx="106.3" cy="46.7" r="2.6"/>
+<circle cx="112.9" cy="39.9" r="2.6"/>
+<circle cx="120.2" cy="33.7" r="2.6"/>
+<circle cx="128" cy="28.3" r="2.6"/>
+<circle cx="136.3" cy="23.7" r="2.6"/>
+<circle cx="145.1" cy="19.9" r="2.6"/>
+<circle cx="154.1" cy="17" r="2.6"/>
+<circle cx="163.4" cy="14.9" r="2.6"/>
+<circle cx="172.9" cy="13.8" r="2.6"/>
+<circle cx="182.4" cy="13.5" r="2.6"/>
+<circle cx="191.9" cy="14.2" r="2.6"/>
+<circle cx="201.3" cy="15.8" r="2.6"/>
+<circle cx="210.4" cy="18.3" r="2.6"/>
+<circle cx="219.3" cy="21.7" r="2.6"/>
+<circle cx="227.9" cy="25.9" r="2.6"/>
+<circle cx="236" cy="30.9" r="2.6"/>
+<circle cx="243.5" cy="36.7" r="2.6"/>
+<circle cx="250.5" cy="43.2" r="2.6"/>
+<circle cx="256.8" cy="50.3" r="2.6"/>
+<circle cx="262.4" cy="58" r="2.6"/>
+<circle cx="267.2" cy="66.2" r="2.6"/>
+<circle cx="271.2" cy="74.9" r="2.6"/>
+<circle cx="274.4" cy="83.8" r="2.6"/>
+<circle cx="276.7" cy="93.1" r="2.6"/>
+<circle cx="278" cy="102.5" r="2.6"/>
+</g>
+<!-- mặt trong W₁/O: chất nhũ hóa ưa dầu (ô vuông nhỏ) -->
+<g style="fill:var(--hh-be-mat);stroke:var(--sl-color-white);stroke-width:1">
+<rect x="168.3" y="72" width="4" height="4" transform="rotate(0 170.3 74)"/>
+<rect x="166.7" y="80.8" width="4" height="4" transform="rotate(21.2 168.7 82.8)"/>
+<rect x="162" y="88.4" width="4" height="4" transform="rotate(42.4 164 90.4)"/>
+<rect x="154.8" y="93.8" width="4" height="4" transform="rotate(63.5 156.8 95.8)"/>
+<rect x="146.2" y="96.2" width="4" height="4" transform="rotate(84.7 148.2 98.2)"/>
+<rect x="137.3" y="95.4" width="4" height="4" transform="rotate(105.9 139.3 97.4)"/>
+<rect x="129.4" y="91.4" width="4" height="4" transform="rotate(127.1 131.4 93.4)"/>
+<rect x="123.3" y="84.8" width="4" height="4" transform="rotate(148.2 125.3 86.8)"/>
+<rect x="120.1" y="76.5" width="4" height="4" transform="rotate(169.4 122.1 78.5)"/>
+<rect x="120.1" y="67.5" width="4" height="4" transform="rotate(190.6 122.1 69.5)"/>
+<rect x="123.3" y="59.2" width="4" height="4" transform="rotate(211.8 125.3 61.2)"/>
+<rect x="129.4" y="52.6" width="4" height="4" transform="rotate(232.9 131.4 54.6)"/>
+<rect x="137.3" y="48.6" width="4" height="4" transform="rotate(254.1 139.3 50.6)"/>
+<rect x="146.2" y="47.8" width="4" height="4" transform="rotate(275.3 148.2 49.8)"/>
+<rect x="154.8" y="50.2" width="4" height="4" transform="rotate(296.5 156.8 52.2)"/>
+<rect x="162" y="55.6" width="4" height="4" transform="rotate(317.6 164 57.6)"/>
+<rect x="166.7" y="63.2" width="4" height="4" transform="rotate(338.8 168.7 65.2)"/>
+<rect x="220.3" y="60" width="4" height="4" transform="rotate(0 222.3 62)"/>
+<rect x="217.7" y="68.8" width="4" height="4" transform="rotate(32.7 219.7 70.8)"/>
+<rect x="210.8" y="74.8" width="4" height="4" transform="rotate(65.5 212.8 76.8)"/>
+<rect x="201.7" y="76.1" width="4" height="4" transform="rotate(98.2 203.7 78.1)"/>
+<rect x="193.3" y="72.3" width="4" height="4" transform="rotate(130.9 195.3 74.3)"/>
+<rect x="188.4" y="64.6" width="4" height="4" transform="rotate(163.6 190.4 66.6)"/>
+<rect x="188.4" y="55.4" width="4" height="4" transform="rotate(196.4 190.4 57.4)"/>
+<rect x="193.3" y="47.7" width="4" height="4" transform="rotate(229.1 195.3 49.7)"/>
+<rect x="201.7" y="43.9" width="4" height="4" transform="rotate(261.8 203.7 45.9)"/>
+<rect x="210.8" y="45.2" width="4" height="4" transform="rotate(294.5 212.8 47.2)"/>
+<rect x="217.7" y="51.2" width="4" height="4" transform="rotate(327.3 219.7 53.2)"/>
+<rect x="252.3" y="112" width="4" height="4" transform="rotate(0 254.3 114)"/>
+<rect x="250.6" y="120.5" width="4" height="4" transform="rotate(22.5 252.6 122.5)"/>
+<rect x="245.8" y="127.8" width="4" height="4" transform="rotate(45 247.8 129.8)"/>
+<rect x="238.5" y="132.6" width="4" height="4" transform="rotate(67.5 240.5 134.6)"/>
+<rect x="230" y="134.3" width="4" height="4" transform="rotate(90 232 136.3)"/>
+<rect x="221.5" y="132.6" width="4" height="4" transform="rotate(112.5 223.5 134.6)"/>
+<rect x="214.2" y="127.8" width="4" height="4" transform="rotate(135 216.2 129.8)"/>
+<rect x="209.4" y="120.5" width="4" height="4" transform="rotate(157.5 211.4 122.5)"/>
+<rect x="207.7" y="112" width="4" height="4" transform="rotate(180 209.7 114)"/>
+<rect x="209.4" y="103.5" width="4" height="4" transform="rotate(202.5 211.4 105.5)"/>
+<rect x="214.2" y="96.2" width="4" height="4" transform="rotate(225 216.2 98.2)"/>
+<rect x="221.5" y="91.4" width="4" height="4" transform="rotate(247.5 223.5 93.4)"/>
+<rect x="230" y="89.7" width="4" height="4" transform="rotate(270 232 91.7)"/>
+<rect x="238.5" y="91.4" width="4" height="4" transform="rotate(292.5 240.5 93.4)"/>
+<rect x="245.8" y="96.2" width="4" height="4" transform="rotate(315 247.8 98.2)"/>
+<rect x="250.6" y="103.5" width="4" height="4" transform="rotate(337.5 252.6 105.5)"/>
+<rect x="208.3" y="154" width="4" height="4" transform="rotate(0 210.3 156)"/>
+<rect x="206.7" y="163" width="4" height="4" transform="rotate(20 208.7 165)"/>
+<rect x="202.1" y="170.9" width="4" height="4" transform="rotate(40 204.1 172.9)"/>
+<rect x="195.2" y="176.8" width="4" height="4" transform="rotate(60 197.2 178.8)"/>
+<rect x="186.6" y="179.9" width="4" height="4" transform="rotate(80 188.6 181.9)"/>
+<rect x="177.4" y="179.9" width="4" height="4" transform="rotate(100 179.4 181.9)"/>
+<rect x="168.9" y="176.8" width="4" height="4" transform="rotate(120 170.9 178.8)"/>
+<rect x="161.9" y="170.9" width="4" height="4" transform="rotate(140 163.9 172.9)"/>
+<rect x="157.3" y="163" width="4" height="4" transform="rotate(160 159.3 165)"/>
+<rect x="155.7" y="154" width="4" height="4" transform="rotate(180 157.7 156)"/>
+<rect x="157.3" y="145" width="4" height="4" transform="rotate(200 159.3 147)"/>
+<rect x="161.9" y="137.1" width="4" height="4" transform="rotate(220 163.9 139.1)"/>
+<rect x="168.9" y="131.2" width="4" height="4" transform="rotate(240 170.9 133.2)"/>
+<rect x="177.4" y="128.1" width="4" height="4" transform="rotate(260 179.4 130.1)"/>
+<rect x="186.6" y="128.1" width="4" height="4" transform="rotate(280 188.6 130.1)"/>
+<rect x="195.1" y="131.2" width="4" height="4" transform="rotate(300 197.1 133.2)"/>
+<rect x="202.1" y="137.1" width="4" height="4" transform="rotate(320 204.1 139.1)"/>
+<rect x="206.7" y="145" width="4" height="4" transform="rotate(340 208.7 147)"/>
+<rect x="140.3" y="132" width="4" height="4" transform="rotate(0 142.3 134)"/>
+<rect x="137.7" y="140.8" width="4" height="4" transform="rotate(32.7 139.7 142.8)"/>
+<rect x="130.8" y="146.8" width="4" height="4" transform="rotate(65.5 132.8 148.8)"/>
+<rect x="121.7" y="148.1" width="4" height="4" transform="rotate(98.2 123.7 150.1)"/>
+<rect x="113.3" y="144.3" width="4" height="4" transform="rotate(130.9 115.3 146.3)"/>
+<rect x="108.4" y="136.6" width="4" height="4" transform="rotate(163.6 110.4 138.6)"/>
+<rect x="108.4" y="127.4" width="4" height="4" transform="rotate(196.4 110.4 129.4)"/>
+<rect x="113.3" y="119.7" width="4" height="4" transform="rotate(229.1 115.3 121.7)"/>
+<rect x="121.7" y="115.9" width="4" height="4" transform="rotate(261.8 123.7 117.9)"/>
+<rect x="130.8" y="117.2" width="4" height="4" transform="rotate(294.5 132.8 119.2)"/>
+<rect x="137.7" y="123.2" width="4" height="4" transform="rotate(327.3 139.7 125.2)"/>
+<rect x="198.3" y="102" width="4" height="4" transform="rotate(0 200.3 104)"/>
+<rect x="195.4" y="109.9" width="4" height="4" transform="rotate(40 197.4 111.9)"/>
+<rect x="188.1" y="114.1" width="4" height="4" transform="rotate(80 190.1 116.1)"/>
+<rect x="179.9" y="112.7" width="4" height="4" transform="rotate(120 181.9 114.7)"/>
+<rect x="174.4" y="106.2" width="4" height="4" transform="rotate(160 176.4 108.2)"/>
+<rect x="174.4" y="97.8" width="4" height="4" transform="rotate(200 176.4 99.8)"/>
+<rect x="179.9" y="91.3" width="4" height="4" transform="rotate(240 181.9 93.3)"/>
+<rect x="188.1" y="89.9" width="4" height="4" transform="rotate(280 190.1 91.9)"/>
+<rect x="195.4" y="94.1" width="4" height="4" transform="rotate(320 197.4 96.1)"/>
+</g>
+<g style="fill:var(--sl-color-white);font-size:14px;font-weight:700">
+<text x="146" y="79" text-anchor="middle">W₁</text>
+<text x="184" y="161" text-anchor="middle">W₁</text>
+<text x="118" y="104" text-anchor="middle">O</text>
+<text x="26" y="30" text-anchor="middle">W₂</text>
+</g>
+<!-- chú giải -->
+<g style="fill:var(--hh-be-mat);stroke:var(--sl-color-white);stroke-width:1">
+<rect x="7" y="237" width="6" height="6"/>
+</g>
+<g style="fill:var(--sl-color-accent);stroke:var(--hh-be-mat);stroke-width:.6">
+<circle cx="10" cy="279" r="3.2"/>
+</g>
+<g style="fill:var(--sl-color-white);font-size:14px">
+<text x="22" y="245" font-weight="700">Mặt trong W₁/O:</text>
+<text x="22" y="284" font-weight="700">Mặt ngoài O/W₂:</text>
+</g>
+<g style="fill:var(--sl-color-gray-2);font-size:14px">
+<text x="22" y="262">chất nhũ hóa ưa dầu, ví dụ PGPR</text>
+<text x="22" y="301">chất nhũ hóa ưa nước, ví dụ protein, Tween</text>
+<text x="4" y="326">W₁: giọt nước trong · O: giọt dầu · W₂: nước ngoài</text>
+</g>
+</svg>

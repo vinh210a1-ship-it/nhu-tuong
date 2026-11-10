@@ -43,6 +43,9 @@ Có đề xuất quy trình chuẩn hóa để đo kích thước, điện tích
 Hạt rắn (nano–micro) hấp phụ lên bề mặt dầu–nước và đóng vai chất nhũ hóa (emulsifier). Ổn định do **năng lượng giải hấp (desorption energy)** rất cao (xem 2.2) ⇒ hợp giọt (coalescence) rất khó.
 
 ### 2.2 Vật lý [N: @schroen2024; @li2022a]
+
+<!-- hinh: pickering-goc-tiep-xuc -->
+
 **Năng lượng giải hấp phụ** của hạt cầu:
 
 $$\Delta E=\pi r^2\gamma\,(1-|\cos\theta|)^2$$
@@ -95,6 +98,9 @@ Bao gói hoạt chất (curcumin, lutein, resveratrol), thay thế chất béo (
 ## 3. Nhũ tương kép (W/O/W, O/W/O)
 
 ### 3.1 Cấu trúc và động cơ
+
+<!-- hinh: nhu-tuong-kep -->
+
 Giọt nước nhỏ (W₁) trong giọt dầu (O) trong nước (W₂). Dùng để: giảm béo (nước chiếm chỗ dầu), bao gói hoạt chất tan nước (che vị, giải phóng có kiểm soát), tách thành phần phản ứng. **[N: @muschiolik2017]**
 
 ### 3.2 Cơ chế mất ổn định riêng của nhũ tương kép [N: @muschiolik2017; K]

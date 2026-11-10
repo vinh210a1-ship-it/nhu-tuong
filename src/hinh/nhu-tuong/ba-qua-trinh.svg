@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 460" width="360" height="460" role="img" aria-labelledby="hinh-ba-qua-trinh-t hinh-ba-qua-trinh-d">
+<title id="hinh-ba-qua-trinh-t">Ba quá trình quyết định cỡ giọt khi tạo nhũ tương</title>
+<desc id="hinh-ba-qua-trinh-d">Ba ô đọc từ trên xuống. Ô a: nhũ tương thô, giọt dầu còn to và không đều. Ô b, quá trình 1, vỡ giọt trong vùng ứng suất cao: ứng suất chảy làm giọt biến dạng, áp suất Laplace giữ giọt và chống lại biến dạng; giọt vỡ thành nhiều giọt mới có bề mặt trần. Ô c, cuộc đua trên bề mặt giọt mới. Bên trái: chất nhũ hóa hấp phụ kịp (quá trình 2), phủ kín bề mặt, giọt mới bền. Bên phải: hấp phụ không kịp, hai giọt trần va nhau và hợp lại thành giọt lớn hơn (quá trình 3).</desc>
+<!-- nền các ô (pha nước) -->
+<g style="fill:var(--hh-be-mat)">
+<rect x="4" y="26" width="352" height="62" rx="10"/>
+<rect x="4" y="136" width="352" height="124" rx="10"/>
+<rect x="4" y="292" width="170" height="96" rx="10"/>
+<rect x="186" y="292" width="170" height="96" rx="10"/>
+</g>
+<g style="fill:var(--hh-nuoc);fill-opacity:.28">
+<rect x="4" y="26" width="352" height="62" rx="10"/>
+<rect x="4" y="136" width="352" height="124" rx="10"/>
+<rect x="4" y="292" width="170" height="96" rx="10"/>
+<rect x="186" y="292" width="170" height="96" rx="10"/>
+</g>
+<g style="fill:none;stroke:var(--hh-nuoc);stroke-width:1.2">
+<rect x="4" y="26" width="352" height="62" rx="10"/>
+<rect x="4" y="136" width="352" height="124" rx="10"/>
+<rect x="4" y="292" width="170" height="96" rx="10"/>
+<rect x="186" y="292" width="170" height="96" rx="10"/>
+</g>
+<!-- giọt dầu -->
+<g style="fill:var(--hh-dau);stroke:var(--hh-vien-giot);stroke-width:1.2">
+<!-- a: nhũ tương thô, giọt to không đều -->
+<circle cx="44" cy="57" r="20"/>
+<circle cx="100" cy="54" r="13"/>
+<circle cx="154" cy="60" r="22"/>
+<circle cx="216" cy="54" r="15"/>
+<circle cx="266" cy="62" r="19"/>
+<circle cx="322" cy="54" r="17"/>
+<!-- b: giọt ban đầu, giọt bị kéo dãn (elip cùng thể tích), 8 giọt con cùng tổng thể tích -->
+<circle cx="26" cy="192" r="16"/>
+<ellipse cx="130" cy="192" rx="44" ry="9.6"/>
+<circle cx="240" cy="181" r="8"/>
+<circle cx="266" cy="183" r="8"/>
+<circle cx="292" cy="180" r="8"/>
+<circle cx="318" cy="183" r="8"/>
+<circle cx="344" cy="181" r="8"/>
+<circle cx="253" cy="202" r="8"/>
+<circle cx="279" cy="204" r="8"/>
+<circle cx="305" cy="201" r="8"/>
+<!-- c trái: trước và sau khi chất nhũ hóa phủ kín -->
+<circle cx="28" cy="322" r="11"/>
+<circle cx="50" cy="358" r="11"/>
+<circle cx="126" cy="322" r="11"/>
+<circle cx="150" cy="358" r="11"/>
+<!-- c phải: hai giọt trần va nhau, rồi thành một giọt lớn hơn (cùng thể tích) -->
+<circle cx="210" cy="340" r="11"/>
+<circle cx="237" cy="340" r="11"/>
+<circle cx="320" cy="340" r="13.9"/>
+</g>
+<!-- chất nhũ hóa (chấm): tự do trong nước hoặc đã bám lên bề mặt giọt -->
+<g style="fill:var(--sl-color-accent);stroke:var(--hh-be-mat);stroke-width:.6">
+<!-- c trái, trước: đang tới bề mặt -->
+<circle cx="17.3" cy="318.1" r="2.1"/>
+<circle cx="36.7" cy="314.7" r="2.1"/>
+<circle cx="59.9" cy="363.7" r="2.1"/>
+<circle cx="40.1" cy="363.7" r="2.1"/>
+<circle cx="56" cy="314" r="2.1"/>
+<circle cx="64" cy="332" r="2.1"/>
+<circle cx="16" cy="348" r="2.1"/>
+<circle cx="74" cy="374" r="2.1"/>
+<circle cx="24" cy="376" r="2.1"/>
+<circle cx="68" cy="306" r="2.1"/>
+<circle cx="12" cy="304" r="2.1"/>
+<circle cx="80" cy="350" r="2.1"/>
+<!-- c trái, sau: phủ kín -->
+<circle cx="137.4" cy="322" r="2.1"/>
+<circle cx="136.3" cy="326.9" r="2.1"/>
+<circle cx="133.1" cy="330.9" r="2.1"/>
+<circle cx="128.5" cy="333.1" r="2.1"/>
+<circle cx="123.5" cy="333.1" r="2.1"/>
+<circle cx="118.9" cy="330.9" r="2.1"/>
+<circle cx="115.7" cy="326.9" r="2.1"/>
+<circle cx="114.6" cy="322" r="2.1"/>
+<circle cx="115.7" cy="317.1" r="2.1"/>
+<circle cx="118.9" cy="313.1" r="2.1"/>
+<circle cx="123.5" cy="310.9" r="2.1"/>
+<circle cx="128.5" cy="310.9" r="2.1"/>
+<circle cx="133.1" cy="313.1" r="2.1"/>
+<circle cx="136.3" cy="317.1" r="2.1"/>
+<circle cx="161.2" cy="360.3" r="2.1"/>
+<circle cx="159.1" cy="364.9" r="2.1"/>
+<circle cx="155.2" cy="368.1" r="2.1"/>
+<circle cx="150.3" cy="369.4" r="2.1"/>
+<circle cx="145.3" cy="368.4" r="2.1"/>
+<circle cx="141.3" cy="365.3" r="2.1"/>
+<circle cx="139" cy="360.8" r="2.1"/>
+<circle cx="138.8" cy="355.7" r="2.1"/>
+<circle cx="140.9" cy="351.1" r="2.1"/>
+<circle cx="144.8" cy="347.9" r="2.1"/>
+<circle cx="149.7" cy="346.6" r="2.1"/>
+<circle cx="154.7" cy="347.6" r="2.1"/>
+<circle cx="158.7" cy="350.7" r="2.1"/>
+<circle cx="161" cy="355.2" r="2.1"/>
+<circle cx="104" cy="374" r="2.1"/>
+<circle cx="164" cy="306" r="2.1"/>
+<!-- c phải, trước: chất nhũ hóa còn ở xa, bề mặt trần -->
+<circle cx="196" cy="304" r="2.1"/>
+<circle cx="252" cy="306" r="2.1"/>
+<circle cx="194" cy="376" r="2.1"/>
+<circle cx="256" cy="374" r="2.1"/>
+<circle cx="224" cy="308" r="2.1"/>
+<circle cx="226" cy="376" r="2.1"/>
+<!-- c phải, sau: tới nơi thì hai giọt đã hợp -->
+<circle cx="333.4" cy="344.9" r="2.1"/>
+<circle cx="323.7" cy="353.8" r="2.1"/>
+<circle cx="310.8" cy="350.9" r="2.1"/>
+<circle cx="306" cy="337.5" r="2.1"/>
+<circle cx="315.1" cy="326.6" r="2.1"/>
+<circle cx="329.2" cy="329.1" r="2.1"/>
+<circle cx="290" cy="306" r="2.1"/>
+<circle cx="348" cy="376" r="2.1"/>
+</g>
+<!-- mũi tên diễn tiến -->
+<g style="fill:var(--sl-color-gray-3);stroke:var(--sl-color-gray-3);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round">
+<line x1="180" y1="92" x2="180" y2="105.2"/><polygon points="180,110 176.7,104 183.3,104"/>
+<line x1="50" y1="192" x2="73.2" y2="192"/><polygon points="78,192 72,195.3 72,188.7"/>
+<line x1="182" y1="192" x2="219.2" y2="192"/><polygon points="224,192 218,195.3 218,188.7"/>
+<line x1="76" y1="340" x2="97.2" y2="340"/><polygon points="102,340 96,343.3 96,336.7"/>
+<line x1="260" y1="340" x2="285.2" y2="340"/><polygon points="290,340 284,343.3 284,336.7"/>
+</g>
+<!-- từ giọt mới (ô b) rẽ hai nhánh xuống ô c -->
+<g style="fill:var(--sl-color-gray-3);stroke:var(--sl-color-gray-3);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round">
+<line x1="292" y1="262" x2="292" y2="283.2"/><polygon points="292,288 288.7,282 295.3,282"/>
+<polyline points="292,273 120,273" style="fill:none"/>
+<line x1="120" y1="273" x2="120" y2="283.2"/><polygon points="120,288 116.7,282 123.3,282"/>
+</g>
+<!-- b: ứng suất chảy kéo hai đầu giọt ra (trên), áp suất Laplace kéo giọt về hình cầu (dưới) -->
+<g style="fill:var(--hh-nuoc-o);stroke:var(--hh-nuoc-o);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round">
+<line x1="122" y1="172" x2="94.8" y2="172"/><polygon points="90,172 96,168.7 96,175.3"/>
+<line x1="138" y1="172" x2="165.2" y2="172"/><polygon points="170,172 164,175.3 164,168.7"/>
+</g>
+<g style="fill:var(--sl-color-white);stroke:var(--sl-color-white);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round">
+<line x1="90" y1="212" x2="117.2" y2="212"/><polygon points="122,212 116,215.3 116,208.7"/>
+<line x1="170" y1="212" x2="142.8" y2="212"/><polygon points="138,212 144,208.7 144,215.3"/>
+</g>
+<!-- c phải: hai giọt trần lao vào nhau -->
+<g style="fill:var(--sl-color-gray-3);stroke:var(--sl-color-gray-3);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round">
+<line x1="210" y1="318" x2="216.8" y2="318"/><polygon points="220,318 216,320.2 216,315.8"/>
+<line x1="237" y1="318" x2="230.2" y2="318"/><polygon points="227,318 231,315.8 231,320.2"/>
+</g>
+<!-- nhãn: (1), (2), (3) là ba quá trình theo đúng số trong sơ đồ chữ của bài -->
+<g style="fill:var(--sl-color-white);font-size:14px">
+<text x="4" y="16"><tspan font-weight="700">a. Nhũ tương thô</tspan> <tspan font-style="italic" style="fill:var(--sl-color-gray-2)">(pre-emulsion)</tspan></text>
+<text x="4" y="128" font-weight="700">b. (1) Vỡ giọt trong vùng ứng suất cao</text>
+<text x="4" y="284" font-weight="700">c. Cuộc đua</text>
+<text x="89" y="406" text-anchor="middle">(2) hấp phụ kịp:</text>
+<text x="89" y="423" font-weight="700" text-anchor="middle">giọt mới bền</text>
+<text x="271" y="406" text-anchor="middle">hấp phụ không kịp:</text>
+<text x="271" y="423" font-weight="700" text-anchor="middle">(3) hợp giọt lại</text>
+</g>
+<g style="fill:var(--sl-color-gray-2);font-size:14px">
+<text x="130" y="154" text-anchor="middle">ứng suất chảy làm giọt biến dạng</text>
+<text x="130" y="234" text-anchor="middle">áp suất Laplace</text>
+<text x="130" y="251" text-anchor="middle">giữ giọt, chống biến dạng</text>
+<text x="292" y="234" text-anchor="middle">giọt mới,</text>
+<text x="292" y="251" text-anchor="middle">bề mặt trần</text>
+</g>
+<!-- chú giải -->
+<g style="fill:var(--hh-dau);stroke:var(--hh-vien-giot);stroke-width:1.2">
+<circle cx="11" cy="446" r="6"/>
+</g>
+<g style="fill:var(--hh-be-mat)">
+<rect x="64" y="440" width="12" height="12" rx="3"/>
+</g>
+<g style="fill:var(--hh-nuoc);fill-opacity:.28">
+<rect x="64" y="440" width="12" height="12" rx="3"/>
+</g>
+<g style="fill:none;stroke:var(--hh-nuoc);stroke-width:1.2">
+<rect x="64" y="440" width="12" height="12" rx="3"/>
+</g>
+<g style="fill:var(--sl-color-accent);stroke:var(--hh-be-mat);stroke-width:.6">
+<circle cx="140" cy="446" r="2.8"/>
+</g>
+<g style="fill:var(--sl-color-gray-2);font-size:14px">
+<text x="22" y="451">dầu</text>
+<text x="82" y="451">nước</text>
+<text x="149" y="451">chất nhũ hóa</text>
+</g>
+</svg>

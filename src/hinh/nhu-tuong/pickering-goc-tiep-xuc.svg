@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 328" width="360" height="328" role="img" aria-labelledby="hinh-pickering-goc-tiep-xuc-t hinh-pickering-goc-tiep-xuc-d">
+<title id="hinh-pickering-goc-tiep-xuc-t">Hạt Pickering trên bề mặt dầu–nước và góc tiếp xúc θ</title>
+<desc id="hinh-pickering-goc-tiep-xuc-d">Ba ô xếp dọc, mỗi ô có dầu ở trên, nước ở dưới và một hạt rắn nằm trên mặt phân cách. Góc tiếp xúc θ đo trong pha nước. Ô trên: θ nhỏ hơn 90 độ, hạt nằm phần lớn trong nước, thuận lợi cho nhũ tương O/W. Ô giữa: θ xấp xỉ 90 độ, hạt nằm nửa trong dầu nửa trong nước, năng lượng giải hấp ΔE lớn nhất nên hạt bám chặt nhất. Ô dưới: θ từ 90 đến 180 độ, hạt nằm phần lớn trong dầu, thuận lợi cho nhũ tương W/O.</desc>
+<!-- mỗi ô: dầu ở trên, nước ở dưới, một hạt rắn nằm trên mặt phân cách -->
+<g style="fill:var(--hh-be-mat)">
+<rect x="4" y="28" width="170" height="92" rx="10"/>
+<rect x="4" y="130" width="170" height="92" rx="10"/>
+<rect x="4" y="232" width="170" height="92" rx="10"/>
+</g>
+<g style="fill:var(--hh-dau);fill-opacity:.45">
+<path d="M4,74 V38 a10,10 0 0 1 10,-10 H164 a10,10 0 0 1 10,10 V74 Z"/>
+<path d="M4,176 V140 a10,10 0 0 1 10,-10 H164 a10,10 0 0 1 10,10 V176 Z"/>
+<path d="M4,278 V242 a10,10 0 0 1 10,-10 H164 a10,10 0 0 1 10,10 V278 Z"/>
+</g>
+<g style="fill:var(--hh-nuoc);fill-opacity:.28">
+<path d="M4,74 V110 a10,10 0 0 0 10,10 H164 a10,10 0 0 0 10,-10 V74 Z"/>
+<path d="M4,176 V212 a10,10 0 0 0 10,10 H164 a10,10 0 0 0 10,-10 V176 Z"/>
+<path d="M4,278 V314 a10,10 0 0 0 10,10 H164 a10,10 0 0 0 10,-10 V278 Z"/>
+</g>
+<g style="fill:none;stroke:var(--sl-color-gray-3);stroke-width:1.2">
+<rect x="4" y="28" width="170" height="92" rx="10"/>
+<rect x="4" y="130" width="170" height="92" rx="10"/>
+<rect x="4" y="232" width="170" height="92" rx="10"/>
+</g>
+<!-- mặt phân cách dầu–nước -->
+<g style="stroke:var(--sl-color-white);stroke-width:1.4">
+<line x1="4" y1="74" x2="174" y2="74"/>
+<line x1="4" y1="176" x2="174" y2="176"/>
+<line x1="4" y1="278" x2="174" y2="278"/>
+</g>
+<!-- hạt: tâm lệch khỏi mặt phân cách một đoạn R·cos θ về phía nước -->
+<g style="fill:var(--sl-color-gray-5);stroke:var(--sl-color-gray-3);stroke-width:1.2">
+<circle cx="100" cy="88.1" r="22"/>
+<circle cx="100" cy="176" r="22"/>
+<circle cx="100" cy="263.9" r="22"/>
+</g>
+<!-- góc tiếp xúc θ: đo trong pha nước, giữa mặt phân cách và tiếp tuyến với hạt tại điểm tiếp xúc -->
+<g style="fill:none;stroke:var(--sl-color-white);stroke-width:1.2;stroke-linecap:round">
+<line x1="116.9" y1="74" x2="131" y2="90.9"/>
+<path d="M128.9,74 A12,12 0 0 1 124.6,83.2"/>
+<line x1="122" y1="176" x2="122" y2="198"/>
+<path d="M134,176 A12,12 0 0 1 122,188"/>
+<line x1="116.9" y1="278" x2="102.7" y2="294.9"/>
+<path d="M128.9,278 A12,12 0 0 1 109.1,287.2"/>
+</g>
+<g style="fill:var(--sl-color-white);font-size:14px">
+<text x="4" y="16"><tspan font-style="italic">θ</tspan>: góc tiếp xúc, đo trong pha nước</text>
+<text x="137.7" y="88.7" text-anchor="middle" font-style="italic">θ</text>
+<text x="100" y="93.1" text-anchor="middle">hạt</text>
+<text x="186" y="68" font-weight="700">θ &lt; 90°</text>
+<text x="138.3" y="197.3" text-anchor="middle" font-style="italic">θ</text>
+<text x="100" y="181" text-anchor="middle">hạt</text>
+<text x="186" y="160" font-weight="700">θ ≈ 90°</text>
+<text x="126.6" y="303.8" text-anchor="middle" font-style="italic">θ</text>
+<text x="100" y="268.9" text-anchor="middle">hạt</text>
+<text x="186" y="272" font-weight="700">90° &lt; θ &lt; 180°</text>
+</g>
+<g style="fill:var(--sl-color-gray-2);font-size:14px">
+<text x="12" y="48">dầu</text>
+<text x="12" y="110">nước</text>
+<text x="186" y="86">thuận lợi cho O/W</text>
+<text x="12" y="150">dầu</text>
+<text x="12" y="212">nước</text>
+<text x="186" y="178">hạt bám chặt nhất</text>
+<text x="186" y="196">(ΔE lớn nhất)</text>
+<text x="12" y="252">dầu</text>
+<text x="12" y="314">nước</text>
+<text x="186" y="290">thuận lợi cho W/O</text>
+</g>
+</svg>
