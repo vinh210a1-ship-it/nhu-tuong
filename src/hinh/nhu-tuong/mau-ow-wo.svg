@@ -1,0 +1,32 @@
+<svg class="hinh" viewBox="0 0 360 356" width="360" role="img" aria-labelledby="t d">
+<title id="t">Hai loại nhũ tương đơn giản: dầu trong nước và nước trong dầu</title>
+<desc id="d">Hai khung xếp dọc. Khung trên: nền là nước, các giọt tròn là dầu (O/W). Khung dưới: nền là dầu, các giọt tròn là nước (W/O).</desc>
+<text class="h-chu" x="10" y="18" font-weight="600">Dầu trong nước (oil-in-water, O/W)</text>
+<rect class="h-nuoc" x="10" y="28" width="340" height="96" rx="8"/>
+<circle class="h-giot-dau" cx="48" cy="58" r="13"/>
+<circle class="h-giot-dau" cx="120" cy="98" r="9"/>
+<circle class="h-giot-dau" cx="95" cy="66" r="7"/>
+<circle class="h-giot-dau" cx="180" cy="64" r="15"/>
+<circle class="h-giot-dau" cx="230" cy="100" r="11"/>
+<circle class="h-giot-dau" cx="272" cy="62" r="8"/>
+<circle class="h-giot-dau" cx="310" cy="96" r="14"/>
+<circle class="h-giot-dau" cx="160" cy="104" r="6"/>
+<circle class="h-giot-dau" cx="335" cy="68" r="6"/>
+<circle class="h-giot-dau" cx="30" cy="100" r="8"/>
+<text class="h-chu-mo" x="10" y="146">Giọt: dầu (pha phân tán)</text>
+<text class="h-chu-mo" x="10" y="166">Nền: nước (pha liên tục)</text>
+<text class="h-chu" x="10" y="194" font-weight="600">Nước trong dầu (water-in-oil, W/O)</text>
+<rect class="h-dau-nen" x="10" y="204" width="340" height="96" rx="8"/>
+<circle class="h-giot-nuoc" cx="48" cy="234" r="13"/>
+<circle class="h-giot-nuoc" cx="120" cy="274" r="9"/>
+<circle class="h-giot-nuoc" cx="95" cy="242" r="7"/>
+<circle class="h-giot-nuoc" cx="180" cy="240" r="15"/>
+<circle class="h-giot-nuoc" cx="230" cy="276" r="11"/>
+<circle class="h-giot-nuoc" cx="272" cy="238" r="8"/>
+<circle class="h-giot-nuoc" cx="310" cy="272" r="14"/>
+<circle class="h-giot-nuoc" cx="160" cy="280" r="6"/>
+<circle class="h-giot-nuoc" cx="335" cy="244" r="6"/>
+<circle class="h-giot-nuoc" cx="30" cy="276" r="8"/>
+<text class="h-chu-mo" x="10" y="322">Giọt: nước (pha phân tán)</text>
+<text class="h-chu-mo" x="10" y="342">Nền: dầu (pha liên tục)</text>
+</svg>

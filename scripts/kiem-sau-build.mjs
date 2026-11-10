@@ -331,6 +331,38 @@ for (const [p, h] of Object.entries(noiDung)) {
 }
 
 // ---- báo kết quả
+// hình cơ chế (T1) và đồ thị (T2): số <figure> trong dist/ khớp số dòng <!-- hinh: --> ở bài gốc, mỗi hình có chú thích, id không trùng; index.json đồ thị khớp thư mục
+const loiHinh = [];
+{
+	const soDong = {};
+	for (const khu of fs.readdirSync(path.join(GOC, 'noi-dung'), { withFileTypes: true }).filter((d) => d.isDirectory()))
+		for (const f of fs.readdirSync(path.join(GOC, 'noi-dung', khu.name)).filter((x) => x.endsWith('.md'))) {
+			const n = [...fs.readFileSync(path.join(GOC, 'noi-dung', khu.name, f), 'utf8').matchAll(/^<!--\s*hinh:\s*([a-z0-9-]+)\s*-->/gm)].length;
+			if (n) soDong[khu.name] = (soDong[khu.name] || 0) + n;
+		}
+	const tong = Object.values(soDong).reduce((a, b) => a + b, 0);
+	let soFigure = 0;
+	for (const [p, h] of Object.entries(noiDung)) {
+		const fig = [...h.matchAll(/<figure class="hinh-co-che[^>]*>([\s\S]*?)<\/figure>/g)];
+		soFigure += fig.length;
+		for (const m of fig) {
+			if (!/<svg\b[^>]*viewBox="/.test(m[1]) || !/<figcaption>\s*<p>/.test(m[1])) loiHinh.push(`${tenTrang(p)}: hình thiếu <svg viewBox> hoặc chú thích <figcaption><p>`);
+			if (/\[(?:N|T|K|G)[:\];]/.test(m[1].replace(/<svg[\s\S]*?<\/svg>/, ''))) loiHinh.push(`${tenTrang(p)}: nhãn tin cậy trong chú thích chưa thành huy hiệu`);
+		}
+		if (fig.length) {
+			const ids = [...h.matchAll(/\sid="(h-[^"]+)"/g)].map((m) => m[1]);
+			if (new Set(ids).size !== ids.length) loiHinh.push(`${tenTrang(p)}: id trong hình bị trùng`);
+		}
+	}
+	if (soFigure !== tong) loiHinh.push(`số hình trong dist/ (${soFigure}) khác số dòng <!-- hinh: --> trong noi-dung/ (${tong})`);
+	for (const p of Object.keys(noiDung)) if (/<!--\s*hinh:/.test(noiDung[p])) loiHinh.push(`${tenTrang(p)}: còn sót dòng <!-- hinh: -->`);
+	const ds = fs.existsSync(path.join(DIST, 'do-thi/index.json')) ? JSON.parse(fs.readFileSync(path.join(DIST, 'do-thi/index.json'), 'utf8')) : null;
+	const dsThuMuc = fs.readdirSync(path.join(GOC, 'public/do-thi')).filter((f) => f.endsWith('.js')).map((f) => f.slice(0, -3)).sort();
+	if (!ds || JSON.stringify(ds) !== JSON.stringify(dsThuMuc)) loiHinh.push('dist/do-thi/index.json thiếu hoặc không khớp public/do-thi/*.js (chạy lại npm run build)');
+	for (const id of dsThuMuc) if (!fs.existsSync(path.join(DIST, 'do-thi', `${id}.js`))) loiHinh.push(`dist/do-thi/${id}.js không có`);
+	var soHinh = soFigure, soDoThi = dsThuMuc.length;
+}
+
 console.log(`kiem-sau-build: ${trang.length} trang, ${soLienKet} liên kết nội bộ, base "${BASE}"`);
 for (const [nhan, ds] of Object.entries(canhBao)) console.log(`  ghi chú (không chặn): ${nhan} còn ở ${ds.length} trang, vd ${ds[0]}`);
 if (loiCam.length) {
@@ -350,8 +382,12 @@ if (loiRnd.length) {
 	console.log(`\nTRANG "SỐ LIỆU R&D": ${loiRnd.length} lỗi`);
 	for (const l of loiRnd.slice(0, 40)) console.log('  - ' + l);
 }
-if (loiCam.length || nhomHong.length || loiThuNgay.length || loiRnd.length) {
+if (loiHinh.length) {
+	console.log(`\nHÌNH CƠ CHẾ / ĐỒ THỊ: ${loiHinh.length} lỗi`);
+	for (const l of loiHinh.slice(0, 40)) console.log('  - ' + l);
+}
+if (loiCam.length || nhomHong.length || loiThuNgay.length || loiRnd.length || loiHinh.length) {
 	console.log('\nkiem-sau-build: KHÔNG ĐẠT');
 	process.exit(1);
 }
-console.log(`kiem-sau-build: đạt (0 chuỗi cấm, 0 liên kết nội bộ hỏng, 8/8 bài có hộp "Thử ngay", ${Object.keys(LIEN_QUAN).length} bài có hộp "Liên quan ở khu khác" (${Object.values(LIEN_QUAN).reduce((t, d) => t + d.length, 0)} liên kết, ${soLkKhuKhac} đã kiểm có đủ hai chiều trong dist/; ${bai0LienKet.length} bài chưa có liên kết thân bài tới bài khác, chỉ báo), mọi #nv-… khớp nhiệm vụ, trang Số liệu R&D đủ 30 + 7 + 16 dòng, 8/8 bài có Tự kiểm tra, mức độ và Cần biết trước; khu đã chuẩn hóa: ${KHU_CHUAN.join(', ') || 'chưa có'})`);
+console.log(`kiem-sau-build: đạt (0 chuỗi cấm, 0 liên kết nội bộ hỏng, 8/8 bài có hộp "Thử ngay", ${Object.keys(LIEN_QUAN).length} bài có hộp "Liên quan ở khu khác" (${Object.values(LIEN_QUAN).reduce((t, d) => t + d.length, 0)} liên kết, ${soLkKhuKhac} đã kiểm có đủ hai chiều trong dist/; ${bai0LienKet.length} bài chưa có liên kết thân bài tới bài khác, chỉ báo), mọi #nv-… khớp nhiệm vụ, trang Số liệu R&D đủ 30 + 7 + 16 dòng, ${soHinh} hình cơ chế và ${soDoThi} đồ thị đúng quy cách, 8/8 bài có Tự kiểm tra, mức độ và Cần biết trước; khu đã chuẩn hóa: ${KHU_CHUAN.join(', ') || 'chưa có'})`);

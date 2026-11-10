@@ -18,6 +18,8 @@ nguon_goc: tai-lieu-nhu-tuong/01-nen-tang-nhu-tuong.md
 
 ## 1. Định nghĩa và phân loại
 
+<!-- hinh: mau-ow-wo -->
+
 **Nhũ tương** là hệ phân tán của một chất lỏng (pha phân tán/pha nội) dưới dạng giọt trong một chất lỏng khác không trộn lẫn (pha liên tục/pha ngoại). Trong thực phẩm, hai chất lỏng gần như luôn là dầu (lipid) và nước (dung dịch nước). **[K]**
 
 | Loại | Cấu trúc | Ví dụ thực phẩm |

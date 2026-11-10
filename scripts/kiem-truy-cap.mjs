@@ -20,6 +20,7 @@ const CHAT = process.argv.includes('--chat');
 const TRANG = [
 	['trang chủ', `${BASE}/`],
 	['bài (mất ổn định)', `${BASE}/nhu-tuong/mat-on-dinh/`],
+	['bài (nền tảng, có hình cơ chế)', `${BASE}/nhu-tuong/nen-tang/`],
 	['tra cứu', `${BASE}/tra-cuu/`],
 	['bài (chất nhũ hóa)', `${BASE}/chat-nhu-hoa/nen-tang-vat-ly-hoa-be-mat/`],
 	['bài (thực phẩm)', `${BASE}/thuc-pham/bao-quan-hoat-do-nuoc-va-han-su-dung/`],
@@ -79,6 +80,8 @@ for (const chuDe of ['light', 'dark']) {
 			await trang.goto(GOC_URL + duongDan, { waitUntil: 'load' });
 			await trang.evaluate((t) => (document.documentElement.dataset.theme = t), chuDe);
 			await trang.waitForTimeout(500); // chờ script gắn thẻ (công thức, tra cứu) chạy xong
+				await trang.evaluate(() => document.querySelectorAll('.dt-bo-qua').forEach((b) => b.click())); // hiện đồ thị (đang chờ "đoán trước") để axe quét cả đồ thị
+				await trang.waitForTimeout(100);
 			await trang.addScriptTag({ content: axeSrc });
 			const kq = await trang.evaluate(async (the) => {
 				// eslint-disable-next-line no-undef

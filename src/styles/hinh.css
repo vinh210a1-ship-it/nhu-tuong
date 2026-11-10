@@ -1,0 +1,17 @@
+/* Hình cơ chế (gói T1): nguồn ở src/hinh/<khu>/<tên>.svg và <tên>.md (chú thích); máy in thay dòng <!-- hinh: tên --> trong bài. */
+.hinh-co-che { margin: 1.5rem 0; padding: 0.75rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.5rem; background: var(--sl-color-gray-7, var(--sl-color-black)); }
+.hinh-co-che .hinh-svg { text-align: center; }
+.hinh-co-che .hinh-svg svg { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+.hinh-co-che figcaption { margin-top: 0.6rem; font-size: 0.9rem; color: var(--sl-color-gray-2); }
+.hinh-co-che figcaption p { margin: 0 0 0.4rem !important; }
+.hinh-co-che figcaption p:last-child { margin-bottom: 0 !important; }
+/* màu và nét của hình: chỉ dùng các lớp dưới đây hoặc biến --hh-* / --sl-color-* */
+.hinh-svg .h-chu { fill: var(--sl-color-white); font-size: 14px; font-family: inherit; }
+.hinh-svg .h-chu-mo { fill: var(--sl-color-gray-2); font-size: 14px; font-family: inherit; }
+.hinh-svg .h-khung { fill: none; stroke: var(--sl-color-gray-4); stroke-width: 1.2; }
+.hinh-svg .h-nuoc { fill: var(--hh-nuoc); fill-opacity: 0.3; stroke: var(--hh-nuoc-o); stroke-width: 1.2; }
+.hinh-svg .h-dau-nen { fill: var(--hh-dau); fill-opacity: 0.28; stroke: var(--hh-vien-giot); stroke-width: 1.2; }
+.hinh-svg .h-giot-dau { fill: var(--hh-dau); stroke: var(--hh-vien-giot); stroke-width: 1.5; }
+.hinh-svg .h-giot-nuoc { fill: var(--hh-nuoc-o); stroke: var(--sl-color-white); stroke-width: 1.2; }
+.hinh-svg .h-mui-ten { stroke: var(--sl-color-gray-2); stroke-width: 1.6; fill: none; }
+.hinh-svg .h-dau-mui { fill: var(--sl-color-gray-2); }

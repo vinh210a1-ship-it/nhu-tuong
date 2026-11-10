@@ -1,0 +1,37 @@
+/* Đồ thị của máy tính (gói T2): khung chung ở public/do-thi.js. Chỉ dùng biến màu có sẵn, nên tự đổi theo nền sáng/tối. */
+.do-thi { margin-top: 1rem; }
+.dt-doan { padding: 0.75rem; border: 1px dashed var(--sl-color-gray-4); border-radius: 0.4rem; margin-bottom: 0.75rem; }
+.dt-doan .dt-hoi { margin: 0 0 0.5rem !important; font-size: 0.95rem; }
+.dt-lua { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.dt-nut {
+	padding: 0.4rem 0.75rem; font: inherit; font-size: 0.9rem; cursor: pointer;
+	border: 1px solid var(--sl-color-gray-4); border-radius: 0.4rem;
+	background: var(--sl-color-black); color: var(--sl-color-white);
+}
+.dt-nut:hover:not(:disabled) { border-color: var(--sl-color-accent); }
+.dt-nut:disabled { cursor: default; opacity: 1; }
+.dt-nut.dt-bo-qua { border-style: dashed; color: var(--sl-color-gray-2); }
+.dt-nut.dt-dung { border-color: var(--hh-thuong-hieu-chu, var(--sl-color-accent)); border-width: 2px; }
+.dt-nut.dt-sai { text-decoration: line-through; color: var(--sl-color-gray-3); }
+.dt-doan .dt-dap { margin: 0.5rem 0 0 !important; font-size: 0.9rem; color: var(--sl-color-gray-2); }
+.dt-dap:empty { display: none; }
+.dt-hinh[hidden] { display: none; }
+.dt-khung { text-align: center; }
+.dt-khung svg { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+.dt-chu-thich { margin: 0.5rem 0 0 !important; font-size: 0.85rem; color: var(--sl-color-gray-2); }
+.dt-bang { margin-top: 0.5rem; font-size: 0.85rem; }
+.dt-bang summary { cursor: pointer; font-weight: 600; }
+.dt-bang-trong { overflow-x: auto; }
+.dt-bang table { margin: 0.5rem 0 0 !important; font-size: 0.85rem; }
+/* nét vẽ */
+.dt-svg .dt-truc { stroke: var(--sl-color-gray-3); stroke-width: 1.2; fill: none; }
+.dt-svg .dt-luoi { stroke: var(--sl-color-gray-5); stroke-width: 0.7; fill: none; }
+.dt-svg .dt-duong { stroke: var(--sl-color-accent); stroke-width: 2.5; fill: none; stroke-linejoin: round; }
+.dt-svg .dt-duong-phu { stroke: var(--sl-color-gray-3); stroke-width: 1.8; stroke-dasharray: 5 4; fill: none; }
+.dt-svg .dt-dong { stroke: var(--hh-ho-phach); stroke-width: 1.2; stroke-dasharray: 4 3; fill: none; }
+.dt-svg .dt-diem { fill: var(--hh-ho-phach); stroke: var(--sl-color-white); stroke-width: 1.5; }
+.dt-svg .dt-moc { fill: var(--sl-color-white); stroke: var(--sl-color-accent); stroke-width: 1.5; }
+.dt-svg .dt-ngoai { fill: var(--sl-color-gray-5); fill-opacity: 0.45; }
+.dt-svg .dt-chu { fill: var(--sl-color-gray-2); font-size: 14px; font-family: inherit; }
+.dt-svg .dt-chu-nho { font-size: 14px; }
+.dt-svg .dt-chu-dam { fill: var(--sl-color-white); font-weight: 600; }

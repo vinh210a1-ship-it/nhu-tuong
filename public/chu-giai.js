@@ -2,7 +2,7 @@
 // Dữ liệu từ Từ điển (public/chu-giai.json). Mỗi thuật ngữ chỉ được chú giải ở lần xuất hiện đầu tiên của trang.
 // Mô tả mang nhãn của mục từ điển (đa số là K: gợi ý, chưa đối chiếu) và tooltip ghi rõ nhãn đó.
 const BASE = new URL('.', import.meta.url).pathname;
-const BO_QUA = 'a,h1,h2,h3,h4,h5,h6,code,pre,kbd,button,summary,input,textarea,select,script,style,.katex,.nhan,.nhan-cum,.may-tinh,.tk-bang,.td-hang,.pl-goc,.chu-giai,.bao-loi,.trich-dan-trang,.sl-anchor-link,[data-khong-chu-giai]';
+const BO_QUA = 'a,svg,h1,h2,h3,h4,h5,h6,code,pre,kbd,button,summary,input,textarea,select,script,style,.katex,.nhan,.nhan-cum,.may-tinh,.tk-bang,.td-hang,.pl-goc,.chu-giai,.bao-loi,.trich-dan-trang,.sl-anchor-link,[data-khong-chu-giai]';
 const TOI_DA = 25;
 const NHAN = { N: 'có nguồn', T: 'tính minh họa', K: 'sách nền, chưa đối chiếu', G: 'suy luận' };
 

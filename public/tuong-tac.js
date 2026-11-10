@@ -295,7 +295,7 @@ function vungCuonBanPhim() {
 			const lan = e.scrollWidth - e.clientWidth;
 			// Công thức trong dòng chỉ lấn 1–8 px là do phần chữ nghiêng của KaTeX, không cuộn được thật: bỏ vùng cuộn bằng CSS, không thêm điểm dừng Tab
 			if (!bang && !khoi) e.classList.toggle('katex-nhe', lan > 0 && lan <= 8);
-			if (lan > 8) {
+			if (lan > (bang || khoi ? 0 : 8)) {
 				if (!e.hasAttribute('tabindex')) e.setAttribute('tabindex', '0');
 				e.setAttribute('aria-label', bang ? 'Bảng, cuộn ngang để xem hết' : 'Công thức, cuộn ngang để xem hết');
 				if (!bang) e.setAttribute('role', khoi ? 'region' : 'group'); // bảng giữ vai trò bảng để trình đọc màn hình vẫn đọc theo hàng, cột
