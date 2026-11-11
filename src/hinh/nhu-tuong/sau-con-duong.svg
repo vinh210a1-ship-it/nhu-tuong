@@ -11,7 +11,7 @@
 <rect x="186" y="392" width="170" height="96" rx="10"/>
 <circle cx="180" cy="250" r="40"/>
 </g>
-<g style="fill:var(--hh-nuoc);fill-opacity:.28">
+<g style="fill:var(--h-nuoc);fill-opacity:.28">
 <rect x="4" y="78" width="170" height="96" rx="10"/>
 <rect x="186" y="78" width="170" height="96" rx="10"/>
 <rect x="256" y="202" width="100" height="96" rx="10"/>
@@ -19,10 +19,10 @@
 <rect x="4" y="392" width="170" height="96" rx="10"/>
 <circle cx="180" cy="250" r="40"/>
 </g>
-<g style="fill:var(--hh-dau);fill-opacity:.45">
+<g style="fill:var(--h-dau);fill-opacity:.45">
 <rect x="4" y="202" width="100" height="96" rx="10"/>
 </g>
-<g style="fill:none;stroke:var(--hh-nuoc);stroke-width:1.2">
+<g style="fill:none;stroke:var(--h-nuoc);stroke-width:1.2">
 <rect x="4" y="78" width="170" height="96" rx="10"/>
 <rect x="186" y="78" width="170" height="96" rx="10"/>
 <rect x="256" y="202" width="100" height="96" rx="10"/>
@@ -30,7 +30,7 @@
 <rect x="4" y="392" width="170" height="96" rx="10"/>
 <circle cx="180" cy="250" r="40"/>
 </g>
-<g style="fill:none;stroke:var(--hh-vien-giot);stroke-width:1.2">
+<g style="fill:none;stroke:var(--h-dau-vien);stroke-width:1.2">
 <rect x="4" y="202" width="100" height="96" rx="10"/>
 </g>
 <!-- bóng nét đứt: vị trí và cỡ giọt TRƯỚC khi đổi (ô 3 và ô 5) -->
@@ -43,7 +43,7 @@
 <circle cx="128" cy="440" r="12"/>
 </g>
 <!-- giọt dầu -->
-<g style="fill:var(--hh-dau);stroke:var(--hh-vien-giot);stroke-width:1.2">
+<g style="fill:var(--h-dau);stroke:var(--h-dau-vien);stroke-width:1.2">
 <!-- giữa -->
 <circle cx="180" cy="250" r="7.5"/>
 <circle cx="204" cy="246" r="7.5"/>
@@ -84,7 +84,7 @@
 <circle cx="322" cy="440" r="13"/>
 </g>
 <!-- 4: tô lại phần ruột để xóa viền ở chỗ hai giọt dính nhau (cổ nối) -->
-<g style="fill:var(--hh-dau)">
+<g style="fill:var(--h-dau)">
 <circle cx="226" cy="444" r="12.4"/>
 <circle cx="248" cy="436" r="12.4"/>
 <circle cx="271" cy="446" r="12.4"/>
@@ -107,7 +107,7 @@
 <circle cx="70" cy="278" r="7.5"/>
 <circle cx="22" cy="282" r="7.5"/>
 </g>
-<g style="fill:var(--hh-nuoc);fill-opacity:.45;stroke:var(--hh-nuoc-o);stroke-width:1.2">
+<g style="fill:var(--h-nuoc);fill-opacity:.45;stroke:var(--h-nuoc-vien);stroke-width:1.2">
 <circle cx="26" cy="224" r="7.5"/>
 <circle cx="64" cy="220" r="7.5"/>
 <circle cx="84" cy="248" r="7.5"/>
@@ -184,16 +184,16 @@
 <text x="356" y="557" text-anchor="end">màng, cụm giữ hình</text>
 </g>
 <!-- chú giải -->
-<g style="fill:var(--hh-dau);stroke:var(--hh-vien-giot);stroke-width:1.2">
+<g style="fill:var(--h-dau);stroke:var(--h-dau-vien);stroke-width:1.2">
 <circle cx="11" cy="580" r="6"/>
 </g>
 <g style="fill:var(--hh-be-mat)">
 <rect x="64" y="574" width="12" height="12" rx="3"/>
 </g>
-<g style="fill:var(--hh-nuoc);fill-opacity:.28">
+<g style="fill:var(--h-nuoc);fill-opacity:.28">
 <rect x="64" y="574" width="12" height="12" rx="3"/>
 </g>
-<g style="fill:none;stroke:var(--hh-nuoc);stroke-width:1.2">
+<g style="fill:none;stroke:var(--h-nuoc);stroke-width:1.2">
 <rect x="64" y="574" width="12" height="12" rx="3"/>
 </g>
 <g style="fill:none;stroke:var(--sl-color-gray-2);stroke-width:1.2;stroke-dasharray:3 2.5">

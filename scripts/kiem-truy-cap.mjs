@@ -90,6 +90,33 @@ for (const chuDe of ['light', 'dark']) {
 				const r = await axe.run(document, { runOnly: { type: 'tag', values: the }, resultTypes: ['violations'] });
 				return r.violations.map((v) => ({ id: v.id, impact: v.impact, soNut: v.nodes.length, mau: v.nodes.slice(0, 3).map((n) => `${n.target.join(' ')} — ${(n.any[0]?.message || n.failureSummary || '').split('\n')[0]}`) }));
 			}, THE_AXE);
+			// bộ màu chung của hình (src/styles/hinh.css): mỗi token --h-* phải đạt tương phản ≥ 3:1 với nền hình (WCAG 1.4.11 cho thành phần đồ họa)
+			if (rong === 1280) {
+				const mauKem = await trang.evaluate(() => {
+					const f = document.querySelector('.hinh-co-che');
+					if (!f) return null;
+					const hex = (c) => {
+						c = c.trim();
+						const m = c.match(/^#([0-9a-f]{6})$/i);
+						if (m) return [0, 2, 4].map((i) => parseInt(m[1].slice(i, i + 2), 16));
+						const r = c.match(/rgba?\((\d+)[ ,]+(\d+)[ ,]+(\d+)/);
+						return r ? [+r[1], +r[2], +r[3]] : null;
+					};
+					const lum = ([r, g, b]) => 0.2126 * l(r) + 0.7152 * l(g) + 0.0722 * l(b);
+					const l = (v) => ((v /= 255) <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4);
+					const nen = hex(getComputedStyle(f).backgroundColor);
+					const ra = [];
+					for (const t of ['dau', 'dau-vien', 'nuoc', 'nuoc-vien', 'chat-nhu-hoa', 'tinh-the', 'polymer', 'hat', 'mui-ten', 'chu-phu']) {
+						const m = hex(getComputedStyle(document.documentElement).getPropertyValue('--h-' + t));
+						if (!m || !nen) { ra.push(`--h-${t}: không đọc được màu`); continue; }
+						const [a1, b1] = [lum(m), lum(nen)].sort((x, y) => y - x);
+						const tl = (a1 + 0.05) / (b1 + 0.05);
+						if (tl < 3) ra.push(`--h-${t}: tương phản ${tl.toFixed(2)}:1 < 3:1 với nền hình`);
+					}
+					return ra;
+				});
+				if (mauKem && mauKem.length) loi.push({ boi: `${ten} · ${chuDe} · ${rong}px`, id: 'h-token-tuong-phan', impact: 'serious', soNut: mauKem.length, mau: mauKem });
+			}
 			soLuot++;
 			for (const v of kq) loi.push({ boi: `${ten} · ${chuDe} · ${rong}px`, ...v });
 		}

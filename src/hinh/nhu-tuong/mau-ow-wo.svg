@@ -1,4 +1,4 @@
-<svg class="hinh" viewBox="0 0 360 566" width="360" role="img" aria-labelledby="t d">
+<svg data-chu-giai="dau nuoc chat-nhu-hoa" class="hinh" viewBox="0 0 360 566" width="360" role="img" aria-labelledby="t d">
 <title id="t">Hai loại nhũ tương đơn giản và bề mặt một giọt dầu có chất nhũ hóa</title>
 <desc id="d">Hai khung đầu xếp dọc. Khung trên: nền là nước, các giọt tròn là dầu (O/W). Khung giữa: nền là dầu, các giọt tròn là nước (W/O). Khung cuối phóng to bề mặt một giọt dầu: nước ở trên, dầu ở dưới, các phân tử chất nhũ hóa đứng dọc theo mặt phân cách, đầu ưa nước quay lên về phía nước, đuôi ưa dầu cắm xuống phía dầu.</desc>
 <text class="h-chu" x="10" y="18" font-weight="600">Dầu trong nước (oil-in-water, O/W)</text>
@@ -36,30 +36,30 @@
 <text class="h-chu-mo" x="18" y="406">Nước</text>
 <text class="h-chu-mo" x="18" y="546">Dầu (trong giọt)</text>
 <text class="h-chu-mo" x="18" y="452">Chất nhũ hóa (emulsifier)</text>
-<circle style="fill:var(--sl-color-accent);stroke:var(--sl-color-white);stroke-width:1.2" cx="48" cy="462" r="6"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:2.4;stroke-linecap:round" d="M46 468Q42 480 45 494"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:2.4;stroke-linecap:round" d="M50 468Q54 480 51 494"/>
-<circle style="fill:var(--sl-color-accent);stroke:var(--sl-color-white);stroke-width:1.2" cx="88" cy="462" r="6"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:2.4;stroke-linecap:round" d="M86 468Q82 480 85 494"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:2.4;stroke-linecap:round" d="M90 468Q94 480 91 494"/>
-<circle style="fill:var(--sl-color-accent);stroke:var(--sl-color-white);stroke-width:1.2" cx="128" cy="462" r="6"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:2.4;stroke-linecap:round" d="M126 468Q122 480 125 494"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:2.4;stroke-linecap:round" d="M130 468Q134 480 131 494"/>
-<circle style="fill:var(--sl-color-accent);stroke:var(--sl-color-white);stroke-width:1.2" cx="168" cy="462" r="6"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:2.4;stroke-linecap:round" d="M166 468Q162 480 165 494"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:2.4;stroke-linecap:round" d="M170 468Q174 480 171 494"/>
-<circle style="fill:var(--sl-color-accent);stroke:var(--sl-color-white);stroke-width:1.2" cx="208" cy="462" r="6"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:2.4;stroke-linecap:round" d="M206 468Q202 480 205 494"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:2.4;stroke-linecap:round" d="M210 468Q214 480 211 494"/>
-<circle style="fill:var(--sl-color-accent);stroke:var(--sl-color-white);stroke-width:1.2" cx="248" cy="462" r="6"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:2.4;stroke-linecap:round" d="M246 468Q242 480 245 494"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:2.4;stroke-linecap:round" d="M250 468Q254 480 251 494"/>
-<circle style="fill:var(--sl-color-accent);stroke:var(--sl-color-white);stroke-width:1.2" cx="288" cy="462" r="6"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:2.4;stroke-linecap:round" d="M286 468Q282 480 285 494"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:2.4;stroke-linecap:round" d="M290 468Q294 480 291 494"/>
-<circle style="fill:var(--sl-color-accent);stroke:var(--sl-color-white);stroke-width:1.2" cx="328" cy="462" r="6"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:2.4;stroke-linecap:round" d="M326 468Q322 480 325 494"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:2.4;stroke-linecap:round" d="M330 468Q334 480 331 494"/>
+<circle style="fill:var(--h-chat-nhu-hoa);stroke:var(--sl-color-white);stroke-width:1.2" cx="48" cy="462" r="6"/>
+<path style="fill:none;stroke:var(--h-dau-vien);stroke-width:2.4;stroke-linecap:round" d="M46 468Q42 480 45 494"/>
+<path style="fill:none;stroke:var(--h-dau-vien);stroke-width:2.4;stroke-linecap:round" d="M50 468Q54 480 51 494"/>
+<circle style="fill:var(--h-chat-nhu-hoa);stroke:var(--sl-color-white);stroke-width:1.2" cx="88" cy="462" r="6"/>
+<path style="fill:none;stroke:var(--h-dau-vien);stroke-width:2.4;stroke-linecap:round" d="M86 468Q82 480 85 494"/>
+<path style="fill:none;stroke:var(--h-dau-vien);stroke-width:2.4;stroke-linecap:round" d="M90 468Q94 480 91 494"/>
+<circle style="fill:var(--h-chat-nhu-hoa);stroke:var(--sl-color-white);stroke-width:1.2" cx="128" cy="462" r="6"/>
+<path style="fill:none;stroke:var(--h-dau-vien);stroke-width:2.4;stroke-linecap:round" d="M126 468Q122 480 125 494"/>
+<path style="fill:none;stroke:var(--h-dau-vien);stroke-width:2.4;stroke-linecap:round" d="M130 468Q134 480 131 494"/>
+<circle style="fill:var(--h-chat-nhu-hoa);stroke:var(--sl-color-white);stroke-width:1.2" cx="168" cy="462" r="6"/>
+<path style="fill:none;stroke:var(--h-dau-vien);stroke-width:2.4;stroke-linecap:round" d="M166 468Q162 480 165 494"/>
+<path style="fill:none;stroke:var(--h-dau-vien);stroke-width:2.4;stroke-linecap:round" d="M170 468Q174 480 171 494"/>
+<circle style="fill:var(--h-chat-nhu-hoa);stroke:var(--sl-color-white);stroke-width:1.2" cx="208" cy="462" r="6"/>
+<path style="fill:none;stroke:var(--h-dau-vien);stroke-width:2.4;stroke-linecap:round" d="M206 468Q202 480 205 494"/>
+<path style="fill:none;stroke:var(--h-dau-vien);stroke-width:2.4;stroke-linecap:round" d="M210 468Q214 480 211 494"/>
+<circle style="fill:var(--h-chat-nhu-hoa);stroke:var(--sl-color-white);stroke-width:1.2" cx="248" cy="462" r="6"/>
+<path style="fill:none;stroke:var(--h-dau-vien);stroke-width:2.4;stroke-linecap:round" d="M246 468Q242 480 245 494"/>
+<path style="fill:none;stroke:var(--h-dau-vien);stroke-width:2.4;stroke-linecap:round" d="M250 468Q254 480 251 494"/>
+<circle style="fill:var(--h-chat-nhu-hoa);stroke:var(--sl-color-white);stroke-width:1.2" cx="288" cy="462" r="6"/>
+<path style="fill:none;stroke:var(--h-dau-vien);stroke-width:2.4;stroke-linecap:round" d="M286 468Q282 480 285 494"/>
+<path style="fill:none;stroke:var(--h-dau-vien);stroke-width:2.4;stroke-linecap:round" d="M290 468Q294 480 291 494"/>
+<circle style="fill:var(--h-chat-nhu-hoa);stroke:var(--sl-color-white);stroke-width:1.2" cx="328" cy="462" r="6"/>
+<path style="fill:none;stroke:var(--h-dau-vien);stroke-width:2.4;stroke-linecap:round" d="M326 468Q322 480 325 494"/>
+<path style="fill:none;stroke:var(--h-dau-vien);stroke-width:2.4;stroke-linecap:round" d="M330 468Q334 480 331 494"/>
 <text class="h-chu" x="236" y="412">Đầu ưa nước</text>
 <path style="fill:none;stroke:var(--sl-color-gray-2);stroke-width:1.4" d="M272 418L288 455"/>
 <circle style="fill:var(--sl-color-gray-2)" cx="288" cy="456" r="2.5"/>

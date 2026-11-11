@@ -3,10 +3,11 @@
 // Chạy: npm run kiem
 import fs from 'node:fs';
 import path from 'node:path';
-import { kiemSvg } from './kiem-svg.mjs';
+import { kiemSvg, canhBaoSvg, KHOA_CHU_GIAI } from './kiem-svg.mjs';
 
 const GOC = process.cwd();
 const loi = [];
+const canhBao = [];
 const hinh = [];
 const goc = path.join(GOC, 'src/hinh');
 if (fs.existsSync(goc))
@@ -24,6 +25,9 @@ for (const [khu, ten] of hinh) {
 	const tep = `src/hinh/${khu}/${ten}`;
 	const svg = fs.readFileSync(path.join(GOC, tep + '.svg'), 'utf8');
 	loi.push(...kiemSvg(svg, `${tep}.svg`));
+	canhBao.push(...canhBaoSvg(svg, `${tep}.svg`));
+	const cg = svg.match(/^<svg[^>]*\sdata-chu-giai="([^"]*)"/);
+	if (cg) for (const k of cg[1].split(/\s+/).filter(Boolean)) if (!KHOA_CHU_GIAI.includes(k)) loi.push(`${tep}.svg: data-chu-giai có khóa lạ "${k}" (hợp lệ: ${KHOA_CHU_GIAI.join(', ')})`);
 	if (!/^[a-z0-9-]+$/.test(ten)) loi.push(`${tep}.svg: tên hình chỉ gồm a-z, 0-9 và dấu gạch ngang`);
 	const tepCt = path.join(GOC, tep + '.md');
 	if (!fs.existsSync(tepCt)) {
@@ -42,6 +46,7 @@ for (const [khu, ten] of hinh) {
 }
 for (const k of Object.keys(dung)) if (!hinh.some(([khu, ten]) => `${khu}/${ten}` === k)) loi.push(`dòng <!-- hinh: ${k.split('/')[1]} --> trong ${dung[k][0]} nhưng không có src/hinh/${k}.svg`);
 
+for (const c of canhBao) console.log('CẢNH BÁO (chưa chặn)  ' + c);
 for (const l of loi) console.log('SAI  ' + l);
 console.log(loi.length ? `\n${loi.length} lỗi hình` : `kiem-hinh: đạt (${hinh.length} hình)`);
 process.exit(loi.length ? 1 : 0);

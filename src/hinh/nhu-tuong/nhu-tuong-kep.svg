@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 336" width="360" height="336" role="img" aria-labelledby="hinh-nhu-tuong-kep-t hinh-nhu-tuong-kep-d">
+<svg data-chu-giai="dau nuoc chat-nhu-hoa" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 336" width="360" height="336" role="img" aria-labelledby="hinh-nhu-tuong-kep-t hinh-nhu-tuong-kep-d">
 <title id="hinh-nhu-tuong-kep-t">Cấu trúc một giọt nhũ tương kép W/O/W</title>
 <desc id="hinh-nhu-tuong-kep-d">Một giọt dầu lớn (O) nằm trong pha nước bên ngoài (W₂). Bên trong giọt dầu có nhiều giọt nước nhỏ (W₁). Mặt trong, giữa W₁ và dầu, do chất nhũ hóa ưa dầu giữ, ví dụ PGPR. Mặt ngoài, giữa dầu và W₂, do chất nhũ hóa ưa nước giữ, ví dụ protein hoặc Tween.</desc>
 <!-- W₂: pha nước bên ngoài -->
 <g style="fill:var(--hh-be-mat)">
 <rect x="4" y="4" width="352" height="216" rx="10"/>
 </g>
-<g style="fill:var(--hh-nuoc);fill-opacity:.28">
+<g style="fill:var(--h-nuoc);fill-opacity:.28">
 <rect x="4" y="4" width="352" height="216" rx="10"/>
 </g>
-<g style="fill:none;stroke:var(--hh-nuoc);stroke-width:1.2">
+<g style="fill:none;stroke:var(--h-nuoc);stroke-width:1.2">
 <rect x="4" y="4" width="352" height="216" rx="10"/>
 </g>
 <!-- O: giọt dầu -->
-<g style="fill:var(--hh-dau);stroke:var(--hh-vien-giot);stroke-width:1.2">
+<g style="fill:var(--h-dau);stroke:var(--h-dau-vien);stroke-width:1.2">
 <circle cx="180" cy="112" r="98"/>
 </g>
 <!-- W₁: các giọt nước nhỏ nằm trong giọt dầu -->
@@ -24,7 +24,7 @@
 <circle cx="126" cy="134" r="16"/>
 <circle cx="188" cy="104" r="12"/>
 </g>
-<g style="fill:var(--hh-nuoc);fill-opacity:.45;stroke:var(--hh-nuoc-o);stroke-width:1.2">
+<g style="fill:var(--h-nuoc);fill-opacity:.45;stroke:var(--h-nuoc-vien);stroke-width:1.2">
 <circle cx="146" cy="74" r="24"/>
 <circle cx="206" cy="62" r="16"/>
 <circle cx="232" cy="114" r="22"/>
@@ -33,7 +33,7 @@
 <circle cx="188" cy="104" r="12"/>
 </g>
 <!-- mặt ngoài O/W₂: chất nhũ hóa ưa nước (chấm tròn) -->
-<g style="fill:var(--sl-color-accent);stroke:var(--hh-be-mat);stroke-width:.6">
+<g style="fill:var(--h-chat-nhu-hoa);stroke:var(--hh-be-mat);stroke-width:.6">
 <circle cx="278.5" cy="112" r="2.6"/>
 <circle cx="278" cy="121.5" r="2.6"/>
 <circle cx="276.7" cy="130.9" r="2.6"/>
@@ -195,7 +195,7 @@
 <g style="fill:var(--hh-be-mat);stroke:var(--sl-color-white);stroke-width:1">
 <rect x="7" y="237" width="6" height="6"/>
 </g>
-<g style="fill:var(--sl-color-accent);stroke:var(--hh-be-mat);stroke-width:.6">
+<g style="fill:var(--h-chat-nhu-hoa);stroke:var(--hh-be-mat);stroke-width:.6">
 <circle cx="10" cy="279" r="3.2"/>
 </g>
 <g style="fill:var(--sl-color-white);font-size:14px">

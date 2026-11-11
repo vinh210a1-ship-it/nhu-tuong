@@ -5,13 +5,52 @@
 .hinh-co-che figcaption { margin-top: 0.6rem; font-size: 0.9rem; color: var(--sl-color-gray-2); }
 .hinh-co-che figcaption p { margin: 0 0 0.4rem !important; }
 .hinh-co-che figcaption p:last-child { margin-bottom: 0 !important; }
+/* Bộ màu chung của mọi hình cơ chế (gói V3). Mỗi màu đạt tương phản ≥ 3:1 với nền hình (--sl-color-gray-7) ở cả nền tối và nền sáng;
+   `npm run kiem-truy-cap` đo lại. Hình mới chỉ dùng các token --h-*, không dùng var(--hh-*) cho dầu/nước. */
+:root {
+	--h-dau: #d9962f;            /* dầu, giọt dầu */
+	--h-dau-vien: #a8700f;       /* viền giọt dầu, nét dầu */
+	--h-nuoc: #4a9bbd;           /* nước, pha nước */
+	--h-nuoc-vien: #8fc3d6;      /* viền giọt nước, nét nước */
+	--h-chat-nhu-hoa: #2ec4b6;   /* chất nhũ hóa, chất hoạt động bề mặt */
+	--h-tinh-the: #a98bf2;       /* tinh thể (mỡ, đường, muối...) */
+	--h-polymer: #e57fae;        /* polymer, protein, hydrocolloid */
+	--h-hat: #a9b8c4;            /* hạt rắn (Pickering...) */
+	--h-mui-ten: #b4c6c7;        /* mũi tên, trục */
+	--h-chu-phu: #b4c6c7;        /* chữ phụ, chữ chú thích trong hình */
+}
+:root[data-theme='light'] {
+	--h-dau: #b8740a;
+	--h-dau-vien: #7a4d08;
+	--h-nuoc: #3b84a8;
+	--h-nuoc-vien: #1f5f7e;
+	--h-chat-nhu-hoa: #0d7480;
+	--h-tinh-the: #6a49c8;
+	--h-polymer: #b03f6f;
+	--h-hat: #52626d;
+	--h-mui-ten: #34454f;
+	--h-chu-phu: #34454f;
+}
+
 /* màu và nét của hình: chỉ dùng các lớp dưới đây hoặc biến --hh-* / --sl-color-* */
 .hinh-svg .h-chu { fill: var(--sl-color-white); font-size: 14px; font-family: inherit; }
-.hinh-svg .h-chu-mo { fill: var(--sl-color-gray-2); font-size: 14px; font-family: inherit; }
+.hinh-svg .h-chu-mo { fill: var(--h-chu-phu); font-size: 14px; font-family: inherit; }
 .hinh-svg .h-khung { fill: none; stroke: var(--sl-color-gray-4); stroke-width: 1.2; }
-.hinh-svg .h-nuoc { fill: var(--hh-nuoc); fill-opacity: 0.3; stroke: var(--hh-nuoc-o); stroke-width: 1.2; }
-.hinh-svg .h-dau-nen { fill: var(--hh-dau); fill-opacity: 0.28; stroke: var(--hh-vien-giot); stroke-width: 1.2; }
-.hinh-svg .h-giot-dau { fill: var(--hh-dau); stroke: var(--hh-vien-giot); stroke-width: 1.5; }
-.hinh-svg .h-giot-nuoc { fill: var(--hh-nuoc-o); stroke: var(--sl-color-white); stroke-width: 1.2; }
-.hinh-svg .h-mui-ten { stroke: var(--sl-color-gray-2); stroke-width: 1.6; fill: none; }
-.hinh-svg .h-dau-mui { fill: var(--sl-color-gray-2); }
+.hinh-svg .h-nuoc { fill: var(--h-nuoc); fill-opacity: 0.28; stroke: var(--h-nuoc); stroke-width: 1.2; }
+.hinh-svg .h-dau-nen { fill: var(--h-dau); fill-opacity: 0.28; stroke: var(--h-dau); stroke-width: 1.2; }
+.hinh-svg .h-giot-dau { fill: var(--h-dau); stroke: var(--h-dau-vien); stroke-width: 1.5; }
+.hinh-svg .h-giot-nuoc { fill: var(--h-nuoc); stroke: var(--sl-color-white); stroke-width: 1.2; }
+.hinh-svg .h-mui-ten { stroke: var(--h-mui-ten); stroke-width: 1.6; fill: none; }
+.hinh-svg .h-dau-mui { fill: var(--h-mui-ten); }
+
+/* Chú giải màu dùng chung (một hàng biểu tượng + chữ, đặt cuối hình): khai trên thẻ <svg> bằng data-chu-giai="dau nuoc chat-nhu-hoa" */
+.hinh-co-che .h-chu-giai { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.25rem 1rem; margin: 0.5rem 0 0 !important; padding: 0 !important; list-style: none; font-size: 0.85rem; color: var(--sl-color-gray-2); }
+.hinh-co-che .h-chu-giai li { display: inline-flex; align-items: center; gap: 0.4rem; margin: 0 !important; padding: 0 !important; }
+.hinh-co-che .h-chu-giai li::marker { content: none; }
+.h-mau { display: inline-block; width: 0.8rem; height: 0.8rem; border-radius: 50%; border: 1.5px solid transparent; flex: none; }
+.h-mau-dau { background: var(--h-dau); border-color: var(--h-dau-vien); }
+.h-mau-nuoc { background: var(--h-nuoc); border-radius: 0.2rem; }
+.h-mau-chat-nhu-hoa { background: var(--h-chat-nhu-hoa); width: 0.5rem; height: 0.5rem; margin: 0 0.15rem; }
+.h-mau-tinh-the { background: var(--h-tinh-the); border-radius: 0.1rem; width: 0.25rem; height: 0.9rem; margin: 0 0.25rem; }
+.h-mau-polymer { background: var(--h-polymer); border-radius: 0.1rem; height: 0.25rem; width: 1rem; }
+.h-mau-hat { background: var(--h-hat); }

@@ -1,6 +1,6 @@
-<svg class="hinh" viewBox="0 0 360 546" width="360" role="img" aria-labelledby="t d">
+<svg class="hinh" data-chu-giai="dau nuoc tinh-the polymer" viewBox="0 0 360 546" width="360" role="img" aria-labelledby="t d">
 <title id="t">Tám cơ chế mất ổn định của giọt nhũ tương và công cụ chính chặn từng cơ chế</title>
-<desc id="d">Một giọt ở đầu sơ đồ, nối bằng một trục dọc tới tám ô xếp chồng. Mỗi ô ghi một cơ chế cần chặn và công cụ chính. Hai ô keo tụ có hình nhỏ: hai giọt có lớp điện tích bao quanh đẩy nhau, và hai giọt có chuỗi polymer bị nén ở giữa.</desc>
+<desc id="d">Một giọt ở đầu sơ đồ, nối bằng một trục dọc tới tám ô xếp chồng. Mỗi ô ghi một cơ chế cần chặn và công cụ chính, kèm một hình nhỏ minh họa cơ chế đó. Hai ô keo tụ có hình nhỏ: hai giọt có lớp điện tích bao quanh đẩy nhau, và hai giọt có chuỗi polymer bị nén ở giữa.</desc>
 <circle class="h-giot-dau" cx="20" cy="34" r="14"/>
 <text class="h-chu" x="44" y="40" font-weight="600">Cơ chế phải chặn và công cụ chính</text>
 <path class="h-mui-ten" d="M20 48V509"/>
@@ -22,13 +22,13 @@
 <text class="h-chu" x="44" y="215" font-weight="600">Keo tụ lập thể (chuỗi bị nén)</text>
 <text class="h-chu-mo" x="44" y="235">Polymer, protein, gum dày</text>
 <circle class="h-giot-dau" cx="314" cy="225" r="6"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:1.6;stroke-linecap:round" d="M320 221q3 -3 5 0t4 0"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:1.6;stroke-linecap:round" d="M320 225q3 -3 5 0t4 0"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:1.6;stroke-linecap:round" d="M320 229q3 -3 5 0t4 0"/>
+<path style="fill:none;stroke:var(--h-polymer);stroke-width:1.6;stroke-linecap:round" d="M320 221q3 -3 5 0t4 0"/>
+<path style="fill:none;stroke:var(--h-polymer);stroke-width:1.6;stroke-linecap:round" d="M320 225q3 -3 5 0t4 0"/>
+<path style="fill:none;stroke:var(--h-polymer);stroke-width:1.6;stroke-linecap:round" d="M320 229q3 -3 5 0t4 0"/>
 <circle class="h-giot-dau" cx="344" cy="225" r="6"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:1.6;stroke-linecap:round" d="M338 221q-3 -3 -5 0t-4 0"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:1.6;stroke-linecap:round" d="M338 225q-3 -3 -5 0t-4 0"/>
-<path style="fill:none;stroke:var(--hh-vien-giot);stroke-width:1.6;stroke-linecap:round" d="M338 229q-3 -3 -5 0t-4 0"/>
+<path style="fill:none;stroke:var(--h-polymer);stroke-width:1.6;stroke-linecap:round" d="M338 221q-3 -3 -5 0t-4 0"/>
+<path style="fill:none;stroke:var(--h-polymer);stroke-width:1.6;stroke-linecap:round" d="M338 225q-3 -3 -5 0t-4 0"/>
+<path style="fill:none;stroke:var(--h-polymer);stroke-width:1.6;stroke-linecap:round" d="M338 229q-3 -3 -5 0t-4 0"/>
 <path class="h-mui-ten" d="M20 277H34"/>
 <rect class="h-khung" x="34" y="252" width="322" height="50" rx="6"/>
 <text class="h-chu" x="44" y="273" font-weight="600">Hợp giọt</text>
@@ -54,4 +54,30 @@
 <text class="h-chu" x="44" y="505" font-weight="600">Oxy hóa</text>
 <text class="h-chu-mo" x="348" y="505" text-anchor="end">oxidation</text>
 <text class="h-chu-mo" x="44" y="525">Chelate, chống oxy hóa, loại ôxy</text>
+<path class="h-mui-ten" d="M326 124V106"/>
+<path class="h-mui-ten" d="M322 110L326 105L330 110"/>
+<circle class="h-giot-dau" cx="338" cy="112" r="4"/>
+<circle class="h-giot-dau" cx="348" cy="108" r="4"/>
+<circle class="h-giot-dau" cx="343" cy="119" r="4"/>
+<circle class="h-giot-dau" cx="314" cy="289" r="5"/>
+<circle class="h-giot-dau" cx="325" cy="289" r="5"/>
+<path class="h-mui-ten" d="M332 289H337"/>
+<circle class="h-giot-dau" cx="346" cy="289" r="8"/>
+<circle class="h-giot-dau" cx="322" cy="347" r="6.5"/>
+<circle class="h-giot-dau" cx="335" cy="347" r="6.5"/>
+<path style="fill:none;stroke:var(--h-tinh-the);stroke-width:1.8;stroke-linecap:round" d="M328 339L330 355"/>
+<path style="fill:none;stroke:var(--h-tinh-the);stroke-width:1.8;stroke-linecap:round" d="M331 341L333 353"/>
+<path style="fill:none;stroke:var(--h-tinh-the);stroke-width:1.8;stroke-linecap:round" d="M326 342L336 352"/>
+<circle style="fill:none;stroke:var(--h-dau-vien);stroke-width:1.2;stroke-dasharray:2 2" cx="318" cy="405" r="3.5"/>
+<path class="h-mui-ten" d="M325 405H333"/>
+<circle class="h-giot-dau" cx="345" cy="405" r="8"/>
+<rect class="h-nuoc" x="311" y="455" width="16" height="16" rx="3"/>
+<circle class="h-giot-dau" cx="319" cy="463" r="3.5"/>
+<path class="h-mui-ten" d="M330 463H336"/>
+<rect class="h-dau-nen" x="339" y="455" width="16" height="16" rx="3"/>
+<circle class="h-giot-nuoc" cx="347" cy="463" r="3.5"/>
+<circle style="fill:none;stroke:var(--h-mui-ten);stroke-width:1.6" cx="313" cy="521" r="3"/>
+<circle style="fill:none;stroke:var(--h-mui-ten);stroke-width:1.6" cx="320" cy="521" r="3"/>
+<path class="h-mui-ten" d="M326 521H332"/>
+<circle class="h-giot-dau" cx="345" cy="521" r="8"/>
 </svg>

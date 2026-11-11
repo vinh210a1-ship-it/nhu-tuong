@@ -8,20 +8,20 @@
 <rect x="4" y="292" width="170" height="96" rx="10"/>
 <rect x="186" y="292" width="170" height="96" rx="10"/>
 </g>
-<g style="fill:var(--hh-nuoc);fill-opacity:.28">
+<g style="fill:var(--h-nuoc);fill-opacity:.28">
 <rect x="4" y="26" width="352" height="62" rx="10"/>
 <rect x="4" y="136" width="352" height="124" rx="10"/>
 <rect x="4" y="292" width="170" height="96" rx="10"/>
 <rect x="186" y="292" width="170" height="96" rx="10"/>
 </g>
-<g style="fill:none;stroke:var(--hh-nuoc);stroke-width:1.2">
+<g style="fill:none;stroke:var(--h-nuoc);stroke-width:1.2">
 <rect x="4" y="26" width="352" height="62" rx="10"/>
 <rect x="4" y="136" width="352" height="124" rx="10"/>
 <rect x="4" y="292" width="170" height="96" rx="10"/>
 <rect x="186" y="292" width="170" height="96" rx="10"/>
 </g>
 <!-- giọt dầu -->
-<g style="fill:var(--hh-dau);stroke:var(--hh-vien-giot);stroke-width:1.2">
+<g style="fill:var(--h-dau);stroke:var(--h-dau-vien);stroke-width:1.2">
 <!-- a: nhũ tương thô, giọt to không đều -->
 <circle cx="44" cy="57" r="20"/>
 <circle cx="100" cy="54" r="13"/>
@@ -51,7 +51,7 @@
 <circle cx="320" cy="340" r="13.9"/>
 </g>
 <!-- chất nhũ hóa (chấm): tự do trong nước hoặc đã bám lên bề mặt giọt -->
-<g style="fill:var(--sl-color-accent);stroke:var(--hh-be-mat);stroke-width:.6">
+<g style="fill:var(--h-chat-nhu-hoa);stroke:var(--hh-be-mat);stroke-width:.6">
 <!-- c trái, trước: đang tới bề mặt -->
 <circle cx="17.3" cy="318.1" r="2.1"/>
 <circle cx="36.7" cy="314.7" r="2.1"/>
@@ -128,7 +128,7 @@
 <line x1="120" y1="273" x2="120" y2="283.2"/><polygon points="120,288 116.7,282 123.3,282"/>
 </g>
 <!-- b: ứng suất chảy kéo hai đầu giọt ra (trên), áp suất Laplace kéo giọt về hình cầu (dưới) -->
-<g style="fill:var(--hh-nuoc-o);stroke:var(--hh-nuoc-o);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round">
+<g style="fill:var(--h-nuoc-vien);stroke:var(--h-nuoc-vien);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round">
 <line x1="122" y1="172" x2="94.8" y2="172"/><polygon points="90,172 96,168.7 96,175.3"/>
 <line x1="138" y1="172" x2="165.2" y2="172"/><polygon points="170,172 164,175.3 164,168.7"/>
 </g>
@@ -159,19 +159,19 @@
 <text x="292" y="251" text-anchor="middle">bề mặt trần</text>
 </g>
 <!-- chú giải -->
-<g style="fill:var(--hh-dau);stroke:var(--hh-vien-giot);stroke-width:1.2">
+<g style="fill:var(--h-dau);stroke:var(--h-dau-vien);stroke-width:1.2">
 <circle cx="11" cy="446" r="6"/>
 </g>
 <g style="fill:var(--hh-be-mat)">
 <rect x="64" y="440" width="12" height="12" rx="3"/>
 </g>
-<g style="fill:var(--hh-nuoc);fill-opacity:.28">
+<g style="fill:var(--h-nuoc);fill-opacity:.28">
 <rect x="64" y="440" width="12" height="12" rx="3"/>
 </g>
-<g style="fill:none;stroke:var(--hh-nuoc);stroke-width:1.2">
+<g style="fill:none;stroke:var(--h-nuoc);stroke-width:1.2">
 <rect x="64" y="440" width="12" height="12" rx="3"/>
 </g>
-<g style="fill:var(--sl-color-accent);stroke:var(--hh-be-mat);stroke-width:.6">
+<g style="fill:var(--h-chat-nhu-hoa);stroke:var(--hh-be-mat);stroke-width:.6">
 <circle cx="140" cy="446" r="2.8"/>
 </g>
 <g style="fill:var(--sl-color-gray-2);font-size:14px">

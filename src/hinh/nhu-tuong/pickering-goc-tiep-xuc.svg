@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 328" width="360" height="328" role="img" aria-labelledby="hinh-pickering-goc-tiep-xuc-t hinh-pickering-goc-tiep-xuc-d">
+<svg data-chu-giai="dau nuoc hat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 328" width="360" height="328" role="img" aria-labelledby="hinh-pickering-goc-tiep-xuc-t hinh-pickering-goc-tiep-xuc-d">
 <title id="hinh-pickering-goc-tiep-xuc-t">Hạt Pickering trên bề mặt dầu–nước và góc tiếp xúc θ</title>
 <desc id="hinh-pickering-goc-tiep-xuc-d">Ba ô xếp dọc, mỗi ô có dầu ở trên, nước ở dưới và một hạt rắn nằm trên mặt phân cách. Góc tiếp xúc θ đo trong pha nước. Ô trên: θ nhỏ hơn 90 độ, hạt nằm phần lớn trong nước, thuận lợi cho nhũ tương O/W. Ô giữa: θ xấp xỉ 90 độ, hạt nằm nửa trong dầu nửa trong nước, năng lượng giải hấp ΔE lớn nhất nên hạt bám chặt nhất. Ô dưới: θ từ 90 đến 180 độ, hạt nằm phần lớn trong dầu, thuận lợi cho nhũ tương W/O.</desc>
 <!-- mỗi ô: dầu ở trên, nước ở dưới, một hạt rắn nằm trên mặt phân cách -->
@@ -7,12 +7,12 @@
 <rect x="4" y="130" width="170" height="92" rx="10"/>
 <rect x="4" y="232" width="170" height="92" rx="10"/>
 </g>
-<g style="fill:var(--hh-dau);fill-opacity:.45">
+<g style="fill:var(--h-dau);fill-opacity:.45">
 <path d="M4,74 V38 a10,10 0 0 1 10,-10 H164 a10,10 0 0 1 10,10 V74 Z"/>
 <path d="M4,176 V140 a10,10 0 0 1 10,-10 H164 a10,10 0 0 1 10,10 V176 Z"/>
 <path d="M4,278 V242 a10,10 0 0 1 10,-10 H164 a10,10 0 0 1 10,10 V278 Z"/>
 </g>
-<g style="fill:var(--hh-nuoc);fill-opacity:.28">
+<g style="fill:var(--h-nuoc);fill-opacity:.28">
 <path d="M4,74 V110 a10,10 0 0 0 10,10 H164 a10,10 0 0 0 10,-10 V74 Z"/>
 <path d="M4,176 V212 a10,10 0 0 0 10,10 H164 a10,10 0 0 0 10,-10 V176 Z"/>
 <path d="M4,278 V314 a10,10 0 0 0 10,10 H164 a10,10 0 0 0 10,-10 V278 Z"/>
@@ -29,7 +29,7 @@
 <line x1="4" y1="278" x2="174" y2="278"/>
 </g>
 <!-- hạt: tâm lệch khỏi mặt phân cách một đoạn R·cos θ về phía nước -->
-<g style="fill:var(--sl-color-gray-5);stroke:var(--sl-color-gray-3);stroke-width:1.2">
+<g style="fill:var(--h-hat);fill-opacity:.35;stroke:var(--h-hat);stroke-width:1.4">
 <circle cx="100" cy="88.1" r="22"/>
 <circle cx="100" cy="176" r="22"/>
 <circle cx="100" cy="263.9" r="22"/>

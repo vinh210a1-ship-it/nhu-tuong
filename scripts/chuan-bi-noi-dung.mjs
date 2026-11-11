@@ -75,6 +75,7 @@ function ngayDangDau(tepTuongDoi) {
 // ---------------- hình cơ chế (T1): src/hinh/<khu>/<tên>.svg + <tên>.md (chú thích, viết Markdown, nhãn [N]/[T]/[K]/[G] như trong bài)
 // Trong bài gốc, dòng riêng `<!-- hinh: tên -->` được thay bằng khối <figure>. Hình tìm trong src/hinh/<khu của bài>/.
 // Khối HTML không được có dòng trống bên trong <svg> (Markdown sẽ cắt khối); id trong hình được thêm tiền tố h-<tên>- để hai hình trên một trang không trùng id.
+const CHU_GIAI_MAU = { dau: 'Dầu', nuoc: 'Nước', 'chat-nhu-hoa': 'Chất nhũ hóa', 'tinh-the': 'Tinh thể', polymer: 'Polymer', hat: 'Hạt rắn' };
 function htmlHinh(khu, ten) {
 	const tep = path.join(GOC, 'src/hinh', khu, `${ten}.svg`);
 	const tepCt = path.join(GOC, 'src/hinh', khu, `${ten}.md`);
@@ -89,7 +90,12 @@ function htmlHinh(khu, ten) {
 		.replace(/url\(#([^)]+)\)/g, `url(#${tt}$1)`)
 		.replace(/href="#([^"]+)"/g, `href="#${tt}$1"`);
 	const chuThich = fs.readFileSync(tepCt, 'utf8').replace(/\r/g, '').trim();
-	return `<figure class="hinh-co-che not-content">\n<div class="hinh-svg">\n${svg}\n</div>\n\n<figcaption>\n\n${chuThich}\n\n</figcaption>\n\n</figure>`;
+	// chú giải màu dùng chung: khai trên thẻ <svg> bằng data-chu-giai="dau nuoc …"; mỗi mục là một hàng biểu tượng + chữ ở cuối hình
+	const khoaCg = (svg.match(/^<svg[^>]*\sdata-chu-giai="([^"]*)"/) || [, ''])[1].split(/\s+/).filter(Boolean);
+	const chuGiai = khoaCg.length
+		? `\n<ul class="h-chu-giai" aria-label="Chú giải màu">${khoaCg.map((k) => { if (!CHU_GIAI_MAU[k]) throw new Error(`Hình "${ten}": data-chu-giai có khóa lạ "${k}" (hợp lệ: ${Object.keys(CHU_GIAI_MAU).join(', ')})`); return `<li><span class="h-mau h-mau-${k}" aria-hidden="true"></span>${CHU_GIAI_MAU[k]}</li>`; }).join('')}</ul>`
+		: '';
+	return `<figure class="hinh-co-che not-content">\n<div class="hinh-svg">\n${svg}${chuGiai}\n</div>\n\n<figcaption>\n\n${chuThich}\n\n</figcaption>\n\n</figure>`;
 }
 
 const escHtml = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');

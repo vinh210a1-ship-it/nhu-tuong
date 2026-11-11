@@ -48,3 +48,17 @@ export function kiemSvg(svg, ten, rongManHinh = MAN_HINH_HEP) {
 	for (const m of svg.matchAll(/var\((--[a-z0-9-]+)/g)) if (!m[1].startsWith('--sl-') && !bien.has(m[1])) sai(`biến ${m[1]} chưa khai trong src/styles/*.css`);
 	return [...new Set(loi)];
 }
+
+/** Khóa hợp lệ của data-chu-giai (cùng danh sách với CHU_GIAI_MAU trong scripts/chuan-bi-noi-dung.mjs). */
+export const KHOA_CHU_GIAI = ['dau', 'nuoc', 'chat-nhu-hoa', 'tinh-the', 'polymer', 'hat'];
+
+/**
+ * Cảnh báo (chưa chặn): hình còn dùng màu cũ var(--hh-*) cho dầu/nước thay vì token --h-* của bộ màu chung (src/styles/hinh.css).
+ * @returns {string[]}
+ */
+export function canhBaoSvg(svg, ten) {
+	const kq = [];
+	const cu = [...new Set([...svg.matchAll(/var\((--hh-(?:dau|dau-sang|vien-giot|duoi|nuoc|nuoc-o|nuoc-h|ho-phach))\)/g)].map((m) => m[1]))];
+	if (cu.length) kq.push(`${ten}: còn dùng ${cu.map((x) => `var(${x})`).join(', ')} cho dầu/nước; đổi sang token --h-dau, --h-dau-vien, --h-nuoc, --h-nuoc-vien`);
+	return kq;
+}
