@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 512" width="360" height="512" role="img" aria-labelledby="tinhbot-t tinhbot-d">
+<title id="tinhbot-t">Tinh bột: từ hạt bán tinh thể tới hồ hóa và thoái hóa</title>
+<desc id="tinhbot-d">Bốn ô xếp dọc. Ô a: hạt tinh bột bán tinh thể. Ô b: thêm nước và nhiệt, hạt hấp thụ nước và trương lên. Ô c: gia nhiệt tiếp, hồ hóa, xoắn kép nóng chảy và amylose rò ra khỏi hạt. Ô d: sau khi làm nguội, các chuỗi xếp lại song song và tái kết tinh, gọi là thoái hóa.</desc>
+<g style="fill:var(--hh-nuoc);fill-opacity:.28">
+<rect x="8" y="10" width="150" height="96" rx="8"/>
+<rect x="8" y="134" width="150" height="96" rx="8"/>
+<rect x="8" y="258" width="150" height="96" rx="8"/>
+<rect x="8" y="382" width="150" height="96" rx="8"/>
+</g>
+<g style="fill:none;stroke:var(--hh-nuoc);stroke-width:1.2">
+<rect x="8" y="10" width="150" height="96" rx="8"/>
+<rect x="8" y="134" width="150" height="96" rx="8"/>
+<rect x="8" y="258" width="150" height="96" rx="8"/>
+<rect x="8" y="382" width="150" height="96" rx="8"/>
+</g>
+<g style="fill:var(--sl-color-gray-5);stroke:var(--sl-color-gray-3);stroke-width:1.4">
+<ellipse cx="83" cy="58" rx="30" ry="24"/>
+<ellipse cx="83" cy="182" rx="46" ry="36"/>
+<ellipse cx="17" cy="494" rx="9" ry="7"/>
+</g>
+<g style="fill:var(--sl-color-gray-5);fill-opacity:.55;stroke:var(--sl-color-gray-3);stroke-width:1.2;stroke-dasharray:4 3">
+<ellipse cx="75" cy="306" rx="52" ry="40"/>
+</g>
+<g style="fill:none;stroke:var(--sl-color-gray-3);stroke-width:1">
+<ellipse cx="83" cy="58" rx="22.5" ry="18"/>
+<ellipse cx="83" cy="58" rx="15" ry="12"/>
+<ellipse cx="83" cy="58" rx="7.5" ry="6"/>
+<ellipse cx="83" cy="182" rx="33.1" ry="25.9"/>
+<ellipse cx="83" cy="182" rx="19.3" ry="15.1"/>
+</g>
+<g style="fill:none;stroke:var(--sl-color-white);stroke-width:1.4;stroke-linecap:round">
+<path d="M45,294 l12,-7 M50,291 l8,6 M54,289 l3,-9"/>
+<path d="M53,318 l12,-7 M58,315 l8,6 M62,313 l3,-9"/>
+<path d="M77,304 l12,-7 M82,301 l8,6 M86,299 l3,-9"/>
+<path d="M250,497 l12,-7 M255,494 l8,6"/>
+</g>
+<g style="fill:none;stroke:var(--hh-dau);stroke-width:2.2;stroke-linecap:round">
+<path d="M105,280 q4.5,-5 9,0 q4.5,5 9,0 q4.5,-5 9,0 q4.5,5 9,0"/>
+<path d="M113,308 q4.5,-5 9,0 q4.5,5 9,0 q4.5,-5 9,0 q4.5,5 9,0"/>
+<path d="M99,334 q4.5,-5 9,0 q4.5,5 9,0 q4.5,-5 9,0 q4.5,5 9,0 q4.5,-5 9,0"/>
+<path d="M69,326 q4.5,-5 9,0 q4.5,5 9,0 q4.5,-5 9,0"/>
+<line x1="35" y1="406" x2="75" y2="406"/>
+<line x1="35" y1="412" x2="75" y2="412"/>
+<line x1="35" y1="418" x2="75" y2="418"/>
+<line x1="35" y1="424" x2="75" y2="424"/>
+<line x1="89" y1="422" x2="129" y2="422"/>
+<line x1="89" y1="428" x2="129" y2="428"/>
+<line x1="89" y1="434" x2="129" y2="434"/>
+<line x1="89" y1="440" x2="129" y2="440"/>
+<line x1="49" y1="446" x2="89" y2="446"/>
+<line x1="49" y1="452" x2="89" y2="452"/>
+<line x1="49" y1="458" x2="89" y2="458"/>
+<line x1="49" y1="464" x2="89" y2="464"/>
+<path d="M75,412 q4.5,-5 9,0 q4.5,5 9,0"/>
+<path d="M129,434 q4.5,-5 9,0 q4.5,5 9,0"/>
+<path d="M89,460 q4.5,-5 9,0 q4.5,5 9,0 q4.5,-5 9,0"/>
+<path d="M124,494 q4.5,-5 9,0 q4.5,5 9,0"/>
+</g>
+<g style="fill:var(--sl-color-gray-3);stroke:var(--sl-color-gray-3);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round">
+<line x1="83" y1="111" x2="83" y2="124.2"/><polygon points="83,129 79.7,123 86.3,123"/>
+<line x1="83" y1="235" x2="83" y2="248.2"/><polygon points="83,253 79.7,247 86.3,247"/>
+<line x1="83" y1="359" x2="83" y2="372.2"/><polygon points="83,377 79.7,371 86.3,371"/>
+</g>
+<g style="fill:var(--sl-color-white);font-size:14px;font-weight:700">
+<text x="170" y="32">a.</text>
+<text x="170" y="156">b.</text>
+<text x="170" y="280">c.</text>
+<text x="170" y="404">d.</text>
+</g>
+<g style="fill:var(--sl-color-gray-2);font-size:14px">
+<text x="190" y="32">Hạt tinh bột</text>
+<text x="190" y="49">bán tinh thể</text>
+<text x="95" y="125">nước và nhiệt</text>
+<text x="190" y="156">Hạt hấp thụ nước,</text>
+<text x="190" y="173">trương lên</text>
+<text x="95" y="249">gia nhiệt tiếp</text>
+<text x="190" y="280">Hồ hóa: xoắn kép</text>
+<text x="190" y="297">nóng chảy, amylose</text>
+<text x="190" y="314">rò ra</text>
+<text x="95" y="373">làm nguội</text>
+<text x="190" y="404">Thoái hóa: sau làm</text>
+<text x="190" y="421">nguội, các chuỗi</text>
+<text x="190" y="438">tái kết tinh</text>
+<text x="32" y="499">hạt tinh bột</text>
+<text x="148" y="499">amylose</text>
+<text x="270" y="499">amylopectin</text>
+</g>
+</svg>

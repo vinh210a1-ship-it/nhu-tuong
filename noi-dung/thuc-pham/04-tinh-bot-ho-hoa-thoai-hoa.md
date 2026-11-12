@@ -16,6 +16,8 @@ Nhãn: `[N: @khóa]` có nguồn đã đọc · `[K]` sách nền, chưa trích 
 
 ## 1. Cấu trúc và hồ hóa
 
+<!-- hinh: tinh-bot-ho-hoa-thoai-hoa -->
+
 - Amylose (mạch thẳng, DP 10²–10³) và amylopectin (phân nhánh) tạo hạt bán tinh thể (xoắn kép amylopectin). Hồ hóa: hạt hấp thụ nước, xoắn kép nóng chảy, amylose rò ra. Amylose với độ dài mạch khác nhau ảnh hưởng nhiệt độ và enthalpy hồ hóa bằng cách tương tác với amylopectin trong lớp bán tinh thể; ở độ ẩm giới hạn có thể thấy nhiều đỉnh thu nhiệt `[N: @li2022]`.
 - Khoảng nhiệt độ hồ hóa điển hình (To–Tc, DSC, bột:nước dư): khoai tây ~58–68 °C, lúa mì ~52–64 °C, ngô ~62–72 °C, gạo ~68–78 °C, sắn ~52–65 °C `[K]` — chỉ dùng nội bộ cho đến khi có trang sách. DSC của các loại tinh bột (sago, khoai tây, khoai lang, sắn, khoai mỡ, ngô) cho thấy tính chất nhiệt phụ thuộc loại tinh bột, tỷ lệ amylose/amylopectin và thành phần thực phẩm khác (đường, NaCl, nước, sữa, hydrocolloid, thịt) `[N: @elgadir2009]`.
 - Độ nhớt hồ: đỉnh khi hạt trương tối đa, rồi giảm do hạt vỡ; ép cắt mạnh và pH thấp làm giảm độ nhớt `[K]` (liên quan RVA/Brabender).

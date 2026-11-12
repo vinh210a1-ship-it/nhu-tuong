@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 484" width="360" height="484" role="img" aria-labelledby="nano-t nano-d">
+<title id="nano-t">Ba hệ phân tán nano: nanoemulsion, liposome và LNP</title>
+<desc id="nano-d">Ba ô xếp dọc, mỗi ô một hạt cắt ngang trong nước. Nanoemulsion: giọt dầu lỏng có một lớp chất hoạt động bề mặt bao quanh. Liposome: túi kín có vỏ là lớp kép lipid, bên trong là pha nước. LNP: hạt lipid có acid nucleic nằm trong lõi lipid và PEG-lipid nhô ra ở bề mặt. Kích thước ba hạt vẽ bằng nhau, không theo tỉ lệ thật.</desc>
+<g style="fill:var(--hh-nuoc);fill-opacity:.28">
+<rect x="8" y="8" width="132" height="124" rx="8"/>
+<rect x="8" y="144" width="132" height="124" rx="8"/>
+<rect x="8" y="280" width="132" height="124" rx="8"/>
+<rect x="120" y="417" width="14" height="14" rx="3"/>
+</g>
+<g style="fill:none;stroke:var(--hh-nuoc);stroke-width:1.2">
+<rect x="8" y="8" width="132" height="124" rx="8"/>
+<rect x="8" y="144" width="132" height="124" rx="8"/>
+<rect x="8" y="280" width="132" height="124" rx="8"/>
+<rect x="120" y="417" width="14" height="14" rx="3"/>
+</g>
+<g style="fill:var(--hh-dau);stroke:var(--hh-vien-giot);stroke-width:1.2">
+<circle cx="74" cy="70" r="44"/>
+<circle cx="74" cy="342" r="44"/>
+<circle cx="16" cy="424" r="7"/>
+</g>
+<g style="fill:var(--hh-dau);fill-opacity:.55;stroke:none">
+<circle cx="74" cy="206" r="38"/>
+</g>
+<g style="fill:var(--hh-be-mat)">
+<circle cx="74" cy="206" r="32"/>
+</g>
+<g style="fill:var(--hh-nuoc);fill-opacity:.28">
+<circle cx="74" cy="206" r="32"/>
+</g>
+<g style="fill:none;stroke:var(--sl-color-white);stroke-width:1.6;stroke-linecap:round">
+<line x1="120.1" y1="351.3" x2="128.9" y2="353.1"/>
+<line x1="100" y1="381.2" x2="104.9" y2="388.7"/>
+<line x1="64.7" y1="388.1" x2="62.9" y2="396.9"/>
+<line x1="34.8" y1="368" x2="27.3" y2="372.9"/>
+<line x1="27.9" y1="332.7" x2="19.1" y2="330.9"/>
+<line x1="48" y1="302.8" x2="43.1" y2="295.3"/>
+<line x1="83.3" y1="295.9" x2="85.1" y2="287.1"/>
+<line x1="113.2" y1="316" x2="120.7" y2="311.1"/>
+<line x1="160" y1="468" x2="174" y2="468"/>
+</g>
+<g style="fill:var(--sl-color-accent);stroke:var(--hh-be-mat);stroke-width:.6">
+<circle cx="118" cy="70" r="3.2"/>,<circle cx="116.7" cy="80.5" r="3.2"/>,<circle cx="113" cy="90.4" r="3.2"/>,<circle cx="106.9" cy="99.2" r="3.2"/>,<circle cx="99" cy="106.2" r="3.2"/>,<circle cx="89.6" cy="111.1" r="3.2"/>,<circle cx="79.3" cy="113.7" r="3.2"/>,<circle cx="68.7" cy="113.7" r="3.2"/>,<circle cx="58.4" cy="111.1" r="3.2"/>,<circle cx="49" cy="106.2" r="3.2"/>,<circle cx="41.1" cy="99.2" r="3.2"/>,<circle cx="35" cy="90.4" r="3.2"/>,<circle cx="31.3" cy="80.5" r="3.2"/>,<circle cx="30" cy="70" r="3.2"/>,<circle cx="31.3" cy="59.5" r="3.2"/>,<circle cx="35" cy="49.6" r="3.2"/>,<circle cx="41.1" cy="40.8" r="3.2"/>,<circle cx="49" cy="33.8" r="3.2"/>,<circle cx="58.4" cy="28.9" r="3.2"/>,<circle cx="68.7" cy="26.3" r="3.2"/>,<circle cx="79.3" cy="26.3" r="3.2"/>,<circle cx="89.6" cy="28.9" r="3.2"/>,<circle cx="99" cy="33.8" r="3.2"/>,<circle cx="106.9" cy="40.8" r="3.2"/>,<circle cx="113" cy="49.6" r="3.2"/>,<circle cx="116.7" cy="59.5" r="3.2"/>
+<circle cx="118" cy="206" r="3.2"/>,<circle cx="116.7" cy="216.5" r="3.2"/>,<circle cx="113" cy="226.4" r="3.2"/>,<circle cx="106.9" cy="235.2" r="3.2"/>,<circle cx="99" cy="242.2" r="3.2"/>,<circle cx="89.6" cy="247.1" r="3.2"/>,<circle cx="79.3" cy="249.7" r="3.2"/>,<circle cx="68.7" cy="249.7" r="3.2"/>,<circle cx="58.4" cy="247.1" r="3.2"/>,<circle cx="49" cy="242.2" r="3.2"/>,<circle cx="41.1" cy="235.2" r="3.2"/>,<circle cx="35" cy="226.4" r="3.2"/>,<circle cx="31.3" cy="216.5" r="3.2"/>,<circle cx="30" cy="206" r="3.2"/>,<circle cx="31.3" cy="195.5" r="3.2"/>,<circle cx="35" cy="185.6" r="3.2"/>,<circle cx="41.1" cy="176.8" r="3.2"/>,<circle cx="49" cy="169.8" r="3.2"/>,<circle cx="58.4" cy="164.9" r="3.2"/>,<circle cx="68.7" cy="162.3" r="3.2"/>,<circle cx="79.3" cy="162.3" r="3.2"/>,<circle cx="89.6" cy="164.9" r="3.2"/>,<circle cx="99" cy="169.8" r="3.2"/>,<circle cx="106.9" cy="176.8" r="3.2"/>,<circle cx="113" cy="185.6" r="3.2"/>,<circle cx="116.7" cy="195.5" r="3.2"/>
+<circle cx="106" cy="206" r="3.2"/>,<circle cx="104.3" cy="216.4" r="3.2"/>,<circle cx="99.3" cy="225.7" r="3.2"/>,<circle cx="91.5" cy="232.8" r="3.2"/>,<circle cx="81.9" cy="237" r="3.2"/>,<circle cx="71.4" cy="237.9" r="3.2"/>,<circle cx="61.1" cy="235.3" r="3.2"/>,<circle cx="52.3" cy="229.5" r="3.2"/>,<circle cx="45.9" cy="221.2" r="3.2"/>,<circle cx="42.4" cy="211.3" r="3.2"/>,<circle cx="42.4" cy="200.7" r="3.2"/>,<circle cx="45.9" cy="190.8" r="3.2"/>,<circle cx="52.3" cy="182.5" r="3.2"/>,<circle cx="61.1" cy="176.7" r="3.2"/>,<circle cx="71.4" cy="174.1" r="3.2"/>,<circle cx="81.9" cy="175" r="3.2"/>,<circle cx="91.5" cy="179.2" r="3.2"/>,<circle cx="99.3" cy="186.3" r="3.2"/>,<circle cx="104.3" cy="195.6" r="3.2"/>
+<circle cx="118" cy="342" r="3.2"/>,<circle cx="116.7" cy="352.5" r="3.2"/>,<circle cx="113" cy="362.4" r="3.2"/>,<circle cx="106.9" cy="371.2" r="3.2"/>,<circle cx="99" cy="378.2" r="3.2"/>,<circle cx="89.6" cy="383.1" r="3.2"/>,<circle cx="79.3" cy="385.7" r="3.2"/>,<circle cx="68.7" cy="385.7" r="3.2"/>,<circle cx="58.4" cy="383.1" r="3.2"/>,<circle cx="49" cy="378.2" r="3.2"/>,<circle cx="41.1" cy="371.2" r="3.2"/>,<circle cx="35" cy="362.4" r="3.2"/>,<circle cx="31.3" cy="352.5" r="3.2"/>,<circle cx="30" cy="342" r="3.2"/>,<circle cx="31.3" cy="331.5" r="3.2"/>,<circle cx="35" cy="321.6" r="3.2"/>,<circle cx="41.1" cy="312.8" r="3.2"/>,<circle cx="49" cy="305.8" r="3.2"/>,<circle cx="58.4" cy="300.9" r="3.2"/>,<circle cx="68.7" cy="298.3" r="3.2"/>,<circle cx="79.3" cy="298.3" r="3.2"/>,<circle cx="89.6" cy="300.9" r="3.2"/>,<circle cx="99" cy="305.8" r="3.2"/>,<circle cx="106.9" cy="312.8" r="3.2"/>,<circle cx="113" cy="321.6" r="3.2"/>,<circle cx="116.7" cy="331.5" r="3.2"/>
+<circle cx="16" cy="446" r="3.2"/>
+</g>
+<g style="fill:none;stroke:var(--sl-color-white);stroke-width:1.8;stroke-linecap:round">
+<path d="M48,328 q6,-8 12,0 t12,0 t12,0 t12,0"/>
+<path d="M54,346 q6,-8 12,0 t12,0 t12,0 t12,0"/>
+<path d="M46,362 q6,-8 12,0 t12,0 t12,0 t12,0"/>
+<path d="M6,468 q4,-7 8,0 t8,0 t8,0"/>
+</g>
+<g style="fill:var(--sl-color-white);font-size:14px;font-weight:700">
+<text x="152" y="38">Nanoemulsion</text>
+<text x="152" y="174">Liposome</text>
+<text x="152" y="310">LNP</text>
+</g>
+<g style="fill:var(--sl-color-gray-2);font-size:14px">
+<text x="152" y="58">giọt chất lỏng (dầu)</text>
+<text x="152" y="75">trong chất lỏng không</text>
+<text x="152" y="92">trộn lẫn với nó</text>
+<text x="152" y="194">túi lipid lớp kép kín,</text>
+<text x="152" y="211">bên trong là pha nước</text>
+<text x="152" y="330">hạt lipid mang acid</text>
+<text x="152" y="347">nucleic; gồm lipid ion</text>
+<text x="152" y="364">hóa, lipid hỗ trợ,</text>
+<text x="152" y="381">cholesterol, PEG-lipid</text>
+<text x="30" y="429">dầu, lipid</text>
+<text x="140" y="429">nước</text>
+<text x="30" y="451">lớp chất hoạt động bề mặt hoặc lipid</text>
+<text x="38" y="473">acid nucleic</text>
+<text x="182" y="473">PEG-lipid</text>
+</g>
+</svg>
