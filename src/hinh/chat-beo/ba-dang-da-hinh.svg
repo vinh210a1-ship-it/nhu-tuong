@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 460" width="360" height="460" role="img" aria-labelledby="dahinh-t dahinh-d">
+<title id="dahinh-t">Ba dạng đa hình α, β′ và β của chất béo</title>
+<desc id="dahinh-d">Ba ô xếp dọc, nhìn dọc theo trục chuỗi hydrocarbon. Dạng α: các chuỗi xếp lưới lục giác và quay tự do. Dạng β′: lưới trực thoi, mặt phẳng zigzag của các chuỗi kề nhau vuông góc với nhau. Dạng β: lưới tam tà, mọi mặt phẳng zigzag song song. Mũi tên một chiều đi từ α sang β′ rồi sang β: dạng kém bền tự chuyển dần sang dạng bền hơn.</desc>
+<g style="fill:var(--hh-be-mat);stroke:var(--sl-color-gray-4);stroke-width:1.2">
+<rect x="8" y="48" width="132" height="92" rx="8"/>
+<rect x="8" y="178" width="132" height="92" rx="8"/>
+<rect x="8" y="308" width="132" height="92" rx="8"/>
+</g>
+<g style="fill:none;stroke:var(--hh-dau);stroke-width:3">
+<circle cx="35" cy="71.5" r="8.5"/>
+<circle cx="61" cy="71.5" r="8.5"/>
+<circle cx="87" cy="71.5" r="8.5"/>
+<circle cx="113" cy="71.5" r="8.5"/>
+<circle cx="22" cy="94" r="8.5"/>
+<circle cx="48" cy="94" r="8.5"/>
+<circle cx="74" cy="94" r="8.5"/>
+<circle cx="100" cy="94" r="8.5"/>
+<circle cx="126" cy="94" r="8.5"/>
+<circle cx="35" cy="116.5" r="8.5"/>
+<circle cx="61" cy="116.5" r="8.5"/>
+<circle cx="87" cy="116.5" r="8.5"/>
+<circle cx="113" cy="116.5" r="8.5"/>
+<circle cx="18" cy="422" r="7"/>
+</g>
+<g style="fill:none;stroke:var(--hh-dau);stroke-width:5;stroke-linecap:round">
+<line x1="40.3" y1="188.3" x2="51.7" y2="199.7"/>
+<line x1="68.3" y1="188.3" x2="79.7" y2="199.7"/>
+<line x1="96.3" y1="188.3" x2="107.7" y2="199.7"/>
+<line x1="40.3" y1="218.3" x2="51.7" y2="229.7"/>
+<line x1="68.3" y1="218.3" x2="79.7" y2="229.7"/>
+<line x1="96.3" y1="218.3" x2="107.7" y2="229.7"/>
+<line x1="40.3" y1="248.3" x2="51.7" y2="259.7"/>
+<line x1="68.3" y1="248.3" x2="79.7" y2="259.7"/>
+<line x1="96.3" y1="248.3" x2="107.7" y2="259.7"/>
+<line x1="54.3" y1="214.7" x2="65.7" y2="203.3"/>
+<line x1="82.3" y1="214.7" x2="93.7" y2="203.3"/>
+<line x1="54.3" y1="244.7" x2="65.7" y2="233.3"/>
+<line x1="82.3" y1="244.7" x2="93.7" y2="233.3"/>
+<line x1="40.6" y1="322.3" x2="49.4" y2="335.7"/>
+<line x1="66.6" y1="322.3" x2="75.4" y2="335.7"/>
+<line x1="92.6" y1="322.3" x2="101.4" y2="335.7"/>
+<line x1="118.6" y1="322.3" x2="127.4" y2="335.7"/>
+<line x1="31.6" y1="347.3" x2="40.4" y2="360.7"/>
+<line x1="57.6" y1="347.3" x2="66.4" y2="360.7"/>
+<line x1="83.6" y1="347.3" x2="92.4" y2="360.7"/>
+<line x1="109.6" y1="347.3" x2="118.4" y2="360.7"/>
+<line x1="22.6" y1="372.3" x2="31.4" y2="385.7"/>
+<line x1="48.6" y1="372.3" x2="57.4" y2="385.7"/>
+<line x1="74.6" y1="372.3" x2="83.4" y2="385.7"/>
+<line x1="100.6" y1="372.3" x2="109.4" y2="385.7"/>
+<line x1="13.1" y1="441.1" x2="22.9" y2="450.9"/>
+</g>
+<g style="fill:var(--sl-color-gray-3);stroke:var(--sl-color-gray-3);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round">
+<line x1="74" y1="146" x2="74" y2="167.2"/><polygon points="74,172 70.7,166 77.3,166"/>
+<line x1="74" y1="276" x2="74" y2="297.2"/><polygon points="74,302 70.7,296 77.3,296"/>
+</g>
+<g style="fill:var(--sl-color-white);font-size:14px;font-weight:700">
+<text x="154" y="70" style="font-size:18px">α</text>
+<text x="154" y="200" style="font-size:18px">β′</text>
+<text x="154" y="330" style="font-size:18px">β</text>
+</g>
+<g style="fill:var(--sl-color-gray-2);font-size:14px">
+<text x="8" y="18">Nhìn dọc theo trục chuỗi: mỗi ký hiệu là</text>
+<text x="8" y="35">tiết diện của một chuỗi hydrocarbon</text>
+<text x="154" y="90">subcell lục giác (H)</text>
+<text x="154" y="107">chuỗi quay tự do,</text>
+<text x="154" y="124">gần như hình trụ</text>
+<text x="154" y="141">kém bền, hình thành nhanh</text>
+<text x="154" y="220">subcell trực thoi</text>
+<text x="154" y="237">vuông góc (O⊥)</text>
+<text x="154" y="350">subcell tam tà</text>
+<text x="154" y="367">song song (T∥)</text>
+<text x="154" y="384">dạng bền nhất</text>
+<text x="86" y="162">tự chuyển dần sang</text>
+<text x="86" y="292">dạng bền hơn</text>
+<text x="32" y="427">chuỗi quay tự do quanh trục</text>
+<text x="32" y="451">mặt phẳng zigzag của một chuỗi</text>
+</g>
+</svg>

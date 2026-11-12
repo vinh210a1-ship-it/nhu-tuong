@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 486" width="360" height="486" role="img" aria-labelledby="oro-t oro-d">
+<title id="oro-t">Orogenic displacement: chất hoạt động bề mặt đẩy protein khỏi mặt phân cách</title>
+<desc id="oro-d">Ba ô xếp dọc, nhìn từ trên xuống mặt phân cách, theo nồng độ chất hoạt động bề mặt tăng dần. Ô 1: mạng protein nguyên vẹn nhưng có vài chỗ khuyết. Ô 2: chất hoạt động bề mặt xen vào chỗ khuyết thành các miền tròn, miền lớn lên và nén mạng protein quanh nó. Ô 3: các miền chiếm gần hết bề mặt, mạng protein vỡ và các mảnh protein rời bề mặt vào pha khối.</desc>
+<defs><clipPath id="o0"><rect x="8" y="30" width="150" height="108" rx="8"/></clipPath><clipPath id="o1"><rect x="8" y="178" width="150" height="108" rx="8"/></clipPath><clipPath id="o2"><rect x="8" y="326" width="150" height="108" rx="8"/></clipPath></defs>
+<g style="fill:var(--sl-color-gray-5)">
+<rect x="8" y="30" width="150" height="108" rx="8"/>
+<rect x="8" y="178" width="150" height="108" rx="8"/>
+<rect x="8" y="326" width="150" height="108" rx="8"/>
+<rect x="8" y="447" width="18" height="12" rx="2"/>
+</g>
+<g style="fill:none;stroke:var(--sl-color-gray-3);stroke-width:1">
+<path clip-path="url(#o0)" d="M-100,30 l108,108 M8,30 l-108,108 M-84,30 l108,108 M24,30 l-108,108 M-68,30 l108,108 M40,30 l-108,108 M-52,30 l108,108 M56,30 l-108,108 M-36,30 l108,108 M72,30 l-108,108 M-20,30 l108,108 M88,30 l-108,108 M-4,30 l108,108 M104,30 l-108,108 M12,30 l108,108 M120,30 l-108,108 M28,30 l108,108 M136,30 l-108,108 M44,30 l108,108 M152,30 l-108,108 M60,30 l108,108 M168,30 l-108,108 M76,30 l108,108 M184,30 l-108,108 M92,30 l108,108 M200,30 l-108,108 M108,30 l108,108 M216,30 l-108,108 M124,30 l108,108 M232,30 l-108,108 M140,30 l108,108 M248,30 l-108,108 M156,30 l108,108 M264,30 l-108,108"/>
+<path clip-path="url(#o1)" d="M-100,178 l108,108 M8,178 l-108,108 M-88,178 l108,108 M20,178 l-108,108 M-76,178 l108,108 M32,178 l-108,108 M-64,178 l108,108 M44,178 l-108,108 M-52,178 l108,108 M56,178 l-108,108 M-40,178 l108,108 M68,178 l-108,108 M-28,178 l108,108 M80,178 l-108,108 M-16,178 l108,108 M92,178 l-108,108 M-4,178 l108,108 M104,178 l-108,108 M8,178 l108,108 M116,178 l-108,108 M20,178 l108,108 M128,178 l-108,108 M32,178 l108,108 M140,178 l-108,108 M44,178 l108,108 M152,178 l-108,108 M56,178 l108,108 M164,178 l-108,108 M68,178 l108,108 M176,178 l-108,108 M80,178 l108,108 M188,178 l-108,108 M92,178 l108,108 M200,178 l-108,108 M104,178 l108,108 M212,178 l-108,108 M116,178 l108,108 M224,178 l-108,108 M128,178 l108,108 M236,178 l-108,108 M140,178 l108,108 M248,178 l-108,108 M152,178 l108,108 M260,178 l-108,108"/>
+<path clip-path="url(#o2)" d="M-100,326 l108,108 M8,326 l-108,108 M-92,326 l108,108 M16,326 l-108,108 M-84,326 l108,108 M24,326 l-108,108 M-76,326 l108,108 M32,326 l-108,108 M-68,326 l108,108 M40,326 l-108,108 M-60,326 l108,108 M48,326 l-108,108 M-52,326 l108,108 M56,326 l-108,108 M-44,326 l108,108 M64,326 l-108,108 M-36,326 l108,108 M72,326 l-108,108 M-28,326 l108,108 M80,326 l-108,108 M-20,326 l108,108 M88,326 l-108,108 M-12,326 l108,108 M96,326 l-108,108 M-4,326 l108,108 M104,326 l-108,108 M4,326 l108,108 M112,326 l-108,108 M12,326 l108,108 M120,326 l-108,108 M20,326 l108,108 M128,326 l-108,108 M28,326 l108,108 M136,326 l-108,108 M36,326 l108,108 M144,326 l-108,108 M44,326 l108,108 M152,326 l-108,108 M52,326 l108,108 M160,326 l-108,108 M60,326 l108,108 M168,326 l-108,108 M68,326 l108,108 M176,326 l-108,108 M76,326 l108,108 M184,326 l-108,108 M84,326 l108,108 M192,326 l-108,108 M92,326 l108,108 M200,326 l-108,108 M100,326 l108,108 M208,326 l-108,108 M108,326 l108,108 M216,326 l-108,108 M116,326 l108,108 M224,326 l-108,108 M124,326 l108,108 M232,326 l-108,108 M132,326 l108,108 M240,326 l-108,108 M140,326 l108,108 M248,326 l-108,108 M148,326 l108,108 M256,326 l-108,108 M156,326 l108,108 M264,326 l-108,108"/>
+<path d="M8,447 l12,12 M14,447 l12,12 M20,447 l-12,12 M26,447 l-12,12"/>
+</g>
+<g style="fill:var(--hh-be-mat);stroke:var(--sl-color-gray-3);stroke-width:1">
+<circle clip-path="url(#o0)" cx="46" cy="60" r="4"/>
+<circle clip-path="url(#o0)" cx="112" cy="56" r="3.5"/>
+<circle clip-path="url(#o0)" cx="78" cy="92" r="4.5"/>
+<circle clip-path="url(#o0)" cx="38" cy="116" r="3.5"/>
+<circle clip-path="url(#o0)" cx="126" cy="112" r="4"/>
+</g>
+<g style="fill:var(--sl-color-accent);stroke:var(--hh-be-mat);stroke-width:1.5">
+<circle clip-path="url(#o1)" cx="46" cy="208" r="15"/>
+<circle clip-path="url(#o1)" cx="112" cy="204" r="13"/>
+<circle clip-path="url(#o1)" cx="78" cy="240" r="17"/>
+<circle clip-path="url(#o1)" cx="38" cy="264" r="12"/>
+<circle clip-path="url(#o1)" cx="126" cy="260" r="14"/>
+<circle clip-path="url(#o2)" cx="46" cy="356" r="27"/>
+<circle clip-path="url(#o2)" cx="112" cy="352" r="24"/>
+<circle clip-path="url(#o2)" cx="78" cy="388" r="26"/>
+<circle clip-path="url(#o2)" cx="38" cy="412" r="23"/>
+<circle clip-path="url(#o2)" cx="126" cy="408" r="25"/>
+<circle cx="150" cy="453" r="7"/>
+</g>
+<g style="fill:none;stroke:var(--sl-color-gray-3);stroke-width:1.2">
+<rect x="8" y="30" width="150" height="108" rx="8"/>
+<rect x="8" y="178" width="150" height="108" rx="8"/>
+<rect x="8" y="326" width="150" height="108" rx="8"/>
+</g>
+<g style="fill:var(--sl-color-gray-5);stroke:var(--sl-color-gray-3);stroke-width:1">
+<path d="M176,404 l8,-5 l7,6 l-9,6 z"/>
+<path d="M196,420 l8,-5 l7,6 l-9,6 z"/>
+<path d="M222,408 l8,-5 l7,6 l-9,6 z"/>
+</g>
+<g style="fill:var(--sl-color-gray-3);stroke:var(--sl-color-gray-3);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round">
+<line x1="83" y1="144" x2="83" y2="167.2"/><polygon points="83,172 79.7,166 86.3,166"/>
+<line x1="83" y1="292" x2="83" y2="315.2"/><polygon points="83,320 79.7,314 86.3,314"/>
+<line x1="160" y1="398" x2="168.2" y2="400.7"/><polygon points="172,402 166.4,403 168.1,397.8"/>
+</g>
+<g style="fill:var(--sl-color-white);font-size:14px;font-weight:700">
+<text x="170" y="50">1.</text>
+<text x="170" y="198">2.</text>
+<text x="170" y="346">3.</text>
+</g>
+<g style="fill:var(--sl-color-gray-2);font-size:14px">
+<text x="190" y="50">Mạng protein nguyên</text>
+<text x="190" y="67">vẹn, dị thể: có</text>
+<text x="190" y="84">chỗ khuyết</text>
+<text x="190" y="198">CHĐBM xen vào chỗ</text>
+<text x="190" y="215">khuyết, tạo mầm;</text>
+<text x="190" y="232">miền lớn lên, nén</text>
+<text x="190" y="249">mạng protein</text>
+<text x="190" y="346">Ở π tới hạn mạng</text>
+<text x="190" y="363">vỡ, protein rời</text>
+<text x="190" y="380">bề mặt vào pha khối</text>
+<text x="95" y="160">nồng độ CHĐBM tăng</text>
+<text x="95" y="308">nồng độ CHĐBM tăng</text>
+<text x="8" y="20">Mặt phân cách nhìn từ trên xuống</text>
+<text x="32" y="458">mạng protein</text>
+<text x="162" y="458">miền chất hoạt động bề mặt</text>
+<text x="32" y="478">CHĐBM: chất hoạt động bề mặt</text>
+</g>
+</svg>

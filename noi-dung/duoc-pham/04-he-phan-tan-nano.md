@@ -20,6 +20,8 @@ nguon_goc: tai-lieu-duoc-pham/04-he-phan-tan-nano.md
 
 ## 1. Nanoemulsion
 
+<!-- hinh: ba-he-nano -->
+
 - Định nghĩa và đặc tính: hai chất lỏng không trộn, giọt cỡ ~100 nm; diện tích riêng lớn, bền, trong suốt, lưu biến điều chỉnh được. Phương pháp năng lượng cao: đồng hóa áp lực cao, siêu âm; năng lượng thấp: nhiệt độ đảo pha (PIT), điểm đảo pha nhũ tương (EIP). [N: @gupta2016]
 - Tổng quan tá dược, kỹ thuật chế tạo và cơ chế mất ổn định, ứng dụng bào chế. [N: @singh2017]
 - **Loại dầu quyết định kích thước và ripening:** dầu nhớt (LCT) cho giọt lớn hơn (D = 120 nm) so với dầu nhớt thấp như hexadecan (80 nm) ở cùng điều kiện đồng hóa; tối ưu cấu trúc chất hoạt động bề mặt và tỉ số nhớt η_D/η_C cho giọt dưới 40 nm; nhũ tương LCT không bị Ostwald ripening và bền trên 3 tháng; hỗn hợp dầu chứa ≥ 50% triglycerid không tan bền nhiệt động với ripening. [N: @wooster2008]

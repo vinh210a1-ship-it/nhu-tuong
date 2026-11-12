@@ -44,6 +44,8 @@ nguon_goc: tai-lieu-chat-hoat-dong-be-mat/03-protein-nhu-hoa-va-canh-tranh-hap-p
 
 ## 3.2 Orogenic displacement — cơ chế chi tiết
 
+<!-- hinh: orogenic-displacement -->
+
 ### Hiện tượng
 Cho Tween 20 vào màng β-casein hoặc β-lg ở mặt không khí–nước hay dầu–nước, protein lần lượt bị loại ra khi nồng độ chất hoạt động tăng. [N: @mackie1999, @mackie2000]
 

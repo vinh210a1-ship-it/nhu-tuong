@@ -26,6 +26,9 @@ nguon_goc: tai-lieu-chat-beo/02-da-hinh-ket-tinh-va-ban-do-pha.md
 4. **Ô mạng (unit cell):** có thể khác subcell. Ví dụ β′ của PPM có ô mạng đơn tà nhưng subcell trực thoi; β của POP và SOS có ô mạng đơn tà trong khi subcell là tam tà. [N: @seilert2025]
 
 ### 2.2 Ba dạng chính
+
+<!-- hinh: ba-dang-da-hinh -->
+
 | Dạng | Subcell | Đặc điểm (từ nguồn) | Short spacing XRD điển hình | Ghi chú |
 |---|---|---|---|---|
 | **α** | Lục giác (H) | Chuỗi quay tự do, không nghiêng so với pháp tuyến lớp; ô mạng lục giác; gần như hình trụ [N: @seilert2025] | ~0,42 nm (một đỉnh) — Macridachis-González và cs. 2020 ghi đỉnh α ở 0,42 nm [N: @macridachisgonzalez2020]; giá trị ~0,415 nm là [K] | Hình thành nhanh khi làm lạnh sâu |

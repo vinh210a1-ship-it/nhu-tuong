@@ -1,0 +1,1 @@
+Hạt tinh bột bán tinh thể hấp thụ nước, đến hồ hóa thì xoắn kép nóng chảy và amylose rò ra. **[N: @li2022]** Chữ trương ở ô b và cả ô d (sau làm nguội các chuỗi tái kết tinh, tức thoái hóa) lấy từ sách nền. **[K]** Hình là sơ đồ: không ghi nhiệt độ hay thời gian, không theo tỉ lệ, và không phân biệt tốc độ tái kết tinh của amylose với amylopectin.

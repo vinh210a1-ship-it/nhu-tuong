@@ -48,6 +48,8 @@ Dùng ký hiệu S = bão hòa, U = không bão hòa (thường O = oleic), ch�
 
 ## 4. Hai cấu hình gấp của TAG trong tinh thể
 
+<!-- hinh: tag-hai-cau-hinh -->
+
 - **Tuning fork (âm thoa):** hai chuỗi ở sn-1 và sn-3 xếp cùng phía, chuỗi sn-2 hướng ngược lại, giống âm thoa. Điển hình với TAG đơn acid (PPP, SSS…). Macridachis-González và cs. 2020 mô tả: hai chuỗi hướng sang cùng bên còn chuỗi sn-2 sang bên đối diện. [N: @macridachisgonzalez2020]
 - **Chair (ghế):** chuỗi xếp theo hình ghế, thường gặp ở TAG không đối xứng hoặc β′. Bảng Seilert và cs. 2025 gán tuning fork/chair cho từng TAG và dạng đa hình: ví dụ SOS, POP, POS β: tuning fork; PPO β: chair; SSO β: chair; PPE β′: chair. [N: @seilert2025]
 - Tại sao quan trọng: cấu hình quyết định tham số 3L/2L, tính chống chuyển dạng và tính trộn lẫn (chương 02).
