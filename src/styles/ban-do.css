@@ -1,0 +1,94 @@
+/* Bản đồ lộ trình bằng hình ở đầu sáu trang khu (HTML do src/data/ban-do-khu.mjs dựng).
+   Điện thoại: các trạm xếp dọc, đường nối chạy dọc qua tâm vòng tròn.
+   Khung rộng từ 34rem: hai hàng ngang, đường nối chạy ngang; cuối hàng trên và đầu hàng dưới có đoạn nối ló ra để báo "còn tiếp".
+   Trạm đã đọc (lớp .da-doc do tuong-tac.js bật): vòng tròn tô nền, số đổi thành ✓, đoạn đường dẫn tới trạm tô màu của khu. */
+.ban-do-khu {
+	--bd-tron: 3.5rem;
+	--bd-dem: 0.6rem;
+	--bd-net: var(--sl-color-gray-4);
+	container-type: inline-size;
+	margin: 1.25rem 0 1.5rem;
+	padding: 1rem 0.75rem 0.75rem;
+	border: 1px solid var(--hh-vien);
+	border-radius: 1.2rem;
+	background: var(--hh-be-mat);
+	box-shadow: var(--hh-bong);
+}
+.ban-do-khu .bd-dau { display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; align-items: baseline; justify-content: space-between; margin: 0 0.5rem 0.5rem; font-size: 1rem; color: var(--sl-color-white); }
+.ban-do-khu .bd-dau span { font-size: 0.85rem; color: var(--sl-color-gray-2); }
+.ban-do-khu .bd-ghi-chu { margin: 0.6rem 0.5rem 0; font-size: 0.8rem; line-height: 1.5; color: var(--sl-color-gray-2); }
+.bd-ds { display: grid; margin: 0; padding: 0; list-style: none; }
+.bd-ds li { position: relative; margin: 0; padding: 0; }
+.bd-nut {
+	display: flex;
+	gap: 0.85rem;
+	align-items: flex-start;
+	height: 100%;
+	padding: var(--bd-dem) 0.5rem;
+	border-radius: 0.9rem;
+	color: var(--sl-color-white);
+	text-decoration: none;
+}
+.bd-nut:hover { background: color-mix(in srgb, var(--mau) 9%, transparent); }
+.bd-nut:focus-visible { outline: 3px solid var(--sl-color-text-accent); outline-offset: -3px; }
+.bd-tron {
+	position: relative;
+	z-index: 1;
+	flex: none;
+	display: grid;
+	place-items: center;
+	width: var(--bd-tron);
+	height: var(--bd-tron);
+	border: 2.5px solid var(--mau);
+	border-radius: 50%;
+	background: var(--hh-be-mat);
+	color: var(--sl-color-white);
+}
+.bd-mo-rong .bd-tron { border-style: dashed; }
+.bd-so {
+	position: absolute;
+	right: -0.35rem;
+	bottom: -0.35rem;
+	display: grid;
+	place-items: center;
+	min-width: 1.5rem;
+	height: 1.5rem;
+	border: 2px solid var(--mau);
+	border-radius: 999px;
+	background: var(--hh-be-mat);
+	color: var(--sl-color-white);
+	font-size: 0.78rem;
+	font-weight: 700;
+	line-height: 1;
+}
+.bd-chu { display: grid; gap: 0.15rem; min-width: 0; padding-top: 0.2rem; }
+.bd-chu b { font-size: 1rem; line-height: 1.3; }
+.bd-nut:hover .bd-chu b { text-decoration: underline; }
+.bd-chu small { font-size: 0.85rem; line-height: 1.45; color: var(--sl-color-gray-2); }
+.bd-an { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.bd-tt { display: none; font-size: 0.8rem; font-weight: 600; color: var(--sl-color-white); }
+/* đường nối: ::before đi vào trạm, ::after đi ra khỏi trạm (đặt theo <li>) */
+.bd-nut::before,
+.bd-nut::after { content: ''; position: absolute; background: var(--bd-net); }
+.bd-nut::before { left: calc(0.5rem + var(--bd-tron) / 2 - 1.5px); top: 0; width: 3px; height: var(--bd-dem); }
+.bd-nut::after { left: calc(0.5rem + var(--bd-tron) / 2 - 1.5px); top: calc(var(--bd-dem) + var(--bd-tron)); bottom: 0; width: 3px; }
+.bd-ds li:first-child .bd-nut::before,
+.bd-ds li:last-child .bd-nut::after { display: none; }
+/* đã đọc */
+.bd-nut.da-doc .bd-tron { background: color-mix(in srgb, var(--mau) 22%, var(--hh-be-mat)); }
+.bd-nut.da-doc .bd-so { background: var(--sl-color-white); color: var(--sl-color-black); border-color: var(--sl-color-white); font-size: 0; }
+.bd-nut.da-doc .bd-so::after { content: '✓'; font-size: 0.85rem; }
+.bd-nut.da-doc .bd-tt { display: block; }
+.bd-nut.da-doc::before,
+.bd-ds li:has(+ li .bd-nut.da-doc) .bd-nut::after { background: var(--mau); }
+@container (min-width: 34rem) {
+	.bd-ds { grid-template-columns: repeat(var(--cot), minmax(0, 1fr)); row-gap: 0.5rem; }
+	.bd-nut { flex-direction: column; align-items: center; gap: 0.5rem; padding: var(--bd-dem) 0.4rem; text-align: center; }
+	.bd-chu { padding-top: 0; justify-items: center; }
+	.bd-nut::before { left: 0; top: calc(var(--bd-dem) + var(--bd-tron) / 2 - 1.5px); width: calc(50% - var(--bd-tron) / 2); height: 3px; }
+	.bd-nut::after { left: calc(50% + var(--bd-tron) / 2); right: 0; top: calc(var(--bd-dem) + var(--bd-tron) / 2 - 1.5px); bottom: auto; width: auto; height: 3px; }
+}
+@media print {
+	.ban-do-khu { box-shadow: none; break-inside: avoid; }
+	.bd-nut::before, .bd-nut::after { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}

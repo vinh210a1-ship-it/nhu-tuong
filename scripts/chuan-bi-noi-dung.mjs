@@ -12,6 +12,7 @@ import { KHU } from '../src/data/khu.mjs';
 import { dungTraCuu } from './tra-cuu.mjs';
 import { docTep } from './doc-tep.mjs';
 import { htmlLienQuan, kiemLienQuan } from '../src/data/lien-quan-khu.mjs';
+import { htmlBanDo } from '../src/data/ban-do-khu.mjs';
 import { htmlThuNgay, htmlMucDo, htmlCanBietTruoc, htmlCanBietTruocKhu, CONG_CU_BAI } from '../src/data/cong-cu-bai.mjs';
 import { docTuKiemTra, kiemTuKiemTra, htmlTuKiemTra } from './tu-kiem-tra.mjs';
 
@@ -202,7 +203,13 @@ for (const khu of KHU_BAT) {
 	const dich = path.join(DOCS, khu);
 	xoaVaTao(dich);
 	// trang lộ trình của khu (viết tay trong trang/<khu>.md)
-	fs.writeFileSync(path.join(dich, 'index.md'), docTep(path.join(GOC, 'trang', `${khu}.md`)));
+	// bản đồ lộ trình bằng hình (src/data/ban-do-khu.mjs) đặt ngay trên bảng lộ trình; bảng giữ lại cho trình đọc màn hình và bản in
+	{
+		const trangKhu = docTep(path.join(GOC, 'trang', `${khu}.md`));
+		const viTri = trangKhu.search(/^\|/m);
+		if (viTri < 0) throw new Error(`trang/${khu}.md: không tìm thấy bảng lộ trình để đặt bản đồ lên trên`);
+		fs.writeFileSync(path.join(dich, 'index.md'), `${trangKhu.slice(0, viTri)}${htmlBanDo(khu)}\n\n${trangKhu.slice(viTri)}`);
+	}
 	const tep = fs.readdirSync(nguonDir).filter((f) => f.endsWith('.md')).sort();
 	// bảng tra: tên file gốc / số thứ tự -> slug
 	const slugTheoFile = {};
