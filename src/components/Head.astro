@@ -1,0 +1,22 @@
+---
+// Phần <head> của mọi trang: giữ nguyên các thẻ Starlight sinh ra, thêm ảnh xem trước khi chia sẻ link (Zalo, Facebook...).
+// Trang thuộc khu nào dùng ảnh của khu đó; các trang còn lại dùng ảnh trang chủ.
+// Ảnh nằm ở public/chia-se/, dựng một lần bằng scripts/dung-anh-chia-se.mjs (không dựng lúc build).
+import { KHU } from '../data/khu.mjs';
+
+const { head, id } = Astro.locals.starlightRoute;
+const khu = id.split('/')[0];
+const ten = KHU[khu] ? khu : 'trang-chu';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const anh = new URL(`${base}/chia-se/${ten}.png`, Astro.site).href;
+const moTa = KHU[khu] ? `Ảnh giới thiệu khu ${KHU[khu].ten} của web Nhũ tương thực phẩm, kèm một hình cơ chế minh họa` : 'Ảnh giới thiệu web Nhũ tương thực phẩm, kèm một hình cơ chế minh họa';
+---
+
+{head.map(({ tag: Tag, attrs, content }) => <Tag {...attrs} set:html={content} />)}
+<meta property="og:image" content={anh} />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={moTa} />
+<meta name="twitter:image" content={anh} />
+<meta name="twitter:image:alt" content={moTa} />
