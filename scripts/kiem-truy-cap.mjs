@@ -19,6 +19,8 @@ const BASE = '/nhu-tuong';
 const CHAT = process.argv.includes('--chat');
 const TRANG = [
 	['trang chủ', `${BASE}/`],
+	['trang khu (nhũ tương, có bản đồ lộ trình)', `${BASE}/nhu-tuong/`],
+	['trang khu (thực phẩm, có bản đồ lộ trình)', `${BASE}/thuc-pham/`],
 	['bài (mất ổn định)', `${BASE}/nhu-tuong/mat-on-dinh/`],
 	['bài (nền tảng, có hình cơ chế)', `${BASE}/nhu-tuong/nen-tang/`],
 	['bài (chất ổn định, có hình cơ chế)', `${BASE}/nhu-tuong/chat-on-dinh/`],

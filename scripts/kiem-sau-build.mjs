@@ -363,6 +363,26 @@ const loiHinh = [];
 	var soHinh = soFigure, soDoThi = dsThuMuc.length;
 }
 
+// bản đồ lộ trình bằng hình: mỗi trang khu có đúng một bản đồ, đủ số trạm, mỗi trạm là liên kết tới bài và mang khóa "đã đọc", bảng lộ trình vẫn còn ngay bên dưới
+{
+	for (const khu of Object.keys(KHU)) {
+		const tep = path.join(DIST, khu, 'index.html');
+		const h = fs.existsSync(tep) ? fs.readFileSync(tep, 'utf8') : '';
+		const bd = [...h.matchAll(/<nav class="ban-do-khu[^>]*>([\s\S]*?)<\/nav>/g)];
+		if (bd.length !== 1) { loiHinh.push(`/${khu}/: cần đúng 1 bản đồ lộ trình (đang ${bd.length})`); continue; }
+		const tram = [...bd[0][1].matchAll(/<a class="bd-nut[^"]*" href="([^"]+)" data-slug="([^"]+)">/g)];
+		if (tram.length !== KHU[khu].bai.length) loiHinh.push(`/${khu}/: bản đồ có ${tram.length} trạm, khu có ${KHU[khu].bai.length} bài`);
+		KHU[khu].bai.forEach((b, i) => {
+			if (!tram[i]) return;
+			if (tram[i][1] !== `${b.slug}/`) loiHinh.push(`/${khu}/: trạm ${i + 1} trỏ "${tram[i][1]}", phải là "${b.slug}/"`);
+			if (tram[i][2] !== (khu === 'nhu-tuong' ? b.slug : `${khu}/${b.slug}`)) loiHinh.push(`/${khu}/: trạm ${i + 1} sai khóa đã đọc "${tram[i][2]}"`);
+			if (!fs.existsSync(path.join(DIST, khu, b.slug, 'index.html'))) loiHinh.push(`/${khu}/: trạm ${i + 1} trỏ tới bài không có trong dist/ (${b.slug})`);
+		});
+		if ((bd[0][1].match(/<svg class="bieu-tuong"/g) || []).length !== tram.length) loiHinh.push(`/${khu}/: có trạm thiếu biểu tượng`);
+		if (!/^\s*<table/.test(h.slice(bd[0].index + bd[0][0].length))) loiHinh.push(`/${khu}/: ngay dưới bản đồ phải còn bảng lộ trình (cho trình đọc màn hình và bản in)`);
+	}
+}
+
 console.log(`kiem-sau-build: ${trang.length} trang, ${soLienKet} liên kết nội bộ, base "${BASE}"`);
 for (const [nhan, ds] of Object.entries(canhBao)) console.log(`  ghi chú (không chặn): ${nhan} còn ở ${ds.length} trang, vd ${ds[0]}`);
 if (loiCam.length) {
@@ -383,11 +403,11 @@ if (loiRnd.length) {
 	for (const l of loiRnd.slice(0, 40)) console.log('  - ' + l);
 }
 if (loiHinh.length) {
-	console.log(`\nHÌNH CƠ CHẾ / ĐỒ THỊ: ${loiHinh.length} lỗi`);
+	console.log(`\nHÌNH CƠ CHẾ / ĐỒ THỊ / BẢN ĐỒ LỘ TRÌNH: ${loiHinh.length} lỗi`);
 	for (const l of loiHinh.slice(0, 40)) console.log('  - ' + l);
 }
 if (loiCam.length || nhomHong.length || loiThuNgay.length || loiRnd.length || loiHinh.length) {
 	console.log('\nkiem-sau-build: KHÔNG ĐẠT');
 	process.exit(1);
 }
-console.log(`kiem-sau-build: đạt (0 chuỗi cấm, 0 liên kết nội bộ hỏng, 8/8 bài có hộp "Thử ngay", ${Object.keys(LIEN_QUAN).length} bài có hộp "Liên quan ở khu khác" (${Object.values(LIEN_QUAN).reduce((t, d) => t + d.length, 0)} liên kết, ${soLkKhuKhac} đã kiểm có đủ hai chiều trong dist/; ${bai0LienKet.length} bài chưa có liên kết thân bài tới bài khác, chỉ báo), mọi #nv-… khớp nhiệm vụ, trang Số liệu R&D đủ 30 + 7 + 16 dòng, ${soHinh} hình cơ chế và ${soDoThi} đồ thị đúng quy cách, 8/8 bài có Tự kiểm tra, mức độ và Cần biết trước; khu đã chuẩn hóa: ${KHU_CHUAN.join(', ') || 'chưa có'})`);
+console.log(`kiem-sau-build: đạt (0 chuỗi cấm, 0 liên kết nội bộ hỏng, 8/8 bài có hộp "Thử ngay", ${Object.keys(LIEN_QUAN).length} bài có hộp "Liên quan ở khu khác" (${Object.values(LIEN_QUAN).reduce((t, d) => t + d.length, 0)} liên kết, ${soLkKhuKhac} đã kiểm có đủ hai chiều trong dist/; ${bai0LienKet.length} bài chưa có liên kết thân bài tới bài khác, chỉ báo), mọi #nv-… khớp nhiệm vụ, trang Số liệu R&D đủ 30 + 7 + 16 dòng, ${soHinh} hình cơ chế và ${soDoThi} đồ thị đúng quy cách, ${Object.keys(KHU).length} trang khu có bản đồ lộ trình, 8/8 bài có Tự kiểm tra, mức độ và Cần biết trước; khu đã chuẩn hóa: ${KHU_CHUAN.join(', ') || 'chưa có'})`);

@@ -42,6 +42,7 @@ export default defineConfig({
 				'./src/styles/chung.css',
 				'./src/styles/trang-chu.css',
 				'./src/styles/cong-cu.css',
+				'./src/styles/ban-do.css',
 				'./src/styles/hinh.css',
 				'./src/styles/do-thi.css',
 			],
