@@ -9,7 +9,7 @@
     "dev": "npm run chuan-bi && astro dev",
     "build": "npm run chuan-bi && astro build",
     "kiem": "node scripts/kiem-may-tinh.mjs && node scripts/kiem-phong-lab.mjs && node scripts/kiem-hinh.mjs && node scripts/kiem-do-thi.mjs",
-    "kiem-sau-build": "node scripts/kiem-sau-build.mjs",
+    "kiem-sau-build": "node scripts/kiem-sau-build.mjs && node scripts/kiem-anh-chia-se.mjs",
     "kiem-truy-cap": "node scripts/kiem-truy-cap.mjs",
     "preview": "astro preview"
   },

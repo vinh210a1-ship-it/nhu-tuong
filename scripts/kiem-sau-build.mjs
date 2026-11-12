@@ -10,7 +10,6 @@ import { KHU } from '../src/data/khu.mjs';
 import { docTuKiemTra } from './tu-kiem-tra.mjs';
 import { CONG_CU_BAI, CONG_CU_KHU, MIEN_THU_NGAY, canBietTruocKhu } from '../src/data/cong-cu-bai.mjs';
 import { LIEN_QUAN } from '../src/data/lien-quan-khu.mjs';
-import { ANH, RONG, CAO, NANG_TOI_DA, coPng } from './dung-anh-chia-se.mjs';
 import { NHIEM_VU } from '../public/phong-lab/mo-hinh.js';
 
 const GOC = process.cwd();
@@ -364,25 +363,6 @@ const loiHinh = [];
 	var soHinh = soFigure, soDoThi = dsThuMuc.length;
 }
 
-// ảnh xem trước khi chia sẻ link: đủ 7 ảnh đúng cỡ và đủ nhẹ; mọi trang có og:image + twitter:image trỏ tới ảnh có thật, trang của khu nào dùng ảnh khu đó
-{
-	for (const ten of Object.keys(ANH)) {
-		const tep = path.join(DIST, 'chia-se', `${ten}.png`);
-		if (!fs.existsSync(tep)) { loiHinh.push(`thiếu ảnh chia sẻ chia-se/${ten}.png (chạy node scripts/dung-anh-chia-se.mjs)`); continue; }
-		const { rong, cao, nang } = coPng(tep);
-		if (rong !== RONG || cao !== CAO) loiHinh.push(`chia-se/${ten}.png cỡ ${rong} × ${cao}, phải ${RONG} × ${CAO}`);
-		if (nang > NANG_TOI_DA) loiHinh.push(`chia-se/${ten}.png nặng ${(nang / 1024).toFixed(0)} KB, quá ${NANG_TOI_DA / 1024} KB`);
-	}
-	for (const [p, h] of Object.entries(noiDung)) {
-		if (/\/404\.html$/.test(p) || /http-equiv="refresh"/i.test(h.slice(0, 600))) continue; // trang 404 và trang chuyển hướng
-		const og = h.match(/<meta property="og:image" content="([^"]+)"/), tw = h.match(/<meta name="twitter:image" content="([^"]+)"/);
-		const khu = tenTrang(p).split('/')[1];
-		const can = `https://vinh210a1-ship-it.github.io${BASE}/chia-se/${KHU[khu] ? khu : 'trang-chu'}.png`;
-		if (!og || !tw) loiHinh.push(`${tenTrang(p)}: thiếu thẻ og:image hoặc twitter:image`);
-		else if (og[1] !== can || tw[1] !== can) loiHinh.push(`${tenTrang(p)}: ảnh chia sẻ là "${og[1]}", phải là "${can}"`);
-	}
-}
-
 console.log(`kiem-sau-build: ${trang.length} trang, ${soLienKet} liên kết nội bộ, base "${BASE}"`);
 for (const [nhan, ds] of Object.entries(canhBao)) console.log(`  ghi chú (không chặn): ${nhan} còn ở ${ds.length} trang, vd ${ds[0]}`);
 if (loiCam.length) {
@@ -410,4 +390,4 @@ if (loiCam.length || nhomHong.length || loiThuNgay.length || loiRnd.length || lo
 	console.log('\nkiem-sau-build: KHÔNG ĐẠT');
 	process.exit(1);
 }
-console.log(`kiem-sau-build: đạt (0 chuỗi cấm, 0 liên kết nội bộ hỏng, 8/8 bài có hộp "Thử ngay", ${Object.keys(LIEN_QUAN).length} bài có hộp "Liên quan ở khu khác" (${Object.values(LIEN_QUAN).reduce((t, d) => t + d.length, 0)} liên kết, ${soLkKhuKhac} đã kiểm có đủ hai chiều trong dist/; ${bai0LienKet.length} bài chưa có liên kết thân bài tới bài khác, chỉ báo), mọi #nv-… khớp nhiệm vụ, trang Số liệu R&D đủ 30 + 7 + 16 dòng, ${soHinh} hình cơ chế và ${soDoThi} đồ thị đúng quy cách, ${Object.keys(ANH).length} ảnh chia sẻ đúng cỡ và mọi trang có og:image, 8/8 bài có Tự kiểm tra, mức độ và Cần biết trước; khu đã chuẩn hóa: ${KHU_CHUAN.join(', ') || 'chưa có'})`);
+console.log(`kiem-sau-build: đạt (0 chuỗi cấm, 0 liên kết nội bộ hỏng, 8/8 bài có hộp "Thử ngay", ${Object.keys(LIEN_QUAN).length} bài có hộp "Liên quan ở khu khác" (${Object.values(LIEN_QUAN).reduce((t, d) => t + d.length, 0)} liên kết, ${soLkKhuKhac} đã kiểm có đủ hai chiều trong dist/; ${bai0LienKet.length} bài chưa có liên kết thân bài tới bài khác, chỉ báo), mọi #nv-… khớp nhiệm vụ, trang Số liệu R&D đủ 30 + 7 + 16 dòng, ${soHinh} hình cơ chế và ${soDoThi} đồ thị đúng quy cách, 8/8 bài có Tự kiểm tra, mức độ và Cần biết trước; khu đã chuẩn hóa: ${KHU_CHUAN.join(', ') || 'chưa có'})`);
