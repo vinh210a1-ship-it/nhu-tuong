@@ -211,6 +211,211 @@ Chia độ dốc cho 8 để có ω. Với phần (c), thay t = 90 vào đườn
 	},
 ];
 
+// ---- Gói 3 (4 bài chất béo và thực phẩm). Thêm bằng push để không đụng chỗ gói khác thêm bài vào mảng phía trên.
+import { totox, mAcidBeo, ivSv, phanChuaPhanLy, giaTriF } from '../../public/cong-thuc.js';
+
+const TTX = [[0, 2, 4], [8, 12, 10], [16, 6, 28]]; // [tuần, PV, p-AnV]
+const IVSV_TP = [[16, 0, 7], [18, 0, 4], [18, 1, 25], [18, 2, 62], [18, 3, 2]]; // [n, k, % khối lượng]
+const IVSV_TEN = ['Palmitic', 'Stearic', 'Oleic', 'Linoleic', 'Linolenic'];
+const IV_DO = 125; // IV đo bằng Wijs do đề cho
+
+BAI_GIAI.push(
+	{
+		id: 'totox',
+		tieuDe: 'Chỉ nhìn PV thì dầu "đạt", nhìn thêm p-AnV thì sao?',
+		may: 'Chỉ số oxy hóa tổng TOTOX',
+		bai: ['chat-beo', 'oxy-hoa-lipid-chong-oxy-hoa-han-su-dung', 'Oxy hóa và hạn dùng'],
+		nhap: { pv: '6', anv: '28' },
+		viet() {
+			const t = TTX.map(([, pv, anv]) => totox(pv, anv));
+			const [, pv8, anv8] = TTX[1], [, pv16, anv16] = TTX[2];
+			const phanPV = (2 * pv16) / t[2];
+			const bang = TTX.map(([tuan, pv, anv]) => `| ${tuan} | ${so(pv)} | ${so(anv)} |`).join('\n');
+			const dat = (ok) => (ok ? 'đạt' : 'vượt');
+			return {
+				de: `Bạn theo dõi một mẫu dầu trong bảo quản và đo PV (chỉ số peroxide) cùng p-AnV (chỉ số p-anisidine) ở ba thời điểm. Số liệu do đề dựng để tập tính, không phải số đo thật. [T]
+
+| Tuần | PV (meq O₂/kg) | p-AnV |
+|---|---|---|
+${bang}
+
+Giả sử đề đặt hai điều kiện nội bộ: PV không quá 10 meq O₂/kg, và TOTOX không quá 30. Hai số này do đề đặt để tập, không phải ngưỡng của tiêu chuẩn nào. [T]
+
+**(a)** Tính TOTOX ở ba thời điểm.
+**(b)** Từ tuần 8 sang tuần 16, PV giảm một nửa. Dầu có "tốt lên" không? Mẫu tuần 16 đạt hay không đạt nếu chỉ xét PV, và nếu xét TOTOX?
+**(c)** Ở tuần 16, bao nhiêu phần trăm TOTOX đến từ PV, bao nhiêu từ p-AnV? Điều gì xảy ra trong dầu để PV giảm mà p-AnV tăng?`,
+				nac1: `Oxy hóa lipid đi qua hai chặng: hydroperoxide hình thành trước (PV đo chúng), rồi hydroperoxide phân hủy dần thành aldehyde và các chất thứ cấp khác (p-AnV đo aldehyde). [K]
+
+Tự hỏi: hydroperoxide vừa được tạo ra vừa bị phân hủy, vậy đường PV theo thời gian chỉ đi lên hay có thể đi lên rồi đi xuống? Nếu có thể xuống, một lần đo PV thấp có đủ để nói dầu còn tốt không? [G]`,
+				nac2: `TOTOX là chỉ số quy ước gộp hai chỉ số trên: [K]
+
+$$
+\\mathrm{TOTOX} = 2\\,\\mathrm{PV} + \\text{p-AnV}
+$$
+
+PV tính bằng meq O₂/kg, còn p-AnV không có đơn vị. Hệ số 2 chỉ để hai chỉ số cùng tầm số, không phải hằng số cơ chế. Phần PV đóng góp vào TOTOX là 2·PV chia cho TOTOX. [G]
+
+Điều kiện "đạt" hay "vượt" ở đây chỉ so từng con số với số do đề đặt. [T]`,
+				nac3: `Tuần 0: TOTOX = 2 × ${so(TTX[0][1])} + ${so(TTX[0][2])} = ${so(t[0])}. Tuần 8 và tuần 16 làm tương tự. [T]
+
+Với phần (c), lấy 2 × PV của tuần 16 chia cho TOTOX của tuần 16 để có phần trăm từ PV; phần còn lại là p-AnV. [T]`,
+				loi: `**(a)** Tuần 0: TOTOX = **${so(t[0])}**. Tuần 8: 2 × ${so(pv8)} + ${so(anv8)} = **${so(t[1])}**. Tuần 16: 2 × ${so(pv16)} + ${so(anv16)} = **${so(t[2])}**. [T]
+
+**(b)** Không, dầu không tốt lên. PV giảm từ ${so(pv8)} xuống ${so(pv16)} meq O₂/kg nhưng p-AnV tăng từ ${so(anv8)} lên ${so(anv16)}, và TOTOX tăng từ ${so(t[1])} lên ${so(t[2])}. Chỉ xét PV: tuần 8 ${dat(pv8 <= 10)}, tuần 16 ${dat(pv16 <= 10)}, nên mẫu tuần 16 trông như hồi phục. Xét TOTOX: tuần 8 ${dat(t[1] <= 30)}, tuần 16 ${dat(t[2] <= 30)} (so với 30 do đề đặt). [T]
+
+**(c)** Phần từ PV: 2 × ${so(pv16)} / ${so(t[2])} = **${so(phanPV * 100)}%**; phần từ p-AnV: **${so((1 - phanPV) * 100)}%**. Cách giải thích hợp lý nhất là hydroperoxide đã phân hủy thành aldehyde nhanh hơn tốc độ nó được tạo ra, nên PV tụt xuống trong khi aldehyde, thứ p-AnV đo, tiếp tục tích lại. Số liệu này không chứng minh được cơ chế; muốn chắc cần thêm đo thời gian ở các điểm giữa tuần 8 và 16. [G]
+
+**Rút ra:** luôn đọc PV cùng p-AnV và theo dõi theo thời gian thay vì một điểm đo. Ngưỡng thật lấy theo tiêu chuẩn sản phẩm hoặc yêu cầu khách hàng; web chưa ghi ngưỡng TOTOX. Cũng cần đọc kỹ ký hiệu: bài Oxy hóa lipid viết tắt p-anisidine là "AV", trong khi tài liệu khác dùng AV cho chỉ số acid (acid value). [G]`,
+			};
+		},
+	},
+	{
+		id: 'iv-sv',
+		tieuDe: 'Thành phần acid béo của dầu cho IV và SV bao nhiêu, có khớp số đo không?',
+		may: 'Chỉ số iod (IV) và xà phòng hóa (SV) từ thành phần acid béo',
+		bai: ['chat-beo', 'cau-truc-triglyceride-va-acid-beo', 'Cấu trúc TAG và acid béo'],
+		nhap: { c160: '7', c180: '4', c181: '25', c182: '62', c183: '2' },
+		viet() {
+			const kq = ivSv(IVSV_TP);
+			const oleic = ivSv([[18, 1, 100]]);
+			const mac = ivSv([[16, 0, 10], [18, 0, 4], [18, 1, 60], [18, 2, 20], [18, 3, 6]]); // thành phần mặc định của máy
+			const bangM = IVSV_TP.map(([n, k], i) => `| ${IVSV_TEN[i]} | C${n}:${k} | ${so(mAcidBeo(n, k), 6)} |`).join('\n');
+			const bangIV = IVSV_TP.map(([n, k, w], i) => {
+				const ivi = ivSv([[n, k, 100]]).iv;
+				return `| ${IVSV_TEN[i]} | ${so(w)} | ${so(ivi, 4)} | ${so((w * ivi) / 100, 4)} |`;
+			}).join('\n');
+			const bangDe = IVSV_TP.map(([n, k, w], i) => `| ${IVSV_TEN[i]} | C${n}:${k} | ${so(w)} |`).join('\n');
+			const lech = kq.ivDau - IV_DO;
+			return {
+				de: `Phân tích sắc ký khí một dầu thực vật cho thành phần acid béo dưới đây (số do đề dựng, coi là % khối lượng acid béo, không phải của loại dầu nào). [T]
+
+| Acid béo | n:k (cacbon : nối đôi) | % |
+|---|---|---|
+${bangDe}
+
+Khối lượng nguyên tử và phân tử dùng (làm tròn như trong máy tính): C = 12,011; H = 1,008; O = 15,999; I₂ = 253,809 g/mol; KOH = 56,106 g/mol. [T]
+
+**(a)** Tính tay IV của acid oleic tự do (C₁₈H₃₄O₂, một nối đôi).
+**(b)** Tính IV và SV của dầu này, coi dầu là triglyceride (TAG).
+**(c)** Phòng lab đo IV bằng phương pháp Wijs của chính mẫu dầu này được ${IV_DO} g I₂/100 g (số do đề cho). Lệch bao nhiêu so với số tính? Nêu hai lý do có thể.`,
+				nac1: `Mỗi nối đôi C=C cộng với một phân tử I₂, nên IV đếm số nối đôi có trong 100 g chất béo. SV thì đếm lượng KOH để xà phòng hóa một lượng béo nhất định, mà mỗi phân tử triglyceride tiêu thụ ba phân tử KOH. [K]
+
+Tự hỏi: (1) khối lượng mol acid béo lớn hơn thì trong cùng một khối lượng có nhiều hay ít phân tử hơn? (2) Vì sao IV phụ thuộc số nối đôi, còn SV chủ yếu phụ thuộc chiều dài chuỗi? [G]`,
+				nac2: `Với acid béo CₙH₂ₙ₋₂ₖO₂ có k nối đôi và khối lượng mol M<sub>i</sub>, IV của acid đó tính theo tỉ lượng; IV của dầu là tổng theo phần khối lượng w<sub>i</sub> của từng acid: [K]
+
+$$
+\\mathrm{IV}_i = \\frac{100\\,k_i\\,M(\\mathrm{I_2})}{M_i}, \\qquad \\mathrm{IV} = \\sum_i w_i\\,\\mathrm{IV}_i
+$$
+
+Để tính SV của TAG, cần khối lượng mol của TAG từ M̄ (khối lượng mol trung bình của acid béo, trung bình theo số mol): [K]
+
+$$
+\\bar{M} = \\frac{1}{\\sum_i w_i/M_i}, \\qquad M(\\mathrm{TAG}) = 3\\bar{M} + M(\\text{glycerol}) - 3\\,M(\\mathrm{H_2O}), \\qquad \\mathrm{SV} = \\frac{3\\,M(\\mathrm{KOH})\\cdot 1000}{M(\\mathrm{TAG})}
+$$
+
+M<sub>i</sub> = n × 12,011 + (2n − 2k) × 1,008 + 2 × 15,999. Glycerol là C₃H₈O₃, nước H₂O (18,015 g/mol). IV vừa tính là IV theo acid béo tự do; dầu thật ở dạng TAG nên phải nhân thêm 3M̄/M(TAG) (phần khối lượng của gốc acyl trong TAG). [T]`,
+				nac3: `**(a)** M(oleic) = 18 × 12,011 + 34 × 1,008 + 2 × 15,999 = ${so(mAcidBeo(18, 1), 6)} g/mol. Với k = 1, lấy 100 × 1 × 253,809 chia cho M này. [T]
+
+**(b)** Khối lượng mol của năm acid béo trong đề (tính bằng cùng công thức): [T]
+
+| Acid béo | n:k | M (g/mol) |
+|---|---|---|
+${bangM}
+
+Tính IV của từng acid theo (a), nhân với phần khối lượng rồi cộng; sau đó tính M̄ và M(TAG) từ bảng này. [T]`,
+				loi: `**(a)** M(C₁₈H₃₄O₂) = ${so(mAcidBeo(18, 1), 6)} g/mol, nên IV = 100 × 1 × 253,809 / ${so(mAcidBeo(18, 1), 6)} = **${so(oleic.iv, 3)} g I₂/100 g**. [T]
+
+**(b)** IV của từng acid và phần đóng góp (% × IV / 100): [T]
+
+| Acid béo | % | IV của acid | Đóng góp |
+|---|---|---|---|
+${bangIV}
+
+Cộng các đóng góp được IV theo acid béo tự do = **${so(kq.iv, 4)}**. M̄ = ${so(kq.mTB, 5)} g/mol, M(TAG) = 3 × ${so(kq.mTB, 5)} + 92,094 − 3 × 18,015 = **${so(kq.mTAG, 4)} g/mol**. IV của dầu dạng TAG = ${so(kq.iv, 4)} × 3 × ${so(kq.mTB, 5)} / ${so(kq.mTAG, 4)} = **${so(kq.ivDau, 4)} g I₂/100 g**. SV = 3 × 56,106 × 1000 / ${so(kq.mTAG, 4)} = **${so(kq.sv, 4)} mg KOH/g**. [T]
+
+**(c)** Số tính ${so(kq.ivDau, 4)}, số đo ${IV_DO}: lệch ${so(lech, 2)} đơn vị, tức ${so((lech / kq.ivDau) * 100, 2)}% (số đo thấp hơn). Hai lý do có thể: dầu đã oxy hóa một phần nên mất nối đôi, hoặc kết quả sắc ký chưa đủ (acid béo chưa định danh, hoặc % diện tích khác % khối lượng nên thành phần nhập vào sai). Một số liệu không đủ để biết lý do nào đúng; nên đo thêm PV và p-AnV, hoặc chạy lại sắc ký với chuẩn nội. [G]
+
+**Rút ra:** với thành phần mặc định của máy (một dầu giàu oleic, đề dựng), SV = ${so(mac.sv, 4)} so với ${so(kq.sv, 4)} ở đây, còn IV = ${so(mac.ivDau, 4)} so với ${so(kq.ivDau, 4)}. [T] SV chủ yếu phản ánh chiều dài chuỗi nên ít phân biệt được các dầu cùng gồm acid béo C16 và C18; IV mới cho biết mức không bão hòa. [G]
+
+Phép tính giả định mọi acid béo nằm trong triglyceride; bỏ qua acid béo tự do, mono- và diglyceride, và chất không xà phòng hóa. [G]`,
+			};
+		},
+	},
+	{
+		id: 'axit-yeu',
+		tieuDe: 'Nâng pH nước sốt cho đỡ chua: chất bảo quản còn tác dụng không?',
+		may: 'Phần chất bảo quản axit yếu chưa phân ly',
+		bai: ['thuc-pham', 'bao-quan-hoat-do-nuoc-va-han-su-dung', 'Bảo quản và hoạt độ nước'],
+		nhap: { pH: '4,6', pKa: '4,5', c: '1000' },
+		viet() {
+			const f38 = phanChuaPhanLy(3.8, 4.5), f46 = phanChuaPhanLy(4.6, 4.5), f56 = phanChuaPhanLy(5.6, 4.5);
+			const cMoi = (f38 * 1000) / f46;
+			return {
+				de: `Một nước sốt đang ở pH 3,8 và bạn muốn nâng lên pH 4,6 cho đỡ chua. Sốt chứa một chất bảo quản axit yếu với tổng nồng độ 1000 mg/kg và pKa = 4,5. Số pKa do đề cho cho một chất giả định, không phải pKa của sorbat, benzoat hay propionat. [T]
+
+**(a)** Phần chưa phân ly (HA) và lượng HA (mg/kg) ở pH 3,8 và ở pH 4,6.
+**(b)** Ở pH 4,6, tổng nồng độ phải bằng bao nhiêu để giữ được lượng HA như ở pH 3,8?
+**(c)** Nếu nâng tiếp từ pH 4,6 lên 5,6 thì phần HA giảm bao nhiêu lần? Vì sao không ra đúng 10 lần?`,
+				nac1: `Axit yếu trong nước là cân bằng giữa dạng chưa phân ly HA và dạng phân ly A⁻ cộng H⁺. Nhiều H⁺ (pH thấp) đẩy cân bằng về phía HA; ít H⁺ (pH cao) đẩy về phía A⁻. Dạng HA là dạng qua được màng tế bào vi sinh vật. [K]
+
+Tự hỏi: khi pH đúng bằng pKa thì HA chiếm bao nhiêu phần? Khi pH cao hơn pKa một đơn vị thì sao, và khi pH thấp hơn pKa một đơn vị thì sao? [G]`,
+				nac2: `Phần chưa phân ly theo phương trình Henderson–Hasselbalch cho dung dịch loãng: [K]
+
+$$
+f_{\\mathrm{HA}} = \\frac{1}{1 + 10^{\\,\\mathrm{pH}-\\mathrm{pKa}}}
+$$
+
+Lượng HA bằng f nhân tổng nồng độ. Muốn giữ lượng HA không đổi khi f đổi, lấy lượng HA cần giữ chia cho f mới để có tổng nồng độ cần có. Hãy tính 10 mũ (pH − pKa) trước. [T]`,
+				nac3: `Ở pH 3,8: pH − pKa = 3,8 − 4,5 = −0,7, nên 10<sup>−0,7</sup> = ${so(10 ** -0.7, 4)}; f = 1 / (1 + ${so(10 ** -0.7, 4)}) = ${so(f38)}. Lượng HA = ${so(f38)} × 1000 mg/kg. Pha pH 4,6 và 5,6 làm tương tự. [T]`,
+				loi: `**(a)** pH 3,8: f = **${so(f38 * 100)}%**, HA ≈ **${so(f38 * 1000)} mg/kg**. pH 4,6: f = **${so(f46 * 100)}%**, HA ≈ **${so(f46 * 1000)} mg/kg**. Nâng pH 0,8 đơn vị làm HA giảm ${so(f38 / f46)} lần. [T]
+
+**(b)** Tổng nồng độ cần có ở pH 4,6 = ${so(f38 * 1000)} / ${so(f46)} ≈ **${so(cMoi)} mg/kg**, tức gấp ${so(cMoi / 1000)} lần mức ban đầu. [T]
+
+**(c)** Ở pH 5,6: f = ${so(f56 * 100)}%, nên từ pH 4,6 lên 5,6 phần HA giảm **${so(f46 / f56)} lần**, chưa tới 10. Lý do: phương trình có số 1 trong mẫu số. Chỉ khi pH cao hơn pKa nhiều (10<sup>pH−pKa</sup> lớn hơn nhiều so với 1) thì f mới giảm gần đúng 10 lần mỗi đơn vị pH; ở gần pKa, số 1 còn đáng kể nên f giảm chậm hơn. Vì thế ở hai chặng này f giảm ${so(f38 / f46)} lần và ${so(f46 / f56)} lần, chứ không phải 10 lần. [T]
+
+**Rút ra:** phép tính (b) chỉ là toán hình thức. Tăng gấp ${so(cMoi / 1000)} lần liều phải nằm trong mức tối đa cho phép của chất đó (tra ở trang [Tra cứu](../tra-cuu/)), và dạng phân ly A⁻ vẫn góp phần ức chế: với sorbic acid, ở pH trên 6 dạng phân ly còn gây hơn một nửa mức ức chế với đa số vi sinh vật được thử [N: @eklund1983]. Kết quả đó thuộc về sorbic acid, không tự áp cho chất trong đề. Chỉ tính phần HA có thể đánh giá thấp tác dụng ở pH cao; muốn biết sốt đủ an toàn vi sinh ở pH mới cần thử thách bằng vi sinh vật thật, không thay bằng phép tính. [G]`,
+			};
+		},
+	},
+	{
+		id: 'gia-tri-f',
+		tieuDe: 'Giữ 20 phút ở 115 °C tương đương bao nhiêu phút ở nhiệt độ chuẩn?',
+		may: 'Giá trị F ở nhiệt độ không đổi',
+		bai: ['thuc-pham', 'qua-trinh-nhiet-lanh-say-ep-dun', 'Thanh trùng, đông lạnh, sấy, ép đùn'],
+		nhap: { T: '115', t: '20', Tref: '120', z: '10', D: '1,5' },
+		viet() {
+			const a = giaTriF(20, 115, 120, 10, 1.5);
+			const L110 = giaTriF(1, 110, 120, 10, 0).L;
+			const t110 = a.F / L110;
+			return {
+				de: `Trong một thí nghiệm ở lab, mẫu được giữ ở nhiệt độ không đổi 115 °C trong 20 phút (bể điều nhiệt; bỏ qua thời gian gia nhiệt và làm nguội). Đề đặt nhiệt độ chuẩn T<sub>ref</sub> = 120 °C, z = 10 °C, và D ở T<sub>ref</sub> = 1,5 phút cho một bào tử giả định. Các số này do đề cho, không phải thông số của loài nào và không phải quy ước của quy trình nào. [T]
+
+**(a)** Tốc độ gây chết L ở 115 °C so với T<sub>ref</sub> là bao nhiêu? F là bao nhiêu phút tương đương ở 120 °C?
+**(b)** Số log giảm là bao nhiêu?
+**(c)** Nếu giữ ở 110 °C thì phải giữ bao lâu để có cùng F? Thời gian đó gấp bao nhiêu lần 20 phút, và vì sao hạ 5 °C không chỉ làm thời gian dài gấp đôi?`,
+				nac1: `F đổi một lần giữ nhiệt ở nhiệt độ T thành "số phút tương đương" ở nhiệt độ chuẩn. Giữ thấp hơn nhiệt độ chuẩn thì mỗi phút gây chết ít hơn một phút ở nhiệt độ chuẩn; giữ cao hơn thì nhiều hơn. Giá trị z cho biết nhiệt độ phải đổi bao nhiêu độ C thì tốc độ gây chết đổi 10 lần. [K]
+
+Tự hỏi: hạ đúng z độ thì mỗi phút "đáng" bao nhiêu phút ở nhiệt độ chuẩn? Hạ nửa z độ thì "đáng" nhiều hơn hay ít hơn một nửa mức đó? [G]`,
+				nac2: `Tốc độ gây chết tương đối L, giá trị F và số log giảm (D<sub>ref</sub> là thời gian để số vi sinh vật giảm 10 lần ở nhiệt độ chuẩn): [K]
+
+$$
+L = 10^{(T-T_{\\mathrm{ref}})/z}, \\qquad F = t\\cdot L, \\qquad \\text{số log giảm} = \\frac{F}{D_{\\mathrm{ref}}}
+$$
+
+Tính số mũ (T − T<sub>ref</sub>)/z trước, rồi mới lấy 10 mũ. Phần (c): đặt F không đổi, tính L ở 110 °C, rồi t = F / L. [T]`,
+				nac3: `Số mũ = (115 − 120) / 10 = −0,5, nên L = 10<sup>−0,5</sup> = ${so(a.L)}. F = 20 × ${so(a.L)}. Với (c), L ở 110 °C có số mũ (110 − 120) / 10 = −1. [T]`,
+				loi: `**(a)** L = 10<sup>−0,5</sup> = **${so(a.L)}**: mỗi phút giữ ở 115 °C bằng ${so(a.L)} phút ở 120 °C. F = 20 × ${so(a.L)} = **${so(a.F)} phút** tương đương ở 120 °C. [T]
+
+**(b)** Số log giảm = F / D<sub>ref</sub> = ${so(a.F)} / 1,5 = **${so(a.logGiam)} log**. [T]
+
+**(c)** Ở 110 °C: L = 10<sup>−1</sup> = ${so(L110)}, nên t = ${so(a.F)} / ${so(L110)} = **${so(t110)} phút**, gấp ${so(t110 / 20)} lần 20 phút. Hạ 5 °C là nửa z, và quan hệ là hàm mũ chứ không tuyến tính: nửa z cho 10<sup>0,5</sup> = ${so(10 ** 0.5)} lần, không phải 2 lần. [T]
+
+**Giới hạn:** máy và bài này chỉ tính cho nhiệt độ không đổi. Quy trình thật có pha gia nhiệt và làm nguội; F phải cộng dồn theo đường nhiệt đo tại điểm chậm nóng nhất. [K] D và z khác nhau theo loài, chủng và môi trường; hoạt độ nước thấp làm vi sinh vật bền nhiệt hơn [N: @tapia2020]. Đây là bài tập số học, không phải cách thiết kế hay phê duyệt quy trình tiệt trùng: việc đó cần đo phân bố nhiệt và người có thẩm quyền thẩm định. [G]`,
+			};
+		},
+	},
+);
+
 const CHU_NAC = [
 	['Nấc 1 · Gợi ý hướng đi', 'nac1'],
 	['Nấc 2 · Gợi ý công thức', 'nac2'],
@@ -264,7 +469,7 @@ Máy tính cho bạn con số; bài giải mẫu cho bạn cách nghĩ để t�
 
 **Số trong đề đều do đề dựng để tập tính ([T]), không phải số đo thật của một sản phẩm.** Phép tính trong lời giải lấy từ cùng công thức với máy tính trong trang [Máy tính](../may-tinh/), nên hai bên luôn khớp. Cách đọc các nhãn [N], [K], [T], [G] ở trang [Quy ước](../quy-uoc/).
 
-Hiện có ${BAI_GIAI.length} bài trên ${tongMay} máy tính; các bài còn lại sẽ được bổ sung dần.
+${BAI_GIAI.length >= tongMay ? `Mỗi máy trong ${tongMay} máy tính đều có một bài giải mẫu.` : `Hiện có ${BAI_GIAI.length} bài trên ${tongMay} máy tính; các bài còn lại sẽ được bổ sung dần.`}
 
 ${phan}
 `;
