@@ -164,7 +164,7 @@ Mỗi muối phải được tách thành các ion: NaCl cho 1 Na⁺ và 1 Cl⁻
 
 **(b)** I = ½ × (10 + 10 + 5×4 + 10) mM = ${so(I1 * 1000)} mM; κ⁻¹ = 0,304/√0,025 = **${so(debye(I1))} nm**. [T]
 
-**(c)** Thêm 5 mM NaCl: I = ${so(I2 * 1000)} mM; κ⁻¹ = **${so(debye(I2))} nm**. Cùng thêm 5 mM, CaCl₂ làm lực ion tăng ${so((I1 - I0) / 0.005)} mM mỗi mM muối, còn NaCl chỉ ${so((I2 - I0) / 0.005)}; lớp che mỏng đi nhiều hơn (${so(debye(I1))} so với ${so(debye(I2))} nm). Ion hóa trị 2 che điện tích mạnh gấp ${so((I1 - I0) / (I2 - I0))} lần cùng nồng độ ion hóa trị 1. [T]
+**(c)** Thêm 5 mM NaCl: I = ${so(I2 * 1000)} mM; κ⁻¹ = **${so(debye(I2))} nm**. Cùng thêm 5 mM, CaCl₂ làm lực ion tăng ${so((I1 - I0) / 0.005)} mM mỗi mM muối, còn NaCl chỉ ${so((I2 - I0) / 0.005)}; lớp che mỏng đi nhiều hơn (${so(debye(I1))} so với ${so(debye(I2))} nm). Vậy muối CaCl₂ (cation hóa trị 2) làm lực ion tăng gấp ${so((I1 - I0) / (I2 - I0))} lần NaCl cùng nồng độ, vì số hạng c·z² của Ca²⁺ gấp 4 lần Na⁺. [T]
 
 **Giới hạn:** thực phẩm thật còn có đệm, phosphat, citrat; Ca²⁺ tạo phức với chúng nên lực ion hiệu dụng khác con số tính. Ca²⁺ còn bắc cầu giữa các protein mang điện âm nên gây keo tụ mạnh hơn dự đoán chỉ từ κ⁻¹. [G]`,
 			};
