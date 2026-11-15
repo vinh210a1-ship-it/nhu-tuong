@@ -8,6 +8,7 @@ import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import { tenNgan, htmlNhan, tachNhan, SO_DON_VI } from '../src/plugins/remark-nhan.mjs';
+import { htmlVach } from '../src/data/muc-doc.mjs';
 import { KHU } from '../src/data/khu.mjs';
 import { dungTraCuu } from './tra-cuu.mjs';
 import { docTep } from './doc-tep.mjs';
@@ -397,7 +398,7 @@ const the = ds
 		if (!e.doi && !e.pmid && e.url) lk.push(`<a href="${esc(e.url)}">Đường dẫn</a>`);
 		const trich = esc(e.trich_dan).replace(/\*([^*]+)\*/g, '<em>$1</em>');
 		return `<li class="the-nguon" id="${e.khoa}" data-khu="${e.khu.join(' ')}" data-muc="${e.muc_doc}">
-<div class="the-dau"><strong>${esc(tenNgan(e))}</strong> <span class="muc-doc ${MUC[e.muc_doc][1]}">${MUC[e.muc_doc][0]}</span> <span class="khu">${e.khu.map((k) => TEN_KHU[k]).join(', ')}</span></div>
+<div class="the-dau"><strong>${esc(tenNgan(e))}</strong> <span class="muc-doc ${MUC[e.muc_doc][1]}">${htmlVach(e.muc_doc)}${MUC[e.muc_doc][0]}</span> <span class="khu">${e.khu.map((k) => TEN_KHU[k]).join(', ')}</span></div>
 <div class="the-trich">${trich}</div>
 <div class="the-lk">${lk.join(' · ')}</div>
 </li>`;
@@ -412,11 +413,11 @@ editUrl: false
 tableOfContents: false
 ---
 
-Mỗi huy hiệu **N** trong bài dẫn về một thẻ ở đây. Cột "mức đọc" cho biết người soạn đã đọc nguồn đến đâu: phần lớn mới đọc **tóm tắt**, nên con số quan trọng vẫn cần mở bản gốc trước khi dùng cho công thức thật.
+Mỗi huy hiệu **N** trong bài dẫn về một thẻ ở đây. Cột "mức đọc" cho biết người soạn đã đọc nguồn đến đâu: phần lớn mới đọc **tóm tắt**, nên con số quan trọng vẫn cần mở bản gốc trước khi dùng cho công thức thật. Dấu bốn vạch trên mỗi thẻ cũng chính là dấu đứng sau tên nguồn trong bài; nghĩa của từng mức ghi ở trang [Cách đọc nhãn tin cậy](../quy-uoc/#mức-đọc-của-nguồn).
 
 | Mức đọc | Số nguồn |
 |---|---|
-${Object.entries(MUC).map(([k, [ten]]) => `| ${ten} | ${dem[k]} |`).join('\n')}
+${Object.entries(MUC).map(([k, [ten]]) => `| <span class="muc-doc">${htmlVach(k)}${ten}</span> | ${dem[k]} |`).join('\n')}
 | **Tổng** | **${ds.length}** |
 
 Không truy cập được trong lúc soạn: OpenAlex, Crossref, trang PMC (bị chặn xác minh). Vì vậy DOI chưa được kiểm chéo, và nhiều nguồn chỉ có đường dẫn trang Consensus.
