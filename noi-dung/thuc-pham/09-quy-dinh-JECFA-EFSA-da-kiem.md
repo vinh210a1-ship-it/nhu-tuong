@@ -36,6 +36,8 @@ Chú thích dùng khi lên web:
 3. Glutamat: dòng "không quy định" là từ tóm tắt tổng quan của các tác giả phản biện EFSA, không phải trang JECFA; cần mở trang JECFA trước khi đăng `@roberts2018`.
 4. Sulfit: thông báo EFSA 2022 là *lo ngại an toàn ở mức phơi nhiễm ước tính*, chưa phải lệnh cấm.
 
+Bảng ADI của hydrocolloid và chất nhũ hóa không lặp ở đây: xem bài [Mã INS/E và quy định](../../chat-on-dinh/quy-dinh-ins-e/) (xanthan, carrageenan, gum arabic…) và bài [Mã INS/E, quy định (EU, Việt Nam) và an toàn của chất nhũ hóa](../../chat-nhu-hoa/ma-ins-quy-dinh-an-toan/) (lecithin, polysorbate, PGPR…).
+
 ## Chưa kiểm (không đưa lên web)
 
 Nisin (234), natamycin (235), propionat (280–283), TBHQ (319), tocopherol (306–309), axit citric/lactic/malic/GDL, erythritol (968), xylitol (967), sorbitol (420), saccharin (954), cyclamat (952), neotam (961), advantam (969), curcumin (100), carotenoid (160), caramel (150a–d), betalain (162), polyphosphat-điều chỉnh pH (nhóm chất đệm), carrageenan (xem tài liệu chất ổn định), Codex GSFA (bảng chức năng, ML), TT 24/2019/TT-BYT, TCVN.

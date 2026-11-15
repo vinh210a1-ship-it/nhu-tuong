@@ -85,6 +85,8 @@ Nguồn đọc trực tiếp (PMC): *Re-evaluation of carrageenan (E 407) and pr
 - Khuyến nghị Ủy ban Châu Âu: thu hẹp định nghĩa phân tử lượng; xây dựng phương pháp phân tích phân đoạn khối lượng thấp; xem xét nâng giới hạn khối lượng thấp từ 50 kDa lên 200 kDa; bổ sung dữ liệu ổn định, giới hạn kim loại độc, dữ liệu giám sát; đặt mức tối đa bằng số.
 - **Chưa kiểm tra**: diễn biến pháp lý sau 2018 (có một văn bản EUR-Lex 2026/196 chưa đọc). Cần xác minh trước khi ghi "hiện hành".
 
+Kết luận EFSA của các hydrocolloid khác để đối chiếu với carrageenan nằm ở bài [Mã INS/E và quy định](../quy-dinh-ins-e/); cách đọc ADI và hai loại chứng cứ an toàn của chất nhũ hóa ở bài [Mã INS/E, quy định (EU, Việt Nam) và an toàn của chất nhũ hóa](../../chat-nhu-hoa/ma-ins-quy-dinh-an-toan/).
+
 ## 5. Việc còn thiếu
 
 - Chưa có bảng liều κ/ι/λ theo loại sản phẩm sữa (sữa cacao, panna cotta, kem, sữa chua uống). Các con số liều ở trên là liều trong nghiên cứu.

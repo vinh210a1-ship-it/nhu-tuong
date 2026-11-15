@@ -47,8 +47,11 @@ Trong bột sữa mô hình, sản phẩm Maillard, độ nâu và kết tinh la
 
 - Đường tự nhiệt phân khi nóng chảy: sucrose khoảng 160–186 °C, fructose ~110 °C, glucose ~146 °C `[K]` (nhiệt độ phụ thuộc điều kiện, chỉ đúng ở mức bậc độ lớn).
 - Caramel màu thực phẩm (INS 150a–d, loại I–IV) khác nhau tác nhân (sulfit, amoni): chưa kiểm ADI JECFA/EFSA `[K]`.
+- Chất tạo màu, trong đó có caramel màu, được xếp cùng nhóm với chất tạo ngọt và điều vị ở bài [Chất tạo ngọt, màu và điều vị](../chat-tao-ngot-mau-dieu-vi/).
 
 ## 5. Mô hình lab đề xuất (`[T]`; Ea và k lấy khoảng từ nguồn)
+
+Cách đặt hạn dùng bằng Arrhenius/Q₁₀ (cùng công thức với dòng `k(T)` dưới đây) được gom ở bài [Bảo quản: hoạt độ nước, pH, axit yếu, nitrit và hàng rào kép](../bao-quan-hoat-do-nuoc-va-han-su-dung/), mục 8.
 
 ```
 k(T) = k_ref * exp( -Ea/R * (1/T - 1/T_ref) )            # Arrhenius, [N: @isleroglu2012]

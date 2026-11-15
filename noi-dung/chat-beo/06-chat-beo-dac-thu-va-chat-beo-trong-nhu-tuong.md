@@ -81,7 +81,8 @@ Bằng chứng định lượng:
 ### 3.3 Các hiện tượng khác (chỉ nhắc; phần sâu ở khu Nhũ tương)
 - **Ostwald ripening:** giọt nhỏ tan vào giọt lớn qua pha nước; quan trọng với dầu hơi tan trong nước (tinh dầu, MCT ở nồng độ nhỏ); khắc phục bằng thêm một TAG chuỗi dài không tan (ripening inhibitor). [K]
 - **Pickering bằng tinh thể béo, nhũ tương giọt kết tinh, SLN/NLC:** tinh thể béo ở giao diện làm ổn định giọt hoặc gây tạo mạng; hạt nano lipid rắn dùng trong mỹ phẩm/dược phẩm — đa hình ảnh hưởng đến khả năng tải thuốc và độ bền dài hạn (xem Campos và cs. 2018). [K; N: @campos2018]
-- **Oxy hóa:** xem chương 05 (Villeneuve và cs. 2023, Yi và cs. 2014, Yi và cs. 2020).
+- **Oxy hóa:** xem bài [Oxy hóa lipid, chất chống oxy hóa và hạn sử dụng](../oxy-hoa-lipid-chong-oxy-hoa-han-su-dung/) (Villeneuve và cs. 2023, Yi và cs. 2014, Yi và cs. 2020).
+- Cơ chế đầy đủ của partial coalescence và Ostwald ripening nằm ở bài [Nhũ tương · Mất ổn định](../../nhu-tuong/mat-on-dinh/) (mục 4 và 5); bài này chỉ giữ phần liên quan đến chất béo.
 
 ## 4. Điều đã chắc và điều còn là giả thuyết
 

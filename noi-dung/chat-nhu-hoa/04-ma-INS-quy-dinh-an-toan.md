@@ -131,6 +131,8 @@ Ghi chú nhãn Việt Nam: tên gọi trong Phụ lục 1 gồm tên Việt + t�
 
 Pháp luật phân loại theo **chức năng khai báo** (nhũ hóa, ổn định, làm dày, tạo gel...), một chất có thể có nhiều chức năng. Ví dụ lecithin: nhũ hóa + chống oxy hóa hiệp đồng; pectin: làm dày + ổn định + tạo gel. [K] Vì vậy **không** nên chia cứng "nhũ hóa" và "ổn định" trên web; nên dùng thẻ chức năng nhiều giá trị. [G]
 
+Bảng mã INS/E và kết luận về hydrocolloid (xanthan, carrageenan, pectin, gum arabic…) nằm ở bài [Mã INS/E và quy định: những gì đã xác minh](../../chat-on-dinh/quy-dinh-ins-e/); bảng ADI/MTDI của phosphat, chất bảo quản, chất tạo ngọt nằm ở bài [Quy định phụ gia: ADI/MTDI đã kiểm](../../thuc-pham/quy-dinh-jecfa-efsa-da-kiem/).
+
 ---
 
 ## Điều chắc / giả thuyết / bước tiếp theo
