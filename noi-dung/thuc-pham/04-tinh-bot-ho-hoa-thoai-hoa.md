@@ -38,6 +38,7 @@ Nhãn: `[N: @khóa]` có nguồn đã đọc · `[K]` sách nền, chưa trích 
 ## 4. Tinh bột biến tính và quy định
 
 - EFSA (2017): 12 tinh bột biến tính (E 1404, 1410, 1412, 1413, 1414, 1420, 1422, 1440, **1442**, 1450, 1451, 1452) **không cần ADI số**; không hấp thu nguyên vẹn, bị thủy phân và lên men; không có tác dụng đáng kể ở chuột ăn đến 31.000 mg/kg tt/ngày; người dung nạp tốt đến liều đơn 25.000 mg/người; phơi nhiễm gộp P95 tới 3.053 mg/kg tt/ngày `[N: @efsa2017starch]`.
+- Cách tinh bột biến tính giữ hạt nguyên vẹn khi nấu và cắt, cùng với gum arabic, gelatin và cellulose, được giải thích ở bài [Gum arabic, gelatin, tinh bột biến tính, cellulose](../../chat-on-dinh/gum-arabic-gelatin-tinh-bot-cellulose/) ở khu Chất ổn định.
 - HDP (hydroxypropyl distarch phosphate, E 1442) cải thiện cấu trúc và WHC của gel cá hồi (HDP từ sắn tốt nhất), tăng khả năng tiêu hóa chất khô `[N: @li2026salmon]`; ở mức 9% trong thịt giả đùn ẩm cao (đậu nành + gluten), tăng độ texturization từ 1,33 lên 2,25, tăng WHC lên 3,04 g/g và OHC 1,32 g/g `[N: @wu2026hdp]`.
 - Tinh bột chống tiêu hóa (RS), GI: chưa tra.
 

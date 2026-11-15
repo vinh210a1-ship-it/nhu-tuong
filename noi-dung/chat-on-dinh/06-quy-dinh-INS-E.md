@@ -35,6 +35,8 @@ nguon_goc: tai-lieu-chat-on-dinh/06-quy-dinh-INS-E.md
 2. Điểm nhạy cảm chung: **thực phẩm cho trẻ nhỏ/FSMP**. Với alginate, guar, LBG, EFSA nêu dữ liệu chưa đủ ở những thời điểm nhất định; xanthan được xem xét bổ sung năm 2023. Nếu web hướng đến công thức cho trẻ nhỏ, cần cảnh báo riêng.
 3. Tác dụng phụ ghi nhận ở liều cao chủ yếu là **khó chịu đường tiêu hóa** (đầy hơi, khó chịu bụng), do lên men của vi khuẩn ruột; EFSA coi là không bất lợi.
 
+Phần carrageenan (ADI tạm thời, phơi nhiễm, trẻ nhỏ) được đọc kỹ hơn ở bài [Carrageenan và hệ sữa](../carrageenan-va-he-sua/), mục 4; bảng của nhóm chất nhũ hóa ở bài [Mã INS/E, quy định (EU, Việt Nam) và an toàn của chất nhũ hóa](../../chat-nhu-hoa/ma-ins-quy-dinh-an-toan/).
+
 ## Đã biết nhưng **chưa xác minh trong đợt này** (cần bổ sung trước khi công bố)
 
 | Hạng mục | Ghi chú |

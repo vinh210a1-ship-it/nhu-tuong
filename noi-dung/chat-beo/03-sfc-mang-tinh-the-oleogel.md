@@ -65,6 +65,7 @@ Rheo-NMR (Rebry và cs. 2021), hai chất béo PHSO (dầu hướng dương hydr
 
 ### 4.3 Giới hạn của SFC
 - Nghiên cứu partial coalescence trên cream tái tạo (AMF, dầu cọ, dầu hạt cọ): partial coalescence do cắt xảy ra nhanh nhất ở 20 °C; ở 25 °C SFC gần như bằng nhau nhưng các loại béo lại khác hẳn nhau, chứng tỏ **vi cấu trúc tinh thể** quan trọng không kém SFC. [N: @moens2018]
+- Muốn đi tiếp từ chỗ SFC không đủ: phần partial coalescence nhìn từ phía chất béo ở bài [Chất béo đặc thù và chất béo trong nhũ tương](../chat-beo-dac-thu-va-chat-beo-trong-nhu-tuong/) (mục 3.2), phần cơ chế mất ổn định ở bài [Nhũ tương · Mất ổn định](../../nhu-tuong/mat-on-dinh/) (mục 4).
 
 ## 5. Oleogel và các chiến lược thay thế chất béo rắn
 

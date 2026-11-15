@@ -56,6 +56,7 @@ Oxy đơn tuyến (¹O₂) sinh ra khi chất nhạy sáng (chlorophyll, ribofla
 - Dữ liệu thực nghiệm trong **nhũ tương W/O** dầu óc chó, ổn định bằng PGPR: DTAB 0,1–0,2 wt% tăng hydroperoxide và hexanal; SDS giảm; Tween 20 không ảnh hưởng đáng kể; whey protein isolate (WPI) ức chế ở 0,05–0,2 wt%, hiệu quả hơn khi pH cao hơn; WPI triệt tiêu hiệu ứng tiền oxy hóa của DTAB; WPI + SDS ức chế tốt hơn ở pH 7,0 so với pH 3,0. [N: @yi2014]
 - Trong nhũ tương O/W ổn định bởi whey protein, **anthocyanin gạo đen** 0,02–0,06% (w/v), bảo quản 35 °C trong 5 ngày: giảm hydroperoxide và MDA, giảm carbonyl protein và base Schiff, đồng thời cải thiện ổn định vật lý (chống kết tụ giọt) theo liều. [N: @yi2020]
 - Cảnh báo: Yi và cs. 2014 và Yi và cs. 2020 chỉ thực hiện **trong thời gian ngắn** (vài ngày ở 35 °C) và trên mô hình phòng lab. [N: @yi2014, @yi2020; G: không ngoại suy ra hạn sử dụng thương phẩm]
+- Phần oxy hóa lipid trong nhũ tương nhìn từ góc cơ chế mất ổn định (điện tích bề mặt giọt, kim loại, chất chelate) có ở bài [Nhũ tương · Mất ổn định](../../nhu-tuong/mat-on-dinh/), mục 7.1.
 
 ### 3.3 "Nghịch lý phân cực" (polar paradox) [K]
 Quan sát của Porter và cs.: chất chống oxy hóa **phân cực** thường hiệu quả hơn ở dầu khối, chất **không phân cực** hiệu quả hơn ở nhũ tương. Cách giải thích hiện đại hơn: chất chống oxy hóa phải **tập trung ở nơi phản ứng** (giao diện/micelle đảo), nên sự phân bố giữa các pha, hình dạng micelle và chất hoạt động bề mặt quyết định hơn độ phân cực tuyệt đối. [K; G: diễn giải] — Villeneuve và cs. 2023 và Chaiyasit và cs. 2007 cung cấp khung này nhưng tóm tắt chưa đủ để trích chi tiết.
@@ -96,6 +97,8 @@ Chabni và cs. 2024: dầu ô liu giàu phenolic từ chiết xuất tuần tự
 | **Cảm quan** | Mùi ôi, mùi hóa chất | Tiêu chuẩn cuối cùng | Cần panel huấn luyện |
 
 ## 6. Hạn sử dụng: Arrhenius, Q10 và các bẫy
+
+Cùng chủ đề hạn dùng ở hai khu khác: [Thực phẩm · Bảo quản: hoạt độ nước, pH, axit yếu, nitrit và hàng rào kép](../../thuc-pham/bao-quan-hoat-do-nuoc-va-han-su-dung/) (hạn dùng theo nhiệt độ, aw và vi sinh) và [Dược phẩm · Độ ổn định, hạn dùng và khí hậu](../../duoc-pham/on-dinh-han-dung-ich/) (điều kiện thử theo ICH và vai trò của Arrhenius, Q10).
 
 ### 6.1 Phương pháp [K; N: @kochhar2009, @chabni2024, @aktar2019]
 1. Đo thời gian cảm ứng (IP) ở ít nhất 3–4 nhiệt độ (Kochhar và cs. 2009 dùng 90, 100, 110, 120 °C Rancimat).

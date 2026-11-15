@@ -25,6 +25,7 @@ nguon_goc: tai-lieu-duoc-pham/04-he-phan-tan-nano.md
 - Định nghĩa và đặc tính: hai chất lỏng không trộn, giọt cỡ ~100 nm; diện tích riêng lớn, bền, trong suốt, lưu biến điều chỉnh được. Phương pháp năng lượng cao: đồng hóa áp lực cao, siêu âm; năng lượng thấp: nhiệt độ đảo pha (PIT), điểm đảo pha nhũ tương (EIP). [N: @gupta2016]
 - Tổng quan tá dược, kỹ thuật chế tạo và cơ chế mất ổn định, ứng dụng bào chế. [N: @singh2017]
 - **Loại dầu quyết định kích thước và ripening:** dầu nhớt (LCT) cho giọt lớn hơn (D = 120 nm) so với dầu nhớt thấp như hexadecan (80 nm) ở cùng điều kiện đồng hóa; tối ưu cấu trúc chất hoạt động bề mặt và tỉ số nhớt η_D/η_C cho giọt dưới 40 nm; nhũ tương LCT không bị Ostwald ripening và bền trên 3 tháng; hỗn hợp dầu chứa ≥ 50% triglycerid không tan bền nhiệt động với ripening. [N: @wooster2008]
+- Cơ chế Ostwald ripening (giọt nhỏ tan vào giọt lớn qua pha liên tục, chất ức chế ripening) được giải thích đầy đủ ở bài [Nhũ tương · Mất ổn định](../../nhu-tuong/mat-on-dinh/), mục 5.
 - Ostwald ripening theo LSW: tốc độ tăng `r³` theo thời gian tỉ lệ với độ tan của pha phân tán trong pha liên tục [K]; vì vậy tinh dầu và dầu ngắn mạch dễ ripening, triglycerid chuỗi dài thì không (khớp với nghiên cứu trên). [G: nối LSW với kết quả Wooster]
 
 ## 2. SEDDS, SMEDDS, SNEDDS và hệ phân loại lipid (LFCS)
@@ -71,6 +72,7 @@ nguon_goc: tai-lieu-duoc-pham/04-he-phan-tan-nano.md
 ## 8. Đồng hóa áp lực cao và rotor–stator: thông số quy trình
 
 - Hai thiết bị năng lượng cao phổ biến nhất là đồng hóa áp lực cao và máy trộn rotor–stator; nghiên cứu hơn một thế kỷ đã cho nhiều tương quan thực nghiệm và luật tỉ lệ, nhưng hiểu biết cơ bản vẫn hạn chế, nhất là với phần thể tích pha phân tán cao. [N: @hakansson2019]
+- Giọt vỡ ra thế nào trong máy đồng hóa và cách chọn thiết bị, điều kiện, scale-up: bài [Nhũ tương · Hình thành](../../nhu-tuong/hinh-thanh/).
 - Tổng quan lý thuyết dự đoán cỡ giọt theo năng lượng, ảnh hưởng chất phụ gia lên độ bền giọt: [N: @gupta2016].
 - Với tinh thể nano, **mật độ công suất và số chu kỳ** là hai biến chính quyết định cỡ cuối. [N: @keck2005]
 - **Luật tỉ lệ để mô phỏng [T]:** vùng quán tính (Kolmogorov–Hinze): `d ∝ ε^(−0,4)` (ε: công suất tiêu tán riêng); với đồng hóa áp lực, ε tăng theo áp suất, nên d giảm khoảng theo `P^(−0,4)` đến `P^(−0,6)`. Kích thước đạt **mức sàn** sau 3–5 chu kỳ khi hàm lượng chất nhũ hóa đủ; chất nhũ hóa không đủ thì giọt **kết hợp lại (coalescence)** và không nhỏ hơn. [K; G về hệ số] Dùng làm quy tắc mặc định của lab với nhãn [T]; lab của web nhũ tương cũng đã dùng công thức Γ·6φ/d để tính lượng chất nhũ hóa cần.
@@ -79,6 +81,7 @@ nguon_goc: tai-lieu-duoc-pham/04-he-phan-tan-nano.md
 
 - Năm 1998, nguồn cung nang mềm bán rắn Norvir bị đe dọa vì xuất hiện dạng tinh thể mới **ít tan hơn nhiều** của ritonavir; hai đa hình có cấu hình phân tử khác nhau, dạng II bền hơn về xếp chặt nhưng **sự tạo nhân rất khó** ngay cả khi có mầm dạng II. [N: @bauer2001]
 - Bài học cho lab: "công thức đạt ở mẻ phát triển nhưng dạng bền xuất hiện về sau khiến độ hòa tan tụt" là sự kiện thật. Đưa vào lab như thẻ sự kiện hiếm (mô phỏng: dạng II xuất hiện khi mẻ chứa hạt mầm; phép thử PXRD/DSC phát hiện).
+- Khái niệm đa hình (dạng kém bền chuyển dần sang dạng bền) được trình bày với chất béo ở bài [Đa hình, kết tinh và bản đồ pha](../../chat-beo/da-hinh-ket-tinh-va-ban-do-pha/); đọc để có hình ảnh cụ thể trước khi đọc ví dụ thuốc ở đây.
 
 ## 10. Chắc chắn / giả thuyết / bước tiếp theo
 

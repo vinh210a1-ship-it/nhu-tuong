@@ -76,6 +76,7 @@ yield     = 100 - cook_loss   # neo: control ≈70%, ướp đủ ≈85%  [N: @s
 - EFSA (2019): nhóm phosphat (E 338–341, 343, 450–452) có **ADI nhóm 40 mg P/kg thể trọng/ngày**; ước tính phơi nhiễm vượt ADI ở trẻ nhỏ và trẻ em ở mức trung bình, ở thanh thiếu niên ở P95 `[N: @efsa2019phos]`.
 - JECFA: **MTDI nhóm 70 mg P/kg thể trọng** (từ mọi nguồn, tính theo P), đánh giá năm 1982 `[N: @jecfa-phosphoric]`.
 - Hai giá trị khác nhau về nguyên tắc (ADI vs MTDI, khác năm, khác dữ liệu): **không trộn** hai giá trị này với nhau.
+- Hai giá trị này cũng nằm trong bảng tổng hợp ở bài [Quy định phụ gia: ADI/MTDI đã kiểm](../quy-dinh-jecfa-efsa-da-kiem/), cạnh nitrit, sorbat, benzoat và các phụ gia khác đã tra.
 
 ## 6. Việc còn thiếu
 
