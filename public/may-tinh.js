@@ -415,6 +415,24 @@ ${kq.logGiam !== null ? `<div><span class="mt-kq-nhan">Số log giảm</span><st
 	},
 };
 
+// Nút "Mở máy với số này" ở trang Bài giải mẫu: địa chỉ có dạng ?<id>.<ô>=<giá trị>. Chỉ điền ô có thật trong máy và giá trị là số.
+function dienSan(id, form) {
+	let dien = 0;
+	try {
+		for (const [k, v] of new URLSearchParams(location.search)) {
+			const [may, o] = k.split('.');
+			const ov = may === id && o ? form.elements[o] : null;
+			if (ov && /^[0-9eE.,+-]{0,12}$/.test(v)) {
+				ov.value = v;
+				dien++;
+			}
+		}
+	} catch (_) {
+		return;
+	}
+	if (dien) form.insertAdjacentHTML('beforebegin', '<p class="mt-tu-bai-giai">Số đã điền sẵn theo đề bài giải mẫu. Đổi số tùy ý. <a href="../bai-giai-mau/#bg-' + id + '">Về bài giải</a></p>');
+}
+
 function dung(el) {
 	const m = MAY[el.dataset.mayTinh];
 	if (!m || el.dataset.daDung) return;
@@ -426,6 +444,7 @@ function dung(el) {
 <details class="mt-chu-y"><summary>Giả thiết và giới hạn</summary><ul>${m.chuY}</ul></details>`;
 	const form = el.querySelector('form');
 	const kq = el.querySelector('.mt-ket-qua');
+	dienSan(el.dataset.mayTinh, form);
 	const chay = () => (kq.innerHTML = m.tinh(form.elements));
 	form.addEventListener('input', chay);
 	chay();

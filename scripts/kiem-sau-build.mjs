@@ -302,7 +302,7 @@ for (const [p, h] of Object.entries(noiDung)) {
 	const ten = tenTrang(p);
 	const o = new URL(BASE + ten, 'http://x');
 	for (const m of h.matchAll(/<a\s[^>]*?href="([^"]*)"/g)) {
-		const raw = m[1].replace(/&amp;/g, '&');
+		const raw = m[1].replace(/&(?:amp|#x26|#38);/g, '&'); // trình dựng markdown viết & trong href thành &#x26;
 		if (/^(https?:)?\/\//.test(raw) || /^(mailto|tel|javascript):/.test(raw)) continue;
 		soLienKet++;
 		let u;
