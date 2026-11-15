@@ -26,13 +26,19 @@ Muốn tập tự giải trước khi bấm máy: [bài giải mẫu cho máy n�
 
 Dùng khi cần phối một chất HLB thấp với một chất HLB cao để đạt HLB mục tiêu, ví dụ Span 60 với Tween 60. HLB chỉ là điểm xuất phát để sàng lọc, không thay được thử nghiệm; giới hạn của nó nằm ở bài [Nền tảng hóa lý bề mặt](../chat-nhu-hoa/nen-tang-vat-ly-hoa-be-mat/).
 
+Muốn tập tự giải trước khi bấm máy: [bài giải mẫu cho máy này](../bai-giai-mau/#bg-hlb).
+
 <div class="may-tinh" id="mt-hlb" data-may-tinh="hlb"></div>
 
 ## Hạn dùng theo nhiệt độ (Arrhenius/Q10)
 
 Dùng khi có kết quả bảo quản cấp tốc ở nhiệt độ cao và muốn ước lượng ở nhiệt độ bảo quản thật. Máy thứ nhất quy đổi nhanh bằng Q10; máy thứ hai khớp đường Arrhenius từ nhiều nhiệt độ. Đọc kỹ các bẫy (đổi cơ chế khi đổi nhiệt độ, chất béo chảy hay kết tinh, nước hoạt động) ở bài [Oxy hóa và hạn dùng](../chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung/).
 
+Muốn tập tự giải trước khi bấm máy: [bài giải mẫu cho máy Q10](../bai-giai-mau/#bg-q10).
+
 <div class="may-tinh" id="mt-q10" data-may-tinh="q10"></div>
+
+Muốn tập tự giải trước khi bấm máy: [bài giải mẫu cho máy Arrhenius](../bai-giai-mau/#bg-arrhenius).
 
 <div class="may-tinh" id="mt-arrhenius" data-may-tinh="arrhenius"></div>
 
@@ -63,6 +69,8 @@ Muốn tập tự giải trước khi bấm máy: [bài giải mẫu cho máy n�
 ## Năng lượng giải hấp hạt Pickering
 
 Vì sao hạt rắn bám giọt chặt hơn chất nhũ hóa phân tử, và vì sao góc tiếp xúc quan trọng đến vậy. Lý thuyết ở bài [Hệ nhũ tương đặc biệt](../nhu-tuong/he-dac-biet/).
+
+Muốn tập tự giải trước khi bấm máy: [bài giải mẫu cho máy này](../bai-giai-mau/#bg-pickering).
 
 <div class="may-tinh" id="mt-pickering" data-may-tinh="pickering"></div>
 
