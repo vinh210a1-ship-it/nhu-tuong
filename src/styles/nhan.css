@@ -79,3 +79,42 @@
 .muc-doc, .khu { font-size: 0.75rem; padding: 0 0.4rem; border-radius: 0.3rem; border: 1px solid var(--sl-color-gray-5); color: var(--sl-color-gray-2); }
 .muc-doc.muc-1, .muc-doc.muc-2 { border-color: var(--nhan-N); color: var(--nhan-N); }
 .muc-doc.muc-4, .muc-doc.muc-5 { border-color: var(--nhan-K); color: color-mix(in srgb, var(--nhan-K) 90%, #000); } /* chữ đậm hơn viền 10% để đạt ≥ 4,5:1 trên nền thẻ (T8) */
+
+/* Dấu mức đọc nguồn (gói T4): 4 vạch kiểu cột sóng sau tên mỗi nguồn. Vạch đặc = người soạn đã đọc tới đó
+   (4 toàn văn, 3 một phần, 2 tóm tắt, 1 tiêu đề, 0 trí nhớ hoặc chưa xác định). Hình dạng mang thông tin, màu chỉ phụ.
+   Hình là mặt nạ SVG tô bằng currentColor nên tự đổi theo nền sáng/tối. Bảng mức: src/data/muc-doc.mjs. */
+.muc-vach { display: inline-flex; align-items: center; vertical-align: baseline; color: var(--sl-color-gray-2); text-decoration: none; }
+a.muc-vach { position: relative; padding: 0.3em 0.05em 0.3em 0.25em; margin: -0.3em 0; border-radius: 0.25em; }
+a.muc-vach:hover { color: var(--sl-color-text-accent); }
+.muc-vach-hinh {
+	display: inline-block;
+	width: 1.58em;
+	height: 1em;
+	background: currentColor;
+	-webkit-mask: var(--muc-vach-hinh) center / contain no-repeat;
+	mask: var(--muc-vach-hinh) center / contain no-repeat;
+}
+.muc-vach-0 { --muc-vach-hinh: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19 12'%3E%3Crect x='0.5' y='7.5' width='3' height='4' fill='none' stroke='%23000'/%3E%3Crect x='5.5' y='5.5' width='3' height='6' fill='none' stroke='%23000'/%3E%3Crect x='10.5' y='3.5' width='3' height='8' fill='none' stroke='%23000'/%3E%3Crect x='15.5' y='0.5' width='3' height='11' fill='none' stroke='%23000'/%3E%3C/svg%3E"); }
+.muc-vach-1 { --muc-vach-hinh: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19 12'%3E%3Crect x='0.5' y='7.5' width='3' height='4' fill='%23000' stroke='%23000'/%3E%3Crect x='5.5' y='5.5' width='3' height='6' fill='none' stroke='%23000'/%3E%3Crect x='10.5' y='3.5' width='3' height='8' fill='none' stroke='%23000'/%3E%3Crect x='15.5' y='0.5' width='3' height='11' fill='none' stroke='%23000'/%3E%3C/svg%3E"); }
+.muc-vach-2 { --muc-vach-hinh: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19 12'%3E%3Crect x='0.5' y='7.5' width='3' height='4' fill='%23000' stroke='%23000'/%3E%3Crect x='5.5' y='5.5' width='3' height='6' fill='%23000' stroke='%23000'/%3E%3Crect x='10.5' y='3.5' width='3' height='8' fill='none' stroke='%23000'/%3E%3Crect x='15.5' y='0.5' width='3' height='11' fill='none' stroke='%23000'/%3E%3C/svg%3E"); }
+.muc-vach-3 { --muc-vach-hinh: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19 12'%3E%3Crect x='0.5' y='7.5' width='3' height='4' fill='%23000' stroke='%23000'/%3E%3Crect x='5.5' y='5.5' width='3' height='6' fill='%23000' stroke='%23000'/%3E%3Crect x='10.5' y='3.5' width='3' height='8' fill='%23000' stroke='%23000'/%3E%3Crect x='15.5' y='0.5' width='3' height='11' fill='none' stroke='%23000'/%3E%3C/svg%3E"); }
+.muc-vach-4 { --muc-vach-hinh: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19 12'%3E%3Crect x='0.5' y='7.5' width='3' height='4' fill='%23000' stroke='%23000'/%3E%3Crect x='5.5' y='5.5' width='3' height='6' fill='%23000' stroke='%23000'/%3E%3Crect x='10.5' y='3.5' width='3' height='8' fill='%23000' stroke='%23000'/%3E%3Crect x='15.5' y='0.5' width='3' height='11' fill='%23000' stroke='%23000'/%3E%3C/svg%3E"); }
+.muc-vach-4, .muc-vach-3 { color: var(--nhan-N); }
+.muc-vach-1, .muc-vach-0 { color: color-mix(in srgb, var(--nhan-K) 90%, #000); }
+:root[data-theme='dark'] .muc-vach-1, :root[data-theme='dark'] .muc-vach-0 { color: var(--nhan-K); }
+/* chữ của mức đọc: ẩn với mắt, còn với trình đọc màn hình; hiện ra khi in hoặc khi trình duyệt không vẽ được mặt nạ */
+.muc-vach-chu { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@supports not ((mask-image: none) or (-webkit-mask-image: none)) {
+	.muc-vach-hinh { display: none; }
+	.muc-vach-chu { position: static; width: auto; height: auto; overflow: visible; clip-path: none; }
+}
+@media print {
+	a.muc-vach .muc-vach-hinh { display: none; }
+	.muc-vach-chu { position: static; width: auto; height: auto; overflow: visible; clip-path: none; }
+}
+/* thẻ ở trang Nguồn và bảng chú giải: dấu đi cùng chữ, lấy màu của chữ bên cạnh */
+.muc-doc .muc-vach { color: inherit; margin-inline-end: 0.3em; vertical-align: -0.05em; }
+.thang-muc-doc { list-style: none; padding: 0; }
+.thang-muc-doc li { padding: 0.45rem 0.6rem; border-inline-start: 3px solid var(--sl-color-gray-5); margin: 0.4rem 0; scroll-margin-top: 5rem; }
+.thang-muc-doc li:target { border-color: var(--sl-color-accent); background: var(--sl-color-accent-low); }
+.thang-muc-doc .muc-vach { margin-inline-end: 0.4em; font-size: 1.1em; vertical-align: -0.08em; }

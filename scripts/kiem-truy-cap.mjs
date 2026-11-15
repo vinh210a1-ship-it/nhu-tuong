@@ -36,6 +36,7 @@ const TRANG = [
 	['tá dược', `${BASE}/tra-cuu-ta-duoc/`],
 	['số liệu R&D', `${BASE}/so-lieu-rnd/`],
 	['nguồn', `${BASE}/nguon/`],
+	['cách đọc nhãn (bảng mức đọc nguồn)', `${BASE}/quy-uoc/`],
 	['giấy phép', `${BASE}/giay-phep/`],
 	['nhật ký thay đổi', `${BASE}/nhat-ky-thay-doi/`],
 ];

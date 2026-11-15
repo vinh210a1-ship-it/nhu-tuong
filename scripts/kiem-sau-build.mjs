@@ -11,6 +11,7 @@ import { docTuKiemTra } from './tu-kiem-tra.mjs';
 import { CONG_CU_BAI, CONG_CU_KHU, MIEN_THU_NGAY, canBietTruocKhu } from '../src/data/cong-cu-bai.mjs';
 import { LIEN_QUAN } from '../src/data/lien-quan-khu.mjs';
 import { NHIEM_VU } from '../public/phong-lab/mo-hinh.js';
+import { MUC_DOC, mucCua } from '../src/data/muc-doc.mjs';
 
 const GOC = process.cwd();
 const DIST = path.resolve(process.argv[2] || path.join(GOC, 'dist'));
@@ -330,6 +331,37 @@ for (const [p, h] of Object.entries(noiDung)) {
 	}
 }
 
+// ---- T4: dấu mức đọc sau tên mỗi nguồn (trang tĩnh). Mỗi liên kết tới thẻ nguồn phải có dấu ngay sau, đúng mức ghi trong nguon.json;
+// nguồn không rõ mức thì phải là "chưa xác định" (0 vạch). Huy hiệu N do JavaScript vẽ lúc chạy (máy tính, đồ thị, chẩn đoán, bàn lab) thuộc gói T4-2, chưa kiểm ở đây.
+const loiMucDoc = [];
+const luotTheoMuc = {};
+let soLuotNguon = 0, soNKhongKhoa = 0, soN = 0;
+{
+	const NGUON = new Map(JSON.parse(fs.readFileSync(path.join(GOC, 'nguon/nguon.json'), 'utf8')).map((e) => [e.khoa, e]));
+	const re = /<a class="nhan-nguon" href="[^"]*\/nguon\/#([^"]+)"[^>]*>[^<]*<\/a>(?:<a class="muc-vach muc-vach-(\d)" data-muc="([^"]+)" href="([^"]+)"[^>]*>(?:<span class="muc-vach-hinh" aria-hidden="true"><\/span><span class="muc-vach-chu">\(([^<)]+)\)<\/span><\/a>)?)?/g;
+	for (const [p, h] of Object.entries(noiDung)) {
+		for (const m of h.matchAll(re)) {
+			soLuotNguon++;
+			const muc = mucCua(NGUON.get(m[1])?.muc_doc);
+			luotTheoMuc[muc.ma] = (luotTheoMuc[muc.ma] || 0) + 1;
+			if (!m[2]) loiMucDoc.push(`${tenTrang(p)}: nguồn @${m[1]} không có dấu mức đọc ngay sau tên`);
+			else if (m[3] !== muc.ma || +m[2] !== muc.vach) loiMucDoc.push(`${tenTrang(p)}: nguồn @${m[1]} hiện mức "${m[3]}" (${m[2]} vạch), nguon.json ghi "${muc.ma}" (${muc.vach} vạch)`);
+			else if (!m[4].endsWith(`/quy-uoc/#muc-doc-${muc.ma}`)) loiMucDoc.push(`${tenTrang(p)}: dấu của @${m[1]} trỏ sai neo (${m[4]})`);
+			else if (m[5] !== muc.ten) loiMucDoc.push(`${tenTrang(p)}: dấu của @${m[1]} thiếu hoặc sai chữ cho trình đọc màn hình`);
+		}
+		// huy hiệu N không kèm khóa nguồn nào (chỉ đếm để báo bộ phận Thông tin, không chặn)
+		const doan = h.split('<span class="nhan nhan-N"').slice(1);
+		soN += doan.length;
+		for (const d of doan) {
+			const het = d.search(/<span class="nhan nhan-|<\/p>|<\/li>|<\/td>/);
+			if (!(het < 0 ? d.slice(0, 1500) : d.slice(0, het)).includes('class="nhan-nguon"')) soNKhongKhoa++;
+		}
+	}
+	const quyUoc = noiDung[path.join(DIST, 'quy-uoc', 'index.html')] || '';
+	for (const ma of [...Object.keys(MUC_DOC), 'chua-ro']) if (!quyUoc.includes(`id="muc-doc-${ma}"`)) loiMucDoc.push(`/quy-uoc/ thiếu dòng giải thích id="muc-doc-${ma}"`);
+	if (!soLuotNguon) loiMucDoc.push('không thấy liên kết nguồn nào trong dist/ (mẫu HTML của huy hiệu đã đổi? sửa lại biểu thức ở khối T4)');
+}
+
 // ---- báo kết quả
 // hình cơ chế (T1) và đồ thị (T2): số <figure> trong dist/ khớp số dòng <!-- hinh: --> ở bài gốc, mỗi hình có chú thích, id không trùng; index.json đồ thị khớp thư mục
 const loiHinh = [];
@@ -406,7 +438,16 @@ if (loiHinh.length) {
 	console.log(`\nHÌNH CƠ CHẾ / ĐỒ THỊ / BẢN ĐỒ LỘ TRÌNH: ${loiHinh.length} lỗi`);
 	for (const l of loiHinh.slice(0, 40)) console.log('  - ' + l);
 }
-if (loiCam.length || nhomHong.length || loiThuNgay.length || loiRnd.length || loiHinh.length) {
+if (loiMucDoc.length) {
+	console.log(`\nDẤU MỨC ĐỌC NGUỒN (T4): ${loiMucDoc.length} lỗi`);
+	for (const l of loiMucDoc.slice(0, 40)) console.log('  - ' + l);
+}
+console.log(
+	`  mức đọc (T4): ${soLuotNguon} lượt trích nguồn trong trang tĩnh, ` +
+		[...Object.keys(MUC_DOC), 'chua-ro'].filter((ma) => luotTheoMuc[ma]).map((ma) => `${mucCua(ma).ten} ${luotTheoMuc[ma]}`).join(', ') +
+		`; ${soNKhongKhoa}/${soN} huy hiệu N không kèm khóa nguồn (chưa có dấu, việc của gói T4-3)`,
+);
+if (loiCam.length || nhomHong.length || loiThuNgay.length || loiRnd.length || loiHinh.length || loiMucDoc.length) {
 	console.log('\nkiem-sau-build: KHÔNG ĐẠT');
 	process.exit(1);
 }

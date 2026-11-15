@@ -15,7 +15,20 @@ Mỗi khẳng định trên web mang một huy hiệu cho biết **nó dựa và
 
 Một câu có thể mang nhiều huy hiệu, ví dụ <span class="nhan nhan-K">K</span><span class="nhan nhan-N">N</span> nghĩa là nguyên lý lấy từ sách nền và có thêm một bài báo xác nhận.
 
-**Mức đọc của nguồn** (ghi trên từng thẻ ở trang [Nguồn](../nguon/)): đọc toàn văn → đọc một phần/trang gốc → đọc tóm tắt → chỉ thấy tiêu đề → ghi từ trí nhớ. Hiện phần lớn nguồn ở mức **tóm tắt**.
+## Mức đọc của nguồn
+
+Sau tên mỗi nguồn cạnh huy hiệu <span class="nhan nhan-N">N</span> có một dấu bốn vạch, giống cột sóng điện thoại. Dấu này cho biết **người soạn đã đọc nguồn đó tới đâu**: càng nhiều vạch đặc thì đã đọc càng sâu. Nó không chấm điểm chất lượng của bài báo; một bài tốt mà người soạn mới đọc tóm tắt vẫn chỉ có hai vạch. Giống trong phòng lab: một chỉ tiêu "đã đo lặp ba lần" và một chỉ tiêu "mới xem phiếu của nhà cung cấp" đều là số, nhưng bạn dùng chúng với mức tin khác nhau.
+
+<ul class="thang-muc-doc">
+<li id="muc-doc-toan-van"><span class="muc-vach muc-vach-4"><span class="muc-vach-hinh" aria-hidden="true"></span></span><strong>Đọc toàn văn</strong> (4 vạch đặc): người soạn đã mở và đọc cả bài hoặc cả chương được trích. Vẫn nên mở bản gốc khi cần điều kiện đo chi tiết.</li>
+<li id="muc-doc-mot-phan"><span class="muc-vach muc-vach-3"><span class="muc-vach-hinh" aria-hidden="true"></span></span><strong>Đọc một phần hoặc trang gốc</strong> (3 vạch đặc): đã đọc một phần của tài liệu, ví dụ một chương sách, một bảng, hoặc trang gốc của cơ quan hay hãng. Phần còn lại của tài liệu chưa đọc.</li>
+<li id="muc-doc-tom-tat"><span class="muc-vach muc-vach-2"><span class="muc-vach-hinh" aria-hidden="true"></span></span><strong>Đọc tóm tắt</strong> (2 vạch đặc): chỉ đọc phần tóm tắt của bài báo hoặc bản tóm lược của công cụ tìm bài. Chưa thấy bảng số, phương pháp và điều kiện đo trong toàn văn, nên với con số quan trọng hãy mở bản gốc trước khi đưa vào công thức.</li>
+<li id="muc-doc-tieu-de"><span class="muc-vach muc-vach-1"><span class="muc-vach-hinh" aria-hidden="true"></span></span><strong>Chỉ thấy tiêu đề</strong> (1 vạch đặc): mới thấy tên bài khi tìm tài liệu, chưa đọc nội dung. Coi như một gợi ý để tìm đọc, chưa phải bằng chứng.</li>
+<li id="muc-doc-tri-nho"><span class="muc-vach muc-vach-0"><span class="muc-vach-hinh" aria-hidden="true"></span></span><strong>Ghi từ trí nhớ, chưa kiểm</strong> (không vạch đặc): người soạn nhớ là có tài liệu này nhưng chưa mở lại để đối chiếu.</li>
+<li id="muc-doc-chua-ro"><span class="muc-vach muc-vach-0"><span class="muc-vach-hinh" aria-hidden="true"></span></span><strong>Chưa xác định</strong> (không vạch đặc): danh mục nguồn chưa ghi mức đọc cho nguồn này. Web xếp nó vào mức thấp nhất, không đoán.</li>
+</ul>
+
+Bấm vào dấu bốn vạch ở bất kỳ bài nào sẽ về đúng dòng tương ứng ở đây; bấm vào tên nguồn sẽ tới thẻ của nguồn đó ở trang [Nguồn](../nguon/). Hiện phần lớn nguồn ở mức **tóm tắt**; số nguồn ở từng mức ghi ở đầu trang Nguồn.
 
 ## Giới hạn của nội dung
 
