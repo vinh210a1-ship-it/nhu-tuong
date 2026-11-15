@@ -6,7 +6,7 @@
 import fs from 'node:fs';
 import { BAI_GIAI, lienKetMay, trangBaiGiai } from '../src/data/bai-giai-mau.mjs';
 import { SO_DON_VI } from '../src/plugins/remark-nhan.mjs';
-import { stokes, chatNhuHoaToiThieu, banKinhNhoNhat, laplace, debye, ostwald } from '../public/cong-thuc.js';
+import { stokes, chatNhuHoaToiThieu, banKinhNhoNhat, laplace, debye, ostwald, pickering, hlbTron, hlbPhanA, q10DoiThoiGian, arrhenius } from '../public/cong-thuc.js';
 
 let loi = 0;
 const sai = (m) => {
@@ -30,6 +30,7 @@ function khoiMay(id) {
 function oCuaMay(khoi) {
 	const ten = new Set([...khoi.matchAll(/\bo\('([a-zA-Z0-9]+)'/g)].map((x) => x[1]));
 	if (khoi.includes('`t${i}`')) for (let i = 0; i < 5; i++) ten.add(`t${i}`).add(`d${i}`); // máy Ostwald dựng ô bằng vòng lặp
+	if (khoi.includes('`c${i}`')) for (let i = 0; i < 4; i++) ten.add(`c${i}`).add(`t${i}`); // máy Arrhenius: 4 cặp (nhiệt độ, thời gian)
 	return ten;
 }
 
@@ -40,6 +41,11 @@ const TAY_TINH = {
 	laplace: { phan: 'loi', so: [[0.04, 3], [0.4, 3], [2, 3], [4000, 3], [40000, 3], [200000, 3]] },
 	debye: { phan: 'loi', so: [[3.04, 3], [1.9226648, 3], [2.4821496, 3], [25, 3], [15, 3]] },
 	ostwald: { phan: 'loi', so: ['1,05 × 10⁻⁴', '1,31 × 10⁻⁵', [0.99994995, 4], [0.9905854, 4], [0.23407193, 3]] },
+	// Gói 2 (Python 2026-11-15): kT = 1,380649e-23 × 298,15; ΔE = π r² γ (1 − |cos θ|)²; hồi quy ln t theo 1/T tính bằng công thức bình phương tối thiểu viết tay
+	pickering: { phan: 'loi', so: ['5,89 × 10⁻¹⁷', '4,12 × 10⁻²¹', '1,43 × 10⁴', [14309.783, 3], [143.09783, 3], [100, 3], '1,03 × 10³', [13.928203, 3], [0.8660254, 3]] },
+	hlb: { phan: 'loi', so: ['= **12**', '**40% A + 60% B**', '**4 g chất A**', '**6 g chất B**', 'HLB 10 cần 50% A', 'HLB 12 cần 30% A', '= −0,1', '"âm 10% A"'] },
+	q10: { phan: 'loi', so: [[59.39697, 3], [38.579463, 3], [109.1192, 3], [3.5894474, 3], [2.8284271, 3], [129.04699, 3]] },
+	arrhenius: { phan: 'loi', so: [[10228.39, 4], [85.038839, 3], [0.99988893, 4], [7.9210086, 3], [11239.704, 3], [468.321, 3], [15.405296, 3], [3.0443735, 3], [2.045025, 3]] },
 };
 // Và các tương quan chữ phải đúng với số (câu "lớn hơn", "thẳng hơn" trong lời giải)
 const QUAN_HE = {
@@ -50,6 +56,24 @@ const QUAN_HE = {
 	ostwald: () => {
 		const k = ostwald([[0, 0.15], [14, 0.169], [28, 0.185], [42, 0.198], [56, 0.21]]);
 		return k.r2D3 > k.r2D && k.doDocD3 > 0;
+	},
+	// "bằng đúng lô 60°", "kém đúng 100 lần", "lô 30° bám yếu hơn"
+	pickering: () => {
+		const E = (r, th) => pickering(r, 30, th, 298.15).kT;
+		return Math.abs(E(50, 120) / E(50, 60) - 1) < 1e-9 && Math.abs(E(50, 60) / E(5, 60) - 100) < 1e-6 && E(50, 30) < E(50, 60) && E(50, 60) < E(50, 90);
+	},
+	// "không đạt được HLB 16", "cả ba điểm nằm trong dải 10–18", "tăng 1 đơn vị HLB thì bớt 10% A"
+	hlb: () =>
+		hlbPhanA(5, 15, 16) === null && Math.abs(hlbTron(5, 15, hlbPhanA(5, 15, 11)) - 11) < 1e-9 && Math.abs(hlbPhanA(5, 15, 10) - hlbPhanA(5, 15, 11) - 0.1) < 1e-9 && [10, 11, 12].every((h) => h >= 10 && h <= 18),
+	// "chưa đầy 2 tháng", "hơn 4 tháng", "chưa đỡ được hạn 12 tháng", khoảng Q10 1,5–3 bao lấy kết quả Q10 = 2
+	q10: () => {
+		const t = (q) => q10DoiThoiGian(21, 40, 25, q), nguoc = q10DoiThoiGian(365, 25, 40, 2);
+		return t(1.5) < t(2) && t(2) < t(3) && t(2) / 30.4 < 2 && nguoc / 30.4 > 4 && nguoc / 30.4 < 5 && nguoc > 21;
+	},
+	// "nằm giữa 11,5 và 5,6 giờ", "Q10 đổi theo nhiệt độ", 25 °C nằm ngoài khoảng đo, máy ghi R² = 1 ở ba chữ số
+	arrhenius: () => {
+		const k = arrhenius([[90, 24], [100, 11.5], [110, 5.6], [120, 2.8]]);
+		return k.thoiGianTai(105) < 11.5 && k.thoiGianTai(105) > 5.6 && k.q10Tai(25) > k.q10Tai(100) && k.r2 > 0.999 && so(k.r2, 3) === '1' && 25 < 90 && 90 - 25 === 65;
 	},
 };
 

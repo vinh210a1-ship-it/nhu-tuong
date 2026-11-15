@@ -9,7 +9,7 @@
 //   3. Chạy npm run kiem. Phép kiểm dừng nếu thiếu nấc, thiếu nhãn, ô không có trong máy, hoặc số lệch số tính tay quá 0,5%.
 // Quy ước nhãn: đề bài và phép tính trong lời giải đều là [T] (số do đề dựng, không phải số đo thật); câu nói về cơ chế mang nhãn
 // [K], [G] hoặc [N] như ở máy tính. Không đặt nhãn [K] lên câu có số kèm đơn vị: máy in sẽ ẩn câu đó (xem remark-nhan.mjs).
-import { stokes, chatNhuHoaToiThieu, banKinhNhoNhat, laplace, lucIon, debye, ostwald } from '../../public/cong-thuc.js';
+import { stokes, chatNhuHoaToiThieu, banKinhNhoNhat, laplace, lucIon, debye, ostwald, pickering, hlbTron, hlbPhanA, q10DoiThoiGian, arrhenius, KB, R } from '../../public/cong-thuc.js';
 
 const MU = '⁰¹²³⁴⁵⁶⁷⁸⁹';
 const so = (x, n = 3) => x.toLocaleString('vi-VN', { maximumSignificantDigits: n });
@@ -23,6 +23,7 @@ function kh(x, n = 3) {
 
 // Số liệu đầu vào của từng bài (đề cho). Đặt ngoài hàm viet() để nút "Mở máy" và lời giải dùng cùng một nguồn.
 const OST = [[0, 0.15], [14, 0.169], [28, 0.185], [42, 0.198], [56, 0.21]];
+const ARR = [[90, 24], [100, 11.5], [110, 5.6], [120, 2.8]]; // (°C, giờ)
 
 export const BAI_GIAI = [
 	{
@@ -206,6 +207,203 @@ Chia độ dốc cho 8 để có ω. Với phần (c), thay t = 90 vào đườn
 **(b)** Đường d³ thẳng hơn (R² ${so(k.r2D3, 4)} so với ${so(k.r2D, 4)}) nên số liệu phù hợp với ripening, nhưng đường d cũng khớp rất cao trong khoảng đo ngắn, vì d³ tăng không nhiều so với giá trị đầu. R² cao chưa chứng minh cơ chế. Một đối chứng nên làm: thêm một ít dầu không tan trong nước (ví dụ triglyceride chuỗi dài) vào pha dầu; nếu tốc độ tăng cỡ giọt giảm mạnh thì nghiêng hẳn về ripening, nếu không thì phải nghĩ đến hợp giọt hay keo tụ. [G]
 
 **(c)** Giữ nguyên đường thẳng thì d³(90) = ${kh(k.d3Dau + k.doDocD3 * 90)} µm³ và **d ≈ ${so(d90)} µm**. Ngày 90 nằm ngoài khoảng đo (0 đến 56 ngày), nên đây là ngoại suy: chỉ đáng tin nếu cơ chế không đổi và tốc độ giữ nguyên, thực tế nhiệt độ, thành phần pha nước hay giai đoạn đầu và cuối của quá trình đều có thể làm tốc độ đổi. Nên đo thêm ở ngày 90 thay vì tin con số này. [G]`,
+			};
+		},
+	},
+	{
+		id: 'pickering',
+		tieuDe: 'Hạt rắn nào bám mặt giọt đủ chặt để làm nhũ tương Pickering?',
+		may: 'Năng lượng giải hấp hạt Pickering',
+		bai: ['nhu-tuong', 'he-dac-biet', 'Hệ nhũ tương đặc biệt'],
+		nhap: { r: '50', g: '30', th: '60', T: '25' },
+		viet() {
+			const TK = 25 + 273.15;
+			const A = pickering(50, 30, 60, TK), B = pickering(5, 30, 60, TK);
+			const C30 = pickering(50, 30, 30, TK), C120 = pickering(50, 30, 120, TK), E90 = pickering(50, 30, 90, TK);
+			const kT = A.J / A.kT;
+			return {
+				de: `Bạn muốn làm nhũ tương dầu trong nước ổn định bằng hạt rắn thay cho chất nhũ hóa phân tử. Nhà cung cấp chào hai cỡ hạt cầu cứng cùng vật liệu: hạt A bán kính r = 50 nm và hạt B bán kính r = 5 nm. Đề cho: sức căng dầu–nước γ = 30 mN/m; góc tiếp xúc của hạt tại mặt phân cách dầu–nước, đo qua pha nước, θ = 60°; nhiệt độ 25 °C. [T]
+
+**(a)** Năng lượng giải hấp ΔE của một hạt A là bao nhiêu J, và gấp bao nhiêu lần kT (năng lượng chuyển động nhiệt)?
+**(b)** Hạt B có ΔE bằng bao nhiêu kT? Vì sao lại kém hạt A đúng chừng đó lần?
+**(c)** Hai lô hạt A khác được xử lý bề mặt nên có θ = 30° và θ = 120°. ΔE của mỗi lô là bao nhiêu kT? Lô nào còn hợp với nhũ tương dầu trong nước?
+**(d)** Phòng lab gửi kết quả "θ = 60°" đo bằng giọt nước đặt trên màng hạt khô trong không khí. Có thay số này vào công thức được không?`,
+				nac1: `Hạt nằm trên mặt giọt giống quả bóng nổi ngang mặt nước: nó che mất một mảng tròn của mặt phân cách dầu–nước. Muốn kéo hạt ra khỏi mặt giọt thì phải tạo lại mảng mặt phân cách đó, tức là tốn một năng lượng cỡ diện tích mảng nhân với sức căng. Tự hỏi: (1) hạt to gấp 10 lần thì mảng tròn bị che rộng gấp mấy lần? (2) Hạt nằm lệch hẳn về một pha (θ xa 90°) thì mảng bị che rộng ra hay hẹp lại? (3) Vì sao phải so ΔE với kT chứ không chỉ nhìn số J? [G]`,
+				nac2: `Năng lượng giải hấp của một hạt cầu cứng nằm trên mặt phân cách dầu–nước: [N: @schroen2024]
+
+$$
+\\Delta E = \\pi\\, r^{2}\\,\\gamma\\,(1-|\\cos\\theta|)^{2}
+$$
+
+Đổi r từ nm thành m (nhân 10⁻⁹) và γ từ mN/m thành N/m (nhân 10⁻³) để ΔE ra J. Năng lượng chuyển động nhiệt kT = k<sub>B</sub> × T, với k<sub>B</sub> = ${kh(KB, 7)} J/K và T tính bằng kelvin (25 °C = 298,15 K). Tỉ số ΔE/kT cho biết chuyển động nhiệt có đủ sức bứt hạt ra khỏi mặt giọt không. [T]`,
+				nac3: `πr² = π × (50×10⁻⁹ m)² = ${kh(E90.J / 0.03)} m². Nhân với γ = 30×10⁻³ N/m được ${kh(E90.J)} J: đây là ΔE lớn nhất, ứng với θ = 90°. [T]
+
+Với θ = 60°: cos 60° = 0,5 nên (1 − 0,5)² = 0,25; nhân vào số vừa có để ra ΔE. kT = ${kh(KB, 7)} J/K × 298,15 K = ${kh(kT)} J; chia ΔE cho kT. Các phần còn lại chỉ đổi r hoặc θ; nhớ lấy giá trị tuyệt đối của cos θ khi θ lớn hơn 90°. [T]`,
+				loi: `**(a)** ΔE = ${kh(E90.J)} J × 0,25 = **${kh(A.J)} J**. Với kT = ${kh(kT)} J thì ΔE ≈ **${kh(A.kT)} kT** (máy ghi ${so(A.kT)} kT). [T]
+
+Chuyển động nhiệt chỉ có năng lượng cỡ 1 kT, nên hạt A coi như không tự rời mặt giọt: lớp hạt đứng chắn giữa hai giọt và hợp giọt rất khó xảy ra. [G]
+
+**(b)** Hạt B: ΔE ≈ **${so(B.kT)} kT**, kém hạt A đúng ${so(A.kT / B.kT)} lần. ΔE tỉ lệ với r²: bán kính nhỏ đi 10 lần thì mảng mặt phân cách mà hạt che nhỏ đi 10² = 100 lần. [T]
+
+Hạt B vẫn bám, nhưng yếu hơn nhiều và nhạy hơn với mọi thứ làm giảm γ hay đẩy θ ra xa 90°. [G] Bài Hệ nhũ tương đặc biệt ghi rằng hạt rất nhỏ (dưới khoảng 10 nm) hoặc γ rất thấp thì hạt không giữ được trên bề mặt. [N: @schroen2024]
+
+**(c)** θ = 30°: (1 − cos 30°)² = (1 − ${so(Math.cos(Math.PI / 6))})² ≈ ${so(C30.J / E90.J, 2)}, nên ΔE ≈ **${kh(C30.kT)} kT**, nhỏ hơn lô θ = 60° khoảng ${so(A.kT / C30.kT)} lần. θ = 120°: |cos 120°| = 0,5, giống cos 60°, nên ΔE ≈ **${kh(C120.kT)} kT**, bằng đúng lô θ = 60°. [T]
+
+Công thức không phân biệt θ = 60° với θ = 120°, nhưng loại nhũ tương thì có: θ đo trong pha nước nhỏ hơn 90° thuận lợi cho dầu trong nước, lớn hơn 90° thuận lợi cho nước trong dầu. [N: @li2022a] Vì vậy lô θ = 120° bám chặt ngang lô 60° nhưng kéo hệ về phía nước trong dầu, không hợp với mục tiêu của đề; lô θ = 30° đúng loại nhũ tương nhưng bám yếu hơn hẳn. ΔE lớn là điều kiện cần, chưa đủ để chọn hạt. [G]
+
+**(d)** Không thay thẳng được. Công thức cần θ tại mặt phân cách dầu–nước, đo qua pha nước. Góc đo bằng giọt nước trên màng hạt khô trong không khí là góc của một mặt phân cách khác (nước–không khí), hai loại số đo không so trực tiếp được. Hãy hỏi lại phương pháp đo; khi chưa rõ thì chỉ coi kết quả tính là minh họa. [G]
+
+**Giới hạn:** công thức viết cho hạt cầu cứng, đơn lẻ, giọt lớn hơn hạt rất nhiều. [N: @schroen2024] Microgel và protein là hạt mềm, đổi hình khi hấp phụ nên không có một góc tiếp xúc cố định; với chúng ΔE tính ra chỉ để minh họa. [N: @murray2019]`,
+			};
+		},
+	},
+	{
+		id: 'hlb',
+		tieuDe: 'Phối hai chất nhũ hóa theo tỉ lệ nào để đạt HLB mục tiêu?',
+		may: 'Trộn hai chất nhũ hóa theo HLB',
+		bai: ['chat-nhu-hoa', 'nen-tang-vat-ly-hoa-be-mat', 'Nền tảng hóa lý bề mặt'],
+		nhap: { a: '5', b: '15', wa: '30', muc: '11' },
+		viet() {
+			const hA = 5, hB = 15, me = 500, tong = (me * 2) / 100;
+			const h30 = hlbTron(hA, hB, 0.3);
+			const w11 = hlbPhanA(hA, hB, 11), w10 = hlbPhanA(hA, hB, 10), w12 = hlbPhanA(hA, hB, 12);
+			const w16 = (16 - hB) / (hA - hB); // hlbPhanA trả null vì nằm ngoài 0–1; phép kiểm QUAN_HE canh điều này
+			return {
+				de: `Bạn có hai chất nhũ hóa không ion. Chất A ưa dầu, tài liệu kỹ thuật (TDS) của nhà cung cấp ghi HLB = ${hA}. Chất B ưa nước, TDS ghi HLB = ${hB}. Nhà cung cấp dầu gợi ý thử quanh HLB = 11 cho nhũ tương dầu trong nước của bạn. Ba con số này do đề cho để tập tính, không phải HLB của một chất hay một loại dầu cụ thể. Mẻ thử nặng ${me} g, tổng lượng chất nhũ hóa bằng 2% khối lượng mẻ. [T]
+
+**(a)** Trộn thử 30% A với 70% B (theo khối lượng) thì HLB hỗn hợp là bao nhiêu?
+**(b)** Muốn HLB hỗn hợp bằng 11 thì cần bao nhiêu % A và bao nhiêu % B? Cân mỗi chất bao nhiêu gam cho mẻ ${me} g?
+**(c)** Lập dãy sàng lọc ba điểm HLB 10, 11 và 12: mỗi điểm cần bao nhiêu % A?
+**(d)** Cặp A–B này có phối ra HLB 16 được không? Vì sao?`,
+				nac1: `HLB hỗn hợp là trung bình có trọng số theo khối lượng, giống pha nước nóng với nước lạnh để được nước ấm: nhiệt độ sau khi pha luôn nằm giữa hai nhiệt độ ban đầu và nghiêng về bên nào nhiều hơn. Tự hỏi: (1) thêm nhiều A thì HLB hỗn hợp tăng hay giảm? (2) Có pha ra được con số nằm ngoài khoảng giữa hai chất không? (3) Bài toán ngược (biết HLB muốn có, tìm tỉ lệ) chỉ là giải một phương trình bậc nhất với ẩn là phần khối lượng của A. [G]`,
+				nac2: `Quy tắc cộng tuyến tính theo khối lượng, với w<sub>A</sub> và w<sub>B</sub> là phần khối lượng của hai chất trong hỗn hợp chất nhũ hóa (cộng lại bằng một), chỉ số hh nghĩa là hỗn hợp: [K]
+
+$$
+\\mathrm{HLB}_{hh} = w_A\\,\\mathrm{HLB}_A + w_B\\,\\mathrm{HLB}_B
+$$
+
+Thay w<sub>B</sub> = 1 − w<sub>A</sub> rồi giải ngược để tìm phần khối lượng của A khi biết HLB mục tiêu (viết tắt HLB<sub>mt</sub>): [T]
+
+$$
+w_A = \\frac{\\mathrm{HLB}_{mt}-\\mathrm{HLB}_B}{\\mathrm{HLB}_A-\\mathrm{HLB}_B}
+$$
+
+Kết quả w<sub>A</sub> chỉ có nghĩa khi nằm từ 0 đến 1. Khối lượng từng chất = phần khối lượng × tổng lượng chất nhũ hóa của mẻ. [T]`,
+				nac3: `**(a)** w<sub>A</sub> = 0,3 và w<sub>B</sub> = 0,7: HLB = 0,3 × ${hA} + 0,7 × ${hB}. [T]
+
+**(b)** w<sub>A</sub> = (11 − ${hB}) / (${hA} − ${hB}) = (−4) / (−10). Tổng chất nhũ hóa của mẻ = 2% × ${me} g = ${so(tong)} g; nhân lần lượt với w<sub>A</sub> và w<sub>B</sub>. [T]
+
+**(c)** và **(d)** Lặp lại công thức của (b) với HLB mục tiêu 10, 12 và 16; để ý dấu của kết quả ở (d). [T]`,
+				loi: `**(a)** HLB = 0,3 × ${hA} + 0,7 × ${hB} = ${so(0.3 * hA)} + ${so(0.7 * hB)} = **${so(h30)}**. [T]
+
+**(b)** w<sub>A</sub> = ${so(w11)}: cần **${so(w11 * 100)}% A + ${so((1 - w11) * 100)}% B**. Mẻ ${me} g có ${so(tong)} g chất nhũ hóa, nên cân **${so(w11 * tong)} g chất A** và **${so((1 - w11) * tong)} g chất B**. Thử lại: ${so(w11)} × ${hA} + ${so(1 - w11)} × ${hB} = ${so(hlbTron(hA, hB, w11))}. [T]
+
+**(c)** HLB 10 cần ${so(w10 * 100)}% A; HLB 11 cần ${so(w11 * 100)}% A; HLB 12 cần ${so(w12 * 100)}% A (phần còn lại là B). Cứ tăng 1 đơn vị HLB thì bớt ${so((w10 - w11) * 100)}% A, vì hai chất cách nhau ${hB - hA} đơn vị HLB. [T]
+
+Cả ba điểm nằm trong dải HLB 10–18 mà McClements (2016) ghi là ổn định nhũ tương dầu trong nước. [N: @mcclements2016 tr.134–135]
+
+**(d)** Không. Công thức cho w<sub>A</sub> = (16 − ${hB}) / (${hA} − ${hB}) = ${so(w16).replace('-', '−')}, tức là "âm ${so(-w16 * 100)}% A", không cân được. HLB hỗn hợp luôn nằm giữa HLB của hai chất (từ ${hA} đến ${hB}); muốn có 16 thì phải đổi chất B sang một chất có HLB cao hơn 16. [T]
+
+**Rút ra:** tỉ lệ ${so(w11 * 100)}% A + ${so((1 - w11) * 100)}% B là điểm xuất phát để thử, không phải đáp án. Làm cả dãy ở (c) rồi đo cỡ giọt và độ bền mới biết điểm nào tốt nhất. [G] HLB là con số tĩnh, không tính đến loại dầu, nhiệt độ, muối, pH. [N: @abbott] Trong kem lạnh, khả năng gây mất ổn định mỡ của chất nhũ hóa không giải thích hết bằng HLB. [N: @goff1989] Về chính phép cộng tuyến tính: một nghiên cứu trên este sucrose thấy trộn tuyến tính theo HLB trong dải 10–16. [N: @gupta1983]`,
+			};
+		},
+	},
+	{
+		id: 'q10',
+		tieuDe: 'Thử cấp tốc ở 40 °C nói gì về hạn dùng ở 25 °C?',
+		may: 'Quy đổi thời gian theo Q10',
+		bai: ['chat-beo', 'oxy-hoa-lipid-chong-oxy-hoa-han-su-dung', 'Oxy hóa và hạn dùng'],
+		nhap: { t1: '21', T1: '40', T2: '25', q: '2' },
+		viet() {
+			const t2 = q10DoiThoiGian(21, 40, 25, 2);
+			const tThap = q10DoiThoiGian(21, 40, 25, 1.5), tCao = q10DoiThoiGian(21, 40, 25, 3);
+			const heSo = q10DoiThoiGian(1, 40, 25, 2); // 2^1,5
+			const nguoc = q10DoiThoiGian(365, 25, 40, 2);
+			return {
+				de: `Bạn bảo quản cấp tốc một loại dầu ăn đóng chai ở 40 °C. Chỉ số peroxid (PV) vượt ngưỡng nội bộ của công ty sau 21 ngày. Chưa có số đo ở nhiệt độ khác, nên tạm giả định Q10 = 2 (đề cho; Q10 là số lần phản ứng nhanh lên khi tăng 10 °C). Nhiệt độ bảo quản thật là 25 °C. [T]
+
+**(a)** Quy về 25 °C thì thời gian tới ngưỡng là bao nhiêu ngày?
+**(b)** Nếu Q10 thật là 1,5 hoặc 3 thì kết quả nằm trong khoảng nào? Hai đầu khoảng chênh nhau mấy lần?
+**(c)** Bài toán ngược: muốn có cơ sở cho hạn 12 tháng (365 ngày) ở 25 °C với Q10 = 2 thì mẫu ở 40 °C phải trụ ít nhất bao nhiêu ngày?
+**(d)** Có nên in kết quả ở (a) lên nhãn không?`,
+				nac1: `Nóng hơn thì hỏng nhanh hơn, nên mẫu ở 25 °C phải trụ lâu hơn mẫu ở 40 °C. Q10 = 2 nghĩa là cứ lạnh đi 10 °C thì thời gian dài gấp đôi. Tự hỏi: (1) từ 40 °C xuống 25 °C là mấy "bậc 10 °C"? (2) Một bậc rưỡi thì nhân đôi "một lần rưỡi" nghĩa là nhân với bao nhiêu? Gợi ý: không phải 2 × 1,5. [G]`,
+				nac2: `Quy đổi thời gian theo Q10, với giả định cơ chế hỏng không đổi giữa hai nhiệt độ: [K]
+
+$$
+t_2 = t_1 \\cdot Q_{10}^{\\,(T_1 - T_2)/10}
+$$
+
+T₁ là nhiệt độ đã đo, T₂ là nhiệt độ muốn quy về, cùng tính bằng °C. Số mũ dương khi quy về nhiệt độ thấp hơn (thời gian dài ra), âm khi quy về nhiệt độ cao hơn (thời gian ngắn lại). [T]`,
+				nac3: `**(a)** Số mũ = (40 − 25) / 10 = 1,5. Lũy thừa 2<sup>1,5</sup> = 2 × √2 ≈ ${so(heSo)}. Nhân với 21 ngày. [T]
+
+**(b)** Làm lại với 1,5<sup>1,5</sup> và 3<sup>1,5</sup> (mẹo: x<sup>1,5</sup> = x × √x). [T]
+
+**(c)** Đổi vai hai nhiệt độ: t₁ = 365 ngày ở T₁ = 25 °C, quy về T₂ = 40 °C. Số mũ = (25 − 40) / 10 = −1,5, tức là chia 365 cho 2<sup>1,5</sup>. [T]`,
+				loi: `**(a)** t₂ = 21 × 2<sup>1,5</sup> = 21 × ${so(heSo)} ≈ **${so(t2)} ngày**, chưa đầy 2 tháng. [T]
+
+**(b)** Q10 = 1,5 cho **${so(tThap)} ngày**; Q10 = 3 cho **${so(tCao)} ngày** (máy đổi thành ${so(tCao / 30.4)} tháng). Hai đầu chênh nhau ${so(tCao / tThap)} lần, dù Q10 chỉ đổi từ 1,5 lên 3. Số mũ lớn dần theo khoảng cách nhiệt độ, nên quy đổi càng xa thì sai số của Q10 càng bị khuếch đại. [T]
+
+**(c)** t₁ = 365 / 2<sup>1,5</sup> = 365 / ${so(heSo)} ≈ **${so(nguoc)} ngày** ở 40 °C, tức hơn 4 tháng. Mẫu của đề mới trụ 21 ngày, nên với Q10 = 2 nó chưa đỡ được hạn 12 tháng. [T]
+
+**(d)** Chưa nên. Con số ${so(t2)} ngày đứng trên hai giả định chưa kiểm: Q10 = 2 là số đề cho chứ không phải số đo của sản phẩm này, và cơ chế hỏng ở 40 °C giống ở 25 °C. Ở nhiệt độ cao, chất béo có thể nóng chảy, nhũ tương có thể vỡ, cơ chế oxy hóa có thể đổi. Việc nên làm: đo thêm ở ít nhất một nhiệt độ nữa để tính Q10 của chính sản phẩm (xem bài giải mẫu kế tiếp, máy Arrhenius), và luôn đặt song song mẫu bảo quản thực ở 25 °C. [G]`,
+			};
+		},
+	},
+	{
+		id: 'arrhenius',
+		tieuDe: 'Bốn điểm đo Rancimat thẳng hàng: ngoại suy về 25 °C đáng tin đến đâu?',
+		may: 'Hạn dùng theo Arrhenius từ thử nghiệm tăng tốc',
+		bai: ['chat-beo', 'oxy-hoa-lipid-chong-oxy-hoa-han-su-dung', 'Oxy hóa và hạn dùng'],
+		nhap: { c0: '90', t0: '24', c1: '100', t1: '11,5', c2: '110', t2: '5,6', c3: '120', t3: '2,8', dich: '25' },
+		viet() {
+			const k = arrhenius(ARR);
+			const b = (k.EaKJ * 1000) / R; // độ dốc của ln t theo 1/T, đơn vị K
+			const a = Math.log(k.thoiGianTai(100)) - b / (100 + 273.15);
+			const t25 = k.thoiGianTai(25), t105 = k.thoiGianTai(105);
+			const thapNhat = Math.min(...ARR.map(([c]) => c)), caoNhat = Math.max(...ARR.map(([c]) => c));
+			const am = (x, n) => so(x, n).replace('-', '−');
+			const bangDe = ARR.map(([c, t]) => `| ${c} | ${so(t)} |`).join('\n');
+			const tp = (x, n) => x.toLocaleString('vi-VN', { minimumFractionDigits: n, maximumFractionDigits: n }); // giữ đủ chữ số sau dấu phẩy để các dòng bảng thẳng hàng
+			const bangDoi = ARR.map(([c, t]) => `| ${c} | ${tp(c + 273.15, 2)} | ${tp(1000 / (c + 273.15), 4)} | ${tp(Math.log(t), 4)} |`).join('\n');
+			return {
+				de: `Bạn đo thời gian cảm ứng (thời gian tới khi dầu bắt đầu oxy hóa nhanh) của một mẫu dầu bằng máy Rancimat ở bốn nhiệt độ. Số liệu dưới đây do đề dựng sẵn để tập tính, không phải số đo của dầu nào. [T]
+
+| Nhiệt độ (°C) | Thời gian cảm ứng (giờ) |
+|---|---|
+${bangDe}
+
+**(a)** Vẽ ln t theo 1/T (T tính bằng kelvin). Độ dốc, năng lượng hoạt hóa E<sub>a</sub> và R² là bao nhiêu?
+**(b)** Dùng đường vừa khớp để ước lượng thời gian cảm ứng ở 105 °C. Phép tính này khác gì về bản chất so với phép tính ở (c)?
+**(c)** Kéo đường thẳng về 25 °C: được bao nhiêu giờ, đổi ra tháng? Q10 quanh 25 °C và quanh 100 °C là bao nhiêu?
+**(d)** Con số ở (c) có dùng làm hạn dùng in trên nhãn được không?`,
+				nac1: `Phản ứng nhanh lên theo nhiệt độ không theo đường thẳng mà theo hàm mũ. Arrhenius cho một cách "nắn thẳng" quan hệ đó: đổi trục tung thành logarit của thời gian và trục hoành thành nghịch đảo của nhiệt độ tuyệt đối thì các điểm đo nằm trên một đường thẳng. Tự hỏi: (1) vì sao phải đổi °C sang kelvin trước khi lấy nghịch đảo? (2) Đường dốc hơn nghĩa là phản ứng nhạy với nhiệt độ hơn hay kém hơn? (3) 105 °C nằm giữa các điểm đo, còn 25 °C cách điểm đo thấp nhất bao xa? [G]`,
+				nac2: `Dạng đường thẳng của phương trình Arrhenius viết cho thời gian (thời gian tỉ lệ nghịch với tốc độ phản ứng): [K]
+
+$$
+\\ln t = a + \\frac{E_a}{R}\\cdot\\frac{1}{T}
+$$
+
+Đặt x = 1/T (T = °C + 273,15, đơn vị K) và y = ln t, rồi làm hồi quy tuyến tính y = a + b·x. Độ dốc b = E<sub>a</sub>/R, nên E<sub>a</sub> = b × R với R = ${so(R, 4)} J/(mol·K). Muốn có thời gian ở một nhiệt độ khác thì thay 1/T của nhiệt độ đó vào đường thẳng rồi lấy e mũ kết quả. Q10 quanh một nhiệt độ = t(T) / t(T + 10). [T]`,
+				nac3: `Bảng đổi biến (cột x ghi 1000/T cho dễ đọc): [T]
+
+| °C | T (K) | 1000/T (1/K) | ln t |
+|---|---|---|---|
+${bangDoi}
+
+Dùng bốn điểm (x, y) làm hồi quy bình phương tối thiểu, hoặc dùng hàm SLOPE, INTERCEPT, RSQ trong bảng tính; nhớ dùng x = 1/T chứ không phải 1000/T. Kết quả: độ dốc b ≈ ${so(b, 4)} K, tung độ gốc a ≈ ${am(a, 4)}. [T]
+
+Với (b) và (c): thay T = 105 + 273,15 rồi T = 25 + 273,15 vào ln t = a + b/T. [T]`,
+				loi: `**(a)** Độ dốc b ≈ **${so(b, 4)} K**, nên E<sub>a</sub> = b × R ≈ **${so(k.EaKJ)} kJ/mol**. R² = **${so(k.r2, 4)}**: bốn điểm nằm rất sát đường thẳng (máy tính ghi ba chữ số nên hiện R² = ${so(k.r2, 3)}). [T]
+
+**(b)** Ở 105 °C: t ≈ **${so(t105)} giờ**, nằm giữa ${so(ARR[1][1])} giờ (100 °C) và ${so(ARR[2][1])} giờ (110 °C) như mong đợi. Đây là nội suy: 105 °C nằm trong khoảng đã đo (${thapNhat} đến ${caoNhat} °C), nên đường thẳng khớp tốt là đủ để tin. [T]
+
+**(c)** 25 °C nằm **ngoài khoảng có dữ liệu**, thấp hơn điểm đo thấp nhất ${thapNhat - 25} °C, nên mọi con số trong đoạn này là ngoại suy, không phải kết quả đo. Kéo dài đường thẳng về 25 °C: t ≈ ${so(t25)} giờ ≈ **${so(t25 / 24)} ngày ≈ ${so(t25 / 24 / 30.4)} tháng**, và Q10 quanh 25 °C ≈ **${so(k.q10Tai(25))}**. [G: ngoại suy ngoài khoảng đo]
+
+Trong khoảng đo, Q10 quanh 100 °C ≈ **${so(k.q10Tai(100))}**. So với con số quanh 25 °C: cùng một E<sub>a</sub> mà Q10 đổi theo nhiệt độ, nên không có một Q10 dùng chung cho mọi khoảng nhiệt. [T]
+
+R² cao chỉ nói bốn điểm thẳng hàng trong khoảng ${thapNhat} đến ${caoNhat} °C; nó không bảo đảm đường thẳng còn đúng khi kéo dài thêm ${thapNhat - 25} °C. Một sai lệch nhỏ của độ dốc bị khuếch đại mạnh trên quãng kéo dài đó. [G]
+
+**(d)** Không. Ngoại suy từ thử nghiệm Rancimat có thể sai rất xa: với dầu óc chó, hạn dùng dự đoán thấp hơn hạn dùng ghi trên nhãn 15–20 lần. [N: @kochhar2009] Ở ${thapNhat}–${caoNhat} °C, độ tan oxy, cơ chế phản ứng và vai trò chất chống oxy hóa khác với ở 25 °C. [G] Nên dùng kết quả để xếp hạng các công thức với nhau trong cùng điều kiện đo, và xác nhận hạn dùng bằng mẫu bảo quản thực ở nhiệt độ mục tiêu. [G]`,
 			};
 		},
 	},
