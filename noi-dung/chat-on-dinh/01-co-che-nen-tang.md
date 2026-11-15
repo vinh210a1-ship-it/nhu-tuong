@@ -85,6 +85,8 @@ Ví dụ định lượng:
 
 **Liên hệ chéo (không đào sâu ở đây)**: chất nhũ hóa và chất hoạt động bề mặt xem khu [Chất nhũ hóa](../../chat-nhu-hoa/), nhũ tương xem khu [Nhũ tương](../../nhu-tuong/), chất béo xem khu [Chất béo](../../chat-beo/); tại đây chỉ giữ phần hydrocolloid.
 
+Hai bài đi tiếp từ mục 4 và mục 5: ví dụ cụ thể về tương tác protein–polysaccharide trong sữa ở bài [Carrageenan và hệ sữa](../carrageenan-va-he-sua/), và cách protein nhũ hóa rồi bị chất nhũ hóa phân tử nhỏ đẩy khỏi giọt ở bài [Protein làm chất nhũ hóa và cạnh tranh hấp phụ](../../chat-nhu-hoa/protein-nhu-hoa-va-canh-tranh-hap-phu/).
+
 ## 6. Việc cần kiểm chứng thêm / còn thiếu
 
 - Chưa có bảng liều dùng công nghiệp tham chiếu cho từng gum trong từng nền (nước giải khát, sữa, sốt, kem). Các số liệu liều trong tài liệu này đều là **liều trong nghiên cứu cụ thể**, không phải khuyến cáo chung.

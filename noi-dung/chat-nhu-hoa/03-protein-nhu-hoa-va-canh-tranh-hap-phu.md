@@ -96,6 +96,7 @@ Cho Tween 20 vào màng β-casein hoặc β-lg ở mặt không khí–nước h
 ## 3.4 Đẩy protein ≠ chỉ chuyện ổn định vật lý: tác động tới oxy hóa và tiêu hóa
 
 - **Oxy hóa:** protein hấp phụ nhạy cảm oxy hóa hơn protein tự do nhưng bảo vệ lipid tốt hơn; Tween 20 đẩy caseinate làm *giảm* oxy hóa protein và *tăng* oxy hóa lipid ở nhũ tương dầu óc chó (45 °C, 8 ngày, pH 7). [N: @yi2019]
+- Cơ chế oxy hóa lipid, các chỉ tiêu đo (PV, AV, hexanal) và chất chống oxy hóa: bài [Oxy hóa lipid, chất chống oxy hóa và hạn sử dụng](../../chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung/) ở khu Chất béo.
 - **Tiêu hóa:** caseinate phủ giọt kết tụ trong dạ dày, làm chậm tiêu hóa lipid ở ruột; saponin chống kết tụ nên tiêu hóa nhanh. [N: @gumus2017]
 - Morris 2008 gợi ý liên hệ cấu trúc liên diện với chuyển hóa chất béo. [N: abstract]
 - **Gợi ý thiết kế** [G]: khi cần bảo vệ dầu giàu PUFA (dầu cá, dầu óc chó) bằng màng protein, tránh thêm CHĐBM tan nhiều trong nước (Tween) ở nồng độ có thể đẩy.
@@ -112,6 +113,8 @@ Cho Tween 20 vào màng β-casein hoặc β-lg ở mặt không khí–nước h
 ---
 
 ## 3.6 Ứng dụng có chủ ý: kem lạnh và kem tươi đánh bông
+
+Cách chọn chất nhũ hóa cho kem lạnh, kem tươi và các sản phẩm khác đặt cạnh nhau ở bài [Ứng dụng và cách chọn chất nhũ hóa](../ung-dung-theo-san-pham-va-quy-trinh-chon-chat-nhu-hoa/).
 
 ### Nguyên lý (Goff)
 - Cần ba điều kiện cho hợp giọt một phần: **hạt béo kết tinh một phần**, **lớp hấp phụ yếu**, và **không khí/ khuấy**. Hỗn hợp casein–whey bình thường quá bền; thêm MDG, DG, polysorbate để đẩy protein, giảm độ phủ bề mặt. [N: @goff1997]

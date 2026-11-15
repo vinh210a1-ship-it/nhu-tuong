@@ -88,6 +88,7 @@ Ví dụ định lượng từ Macridachis-González và cs. 2020:
 - Trong nghiên cứu Zeng và cs. 2020 (shea stearin SBS + bơ ca cao), tỷ lệ SBS:CB 20:80 cho độ tương thích tốt nhất với ΔSFC trong khoảng 1,5; emulsifier được chọn theo **hàm lượng dạng β**, và tổ hợp lecithin đậu nành : PGPR : Tween 60 = 1:1:1 tối ưu cho cảm quan và kết cấu sô-cô-la. [N: @zeng2020]
 - CBE từ cọ stearin (giàu POP) và shea (giàu SOS) có thể trộn tới 40% với bơ ca cao mà không đổi độ cứng và hành vi nóng chảy rõ rệt (dựa trên SFC) khi DAG thấp (~1,3%). [N: @hwang2021]
 - Cơ chế tác động của emulsifier lên đa hình (làm mầm hay làm chậm) **không** được các nguồn đã đọc giải thích đến tầng phân tử. [G: sự thích hợp về cấu trúc mạch của emulsifier với mặt tinh thể quyết định hiệu quả — cần kiểm.]
+- Lecithin, PGPR và polysorbate (Tween) nói ở trên là những chất gì, cấu trúc và cơ chế ra sao: xem bài [Các nhóm chất nhũ hóa thực phẩm](../../chat-nhu-hoa/cac-nhom-chat-nhu-hoa-thuc-pham/) ở khu Chất nhũ hóa.
 
 ## 7. Các dạng chất béo thực phẩm và đa hình điển hình [K]
 

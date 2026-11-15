@@ -75,6 +75,8 @@ Gọi X là thời gian có dữ liệu dài hạn: [N: @ichq1e]
 
 `k = A·exp(−Ea/RT)`; thời gian còn 90% (t90): bậc không `t90 = 0,1·C0/k`; bậc một `t90 = 0,105/k`.
 
+Cùng công thức này được dùng cho hạn dùng của thực phẩm ở bài [Bảo quản: hoạt độ nước, pH, axit yếu, nitrit và hàng rào kép](../../thuc-pham/bao-quan-hoat-do-nuoc-va-han-su-dung/) (mục 8) và cho dầu béo ở bài [Oxy hóa lipid, chất chống oxy hóa và hạn sử dụng](../../chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung/) (mục 6, kèm các bẫy khi ngoại suy).
+
 Hệ số tăng tốc giữa hai nhiệt độ: `AF = exp[(Ea/R)(1/T1 − 1/T2)]`. Với hệ số cho 10 °C quanh 30 °C: `Q10 = exp[(Ea/R)(1/303 − 1/313)]`.
 
 ### 4.2 Bảng tính minh họa [T]

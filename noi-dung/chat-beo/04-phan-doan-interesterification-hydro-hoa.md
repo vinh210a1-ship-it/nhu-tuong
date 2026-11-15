@@ -15,7 +15,7 @@ nguon_goc: tai-lieu-chat-beo/04-phan-doan-interesterification-hydro-hoa.md
 - Có **ba công cụ cổ điển** để chỉnh vật lý chất béo: **hydro hóa**, **phân đoạn**, **interesterification** (hóa học hoặc enzyme). Chúng khác nhau ở cái được thay đổi: hydro hóa đổi acid béo (và có thể sinh trans), phân đoạn chỉ **tách** các TAG sẵn có, interesterification **xếp lại** acid béo trên glycerol mà không đổi thành phần acid béo tổng. [N: @kadhum2017, @zbikowska2023]
 - Hydro hóa bán phần sinh **trans fatty acid (TFA)** bị chỉ trích vì sức khỏe; đây là động lực chính của phân đoạn, interesterification và oleogel. [N: @singh2022, @zbikowska2023, @dhiman2024]
 - **Interesterification enzyme** đang được coi là lựa chọn nhiều hứa hẹn (zero-trans, ít sản phẩm phụ, tái sử dụng enzyme), nhưng **chi phí cao** và **chuyển acyl (acyl migration)** làm phức tạp việc kiểm soát. [N: @singh2022, @zhang2021, @zbikowska2023]
-- Chọn kỹ thuật phải xuất phát từ **mục tiêu đa hình/SFC** (chương 02–03) và ràng buộc nhãn sản phẩm (ví dụ "không biến tính hóa học").
+- Chọn kỹ thuật phải xuất phát từ **mục tiêu đa hình/SFC** (xem bài [Đa hình, kết tinh và bản đồ pha](../da-hinh-ket-tinh-va-ban-do-pha/) và bài [SFC, mạng tinh thể, oleogel](../sfc-mang-tinh-the-oleogel/)) và ràng buộc nhãn sản phẩm (ví dụ "không biến tính hóa học").
 
 ## 2. Phân đoạn (fractionation)
 
@@ -63,7 +63,7 @@ Bài tổng quan Kadhum và cs. 2017 mô tả hydro hóa, IE hóa học và IE e
 - Đặc điểm chuyển hóa: MCFA chuyển hóa nhanh. Các tác dụng sức khỏe của MCT "được cho là" và cần đánh giá riêng; tóm tắt có nêu nhược điểm. [N: @lee2022]
 
 ### 3.5 Hệ quả vị trí sn-2
-Thay đổi sn-2 bằng IE có thể tác động đến lipaemia sau ăn và tiêu hóa (chương 01 mục 6). Bằng chứng người lớn dài hạn chưa kết luận. [N: @berry2009, @sanders2011]
+Thay đổi sn-2 bằng IE có thể tác động đến lipaemia sau ăn và tiêu hóa (bài [Cấu trúc TAG và acid béo](../cau-truc-triglyceride-va-acid-beo/), mục 6). Bằng chứng người lớn dài hạn chưa kết luận. [N: @berry2009, @sanders2011]
 
 ## 4. Hydro hóa và acid béo trans
 
