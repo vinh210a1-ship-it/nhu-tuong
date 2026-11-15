@@ -51,7 +51,7 @@ Trong bột sữa mô hình, sản phẩm Maillard, độ nâu và kết tinh la
 
 ## 5. Mô hình lab đề xuất (`[T]`; Ea và k lấy khoảng từ nguồn)
 
-Cách đặt hạn dùng bằng Arrhenius/Q₁₀ (cùng công thức với dòng `k(T)` dưới đây) được gom ở bài [Bảo quản: hoạt độ nước, pH, axit yếu, nitrit và hàng rào kép](../bao-quan-hoat-do-nuoc-va-han-su-dung/), mục 8.
+Xem thêm bài [Bảo quản: hoạt độ nước, pH, axit yếu, nitrit và hàng rào kép](../bao-quan-hoat-do-nuoc-va-han-su-dung/), mục 8, về hạn dùng theo nhiệt độ (Arrhenius/Q₁₀), theo aw và theo tăng vi sinh.
 
 ```
 k(T) = k_ref * exp( -Ea/R * (1/T - 1/T_ref) )            # Arrhenius, [N: @isleroglu2012]
