@@ -78,7 +78,11 @@ Muốn tập tự giải trước khi bấm máy: [bài giải mẫu cho máy n�
 
 TOTOX gộp sản phẩm oxy hóa sơ cấp và thứ cấp vào một con số; IV và SV tính từ kết quả sắc ký acid béo để đối chiếu với số đo. Lý thuyết ở bài [Cấu trúc triglyceride](../chat-beo/cau-truc-triglyceride-va-acid-beo/) và [Oxy hóa và hạn dùng](../chat-beo/oxy-hoa-lipid-chong-oxy-hoa-han-su-dung/).
 
+Muốn tập tự giải trước khi bấm máy: [bài giải mẫu cho máy này](../bai-giai-mau/#bg-totox).
+
 <div class="may-tinh" id="mt-totox" data-may-tinh="totox"></div>
+
+Muốn tập tự giải trước khi bấm máy: [bài giải mẫu cho máy này](../bai-giai-mau/#bg-iv-sv).
 
 <div class="may-tinh" id="mt-iv-sv" data-may-tinh="iv-sv"></div>
 
@@ -86,7 +90,11 @@ TOTOX gộp sản phẩm oxy hóa sơ cấp và thứ cấp vào một con số;
 
 Sorbat, benzoat, propionat mạnh nhất ở dạng chưa phân ly, nên pH quyết định hiệu quả. Giá trị F quy một bước gia nhiệt về số phút tương đương ở nhiệt độ chuẩn. Lý thuyết ở bài [Bảo quản và hạn dùng](../thuc-pham/bao-quan-hoat-do-nuoc-va-han-su-dung/) và [Các quá trình nhiệt](../thuc-pham/qua-trinh-nhiet-lanh-say-ep-dun/).
 
+Muốn tập tự giải trước khi bấm máy: [bài giải mẫu cho máy này](../bai-giai-mau/#bg-axit-yeu).
+
 <div class="may-tinh" id="mt-axit-yeu" data-may-tinh="axit-yeu"></div>
+
+Muốn tập tự giải trước khi bấm máy: [bài giải mẫu cho máy này](../bai-giai-mau/#bg-gia-tri-f).
 
 <div class="may-tinh" id="mt-gia-tri-f" data-may-tinh="gia-tri-f"></div>
 

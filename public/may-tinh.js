@@ -361,7 +361,7 @@ ${tang ? `<div><span class="mt-kq-nhan">Ở ${so(du)} ngày</span><strong>${isFi
 		chuY: `<li>Tính theo tỉ lượng từ công thức phân tử, giả định mọi acid béo nằm trong triglyceride ${T}. Bỏ qua chất không xà phòng hóa, acid béo tự do, mono- và diglyceride ${G}.</li>
 <li>Kết quả GC thường là % diện tích hoặc % khối lượng methyl ester (FAME); dùng trực tiếp như % khối lượng acid béo là gần đúng ${G}.</li>
 <li>Đồng phân cis và trans, vị trí nối đôi không đổi IV. Nối đôi liên hợp phản ứng không hết với thuốc thử Wijs nên IV đo có thể thấp hơn tính ${K}.</li>
-<li>Kiểm máy tính: acid oleic, linoleic, linolenic cho 89,9 / 181,1 / 273,5; tristearin cho SV 188,8, khớp bảng trong bài Cấu trúc triglyceride. Thành phần mặc định là ví dụ tự đặt, không phải của loại dầu nào ${T}.</li>`,
+<li>Kiểm máy tính: acid oleic, linoleic, linolenic cho 89,9 / 181,0 / 273,5; tristearin cho SV 188,8. Bảng trong bài Cấu trúc triglyceride ghi linoleic ≈ 181,1, lệch 0,1 do cách làm tròn khối lượng nguyên tử. Thành phần mặc định là ví dụ tự đặt, không phải của loại dầu nào ${T}.</li>`,
 	},
 	'axit-yeu': {
 		tieuDe: 'Phần chất bảo quản axit yếu chưa phân ly',
@@ -380,7 +380,7 @@ ${tang ? `<div><span class="mt-kq-nhan">Ở ${so(du)} ngày</span><strong>${isFi
 <div><span class="mt-kq-nhan">Chưa phân ly (HA)</span><strong>${so(fr * 100)}%</strong>${c > 0 ? ` ≈ ${so(fr * c)} mg/kg trên ${so(c)} mg/kg tổng` : ''}</div>
 <div><span class="mt-kq-nhan">Theo pH</span>${bang}</div>
 </div>
-<p class="mt-meo">Mỗi khi pH tăng 1 đơn vị trên pKa, phần chưa phân ly giảm khoảng 10 lần.</p>`;
+<p class="mt-meo">Khi pH đã cao hơn pKa nhiều, mỗi đơn vị pH tăng thêm làm phần chưa phân ly giảm gần 10 lần; gần pKa thì giảm chậm hơn (ở pH = pKa phần chưa phân ly là 50%).</p>`;
 		},
 		chuY: `<li>Phương trình Henderson–Hasselbalch cho dung dịch loãng ${K}. pKa thay đổi theo nhiệt độ, lực ion và lượng đường hoặc ethanol trong pha nước ${G}.</li>
 <li>Dạng phân ly <strong>vẫn có tác dụng</strong>: với sorbic, ở pH trên 6 dạng phân ly còn đóng góp hơn một nửa mức ức chế với đa số vi sinh vật thử ${N(['eklund1983', 'Eklund 1983'])}. Chỉ nhìn phần HA sẽ đánh giá thấp tác dụng ở pH cao.</li>

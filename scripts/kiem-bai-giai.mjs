@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import { BAI_GIAI, lienKetMay, trangBaiGiai } from '../src/data/bai-giai-mau.mjs';
 import { SO_DON_VI } from '../src/plugins/remark-nhan.mjs';
 import { stokes, chatNhuHoaToiThieu, banKinhNhoNhat, laplace, debye, ostwald, pickering, hlbTron, hlbPhanA, q10DoiThoiGian, arrhenius } from '../public/cong-thuc.js';
+import { ivSv, giaTriF } from '../public/cong-thuc.js'; // gói 3
 
 let loi = 0;
 const sai = (m) => {
@@ -29,6 +30,7 @@ function khoiMay(id) {
 }
 function oCuaMay(khoi) {
 	const ten = new Set([...khoi.matchAll(/\bo\('([a-zA-Z0-9]+)'/g)].map((x) => x[1]));
+	if (khoi.includes('.map(([ten, nhan, md])')) for (const m of khoi.matchAll(/\['(c\d+)', '/g)) ten.add(m[1]); // máy IV/SV dựng ô từ bảng acid béo
 	if (khoi.includes('`t${i}`')) for (let i = 0; i < 5; i++) ten.add(`t${i}`).add(`d${i}`); // máy Ostwald dựng ô bằng vòng lặp
 	if (khoi.includes('`c${i}`')) for (let i = 0; i < 4; i++) ten.add(`c${i}`).add(`t${i}`); // máy Arrhenius: 4 cặp (nhiệt độ, thời gian)
 	return ten;
@@ -76,6 +78,26 @@ const QUAN_HE = {
 		return k.thoiGianTai(105) < 11.5 && k.thoiGianTai(105) > 5.6 && k.q10Tai(25) > k.q10Tai(100) && k.r2 > 0.999 && so(k.r2, 3) === '1' && 25 < 90 && 90 - 25 === 65;
 	},
 };
+
+// Gói 3 (thêm bằng Object.assign để không đụng chỗ gói khác thêm dòng vào hai bảng phía trên)
+// Số tính tay bằng Python viết lại độc lập công thức (khối lượng nguyên tử IUPAC làm tròn như máy), 2026-11-15.
+const f_ = (pH, pKa) => 1 / (1 + 10 ** (pH - pKa));
+Object.assign(TAY_TINH, {
+	totox: { phan: 'loi', so: ['**8**', '**34**', '**40**', '30%', '70%'] },
+	'iv-sv': { phan: 'loi', so: [[282.468, 6], [89.85407, 3], [140.1528, 4], [279.237, 4], [875.760, 4], [134.0636, 4], [192.1965, 4], [9.0636, 2], [6.7596, 2], [101.8898, 4], [192.3067, 4]] },
+	'axit-yeu': { phan: 'loi', so: [[83.36625, 3], [833.6625, 3], [44.26884, 3], [442.6884, 3], [1883.1813, 3], [1.88318, 3], [7.35876, 3], [6.015805, 3]] },
+	'gia-tri-f': { phan: 'loi', so: [[0.316228, 3], [6.32456, 3], [4.21637, 3], [63.2456, 3], [3.16228, 3]] },
+});
+Object.assign(QUAN_HE, {
+	totox: () => 2 * 6 <= 12 && 6 <= 10 && 12 > 10 && 2 * 12 + 10 > 30 && 2 * 6 + 28 > 30 && 2 * 2 + 4 <= 30 && Math.abs((2 * 6) / (2 * 6 + 28) - 0.3) < 1e-9,
+	'iv-sv': () => {
+		const kq = ivSv([[16, 0, 7], [18, 0, 4], [18, 1, 25], [18, 2, 62], [18, 3, 2]]);
+		const mac = ivSv([[16, 0, 10], [18, 0, 4], [18, 1, 60], [18, 2, 20], [18, 3, 6]]);
+		return kq.ivDau > 125 && Math.abs(ivSv([[18, 1, 100]]).iv - 89.854) < 0.01 && Math.abs(kq.sv - mac.sv) < 0.2 && kq.ivDau - mac.ivDau > 30;
+	},
+	'axit-yeu': () => f_(3.8, 4.5) > f_(4.6, 4.5) && f_(4.6, 4.5) / f_(5.6, 4.5) < 10 && f_(3.8, 4.5) / f_(4.6, 4.5) < f_(4.6, 4.5) / f_(5.6, 4.5),
+	'gia-tri-f': () => 10 ** ((110 - 120) / 10) === 0.1 && giaTriF(20, 115, 120, 10, 1.5).F / 0.1 > 20 * 2 && Math.abs(giaTriF(20, 115, 120, 10, 1.5).logGiam - 6.32456 / 1.5) < 1e-4,
+});
 
 const ids = new Set();
 for (const b of BAI_GIAI) {
