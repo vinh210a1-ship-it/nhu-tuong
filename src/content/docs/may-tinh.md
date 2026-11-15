@@ -10,11 +10,15 @@ Phép tính chạy ngay trong trình duyệt của bạn, giống máy tính c�
 
 Dùng khi muốn ước lượng giọt nổi (hoặc lắng) nhanh cỡ nào và cần tăng độ nhớt hay giảm kích thước giọt bao nhiêu. Lý thuyết đầy đủ ở bài [Mất ổn định](../nhu-tuong/mat-on-dinh/).
 
+Muốn tập tự giải trước khi bấm máy: [bài giải mẫu cho máy này](../bai-giai-mau/#bg-stokes).
+
 <div class="may-tinh" id="mt-stokes" data-may-tinh="stokes"></div>
 
 ## Diện tích bề mặt và lượng chất nhũ hóa tối thiểu
 
 Dùng khi cần biết tối thiểu bao nhiêu chất nhũ hóa để phủ hết bề mặt giọt ở một kích thước mục tiêu. Lý thuyết ở bài [Nền tảng](../nhu-tuong/nen-tang/).
+
+Muốn tập tự giải trước khi bấm máy: [bài giải mẫu cho máy này](../bai-giai-mau/#bg-chat-nhu-hoa-toi-thieu).
 
 <div class="may-tinh" id="mt-chat-nhu-hoa-toi-thieu" data-may-tinh="chat-nhu-hoa-toi-thieu"></div>
 
@@ -36,17 +40,23 @@ Dùng khi có kết quả bảo quản cấp tốc ở nhiệt độ cao và mu�
 
 Giọt càng nhỏ thì áp suất bên trong càng lớn, nên càng khó bẻ tiếp. Lý thuyết ở bài [Nền tảng](../nhu-tuong/nen-tang/).
 
+Muốn tập tự giải trước khi bấm máy: [bài giải mẫu cho máy này](../bai-giai-mau/#bg-laplace).
+
 <div class="may-tinh" id="mt-laplace" data-may-tinh="laplace"></div>
 
 ## Lực ion và độ dài Debye
 
 Dùng khi thêm muối vào nhũ tương ổn định bằng điện tích (protein, gôm mang điện) và muốn biết lực đẩy tĩnh điện còn "với" xa bao nhiêu. Lý thuyết ở bài [Mất ổn định](../nhu-tuong/mat-on-dinh/).
 
+Muốn tập tự giải trước khi bấm máy: [bài giải mẫu cho máy này](../bai-giai-mau/#bg-debye).
+
 <div class="may-tinh" id="mt-debye" data-may-tinh="debye"></div>
 
 ## Ostwald ripening
 
 Nhập kích thước giọt đo theo thời gian; máy kiểm xem d³ có tăng thẳng theo thời gian như thuyết LSW dự đoán không. Hay gặp ở nhũ tương tinh dầu, hương liệu, nanoemulsion. Lý thuyết ở bài [Mất ổn định](../nhu-tuong/mat-on-dinh/).
+
+Muốn tập tự giải trước khi bấm máy: [bài giải mẫu cho máy này](../bai-giai-mau/#bg-ostwald).
 
 <div class="may-tinh" id="mt-ostwald" data-may-tinh="ostwald"></div>
 

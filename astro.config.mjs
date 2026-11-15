@@ -89,6 +89,7 @@ export default defineConfig({
 					items: [
 						{ label: 'Phòng lab ảo', slug: 'phong-lab', badge: { text: 'Mới', variant: 'tip' } },
 						{ label: 'Máy tính', slug: 'may-tinh' },
+						{ label: 'Bài giải mẫu', slug: 'bai-giai-mau', badge: { text: 'Mới', variant: 'tip' } },
 						{ label: 'Chẩn đoán sự cố', slug: 'chan-doan' },
 					],
 				},

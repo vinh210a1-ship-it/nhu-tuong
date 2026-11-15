@@ -30,6 +30,7 @@ const TRANG = [
 	['bài (thực phẩm)', `${BASE}/thuc-pham/bao-quan-hoat-do-nuoc-va-han-su-dung/`],
 	['bài (dược phẩm)', `${BASE}/duoc-pham/hoa-tan-sinh-kha-dung-bcs/`],
 	['máy tính', `${BASE}/may-tinh/`],
+	['bài giải mẫu', `${BASE}/bai-giai-mau/`],
 	['phòng lab', `${BASE}/phong-lab/`],
 	['chẩn đoán', `${BASE}/chan-doan/`],
 	['tá dược', `${BASE}/tra-cuu-ta-duoc/`],

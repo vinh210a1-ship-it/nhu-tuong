@@ -44,3 +44,16 @@
 .mt-loi { color: #c0392b; font-weight: 600; }
 .mt-chu-y { margin-top: 0.75rem; font-size: 0.85rem; }
 .mt-chu-y summary { cursor: pointer; font-weight: 600; }
+
+/* Trang Bài giải mẫu (src/data/bai-giai-mau.mjs): đề, ba nấc gợi ý gập, lời giải, nút mở máy */
+.bg-dong { font-size: 0.85rem; color: var(--sl-color-gray-2); margin: 0 0 0.5rem !important; }
+.bg-de { border-left: 4px solid var(--sl-color-accent); background: var(--sl-color-gray-6); padding: 0.1rem 1rem; border-radius: 0 0.4rem 0.4rem 0; }
+.bg-huong-dan { font-size: 0.85rem; color: var(--sl-color-gray-2); margin: 0.75rem 0 0.4rem !important; }
+.bg-nac { border: 1px solid var(--sl-color-gray-5); border-radius: 0.4rem; margin: 0.4rem 0; padding: 0 1rem; }
+.bg-nac[open] { padding-bottom: 0.4rem; }
+.bg-nac > summary { cursor: pointer; font-weight: 600; padding: 0.55rem 0; }
+.bg-loi { border-color: var(--sl-color-accent); }
+.bg-mo-may { margin-top: 0.75rem !important; }
+.bg-mo-may a { display: inline-block; padding: 0.5rem 0.9rem; border: 1px solid var(--sl-color-accent); border-radius: 0.4rem; font-weight: 600; text-decoration: none; }
+.bg-mo-may a:hover { background: var(--sl-color-accent-low); }
+.mt-tu-bai-giai { font-size: 0.85rem; background: var(--sl-color-accent-low); padding: 0.4rem 0.6rem; border-radius: 0.35rem; margin: 0.5rem 0 !important; }

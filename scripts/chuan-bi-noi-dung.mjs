@@ -15,6 +15,7 @@ import { htmlLienQuan, kiemLienQuan } from '../src/data/lien-quan-khu.mjs';
 import { htmlBanDo } from '../src/data/ban-do-khu.mjs';
 import { htmlThuNgay, htmlMucDo, htmlCanBietTruoc, htmlCanBietTruocKhu, CONG_CU_BAI } from '../src/data/cong-cu-bai.mjs';
 import { docTuKiemTra, kiemTuKiemTra, htmlTuKiemTra } from './tu-kiem-tra.mjs';
+import { trangBaiGiai } from '../src/data/bai-giai-mau.mjs';
 
 const GOC = process.cwd();
 kiemLienQuan(); // dữ liệu hộp "Liên quan ở khu khác" sai (bài lạ, cùng khu, quá 3 dòng) thì dừng build
@@ -373,6 +374,9 @@ ${dong.length ? dong.join('\n') : '_Chưa đọc được lịch sử sửa tệ
 `,
 	);
 }
+
+// ---------------- trang Bài giải mẫu (gói T3): dựng từ src/data/bai-giai-mau.mjs, số lấy từ public/cong-thuc.js
+fs.writeFileSync(path.join(DOCS, 'bai-giai-mau.md'), trangBaiGiai(13));
 
 // ---------------- trang Nguồn
 const ds = JSON.parse(fs.readFileSync(path.join(GOC, 'nguon/nguon.json'), 'utf8'));
