@@ -335,7 +335,7 @@ ${htmlTuKiemTra(`${khu}/${fm.slug}`, TU_KIEM_TRA_KHU[khu][fm.slug])}
 }
 
 // ---------------- mức đọc nguồn cho phần JavaScript (T4-2): public/muc-doc.json (sinh tự động, đã gitignore)
-fs.writeFileSync(path.join(GOC, 'public/muc-doc.json'), JSON.stringify(jsonMucDoc(JSON.parse(fs.readFileSync(path.join(GOC, 'nguon/nguon.json'), 'utf8')))));
+fs.writeFileSync(path.join(GOC, 'public/muc-doc.json'), JSON.stringify(jsonMucDoc(JSON.parse(fs.readFileSync(path.join(GOC, 'nguon/nguon.json'), 'utf8')), fs.readFileSync(path.join(GOC, 'src/content/docs/quy-uoc.md'), 'utf8'))));
 
 // ---------------- trang Nhật ký thay đổi (T5): 100 dòng mới nhất từ git log, chỉ tính commit chạm bài công khai
 {

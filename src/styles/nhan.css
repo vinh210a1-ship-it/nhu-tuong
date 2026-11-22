@@ -126,6 +126,17 @@ a.muc-vach:hover { color: var(--sl-color-text-accent); }
 	a.muc-vach .muc-vach-hinh { display: none; }
 	.muc-vach-chu { position: static; width: auto; height: auto; overflow: visible; clip-path: none; }
 }
+/* Hộp giải thích mức đọc bấm ra tại chỗ (T4-4, public/muc-doc.js). Không có JavaScript hoặc trình duyệt cũ thì không có hộp,
+   dấu vẫn là liên kết tới trang Cách đọc nhãn. */
+#muc-doc-hop { position: fixed; inset: auto; margin: 0; width: min(21rem, calc(100vw - 1rem)); max-width: none; padding: 0.65rem 0.8rem; background: var(--sl-color-bg); color: var(--sl-color-text); border: 1px solid var(--sl-color-gray-4); border-radius: 0.5rem; font-size: 0.85rem; line-height: 1.5; box-shadow: 0 4px 14px rgb(0 0 0 / 0.25); overflow: visible; }
+#muc-doc-hop:focus-visible { outline: 2px solid var(--sl-color-accent); outline-offset: 2px; }
+#muc-doc-hop p { margin: 0; }
+#muc-doc-hop .mdh-nghia .muc-vach { margin-inline-end: 0.15em; font-size: 1.1em; vertical-align: -0.1em; }
+#muc-doc-hop .mdh-duoi { display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; margin-top: 0.5rem; }
+#muc-doc-hop a { color: var(--sl-color-text-accent); }
+#muc-doc-hop button { min-height: 2rem; padding: 0 0.7rem; border: 1px solid var(--sl-color-gray-4); border-radius: 0.3rem; background: transparent; color: inherit; font: inherit; cursor: pointer; }
+#muc-doc-hop button:hover { border-color: var(--sl-color-accent); }
+@media print { #muc-doc-hop { display: none; } }
 /* thẻ ở trang Nguồn và bảng chú giải: dấu đi cùng chữ, lấy màu của chữ bên cạnh */
 .muc-doc .muc-vach { color: inherit; margin-inline-end: 0.3em; vertical-align: -0.05em; }
 .thang-muc-doc { list-style: none; padding: 0; }

@@ -32,9 +32,26 @@ export const htmlMucDoc = (ma, base = '') => {
 	);
 };
 
+// Lời giải nghĩa từng mức cho hộp bấm-ra-tại-chỗ (T4-4): lấy NGUYÊN VĂN từ danh sách có neo `muc-doc-<mã>` ở trang
+// Cách đọc nhãn (src/content/docs/quy-uoc.md), để chỉ có MỘT nơi viết nghĩa của mức, không chép tay sang file JS.
+// Trả về { mã: chữ thuần }; mã nào trang không có neo thì không có mục (hộp sẽ không mở, dấu vẫn là liên kết như cũ).
+export const nghiaTuTrang = (md) => {
+	const kq = {};
+	for (const m of md.matchAll(/<li id="muc-doc-([a-z-]+)">([\s\S]*?)<\/li>/g)) {
+		const chu = m[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+		if (chu) kq[m[1]] = chu;
+	}
+	return kq;
+};
+
 // Dữ liệu cho public/muc-doc.js (dấu mức đọc do JavaScript chèn sau liên kết nguồn trong máy tính, đồ thị, chẩn đoán, bàn lab).
-// { muc: {mã: {ten, vach}}, nguon: {khóa: mã} }: bảng mã lấy từ MUC_DOC ở đây, không chép tay sang file JS.
-export const jsonMucDoc = (dsNguon) => ({
-	muc: Object.fromEntries([...Object.entries(MUC_DOC).map(([ma, m]) => [ma, { ten: m.ten, vach: m.vach }]), [CHUA_RO, { ...MUC_CHUA_RO }]]),
-	nguon: Object.fromEntries(dsNguon.filter((e) => e.khoa).map((e) => [e.khoa, mucCua(e.muc_doc).ma])),
-});
+// { muc: {mã: {ten, vach, nghia?}}, nguon: {khóa: mã} }: bảng mã lấy từ MUC_DOC ở đây, không chép tay sang file JS.
+// `nghia` (có khi truyền nội dung trang quy-uoc.md vào `mdQuyUoc`) dùng cho hộp giải thích tại chỗ.
+export const jsonMucDoc = (dsNguon, mdQuyUoc = '') => {
+	const nghia = nghiaTuTrang(mdQuyUoc);
+	const mot = (ma, m) => ({ ten: m.ten, vach: m.vach, ...(nghia[ma] ? { nghia: nghia[ma] } : {}) });
+	return {
+		muc: Object.fromEntries([...Object.entries(MUC_DOC).map(([ma, m]) => [ma, mot(ma, m)]), [CHUA_RO, mot(CHUA_RO, MUC_CHUA_RO)]]),
+		nguon: Object.fromEntries(dsNguon.filter((e) => e.khoa).map((e) => [e.khoa, mucCua(e.muc_doc).ma])),
+	};
+};
