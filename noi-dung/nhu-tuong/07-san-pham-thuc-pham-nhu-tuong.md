@@ -57,7 +57,7 @@ nguon_goc: tai-lieu-nhu-tuong/07-san-pham-thuc-pham-nhu-tuong.md
 - O/W đậm đặc (HIPE) trong đó lòng đỏ trứng (lipoprotein LDL, phospholipid, protein) là chất nhũ hóa; pH thấp (đo thực khoảng 3,7–4,4 **[N: @li2012mayo, @paananen2017]**) vừa kìm hãm vi sinh vừa làm protein lòng đỏ tương tác.
 - Quy trình: tạo hỗn hợp nước–trứng–giấm–mù tạt **[K]**. **Cho dầu từng phần nhỏ** vào máy trộn cao tốc để tạo nhũ thô, kiểm soát tốc độ thêm dầu để tránh đảo pha (phase inversion); sau đó đồng hóa bằng máy nghiền keo. **[N: @mcclements2016 tr.569]**
 - Điểm gãy: thêm dầu quá nhanh ⇒ dễ đảo pha; khi bảo quản nên tránh đông lạnh, gia nhiệt hoặc khuấy quá mạnh. **[N: @mcclements2016 tr.569]** Thiếu chất nhũ hóa ⇒ tách dầu; nhiệt độ thấp (kết tinh dầu) ⇒ hợp giọt khi đông lạnh. **[K]** Trong thử nghiệm đông lạnh–rã đông của một nghiên cứu mayonnaise, lượng dầu tách ra tăng khi giấm được thêm vào lòng đỏ trước khi nhũ hóa nhiều hơn. **[N: @li2023vinegar]**
-- **Thay thế trứng:** protein thực vật + hạt Pickering (tinh bột, cellulose, protein đậu) được đề xuất thay mayonnaise; ví dụ nhũ tương không trứng dùng Pickering **[N: @li2022a]**; HIPE O/W bằng phân đoạn lòng đỏ + hydroxypropyl distarch phosphate **[N: PubMed 39662540]**.
+- **Thay thế trứng:** protein thực vật + hạt Pickering (tinh bột, cellulose, protein đậu) được đề xuất thay mayonnaise; ví dụ nhũ tương không trứng dùng Pickering **[N: @li2022a]**; HIPE O/W bằng phân đoạn lòng đỏ + hydroxypropyl distarch phosphate **[N: @xu2025]**.
 
 ---
 

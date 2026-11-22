@@ -21,12 +21,12 @@ Chọn chất nhũ hóa theo **loại hệ** trước, theo **HLB** sau, rồi m
 
 | Hệ | Câu hỏi quyết định | Chất thường dùng | Bằng chứng trong phiên |
 |---|---|---|---|
-| O/W lỏng (đồ uống, sữa, nước sốt) | pH, muối, nhiệt, có protein? | Tween, lecithin, saponin, este sucrose HLB cao, protein | [N] Gumus; Zhang 2020 |
-| O/W đông lạnh, đánh bông (kem) | cần hợp giọt một phần? | MDG + PS80, este sucrose | [N] Goff; Cheng 2020; Wang 2021 |
-| Bột nhào, bánh mì | gia cố gluten, làm mềm ruột, trì hoãn cứng | SSL, DATEM, MDG, lecithin | [N] Gómez 2004; Gárzon 2018 |
-| W/O (bơ thực vật, phết) | độ ổn định hợp giọt, tinh thể mỡ | PGPR, MDG, lecithin, Span | [N] Zembyla 2020; Jin 2021 |
-| Nhũ tương kép W/O/W | hai lớp chất nhũ hóa khác nhau | PGPR (trong) + protein/gum arabic (ngoài) | [N] Niu 2023; Gregersen 2025 |
-| Nhũ tương nano, mùi | giọt < 200 nm, nhiệt, pH | saponin quillaja, lecithin (microfluidizer), polysorbate | [N] Gumus; Tsibranska 2019 |
+| O/W lỏng (đồ uống, sữa, nước sốt) | pH, muối, nhiệt, có protein? | Tween, lecithin, saponin, este sucrose HLB cao, protein | [N: @gumus2017, @zhang2020] |
+| O/W đông lạnh, đánh bông (kem) | cần hợp giọt một phần? | MDG + PS80, este sucrose | [N: @goff1989, @cheng2020, @wang2021a] |
+| Bột nhào, bánh mì | gia cố gluten, làm mềm ruột, trì hoãn cứng | SSL, DATEM, MDG, lecithin | [N: @gomez2004, @garzon2018] |
+| W/O (bơ thực vật, phết) | độ ổn định hợp giọt, tinh thể mỡ | PGPR, MDG, lecithin, Span | [N: @zembyla2020, @jin2021] |
+| Nhũ tương kép W/O/W | hai lớp chất nhũ hóa khác nhau | PGPR (trong) + protein/gum arabic (ngoài) | [N: @niu2023, @gregersen2025] |
+| Nhũ tương nano, mùi | giọt < 200 nm, nhiệt, pH | saponin quillaja, lecithin (microfluidizer), polysorbate | [N: @gumus2017, @tsibranska2019] |
 
 ---
 
@@ -49,7 +49,7 @@ Xem bài [Protein làm chất nhũ hóa và cạnh tranh hấp phụ](../protein
 - **Thời gian ủ quyết định hiệu quả.** Mọi chất nhũ hóa thử làm tăng độ ổn định bột nhưng làm chậm ủ; lợi ích về thể tích chỉ rõ khi ủ dài. SSL, este sucrose, lecithin làm mềm ruột mạnh nhất ở ủ kéo dài; MDG và lecithin giàu lysophospholipid trì hoãn cứng khi bảo quản. [N: @gomez2004]
 - **Tạo bọt khí:** chất nhũ hóa tăng số bóng khí khi trộn, PGEF tạo nhiều nhất; DMG-75 bóng lớn nhất; ruột cứng hơn dù nhiều lỗ nhỏ. [N: @garzon2018]
 - **Hiệp đồng với enzyme:** DMG90–SSL–α-amylase maltogenic cho độ ổn định bột và độ mềm bền hơn so với improver thương mại. [N: @rodriguezsandoval2026]
-- **Không gluten:** hiệu ứng khác; SSL và tổ hợp DATEM+SSL+MG+LC cho bánh kiều mạch/quinoa/dền tốt; nhưng đôi khi bột đối chứng không phụ gia vẫn tốt (Sciarini 2012). [N] Pão de queijo: chất nhũ hóa không kiểm soát lão hóa. [N: @lopeztenorio2015]
+- **Không gluten:** hiệu ứng khác; SSL và tổ hợp DATEM+SSL+MG+LC cho bánh kiều mạch/quinoa/dền tốt; nhưng đôi khi bột đối chứng không phụ gia vẫn tốt (Sciarini 2012). [N: @sciarini2012] Pão de queijo: chất nhũ hóa không kiểm soát lão hóa. [N: @lopeztenorio2015]
 - **Bột mì xơ/ tinh bột kháng:** hỗn hợp tối ưu 0,24% SSL, 0,18% PS80, 0,08% DATEM. [N: @gomez2013]
 
 ## 5.4 W/O, bơ thực vật, phết
@@ -85,7 +85,7 @@ Xem bài [Protein làm chất nhũ hóa và cạnh tranh hấp phụ](../protein
 - γ(t), mô-đun giãn nở, thế zeta; nếu có protein: đo độ phủ bề mặt Γ (kem rửa, ly tâm). [N: @gumus2017; @hinderink2021]
 
 ### Bước 3. Thử trong hệ thật
-- Đồng hóa theo điều kiện gần sản xuất; đo d₃₂, creaming, độ nhớt; thử 3 điều kiện stress (pH, muối, nhiệt) (như Gumus, Raffinose esters). [N]
+- Đồng hóa theo điều kiện gần sản xuất; đo d₃₂, creaming, độ nhớt; thử 3 điều kiện stress (pH, muối, nhiệt) (như Gumus, Raffinose esters). [N: @gumus2017]
 
 ### Bước 4. Cạnh tranh hấp phụ (nếu có protein)
 - Dải nồng độ CHĐBM: 0 → 0,3 → 1 → 3 mM hay tỉ lệ mol CHĐBM/protein, đo Γ và d₃₂ sau mỗi bước; so sánh với π_c của hệ. [G: dựa trên Mackie, Rabe, Girardet]

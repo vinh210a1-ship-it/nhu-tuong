@@ -36,7 +36,7 @@ nguon_goc: tai-lieu-chat-hoat-dong-be-mat/01-nen-tang-vat-ly-hoa-be-mat.md
 
 ### Áp suất Laplace và kích thước giọt
 - Giọt cầu bán kính r có chênh áp Laplace ΔP = 2γ/r. Giọt càng nhỏ, ΔP càng lớn, càng khó vỡ thêm. [K]
-- Luận án Gumus (UMass, hướng dẫn McClements) nêu rõ: **γ thấp hơn → giọt nhỏ hơn ở cùng năng lượng đồng hóa**. [N]
+- Luận án Gumus (UMass, hướng dẫn McClements) nêu rõ: **γ thấp hơn → giọt nhỏ hơn ở cùng năng lượng đồng hóa**. [N: @gumus2017]
 
 ### Áp suất bề mặt Π
 - Π = γ₀ − γ, trong đó γ₀ là sức căng của mặt phân cách sạch. Π tăng từ 0 đến Π_sat khi bề mặt bão hòa chất hoạt động bề mặt. Π_sat cao thường tương ứng giọt mịn hơn nếu chất nhũ hóa đủ nhiều và hấp phụ đủ nhanh. [N: @gumus2017]
@@ -51,7 +51,7 @@ nguon_goc: tai-lieu-chat-hoat-dong-be-mat/01-nen-tang-vat-ly-hoa-be-mat.md
 
 ## 1.2 Động học: tại sao "mạnh trên giấy" chưa chắc thắng trong máy đồng hóa
 
-Tensiometer thông thường đo ở trạng thái cân bằng, quá chậm so với đồng hóa (mili-giây). Luận án Gumus nhấn mạnh điều này. [N]
+Tensiometer thông thường đo ở trạng thái cân bằng, quá chậm so với đồng hóa (mili-giây). Luận án Gumus nhấn mạnh điều này. [N: @gumus2017]
 
 Tiến trình của một phân tử chất nhũ hóa (mô hình giáo khoa [K]):
 1. Khuếch tán/đối lưu đến sát bề mặt (nhanh nhờ cường độ rối trong đồng hóa).
@@ -66,8 +66,8 @@ d_min ∝ Γ·φ / c_S (φ: phần thể tích dầu; c_S: nồng độ chất n
 Chú ý khi dạy: đây là **giới hạn do thiếu chất nhũ hóa** (emulsifier-limited), khác với **giới hạn do năng lượng** (energy-limited).
 
 ### Tải bề mặt Γ: thứ tự độ lớn
-- Thứ tự theo Gumus: saponin nhỏ < protein cầu (whey) < protein mềm dẻo (caseinate) < polysaccharide (gum arabic). [N]
-- Whey ≈ 1 mg/m², gum arabic ≈ 25 mg/m² (số theo luận án). [N]
+- Thứ tự theo Gumus: saponin nhỏ < protein cầu (whey) < protein mềm dẻo (caseinate) < polysaccharide (gum arabic). [N: @gumus2017]
+- Whey ≈ 1 mg/m², gum arabic ≈ 25 mg/m² (số theo luận án). [N: @gumus2017]
 - Con số saponin (0,001 mg/m²) mà công cụ trích ra từ bản đọc **có vẻ bất thường**; **cần mở bản gốc để xác nhận trước khi dùng** vì có thể đã mất dấu thập phân hoặc bị đổi đơn vị khi trích. `[cảnh báo]`
 - Số liệu thực nghiệm khác: độ phủ bề mặt protein trong nhũ tương dầu hướng dương 10 wt%: WPI ≈ 1,4 mg/m², pea PPI ≈ 2,5 mg/m². [N: @hinderink2021]
 
@@ -87,7 +87,7 @@ Chú ý khi dạy: đây là **giới hạn do thiếu chất nhũ hóa** (emuls
 ## 1.4 HLB — cân bằng ưa nước–ưa dầu
 
 ### Định nghĩa và lịch sử
-- Griffin đề xuất HLB năm 1949 và 1954 (thang 0–20, cho chất không ion, dựa trên tỉ lệ khối lượng phần ưa nước/toàn phân tử). Davies đề xuất cách khác năm 1957 dựa trên số nhóm hóa học. [N: Wikipedia; bản gốc Griffin 1949 đã đối chiếu, xem bảng dưới]
+- Griffin đề xuất HLB năm 1949 và 1954 (thang 0–20, cho chất không ion, dựa trên tỉ lệ khối lượng phần ưa nước/toàn phân tử). Davies đề xuất cách khác năm 1957 dựa trên số nhóm hóa học. [N: @wikipedia, @griffin1949a; bản gốc Griffin 1949 đã đối chiếu, xem bảng dưới]
 - Công thức Griffin (1954) cho chất không ion [K]:
   - Este polyol/ axit béo: **HLB = 20 × (1 − S/A)**, S = chỉ số xà phòng hóa của este, A = chỉ số axit của axit béo.
   - Chất polyethoxy (không có este polyol): **HLB = E/5**, E = % khối lượng phần polyoxyethylene.
@@ -95,7 +95,7 @@ Chú ý khi dạy: đây là **giới hạn do thiếu chất nhũ hóa** (emuls
 - Davies [N: @wikipedia, một phần]: nhóm ưa dầu CH, CH₂, CH₃, =CH mỗi nhóm −0,475; ví dụ nhóm sulfat muối 38,6; OH tự do 1,9. Công thức đầy đủ [K]: **HLB = 7 + Σ(số nhóm ưa nước) − Σ(số nhóm ưa dầu)**.
 
 ### Dải HLB theo ứng dụng
-Theo McClements 2016: HLB 3–6 ổn định W/O; 7–9 là chất thấm ướt, nhũ tương dễ hợp giọt; 10–18 ổn định O/W. **[N: @mcclements2016 tr.134–135]** Một số nguồn giáo dục nêu O/W rộng hơn, từ khoảng 8. **[N: OSU Extension "Food Emulsifiers"]** Hai cách ghi lệch nhau ở vùng 8–10, nơi chất thấm ướt và chất nhũ hóa O/W giao nhau; chọn chất ở vùng này phải thử thực nghiệm. **[G]**
+Theo McClements 2016: HLB 3–6 ổn định W/O; 7–9 là chất thấm ướt, nhũ tương dễ hợp giọt; 10–18 ổn định O/W. **[N: @mcclements2016 tr.134–135]** Một số nguồn giáo dục nêu O/W rộng hơn, từ khoảng 8. **[N: @okstate]** Hai cách ghi lệch nhau ở vùng 8–10, nơi chất thấm ướt và chất nhũ hóa O/W giao nhau; chọn chất ở vùng này phải thử thực nghiệm. **[G]**
 
 ### Thang ứng dụng HLB theo Griffin (1949)
 Bảng dưới chép nguyên số liệu từ bảng phân loại ứng dụng của bài gốc. **[N: @griffin1949a tr.314, Table 2]**
@@ -120,8 +120,8 @@ Với hai chất A và B có phần khối lượng w_A, w_B: **HLB_mix = w_A·H
 ### Bảng HLB tham khảo — **số liệu nền, chưa kiểm**
 | Chất | HLB thường nêu | Nguồn trong phiên | Nhãn |
 |---|---|---|---|
-| Lecithin thô/đậu nành | ~2–8 tùy phân đoạn; kém khi dùng riêng | Gumus: "HLB 2–8 ổn định kém riêng lẻ" | [N] |
-| Este sucrose | rất rộng, 1 đến 16+ tùy mức este hóa | Gupta 1983; Cholakova 2024; Zeng 2023 (S170 HLB 1); Zhu 2021 (mono-este 10,3–15,7) | [N] |
+| Lecithin thô/đậu nành | ~2–8 tùy phân đoạn; kém khi dùng riêng | Gumus: "HLB 2–8 ổn định kém riêng lẻ" | [N: @gumus2017] |
+| Este sucrose | rất rộng, 1 đến 16+ tùy mức este hóa | Gupta 1983; Cholakova 2024; Zeng 2023 (S170 HLB 1); Zhu 2021 (mono-este 10,3–15,7) | [N: @gupta1983, @cholakova2024, @zeng2023, @zhu2021] |
 | Glyceryl monostearate/monooleate | ~3–4 | — | [K] |
 | Span 80 (sorbitan monooleate) | ~4,3 | — | [K] |
 | Tween 80 | ~15 | — | [K] |
@@ -155,7 +155,7 @@ Với hai chất A và B có phần khối lượng w_A, w_B: **HLB_mix = w_A·H
 
 ### Dùng CPP thế nào là hợp lý
 - **Giải thích tại sao lecithin (hai đuôi, đầu nhỏ) thiên về lớp đôi/ túi, không phải mixen cầu**, và vì sao lysolecithin (một đuôi) dễ tạo O/W hơn. [K], [G]
-- **Giải thích sự đảo pha khi đổi muối/nhiệt độ** (muối giảm a₀ của chất ion, tăng CPP). Abbott: muối làm giảm diện tích nhóm đầu hiệu dụng của chất ion; đồng chất hoạt động như dodecanol thêm thể tích đuôi mà ít thêm đầu. [N]
+- **Giải thích sự đảo pha khi đổi muối/nhiệt độ** (muối giảm a₀ của chất ion, tăng CPP). Abbott: muối làm giảm diện tích nhóm đầu hiệu dụng của chất ion; đồng chất hoạt động như dodecanol thêm thể tích đuôi mà ít thêm đầu. [N: @abbott]
 - **Đừng** dùng CPP để "tính" một nhũ tương thực phẩm đầy dầu: chưa có phép tính CPP đáng tin cho hỗn hợp lecithin–protein–MDG. [G]
 
 ---

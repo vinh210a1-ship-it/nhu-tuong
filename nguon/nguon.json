@@ -3075,6 +3075,20 @@
   "khoa": "gursoy2004"
  },
  {
+  "trich_dan": "Gutiérrez-Luna K, Astiasarán I, Ansorena D (2022). Gels as fat replacers in bakery products: a review. *Crit Rev Food Sci Nutr* 62(14):3768–3781",
+  "ho": "gutierrezluna",
+  "nam": 2022,
+  "doi": "10.1080/10408398.2020.1869693",
+  "pmid": "33412906",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [],
+  "khoa": "gutierrezluna2022"
+ },
+ {
   "trich_dan": "Håkansson A (2019). Emulsion formation by homogenization: current understanding and future perspectives. *Annu Rev Food Sci Technol* 10:239–258.",
   "ho": "hakansson",
   "nam": 2019,
@@ -4634,6 +4648,20 @@
   "khoa": "lin2021"
  },
  {
+  "trich_dan": "Lin J, Tang Z-S, Brennan CS, Chandrapala J, Gao W, Han Z, Zeng X-A (2023). Valorizing protein-polysaccharide conjugates from sugar beet pulp as an emulsifier. *Int J Biol Macromol* 226:679–689",
+  "ho": "lin",
+  "nam": 2023,
+  "doi": "10.1016/j.ijbiomac.2022.11.217",
+  "pmid": "36436597",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [],
+  "khoa": "lin2023"
+ },
+ {
   "trich_dan": "Lipinski CA, Lombardo F, Dominy BW, Feeney PJ (2001). Experimental and computational approaches to estimate solubility and permeability in drug discovery and development settings. *Adv Drug Deliv Rev* 46(1–3):3–26.",
   "ho": "lipinski",
   "nam": 2001,
@@ -5074,6 +5102,20 @@
    "ban-lab-moi:mason1997"
   ],
   "khoa": "mason1997"
+ },
+ {
+  "trich_dan": "Masui S, Kanno Y, Nisisako T (2025). Scaling up microdroplet production with post-array devices. *Biomicrofluidics* 19(3):031303",
+  "ho": "masui",
+  "nam": 2025,
+  "doi": "10.1063/5.0270507",
+  "pmid": "40444208",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [],
+  "khoa": "masui2025"
  },
  {
   "trich_dan": "Investigation and characterization of Pickering emulsion stabilized by alkali-treated zein (AZ)/sodium alginate (SA) composite particles. *Materials* 16(8):3164 (tác giả chưa ghi) [Mức đọc gốc: Đọc toàn văn (bản mở) (qua WebFetch tóm tắt; kiểm lại bảng gốc)]",
@@ -7112,6 +7154,20 @@
   "khoa": "sulaiman2022"
  },
  {
+  "trich_dan": "Syamaladevi RM, Tang J, Villa-Rojas R, Sablani S, Carter B, Campbell G (2016). Influence of water activity on thermal resistance of microorganisms in low-moisture foods: a review. *Compr Rev Food Sci Food Saf* 15(2):353–370",
+  "ho": "syamaladevi",
+  "nam": 2016,
+  "doi": "10.1111/1541-4337.12190",
+  "pmid": "33371598",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "thuc-pham"
+  ],
+  "ma_cu": [],
+  "khoa": "syamaladevi2016"
+ },
+ {
   "trich_dan": "Sylvani MI, Evanuarini H, Rahayu PP. Physicochemical quality of reduced fat mayonnaise with Aloe vera powder as a natural antioxidant. Asian J Biol 21(1):1–7",
   "ho": "sylvani",
   "nam": 2025,
@@ -7288,6 +7344,20 @@
    "chat-nhu-hoa:E16"
   ],
   "khoa": "thong2019"
+ },
+ {
+  "trich_dan": "Tian H, Xiang D, Li C (2021). Tea polyphenols encapsulated in W/O/W emulsions with xanthan gum-locust bean gum mixture: Evaluation of their stability and protection. *Int J Biol Macromol* 175:40–48",
+  "ho": "tian",
+  "nam": 2021,
+  "doi": "10.1016/j.ijbiomac.2021.01.161",
+  "pmid": "33548306",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [],
+  "khoa": "tian2021"
  },
  {
   "trich_dan": "Tijssen R. et al. (2007). Gelation upon long storage of milk drinks with carrageenan. *J. Dairy Sci.*",
@@ -8172,6 +8242,20 @@
   "khoa": "xie2024"
  },
  {
+  "trich_dan": "Xie H, Sha X-M, Yuan P, Li J-L, Hu Z-Z, Tu Z-C (2024). Rheology, physicochemical properties, and microstructure of fish gelatin emulsion gel modified by γ-polyglutamic acid. *Front Nutr* 11:1343394",
+  "ho": "xie",
+  "nam": 2024,
+  "doi": "10.3389/fnut.2024.1343394",
+  "pmid": "38571750",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10987959/",
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [],
+  "khoa": "xie2024pga"
+ },
+ {
   "trich_dan": "Xie J et al. (2026). Low-phosphate myofibrillar protein emulsions stabilized by fractionated fava bean protein fibrils. *Food Chem* 532:151778",
   "ho": "xie",
   "nam": 2026,
@@ -8250,6 +8334,20 @@
    "chat-on-dinh:S94"
   ],
   "khoa": "xu2023"
+ },
+ {
+  "trich_dan": "Xu L, Wang J, Zhao Y, Wu N, Yao Y, Chen S, Yang Y, Tu Y (2025). Facile fabrication of stable O/W high internal phase emulsions with egg yolk fractions and hydroxypropyl distarch phosphate. *Int J Biol Macromol* 288:138599",
+  "ho": "xu",
+  "nam": 2025,
+  "doi": "10.1016/j.ijbiomac.2024.138599",
+  "pmid": "39662540",
+  "url": null,
+  "muc_doc": "tom-tat",
+  "khu": [
+   "nhu-tuong"
+  ],
+  "ma_cu": [],
+  "khoa": "xu2025"
  },
  {
   "trich_dan": "Xu K. et al. (2026). Rheology and molecular mechanisms of fracturing fluids... *Gels*.",

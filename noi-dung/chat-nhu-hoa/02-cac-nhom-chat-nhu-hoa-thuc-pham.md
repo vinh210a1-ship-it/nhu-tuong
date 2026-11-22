@@ -19,17 +19,17 @@ nguon_goc: tai-lieu-chat-hoat-dong-be-mat/02-cac-nhom-chat-nhu-hoa-thuc-pham.md
 
 | Nhóm | Mã INS/E | HLB điển hình | Hay dùng cho | Điểm mạnh nổi bật | Điểm cần lưu ý |
 |---|---|---|---|---|---|
-| Lecithin | 322 | thấp–trung bình (2–8 [N]) | sô-cô-la, margarine, bánh, bột hòa tan (instantizing), nhũ tương sữa đậu | phospholipid tự nhiên, "nhãn sạch" | kém khi dùng riêng ở O/W; nhạy pH, muối [N] |
+| Lecithin | 322 | thấp–trung bình (2–8 [N: @gumus2017]) | sô-cô-la, margarine, bánh, bột hòa tan (instantizing), nhũ tương sữa đậu | phospholipid tự nhiên, "nhãn sạch" | kém khi dùng riêng ở O/W; nhạy pH, muối [N: @gumus2017] |
 | Mono/diglyceride (MDG) | 471 | thấp (3–4 [K]) | kem, margarine, bánh mì (chống lão hóa), kẹo | kết tinh mỡ, tạo phức amylose | phân loại "chất nhũ hóa" có nghiên cứu quan sát về ung thư (Mục 2.2) |
 | Este axit hữu cơ của MDG | 472a–f (DATEM 472e, LACTEM 472b, CITREM 472c...) | trung bình–cao [K] | bột mì, gluten | gia cố gluten | 472e có ADI theo axit tartaric |
-| Stearoyl lactylate | 481 (Na), 482 (Ca) | ~8–10 [K] | bánh mì, bột nhào | làm mềm ruột, gia cố bột | ADI 22 mg/kg/ngày [N] |
+| Stearoyl lactylate | 481 (Na), 482 (Ca) | ~8–10 [K] | bánh mì, bột nhào | làm mềm ruột, gia cố bột | ADI 22 mg/kg/ngày [N: @efsa2013] |
 | Polysorbate | 432–436 | cao (15–17 [K]) | kem, nước sốt, vitamin tan trong dầu | mạnh, hấp phụ nhanh, hạ γ rất mạnh | ADI nhóm 25 mg/kg/ngày; vết ethylene oxide; thí nghiệm chuột (Chassaing 2015) |
 | Este sorbitan (Span) | 491–495 | thấp | W/O, bơ thực vật, kem | phối với Tween | chưa kiểm ADI trong phiên |
-| Este sucrose | 473 | 1–16+ [N] | bánh, đồ uống, kem, đánh bông | HLB rất rộng, "tiệm cận tự nhiên" | giá cao; nhạy axit/nhiệt (suy luận [K]) |
+| Este sucrose | 473 | 1–16+ [N: @gupta1983, @cholakova2024, @zeng2023, @zhu2021] | bánh, đồ uống, kem, đánh bông | HLB rất rộng, "tiệm cận tự nhiên" | giá cao; nhạy axit/nhiệt (suy luận [K]) |
 | Este polyglycerol | 475 | tùy | bánh, kem | HLB phối | ít tài liệu trong phiên |
-| PGPR | 476 | rất thấp (~1,5 [K]) | sô-cô-la (giảm độ nhớt), W/O, nhũ tương kép | màng nhớt–đàn hồi cao [N] | ADI 25 mg/kg/ngày [N] |
-| Este propane-1,2-diol | 477 | thấp | kem lạnh, bánh | — | ADI theo propane-1,2-diol [N] |
-| Saponin (quillaja) | 999 | cao [K] | đồ uống mùi, nhũ tương nano | hạ γ mạnh, tạo màng đàn hồi | ADI 3 mg saponin/kg/ngày [N] |
+| PGPR | 476 | rất thấp (~1,5 [K]) | sô-cô-la (giảm độ nhớt), W/O, nhũ tương kép | màng nhớt–đàn hồi cao [N] | ADI 25 mg/kg/ngày [N: @efsaa] |
+| Este propane-1,2-diol | 477 | thấp | kem lạnh, bánh | — | ADI theo propane-1,2-diol [N: @efsa2018a] |
+| Saponin (quillaja) | 999 | cao [K] | đồ uống mùi, nhũ tương nano | hạ γ mạnh, tạo màng đàn hồi | ADI 3 mg saponin/kg/ngày [N: @efsa2019] |
 
 ---
 
@@ -37,17 +37,17 @@ nguon_goc: tai-lieu-chat-hoat-dong-be-mat/02-cac-nhom-chat-nhu-hoa-thuc-pham.md
 
 ### Bản chất
 - Hỗn hợp phospholipid: **PC, PE** (lưỡng tính), **PI, PA** (anion), kèm glycolipid, chất trung tính. Mỗi phospholipid: khung glycerol + 2 đuôi axit béo + nhóm đầu phosphate. Điện tích đầu phụ thuộc pH. Lysolecithin mất một đuôi nên phân cực hơn. [N: @gumus2017]
-- Nguồn: đậu nành, trứng, sữa, cải dầu, bông, hướng dương. [N]
+- Nguồn: đậu nành, trứng, sữa, cải dầu, bông, hướng dương. [N: @gumus2017]
 - Về cấu trúc, hai đuôi + đầu nhỏ → CPP gần 1 → ưa lớp đôi, không ưa mixen cầu; PE có CPP > 1 khuynh hướng pha đảo. [K]
 
 ### Cơ chế nhũ hóa
-- Hấp phụ lên mặt phân cách tạo màng đơn lớp phospholipid; ổn định chủ yếu bằng **tĩnh điện** (điện tích âm của PA, PI và pH). [N]
+- Hấp phụ lên mặt phân cách tạo màng đơn lớp phospholipid; ổn định chủ yếu bằng **tĩnh điện** (điện tích âm của PA, PI và pH). [N: @gumus2017]
 - Tính nhạy pH và muối [N: @gumus2017]:
   - Nhũ tương lecithin đậu nành ở pH trung tính điện tích âm cao và ổn định.
   - pH 1,6 giọt kết tụ vì đầu mất điện tích (pKa ≈ 1,5).
   - Nhũ tương vitamin E không muối ổn định ở pH 8→3, keo tụ ở pH 2; ở pH 7 keo tụ khi NaCl > khoảng 100 mM do che chắn điện tích.
-- Kích thước giọt phụ thuộc thiết bị: chỉ cắt cao tốc → 30–160 µm (hướng dương); vi lỏng (microfluidizer) → d₃₂ < 200 nm (hướng dương), < 400 nm (đậu nành). [N]
-- Lecithin dùng riêng ổn định kém; phối với casein, whey, monoacylglycerol hoặc phủ nhiều lớp (chitosan) để cải thiện. [N]
+- Kích thước giọt phụ thuộc thiết bị: chỉ cắt cao tốc → 30–160 µm (hướng dương); vi lỏng (microfluidizer) → d₃₂ < 200 nm (hướng dương), < 400 nm (đậu nành). [N: @gumus2017]
+- Lecithin dùng riêng ổn định kém; phối với casein, whey, monoacylglycerol hoặc phủ nhiều lớp (chitosan) để cải thiện. [N: @gumus2017]
 
 ### Phối hợp thực tế
 - **W/O:** lecithin + PGPR theo tỉ lệ 1:3 và 2:2 cho nhũ tương W/O nano ổn định hơn (nghiên cứu ứng dụng cho vịt quay). [N: @yao2024b]
@@ -67,7 +67,7 @@ Este glycerol với 1–2 axit béo (mono ưa nước hơn). Thương phẩm g�
 ### Cơ chế và ứng dụng
 1. **Trong kem lạnh/ kem tươi đánh bông:** MDG chen vào mặt phân cách, đẩy protein, thúc đẩy hợp giọt một phần; MDG còn thúc đẩy kết tinh mỡ. [N: @goff1997; @wang2021a; @cheng2020]
 2. **Trong bánh mì:** làm mềm ruột và trì hoãn cứng khi bảo quản; kết hợp tốt với SSL và enzyme (DMG90–SSL–maltogenic α-amylase cho độ cứng thấp hơn, độ ổn định bột tốt hơn). [N: @rodriguezsandoval2026; @gomez2004]
-   - Gómez 2004: monoglyceride và lecithin giàu lysophospholipid là lựa chọn tốt nhất để **trì hoãn cứng khi bảo quản**; SSL, este sucrose, lecithin cho hiệu ứng làm mềm ruột mạnh nhất ở thời gian ủ dài. [N]
+   - Gómez 2004: monoglyceride và lecithin giàu lysophospholipid là lựa chọn tốt nhất để **trì hoãn cứng khi bảo quản**; SSL, este sucrose, lecithin cho hiệu ứng làm mềm ruột mạnh nhất ở thời gian ủ dài. [N: @gomez2004]
    - Cơ chế nền (tạo phức với amylose, "α-gel") [K]: chưa đối chiếu nguồn. Một nghiên cứu bánh mì không gluten ghi nhận chất nhũ hóa **không làm thay đổi** sự thoái hóa tinh bột trong 5 ngày dù kéo dài hạn dùng. [N: @nunes2009] Vì vậy cơ chế còn tranh luận, tùy hệ.
 3. **Mỡ thực vật:** làm tinh thể mỡ nhỏ hơn, hiệu quả ở bơ thực vật [K].
 
@@ -80,9 +80,9 @@ Este glycerol với 1–2 axit béo (mono ưa nước hơn). Thương phẩm g�
 ## 2.3 Este của axit hữu cơ với MDG (E472a–f): DATEM, LACTEM, CITREM...
 
 - **DATEM** (E472e) là este của monoglyceride với axit diacetyl-tartaric: phân tử có đầu axit tartaric ưa nước; thương mại rộng trong bánh mì công nghiệp để gia cố gluten. [K]
-- Cơ chế gia cố gluten [K]: cho rằng đầu phân cực tương tác với gliadin/glutenin, đuôi dài tương tác với lipid bột; **chưa được kiểm trong phiên**. Gárzon 2018 thấy chất nhũ hóa (DATEM, SSL, DMG, lecithin, PGEF) tăng số bóng khí và thể tích bột khi ủ nhưng ruột bánh cứng hơn, gợi ý tương tác với gluten ảnh hưởng đến polymer hóa protein khi nướng. [N]
-- Bánh không gluten: DATEM làm thể tích riêng thấp hơn DM; không thiết yếu: nghiên cứu Sciarini 2012 cho thấy bột đối chứng không phụ gia vẫn cho bánh có độ cứng giảm tốt. [N]
-- **Quy định EU (Reg. 1333/2008):** E472c giới hạn 7.500 mg/kg (sữa bột trẻ nhỏ) và 9.000 mg/kg (dạng lỏng); E322, E471, E472c, E473 khi dùng cùng nhau phải giảm tỉ lệ từng chất trong giới hạn. [N: bảng PMC7448088]
+- Cơ chế gia cố gluten [K]: cho rằng đầu phân cực tương tác với gliadin/glutenin, đuôi dài tương tác với lipid bột; **chưa được kiểm trong phiên**. Gárzon 2018 thấy chất nhũ hóa (DATEM, SSL, DMG, lecithin, PGEF) tăng số bóng khí và thể tích bột khi ủ nhưng ruột bánh cứng hơn, gợi ý tương tác với gluten ảnh hưởng đến polymer hóa protein khi nướng. [N: @garzon2018]
+- Bánh không gluten: DATEM làm thể tích riêng thấp hơn DM; không thiết yếu: nghiên cứu Sciarini 2012 cho thấy bột đối chứng không phụ gia vẫn cho bánh có độ cứng giảm tốt. [N: @sciarini2012]
+- **Quy định EU (Reg. 1333/2008):** E472c giới hạn 7.500 mg/kg (sữa bột trẻ nhỏ) và 9.000 mg/kg (dạng lỏng); E322, E471, E472c, E473 khi dùng cùng nhau phải giảm tỉ lệ từng chất trong giới hạn. [N: @efsa2020 bảng 6, PMC7448088]
 - EFSA 2020: không cần ADI cho 472a, b, c; 472d, e, f có ADI qua axit L(+)-tartaric (nhóm ADI 240 mg/kg/ngày tính theo axit tartaric). [N: @efsa2020]
 
 ---
@@ -92,7 +92,7 @@ Este glycerol với 1–2 axit béo (mono ưa nước hơn). Thương phẩm g�
 - Tạo từ axit stearic + axit lactic, trung hòa bằng Na (E481) hoặc Ca (E482). [K]
 - Ứng dụng: bánh mì, bột nhào, kem tươi (cải thiện bọt). SSL và tổ hợp "DATEM + SSL + MG + LC" cho thể tích riêng cao, độ cứng thấp, lão hóa chậm trong bánh không gluten lên men từ kiều mạch, quinoa, dền. [N: @yesil2022]
 - Trong nhũ tương đánh bông, SSL và LACTEM góp phần vào công thức bốn chất nhũ hóa tạo kem bọt ổn định. [N: @wang2021a]
-- **EFSA 2013:** ADI 22 mg/kg bw/ngày (NOAEL 2.200 mg/kg bw/ngày, nghiên cứu một năm ở chuột, hệ số bất định 100), áp dụng riêng hoặc tổng E481+E482; mức phơi nhiễm trung bình vượt ADI ở các nhóm trừ người lớn. [N: EFSA J 2013; 11(5):3144]
+- **EFSA 2013:** ADI 22 mg/kg bw/ngày (NOAEL 2.200 mg/kg bw/ngày, nghiên cứu một năm ở chuột, hệ số bất định 100), áp dụng riêng hoặc tổng E481+E482; mức phơi nhiễm trung bình vượt ADI ở các nhóm trừ người lớn. [N: @efsa2013]
 
 ---
 
@@ -105,10 +105,10 @@ Sorbitan este hóa với axit béo, ngưng tụ khoảng 20 mol ethylene oxide (
 - HLB cao (≈15–16,7 [K]), hấp phụ rất nhanh, hạ γ mạnh, ổn định lập thể bằng chuỗi PEG–sorbitan.
 - Trong **kem lạnh**: PS80 giảm protein hấp phụ trên hạt béo, nên hạt dễ hợp giọt một phần khi đánh/ đông lạnh, tạo mạng hạt béo giúp kem "khô", chịu chảy. Goff chỉ ra PS80 là tác nhân gây mất ổn định mạnh nhất, tỉ lệ thuận với hạ γ liên diện, **không** tỉ lệ thuận HLB. [N: @goff1987, @goff1989]
 - Trong thực nghiệm kem thực vật (đậu nành, đậu Hà Lan): hợp giọt một phần tăng khi tăng PS80; MDG gây chảy rỉ (drip-through) cao hơn PS80. [N: @hartel2025]
-- Trong hệ protein: Tween 20/60/80 đẩy protein theo cơ chế "orogenic" (file 03). [N]
+- Trong hệ protein: Tween 20/60/80 đẩy protein theo cơ chế "orogenic" (file 03). [N: @mackie1999]
 
 ### An toàn
-- EFSA 2015 (bản sửa đổi 2018): nhóm ADI 25 mg/kg bw/ngày, từ NOAEL 2.500 mg/kg bw/ngày (nghiên cứu chuột PS80) và hệ số 100. Vết ethylene oxide giới hạn EU 0,2 mg/kg. Mức phơi nhiễm cao có thể vượt ADI ở kịch bản mức tối đa; trẻ nhỏ gần ADI kể cả kịch bản tinh chỉnh. [N: EFSA J 2015; 13(7):4152]
+- EFSA 2015 (bản sửa đổi 2018): nhóm ADI 25 mg/kg bw/ngày, từ NOAEL 2.500 mg/kg bw/ngày (nghiên cứu chuột PS80) và hệ số 100. Vết ethylene oxide giới hạn EU 0,2 mg/kg. Mức phơi nhiễm cao có thể vượt ADI ở kịch bản mức tối đa; trẻ nhỏ gần ADI kể cả kịch bản tinh chỉnh. [N: @efsa2015]
 - Nghiên cứu chuột Chassaing 2015 (Nature) với CMC và PS80 ở nồng độ tương đối thấp: viêm mức thấp, béo phì/hội chứng chuyển hóa, viêm đại tràng ở chuột có tố bẩm; ghép phân vô khuẩn chứng minh vai trò vi sinh vật. **Chuột, không phải người.** [N: @chassaing2015]
 
 ---
@@ -130,7 +130,7 @@ Sucrose este hóa với 1–8 nhóm axit béo; mức este hóa và độ dài m�
 - Este sucrose HLB 5–7 phù hợp cho O/W trong hệ có thêm axit béo; thêm axit béo bão hòa mạch thẳng ≥ C14 chặn kem hóa trên 30 ngày. [N: @watanabe2018]
 - Kem đánh bông: S170 (HLB 1, mono-este < 1%, 70% axit stearic) tạo tinh thể mỡ nhỏ và màng liên diện mạnh → mạng hợp giọt một phần đồng đều, độ chắc và ổn định cao. [N: @zeng2023]
 - Kem lạnh: SE làm giảm độ phủ protein, khiến hạt mỡ dễ hợp giọt một phần; GMO lại tác động qua tinh thể mỡ chứ không đổi độ phủ protein. [N: @cheng2020]
-- Review cập nhật: Cholakova 2024 (Curr Opin Colloid Interface Sci) — hành vi pha, nhũ tương, bọt, oleogel. [N: abstract]
+- Review cập nhật: Cholakova 2024 (Curr Opin Colloid Interface Sci) — hành vi pha, nhũ tương, bọt, oleogel. [N: @cholakova2024]
 
 ### An toàn
 Theo trí nhớ, EFSA đánh giá lại E473 năm 2010 với ADI 40 mg/kg bw/ngày và có đánh giá bổ sung cho trẻ dưới 16 tuần, nhưng **chưa đối chiếu nguồn**. [K: cần kiểm] Kết quả tìm kiếm có "Refined exposure assessment of sucrose esters of fatty acids (E 473)" và "Re-evaluation ... in foods for infants below 16 weeks of age".
@@ -148,14 +148,14 @@ Polyglycerol este hóa với axit polyricinoleic (từ dầu thầu dầu). Đ�
 - PGPR chưa hấp phụ vẫn góp phần ổn định giọt nước bên trong ở nhũ tương kép W/O/W (chống trương phồng trong dung dịch nhược trương), không chỉ do độ nhớt pha dầu. [N: @gregersen2025]
 - Nồng độ cao quá (4% trong một hệ W/O/W Pickering) làm giảm ổn định do cạnh tranh hấp phụ. [N: @nie2025]
 - Thực tế: tăng PGPR 2% → 6% ngăn hợp giọt; đến 10% độ nhớt tăng ổn định thêm. [N: @niu2024]
-- Review Zembyla 2020: PGPR là chất nhũ hóa W/O "kinh điển"; hướng nghiên cứu hiện nay chuyển sang hạt Pickering (zein, cellulose, lignin, tinh bột, tinh thể polyphenol). [N]
+- Review Zembyla 2020: PGPR là chất nhũ hóa W/O "kinh điển"; hướng nghiên cứu hiện nay chuyển sang hạt Pickering (zein, cellulose, lignin, tinh bột, tinh thể polyphenol). [N: @zembyla2020]
 - Kết hợp DAG (diacylglycerol) + PGPR: DAG kết tinh liên diện, kết hợp Pickering + mạng, tăng ổn định đông–rã. [N: @yang2020]
 
 ### Sô-cô-la [K]
 PGPR giảm giới hạn chảy của sô-cô-la lỏng; chưa có nguồn trong phiên.
 
 ### An toàn
-EFSA: ADI 25 mg/kg bw/ngày (từ NOAEL 2.500 mg/kg bw/ngày, một liều duy nhất trong nghiên cứu 2 năm; trước đó SCF 1978 là 7,5 mg/kg). Phơi nhiễm ước lượng dưới ADI. [N: EFSA, pub 4743] Năm công bố (2017) suy ra từ mã ấn phẩm, **trang không ghi**.
+EFSA: ADI 25 mg/kg bw/ngày (từ NOAEL 2.500 mg/kg bw/ngày, một liều duy nhất trong nghiên cứu 2 năm; trước đó SCF 1978 là 7,5 mg/kg). Phơi nhiễm ước lượng dưới ADI. [N: @efsaa] Năm công bố (2017) suy ra từ mã ấn phẩm, **trang không ghi**.
 
 ---
 
@@ -165,7 +165,7 @@ EFSA: ADI 25 mg/kg bw/ngày (từ NOAEL 2.500 mg/kg bw/ngày, một liều duy n
 Phân tử lưỡng tính: khung triterpenoid/ steroid (kỵ nước) + chuỗi đường (ưa nước). Thương mại: Q-Naturale (Ingredion). Tạo mixen. [N: @gumus2017]
 
 ### Cơ chế khác biệt so với Tween
-- Ở cùng nồng độ, saponin cho giọt nhỏ hơn protein/polysaccharide vì độ phủ bề mặt thấp (Gumus). [N]
+- Ở cùng nồng độ, saponin cho giọt nhỏ hơn protein/polysaccharide vì độ phủ bề mặt thấp (Gumus). [N: @gumus2017]
 - Saponin quillaja và berry hình thành **lớp vỏ rắn** trên mặt dầu hướng dương–nước; độ đàn hồi giãn nở các saponin khác từ 2 đến 500 mN/m; độ đàn hồi liên diện tác động lớn tới độ đàn hồi cắt của nhũ tương (φ 75–85%), vừa phải tới giới hạn chảy, không ảnh hưởng ứng suất nhớt. [N: @tsibranska2019]
 - Quillaja tự lắp ghép tạo màng mạng sợi ở mặt phân cách, cho phép làm bột dầu tinh dầu cam 93% và oleogel 98,2% dầu từ khuôn nhũ tương. [N: @chen2019a]
 - Chống kết tụ trong dạ dày (khác caseinate) → dầu tiêu hóa nhanh hơn. [N: @gumus2017]
