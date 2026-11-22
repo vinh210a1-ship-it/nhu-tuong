@@ -7,7 +7,7 @@
 import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
-import { tenNgan, htmlNhan, tachNhan, SO_DON_VI } from '../src/plugins/remark-nhan.mjs';
+import { tenNgan, htmlNhan, tachNhan, SO_DON_VI, DAU_DEM_NGUON } from '../src/plugins/remark-nhan.mjs';
 import { htmlVach, jsonMucDoc } from '../src/data/muc-doc.mjs';
 import { KHU } from '../src/data/khu.mjs';
 import { dungTraCuu } from './tra-cuu.mjs';
@@ -281,7 +281,7 @@ for (const khu of KHU_BAT) {
 			...(fm.loai === 'bai' ? [dauMetaTrichDan(fm.title, dangDau, chuaSuaLon ? dangDau : fm.updated)] : []),
 			'---',
 			'',
-			`<p class="nguon-goc-bai">${khu === 'nhu-tuong' && fm.loai === 'bai' ? htmlMucDo(fm.level) + ' · ' : ''}${dongNgay} · <a href="../../quy-uoc/">Cách đọc nhãn và giới hạn nội dung →</a></p>`,
+			`<p class="nguon-goc-bai">${khu === 'nhu-tuong' && fm.loai === 'bai' ? htmlMucDo(fm.level) + ' · ' : ''}${dongNgay} · <a href="../../quy-uoc/">Cách đọc nhãn và giới hạn nội dung →</a>${fm.loai === 'bai' ? `<br>${DAU_DEM_NGUON}` : ''}</p>`,
 			...(khu === 'nhu-tuong' && fm.loai === 'bai' && htmlCanBietTruoc(fm.slug) ? [htmlCanBietTruoc(fm.slug)] : []),
 			...(khu in TU_KIEM_TRA_KHU && fm.loai === 'bai' && htmlCanBietTruocKhu(khu, fm.slug) ? [htmlCanBietTruocKhu(khu, fm.slug)] : []),
 			'',
@@ -426,6 +426,12 @@ ${Object.entries(MUC).map(([k, [ten]]) => `| <span class="muc-doc">${htmlVach(k)
 Không truy cập được trong lúc soạn: OpenAlex, Crossref, trang PMC (bị chặn xác minh). Vì vậy DOI chưa được kiểm chéo, và nhiều nguồn chỉ có đường dẫn trang Consensus.
 
 <input id="loc-nguon" class="loc-nguon" type="search" placeholder="Lọc theo tên tác giả, năm, từ khóa…" aria-label="Lọc nguồn" />
+
+<div class="loc-muc not-content" role="group" aria-label="Lọc theo mức đọc">
+<button type="button" class="loc-muc-nut" data-loc-muc="" aria-pressed="true">Tất cả <span class="loc-muc-so">${ds.length}</span></button>
+${Object.entries(MUC).map(([k, [ten]]) => `<button type="button" class="loc-muc-nut" data-loc-muc="${k}" aria-pressed="false">${htmlVach(k)}${ten} <span class="loc-muc-so">${dem[k]}</span></button>`).join('\n')}
+</div>
+<p class="dem-loc-nguon" data-dem-nguon role="status"></p>
 
 <ul class="ds-nguon">
 ${the}

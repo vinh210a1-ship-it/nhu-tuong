@@ -8,7 +8,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { visit, SKIP } from 'unist-util-visit';
-import { htmlMucDoc } from '../data/muc-doc.mjs';
+import { htmlMucDoc, htmlVach, MUC_DOC, CHUA_RO, mucCua } from '../data/muc-doc.mjs';
 
 const NHAN_RE = /\[(N|K|T|G)(?:[:;][^\]\n]*)?\]/g;
 const TEN = {
@@ -52,7 +52,7 @@ export function tachNhan(nhan) {
 	return doan;
 }
 
-function htmlPhan(phan, base, thieu) {
+function htmlPhan(phan, base, thieu, trich) {
 	let html = esc(phan);
 	html = html.replace(/@([a-z][a-z0-9]*(?:-[a-z0-9]+)*)/g, (_, k) => {
 		const e = nguon().get(k);
@@ -61,6 +61,7 @@ function htmlPhan(phan, base, thieu) {
 			return esc('@' + k);
 		}
 		// gói T4: sau tên mỗi nguồn là dấu mức đọc (4 vạch) lấy từ muc_doc của nguồn đó
+		trich?.add(k);
 		return `<a class="nhan-nguon" href="${base}/nguon/#${k}" title="${esc(e.trich_dan)}">${esc(tenNgan(e))}</a>${htmlMucDoc(e.muc_doc, base)}`;
 	});
 	html = html.replace(
@@ -70,16 +71,34 @@ function htmlPhan(phan, base, thieu) {
 	return html;
 }
 
-export function htmlNhan(nhan, base, thieu = new Set()) {
+export function htmlNhan(nhan, base, thieu = new Set(), trich = null) {
 	const doan = tachNhan(nhan);
 	const ben = doan
 		.map(
 			({ ma, phan }) =>
 				`<span class="nhan nhan-${ma}" title="${TEN[ma]}">${ma}</span>` +
-				(phan ? `<span class="nhan-phan">${htmlPhan(phan, base, thieu)}</span>` : ''),
+				(phan ? `<span class="nhan-phan">${htmlPhan(phan, base, thieu, trich)}</span>` : ''),
 		)
 		.join('');
 	return `<span class="nhan-cum">${ben}</span>`;
+}
+
+// Dấu thay chỗ trong lý lịch bài (scripts/chuan-bi-noi-dung.mjs); plugin thay bằng dòng đếm khi đã biết bài trích những nguồn nào.
+export const DAU_DEM_NGUON = '<!--dem-nguon-->';
+
+// Dòng "Bài này trích n nguồn: a đọc toàn văn, b đọc một phần…" (gói T4-3). Chỉ đếm khóa nguồn thật sự hiện thành liên kết
+// trong thân bài (khối [K] bị ẩn không tính), mỗi nguồn một lần dù trích nhiều chỗ. Số đếm lấy từ muc_doc của nguon.json, không gõ tay.
+export function htmlDemNguon(khoa) {
+	if (!khoa.size) return '<span class="dem-nguon">Bài này chưa trích nguồn nào trong danh mục <a href="__BASE__/nguon/">Nguồn</a> bằng khóa.</span>';
+	const dem = {};
+	for (const k of khoa) {
+		const ma = mucCua(nguon().get(k)?.muc_doc).ma;
+		dem[ma] = (dem[ma] || 0) + 1;
+	}
+	const phan = [...Object.keys(MUC_DOC), CHUA_RO]
+		.filter((ma) => dem[ma])
+		.map((ma) => `<span class="dem-muc">${htmlVach(ma)}${dem[ma]} ${mucCua(ma).ten}</span>`);
+	return `<span class="dem-nguon">Bài này trích ${khoa.size} nguồn: ${phan.join(', ')}. <a href="__BASE__/quy-uoc/#mức-đọc-của-nguồn">Mức đọc nghĩa là gì?</a></span>`;
 }
 
 function chuoi(node) {
@@ -96,6 +115,7 @@ function maTrong(s) {
 export default function remarkNhan({ base = '', anSoSachNen = true } = {}) {
 	return (tree, file) => {
 		const thieu = new Set();
+		const trich = new Set();
 		const an = [];
 
 		// 1) Ẩn khối chỉ có nhãn K mà chứa số liệu
@@ -131,7 +151,7 @@ export default function remarkNhan({ base = '', anSoSachNen = true } = {}) {
 						{
 							type: 'html',
 							value:
-								'<span class="nhan-muc">Cả mục này: ' + nhan.map((n) => htmlNhan(n, base, thieu)).join(' ') + '</span>',
+								'<span class="nhan-muc">Cả mục này: ' + nhan.map((n) => htmlNhan(n, base, thieu, trich)).join(' ') + '</span>',
 						},
 					],
 				});
@@ -146,12 +166,18 @@ export default function remarkNhan({ base = '', anSoSachNen = true } = {}) {
 			let cuoi = 0;
 			for (const m of node.value.matchAll(NHAN_RE)) {
 				if (m.index > cuoi) moi.push({ type: 'text', value: node.value.slice(cuoi, m.index) });
-				moi.push({ type: 'html', value: htmlNhan(m[0], base, thieu) });
+				moi.push({ type: 'html', value: htmlNhan(m[0], base, thieu, trich) });
 				cuoi = m.index + m[0].length;
 			}
 			if (cuoi < node.value.length) moi.push({ type: 'text', value: node.value.slice(cuoi) });
 			parent.children.splice(i, 1, ...moi);
 			return [SKIP, i + moi.length];
+		});
+
+		// 4) Dòng đếm mức đọc trong lý lịch bài (chỉ ở trang có dấu thay chỗ)
+		const dem = htmlDemNguon(trich).replaceAll('__BASE__', base);
+		visit(tree, 'html', (node) => {
+			if (node.value.includes(DAU_DEM_NGUON)) node.value = node.value.replace(DAU_DEM_NGUON, dem);
 		});
 
 		// Ghi báo cáo để kiểm sau khi build
@@ -160,7 +186,7 @@ export default function remarkNhan({ base = '', anSoSachNen = true } = {}) {
 		try {
 			bc = JSON.parse(fs.readFileSync(tep, 'utf8'));
 		} catch {}
-		bc[path.relative(process.cwd(), file.path || 'khong-ro')] = { an, khoaThieu: [...thieu] };
+		bc[path.relative(process.cwd(), file.path || 'khong-ro')] = { an, khoaThieu: [...thieu], khoaTrich: [...trich].sort() };
 		fs.writeFileSync(tep, JSON.stringify(bc, null, 1));
 		if (thieu.size) throw new Error(`Mã nguồn không có trong nguon.json: ${[...thieu].join(', ')} (${file.path})`);
 	};

@@ -64,6 +64,20 @@
 	color: var(--sl-color-white);
 	font-size: 1rem;
 }
+.loc-muc { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 0.5rem; }
+.loc-muc-nut {
+	display: inline-flex; align-items: center; gap: 0.3em; min-height: 2.75rem; padding: 0.3rem 0.7rem;
+	border: 1px solid var(--sl-color-gray-5); border-radius: 0.4rem; background: transparent; color: var(--sl-color-white);
+	font-size: 0.875rem; cursor: pointer;
+}
+.loc-muc-nut:hover { border-color: var(--sl-color-gray-3); }
+.loc-muc-nut[aria-pressed="true"] { background: var(--sl-color-accent-low); border-color: var(--sl-color-accent); font-weight: 600; }
+.loc-muc-nut:focus-visible { outline: 2px solid var(--sl-color-accent-high); outline-offset: 2px; }
+.loc-muc-so { color: var(--sl-color-gray-2); font-variant-numeric: tabular-nums; }
+.dem-loc-nguon { min-height: 1.4em; font-size: 0.85rem; color: var(--sl-color-gray-2); margin: 0 0 0.5rem; }
+.dem-nguon { font-size: 0.8rem; color: var(--sl-color-gray-3); }
+.dem-muc { white-space: nowrap; }
+.dem-muc .muc-vach { margin-inline-end: 0.25em; vertical-align: -0.05em; }
 .ds-nguon { list-style: none; padding: 0; }
 .ds-nguon .the-nguon {
 	padding: 0.6rem 0.75rem;
