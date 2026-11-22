@@ -47,7 +47,7 @@ nguon_goc: tai-lieu-chat-hoat-dong-be-mat/02-cac-nhom-chat-nhu-hoa-thuc-pham.md
   - pH 1,6 giọt kết tụ vì đầu mất điện tích (pKa ≈ 1,5).
   - Nhũ tương vitamin E không muối ổn định ở pH 8→3, keo tụ ở pH 2; ở pH 7 keo tụ khi NaCl > khoảng 100 mM do che chắn điện tích.
 - Kích thước giọt phụ thuộc thiết bị: chỉ cắt cao tốc → 30–160 µm (hướng dương); vi lỏng (microfluidizer) → d₃₂ < 200 nm (hướng dương), < 400 nm (đậu nành). [N: @gumus2017]
-- Lecithin dùng riêng ổn định kém; phối với casein, whey, monoacylglycerol hoặc phủ nhiều lớp (chitosan) để cải thiện. [N: @gumus2017]
+- Lecithin dùng riêng ổn định kém; kết hợp với chất nhũ hóa tự nhiên khác hoặc phủ nhiều lớp (chitosan) để cải thiện. [N: @gumus2017] Ví dụ chất kết hợp: casein, whey, monoacylglycerol. [G]
 
 ### Phối hợp thực tế
 - **W/O:** lecithin + PGPR theo tỉ lệ 1:3 và 2:2 cho nhũ tương W/O nano ổn định hơn (nghiên cứu ứng dụng cho vịt quay). [N: @yao2024b]
