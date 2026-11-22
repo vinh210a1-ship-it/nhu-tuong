@@ -31,3 +31,10 @@ export const htmlMucDoc = (ma, base = '') => {
 		`<span class="muc-vach-hinh" aria-hidden="true"></span><span class="muc-vach-chu">(${m.ten})</span></a>`
 	);
 };
+
+// Dữ liệu cho public/muc-doc.js (dấu mức đọc do JavaScript chèn sau liên kết nguồn trong máy tính, đồ thị, chẩn đoán, bàn lab).
+// { muc: {mã: {ten, vach}}, nguon: {khóa: mã} }: bảng mã lấy từ MUC_DOC ở đây, không chép tay sang file JS.
+export const jsonMucDoc = (dsNguon) => ({
+	muc: Object.fromEntries([...Object.entries(MUC_DOC).map(([ma, m]) => [ma, { ten: m.ten, vach: m.vach }]), [CHUA_RO, { ...MUC_CHUA_RO }]]),
+	nguon: Object.fromEntries(dsNguon.filter((e) => e.khoa).map((e) => [e.khoa, mucCua(e.muc_doc).ma])),
+});

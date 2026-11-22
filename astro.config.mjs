@@ -64,6 +64,7 @@ export default defineConfig({
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/bao-loi.js` } },
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/chu-giai.js` } },
 				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/trich-dan.js` } },
+				{ tag: 'script', attrs: { type: 'module', src: `${BASE}/muc-doc.js` } },
 			],
 			lastUpdated: false,
 			pagination: true,

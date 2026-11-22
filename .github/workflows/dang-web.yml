@@ -47,6 +47,11 @@ jobs:
           npx playwright install --with-deps chromium
           node scripts/kiem-truy-cap.mjs | tee truy-cap.txt
           { echo '## Kiểm truy cập (báo cáo)'; echo '```'; cat truy-cap.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      # Dấu mức đọc trên liên kết nguồn do JavaScript vẽ (máy tính, chẩn đoán, bàn lab): cũng ở giai đoạn báo cáo. Cần playwright đã cài ở bước trên.
+      - name: Kiểm dấu mức đọc do JavaScript vẽ (chỉ báo cáo)
+        if: github.event_name == 'pull_request'
+        continue-on-error: true
+        run: node scripts/kiem-muc-doc-js.mjs
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main'
         with:
