@@ -340,6 +340,8 @@ const nKhongKhoa = [];
 // nhãn [N] trần ở trang quy ước, hoặc ngay sau câu "Độ tin cậy:" / "Mức tin cậy:" ở đầu bài, là chú giải cách đọc nhãn, không phải thiếu nguồn (bản giao GĐ4, mục "Bẫy" của T4-3)
 const TRANG_CHU_GIAI = /^\/(?:quy-uoc|nhat-ky-thay-doi|giay-phep)\//;
 const CAU_CHU_GIAI = /(?:Độ|Mức) tin cậy\s*:\s*$/;
+// huy hiệu "N xem mục …" ở hộp Tự kiểm tra (scripts/tu-kiem-tra.mjs) là chỉ dẫn tới mục mang nhãn N có nguồn trong bài, không phải một khẳng định mới: tách ra, không đếm là thiếu nguồn
+const CAN_CU_TU_KIEM = /^[^>]*>N<\/span>\s*xem mục\s/;
 {
 	const NGUON = new Map(JSON.parse(fs.readFileSync(path.join(GOC, 'nguon/nguon.json'), 'utf8')).map((e) => [e.khoa, e]));
 	const re = /<a class="nhan-nguon" href="[^"]*\/nguon\/#([^"]+)"[^>]*>[^<]*<\/a>(?:<a class="muc-vach muc-vach-(\d)" data-muc="([^"]+)" href="([^"]+)"[^>]*>(?:<span class="muc-vach-hinh" aria-hidden="true"><\/span><span class="muc-vach-chu">\(([^<)]+)\)<\/span><\/a>)?)?/g;
@@ -363,7 +365,7 @@ const CAU_CHU_GIAI = /(?:Độ|Mức) tin cậy\s*:\s*$/;
 				soNKhongKhoa++;
 				// chữ ngay trước huy hiệu (bỏ thẻ) để Thông tin tìm đúng câu; trang chú giải nhãn thì gắn cờ, không tính là thiếu nguồn
 				const truoc = doan[i - 1].replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().slice(-110);
-				nKhongKhoa.push({ trang: tenTrang(p), boi_canh: truoc, co_chu_sau_n: d.startsWith('>N</span><span class="nhan-phan">') || /^[^>]*>N<\/span><span class="nhan-phan">/.test(d), chu_giai: TRANG_CHU_GIAI.test(tenTrang(p)) || CAU_CHU_GIAI.test(truoc) });
+				nKhongKhoa.push({ trang: tenTrang(p), boi_canh: truoc, co_chu_sau_n: d.startsWith('>N</span><span class="nhan-phan">') || /^[^>]*>N<\/span><span class="nhan-phan">/.test(d), chu_giai: TRANG_CHU_GIAI.test(tenTrang(p)) || CAU_CHU_GIAI.test(truoc), can_cu_tu_kiem: CAN_CU_TU_KIEM.test(d) });
 			}
 		}
 	}
@@ -485,8 +487,9 @@ const baiDem = {};
 	bc._t4 = {
 		luot_trich_theo_muc: luotTheoMuc,
 		huy_hieu_n_tong: soN,
-		huy_hieu_n_khong_khoa: nKhongKhoa.filter((x) => !x.chu_giai),
+		huy_hieu_n_khong_khoa: nKhongKhoa.filter((x) => !x.chu_giai && !x.can_cu_tu_kiem),
 		huy_hieu_n_chu_giai_nhan: nKhongKhoa.filter((x) => x.chu_giai).length,
+		huy_hieu_n_can_cu_tu_kiem: nKhongKhoa.filter((x) => x.can_cu_tu_kiem && !x.chu_giai).length,
 		bai: baiDem,
 	};
 	fs.writeFileSync(tep, JSON.stringify(bc, null, 1));
@@ -498,7 +501,7 @@ if (loiMucDoc.length) {
 console.log(
 	`  mức đọc (T4): ${soLuotNguon} lượt trích nguồn trong trang tĩnh, ` +
 		[...Object.keys(MUC_DOC), 'chua-ro'].filter((ma) => luotTheoMuc[ma]).map((ma) => `${mucCua(ma).ten} ${luotTheoMuc[ma]}`).join(', ') +
-		`; ${soNKhongKhoa}/${soN} huy hiệu N không kèm khóa nguồn (${nKhongKhoa.filter((x) => x.chu_giai).length} ở trang chú giải nhãn, ${nKhongKhoa.filter((x) => !x.chu_giai).length} cần Thông tin xem, danh sách ở bao-cao-build.json); ${Object.keys(baiDem).length} bài có dòng đếm nguồn khớp số tự đếm`,
+		`; ${soNKhongKhoa}/${soN} huy hiệu N không kèm khóa nguồn (${nKhongKhoa.filter((x) => x.chu_giai).length} ở trang chú giải nhãn, ${nKhongKhoa.filter((x) => x.can_cu_tu_kiem && !x.chu_giai).length} là chỉ dẫn "xem mục" của hộp Tự kiểm tra, ${nKhongKhoa.filter((x) => !x.chu_giai && !x.can_cu_tu_kiem).length} cần Thông tin xem, danh sách ở bao-cao-build.json); ${Object.keys(baiDem).length} bài có dòng đếm nguồn khớp số tự đếm`,
 );
 if (loiCam.length || nhomHong.length || loiThuNgay.length || loiRnd.length || loiHinh.length || loiMucDoc.length) {
 	console.log('\nkiem-sau-build: KHÔNG ĐẠT');

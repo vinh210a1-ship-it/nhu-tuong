@@ -107,7 +107,7 @@ tức **≈ 2,4 K mỗi 10 MPa**. Điều này giải thích vì sao: (i) sản 
 | Microfluidizer (buồng tương tác Y/Z) | Hai dòng chảy tốc độ cực cao va chạm | Sub-µm, gần 100 nm | Phân bố hẹp hơn HPH van tiêu chuẩn | Chi phí, nhiệt, khó scale |
 | Siêu âm cường độ cao (đầu dò 20 kHz) | Cavitation âm | ~0,1–1 µm | Rất tiện cho phòng lab, thể tích nhỏ | Khó scale, nhiệt, tạp kim loại từ đầu dò; cần flow cell |
 | Màng/membrane (SPG…) | Đẩy dầu qua lỗ màng vào pha nước chảy | Giọt bằng ~2–10 lần đường kính lỗ, rất đơn phân tán | Rất đồng đều; hợp nhũ tương kép nhạy cắt **[N: @muschiolik2017 nhấn mạnh phương pháp nhẹ cho W/O/W]** | Lưu lượng thấp, tắc màng |
-| Microfluidics (chip) | Hình học giọt đơn | 10–1000 µm | Đơn phân tán tuyệt đối; nghiên cứu | Lưu lượng rất thấp (công bố scale-up vẫn là đề tài nghiên cứu, ví dụ post-array devices **[N: PubMed 40444208]**) |
+| Microfluidics (chip) | Hình học giọt đơn | 10–1000 µm | Đơn phân tán tuyệt đối; nghiên cứu | Lưu lượng rất thấp (công bố scale-up vẫn là đề tài nghiên cứu, ví dụ post-array devices **[N: @masui2025]**) |
 
 **Điểm cần nhớ:** chọn thiết bị theo **mục tiêu**: (i) kích thước giọt cần đạt, (ii) độ nhạy cắt của vật liệu (protein, nhũ tương kép, tinh thể mỡ), (iii) độ nhớt, (iv) quy mô, (v) tính dễ vệ sinh/CIP.
 

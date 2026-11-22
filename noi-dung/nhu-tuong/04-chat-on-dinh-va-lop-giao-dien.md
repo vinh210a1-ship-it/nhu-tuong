@@ -51,7 +51,7 @@ nguon_goc: tai-lieu-nhu-tuong/04-chat-on-dinh-va-lop-giao-dien.md
 
 ### 2.3 Protein và phức protein–polysaccharide
 - Protein tạo màng nhớt–đàn hồi chống hợp giọt (coalescence), nhưng nhạy pH/ion/nhiệt.
-- **Liên hợp (Maillard) hoặc phức coacervate** protein–polysaccharide mở rộng vùng pH–ion bền. Có tổng quan ứng dụng HPH/siêu âm với nhũ tương protein–polysaccharide **[N: @qayum2023]**; ví dụ nghiên cứu cho nhũ tương ổn định bằng liên hợp protein–polysaccharide từ bã củ cải đường được lập chỉ mục trong PubMed (36436597) **[N: PM, cần đọc thêm để trích số liệu]**.
+- **Liên hợp (Maillard) hoặc phức coacervate** protein–polysaccharide mở rộng vùng pH–ion bền. Có tổng quan ứng dụng HPH/siêu âm với nhũ tương protein–polysaccharide **[N: @qayum2023]**; ví dụ nghiên cứu cho nhũ tương ổn định bằng liên hợp protein–polysaccharide từ bã củ cải đường được lập chỉ mục trong PubMed (36436597) **[N: @lin2023]**.
 - Lớp đa tầng (layer-by-layer): thêm polymer trái dấu điện tích (ví dụ alginate lên lactoferrin) để tăng độ bền với lực ion/tiêu hóa **[N: @mcclements2017]**.
 
 ### 2.4 Hạt Pickering

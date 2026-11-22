@@ -116,7 +116,7 @@ Giọt nước nhỏ (W₁) trong giọt dầu (O) trong nước (W₂). Dùng �
 - Quy trình **hai bước**: bước một (W₁/O) cắt mạnh; bước hai (W₁/O vào W₂) **cắt nhẹ** để không phá W₁. **[N: @muschiolik2017 nêu phương pháp chế tạo; K]**
 - Hiệu suất nhũ tương kép được đánh giá qua "double emulsion yield" (tỷ lệ W₁ còn giữ) và tốc độ rò rỉ chất đánh dấu. **[N: @muschiolik2017 nêu "techniques used to estimate DE yield and emulsification efficiency"]**
 - Pickering kép (multiple Pickering emulsions) tận dụng ưu điểm cả hai hệ, chế tạo bằng thao tác tương đối đơn giản/scalable. **[N: @boostani2024]**
-- Ví dụ thực nghiệm: polyphenol trà bao trong W/O/W với hỗn hợp xanthan–locust bean gum (đánh giá độ bền và khả năng bảo vệ) — PubMed 33548306. **[N: PM; chưa đọc số liệu]**
+- Ví dụ thực nghiệm: polyphenol trà bao trong W/O/W với hỗn hợp xanthan–locust bean gum (đánh giá độ bền và khả năng bảo vệ) — PubMed 33548306. **[N: @tian2021]**
 
 ### 3.4 Hạn chế
 Bước hai (đưa W₁/O vào pha nước) phải nhẹ hơn bước một để khỏi phá hoặc đẩy giọt nước trong ra ngoài. **[N: @mcclements2016 tr.588]**
@@ -128,7 +128,7 @@ Hiệu suất bao gói thường giảm trong bảo quản; chịu nhiệt/cắt
 ## 4. Nhũ tương nước trong dầu (W/O) và HIPE W/O
 
 ### 4.1 Đặc điểm
-- Pha liên tục dầu: độ dẫn điện thấp; bền khi chất nhũ hóa ưa dầu (HLB ~3–6) **[N: OSU Extension – W/O HLB 3,5–6]**; nước tự do khó tạo vi sinh nên W/O (bơ, margarine) có thời hạn tốt về vi sinh. **[K]**
+- Pha liên tục dầu: độ dẫn điện thấp; bền khi chất nhũ hóa ưa dầu (HLB ~3–6) **[N: @okstate]**; nước tự do khó tạo vi sinh nên W/O (bơ, margarine) có thời hạn tốt về vi sinh. **[K]**
 - Ổn định không chỉ bằng chất nhũ hóa mà bằng **mạng tinh thể mỡ** ở pha dầu (Pickering tinh thể béo) và ma trận gel. **[K]**
 
 ### 4.2 W/O HIPE
@@ -137,9 +137,9 @@ Tổng quan: W/O HIPE giúp **giảm béo** và phân phối hoạt chất, như
 ---
 
 ## 5. HIPE O/W, nhũ tương gel (emulsion gel), emulgel
-- HIPE O/W: φ cao tạo mạng giọt đàn hồi, ứng dụng thay mỡ/mayonnaise. Ví dụ nghiên cứu: HIPE O/W bằng phân đoạn lòng đỏ trứng + hydroxypropyl distarch phosphate — PubMed 39662540. **[N: PM; cần đọc thêm]**
-- Emulsion gel: mạng gel pha liên tục hoặc giọt hoạt tính như chất độn (protein/gelatin). Ví dụ: gel nhũ gelatin cá biến tính bởi γ-PGA, đặc trưng lưu biến và vi cấu trúc. **[N: PubMed 38571750]**
-- Ứng dụng làm chất thay mỡ trong thực phẩm: tổng quan gels thay mỡ trong bánh nướng (PubMed 33412906) và xu hướng sửa đổi chất béo (PubMed 37367124). **[N: PM; chi tiết xem khu Chất béo]**
+- HIPE O/W: φ cao tạo mạng giọt đàn hồi, ứng dụng thay mỡ/mayonnaise. Ví dụ nghiên cứu: HIPE O/W bằng phân đoạn lòng đỏ trứng + hydroxypropyl distarch phosphate — PubMed 39662540. **[N: @xu2025]**
+- Emulsion gel: mạng gel pha liên tục hoặc giọt hoạt tính như chất độn (protein/gelatin). Ví dụ: gel nhũ gelatin cá biến tính bởi γ-PGA, đặc trưng lưu biến và vi cấu trúc. **[N: @xie2024pga]**
+- Ứng dụng làm chất thay mỡ trong thực phẩm: tổng quan gels thay mỡ trong bánh nướng (PubMed 33412906) và xu hướng sửa đổi chất béo (PubMed 37367124). **[N: @gutierrezluna2022, @zbikowska2023]**
 
 ---
 

@@ -17,8 +17,8 @@ nguon_goc: tai-lieu-chat-hoat-dong-be-mat/04-ma-INS-quy-dinh-an-toan.md
 
 ## Kết luận trước
 
-1. **Chất nhũ hóa phổ biến đã được EFSA đánh giá lại; phần lớn không có ADI bằng số hoặc có ADI khá cao**: lecithin (E322) và MDG (E471) *không cần ADI bằng số*; polysorbate 25, PGPR 25, SSL/CSL 22, quillaia 3 (mg/kg bw/ngày). [N]
-2. **Đoạn khó nhất là khoảng trống giữa "đủ an toàn theo đánh giá hóa độc" và "nghiên cứu quan sát/ chuột gợi ý lo ngại".** Hai nhóm chứng cứ khác loại: (a) EFSA dùng nghiên cứu độc chất cổ điển và mức phơi nhiễm; (b) NutriNet-Santé là quan sát (không chứng minh nhân quả), Chassaing 2015 là chuột. Web nên trình bày cả hai, không kết luận thay độc giả. [N]
+1. **Chất nhũ hóa phổ biến đã được EFSA đánh giá lại; phần lớn không có ADI bằng số hoặc có ADI khá cao**: lecithin (E322) và MDG (E471) *không cần ADI bằng số*; polysorbate 25, PGPR 25, SSL/CSL 22, quillaia 3 (mg/kg bw/ngày). [N: @efsa2017a, @efsa2017b, @efsa2015, @efsaa, @efsa2013, @efsa2019]
+2. **Đoạn khó nhất là khoảng trống giữa "đủ an toàn theo đánh giá hóa độc" và "nghiên cứu quan sát/ chuột gợi ý lo ngại".** Hai nhóm chứng cứ khác loại: (a) EFSA dùng nghiên cứu độc chất cổ điển và mức phơi nhiễm; (b) NutriNet-Santé là quan sát (không chứng minh nhân quả), Chassaing 2015 là chuột. Web nên trình bày cả hai, không kết luận thay độc giả. [N: @chassaing2015, @nutrinetsante2023, @nutrinetsante2024a, @nutrinetsante2024b]
 3. **Việt Nam:** Thông tư 24/2019/TT-BYT (30/8/2019; hiệu lực 16/10/2019) là khung chính; sửa đổi bởi Thông tư 17/2023/TT-BYT; bản hợp nhất mới nhất đã đọc là 09/VBHN-BYT (2024), gộp thêm Thông tư 08/2024/TT-BYT. Danh mục INS (Phụ lục 1) và ML theo nhóm thực phẩm (Phụ lục 2A, 2B, 3) tra ở [tab Mức tối đa (TT24)](../../tra-cuu/#tt24). [N: @tt24-2019]
 
 ---
@@ -31,31 +31,31 @@ nguon_goc: tai-lieu-chat-hoat-dong-be-mat/04-ma-INS-quy-dinh-an-toan.md
 ### Bảng INS/E của chất nhũ hóa chính (đối chiếu với nhóm tài liệu)
 | INS/E | Tên | Chức năng điển hình | Xác minh trong phiên |
 |---|---|---|---|
-| 322 | Lecithin | nhũ hóa, chống oxy hóa hiệp đồng | EFSA 2017 [N] |
-| 471 | Mono- và diglyceride của axit béo | nhũ hóa | EFSA 2017 [N] |
-| 472a | este axit acetic của MDG (ACETEM) | nhũ hóa | EFSA 2020 [N] |
-| 472b | este axit lactic (LACTEM) | nhũ hóa | EFSA 2020 [N] |
-| 472c | este axit citric (CITREM) | nhũ hóa | EFSA 2020 [N] |
-| 472d | este axit tartaric (TATEM) | nhũ hóa | EFSA 2020 [N] |
-| 472e | este axit diacetyl-tartaric (DATEM) | nhũ hóa, cải tạo bột | EFSA 2020 [N] |
-| 472f | este hỗn hợp axit acetic + tartaric (MATEM) | nhũ hóa | EFSA 2020 [N] |
+| 322 | Lecithin | nhũ hóa, chống oxy hóa hiệp đồng | EFSA 2017 [N: @efsa2017a] |
+| 471 | Mono- và diglyceride của axit béo | nhũ hóa | EFSA 2017 [N: @efsa2017b] |
+| 472a | este axit acetic của MDG (ACETEM) | nhũ hóa | EFSA 2020 [N: @efsa2020] |
+| 472b | este axit lactic (LACTEM) | nhũ hóa | EFSA 2020 [N: @efsa2020] |
+| 472c | este axit citric (CITREM) | nhũ hóa | EFSA 2020 [N: @efsa2020] |
+| 472d | este axit tartaric (TATEM) | nhũ hóa | EFSA 2020 [N: @efsa2020] |
+| 472e | este axit diacetyl-tartaric (DATEM) | nhũ hóa, cải tạo bột | EFSA 2020 [N: @efsa2020] |
+| 472f | este hỗn hợp axit acetic + tartaric (MATEM) | nhũ hóa | EFSA 2020 [N: @efsa2020] |
 | 473 | Este sucrose của axit béo | nhũ hóa | tên có trong các tài liệu EFSA, chi tiết [K] |
 | 474 | Sucroglyceride | nhũ hóa | [K] |
 | 475 | Este polyglycerol của axit béo | nhũ hóa | [K] |
-| 476 | PGPR | nhũ hóa W/O | EFSA (pub 4743) [N] |
-| 477 | Este propane-1,2-diol của axit béo | nhũ hóa | EFSA 2018 [N] |
-| 481(i) | Natri stearoyl-2-lactylate (SSL) | nhũ hóa, cải tạo bột | EFSA 2013 [N] |
-| 482(i) | Canxi stearoyl-2-lactylate (CSL) | tương tự | EFSA 2013 [N] |
-| 432 | Polysorbate 20 | nhũ hóa | EFSA 2015 [N] |
-| 433 | Polysorbate 80 | nhũ hóa | EFSA 2015 [N] |
-| 434 | Polysorbate 40 | nhũ hóa | EFSA 2015 [N] |
-| 435 | Polysorbate 60 | nhũ hóa | EFSA 2015 [N] |
-| 436 | Polysorbate 65 | nhũ hóa | EFSA 2015 [N] |
+| 476 | PGPR | nhũ hóa W/O | EFSA (pub 4743) [N: @efsaa] |
+| 477 | Este propane-1,2-diol của axit béo | nhũ hóa | EFSA 2018 [N: @efsa2018a] |
+| 481(i) | Natri stearoyl-2-lactylate (SSL) | nhũ hóa, cải tạo bột | EFSA 2013 [N: @efsa2013] |
+| 482(i) | Canxi stearoyl-2-lactylate (CSL) | tương tự | EFSA 2013 [N: @efsa2013] |
+| 432 | Polysorbate 20 | nhũ hóa | EFSA 2015 [N: @efsa2015] |
+| 433 | Polysorbate 80 | nhũ hóa | EFSA 2015 [N: @efsa2015] |
+| 434 | Polysorbate 40 | nhũ hóa | EFSA 2015 [N: @efsa2015] |
+| 435 | Polysorbate 60 | nhũ hóa | EFSA 2015 [N: @efsa2015] |
+| 436 | Polysorbate 65 | nhũ hóa | EFSA 2015 [N: @efsa2015] |
 | 491–495 | Este sorbitan (Span 60/65/20/80/40...) | nhũ hóa | [K], cần đối chiếu |
-| 999 | Chiết xuất quillaia | tạo bọt, nhũ hóa (EU: đồ uống mùi) | EFSA 2019/2024 [N] |
+| 999 | Chiết xuất quillaia | tạo bọt, nhũ hóa (EU: đồ uống mùi) | EFSA 2019/2024 [N: @efsa2019] |
 | 322, 442, 479b, 484... | ammonium phosphatide (442), dầu đậu nành oxy hóa nhiệt + MDG (479b) | nhũ hóa | [K], chỉ để tra |
 
-Ghi chú nhãn Việt Nam: tên gọi trong Phụ lục 1 gồm tên Việt + tên Anh + chức năng + INS. [N: mô tả Thông tư 24/2019]
+Ghi chú nhãn Việt Nam: tên gọi trong Phụ lục 1 gồm tên Việt + tên Anh + chức năng + INS. [N: @tt24-2019]
 
 ---
 
@@ -74,8 +74,8 @@ Ghi chú nhãn Việt Nam: tên gọi trong Phụ lục 1 gồm tên Việt + t�
 
 ### Lưu ý khi đọc ADI
 - "Không cần ADI bằng số" **không phải** "không giới hạn": theo khung EFSA cho nhóm phụ gia này, kết luận dựa trên thủy phân thành chất thường có trong thực phẩm và mức phơi nhiễm đã báo cáo; vẫn có giới hạn quy định (ML) trong phụ lục. [G: dựa trên N]
-- ADI áp dụng cho dân số chung ≥ 1 tuổi; trẻ nhỏ và thực phẩm chuyên biệt có giới hạn riêng. Ví dụ E472c: 7.500 mg/kg (bột), 9.000 mg/L (lỏng) cho sữa công thức. [N: bảng 6 PMC7448088]
-- **Quy tắc cộng gộp EU:** nếu thêm nhiều hơn một trong E322, E471, E472c, E473 vào cùng thực phẩm, giới hạn mỗi chất được giảm theo tỉ lệ các chất kia hiện diện. [N: chú thích bảng 6]
+- ADI áp dụng cho dân số chung ≥ 1 tuổi; trẻ nhỏ và thực phẩm chuyên biệt có giới hạn riêng. Ví dụ E472c: 7.500 mg/kg (bột), 9.000 mg/L (lỏng) cho sữa công thức. [N: @efsa2020 bảng 6, PMC7448088]
+- **Quy tắc cộng gộp EU:** nếu thêm nhiều hơn một trong E322, E471, E472c, E473 vào cùng thực phẩm, giới hạn mỗi chất được giảm theo tỉ lệ các chất kia hiện diện. [N: @efsa2020 chú thích bảng 6]
 - Các tạp chất/ sản phẩm phụ cần giám sát: ethylene oxide (polysorbate); 3-MCPD este, glycidyl este, trans, erucic (E477 và glyceride khác); kim loại nặng. [N: @efsa2015, @efsa2018a]
 
 ---
@@ -85,9 +85,9 @@ Ghi chú nhãn Việt Nam: tên gọi trong Phụ lục 1 gồm tên Việt + t�
 ### Văn bản
 | Văn bản | Nội dung | Ngày | Nguồn |
 |---|---|---|---|
-| Thông tư 24/2019/TT-BYT | Quy định quản lý và sử dụng phụ gia thực phẩm; Phụ lục 1 (danh mục INS + chức năng), 2A/2B (ML theo nhóm thực phẩm), 3 (GMP), 4 (phân nhóm thực phẩm) | ký 30/8/2019; hiệu lực 16/10/2019 | thuvienphapluat.vn [N] |
-| Thông tư 17/2023/TT-BYT | sửa đổi một số văn bản về an toàn thực phẩm | 25/9/2023; hiệu lực 9/11/2023 | thuvienphapluat.vn [N] |
-| 08/VBHN-BYT | Văn bản hợp nhất Thông tư 24/2019 (có sửa đổi) | 02/11/2023 | thuvienphapluat.vn [N] |
+| Thông tư 24/2019/TT-BYT | Quy định quản lý và sử dụng phụ gia thực phẩm; Phụ lục 1 (danh mục INS + chức năng), 2A/2B (ML theo nhóm thực phẩm), 3 (GMP), 4 (phân nhóm thực phẩm) | ký 30/8/2019; hiệu lực 16/10/2019 | thuvienphapluat.vn [N: @tt24-2019] |
+| Thông tư 17/2023/TT-BYT | sửa đổi một số văn bản về an toàn thực phẩm | 25/9/2023; hiệu lực 9/11/2023 | thuvienphapluat.vn [N: @tt24-2019] |
+| 08/VBHN-BYT | Văn bản hợp nhất Thông tư 24/2019 (có sửa đổi) | 02/11/2023 | thuvienphapluat.vn [N: @van2023] |
 
 - Thông tư 24/2019 bãi bỏ Thông tư 27/2012/TT-BYT, 08/2015/TT-BYT và Phần III Quyết định 3742/2001/QĐ-BYT. [N]
 - Nguyên tắc GMP (Điều 8): dùng lượng tối thiểu cần cho hiệu quả kỹ thuật. Điều 9(3): không cho phụ gia mang theo trong thực phẩm công thức trẻ nhỏ và thực phẩm bổ sung trừ khi phụ lục cho phép. [N]

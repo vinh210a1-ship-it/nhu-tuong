@@ -19,7 +19,7 @@ Nhãn: `[N: @khóa]` có nguồn đã đọc · `[K]` sách nền, chưa trích 
 - Định nghĩa: aw = áp suất hơi nước của sản phẩm / áp suất hơi nước tinh khiết ở cùng nhiệt độ; nước cất = 1. aw đo nước "có sẵn" cho phản ứng và vi sinh, khác với độ ẩm. `[N: @allen2018]`
 - Vi khuẩn thường cần aw ≥ ~0,91 và nấm ≥ ~0,6 `[N: @allen2018]`; nấm mốc/men gây hỏng nhiều hơn vi khuẩn trong vùng aw 0,61–0,85 **không phải vì chúng mọc nhanh hơn** mà vì thiếu đối thủ cạnh tranh `[N: @beuchat1983]`; ngưỡng aw cho độc tố nấm thường cao hơn ngưỡng sinh trưởng `[N: @beuchat1983]`.
 - *S. aureus*: aw tối thiểu công bố 0,83–0,86, thực tế khó mọc dưới ~0,89, trong thực phẩm có thể lên 0,90–0,91 `[N: @troller2017]`; nghiên cứu gốc cho 14 chủng mọc từ 0,999 đến 0,86, tốc độ và sinh khối giảm rõ khi aw < ~0,94; mọc hiếu khí chịu aw thấp hơn kỵ khí một chút `[N: @scott1953]`.
-- aw cũng ảnh hưởng độ bền nhiệt của vi sinh vật, và aw nên coi là một "hàng rào" trong chiến lược kết hợp `[N: @tapia2020]` (đã đọc mục lục chương, chưa đọc nội dung).
+- aw cũng ảnh hưởng độ bền nhiệt của vi sinh vật, và aw nên coi là một "hàng rào" trong chiến lược kết hợp `[N: @syamaladevi2016, @tapia2020]` (đã đọc mục lục chương, chưa đọc nội dung).
 - Hạ aw: thêm NaCl, sucrose, glycerol, propylen glycol, ethanol; hoặc sấy. Sản phẩm khô không hỗ trợ nảy mầm bào tử `[N: @allen2018]`.
 - Công thức ước lượng aw dung dịch đường: phương trình Norrish, ln(aw/xw) = K·xs²; với sucrose K ≈ −6,47 `[K]`. Nồng độ NaCl bão hòa cho aw ≈ 0,75 `[K]`.
 

@@ -27,10 +27,10 @@ Q10   = 10^(10/z) ;  z = 2.303 R T^2 / Ea                              [K]
 gia nhiệt (Ball): log(T_RT - T) = log(j*(T_RT-T0)) - t/f_h              [K]
 ```
 - Ví dụ giá trị đại diện: bào tử *C. botulinum* (proteolytic) D121.1 ≈ 0,1–0,25 phút, z ≈ 10 °C; khái niệm "12D botulinum" tương ứng F0 ≈ 2,5–3 phút `[K]`. Đây là bậc độ lớn từ sách; **cần số trang** trước khi lên web.
-- Giới hạn sinh trưởng và ngưỡng pH: bảng FDA trong file 02 `[N: @fda-app4]`: *C. botulinum* không mọc dưới pH 4,6 → ranh giới thực phẩm axit/ít axit `[N]`.
+- Giới hạn sinh trưởng và ngưỡng pH: bảng FDA trong file 02 `[N: @fda-app4]`: *C. botulinum* không mọc dưới pH 4,6 → ranh giới thực phẩm axit/ít axit `[N: @fda-app4]`.
 - Bất hoạt enzym bằng vi sóng: nấm PPO bất hoạt vi sóng 2450 MHz nhanh hơn nhiều so với nhúng nước nóng, giữ chất chống oxy hóa và giảm hóa nâu; hai kiểu gia nhiệt tạo trung gian enzym khác nhau `[N: @rodriguezlopez1999]`.
 - Thanh trùng sữa HTST 72 °C/15 giây; UHT 135–150 °C/vài giây; thanh trùng chậm 63 °C/30 phút `[K]`.
-- aw thấp làm vi sinh vật **bền nhiệt hơn** (aw ảnh hưởng độ bền nhiệt) `[N: @tapia2020]` (mục lục chương); dùng D-value theo aw nếu sản phẩm khô `[G]`.
+- aw thấp làm vi sinh vật **bền nhiệt hơn** (aw ảnh hưởng độ bền nhiệt) `[N: @syamaladevi2016]`; dùng D-value theo aw nếu sản phẩm khô `[G]`.
 
 ## 2. Đông lạnh và trạng thái thủy tinh
 

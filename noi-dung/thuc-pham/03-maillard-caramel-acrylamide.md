@@ -55,7 +55,7 @@ Xem thêm bài [Bảo quản: hoạt độ nước, pH, axit yếu, nitrit và h
 
 ```
 k(T) = k_ref * exp( -Ea/R * (1/T - 1/T_ref) )            # Arrhenius, [N: @isleroglu2012]
-Ea_nauhoa (bánh nướng) 20–35 kJ/mol ; (dung dịch lỏng) 100–150 kJ/mol   # [N]
+Ea_nauhoa (bánh nướng) 20–35 kJ/mol ; (dung dịch lỏng) 100–150 kJ/mol   # [N: @isleroglu2012, @buera1987]
 f_pH   = tăng đơn điệu theo pH (nhân 1 ở pH 5, ~2–3 ở pH 7)        # [T]
 f_aw   = đường chuông, đỉnh aw ≈ 0.6–0.9 tùy T                       # [N: @kim1987], hình dạng [T]
 f_duong= {xylose:1.5, glucose:1.0, fructose:0.8 (pH<6 → >glucose), lactose:0.6, sucrose:0.1}  # [T] theo thứ tự [N: @buera1987]

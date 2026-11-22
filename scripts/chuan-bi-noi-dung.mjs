@@ -491,8 +491,18 @@ for (const [ma, ten, chucNang, xacMinh] of dongBang(nhGoc, '### Bảng INS/E c�
 		bai: 'chat-nhu-hoa/ma-ins-quy-dinh-an-toan',
 	});
 }
+// DOI của ý kiến EFSA trong bảng "Nguồn (DOI)" → khóa trong nguon.json (đã đối chiếu DOI ↔ PMID qua PubMed ngày 2026-11-22 với URL PubMed của từng khóa).
+// DOI lạ thì thẻ chỉ mang huy hiệu [N] trần (không đoán khóa).
+const KHOA_EFSA_THEO_DOI = {
+	'10.2903/j.efsa.2016.4645': 'efsag', '10.2903/j.efsa.2018.5238': 'efsa2018b', '10.2903/j.efsa.2017.5049': 'efsae',
+	'10.2903/j.efsa.2017.4646': 'efsa2017e', '10.2903/j.efsa.2023.7775': 'efsa2023b', '10.2903/j.efsa.2017.4669': 'efsa2017d',
+	'10.2903/j.efsa.2024.8748': 'efsa2024', '10.2903/j.efsa.2017.4741': 'efsah', '10.2903/j.efsa.2017.4909': 'efsa2017c',
+	'10.2903/j.efsa.2023.7951': 'efsa2023a', '10.2903/j.efsa.2017.4863': 'efsad', '10.2903/j.efsa.2018.5296': 'efsaf',
+	'10.2903/j.efsa.2017.4911': 'efsai',
+};
 for (const [ten, ma, efsa, jecfa, nguonOd] of dongBang(odGoc, '## Bảng tổng hợp')) {
-	phuGia.push({ ma, ten, nhom: 'Chất ổn định', chucNang: '', xacMinh: '[N]', efsa, jecfa, nguon: nguonOd, bai: 'chat-on-dinh/quy-dinh-ins-e' });
+	const khoa = [...new Set([...nguonOd.matchAll(/10\.2903\/j\.efsa\.\d{4}\.\d+/g)].map((m) => KHOA_EFSA_THEO_DOI[m[0]]).filter(Boolean))];
+	phuGia.push({ ma, ten, nhom: 'Chất ổn định', chucNang: '', xacMinh: khoa.length ? `[N: ${khoa.map((k) => '@' + k).join(', ')}]` : '[N]', efsa, jecfa, nguon: nguonOd, bai: 'chat-on-dinh/quy-dinh-ins-e' });
 }
 for (const [ten, ghiChu] of dongBang(odGoc, '## Đã biết nhưng **chưa xác minh')) {
 	if (!/E\d|INS \d|[Gg]elatin/.test(ten)) continue;
