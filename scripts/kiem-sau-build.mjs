@@ -336,6 +336,10 @@ for (const [p, h] of Object.entries(noiDung)) {
 const loiMucDoc = [];
 const luotTheoMuc = {};
 let soLuotNguon = 0, soNKhongKhoa = 0, soN = 0;
+const nKhongKhoa = [];
+// nhãn [N] trần ở trang quy ước, hoặc ngay sau câu "Độ tin cậy:" / "Mức tin cậy:" ở đầu bài, là chú giải cách đọc nhãn, không phải thiếu nguồn (bản giao GĐ4, mục "Bẫy" của T4-3)
+const TRANG_CHU_GIAI = /^\/(?:quy-uoc|nhat-ky-thay-doi|giay-phep)\//;
+const CAU_CHU_GIAI = /(?:Độ|Mức) tin cậy\s*:\s*$/;
 {
 	const NGUON = new Map(JSON.parse(fs.readFileSync(path.join(GOC, 'nguon/nguon.json'), 'utf8')).map((e) => [e.khoa, e]));
 	const re = /<a class="nhan-nguon" href="[^"]*\/nguon\/#([^"]+)"[^>]*>[^<]*<\/a>(?:<a class="muc-vach muc-vach-(\d)" data-muc="([^"]+)" href="([^"]+)"[^>]*>(?:<span class="muc-vach-hinh" aria-hidden="true"><\/span><span class="muc-vach-chu">\(([^<)]+)\)<\/span><\/a>)?)?/g;
@@ -350,11 +354,17 @@ let soLuotNguon = 0, soNKhongKhoa = 0, soN = 0;
 			else if (m[5] !== muc.ten) loiMucDoc.push(`${tenTrang(p)}: dấu của @${m[1]} thiếu hoặc sai chữ cho trình đọc màn hình`);
 		}
 		// huy hiệu N không kèm khóa nguồn nào (chỉ đếm để báo bộ phận Thông tin, không chặn)
-		const doan = h.split('<span class="nhan nhan-N"').slice(1);
-		soN += doan.length;
-		for (const d of doan) {
+		const doan = h.split('<span class="nhan nhan-N"');
+		soN += doan.length - 1;
+		for (let i = 1; i < doan.length; i++) {
+			const d = doan[i];
 			const het = d.search(/<span class="nhan nhan-|<\/p>|<\/li>|<\/td>/);
-			if (!(het < 0 ? d.slice(0, 1500) : d.slice(0, het)).includes('class="nhan-nguon"')) soNKhongKhoa++;
+			if (!(het < 0 ? d.slice(0, 1500) : d.slice(0, het)).includes('class="nhan-nguon"')) {
+				soNKhongKhoa++;
+				// chữ ngay trước huy hiệu (bỏ thẻ) để Thông tin tìm đúng câu; trang chú giải nhãn thì gắn cờ, không tính là thiếu nguồn
+				const truoc = doan[i - 1].replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().slice(-110);
+				nKhongKhoa.push({ trang: tenTrang(p), boi_canh: truoc, co_chu_sau_n: d.startsWith('>N</span><span class="nhan-phan">') || /^[^>]*>N<\/span><span class="nhan-phan">/.test(d), chu_giai: TRANG_CHU_GIAI.test(tenTrang(p)) || CAU_CHU_GIAI.test(truoc) });
+			}
 		}
 	}
 	const quyUoc = noiDung[path.join(DIST, 'quy-uoc', 'index.html')] || '';
@@ -438,6 +448,49 @@ if (loiHinh.length) {
 	console.log(`\nHÌNH CƠ CHẾ / ĐỒ THỊ / BẢN ĐỒ LỘ TRÌNH: ${loiHinh.length} lỗi`);
 	for (const l of loiHinh.slice(0, 40)) console.log('  - ' + l);
 }
+// ---- T4-3: dòng "Bài này trích n nguồn: …" trong lý lịch mỗi bài. Số hiển thị phải khớp số tự đếm lại từ liên kết nguồn trong thân bài
+// (phần giữa lý lịch và hộp Tự kiểm tra / Thử ngay / Liên quan / Đọc xong), mức lấy từ nguon.json.
+const baiDem = {};
+{
+	const NGUON = new Map(JSON.parse(fs.readFileSync(path.join(GOC, 'nguon/nguon.json'), 'utf8')).map((e) => [e.khoa, e]));
+	const CAT = ['class="tu-kiem-tra', 'class="thu-ngay', 'class="lien-quan', 'class="ket-bai'];
+	for (const [p, h] of Object.entries(noiDung)) {
+		if (!h.includes('data-ket-bai')) continue;
+		const ten = tenTrang(p);
+		const dau = h.indexOf('<p class="nguon-goc-bai">');
+		const hetDau = dau < 0 ? -1 : h.indexOf('</p>', dau);
+		if (hetDau < 0) { loiMucDoc.push(`${ten}: không thấy lý lịch bài`); continue; }
+		const ly = h.slice(dau, hetDau);
+		if (h.includes('dem-nguon-->')) loiMucDoc.push(`${ten}: dấu thay chỗ của dòng đếm nguồn chưa được thay`);
+		if ((ly.match(/class="dem-nguon"/g) || []).length !== 1) { loiMucDoc.push(`${ten}: lý lịch bài phải có đúng một dòng đếm nguồn`); continue; }
+		const cuoi = Math.min(...CAT.map((c) => { const i = h.indexOf(c, hetDau); return i < 0 ? h.length : i; }));
+		const khoa = new Set([...h.slice(hetDau, cuoi).matchAll(/<a class="nhan-nguon" href="[^"]*\/nguon\/#([^"]+)"/g)].map((m) => m[1]));
+		const mong = {};
+		for (const k of khoa) { const v = mucCua(NGUON.get(k)?.muc_doc).vach; mong[v] = (mong[v] || 0) + 1; }
+		const thay = {};
+		for (const m of ly.matchAll(/<span class="dem-muc"><span class="muc-vach muc-vach-(\d)">[^]*?<\/span><\/span>(\d+) /g)) thay[m[1]] = (thay[m[1]] || 0) + +m[2];
+		const nThay = /trích (\d+) nguồn:/.exec(ly)?.[1] ?? (/chưa trích nguồn nào/.test(ly) ? '0' : null);
+		if (nThay === null || +nThay !== khoa.size) loiMucDoc.push(`${ten}: dòng đếm ghi ${nThay} nguồn, tự đếm trong thân bài được ${khoa.size}`);
+		else if (JSON.stringify(Object.entries(thay).sort()) !== JSON.stringify(Object.entries(mong).sort())) loiMucDoc.push(`${ten}: số nguồn theo mức ở dòng đếm (${JSON.stringify(thay)}) lệch số tự đếm (${JSON.stringify(mong)})`);
+		baiDem[ten] = { nguon: khoa.size, theo_vach: mong, khoa: [...khoa].sort() };
+	}
+	if (!Object.keys(baiDem).length) loiMucDoc.push('không thấy bài nào có dòng đếm nguồn (mẫu HTML đã đổi? sửa khối T4-3)');
+}
+// Xuất báo cáo cho bộ phận Thông tin vào bao-cao-build.json (tệp tạm của lần build, đã gitignore): huy hiệu N không kèm khóa nguồn
+// (tách trang chú giải nhãn) và số nguồn theo mức của từng bài.
+{
+	const tep = path.join(GOC, 'bao-cao-build.json');
+	let bc = {};
+	try { bc = JSON.parse(fs.readFileSync(tep, 'utf8')); } catch {}
+	bc._t4 = {
+		luot_trich_theo_muc: luotTheoMuc,
+		huy_hieu_n_tong: soN,
+		huy_hieu_n_khong_khoa: nKhongKhoa.filter((x) => !x.chu_giai),
+		huy_hieu_n_chu_giai_nhan: nKhongKhoa.filter((x) => x.chu_giai).length,
+		bai: baiDem,
+	};
+	fs.writeFileSync(tep, JSON.stringify(bc, null, 1));
+}
 if (loiMucDoc.length) {
 	console.log(`\nDẤU MỨC ĐỌC NGUỒN (T4): ${loiMucDoc.length} lỗi`);
 	for (const l of loiMucDoc.slice(0, 40)) console.log('  - ' + l);
@@ -445,7 +498,7 @@ if (loiMucDoc.length) {
 console.log(
 	`  mức đọc (T4): ${soLuotNguon} lượt trích nguồn trong trang tĩnh, ` +
 		[...Object.keys(MUC_DOC), 'chua-ro'].filter((ma) => luotTheoMuc[ma]).map((ma) => `${mucCua(ma).ten} ${luotTheoMuc[ma]}`).join(', ') +
-		`; ${soNKhongKhoa}/${soN} huy hiệu N không kèm khóa nguồn (chưa có dấu, việc của gói T4-3)`,
+		`; ${soNKhongKhoa}/${soN} huy hiệu N không kèm khóa nguồn (${nKhongKhoa.filter((x) => x.chu_giai).length} ở trang chú giải nhãn, ${nKhongKhoa.filter((x) => !x.chu_giai).length} cần Thông tin xem, danh sách ở bao-cao-build.json); ${Object.keys(baiDem).length} bài có dòng đếm nguồn khớp số tự đếm`,
 );
 if (loiCam.length || nhomHong.length || loiThuNgay.length || loiRnd.length || loiHinh.length || loiMucDoc.length) {
 	console.log('\nkiem-sau-build: KHÔNG ĐẠT');

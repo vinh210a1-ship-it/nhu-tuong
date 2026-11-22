@@ -452,17 +452,42 @@ function dung(el) {
 
 function khoiDong() {
 	document.querySelectorAll('[data-may-tinh]').forEach(dung);
-	// lọc trên trang Nguồn
+	// lọc trên trang Nguồn: ô chữ + nút theo mức đọc (thẻ mang data-muc) + dòng đếm; địa chỉ ?muc=<mã> chọn sẵn một mức
 	const loc = document.getElementById('loc-nguon');
 	if (loc && !loc.dataset.daDung) {
 		loc.dataset.daDung = '1';
 		const the = [...document.querySelectorAll('.the-nguon')];
+		const nut = [...document.querySelectorAll('[data-loc-muc]')];
+		const dem = document.querySelector('[data-dem-nguon]');
 		const bo = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd').toLowerCase();
 		const chu = the.map((t) => bo(t.textContent));
-		loc.addEventListener('input', () => {
+		let muc = '';
+		try {
+			const m = new URLSearchParams(location.search).get('muc');
+			if (m && nut.some((n) => n.dataset.locMuc === m)) muc = m;
+		} catch {}
+		const chay = () => {
 			const q = bo(loc.value.trim());
-			the.forEach((t, i) => (t.hidden = q && !chu[i].includes(q)));
-		});
+			let hien = 0;
+			the.forEach((t, i) => {
+				const an = (q && !chu[i].includes(q)) || (muc && t.dataset.muc !== muc);
+				t.hidden = Boolean(an);
+				if (!an) hien++;
+			});
+			nut.forEach((n) => n.setAttribute('aria-pressed', String(n.dataset.locMuc === muc)));
+			if (dem) dem.textContent = q || muc ? (hien ? `Đang hiện ${hien} trong ${the.length} nguồn.` : 'Không có nguồn nào khớp bộ lọc.') : '';
+		};
+		loc.addEventListener('input', chay);
+		nut.forEach((n) =>
+			n.addEventListener('click', () => {
+				muc = n.dataset.locMuc;
+				try {
+					history.replaceState(null, '', muc ? `?muc=${muc}` + location.hash : location.pathname + location.hash);
+				} catch {}
+				chay();
+			}),
+		);
+		chay();
 	}
 	// lọc trên trang Tra cứu phụ gia: ô chữ + nút nhóm + đếm số thẻ đang hiện
 	const locPg = document.getElementById('loc-phu-gia');

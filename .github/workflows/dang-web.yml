@@ -52,6 +52,11 @@ jobs:
         if: github.event_name == 'pull_request'
         continue-on-error: true
         run: node scripts/kiem-muc-doc-js.mjs
+      # Nút lọc theo mức đọc ở trang Nguồn (T4-3): cũng ở giai đoạn báo cáo.
+      - name: Kiểm nút lọc mức đọc ở trang Nguồn (chỉ báo cáo)
+        if: github.event_name == 'pull_request'
+        continue-on-error: true
+        run: node scripts/kiem-loc-nguon.mjs
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main'
         with:
