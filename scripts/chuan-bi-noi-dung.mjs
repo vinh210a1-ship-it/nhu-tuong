@@ -8,7 +8,7 @@ import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import { tenNgan, htmlNhan, tachNhan, SO_DON_VI } from '../src/plugins/remark-nhan.mjs';
-import { htmlVach } from '../src/data/muc-doc.mjs';
+import { htmlVach, jsonMucDoc } from '../src/data/muc-doc.mjs';
 import { KHU } from '../src/data/khu.mjs';
 import { dungTraCuu } from './tra-cuu.mjs';
 import { docTep } from './doc-tep.mjs';
@@ -333,6 +333,9 @@ ${htmlTuKiemTra(`${khu}/${fm.slug}`, TU_KIEM_TRA_KHU[khu][fm.slug])}
 	fs.mkdirSync(thuMuc, { recursive: true });
 	fs.writeFileSync(path.join(thuMuc, 'index.json'), JSON.stringify(ds));
 }
+
+// ---------------- mức đọc nguồn cho phần JavaScript (T4-2): public/muc-doc.json (sinh tự động, đã gitignore)
+fs.writeFileSync(path.join(GOC, 'public/muc-doc.json'), JSON.stringify(jsonMucDoc(JSON.parse(fs.readFileSync(path.join(GOC, 'nguon/nguon.json'), 'utf8')))));
 
 // ---------------- trang Nhật ký thay đổi (T5): 100 dòng mới nhất từ git log, chỉ tính commit chạm bài công khai
 {
