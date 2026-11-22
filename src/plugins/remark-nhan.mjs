@@ -1,5 +1,6 @@
 // Đổi nhãn tin cậy trong bài ([N: @khoa], [T], [K], [G: ghi chú], nhãn ghép [K; N: @khoa])
-// thành huy hiệu màu; mỗi @khoa thành đường dẫn tới thẻ nguồn trên trang Nguồn.
+// thành huy hiệu màu; mỗi @khoa thành đường dẫn tới thẻ nguồn trên trang Nguồn, kèm dấu mức đọc của nguồn đó
+// (bảng mức ở src/data/muc-doc.mjs).
 //
 // Quy tắc "số liệu sách nền chờ đối chiếu" (anh Vinh duyệt 2026-11-01): khối nội dung
 // (đoạn, mục danh sách, dòng bảng) chỉ có nhãn K mà chứa số kèm đơn vị thì tạm ẩn,
@@ -7,6 +8,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { visit, SKIP } from 'unist-util-visit';
+import { htmlMucDoc } from '../data/muc-doc.mjs';
 
 const NHAN_RE = /\[(N|K|T|G)(?:[:;][^\]\n]*)?\]/g;
 const TEN = {
@@ -58,7 +60,8 @@ function htmlPhan(phan, base, thieu) {
 			thieu.add(k);
 			return esc('@' + k);
 		}
-		return `<a class="nhan-nguon" href="${base}/nguon/#${k}" title="${esc(e.trich_dan)}">${esc(tenNgan(e))}</a>`;
+		// gói T4: sau tên mỗi nguồn là dấu mức đọc (4 vạch) lấy từ muc_doc của nguồn đó
+		return `<a class="nhan-nguon" href="${base}/nguon/#${k}" title="${esc(e.trich_dan)}">${esc(tenNgan(e))}</a>${htmlMucDoc(e.muc_doc, base)}`;
 	});
 	html = html.replace(
 		/PubMed (\d{6,9})/g,

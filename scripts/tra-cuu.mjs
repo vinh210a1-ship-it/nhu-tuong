@@ -176,7 +176,7 @@ export function dungTraCuu({ GOC, DOCS, BASE, theGia, soPhuGia, soNhom }) {
 <details class="tk-doc-ma">
 <summary>Cách đọc mã INS/E và dải số</summary>
 <p><b>INS</b> (International Numbering System) là hệ mã số của Codex Alimentarius, để gọi phụ gia thống nhất giữa các nước. <b>E</b> là mã của EU: số trùng INS, thêm chữ E, chỉ dành cho chất EU cho phép. Chữ và số trong ngoặc phân biệt các chất cùng họ, ví dụ 322(i) lecithin, 322(ii) lecithin thủy phân một phần; 472a–472f là các este của monoglyceride. <span class="nhan-cum"><span class="nhan nhan-K" title="Sách nền, chờ đối chiếu trang">K</span></span></p>
-<p>Dải số dưới đây chỉ là <b>quy luật gần đúng</b> để đoán nhóm chất khi gặp một mã lạ, có ngoại lệ; muốn chắc phải tra đúng mã. <span class="nhan-cum"><span class="nhan nhan-N" title="Có nguồn">N</span><span class="nhan-phan"><a class="nhan-nguon" href="${BASE}/nguon/#wikipedia-ins">Wikipedia</a></span></span> Nguồn là bảng tổng hợp thứ cấp, chưa đối chiếu bản Codex CXG 36-1989.</p>
+<p>Dải số dưới đây chỉ là <b>quy luật gần đúng</b> để đoán nhóm chất khi gặp một mã lạ, có ngoại lệ; muốn chắc phải tra đúng mã. ${htmlNhan('[N: @wikipedia-ins]', BASE, thieu)} Nguồn là bảng tổng hợp thứ cấp, chưa đối chiếu bản Codex CXG 36-1989.</p>
 <table class="tk-dai"><thead><tr><th>Dải mã</th><th>Nhóm thường gặp</th></tr></thead><tbody>
 <tr><td>100–199</td><td>Chất màu</td></tr>
 <tr><td>200–299</td><td>Chất bảo quản (kèm một số axit, chất chống oxy hóa)</td></tr>
