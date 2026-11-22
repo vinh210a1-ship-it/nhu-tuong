@@ -52,6 +52,11 @@ jobs:
         if: github.event_name == 'pull_request'
         continue-on-error: true
         run: node scripts/kiem-muc-doc-js.mjs
+      # Hộp giải thích bấm ra tại chỗ khi bấm dấu mức đọc (T4-4): cũng ở giai đoạn báo cáo.
+      - name: Kiểm hộp giải thích mức đọc (chỉ báo cáo)
+        if: github.event_name == 'pull_request'
+        continue-on-error: true
+        run: node scripts/kiem-muc-doc-hop.mjs
       # Nút lọc theo mức đọc ở trang Nguồn (T4-3): cũng ở giai đoạn báo cáo.
       - name: Kiểm nút lọc mức đọc ở trang Nguồn (chỉ báo cáo)
         if: github.event_name == 'pull_request'
